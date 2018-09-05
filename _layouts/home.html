@@ -15,8 +15,7 @@ layout: default
         </div>
         <div class="column column-40">
           <div class="landing-about">
-            The Secure, Reliable, and Intelligent Systems Lab (SRI) is a research group in the Department of Computer Science at ETH Zurich. We are also part of the ETH ICE center on interdisciplinary research. Our group tends to work on inter-disciplinary topics spanning theory and systems. Currently, we are actively working on practical and reliable artificial intelligence (A.I.), new machine learning methods to automate programming, and reasoning approaches for more dependable systems (e.g., blockchain security, computer networks, etc). <br/ ><br/ >
-            Over the last few years we have built a number of systems around these topics, widely used in both industry and academia, including: JSNice, APK Deguard, PSI Solver, Securify, Nice2Predict and others. To learn about our work, please see research and publications for more information.
+            The Secure, Reliable, and Intelligent Systems Lab (SRI) is a research group in the <a href="https://www.inf.ethz.ch/" target="_blank">Department of Computer Science</a> at ETH Zurich. We are also part of the <a href="http://ice.ethz.ch/" target="_blank">ETH ICE center</a> on interdisciplinary research. Our group works on inter-disciplinary topics spanning the intersection of artificial intelligence, automated reasoning and security. We have released many systems on these topics, now widely used in both industry and academia, including: <a href="http://jsnice.org" target="_blank">JSNice</a>, <a href="http://www.apk-deguard.com" target="_blank">APK Deguard</a>, <a href="https://psisolver.org/" target="_blank">PSI Solver</a>, <a href="https://securify.ch/" target="_blank">Securify</a>, <a href="http://nice2predict.org/" target="_blank">Nice2Predict</a> and others. To learn about our work, please see research and publications for more information.
           </div>
         </div>
       </div>
@@ -30,8 +29,8 @@ layout: default
       <div class="column column-66">
 
         <h2>In the Media</h2>
-        
-          
+
+
           <div class="grid">
             {% assign sorted_media = site.media | sort:"date" | reverse %}
             {%- for media in sorted_media limit: 3  -%}
@@ -39,13 +38,13 @@ layout: default
               <div class="media-image">
                 <a href="{{ media.link }}">
                   <img src="{{ media.image | prepend: '/assets/media/' | relative_url}}"/>
-                </a>  
+                </a>
               </div>
               <div class="media-title"><a href="{{ media.link }}">{{ media.title}}</a></div>
             </div>
             {%- endfor -%}
           </div>
-          
+
 
 
       </div>
@@ -66,7 +65,7 @@ layout: default
       </div>
 
 
-    </div>      
+    </div>
   </div>
 </article>
 
