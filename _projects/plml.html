@@ -1,7 +1,7 @@
 ---
 title: Machine Learning for Programming
 ref: plml
-image: programming.png    
+image: programming.png
 description: This project combines programming languages and machine learning for building statistical programming engines -- systems built on top of machine learning models of large codebases. These are new kinds of engines which can provide statistically likely solutions to problems that are difficult or impossible to solve with traditional techniques.
 ---
 
@@ -9,10 +9,10 @@ description: This project combines programming languages and machine learning fo
 <h2>Startups</h2>
 
 <div class="grid">
-  {% include card.html 
+  {% include card.html
     title="DeepCode"
     output="vertical"
-    url="https://deepcode.ai/" 
+    url="https://deepcode.ai/"
     image="/assets/systems/dc-logo.png"
     description="DeepCode offers the first AI-based code review system"
   %}
@@ -23,21 +23,21 @@ description: This project combines programming languages and machine learning fo
 
 <h2>Statistical Engines</h2>
 <div class="grid">
-  {% include card.html 
+  {% include card.html
     title="JSNice"
     output="vertical"
-    url="http://jsnice.org/" 
+    url="http://jsnice.org/"
     image="/assets/systems/js_nice_logo_wide.png"
     description="JSNice de-obfuscates JavaScript programs. JSNice is a popular system in the JavaScript commmunity used by tens of thousands of programmers, worldwide"
   %}
-  {% include card.html 
+  {% include card.html
     title="Nice2Predict"
     output="vertical"
-    url="http://www.nice2predict.org/" 
+    url="http://www.nice2predict.org/"
     image="/assets/systems/nice2predict_logo.png"
     description="Efficient and scalable open-source framework for structured prediction, enabling one to build new statistical engines more quickly."
   %}
-  {% include card.html 
+  {% include card.html
     title="DeGuard"
     output="vertical"
     url="http://www.apk-deguard.com/"
@@ -48,223 +48,213 @@ description: This project combines programming languages and machine learning fo
 
 
 
+<h2>Datasets and Models</h2>
+
+{% include card.html
+title="150k Python Dataset"
+url="downloads/py150"
+output="horizontal"
+description="Dataset consisting of 150'000 Python ASTs"
+download="py150"
+%}
+
+{% include card.html
+title="150k JavaScript Dataset"
+url="downloads/js150"
+output="horizontal"
+description="Dataset consisting of 150'000 JavaScript files and their parsed ASTs"
+download="js150"
+%}
+
+{% include card.html
+title="Probablistic models"
+url="downloads/phog"
+output="horizontal"
+description="Sythesized programs for probabilistic models (on the above datasets)"
+download="phog"
+%}
+
+{% include card.html
+title="JSNice artifact"
+url="downloads/jsnice-artifact"
+output="horizontal"
+description="JSNice artifact that contains an engine, trained model and evaluation dataset"
+download="jsnice-artifact"
+%}
+
+{% include card.html
+title="JSNice dataset"
+url="downloads/jsnice_git_repos.txt"
+output="horizontal"
+description="List of GitHub repositories used to train JSNice on"
+download="jsnice_git_repos.txt"
+%}
+
 <h2>Publications</h2>
 
 {% include get-publications.html filter="project" key="plml" %}
 
 
-
-<h2>Datasets and Models</h2>
-
-{% include card.html 
-  title="150k Python Dataset"
-  url="downloads/py150" 
-  output="horizontal" 
-  description="Dataset consisting of 150'000 Python ASTs"
-  download="py150"
-%}
-
-{% include card.html 
-  title="150k JavaScript Dataset"
-  url="downloads/js150" 
-  output="horizontal" 
-  description="Dataset consisting of 150'000 JavaScript files and their parsed ASTs"
-  download="js150"
-%}
-
-{% include card.html 
-  title="Probablistic models"
-  url="downloads/phog" 
-  output="horizontal" 
-  description="Sythesized programs for probabilistic models (on the above datasets)"
-  download="phog"
-%}
-
-{% include card.html 
-  title="JSNice artifact"
-  url="downloads/jsnice-artifact" 
-  output="horizontal" 
-  description="JSNice artifact that contains an engine, trained model and evaluation dataset"
-  download="jsnice-artifact"
-%}
-
-{% include card.html 
-  title="JSNice dataset"
-  url="downloads/jsnice_git_repos.txt" 
-  output="horizontal" 
-  description="List of GitHub repositories used to train JSNice on"
-  download="jsnice_git_repos.txt"
-%}
-
-
 <h2>Talks</h2>
 
-{% include card.html 
-  title="Learning to Analyze Programs at Scale" 
-  url="https://ml4p.org/" 
-  output="horizontal" 
+{% include card.html
+  title="Learning to Analyze Programs at Scale"
+  url="https://ml4p.org/"
+  output="horizontal"
   description="Machine Learning for Programming Workshop, FLOC 2018"
-  slides="files/FLOC18-MLP18.pdf"
+  slides="https://files.sri.inf.ethz.ch/website/slides/FLOC18-MLP18.pdf"
 %}
 
-{% include card.html 
-  title="Learning a static analyzer from data" 
-  url="http://cavconference.org/2017/" 
-  output="horizontal" 
+{% include card.html
+  title="Learning a static analyzer from data"
+  url="http://cavconference.org/2017/"
+  output="horizontal"
   description="Computer Aided Verification 2017"
-  slides="http://www.sri.inf.ethz.ch/slides/cav17_learning_slides.pdf"
+  slides="https://files.sri.inf.ethz.ch/website/slides/cav17_learning_slides.pdf"
   talk="https://www.youtube.com/watch?v=bkieI3jLxVY"
 %}
 
-{% include card.html 
-  title="Learning to Analyze Programs at Scale" 
-  url="https://ml4p.org/" 
-  output="horizontal" 
-  description="Machine Learning for Programming Workshop, FLOC 2018"
-  slides="files/FLOC18-MLP18.pdf"
-%}
-
-{% include card.html 
-  title="Probabilistic and Interpretable Models for Code" 
-  url="https://easychair.org/smart-program/FLoC2018/SYNT-program.html" 
-  output="horizontal" 
+{% include card.html
+  title="Probabilistic and Interpretable Models for Code"
+  url="https://easychair.org/smart-program/FLoC2018/SYNT-program.html"
+  output="horizontal"
   description="SYNT workshop, FLOC 2018"
-  slides="files/FLOC18-SYNT.pdf"
+  slides="https://files.sri.inf.ethz.ch/website/slides/FLOC18-SYNT.pdf"
 %}
 
-{% include card.html 
-  title="Machine Learning for Programming" 
-  url="http://ifm2017.di.unito.it" 
-  output="horizontal" 
+{% include card.html
+  title="Machine Learning for Programming"
+  url="http://ifm2017.di.unito.it"
+  output="horizontal"
   description="iFM 2017 Keynote Talk"
-  slides="http://www.sri.inf.ethz.ch/slides/ifm17.pdf"
+  slides="https://files.sri.inf.ethz.ch/website/slides/ifm17.pdf"
 %}
 
-{% include card.html 
-  title="DeGuard: Statistical Deobfuscation for Android" 
-  url="https://usmile.at/symposium" 
-  output="horizontal" 
+{% include card.html
+  title="DeGuard: Statistical Deobfuscation for Android"
+  url="https://usmile.at/symposium"
+  output="horizontal"
   description="Android Security Symposium 2017"
-  slides="http://www.sri.inf.ethz.ch/slides/deguard-androidsec17.pdf"
+  slides="https://files.sri.inf.ethz.ch/website/slides/deguard-androidsec17.pdf"
   talk="https://www.youtube.com/watch?v=CT_XmRrvDYg"
 %}
 
-{% include card.html 
-  title="Programming Languages and Machine Learning" 
-  url="https://uclmr.github.io/nampi/" 
-  output="horizontal" 
+{% include card.html
+  title="Programming Languages and Machine Learning"
+  url="https://uclmr.github.io/nampi/"
+  output="horizontal"
   description="Neural Abstract Machines & Program Induction (NIPS'16 workshop)"
-  slides="http://www.sri.inf.ethz.ch/slides/nampi16.pdf"
+  slides="https://files.sri.inf.ethz.ch/website/slides/nampi16.pdf"
 %}
 
-{% include card.html 
-  title="Statistical Deobfuscation of Android Applications" 
-  url="https://www.sigsac.org/ccs/CCS2016/" 
-  output="horizontal" 
+{% include card.html
+  title="Statistical Deobfuscation of Android Applications"
+  url="https://www.sigsac.org/ccs/CCS2016/"
+  output="horizontal"
   description="CCS 2016 talk"
-  slides="http://www.sri.inf.ethz.ch/slides/deguard-slides-ccs16.pdf"
+  slides="https://files.sri.inf.ethz.ch/website/slides/deguard-slides-ccs16.pdf"
   talk="https://www.youtube.com/watch?v=JG4WJBBQef4"
 %}
 
-{% include card.html 
-  title="Machine Learning for Programs" 
-  url="http://i-cav.org/2016/tutorials" 
-  output="horizontal" 
+{% include card.html
+  title="Machine Learning for Programs"
+  url="http://i-cav.org/2016/tutorials"
+  output="horizontal"
   description="CAV'16 Tutorial"
-  slides="http://www.sri.inf.ethz.ch/slides/CAV16-TUTORIAL.pdf"
+  slides="https://files.sri.inf.ethz.ch/website/slides/CAV16-TUTORIAL.pdf"
 %}
 
-{% include card.html 
-  title="Probabilistic Learning from Big Code" 
-  url="https://issta2016.cispa.saarland/probabilistic-learning-from-big-code" 
-  output="horizontal" 
+{% include card.html
+  title="Probabilistic Learning from Big Code"
+  url="https://issta2016.cispa.saarland/probabilistic-learning-from-big-code"
+  output="horizontal"
   description="ISSTA'16 Keynote Talk"
-  slides="http://www.sri.inf.ethz.ch/slides/ISSTA16-KEYNOTE.pdf"
+  slides="https://files.sri.inf.ethz.ch/website/slides/ISSTA16-KEYNOTE.pdf"
 %}
 
-{% include card.html 
-  title="PHOG: Probabilistic Model for Code" 
-  url="http://icml.cc/2016/" 
-  output="horizontal" 
+{% include card.html
+  title="PHOG: Probabilistic Model for Code"
+  url="http://icml.cc/2016/"
+  output="horizontal"
   description="ICML 2016 talk"
-  slides="http://www.sri.inf.ethz.ch/slides/ICML16_PHOG.pdf"
+  slides="https://files.sri.inf.ethz.ch/website/slides/ICML16_PHOG.pdf"
 %}
 
-{% include card.html 
-  title="Learning Programs from Noisy Data" 
-  url="http://conf.researchr.org/home/POPL-2016" 
-  output="horizontal" 
+{% include card.html
+  title="Learning Programs from Noisy Data"
+  url="http://conf.researchr.org/home/POPL-2016"
+  output="horizontal"
   description="POPL 2016 talk"
-  slides="http://www.sri.inf.ethz.ch/slides/popl16-slides.pdf"
+  slides="https://files.sri.inf.ethz.ch/website/slides/popl16-slides.pdf"
 %}
 
-{% include card.html 
-  title="Machine Learning for Programming" 
-  url="http://2015.ecoop.org/track/ML4PL2015" 
-  output="horizontal" 
+{% include card.html
+  title="Machine Learning for Programming"
+  url="http://2015.ecoop.org/track/ML4PL2015"
+  output="horizontal"
   description="Invited Talk at ML4PL'15"
 %}
 
-{% include card.html 
-  title="Machine Learning for Code Analytics" 
-  url="http://www.sri.inf.ethz.ch/ml4code-tutorial.php" 
-  output="horizontal" 
+{% include card.html
+  title="Machine Learning for Code Analytics"
+  url="http://www.sri.inf.ethz.ch/ml4code-tutorial.php"
+  output="horizontal"
   description="PLDI'15 Tutorial"
-  slides="http://www.sri.inf.ethz.ch/PLDI15-TUTORIAL.pdf"
+  slides="https://files.sri.inf.ethz.ch/website/slides/PLDI15-TUTORIAL.pdf"
 %}
 
-{% include card.html 
-  title="Machine Learning for Programming" 
-  url="https://excape.cis.upenn.edu/summer-school.html" 
-  output="horizontal" 
+{% include card.html
+  title="Machine Learning for Programming"
+  url="https://excape.cis.upenn.edu/summer-school.html"
+  output="horizontal"
   description="Invited Talk at MIT ExCAPE'15 Summer School"
   slides="https://excape.cis.upenn.edu/documents/June2015_SummerSchool/Vechev.pdf"
 %}
 
-{% include card.html 
-  title="Machine Learning for Programming" 
-  url="http://tce.technion.ac.il/events/the-5th-annual-henry-taub-international-tce-conference/" 
-  output="horizontal" 
+{% include card.html
+  title="Machine Learning for Programming"
+  url="http://tce.technion.ac.il/events/the-5th-annual-henry-taub-international-tce-conference/"
+  output="horizontal"
   description="Invited Talk at TCE'15 Conference"
   slides="http://tce.technion.ac.il/wp-content/uploads/sites/8/2015/06/SC-1.1-M.-Vechev.pdf"
   talk="https://www.youtube.com/watch?v=59ujp8-Ijw4"
 %}
 
-{% include card.html 
-  title="Programming with Probabilistic Graphical Models" 
-  url="http://memento.epfl.ch/event/ic-colloquium-programming-with-probabilistic-gra-2/" 
-  output="horizontal" 
+{% include card.html
+  title="Programming with Probabilistic Graphical Models"
+  url="http://memento.epfl.ch/event/ic-colloquium-programming-with-probabilistic-gra-2/"
+  output="horizontal"
   description="EPFL Colloquium, Dec, 2014"
   talk="http://slideshot.epfl.ch/play/icc_vechev"
 %}
 
-{% include card.html 
-  title="Programming Tools based on Big Data and Conditional Random Fields" 
-  url="http://www.meetup.com/Zurich-Machine-Learning/photos/25771414/432065246/" 
-  output="horizontal" 
+{% include card.html
+  title="Programming Tools based on Big Data and Conditional Random Fields"
+  url="http://www.meetup.com/Zurich-Machine-Learning/photos/25771414/432065246/"
+  output="horizontal"
   description="Zurich Machine Learning and Data Science Meet-up"
 %}
 
-{% include card.html 
-  title="Statistical Program Analysis and Synthesis" 
-  url="http://www.research.ibm.com/haifa/conferences/hvc2014/day2.shtml" 
-  output="horizontal" 
+{% include card.html
+  title="Statistical Program Analysis and Synthesis"
+  url="http://www.research.ibm.com/haifa/conferences/hvc2014/day2.shtml"
+  output="horizontal"
   description="HVC'14 Keynote"
 %}
 
-{% include card.html 
-  title="Statistical Program Analysis and Synthesis" 
-  url="http://www.sri.inf.ethz.ch/workshop2014.php" 
-  output="horizontal" 
+{% include card.html
+  title="Statistical Program Analysis and Synthesis"
+  url="http://www.sri.inf.ethz.ch/workshop2014.php"
+  output="horizontal"
   description="ETH Workshop 2014"
-  slides="http://www.sri.inf.ethz.ch/workshop2014/eth-vechev.pdf"
+  slides="https://files.sri.inf.ethz.ch/website/events/workshop2014/eth-vechev.pdf"
   talk="http://www.youtube.com/watch?v=-_CvQeXbVGg"
 %}
 
-{% include card.html 
-  title="Code Completion with Statistical Language Models" 
-  url="http://research.microsoft.com/apps/video/default.aspx?id=226987" 
-  output="horizontal" 
+{% include card.html
+  title="Code Completion with Statistical Language Models"
+  url="http://research.microsoft.com/apps/video/default.aspx?id=226987"
+  output="horizontal"
   description="Talk given at University of Washington and Microsoft Research (by V. Raychev) and EPFL and ETH (by Martin Vechev)"
   slides="http://msrvideo.vo.msecnd.net/rmcvideos/226987/dl/226987.pdf"
   talk="http://research.microsoft.com/apps/video/default.aspx?id=226987"
@@ -280,7 +270,7 @@ The web site contains data sets, systems and challenge problems from groups work
 <br>
 
 <p>
-  
+
   <a href="https://erc.europa.eu/">
     <img src="{{ "/assets/images/erc-logo.png" | relative_url}}" width="173" height="114">
   </a>
