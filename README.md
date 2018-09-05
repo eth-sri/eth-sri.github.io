@@ -1,5 +1,8 @@
 # SRI Website
 
+## Notice
+
+All larger files, including pdfs of papers/slides, should be uploaded to the file server and server from https://files.sri.inf.ethz.ch/
 
 ## Overview
 
