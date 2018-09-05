@@ -1,9 +1,10 @@
 
 {% if include.output == "vertical" %}
   <div class="card card-vertical">
-    <div class="card-img">
+    {% if include.image %}<div class="card-img">
       <a href="{{ include.url | relative_url}}" alt="{{ include.title }}" target="_blank"><img src="{{ include.image | relative_url }}"></a>
     </div>
+    {% endif %}
     <div class="card-content">
       <div class="card-title">{{ include.title }}</div>
       {% if include.description %}<div class="card-subtitle">{{ include.description }}</div>{% endif %}
