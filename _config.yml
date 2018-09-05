@@ -49,7 +49,7 @@ collections:
     permalink: /:collection/:name
   events:
     output: true
-    permalink: /:collection/:name
+    permalink: /:name
 
 defaults:
   -
@@ -96,7 +96,7 @@ defaults:
 
 # Build settings
 theme: minima
-  
+
 plugins:
  - jekyll-feed
  - jekyll-seo-tag
