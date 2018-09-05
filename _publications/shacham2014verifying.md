@@ -13,7 +13,7 @@ bibtex: '@inproceedings{shacham2014verifying,
   pages={26--36},
   year={2014},
   organization={ACM}}'
-paper: issta14-atomicity.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/issta14-atomicity.pdf
 talk: 
 slides: 
 ---

@@ -8,7 +8,7 @@ venue: ACM CCS
 projects: plml
 awards:
 bibtex: ''
-paper: ccs18-debin.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/ccs18-debin.pdf
 talk: 
 slides: 
 ---

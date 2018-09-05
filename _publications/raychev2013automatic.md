@@ -13,9 +13,9 @@ bibtex: '@inproceedings{raychev2013automatic,
   pages={283--303},
   year={2013},
   organization={Springer}}'
-paper: sas13-dps.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/sas13-dps.pdf
 talk: 
-slides: sas13-dps-slides.pdf
+slides: https://files.sri.inf.ethz.ch/website/slides/sas13-dps-slides.pdf
 ---
 
 Many parallel programs are meant to be deterministic: for the same input, the program must produce the same output, regardless of scheduling choices. Unfortunately, due to complex parallel interaction, programmers make subtle mistakes that lead to violations of determinism.

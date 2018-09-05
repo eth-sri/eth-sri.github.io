@@ -13,7 +13,7 @@ bibtex: '@inproceedings{birkner2018net2text,
   booktitle={15th $\{$USENIX$\}$ Symposium on Networked Systems Design and Implementation ($\{$NSDI$\}$ 18)},
   year={2018},
   organization={USENIX$\}$ Association}}'
-paper: nsdi18.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/nsdi18.pdf
 talk: https://www.youtube.com/watch?v=OrGIc4_TYq8
 slides: 
 ---

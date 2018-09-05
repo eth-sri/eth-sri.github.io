@@ -13,7 +13,7 @@ bibtex: '@inproceedings{vechev2009experience,
   pages={261--278},
   year={2009},
   organization={Springer}}'
-paper: spin09.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/spin09.pdf
 talk: 
 slides: 
 ---

@@ -14,7 +14,7 @@ bibtex: '@inproceedings{brutschy2018static,
   pages={90--104},
   year={2018},
   organization={ACM}}'
-paper: c4-pldi2018.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/c4-pldi2018.pdf
 talk: 
 slides: 
 ---

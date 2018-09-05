@@ -16,7 +16,7 @@ bibtex: '@article{singh2017practical,
   pages={55},
   year={2017},
   publisher={ACM}}'
-paper: popl2018.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/popl2018.pdf
 talk: https://youtu.be/t_ht1p67tOA
 slides: http://elina.ethz.ch/slides/popl2018_slides.pdf
 ---

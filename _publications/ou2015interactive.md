@@ -13,7 +13,7 @@ bibtex: '@inproceedings{ou2015interactive,
   pages={3053--3062},
   year={2015},
   organization={ACM}}'
-paper: CHI15-Interactive.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/CHI15-Interactive.pdf
 talk: https://youtu.be/x_QdgBQ43OI
 slides: 
 ---

@@ -13,7 +13,7 @@ bibtex: '@inproceedings{mirman2018training,
   booktitle={International Conference on Machine Learning},
   pages={3566--3574},
   year={2018}}'
-paper: icml18-ncm.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/icml18-ncm.pdf
 talk: 
 slides: 
 ---

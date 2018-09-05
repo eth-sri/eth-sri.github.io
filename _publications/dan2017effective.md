@@ -14,7 +14,7 @@ bibtex: '@article{dan2017effective,
   pages={62--76},
   year={2017},
   publisher={Elsevier}}'
-paper: vmcai15.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/vmcai15.pdf
 talk: 
 slides: http://practicalsynthesis.github.io/papers/vmcai15-slides.pdf
 ---

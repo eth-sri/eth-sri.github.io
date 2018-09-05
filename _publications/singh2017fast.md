@@ -15,7 +15,7 @@ bibtex: '@inproceedings{singh2017fast,
   pages={46--59},
   year={2017},
   organization={ACM}}'
-paper: POPL17-Polyhedra.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/POPL17-Polyhedra.pdf
 talk: https://www.youtube.com/watch?v=SdOaoIcVZAY
 slides: http://elina.ethz.ch/slides/popl2017-fast-polyhedra.pdf
 ---

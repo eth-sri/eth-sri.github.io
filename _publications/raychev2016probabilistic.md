@@ -15,7 +15,7 @@ bibtex: '@inproceedings{raychev2016probabilistic,
   pages={731--747},
   year={2016},
   organization={ACM}}'
-paper: oopsla16-dt.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/oopsla16-dt.pdf
 talk: 
 slides: 
 ---

@@ -13,7 +13,7 @@ bibtex: '@inproceedings{mirman2018differentiable,
   booktitle={International Conference on Machine Learning},
   pages={3575--3583},
   year={2018}}'
-paper: icml18-diffai.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/icml18-diffai.pdf
 talk: 
 slides: 
 ---

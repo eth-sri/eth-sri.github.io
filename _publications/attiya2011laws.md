@@ -15,7 +15,7 @@ bibtex: '@article{attiya2011laws,
   pages={487--498},
   year={2011},
   publisher={ACM}}'
-paper: popl168gf-attiya.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/popl168gf-attiya.pdf
 talk: 
 slides: 
 ---

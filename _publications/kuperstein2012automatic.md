@@ -15,7 +15,7 @@ bibtex: '@article{kuperstein2012automatic,
   pages={108--123},
   year={2012},
   publisher={ACM}}'
-paper: fmcad2010.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/fmcad2010.pdf
 talk: 
 slides: http://practicalsynthesis.github.io/papers/FMCAD2010-slides.pptx
 ---

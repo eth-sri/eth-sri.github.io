@@ -15,7 +15,7 @@ bibtex: '@article{arnold2011qvm,
   pages={2},
   year={2011},
   publisher={ACM}}'
-paper: tosem11.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/tosem11.pdf
 talk: 
 slides: 
 ---

@@ -13,9 +13,9 @@ bibtex: '@inproceedings{tsankov2016fase,
   pages={471--483},
   year={2016},
   organization={ACM}}'
-paper: acsac16fase.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/acsac16fase.pdf
 talk: 
-slides: acsac16fase-slides.pdf
+slides: https://files.sri.inf.ethz.ch/website/slides/acsac16fase-slides.pdf
 ---
 
 Dynamic information-flow enforcement systems automatically protect applications against confidentiality and integrity threats. Unfortunately, existing solutions cause undesirable side effects, if not crashes, due to unconstrained modification of run-time values (e.g. anonymizing sensitive identifiers even when these are used for authentication).

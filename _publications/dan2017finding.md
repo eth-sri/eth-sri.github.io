@@ -13,7 +13,7 @@ bibtex: '@inproceedings{dan2017finding,
   pages={521--541},
   year={2017},
   organization={Springer}}'
-paper: cav17-mincut.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/cav17-mincut.pdf
 talk: 
 slides: 
 ---

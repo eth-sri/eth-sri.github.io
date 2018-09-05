@@ -13,9 +13,9 @@ bibtex: '@inproceedings{bichsel2016statistical,
   pages={343--355},
   year={2016},
   organization={ACM}}'
-paper: deguard.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/deguard.pdf
 talk: https://www.youtube.com/watch?v=JG4WJBBQef4
-slides: deguard-slides-ccs16.pdf
+slides: https://files.sri.inf.ethz.ch/website/slides/deguard-slides-ccs16.pdf
 ---
 
 This work presents a new approach for deobfuscating Android APKs based on probabilistic learning of large code bases (termed “Big Code”). The key idea is to learn a probabilistic model over thousands of non-obfuscated Android applications and to use this probabilistic model to deobfuscate new, unseen Android APKs. The concrete focus of the paper is on reversing layout obfuscation, a popular transformation which renames key program elements such as classes, packages and methods, thus making it difficult to understand what the program does.

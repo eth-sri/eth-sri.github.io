@@ -15,7 +15,7 @@ bibtex: '@inproceedings{raychev2015predicting,
   pages={111--124},
   year={2015},
   organization={ACM}}'
-paper: jsnice15.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/jsnice15.pdf
 talk: 
 slides: 
 ---

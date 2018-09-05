@@ -15,7 +15,7 @@ bibtex: '@inproceedings{bacon2005syncopation,
   pages={183--192},
   year={2005},
   organization={ACM}}'
-paper: syncopation.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/syncopation.pdf
 talk: 
 slides: 
 ---

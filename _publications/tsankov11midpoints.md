@@ -7,9 +7,9 @@
   projects: 
   awards:
   bibtex:
-  paper: tsankov11midpoints.pdf
+  paper: https://files.sri.inf.ethz.ch/website/papers/tsankov11midpoints.pdf
   talk: 
-  slides: tsankov11midpoints-slides.pdf
+  slides: https://files.sri.inf.ethz.ch/website/slides/tsankov11midpoints-slides.pdf
 ---
 
 Communication protocols describe the steps that the communication end-points must take in order to achieve a common goal. In practice, networks often contain mid-points, which can relay, redirect, or filter messages exchanged by the end-points. A mid-point can enforce a communication protocol: it for- wards the messages that conform to the protocol, and drops them otherwise. Pro- tocol specifications typically define only the end-points’ behavior. Implementing a mid-point that enforces a protocol is nontrivial: the mid-point’s behavior de- pends on the end-point’s behavior, and also on the behavior of the communication environment in which the protocol executes.

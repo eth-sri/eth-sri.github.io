@@ -15,7 +15,7 @@ layout: default
       <div class="card-links" style="margin-top: 30px; margin-bottom: 30px; margin-left: -10px">
           {% if page.slides %}
             {% assign slides_link = page.slides %}
-            
+
             {% unless slides_link contains 'http' %}
               {% assign slides_link = 'slides/' | append: slides_link %}
             {% endunless %}
@@ -24,22 +24,22 @@ layout: default
           {% endif %}
 
 
-          {% if page.talk %}                
+          {% if page.talk %}
               <a href="{{ page.talk | relative_url }}" target="_blank"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"><br />Talk</a>
           {% endif %}
 
           {% if page.paper %}
             {% assign pub_link = page.paper %}
-            
+
             {% unless pub_link contains 'http' %}
-              {% assign pub_link = 'https://files.sri.inf.ethz.ch/papers/' | append: pub_link %}
+              {% assign pub_link = 'papers/' | append: pub_link %}
             {% endunless %}
 
               <a href="{{ pub_link | relative_url }}" target="_blank"><img class="svg-icon" src="{{ '/assets/icons/icon-pdf.svg' | relative_url }}"><br />Paper</a>
           {% endif %}
         </div>
 
-  
+
 
 		</div>
 	</div>
@@ -52,11 +52,11 @@ layout: default
 
 
     <hr />
-    {% if page.projects %} 
+    {% if page.projects %}
       <div class="extras">
         <label>Research Projects</label>
         {% include get-project.html ref=page.projects output="plain" %}
-      </div>  
+      </div>
     {% endif %}
 
     {% if page.bibtex %} <div class="extras"><label>Bibtex</label>{{ page.bibtex }}</div>  {% endif %}

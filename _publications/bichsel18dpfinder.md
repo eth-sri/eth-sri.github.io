@@ -8,7 +8,7 @@ venue: ACM CCS
 projects: probabilistic-programming
 awards:
 bibtex: ''
-paper: ccs18-dpfinder.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/ccs18-dpfinder.pdf
 talk: 
 slides: 
 ---

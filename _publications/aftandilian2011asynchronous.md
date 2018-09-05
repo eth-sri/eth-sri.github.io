@@ -15,7 +15,7 @@ bibtex: '@inproceedings{aftandilian2011asynchronous,
   pages={275--288},
   year={2011},
   organization={ACM}}'
-paper: oopsla11-aa.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/oopsla11-aa.pdf
 talk: 
 slides: 
 ---

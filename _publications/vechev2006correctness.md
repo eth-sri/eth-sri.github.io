@@ -15,7 +15,7 @@ bibtex: '@inproceedings{vechev2006correctness,
   pages={341--353},
   year={2006},
   organization={ACM}}'
-paper: pldi06-cgc.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/pldi06-cgc.pdf
 talk: 
 slides: 
 ---

@@ -15,7 +15,7 @@ bibtex: '@article{dimitrov2014commutativity,
   pages={305--315},
   year={2014},
   publisher={ACM}}'
-paper: pldi14-commutativity.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/pldi14-commutativity.pdf
 talk: 
 slides: 
 ---

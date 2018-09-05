@@ -15,7 +15,7 @@ bibtex: '@inproceedings{raychev2013refactoring,
   pages={339--354},
   year={2013},
   organization={ACM}}'
-paper: oopsla13-refactoring.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/oopsla13-refactoring.pdf
 talk: 
 slides: https://docs.google.com/presentation/d/1cScMNtjXskvVGWZkO-2eVm7kj-8Jtln5W7Xnl8_LAfA/edit?usp=sharing
 ---

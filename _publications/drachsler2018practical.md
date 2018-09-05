@@ -13,7 +13,7 @@ bibtex: '@inproceedings{drachsler2018practical,
   booktitle={PPOPP},
   pages={207--218},
   year={2018}}'
-paper: ppopp18.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/ppopp18.pdf
 talk: 
 slides: 
 ---

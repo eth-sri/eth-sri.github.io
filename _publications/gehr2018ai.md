@@ -12,7 +12,7 @@ bibtex: '@inproceedings{gehr2018ai,
   author={Gehr, Timon and Mirman, Matthew and Drachsler-Cohen, Dana and Tsankov, Petar and Chaudhuri, Swarat and Vechev, Martin},
   booktitle={Security and Privacy (SP), 2018 IEEE Symposium on},
   year={2018}}'
-paper: sp2018.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/sp2018.pdf
 talk: https://www.youtube.com/watch?v=LJnjCMV8KzA
 slides: http://safeai.ethz.ch/files/FLOC18-AI2.pdf
 ---

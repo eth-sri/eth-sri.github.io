@@ -13,7 +13,7 @@ bibtex: '@book{michael2009idempotent,
   number={4},
   year={2009},
   publisher={ACM}}'
-paper: idempotentWSQ09.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/idempotentWSQ09.pdf
 talk: 
 slides: 
 ---

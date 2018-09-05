@@ -8,7 +8,7 @@ venue: ACM CCS
 projects: blockchain-security
 awards:
 bibtex: ''
-paper: ccs18-securify.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/ccs18-securify.pdf
 talk: 
 slides: 
 ---

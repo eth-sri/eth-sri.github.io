@@ -13,7 +13,7 @@ bibtex: '@inproceedings{bielik2015programming,
   volume={32},
   year={2015},
   organization={Schloss Dagstuhl-Leibniz-Zentrum fuer Informatik}}'
-paper: SNAPL15-BigCode.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/SNAPL15-BigCode.pdf
 talk: 
 slides: 
 ---

@@ -15,7 +15,7 @@ bibtex: '@inproceedings{arnold2008qvm,
   pages={143--162},
   year={2008},
   organization={ACM}}'
-paper: oopsla08.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/oopsla08.pdf
 talk: 
 slides: 
 ---

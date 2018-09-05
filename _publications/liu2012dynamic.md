@@ -15,7 +15,7 @@ bibtex: '@article{liu2012dynamic,
   pages={429--440},
   year={2012},
   publisher={ACM}}'
-paper: pldi12-fender.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/pldi12-fender.pdf
 talk: 
 slides: 
 ---

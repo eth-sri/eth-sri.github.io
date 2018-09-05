@@ -15,7 +15,7 @@ bibtex: '@inproceedings{vechev2010abstraction,
   pages={327--338},
   year={2010},
   organization={ACM}}'
-paper: popl10.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/popl10.pdf
 talk: 
 slides: 
 ---
