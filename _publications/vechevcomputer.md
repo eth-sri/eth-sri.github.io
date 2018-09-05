@@ -9,7 +9,7 @@ awards:
 bibtex: '@article{vechevcomputer,
   title={Computer-Assisted Construction of Efficient Concurrent Algorithms},
   author={Vechev, Martin and Yahav, Eran and Michael, Maged and Attiya, Hagit and Yorsh, Greta}}'
-paper: ec2-2008.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/ec2-2008.pdf
 talk: 
 slides: 
 ---

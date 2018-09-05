@@ -13,7 +13,7 @@ bibtex: '@inproceedings{kuvcera2017synthesis,
   pages={391--408},
   year={2017},
   organization={ACM}}'
-paper: spire-ccs17.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/spire-ccs17.pdf
 talk: https://www.youtube.com/watch?v=_MINtBZwxUM
 slides: 
 ---

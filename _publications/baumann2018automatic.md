@@ -14,7 +14,7 @@ bibtex: '@inproceedings{baumann2018automatic,
   pages={47--70},
   year={2018},
   organization={Springer}}'
-paper: vmcai18.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/vmcai18.pdf
 talk: 
 slides: http://practicalsynthesis.github.io/papers/slides-vmcai18.pdf
 ---

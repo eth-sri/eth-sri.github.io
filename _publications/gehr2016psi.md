@@ -13,7 +13,7 @@ bibtex: '@inproceedings{gehr2016psi,
   pages={62--83},
   year={2016},
   organization={Springer}}'
-paper: psi-solver.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/psi-solver.pdf
 talk: 
 slides: 
 ---

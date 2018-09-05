@@ -14,7 +14,7 @@ bibtex: '@inproceedings{bichsel2018fine,
   pages={145--185},
   year={2018},
   organization={Springer}}'
-paper: Fine-grained_Semantics_for_Probabilistic_Programs_full.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/Fine-grained_Semantics_for_Probabilistic_Programs_full.pdf
 talk: 
 slides: 
 ---

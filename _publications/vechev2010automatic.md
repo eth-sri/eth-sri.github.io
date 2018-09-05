@@ -13,7 +13,7 @@ bibtex: '@inproceedings{vechev2010automatic,
   pages={455--471},
   year={2010},
   organization={Springer}}'
-paper: SAS%202010%20-%20Determinism.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/SAS%202010%20-%20Determinism.pdf
 talk: 
 slides: 
 ---

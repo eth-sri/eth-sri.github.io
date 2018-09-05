@@ -15,7 +15,7 @@ bibtex: '@inproceedings{kuperstein2011partial,
   pages={187--198},
   year={2011},
   organization={ACM}}'
-paper: pldi11.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/pldi11.pdf
 talk: 
 slides: http://practicalsynthesis.github.io/papers/PLDI2011-slides.pptx
 ---

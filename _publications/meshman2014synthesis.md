@@ -13,7 +13,7 @@ bibtex: '@inproceedings{meshman2014synthesis,
   pages={237--252},
   year={2014},
   organization={Springer}}'
-paper: sas14-smfrp.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/sas14-smfrp.pdf
 talk: 
 slides: http://practicalsynthesis.github.io/papers/sas14-slides.pptx
 ---

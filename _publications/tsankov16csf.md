@@ -7,9 +7,9 @@
   projects: 
   awards:
   bibtex:
-  paper: tsankov16csf.pdf
+  paper: https://files.sri.inf.ethz.ch/website/papers/tsankov16csf.pdf
   talk: 
-  slides: tsankov16csf-slides.pdf
+  slides: https://files.sri.inf.ethz.ch/website/slides/tsankov16csf-slides.pdf
 ---
 
 Access-control requirements for physical spaces, like office buildings and airports, are best formulated from a global viewpoint in terms of system-wide requirements. For example, “there is an authorized path to exit the building from every room.” In contrast, individual access-control components, such as doors and turnstiles, can only enforce local policies, specifying when the component may open. In practice, the gap between the system-wide, global requirements and the many local policies is bridged manually, which is tedious, error-prone, and scales poorly.

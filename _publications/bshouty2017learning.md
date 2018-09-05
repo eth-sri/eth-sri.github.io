@@ -11,7 +11,7 @@ bibtex: '@article{bshouty2017learning,
   author={Bshouty, Nader H and Drachsler-Cohen, Dana and Vechev, Martin and Yahav, Eran},
   journal={arXiv preprint arXiv:1706.05070},
   year={2017}}'
-paper: ldp-colt17.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/ldp-colt17.pdf
 talk: 
 slides: 
 ---

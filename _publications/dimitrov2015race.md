@@ -13,7 +13,7 @@ bibtex: '@inproceedings{dimitrov2015race,
   pages={101--110},
   year={2015},
   organization={ACM}}'
-paper: spaa15-twodim.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/spaa15-twodim.pdf
 talk: 
 slides: 
 ---

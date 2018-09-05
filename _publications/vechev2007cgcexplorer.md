@@ -15,7 +15,7 @@ bibtex: '@inproceedings{vechev2007cgcexplorer,
   pages={456--467},
   year={2007},
   organization={ACM}}'
-paper: pldi07-cgc.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/pldi07-cgc.pdf
 talk: 
 slides: 
 ---

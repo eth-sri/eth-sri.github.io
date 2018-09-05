@@ -7,7 +7,7 @@
   projects: 
   awards:
   bibtex:
-  paper: tsankov11hijacking.pdf
+  paper: https://files.sri.inf.ethz.ch/website/papers/tsankov11hijacking.pdf
   talk:
   slides:
 ---

@@ -7,9 +7,9 @@
   projects: 
   awards:
   bibtex:
-  paper: tsankov16webcheck.pdf
+  paper: https://files.sri.inf.ethz.ch/website/papers/tsankov16webcheck.pdf
   talk: 
-  slides: tsankov16webcheck-slides.pdf
+  slides: https://files.sri.inf.ethz.ch/website/slides/tsankov16webcheck-slides.pdf
 ---
 
 Test isolation is a prerequisite for the correct execution of test suites on web applications. We present Test Execution Checkpointing, a method for efficient test isolation. Our method instruments web applications to support checkpointing and exploits this support to isolate and optimize tests. We have implemented and evaluated this method on five popular PHP web applications. The results show that our method not only provides test isolation essentially for free, it also reduces testing time by 44% on average.

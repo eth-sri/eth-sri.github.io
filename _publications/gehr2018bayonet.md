@@ -14,7 +14,7 @@ bibtex: '@inproceedings{gehr2018bayonet,
   pages={586--602},
   year={2018},
   organization={ACM}}'
-paper: bayonet-pldi2018.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/bayonet-pldi2018.pdf
 talk: https://www.youtube.com/watch?v=VeaBso0n13k
 slides: 
 ---

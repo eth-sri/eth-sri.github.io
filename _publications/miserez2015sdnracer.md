@@ -13,7 +13,7 @@ bibtex: '@inproceedings{miserez2015sdnracer,
   pages={22},
   year={2015},
   organization={ACM}}'
-paper: SOSR15-SDNRacer.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/SOSR15-SDNRacer.pdf
 talk: 
 slides: 
 ---

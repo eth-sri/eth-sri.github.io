@@ -15,7 +15,7 @@ bibtex: '@article{dan2016modeling,
   pages={129--144},
   year={2016},
   publisher={ACM}}'
-paper: oopsla16-rma.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/oopsla16-rma.pdf
 talk: https://2016.splashcon.org/event/splash-2016-oopsla-modeling-and-analysis-of-remote-memory-access-programming
 slides: 
 ---

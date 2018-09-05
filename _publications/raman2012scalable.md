@@ -15,7 +15,7 @@ bibtex: '@article{raman2012scalable,
   pages={531--542},
   year={2012},
   publisher={ACM}}'
-paper: pldi12-spd3.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/pldi12-spd3.pdf
 talk: 
 slides: 
 ---

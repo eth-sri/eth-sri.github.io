@@ -13,7 +13,7 @@ bibtex: '@inproceedings{el2017network,
   pages={261--281},
   year={2017},
   organization={Springer}}'
-paper: cav17-synet.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/cav17-synet.pdf
 talk: https://youtu.be/dUbFWtHLTCI
 slides: https://synet.ethz.ch/files/synet-lec17.pdf
 ---

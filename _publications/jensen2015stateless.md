@@ -15,7 +15,7 @@ bibtex: '@article{jensen2015stateless,
   pages={57--73},
   year={2015},
   publisher={ACM}}'
-paper: oopsla15-modelchecking.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/oopsla15-modelchecking.pdf
 talk: 
 slides: 
 ---

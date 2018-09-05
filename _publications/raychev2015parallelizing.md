@@ -13,7 +13,7 @@ bibtex: '@inproceedings{raychev2015parallelizing,
   pages={153--167},
   year={2015},
   organization={ACM}}'
-paper: sosp15-symple.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/sosp15-symple.pdf
 talk: 
 slides: 
 ---

@@ -7,7 +7,7 @@ venue: ACM PPoPP
 projects: Research Area 1, Research Area 1
 awards:
 bibtex: 
-paper: ppopp14-logicalavl.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/ppopp14-logicalavl.pdf
 talk: 
 slides: 
 ---

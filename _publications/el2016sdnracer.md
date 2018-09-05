@@ -15,7 +15,7 @@ bibtex: '@inproceedings{el2016sdnracer,
   pages={402--415},
   year={2016},
   organization={ACM}}'
-paper: pldi16.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/pldi16.pdf
 talk: 
 slides: 
 ---

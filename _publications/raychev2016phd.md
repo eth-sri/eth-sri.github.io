@@ -11,7 +11,7 @@ bibtex: '@phdthesis{raychev2016learning,
   author={Raychev, Veselin},
   year={2016},
   school={ETH Zurich}}'
-paper: raychev_thesis.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/raychev_thesis.pdf
 talk: 
 slides: 
 ---

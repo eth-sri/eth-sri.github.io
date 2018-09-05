@@ -13,7 +13,7 @@ bibtex: '@inproceedings{raman2010efficient,
   pages={368--383},
   year={2010},
   organization={Springer}}'
-paper: rv2010.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/rv2010.pdf
 talk: 
 slides: 
 ---

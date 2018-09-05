@@ -15,7 +15,7 @@ bibtex: '@inproceedings{singh2015making,
   pages={303--313},
   year={2015},
   organization={ACM}}'
-paper: PLDI15-OptOctagon.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/PLDI15-OptOctagon.pdf
 talk: 
 slides: http://elina.ethz.ch/slides/pldi2015-fast-octagon.pdf
 ---

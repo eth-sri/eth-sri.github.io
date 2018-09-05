@@ -33,7 +33,7 @@
 
 
   <div class="horizontal-card">
-    
+
     <div class="card-content">
       <a class="card-title" href="{{ publication.url | relative_url}}">{{ publication.title }}</a>
       <div class="card-subtitle">{{ publication.authors }}</div>
@@ -44,7 +44,7 @@
 
         {% if publication.slides %}
           {% assign slides_link = publication.slides %}
-          
+
           {% unless slides_link contains 'http' %}
             {% assign slides_link = '/slides/' | append: slides_link %}
           {% endunless %}
@@ -53,21 +53,21 @@
         {% endif %}
 
 
-        {% if publication.talk %}                
+        {% if publication.talk %}
             <a href="{{ publication.talk | relative_url }}" target="_blank"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"><br />Talk</a>
         {% endif %}
 
         {% if publication.paper %}
           {% assign pub_link = publication.paper %}
-          
+
           {% unless pub_link contains 'http' %}
-            {% assign pub_link = 'https://files.sri.inf.ethz.ch/papers/' | append: pub_link %}
+            {% assign pub_link = 'papers/' | append: pub_link %}
           {% endunless %}
 
             <a href="{{ pub_link | relative_url }}" target="_blank"><img class="svg-icon" src="{{ '/assets/icons/icon-pdf.svg' | relative_url }}"><br />Paper</a>
         {% endif %}
 
-        
+
     </div>
 
   </div>

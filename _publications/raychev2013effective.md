@@ -15,7 +15,7 @@ bibtex: '@inproceedings{raychev2013effective,
   pages={151--166},
   year={2013},
   organization={ACM}}'
-paper: oopsla13-web.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/oopsla13-web.pdf
 talk: 
 slides: https://docs.google.com/presentation/d/1-eKof4xLvDJYyWigujUNtf0kdEnAB3Kx3l2sbyDiyOY/edit?usp=sharing
 ---

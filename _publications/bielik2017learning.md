@@ -13,9 +13,9 @@ bibtex: '@inproceedings{bielik2017learning,
   pages={233--253},
   year={2017},
   organization={Springer}}'
-paper: cav17-pa.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/cav17-pa.pdf
 talk: https://www.youtube.com/watch?v=bkieI3jLxVY
-slides: cav17_learning_slides.pdf
+slides: https://files.sri.inf.ethz.ch/website/slides/cav17_learning_slides.pdf
 ---
 
 To be practically useful, modern static analyzers must precisely model the effect of both, statements in the programming language as well as frameworks used by the program under analysis. While important, manually addressing these challenges is difficult for at least two reasons: (i) the effects on the overall analysis can be non-trivial, and (ii) as the size and complexity of modern libraries increase, so is the number

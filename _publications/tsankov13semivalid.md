@@ -7,9 +7,9 @@
   projects: 
   awards:
   bibtex:
-  paper: tsankov13semivalid.pdf
+  paper: https://files.sri.inf.ethz.ch/website/papers/tsankov13semivalid.pdf
   talk: 
-  slides: tsankov13semivalid-slides.pdf
+  slides: https://files.sri.inf.ethz.ch/website/slides/tsankov13semivalid-slides.pdf
 ---
 
 We define semi-valid input coverage (SVCov), the first cov- erage criterion for fuzz testing. Our criterion is applicable whenever the valid inputs can be defined by a finite set of constraints. SVCov measures to what extent the tests cover the domain of semi-valid inputs, where an input is semi-valid if and only if it satisfies all the constraints but one.

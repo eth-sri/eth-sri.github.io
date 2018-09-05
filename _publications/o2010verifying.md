@@ -13,7 +13,7 @@ bibtex: "@inproceedings{o2010verifying,
   pages={85--94},
   year={2010},
   organization={ACM}}"
-paper: PODC10-hindsight.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/PODC10-hindsight.pdf
 talk: 
 slides: 
 ---

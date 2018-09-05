@@ -15,7 +15,7 @@ bibtex: '@inproceedings{bielik2015scalable,
   pages={332--348},
   year={2015},
   organization={ACM}}'
-paper: oopsla15-eventracer-android.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/oopsla15-eventracer-android.pdf
 talk: 
 slides: 
 ---

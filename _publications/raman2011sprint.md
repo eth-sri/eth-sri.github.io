@@ -15,7 +15,7 @@ bibtex: '@article{raman2011sprint,
   pages={259--274},
   year={2011},
   publisher={ACM}}'
-paper: oopsla11-prefetch.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/oopsla11-prefetch.pdf
 talk: 
 slides: 
 ---

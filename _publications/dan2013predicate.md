@@ -13,9 +13,9 @@ bibtex: '@inproceedings{dan2013predicate,
   pages={84--104},
   year={2013},
   organization={Springer}}'
-paper: sas13-parmm-extended.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/sas13-parmm-extended.pdf
 talk: 
-slides: sas13-parmm-slides.pdf
+slides: https://files.sri.inf.ethz.ch/website/slides/sas13-parmm-slides.pdf
 ---
 
 We present a novel approach for predicate abstraction of programs running on relaxed memory models. Our approach consists of two steps.

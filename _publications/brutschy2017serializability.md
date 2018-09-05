@@ -15,7 +15,7 @@ bibtex: "@inproceedings{brutschy2017serializability,
   pages={458--472},
   year={2017},
   organization={ACM}}"
-paper: popl17-serializability.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/popl17-serializability.pdf
 talk: 
 slides: 
 ---

@@ -15,7 +15,7 @@ bibtex: '@inproceedings{vechev2010phalanx,
   pages={41--50},
   year={2010},
   organization={ACM}}'
-paper: ismm2010.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/ismm2010.pdf
 talk: 
 slides: 
 ---

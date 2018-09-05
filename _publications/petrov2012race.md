@@ -15,7 +15,7 @@ bibtex: '@inproceedings{petrov2012race,
   pages={251--262},
   year={2012},
   organization={ACM}}'
-paper: pldi12-wr.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/pldi12-wr.pdf
 talk: 
 slides: 
 ---

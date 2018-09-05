@@ -13,7 +13,7 @@ bibtex: '@inproceedings{karaivanov2014phrase,
   pages={173--184},
   year={2014},
   organization={ACM}}'
-paper: onward14.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/onward14.pdf
 talk: 
 slides: 
 ---

@@ -15,9 +15,9 @@ bibtex: '@inproceedings{raychev2016learning,
   pages={761--774},
   year={2016},
   organization={ACM}}'
-paper: popl16.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/popl16.pdf
 talk: 
-slides: popl16-slides.pdf
+slides: https://files.sri.inf.ethz.ch/website/slides/popl16-slides.pdf
 ---
 
 We present a new approach for learning programs from noisy datasets. Our approach is based on two new concepts: a regularized program generator which produces a candidate program based on a small sample of the entire dataset while avoiding overfitting, and a dataset sampler which carefully samples the dataset by leveraging the candidate program’s score on that dataset. The two components are connected in a continuous feedback-directed loop.

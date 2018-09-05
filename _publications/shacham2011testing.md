@@ -15,7 +15,7 @@ bibtex: '@inproceedings{shacham2011testing,
   pages={51--64},
   year={2011},
   organization={ACM}}'
-paper: oopsla11-atomicity.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/oopsla11-atomicity.pdf
 talk: 
 slides: 
 ---
