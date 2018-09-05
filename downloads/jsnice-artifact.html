@@ -1,0 +1,211 @@
+---
+layout: page
+title: "Artifact for POPL'2015 paper: Predicting Program Properties from Big Code"
+---
+
+{% include card.html
+  title="JSNice artifact"
+  url="http://files.sri.inf.ethz.ch/jsniceartifact/artifact1.tar.gz"
+  output="horizontal"
+  description="Tool for automatic name and type inference for JavaScript code"
+  download="http://files.sri.inf.ethz.ch/jsniceartifact/artifact1.tar.gz"
+%}
+
+<h2>Quick summary</h2>
+<p>
+JSNice is a tool for automatic name and type inference for JavaScript code. The tool operates by learning names and types from large amounts of existing JavaScript code and then based on the learned model, infers such properties for new unseen code.
+</p>
+<p>
+The way the tool operates is described in Paper #253: Predicting Program Properties from "Big Code".
+</p>
+
+<hr></hr>
+
+<h2>Artifact contents</h2>
+<ul>
+ <li>Java binary (compiler.jar) that performs name and type inference for JavaScript. The binary is a modified <a href="https://developers.google.com/closure/compiler/">Google Closure Compiler</a>.</li>
+ <li>Six pre-trained models - three for names and three for types, trained on all our training data, a sample of 10% of the training data, and a sample of 1% of the training data.
+  <ul><li>model-reg : all training data</li><li>model-reg-10 : 10% of training data</li><li>model-reg-1 : 1% of training data</li></ul>
+ </li>
+ <li>Our evaluation data</li>
+ <li>Output files from running evaluation</li>
+</ul>
+
+<h2>Components we did not include in the artifact</h2>
+<ul>
+  <li>All the training data (due to its size and long time necessary to train a model). However, the tool provided can be used to train on user-provided data.</li>
+  <li>Source code of the tool.</li>
+</ul>
+<p>This tool is copyrighted by ETH Zurich.</p>
+<p>
+The authors will be grateful if the contents of this artifact is not distributed for purposes other than artifact evaluation. The authors would like to be able to open source the tool themselves and/or to incorporate it into commercial software.
+</p>
+
+<hr></hr>
+
+<p>The artifact does not require a VM, as it only depends on Java 7 and bash scripts. The provided binary compiler.jar is a modified <a href="https://developers.google.com/closure/compiler/">Google Closure Compiler</a> binary.</p>
+
+<h2>Using the tool.</h2>
+
+<p>The tool is also available for online use at <a href="http://jsnice.org/">http://jsnice.org/</a>. The online tool uses Google Analytics, but it has hundreds of daily users so it is unlikely reviewers can be identified based on this, and the authors promise they will not attempt to.</p>
+
+<p>One can of course infer names and types locally with the provided binary and models using the following instructions:</p>
+
+<ul>
+<li>Enter in the directory with the compiler.jar file.</li>
+<li>Copy a model to the directory of the compiler. E.g. the names and types model trained on the full data are in:
+<pre>
+cp model-reg/nameemsvm* .
+cp model-reg/typeemsvm* .
+</pre>
+</li>
+<li>Execute the compiler in JSNice mode for names:
+<pre>
+java -jar compiler.jar --compilation_level=JSNICE --jsnice_infer=NAMES --jsnice_features=ASTREL,NODEFLAG,ARGALIAS,FNAMES &lt;input-file&gt;.js
+</pre>
+</li>
+<li>or for types:
+<pre>
+java -jar compiler.jar --compilation_level=JSNICE --jsnice_infer=TYPES --jsnice_features=TYPEREL,TYPEALIAS,TYPERELALIAS &lt;input-file&gt;.js
+</pre>
+</li>
+</ul>
+
+<p>The tool will take a few seconds at start-up to load the model, but the actual inference is typically fast for reasonably big input files.</p>
+
+<p>Note: the <a href="http://jsnice.org/">http://jsnice.org/</a> website uses the same model trained of the full dataset like the ones included in this artifact, but trained with slightly different regularization constants. Thus, it may not always produce exactly the same names and types.</p>
+
+<h1>Reproducing evaluation results</h1>
+
+<h2>Evaluation of the name and type inference (reproducing accuracy results in Table 1)</h2>
+
+<p>For each of our training data sizes, we include an eval1.sh script that evaluates the accuracy on the given dataset. For example, to evaluate the accuracy on the models trained on the full data, execute:</p>
+<pre>
+cd model-reg
+./eval1.sh
+</pre>
+
+<p>The above command runs a tiny 4-line script that runs two evaluation commands - one for names and one for types. Each evaluation uses all the CPU cores of the machine and should run around 10 minutes on a modern 4-core CPU. As a result, evaluation reports for names and types are created (evalnames.txt and evaltypes.txt). To see a summary, look the last few lines of these files (e.g. via tail command). E.g. in evalnames.txt, there should be a TOTAL line that says:</p>
+<pre>
+>>>> Errors: 56. Names: OK=269180. DIFF=155222  (0.634257). Types: OK=  26. NO=2309. DIFF=  12 (p=0.684211 r=0.016191)  -- TOTAL
+</pre>
+
+<p>and in evaltypes.txt:</p>
+
+<pre>
+>>>> Errors: 56. Names: OK=107254. DIFF=317148  (0.252718). Types: OK=1281. NO= 777. DIFF= 289 (p=0.815924 r=0.668939)  -- TOTAL
+</pre>
+
+<p>The interpretation of these lines is, Error AST nodes due to minification (due to rearrangement of boolean conditions by uglifyjs, we ignore these, but they are negligibly few compared to the total number of names i.e. 56 vs >400K), and then for names:
+<ul>
+<li>equal names as in the non-minified code (OK)</li>
+<li>number of names that different between the original name before minification and the JSNice inferred name (DIFF)</li>
+<li>accuracy in brackets (63.4% in evalnames.txt and only 25.2% in evaltypes.txt when names are not inferred, but types)</li>
+</ul>
+
+Similarly for types we have:
+<ul>
+<li>types predicted like manual annotation (OK)</li>
+<li>no predicted type when there was a original type annotation (NO)</li>
+<li>different type than the original type annotation (DIFF)</li>
+<li>precision (p=) and recall (r=)</li>
+</ul>
+
+Again, when names are inferred, the recall for types is only &lt;2% (these are cases that a regular type inference guesses) and when JSNice runs for types, we get recall of above 66% with above 80% precision.
+<br></br></p>
+
+<p>After running an eval1.sh command, the directory evalresults is populated with the inferred types (names can also be obtained by changing eval1.sh not to evaluate types, which overwrites the evalresults directory).</p>
+
+<p>Additional summary about the errors in an evaluation is produced in the type_errors.txt files. These files list the number of cases when JSNice predicted a type correctly or incorrectly:
+<ul>
+<li>OK: &lt;type&gt; : &lt;count&gt; denotes that a type was correctly predicted count number of times.</li>
+<li>&lt;original-type&gt; -&gt; &lt;predicted-type&gt; : &lt;count&gt; denotes the number of times for which instead of the original type, JSNice predicted a different type.</li>
+</ul>
+</p>
+
+<p>To evaluate quality when structure would not be used (i.e. no relationship between inferred labels), run: ./eval_nostructure.sh and see the results in evalnames_nostruct.txt and evaltypes_nostruct.txt .
+
+<h2>Reproducing running time experiments (Table 2)</h2>
+
+<p>
+The runtimes for each evaluation run are at the end of the evalnames.txt and evaltypes.txt. E.g. a line:
+
+<pre>Took on average 22.9660014781966ms</pre>
+
+For the full training data model (in model-reg), we also include similar results with different beam sizes and no beam (naive). These are in the files evalnames_&lt;beamsize&gt; and evaltypes_&lt;beamsize&gt;. To regenerate these files on your machine (takes a lot of time, especially for the naive), run:
+</p>
+
+<pre>
+cd model-reg
+./eval_beam.sh
+./eval_naive.sh
+</pre>
+
+<h2>Evaluating type-checking errors</h2>
+
+<p>
+First, get pairs of input JavaScript files (in evaldata), and their corresponding JavaScripts with JSNice inferred types (in evalresults) by running:
+</p>
+
+<pre>
+cd model-reg
+./eval1.sh
+</pre>
+
+<p>
+Then, we perform type checking (from Closure Compiler) by calling:
+</p>
+
+<pre>
+./typecheck_eval.sh | tee typecheck_rate.txt 
+</pre>
+
+<p>
+After this command, typecheck_rate.txt contains for each evaluated file (with existing type annotations, the number of type errors for the original code versus the number of type errors for the types inferred by JSNice). The values "&lt;num&gt; ERR" include only the errors we consider in the paper (excluding the inconsistent property check).
+</p>
+
+<p>
+To only count the number of files that typecheck, in order to get numbers for Figure 6, grep through the typecheck_rate.txt file:
+</p>
+
+<pre>
+$ wc -l typecheck_rate.txt 
+396 typecheck_rate.txt
+$ grep ' 0 ERR vs' typecheck_rate.txt  | wc -l
+107
+$ grep ' 0 ERR$' typecheck_rate.txt  | wc -l
+227
+</pre>
+
+<p>
+i.e. 396 total files, 107 typechecked originally, 227 typecheck after JSNice. If you are interested to see what kind of errors JSNice fixes or introduces, for individual JavaScripts from typecheck_rate.txt, compare the original file located in evaldata/&lt;filename&gt;.js to the inferred evalresults/&lt;filename&gt;.js 
+</p>
+
+<h2>Other use-cases for JSNice</h2>
+
+<h3>Training on custom dataset</h3>
+
+<p>To run training, put your training data in a directory named "data" (where compiler.jar stays) and run:</p>
+
+<pre>java -jar compiler.jar --train_jsnice --jsnice_infer=NAMES --jsnice_features=FNAMES,ASTREL,NODEFLAG,ARGALIAS --jsnice_training_flags=SVM,MIDAPR</pre>
+
+<p>After the training, you can look at the best_features.txt or predict names for new programs</p>
+
+<p>Note: JSNice will not train of files it detects as minified. Do not put all your statements one on line or use only one-letter parameter names.</p>
+
+<p>In addition to model for names, model for types can be trained by running:</p>
+
+<pre>java -jar compiler.jar --train_jsnice --jsnice_infer=TYPES --jsnice_features=TYPEREL,TYPEALIAS,TYPERELALIAS --jsnice_training_flags=SVM,MIDAPR</pre>
+
+<p>The trained model can be used for prediction as described in the "Using the tool" section above</p>
+
+<h3>Variations of the system</h3>
+
+<p>Via the parameter --jsnice_features, different features can be used to train a model and at prediction time.</p>
+
+<h3>More options</h3>
+
+<p>All options exposed by Closure Compler plus the options added by JSNice are listed by running</p>
+
+<pre>java -jar compiler.jar --help</pre>
+

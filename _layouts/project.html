@@ -1,0 +1,36 @@
+---
+layout: default
+---
+<article class="page">
+
+  <header class="page-header container">
+	<div class="row">
+		<div class="column column-50">
+			<h1 class="page-title">{{ page.title | escape }}</h1>
+      
+      <div class="page-info">
+        {% if page.description %} {{ page.description }} {% endif %}
+      </div>
+
+      
+
+		</div>
+
+    <div class="column column-25 column-offset-20">
+      <div class="page-img as-bg">
+        {% if page.image %} <img src="{{ page.image | prepend: '/assets/projects/' | relative_url}}"/> {% endif %}
+      </div>
+    </div>
+	</div>
+  </header>
+
+  <div class="page-content">
+    <div class="row">
+      <div class="column column-66">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+
+
+</article>

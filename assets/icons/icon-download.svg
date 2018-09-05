@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 33 33">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-icon-download);
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-3 {
+        fill: #707070;
+      }
+
+      .cls-4, .cls-5 {
+        stroke: none;
+      }
+
+      .cls-5 {
+        fill: #c3c3c3;
+      }
+    </style>
+    <clipPath id="clip-icon-download">
+      <rect width="33" height="33"/>
+    </clipPath>
+  </defs>
+  <g id="icon-download" class="cls-1">
+    <g id="Group_301" data-name="Group 301" transform="translate(-0.386)">
+      <g id="Path_755" data-name="Path 755" class="cls-2" transform="translate(19.965 -3.203) rotate(45)">
+        <path class="cls-4" d="M-.058,4.286,18.37,0l9.891,9.891L23.268,27.612,5.652,32.5l-9.891-9.891Z"/>
+        <path class="cls-5" d="M 17.74076080322266 2.199609756469727 L 1.613351821899414 5.950273513793945 L -2.043371200561523 21.97603988647461 L 6.241495132446289 30.26090431213379 L 21.64841651916504 25.98583984375 L 26.01802253723145 10.47687339782715 L 17.74076080322266 2.199609756469727 M 18.36956977844238 0 L 28.2608699798584 9.891300201416016 L 23.26811981201172 27.61198043823242 L 5.652170181274414 32.5 L -4.239130020141602 22.60869979858398 L -0.05821990966796875 4.285650253295898 L 18.36956977844238 0 Z"/>
+      </g>
+      <path id="Path_756" data-name="Path 756" class="cls-3" d="M1.413,0,9.891,8.482A1.275,1.275,0,0,1,8.478,9.9H2.826A2.826,2.826,0,0,1,0,7.069V1.417A1.275,1.275,0,0,1,1.413,0Z" transform="translate(9.864 15.847) rotate(-45)"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,37 @@
+---
+layout: default
+title: Research
+permalink: /research/index.html
+---
+
+
+<article class="page">
+
+  <header class="page-header container">
+  <div class="row">
+    <div class="column column-66">
+      <h1 class="page-title">{{ page.title | escape }}</h1>
+    </div>
+  </div>
+  </header>
+
+
+  <div class="page-content container">
+    <div class="row">
+      <div class="column">
+
+        <div class="grid">
+	        {% include get-project.html ref="safeai" %}
+	        {% include get-project.html ref="plml" %}
+	        {% include get-project.html ref="probabilistic-programming" %}
+	        {% include get-project.html ref="programmable-networks" %}
+	        {% include get-project.html ref="blockchain-security" %}
+	        {% include get-project.html ref="numerical-analysis" %}
+	       </div>
+
+      </div>
+    </div>      
+  </div>
+
+</article>
+

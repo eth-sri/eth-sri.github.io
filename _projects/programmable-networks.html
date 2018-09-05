@@ -1,0 +1,44 @@
+---
+title: Programmable Networks
+ref: programmable-networks
+image: network.png    
+description: "Computer networks are hard to manage. In this project, we develop novel systems for reasoning about computer networks and automatically synthesizing their configurations."
+---
+
+
+<h2>Systems</h2>
+
+<div class="grid">
+  {% include card.html
+    title="Net2Text"
+    output="vertical"
+    url="https://net2text.ethz.ch/"
+    image="/assets/systems/net2text-logo.png"
+    description="Net2Text assists network operators in reasoning about their network-wide forwarding state by directly answering to questions expressed in natural language"
+  %}
+  {% include card.html
+    title="NetComplete"
+    output="vertical"
+    url="https://netcomplete.ethz.ch/"
+    image="/assets/systems/netcomplete-logo.png"
+    description="NetComplete automatically autocompletes configurations for routers running multiple interacting protocols, including policy-based protocols (BGP) and shortest-path protocols (OSPF), and it also supports static routes"
+  %}
+  {% include card.html
+    title="SyNET"
+    output="vertical"
+    url="https://synet.ethz.ch/"
+    image="/assets/systems/synet-logo.png"
+    description="SyNet automatically synthesizes configurations for routers running multiple interacting protocols, including policy-based protocols (BGP) and shortest-path protocols (OSPF), and it also supports static routes"
+  %}
+  {% include card.html
+    title="Bayonet"
+    output="vertical"
+    url="https://github.com/eth-sri/bayonet"
+    image="/assets/systems/bayonet-logo.png"
+    description="Bayonet is a language and a system for reasoning about probabilistic networks"
+  %}
+</div>
+
+<h2>Publications</h2>
+
+{% include get-publications.html filter="project" key="programmable-networks" %}

@@ -1,0 +1,88 @@
+/**
+ * Project Card 
+ */
+
+.grid
+	display: flex
+	flex-wrap: wrap
+	align-items: flex-start
+
+
+.card
+	padding: $spacing-unit*2 0
+	flex-grow: 1
+	max-width: 33%
+	display: inline-flex
+
+	.card-title
+		font-size: 18px
+		font-weight: bold
+		margin-bottom: $spacing-unit/3
+
+	.card-content
+		margin: 0 $spacing-unit/2
+	.card-img
+		width: 150px
+
+
+	&.card-vertical
+		padding: $spacing-unit 0
+		display: block
+		text-align: center
+		.card-title
+			margin-top: $spacing-unit
+		.card-img
+			margin: 0 auto
+			width: 80%
+
+
+.horizontal-card
+	padding: $spacing-unit 0
+	border-top: 1px solid $color-border
+	display: flex
+
+	.card-content
+		flex: 1
+
+	.card-title
+		display: block
+		font-weight: bold
+		margin-bottom: $spacing-unit/3
+
+	.card-subtitle
+		margin-bottom: $spacing-unit/2
+		font-size: 12px
+
+	.card-extra
+		font-weight: bold
+		font-size: 12px
+
+
+.card-links
+	display: inline-block
+	text-align: center
+	a
+		display: inline-block
+		color: $text-color
+		font-size: 12px
+		margin-left: $spacing-unit/2
+
+	img
+		margin-bottom: $spacing-unit/2
+
+
+
+@include media-query($mobile)
+	.grid
+		display: block
+
+	.card
+		max-width: 100%
+		width: 100%
+		padding: $spacing-unit 0
+
+		&.card-vertical
+			.card-img
+				height: auto
+
+

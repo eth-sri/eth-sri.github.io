@@ -1,0 +1,74 @@
+{% assign sorted_publications = site.publications | sort:"year" | sort:"month" | reverse %}
+{% assign current_year = 0 %}
+
+
+{% for publication in sorted_publications %}
+
+
+  {% unless include.filter %}
+    {% if current_year != publication.year %}
+      {% assign current_year = publication.year %}
+      <h2>{{current_year}}</h2>
+    {% endif %}
+  {% endunless %}
+
+
+  {% if include.filter == 'person' %}
+    {% unless publication.authors contains include.key %}
+      {% continue %}
+    {% endunless %}
+  {% endif %}
+
+  {% if include.filter == 'project' %}
+    {% unless publication.projects contains include.key %}
+      {% continue %}
+    {% endunless %}
+  {% endif %}
+
+  {% if include.filter == 'id' %}
+    {% unless publication.ref contains include.key %}
+      {% continue %}
+    {% endunless %}
+  {% endif %}
+
+
+  <div class="horizontal-card">
+    
+    <div class="card-content">
+      <a class="card-title" href="{{ publication.url | relative_url}}">{{ publication.title }}</a>
+      <div class="card-subtitle">{{ publication.authors }}</div>
+      <div class="card-extra">{{ publication.venue }} {{ publication.year }} {{ publication.awards }}</div>
+    </div>
+
+    <div class="card-links">
+
+        {% if publication.slides %}
+          {% assign slides_link = publication.slides %}
+          
+          {% unless slides_link contains 'http' %}
+            {% assign slides_link = '/slides/' | append: slides_link %}
+          {% endunless %}
+
+            <a href="{{ slides_link | relative_url }}" target="_blank"><img class="svg-icon" src="{{ '/assets/icons/icon-slides.svg' | relative_url }}"><br />Slides</a>
+        {% endif %}
+
+
+        {% if publication.talk %}                
+            <a href="{{ publication.talk | relative_url }}" target="_blank"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"><br />Talk</a>
+        {% endif %}
+
+        {% if publication.paper %}
+          {% assign pub_link = publication.paper %}
+          
+          {% unless pub_link contains 'http' %}
+            {% assign pub_link = '/papers/' | append: pub_link %}
+          {% endunless %}
+
+            <a href="{{ pub_link | relative_url }}" target="_blank"><img class="svg-icon" src="{{ '/assets/icons/icon-pdf.svg' | relative_url }}"><br />Paper</a>
+        {% endif %}
+
+        
+    </div>
+
+  </div>
+{% endfor %}

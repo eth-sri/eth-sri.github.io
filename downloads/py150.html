@@ -1,0 +1,89 @@
+---
+layout: page
+title: 150k Python Dataset
+---
+
+This dataset is released as a part of 
+<a class="page-link " href="/research/plml">Machine Learning for Programming</a> project that aims to create new kinds of programming tools and techniques based on machine learning and statistical models learned over massive codebases. For more information about the project, tools and other resources please visit the main project page.
+
+<h2>Overview</h2>
+<p>
+We provide a dataset consisting of parsed Parsed ASTs that were used to train and evaluate the DeepSyn tool.
+The Python programs are collected from GitHub repositories by removing duplicate files, removing project forks (copy of another existing repository), keeping only programs that
+parse and have at most 30'000 nodes in the AST and we aim to remove obfuscated files. Furthermore, we only used repositories with permissive and non-viral licenses such as MIT, BSD and Apache.
+For parsing, we used the Python AST parser included in Python 2.7. We also include the parser as part of our dataset.
+The dataset is split into two parts -- 100'000 files used for training and 50'000 files used for evaluation.
+</p>
+
+<h2>Download</h2>
+
+{% include card.html
+  title="Version 1.0 [526.6MB]"
+  url="http://files.srl.inf.ethz.ch/data/py150.tar.gz"
+  description="An archive of the dataset"
+  output="horizontal"
+  download="http://files.srl.inf.ethz.ch/data/py150.tar.gz"
+%}
+
+The archive contains the following files:
+<ul>
+<li> <strong>parse_python.py</strong> -- The parser that we used to obtain JSON from each Python source code that we used to obtain this dataset.
+<li> <strong>python100k_train.json</strong> -- Parsed ASTs in JSON format. This is a dataset for training.
+<li> <strong>python50k_eval.json</strong> -- Parsed ASTs in JSON format. This is a dataset for evaluation.
+</ul>
+
+
+<h2>Download - Source Files</h2>
+
+{% include card.html
+  title="Version 1.0 Files [190MB]"
+  url="http://files.srl.inf.ethz.ch/data/py150_files.tar.gz"
+  description="An archive of source files used to generate the py150 Dataset"
+  output="horizontal"
+  download="http://files.srl.inf.ethz.ch/data/py150_files.tar.gz"
+%}
+
+The archive contains the following files:
+<ul>
+<li> <strong>data.tar.gz</strong> -- Archive containing all the source files
+<li> <strong>python100k_train.txt</strong> -- List of files used in the training dataset.
+<li> <strong>python50k_eval.txt</strong> -- List of files used in the evaluation dataset.
+<li> <strong>github_repos.txt</strong> -- List of GitHub repositories and their revisions used to obtain the dataset.
+</ul>
+Note that the order of python100k_train.txt and python100k_train.json (containing the ASTs of the parsed files) are the same.
+That is, parsing the n-th file from python100k_train.txt produces n-th ASTs in python100k_train.json.
+
+<br><br><br>
+Published research using this dataset may cite the following paper:
+
+<blockquote>Raychev, V., Bielik, P., and Vechev, M. <i>Probabilistic Model for Code with Decision Trees</i>. In <i>Proceedings of the 2016 ACM SIGPLAN International Conference on Object-Oriented Programming, Systems, Languages, and Applications</i> (2016), OOPSLA ’16, ACM</blockquote>
+
+<h2>Format</h2>
+Now we briefly explain the JSON format into which each AST is stored. The python100k_train.json and python50k_eval.json files include one such JSON per line.
+As an example, given a simple program:
+
+<pre class="prettyprint">
+x = 7
+print x+1
+</pre>
+
+The serialized AST is as follows (here we show it pretty-printed, but the entire JSON is on a single line in the data):
+
+<pre class="prettyprint">
+[ {"type":"Module","children":[1,4]},
+    {"type":"Assign","children":[2,3]},
+      {"type":"NameStore","value":"x"},
+      {"type":"Num","value":"7"},
+    {"type":"Print","children":[5]},
+      {"type":"BinOpAdd","children":[6,7]},
+        {"type":"NameLoad","value":"x"},
+        {"type":"Num","value":"1"} ]
+</pre>
+
+As can be seen, the json contains array of objects.
+Each object contains several name/value pairs:
+<ul>
+<li> (Required) <strong>type</strong>: string containing type of current AST node.
+<li> (Optional) <strong>value</strong>: string containing value (if any) of the current AST node.
+<li> (Optional) <strong>children</strong>: array of integers denoting indices of children (if any) of the current AST node. Indices are 0-based starting from the first node in the JSON.
+</ul>

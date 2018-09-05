@@ -1,0 +1,64 @@
+
+{% if include.output == "vertical" %}
+  <div class="card card-vertical">
+    <div class="card-img">
+      <a href="{{ include.url | relative_url}}" alt="{{ include.title }}" target="_blank"><img src="{{ include.image | relative_url }}"></a>
+    </div>
+    <div class="card-content">
+      <div class="card-title">{{ include.title }}</div>
+      {% if include.description %}<div class="card-subtitle">{{ include.description }}</div>{% endif %}
+      {% if include.extra %}<div class="card-extra">{{ include.extra }}</div>{% endif %}
+      {% if include.buttontext %}<a class="button" href="{{ include.url | relative_url}}">{{include.buttontext}}</a>{% endif %}
+    </div>
+  </div>
+
+{% endif%}
+
+
+{% if include.output == "horizontal" %}
+  <div class="horizontal-card">
+    <div class="card-content">
+      <a class="card-title" href="{{ include.url | relative_url}}">{{ include.title }}</a>
+      {% if include.description %}<div class="card-subtitle">{{ include.description }}</div>{% endif %}
+      {% if include.extra %}<div class="card-extra">{{ include.extra }}</div>{% endif %}
+    </div>
+      <div class="card-links">
+        
+        {% if include.slides %}
+          {% assign slides_link = include.slides %}
+          
+          {% unless slides_link contains 'http' %}
+            {% assign slides_link = '/slides/' | append: slides_link %}
+          {% endunless %}
+
+            <a href="{{ slides_link | relative_url }}" target="_blank"><img class="svg-icon" src="{{ '/assets/icons/icon-slides.svg' | relative_url }}"><br />Slides</a>
+          {% endif %}
+
+
+        {% if include.talk %}                
+            <a href="{{ include.talk | relative_url }}" target="_blank"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"><br />Talk</a>
+        {% endif %}
+
+        {% if include.paper %}
+          {% assign pub_link = include.paper %}
+          
+          {% unless pub_link contains 'http' %}
+            {% assign pub_link = '/papers/' | append: pub_link %}
+          {% endunless %}
+
+            <a href="{{ pub_link | relative_url }}" target="_blank"><img class="svg-icon" src="{{ '/assets/icons/icon-pdf.svg' | relative_url }}"><br />Paper</a>
+        {% endif %}
+
+        {% if include.download %}
+          {% assign download_link = include.download %}
+          
+          {% unless download_link contains 'http' %}
+            {% assign download_link = '/downloads/' | append: download_link %}
+          {% endunless %}
+
+            <a href="{{ download_link | relative_url }}" target="_blank"><img class="svg-icon" src="{{ '/assets/icons/icon-download.svg' | relative_url }}"><br />Download</a>
+        {% endif %}
+
+      </div>
+  </div>
+{% endif%}

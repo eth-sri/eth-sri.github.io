@@ -1,0 +1,218 @@
+/**
+ * Reset some basic elements
+ */
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure
+  margin: 0
+  padding: 0
+
+
+/**
+ * Basic styling
+ */
+body
+  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family
+  color: $text-color
+  background-color: $color-background
+  display: flex
+  min-height: 100vh
+  flex-direction: column
+
+
+
+
+
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+%vertical-rhythm
+  margin-bottom: $spacing-unit / 2
+
+
+
+
+/**
+ * `main` element
+ */
+main
+  display: block /* Default value of `display` of `main` element is 'inline' in IE 11. */
+
+
+
+
+/**
+ * Images
+ */
+img
+  max-width: 100%
+  vertical-align: middle
+
+
+
+
+/**
+ * Figures
+ */
+figure > img
+  display: block
+
+
+figcaption
+  font-size: $small-font-size
+
+
+
+
+/**
+ * Lists
+ */
+ul, ol
+  margin-left: $spacing-unit
+
+
+li
+  > ul,
+  > ol
+    margin-bottom: 0
+  
+
+
+
+
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6
+  font-weight: $base-font-weight
+
+
+
+h1
+  font-size: 48px
+  font-family: $heading-font-family
+  color: $color-black
+  margin-left: -4px
+
+@include media-query($mobile)
+  h1
+    font-size: 32px
+    margin-left: 0
+
+h2
+  font-size: $base-font-size
+  text-transform: uppercase
+  font-weight: bold
+  color: $color-grey-dark
+  margin-top: $spacing-unit*2
+
+
+
+h3
+  font-family: $heading-font-family
+  font-size: $base-font-size
+  text-transform: uppercase
+  font-weight: bold
+  color: $color-grey-dark
+
+hr
+  margin: $spacing-unit 0
+  border-top: 1px solid $color-border
+  border-bottom: none
+
+/**
+ * Links
+ */
+a
+  color: $color-blue
+  text-decoration: none
+  &:hover
+    color: lighten($color-blue, 15%)
+
+/**
+ * Blockquotes
+ */
+blockquote
+  color: $color-grey
+  border-left: 4px solid $color-grey-light
+  padding-left: $spacing-unit / 2
+  @include relative-font-size(1.125)
+  letter-spacing: -1px
+  font-style: italic
+
+  > last-child
+    margin-bottom: 0
+  
+
+
+
+
+/**
+ * Code formatting
+ */
+pre,
+code
+  @include relative-font-size(0.9375)
+  border: 1px solid $color-grey-light
+  border-radius: 3px
+  background-color: #eef
+
+
+code
+  padding: 1px 5px
+
+
+pre
+  padding: 8px 12px
+  overflow-x: auto
+
+  > code
+    border: 0
+    padding-right: 0
+    padding-left: 0
+  
+
+
+
+
+
+
+
+
+
+/**
+ * Tables
+ */
+table
+  margin-bottom: $spacing-unit
+  text-align: $table-text-align
+  border-collapse: collapse
+  border: none
+  tr
+    &:nth-child(even)
+      background-color: lighten($color-grey-light, 20%)
+      width: 100%
+    
+  
+  th, td
+    padding: ($spacing-unit / 3) 
+  
+  th
+    background-color: lighten($color-grey-light, 3%)
+  
+  td
+    border: none
+  
+
+
+@include media-query($mobile)
+  table
+    font-size: 12px
+    th, td
+      padding: ($spacing-unit / 5)
+
+    th:empty, td:empty
+      padding: 0

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% seo title=false %}
+    <title>{{ page.title}} | ETH</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+    {%- feed_meta -%}
+    {%- if jekyll.environment == 'production' and site.google_analytics -%}
+      {%- include google-analytics.html -%}
+    {%- endif -%}
+
+    <meta property="og:title" content="{{page.title}} @ ETH Zurich" />
+    <meta property="og:description" content="{{page.title}} @ ETH Zurich" /> 
+
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/images/favicon-32x32.png" | relative_url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ "/assets/images/favicon-16x16.png" | relative_url }}">  
+    <link rel="mask-icon" href="{{ "/assets/icons/bwicon.svg" | relative_url }}" color="#0079AF">
+  </head>
+
+
+  <body class="event">
+
+
+    <main aria-label="Content">
+      <article class="landing">
+        <header class="landing-header container">
+          <div class="landing-header-content">
+            <div class="row">
+              <div class="column column-66 ">
+                <h1 class="landing-title">{{ page.title | escape }}</h1>
+
+              </div>
+              <div class="column column-33">
+                <div class="landing-info">
+                  <div class="date">{{ page.dates }}</div>
+                  <div class="place">{{ page.venue }}, {{ page.place }}</div>
+                 <div class="venue"></div>
+                  
+                  <div class="logos">
+                      <a href="http://ethz.ch/index_EN" class="eth-logo" target="_blank">
+                        <img src="{{ '/assets/images/eth-logo.svg' | relative_url }}">
+                      </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="landing-banner" style="background:url('{{ page.bgimage | relative_url}}') 0 0 no-repeat"></div>
+      </header>
+
+
+      <div class="landing-content">
+        <div class="row">
+          <div class="column column-66">
+            {{ content }}
+          </div>
+        </div>
+      </div>
+
+
+    </article>
+
+    </main>
+
+
+  </body>
+
+</html>
+
+

@@ -1,0 +1,118 @@
+---
+layout: page
+title: Probabilistic Models for Code
+---
+
+As part of our research efforts in the machine learning/programming languages space (<a href="plml.ethz.ch">see here</a>), we develop new program synthesis techniques based on domain-specific languages to create precise probabilistic models over structures such as trees. This idea proved useful for creating probabilistic models of source code. Here, we provide several already synthesized models and code to replicate the results. The code can also be used to build other tools on top of the said models.
+
+<h2>Code to replicate results</h2>
+
+The code and the trained models are available at: <a href="https://github.com/eth-srl/ModelsPHOG">https://github.com/eth-srl/ModelsPHOG</a>
+
+<h2>Precision for code completion tasks</h2>
+
+We provide code and models with their respective accuracy for several code completion tasks. Running these commands requres downloading the corresponding training datasets listed below.
+
+<ul>
+<li><strong>JavaScript</strong> dataset
+  <ul>
+    <li>Best terminal prediction (based on the <b>E13</b> synthesis procedure defined in [1] with additional prunning of the tree, this is better result than shown in [1])<br>
+Accuracy: <b>85.9%</b><br>
+Command to replicate:<br>
+<pre>
+bazel-bin/phog/model/evaluate --logtostderr \
+    --training_data programs_training.json \
+    --evaluation_data programs_eval.json \
+    --tgen_program synthesized/js/values_best.tgen
+</pre></li>
+
+    <li>Best non-terminal prediction (based on the <b>ID3+</b> synthesis procedure defined in [1], the result is the shown in [1])<br>
+Accuracy: <b>83.9%</b><br>
+Command to replicate:<br>
+<pre>
+bazel-bin/phog/model/evaluate --logtostderr \
+    --training_data programs_training.json \
+    --evaluation_data programs_eval.json \
+    --tgen_program synthesized/js/types_id3.tgen \
+    --is_for_node_type
+</pre></li>
+
+  </ul>
+</li>
+<li><strong>Python</strong> dataset
+  <ul>
+
+    <li>Best terminal prediction (based on the <b>E13</b> synthesis procedure defined in [1], this is the result shown in [1])<br>
+Accuracy: <b>69.2%</b><br>
+Command to replicate:<br>
+<pre>
+bazel-bin/phog/model/evaluate --logtostderr \
+    --training_data python100k_train.json \
+    --evaluation_data python50k_eval.json \
+    --tgen_program synthesized/py/values_e13.tgen
+</pre></li>
+
+    <li>Best non-terminal prediction (based on the <b>ID3+</b> synthesis procedure defined in [1], the result is the shown in [1])<br>
+Accuracy: <b>76.1%</b><br>
+Command to replicate:<br>
+<pre>
+bazel-bin/phog/model/evaluate --logtostderr \
+    --training_data python100k_train.json \
+    --evaluation_data python50k_eval.json \
+    --tgen_program synthesized/py/types_id3.tgen \
+    --is_for_node_type
+</pre></li>
+
+
+  </ul>
+</li>
+</ul>
+
+<h2>Training datasets</h2>
+
+{% include card.html
+  title="150k Python Dataset"
+  url="downloads/py150.html"
+  output="horizontal"
+  description="Dataset consisting of 150'000 Python ASTs"
+  download="py150.html"
+%}
+
+{% include card.html
+  title="150k JavaScript Dataset"
+  url="downloads/js150.html"
+  output="horizontal"
+  description="Dataset consisting of 150'000 JavaScript files and their parsed ASTs"
+  download="js150.html"
+%}
+
+<h2>Relevant publications</h2>
+
+{% include card.html
+  title="Probabilistic Model for Code with Decision Trees"
+  url="publications/raychev2016probabilistic"
+  output="horizontal"
+  description="Veselin Raychev, Pavol Bielik, Martin Vechev"
+  extra="ACM OOPSLA 2016"
+  paper="oopsla16-dt.pdf"
+%}
+
+{% include card.html
+  title="PHOG: Probabilistic Model for Code"
+  url="publications/bielik2016phog"
+  output="horizontal"
+  description="Pavol Bielik, Veselin Raychev, Martin Vechev"
+  extra="ACM ICML 2016"
+  slides="ICML16_PHOG.pdf"
+  paper="icml16_phog.pdf"
+%}
+
+{% include card.html
+  title="Learning Programs from Noisy Data"
+  url="publications/raychev2016learning"
+  output="horizontal"
+  description="Veselin Raychev, Pavol Bielik, Martin Vechev, Andreas Krause"
+  extra="ACM POPL 2016"
+  slides="popl16-slides.pdf"
+  paper="popl16.pdf"
+%}

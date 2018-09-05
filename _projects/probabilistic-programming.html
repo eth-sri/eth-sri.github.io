@@ -1,0 +1,37 @@
+---
+title: Probabilistic Programming and Applications
+ref: probabilistic-programming
+image: data.png    
+description: This project consists of research on building efficient probabilistic solvers and applying existing probabilistic solvers to different practical application domains, such as security and computer networks.
+---
+
+<h2>Systems</h2>
+
+<div class="grid">
+  {% include card.html
+    title="PSI solver"
+    output="vertical"
+    url="https://psisolver.org/"
+    image="/assets/systems/psi_logo.png"
+    description="PSI is a probabilistic solver that takes as input a probabilistic program and automatically computes the exact probability density function (PDF) represented by that program"
+  %}
+  {% include card.html
+    title="SPIRE"
+    output="vertical"
+    url="https://github.com/eth-sri/Spire"
+    image="/assets/systems/spire-logo.png"
+    description="SPIRE is a synthesis system that automatically transforms a program into one that complies with a given privacy policy"
+  %}
+  {% include card.html
+    title="DP-Finder"
+    output="vertical"
+    url="https://github.com/eth-sri/dp-finder"
+    image="/assets/systems/dpfinder-logo.png"
+    description="DP-Finder is a system that automatically derives lower bounds on the differential privacy enforced by algorithms"
+  %}
+</div>
+
+
+<h2>Publications</h2>
+
+{% include get-publications.html filter="project" key="probabilistic-programming" %}

@@ -1,0 +1,388 @@
+---
+title: Workshop on Software Correctness and Reliability
+ref: workshop2017
+redirect_from: workshop2017.php
+bgimage: /assets/images/eth-zurich-workshop.jpg
+image: /assets/images/workshop17_logo.png
+dates: Oct 13-14, 2017
+place: ETH Zürich
+venue: Alumni Pavillon, Rämlmistrasse 101
+---
+
+
+
+{% comment %}
+		<li><a href="#workshop">Home</a></li>
+		<li><a href="#schedule">Schedule</a></li>
+		<li><a href="#registration">Registration</a></li>
+		<li><a href="#travel">Travel</a></li>
+		<li><a href="#accomodation">Accomodation</a></li> 
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js'></script>
+<script src="https://www.sri.inf.ethz.ch/js/jquery.scrollTo-1.4.3.1-min.js" type="text/javascript"></script>
+<script src="https://www.sri.inf.ethz.ch/js/tooltipsy.min.js" type="text/javascript"></script>
+<script src="https://www.sri.inf.ethz.ch/js/global.js" type="text/javascript"></script>
+{%endcomment%}
+
+
+<h2>Workshop Information</h2>
+Ensuring that our programs behave correctly and reliably is a fundamental challenge facing computing today. Recent years have seen an explosion of a diverse set of new techniques for ensuring program correctness ranging from verification and synthesis approaches to runtime systems to quantitative reasoning. The aim of the workshop is to provide insight into the latest research advances in the area. In a period of two days, the workshop will host a number of invited speakers who will present research talks related to software reliability and correctness.
+
+<h2>Organizers</h2>
+<p>
+<a href="http://www.pm.inf.ethz.ch/people/personal/pmueller-pers.html">Peter M&uumlller (ETH Z&uumlrich) </a>, <a href="{{ "/people/martin" | relative_url }}">Martin Vechev (ETH Z&uumlrich) </a>
+</br>
+This is the fifth time the workshop is being held. Materials from the 
+<a href="{{ "/events/workshop2016" | relative_url }}">2016</a>,
+<a href="{{ "/events/workshop2015" | relative_url }}">2015</a>, 
+<a href="{{ "/events/workshop2014" | relative_url }}">2014</a> and 
+<a href="{{ "/events/workshop2013" | relative_url }}">2013</a> workshops are also available.
+</p>
+
+
+<h2 id="schedule">Schedule</h2>
+<h3>October 13 (Friday)</h3>
+<table centering border="0" width="100%" cellspacing="0" cellpadding="0">
+
+<th width=17%>Time</th><th width="16%">Speaker</th><th width="22%">Institution</th><th width=33%>Talk Title & Abstract</th><th width=8%>Slides</th><th width=4%>Video</th>
+
+
+
+<tr>
+	<td>9:00  - 9:15</td>
+	<td>Organizers</td>
+	<td>ETH Z&uumlrich</td>
+	<td><div class="talk" data-tooltip="Introduction of participants. Workshop objectives.">Opening Remarks </div></td>
+	<td></td>
+	<td></td>
+</tr>
+
+<tr>
+	<td>9:15 - 10:00</td>
+	<td><a href="http://www.cs.cornell.edu/~jnfoster/">Nate Foster</a></td>
+	<td>Maryland, USA</td>
+	<td><div class="talk" data-tooltip="P4 is a new language for programming network data planes. The language provides domain-specific constructs for describing the input-output formats and functionality of packet-processing pipelines. Unfortunately P4 programs can go wrong in a variety of interesting and frustrating ways including reading uninitialized data, generating malformed packets, and failing to handle exceptions. In this talk, I will present the design and implementation of p4v, a tool for verifying P4 programs. The tool is based on classic software verification techniques (due to Hoare, Dijkstra, Flanagan, Leino, etc.), but adds several important innovations: a novel mechanism for incorporating control-plane assumptions and domain-specific optimizations, both of which are needed to scale up to large programs. I will discuss our experiences applying p4v to a variety of real-world programs including switch.p4, a large program that implements the functionality of a conventional switch.
+	
+	p4v is joint work with Bill Hallahan (Yale), JK Lee (Barefoot), Cole Schlesinger (Barefoot), Steffen Smolka (Cornell), Robert Soule (Barefoot and USI), and Han Wang (Barefoot).">Verifying Network Data Planes</div></td>
+	<td><a href="{{"/events/workshop2017/foster.pdf" | relative_url }}" class="pdf" title="eth-foster"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=Z4NNCJdoNBY&list=PLn9KV9ACrihhr2UTtA-jJ1Cva2hHTTXTX&index=1" title="eth-foster"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>10:00 - 10:45</td>
+	<td><a href="http://www-i2.informatik.rwth-aachen.de/~katoen/">Joost-Pieter Katoen</a></td>
+	<td>Aachen, Germany</td>
+	<td><div class="talk" data-tooltip="Probabilistic programming aims to make probabilistic modeling and machine learning accessible to the programmer. Probabilistic programs steer autonomous robots, are key to describe security mechanisms, code randomised algorithms, and are rapidly encroaching AI. Though typically relatively small in size, they are hard to grasp. Are they doing the right thing? With what precision? How fast? Are programs equivalent?
+	
+	These questions are notoriously hard; even the most elementary question 'does a program terminate with probability one?' is more undecidable than the halting problem. We propose to use weakest precondition reasoning, explain its ins and outs, and show some encouraging results on the analysis of randomised algorithms and Bayesian networks.">Predictable Probabilistic Programming by Deductive Verification</div></td>
+	<td><a href="{{"/events/workshop2017/pieter.pdf" | relative_url }}" class="pdf" title="eth-katoen"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=cTtYYvvUviY&list=PLn9KV9ACrihhr2UTtA-jJ1Cva2hHTTXTX&index=2" title="eth-katoen"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>10:45 - 11:15</td>
+	<td></td>
+	<td>Coffee Break</td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+
+<tr>
+	<td>11:15 - 12:00</td>
+	<td><a href="http://www.tau.ac.il/~sharonshoham/">Sharon Shoham</a></td>
+	<td>Tel Aviv University, Israel</td>
+	<td><div class="talk" data-tooltip="Distributed protocols such as Paxos play an important role in many computer systems. Therefore, a bug in a distributed protocol may have tremendous effects. Accordingly, a lot of effort has been invested in verifying such protocols. However, due to the infinite state space (e.g., unbounded number of nodes, messages) and protocols complexity, verification is both undecidable and hard in practice. This talk will describe an interactive approach for formal verification of distributed protocols. The idea is to model systems and their properties in a decidable fragment of first-order logic, and use inductive invariants to prove correctness. To infer inductive invariants, we interact with a user based on graphically displayed counterexamples. These techniques are applied to verify safety of several variants of Paxos. The approach is implemented in the IVy system, and already resulted in the first mechanized proofs for some variants of Paxos.">Interactive Verification of Distributed Protocols</div></td>
+	<td><a href="{{"/events/workshop2017/sharon.pdf" | relative_url }}" class="pdf" title="eth-shoham"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=drRuEDqf0E4&index=3&list=PLn9KV9ACrihhr2UTtA-jJ1Cva2hHTTXTX" title="eth-shoham"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>12:00 - 13:30</td>
+	<td></td>
+	<td colspan=2>Lunch</td>
+	<td></td>
+	<td></td>
+</tr>
+
+
+<tr>
+	<td>13:30 - 14:15</td>
+	<td><a href="http://people.csail.mit.edu/mcarbin/">Mike Carbin</a></td>
+	<td>MIT, USA</td>
+	<td><div class="talk" data-tooltip="Researchers have recently designed a number of application-specific fault tolerance mechanisms that enable applications to either be naturally resilient to errors or include additional detection and correction steps that can bring the overall execution of an application back into an envelope for which an acceptable execution is eventually guaranteed. A major challenge to building an application that leverages these mechanisms, however, is to verify that the implementation satisfies the basic invariants that these mechanisms require -- given a model of how faults may manifest during the application's execution.
+
+	In this talk, I will present Leto, a verification system that enables developers to verify their applications with respect to a first-class execution model specification. Namely, Leto enables software and platform developers to programmatically specify the execution semantics of the underlying execution platform as well as verify assertions about the behavior of the application's resulting execution.">From Reliability to Resilience via Program Verification</div></td>
+	<td><a href="{{"/events/workshop2017/carbin.pdf" | relative_url }}" class="pdf" title="eth-carbin"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=0QAL2WtVZKI&index=4&list=PLn9KV9ACrihhr2UTtA-jJ1Cva2hHTTXTX" title="eth-carbin"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>14:15 - 15:00</td>
+	<td><a href="https://people.mpi-sws.org/~dreyer/">Derek Dreyer</a></td>
+	<td>MPI-SWS, Germany</td>
+	<td><div class="talk" data-tooltip="Rust is a new systems programming language that promises to overcome the seemingly fundamental tradeoff between high-level safety guarantees and low-level control over resource management. Unfortunately, none of Rust's safety claims have been formally proven, and there is good reason to question whether they actually hold. Specifically, Rust employs a strong, ownership-based type system, but then extends the expressive power of this core type system through libraries that internally use unsafe features. In this work, we present RustBelt, the first formal (and machine-checked) safety proof for a language representing a realistic subset of Rust.  Our proof is extensible in the sense that, for each new Rust library that uses unsafe features, we can say what verification condition it must satisfy in order for it to be deemed a safe extension to the language. We have carried out this verification for some of the most important libraries that are used throughout the Rust ecosystem.  In the talk, I will first review some of the essential features of Rust, and then explain some of the key ideas behind the RustBelt verification.">RustBelt: Securing the Foundations of the Rust Programming Language</div></td>
+	<td><a href="{{"/events/workshop2017/dreyer.pdf" | relative_url }}" class="pdf" title="eth-dreyer"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=Y9vemQmVeLI&index=5&list=PLn9KV9ACrihhr2UTtA-jJ1Cva2hHTTXTX" title="eth-dreyer"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+
+<tr>
+	<td>15:00 - 15:30</td>
+	<td></td>
+	<td>Coffee Break</td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+
+<tr>
+	<td>15:30 - 16:15</td>
+	<td><a href="http://forsyte.at/people/kovacs/">Laura Kovacs</a></td>
+	<td>TU Wien, Austria</td>
+	<td><div class="talk" data-tooltip="In this talk we describe applications and use of our symbol elimination method in program analysis. We show that symbol elimination adapted to polynomial algebra can automatically infer non-linear program properties, such as loop invariants and loop bounds. By combining techniques from symbolic computation and first-order theorem proving, we then introduce symbol elimination in saturation-based theorem proving and generate first-order program properties, possibly with quantifier alternations, of programs over unbounded data structures.">Symbol Elimination for Program Analysis</div></td>
+	<td><a href="{{"/events/workshop2017/kovacs.pdf" | relative_url }}" class="pdf" title="eth-kovacs"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=WHD9T-6GUfk&index=6&list=PLn9KV9ACrihhr2UTtA-jJ1Cva2hHTTXTX" title="eth-kovacs"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>16:15 - 16:45</td>
+	<td><a href="{{ "/people/martin" | relative_url }}">Martin Vechev</a></td>
+	<td>ETH Z&uumlrich</td>
+	<td><div class="talk" data-tooltip="In this talk I will survey some of the latest work we have been doing in analyzing and synthesizing explanations for machine learning models.">Reliable and Interpretable Artificial Intelligence</div></td>
+	<td><a href="{{"/events/workshop2017/vechev.pdf" | relative_url }}" class="pdf" title="eth-vechev"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=VViHZklm9pI&index=7&list=PLn9KV9ACrihhr2UTtA-jJ1Cva2hHTTXTX" title="eth-vechev"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>16:45 - 17:15</td>
+	<td><a href="http://www.pm.inf.ethz.ch/people/personal/pmueller-pers.html">Peter M&uumlller</a></td>
+	<td>ETH Z&uumlrich</td>
+	<td><div class="talk" data-tooltip="Verifying secure information flow is useful to show that a program does not leak secret data such as passwords. We present a new verification technique for secure information flow that is modular and can be implemented using off-the-shelf verifiers. Modularity is important to reason about libraries and for the verification to scale. Using existing verifiers reduces the implementation effort and aids automation. 
+
+	Our technique uses a new form of product program, which reduces secure information flow to a traditional safety property. In contrast to earlier work, our product programs do not duplicate method calls. This allows us to employ procedure contracts that specify information flow properties and, thus, to reason about procedures modularly. We will present our product programs and discuss how to extend the approach to several advanced information flow properties.">Modular Verification of Secure Information Flow</div></td>
+	<td><a href="{{"/events/workshop2017/muller.pdf" | relative_url }}" class="pdf" title="eth-mueller"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=a8SosOAG1Dc&index=8&list=PLn9KV9ACrihhr2UTtA-jJ1Cva2hHTTXTX" title="eth-mueller"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+</table>
+
+<h3>October 14 (Saturday)</h3>
+<table centering border="0" width="100%" cellspacing="0" cellpadding="0">
+
+<th width=17%>Time</th>
+<th width="16%">Speaker</th>
+<th width="22%">Institution</th>
+<th width=33%>Talk Title & Abstract</th>
+<th width=8%>Slides</th>
+<th width=4%>Video</th>
+
+<tr>
+	<td>9:00  - 9:15</td>
+	<td>Organizers</td>
+	<td>ETH Z&uumlrich</td>
+	<td><div class="talk" data-tooltip="Introduction to second day.">Opening Remarks </div></td>
+	<td></td>
+	<td></td>
+</tr>
+
+<tr>
+	<td>9:15 - 10:00</td>
+	<td><a href="https://people.mpi-sws.org/~rupak/">Rupak Majumdar</a></td>
+	<td>MPI-SWS, Germany</td>
+	<td><div class="talk" data-tooltip="We consider the following basic task in the testing of concurrent systems. The input to the task is a partial order of events, which models actions performed on or by the system and specifies ordering constraints between them. The task is to determine if some scheduling of these events can result in a bug. The number of schedules to be explored can, in general, be exponential.
+
+	Empirically, many bugs in concurrent programs have been observed to have small bug depth; that is, these bugs are exposed by every schedule that orders some d specific events in a particular way, irrespective of how the other events are ordered, and d is small compared to the total number of events.
+
+	To find all bugs of depth d, one needs to only test a d-hitting family of schedules: we call a set of schedules a d-hitting family if for each set of d events, and for each allowed ordering of these events, there is some schedule in the family that executes these events in this ordering. The size of a d-hitting family may be much smaller than the number of all possible schedules.
+
+	While in general, finding the size of optimal d-hitting families is hard, even for d=2, we show that when the partial order is a tree, one can explicitly construct d-hitting families of schedules of small size. We conclude by describing a number of related tasks and combinatorial constructions that provide rigorous guarantees on the size of test sets for concurrent programs.
+
+	(Joint work with Dmitry Chistikov and Filip Niksic)">Combinatorial Constructions in Testing Concurrent Programs</div></td>
+	<td><a href="{{"/events/workshop2017/majumdar.pdf" | relative_url }}" class="pdf" title="eth-majumdar"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=cCzNJ-guLKc&index=9&list=PLn9KV9ACrihhr2UTtA-jJ1Cva2hHTTXTX" title="eth-majumdar"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+<td>10:00 - 10:45</td>
+<td><a href="http://brandonlucia.com/">Brandon Lucia</a></td>
+<td>CMU, USA</td>
+<td><div class="talk" data-tooltip="Emerging energy-harvesting devices (EHDs) are computer systems that operate using energy extracted from their environment, even from low-power sources like ambient radio-frequency energy. Future EHDs will be a key enabler of emerging implantable medical devices, IoT applications, and nano-satellites, but today's EHDs operate intermittently, only as environmental energy is available.  Unfortunately, intermittence makes today's EHDs unreliable and extremely difficult to program and debug.  In this talk I will summarize the main challenges of intermittent computing.  I will then discuss our recent efforts developing system, programming language, and toolchain support for EHDs to address the challenges of intermittence, focusing especially on programmability, debugging, and reliability.  I will close by discussing our recent work on building a reliable, EHD-based, hardware/software nano-satellite platform for an upcoming on-orbit deployment.">Reliable Intermittent Computing</div></td>
+<td><a href="{{"/events/workshop2017/lucia.pdf" | relative_url }}" class="pdf" title="eth-lucia"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+<td><a href="https://www.youtube.com/watch?v=o9qrg_-l3Ec&index=10&list=PLn9KV9ACrihhr2UTtA-jJ1Cva2hHTTXTX" title="eth-lucia"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>10:45 - 11:15</td>
+	<td></td>
+	<td>Coffee Break</td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+
+<tr>
+	<td>11:15 - 12:00</td>
+	<td><a href="http://www.havelund.com/">Klaus Havelund</a></td>
+	<td>JPL/NASA, USA</td>
+	<td><div class="talk" data-tooltip="In this talk we will discuss how we can specify a system by formalizing properties about the events it generates. Such specifications can be turned into monitors, that can be used to monitor the system as it executes, or alternatively to analyze log files produced by the system. The subject offers challenges with respect to expressiveness of specification languages/logics, and efficiency in terms of time and memory consumption used by monitors. We shall present a few approaches to this problem, ranging from a first-order temporal logic named QTL (Quantified Temporal Logic), and its associated implementation named DejaVu, focusing on efficiency using BDDs; to an internal DSL (API in Scala), named TraceContract, focusing on expressiveness. Internal DSLs for modeling properties naturally lead to the topic of unifying modeling and programming, a perspective that we shall briefly discuss.">From Specifications to Monitors</div></td>
+	<td><a href="{{"/events/workshop2017/havelund.pdf" | relative_url }}" class="pdf" title="eth-havelund"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=lTvTXIWjB9s&index=11&list=PLn9KV9ACrihhr2UTtA-jJ1Cva2hHTTXTX" title="eth-havelund"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>12:00 - 13:30</td>
+	<td></td>
+	<td colspan=2>Lunch</td>
+	<td></td>
+	<td></td>
+</tr>
+
+
+<tr>
+	<td>13:30 - 14:15</td>
+	<td><a href="http://manu.sridharan.net/">Manu Sridharan</a></td>
+	<td>Uber, USA</td>
+	<td><div class="talk" data-tooltip="At Uber, software reliability is of critical importance: outages can leave riders stranded and drivers without a way to earn a living.  At the same time, Uber needs to be able to move fast in developing new features and products.  Our belief is that program analysis can play a key role in reducing the tension between these seemingly-conflicting needs.  In this talk, I will describe the philosophy of how analysis tools are deployed at Uber and how code is developed to be analyzable.  I will present some initial experience reports from deployed analyses, plans for future analyses, and some open problems that may be interesting to the research community.">Moving Fast with High Reliability: Program Analysis at Uber</div></td>
+	<td><a href="{{"/events/workshop2017/manu.pdf" | relative_url }}" class="pdf" title="eth-sridharan"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=-jdgS7i490w&index=12&list=PLn9KV9ACrihhr2UTtA-jJ1Cva2hHTTXTX" title="eth-sridharan"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>14:15 - 15:00</td>
+	<td><a href="https://www.cs.rice.edu/~sc40/">Swarat Chaudhuri</a></td>
+	<td>Rice University, USA</td>
+	<td><div class="talk" data-tooltip="Systems for automated formal reasoning about programs depend on human specification at multiple levels. Users of such a system must write full specifications of the tasks that they want performed. The designer of the system is expected to define the domain that the system will handle, and specify the domain-dependent heuristics that guide automated reasoning.
+
+	The assumption of specifications reflects a common expectation in formal methods research: that humans hold deep knowledge about problem domains and instances. In practice, this expectation can be violated and lead to hard-to-use or brittle tools. In this talk, we describe an approach to formal methods that addresses this difficulty through automatic discovery of knowledge from corpora of pre-existing code, execution traces, and proofs.
+
+	Our thesis is that many of the specifications and heuristics relevant to a programming task are broadly shared with other tasks. Such insights can be algorithmically learned from datasets of existing formal artifacts, and can lead to systems for program analysis and synthesis that demand less human intervention than traditional tools. The talk will describe two concrete instantiations of this thesis, in the form of a  statistical approach to finding errors in the way a program uses APIs, and a statistical approach to program synthesis.">Guiding Formal Methods with Discovered Knowledge</div></td>
+	<td></td>
+	<td><a href="https://www.youtube.com/watch?v=-jdgS7i490w&index=12&list=PLn9KV9ACrihhr2UTtA-jJ1Cva2hHTTXTX" title="eth-chaudhuri"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>15:00 - 15:30</td>
+	<td></td>
+	<td>Coffee Break</td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+
+
+<tr>
+	<td>15:30- 16:15</td>
+	<td><a href="http://www.di.ens.fr/~cezarad/">Cezara Dragoi</a></td>
+	<td>ENS, France</td>
+	<td><div class="talk" data-tooltip="Replication is the standard way to make distributed applications fault-tolerant. Implementing state machine replication is notoriously difficult due to asynchronous communication and the occurrence of faults, such as the network dropping messages or processes crashing. 
+
+	One fundamental obstacle in having correct fault-tolerant implementations is the lack of abstractions when reasoning about their behaviors. In this talk we focus on partially synchronous programming abstractions that view asynchronous faulty systems as synchronous ones with an adversarial environment that simulates asynchrony and faults by dropping messages. This view simplifies the proof arguments making systems amendable to automated verification.  
+
+	Technically, we take a programming language perspective and define a domain specific language which has a partially synchronous semantics and separates the implementation of network constraints from the algorithmic computation done by processes. We validate our technique by defining partially synchronous abstractions for several state machine replication algorithms, enabling automation of the verification procedure.">Partially synchronous programming abstractions for replicated state machine</div></td>
+	<td><a href="{{"/events/workshop2017/dragoi.pdf" | relative_url }}" class="pdf" title="eth-dragoi"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=ihT4gD9aJRg&index=14&list=PLn9KV9ACrihhr2UTtA-jJ1Cva2hHTTXTX" title="eth-dragoi"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>16:15 - 17:00</td>
+	<td><a href="http://www.di.ens.fr/~zappa/">Francesco Zappa Nardelli</a></td>
+	<td>Inria, France</td>
+	<td><div class="talk" data-tooltip="The spectacular results achieved by computer science in the recent years rely on hidden, obscure, and badly specified components that lurk at the very heart of our computing infrastructure.  Consider debugging informations.  Debugging informations are obviously relied upon by debuggers and play a key role in the in the implementation of program analysis tools, but, more surprisingly, debugging informations can be relied upon by the runtime of high-level programming languages (e.g. to unwind the stack and implement C++ exceptions). Unfortunately debugging informations themselves can be pervaded by subtle bugs.  Linus Torvalds wrote around 2012:
+
+  'The whole (and only) point of unwinders is to make debugging easy when a bug occurs. But the *** DWARF unwinder had bugs itself, or our DWARF information had bugs, and in either case it actually turned several trivia bugs into a total undebuggable hell...If you can mathematically prove that the unwinder is correct -- even in the presence of bogus and actively incorrect unwinding information -- and never ever follows a bad pointer, I'll reconsider.'
+
+	I will describe an approach and a tool to perform validation and synthesis of the DWARF stack unwinding debug tables, hoping to make Linus Torvalds reconsider.  I will also report on possible approaches to validate the whole of DWARF informations, a far more ambitious plan.">Debugging Debug Informations</div></td>
+	<td><a href="{{"/events/workshop2017/nardelli.pdf" | relative_url }}" class="pdf" title="eth-nardelli"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=lBJIrGgEP1A&index=15&list=PLn9KV9ACrihhr2UTtA-jJ1Cva2hHTTXTX" title="eth-nardelli"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>17:00 - 17:10</td>
+	<td>Organizers</td>
+	<td>ETH Z&uumlrich</td>
+	<td>Closing Remarks</td>
+	<td></td>
+	<td></td>
+</tr>
+
+
+</table>
+
+<h2 id="registration">Registration</h2>
+
+
+<table centering border="0" width="100%" cellspacing="0" cellpadding="0">
+
+<th width=33%></th>
+<th width="33%">Early Bird: by Sept 15th 2017</th>
+<th width="34%">Regular fee: after Sept 15th 2017</th>
+
+<tr>
+	<td>Workshop Fee (Students)</td>
+	<td>70 CHF</td>
+	<td>90 CHF</td>
+</tr>
+
+<tr>
+	<td>Workshop Fee (Regular)</td>
+	<td>110 CHF</td>
+	<td>130 CHF</td>
+</tr>
+</table>
+
+The registration fees include:
+<ul>
+<li> Attendance to all presentations</li>
+<li> Lunches on both days </li>
+<li> Coffee & Snacks </li>
+</ul>
+<p>
+To register for the workshop, please send an e-mail to Claudia Gunthart at: claudia.guenthart@inf.ethz.ch
+<p>
+
+
+<h2 id="travel">Travel</h2>
+<p>
+ETH Z&uumlrich is located in the heart of the city and easy to reach.
+</br>
+From <strong>Z&uumlrich HB </strong> (main station): If you arrive by train to Z&uumlrich HB, take either:
+<ul>
+	<li> Tram no. 6 (direction Zoo) from tram stop "Bahnhofstrasse/HB", exit at tram stop "ETH/Universit&aumltsspital" (right next to the ETH main building). Journey time: about 8 minutes or </li>
+	<li> Tram no. 10 (direction Flughafen or Bahnhof Oerlikon) from tram stop "Bahnhofplatz/HB", exit at tram stop "ETH/Universit&aumltsspital". Journey time: about 8 minutes </li>
+</ul>
+</p>
+
+<p>
+From <a href="http://www.flughafen-zuerich.ch/"><strong>Z&uumlrich airport</strong></a>: You can either take the tram to ETH or a train to the city center (Z&uumlrich HB):
+<ul>
+	<li> Tram no. 10 (direction Bahnhofplatz/HB) to tram stop "ETH/Universittsspital". The tram operates daily from 6 a.m to 11 p.m. with trams departing every 7 to 15 minutes. Journey time: 30 minutes </li>
+	<li> S-Bahn/Train: Follow the signs "Bahn/Railway" to the ticket counters and/or ticket machines. You will find instructions in English on the ticket machines. Get a ticket for "Z&uumlrich City" (make sure that the display shows "1 Std"). The machines accept coins as well as bills and gives change (the ticket costs 6.40 CHF). The ticket is valid for 1 hour for all trains to Z&uumlrich as well as for trams and buses in the city (streetcar, Strassenbahn). Take the escalator down to the platforms. Trains to the city center leave approx. every 10 minutes and it takes about 10 minutes to reach the main station.</li>
+</ul>
+</p>
+
+
+<h2 id="accomodation">Accomodation</h2>
+You can check the availability and prices and make reservations for hotels at <a href="http://www.zuerich.com/en/Visitor.html">Z&uumlrich Tourism</a>
+
+<p>
+The following is a list of hotels in walking distance from the workshop venue:
+<ul>
+	<li> <a href="http://www.hotelrex.ch/de/home.asp">Hotel Rex </a> (single room from CHF 150 to CHF 225) </li>
+	<li> <a href="http://www.hotelbristol.ch/">Hotel Bristol </a> (single room from CHF 150 to CHF 200) </li>
+
+	<li> <a href="http://www.hotelbasilea.ch">Hotel Basilea </a> (single room from CHF 195 to CHF 225) </li>
+	<li> <a href="http://hotelrigihof.hotelszurich.it">Leonardo Hotel Rigihof </a>(single room from CHF 240 to CHF 290) </li>
+</ul>
+</p>
+
+<p>
+Some hotels further away:
+<ul>
+	<li> <a href="http://www.ibishotel.com/de/hotel-2942-ibis-zurich-city-west/index.shtml">Hotel Ibis Zurich City West </a> (room rate CHF 129 to CHF 164) </li>
+	<li> <a href=" http://ibisbudgethotel.ibis.com/de/hotel-3184-ibis-budget-zurich-city-west/index.shtml">Hotel Ibis Budget </a> (room rate CHF 85 to CHF 99) </li>
+</ul>
+</p>
+</div>
+
+
+
+

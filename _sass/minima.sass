@@ -1,0 +1,68 @@
+@charset "utf-8"
+
+// Define defaults for each variable.
+
+$base-font-family: Roboto, Helvetica, Arial, sans-serif
+$base-font-size:   14px !default
+$base-font-weight: 400 !default
+$small-font-size:  $base-font-size * 0.875 !default
+$base-line-height: 1.5 !default
+
+$heading-font-family: TexGyreAdventor, serif
+
+
+$spacing-unit:     30px !default
+
+$text-color:       #707070 !default
+$color-background: #FFFFFF !default
+$color-blue:       #0079AF !default
+$color-red:        #FF3100 !default
+$color-yellow:     #FFD750 !default
+$color-black:      #000 !default
+$color-grey:       #707070 !default
+$color-grey-light: #C3C3C3 !default
+$color-grey-dark:  #555555 !default
+$color-border: #C3C3C3 !default
+
+$animation-time: 0.15s !default
+
+$table-text-align: left !default
+
+// Width of the content area
+$site-width:    1264px !default
+
+// break at the width of the content area + some side margins (60px)
+$mobile:          1304px !default
+
+// Use media queries like this:
+// @include media-query($on-palm) {
+//   .wrapper {
+//     padding-right: $spacing-unit / 2
+//     padding-left: $spacing-unit / 2
+//   }
+// }
+@mixin media-query($device)
+  @media screen and (max-width: $device)
+    @content
+
+@mixin relative-font-size($ratio)
+  font-size: $base-font-size * $ratio
+
+
+// Import partials.
+@import "fonts"
+@import "base"
+@import "grid"
+@import "button"
+@import "tooltip"
+@import "card"
+@import "icon"
+@import "header"
+@import "footer"
+@import "landing"
+@import "page"
+@import "post"
+@import "media"
+@import "news"
+@import "event"
+@import "syntax-highlighting"

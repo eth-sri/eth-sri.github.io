@@ -1,0 +1,29 @@
+---
+ref: singh2017fast
+title: Fast Polyhedra Abstract Domain
+authors: Gagandeep Singh, Markus Püschel, Martin Vechev
+year: 2017
+venue: ACM POPL
+projects: numerical-analysis
+awards:
+bibtex: '@inproceedings{singh2017fast,
+  title={Fast polyhedra abstract domain},
+  author={Singh, Gagandeep and P{\"u}schel, Markus and Vechev, Martin},
+  booktitle={ACM SIGPLAN Notices},
+  volume={52},
+  number={1},
+  pages={46--59},
+  year={2017},
+  organization={ACM}}'
+paper: POPL17-Polyhedra.pdf
+talk: https://www.youtube.com/watch?v=SdOaoIcVZAY
+slides: http://elina.ethz.ch/slides/popl2017-fast-polyhedra.pdf
+---
+
+Numerical abstract domains are an important ingredient of modern static analyzers used for verifying critical program properties (e.g., absence of buffer overflow or memory safety). Among the many numerical domains introduced over the years, Polyhedra is the most expressive one, but also the most expensive: it has worst-case exponential space and time complexity. As a consequence, static analysis with the Polyhedra domain is thought to be impractical when applied to large scale, real world programs.
+
+In this paper, we present a new approach and a complete implementation for speeding up Polyhedra domain analysis. Our approach does not lose precision, and for many practical cases, is orders of magnitude faster than state-of-the-art solutions. The key insight underlying our work is that polyhedra arising during analysis can usually be kept decomposed, thus considerably reducing the overall complexity.
+
+We first present the theory underlying our approach, which identifies the interaction between partitions of variables and domain operators. Based on the theory we develop new algorithms for these operators that work with decomposed polyhedra. We implemented these algorithms using the same interface as existing libraries, thus enabling static analyzers to use our implementation with little effort. In our evaluation, we analyze large benchmarks from the popular software verification competition, including Linux device drivers with over 50K lines of code. Our experimental results demonstrate massive gains in both space and time: we show end-to-end speedups of two to five orders of magnitude compared to state-of-the-art Polyhedra implementations as well as significant memory gains, on all larger benchmarks. In fact, in many cases our analysis terminates in seconds where prior code runs out of memory or times out after 4 hours.
+
+We believe this work is an important step in making the Polyhedra abstract domain both feasible and practically usable for handling large, real-world programs.

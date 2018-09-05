@@ -1,0 +1,47 @@
+---
+layout: default
+---
+<article class="page">
+
+  <header class="page-header container">
+	<div class="row">
+		<div class="column column-66">
+			<h1 class="page-title">{{ page.title | escape }}</h1>
+      <h3 class="page-subtitle">{{ page.position }}</h3>
+      
+      <div class="page-info">
+        {% if page.email %} <div class="info-line"><label>Email:</label><a href="mailto:{{ page.email }}">{{ page.email }}</a></div>  {% endif %}
+        {% if page.office %} <div class="info-line"><label>Office:</label>{{ page.office }}</div>  {% endif %}
+        {% if page.website %} <div class="info-line"><label>Website:</label><a href="{{ page.website }}" target="_blank">{{ page.website }}</a></div>  {% endif %}
+        {% if page.phone %} <div class="info-line"><label>Phone:</label>{{ page.phone }}</div>  {% endif %}
+        {% if page.cv %} 
+               {% assign cvlink = page.cv %}
+               {% unless cvlink contains 'http' %}
+                {% assign cvlink = '/people/' | append: cvlink | relative_url %}
+               {% endunless %}
+            <div class="info-line"><label>CV:</label><a href="{{ cvlink }}" target="_blank">View PDF</a></div>  
+        {% endif %}
+      </div>
+
+
+		</div>
+
+    <div class="column column-25">
+      <div class="page-img full-width">
+        {% if page.image %} <img src="{{ page.image | prepend: '/assets/images/' | relative_url}}"/> {% endif %}
+      </div>
+    </div>
+	</div>
+  </header>
+
+
+  <div class="page-content" style="padding-top: 0;">
+    <div class="row">
+      <div class="column column-66">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+
+
+</article>

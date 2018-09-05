@@ -1,0 +1,358 @@
+---
+title: Workshop on Software Correctness and Reliability
+ref: workshop2014
+redirect_from: workshop2014.php
+bgimage: /assets/images/eth-zurich-workshop.jpg
+image: 
+dates: Oct 3-4, 2014
+place: ETH Zürich
+venue: Alumni Pavillon, Rämlmistrasse 101
+---
+
+
+
+{% comment %}
+		<li><a href="#workshop">Home</a></li>
+		<li><a href="#schedule">Schedule</a></li>
+		<li><a href="#registration">Registration</a></li>
+		<li><a href="#travel">Travel</a></li>
+		<li><a href="#accomodation">Accomodation</a></li> 
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js'></script>
+<script src="https://www.sri.inf.ethz.ch/js/jquery.scrollTo-1.4.3.1-min.js" type="text/javascript"></script>
+<script src="https://www.sri.inf.ethz.ch/js/tooltipsy.min.js" type="text/javascript"></script>
+<script src="https://www.sri.inf.ethz.ch/js/global.js" type="text/javascript"></script>
+{%endcomment%}
+
+
+<h2>Workshop Information</h2>
+Ensuring that our programs behave correctly and reliably is a fundamental challenge facing computing today. Recent years have seen an explosion of a diverse set of new techniques for ensuring program correctness ranging from verification and synthesis approaches to runtime systems to quantitative reasoning. The aim of the workshop is to provide insight into the latest research advances in the area. In a period of two days, the workshop will host a number of invited speakers who will present research talks related to software reliability and correctness.
+
+<h2>Organizers</h2>
+<p>
+<a href="http://www.pm.inf.ethz.ch/people/personal/pmueller-pers.html">Peter M&uumlller (ETH Z&uumlrich) </a>, <a href="{{ "/people/martin" | relative_url }}">Martin Vechev (ETH Z&uumlrich) </a>
+</br>
+This is the second time the workshop is being held. Materials from the  
+<a href="{{ "/events/workshop2013" | relative_url }}">2013</a> workshop is also available.
+</p>
+
+
+<h2 id="schedule">Schedule</h2>
+<h3>October 3 (Friday)</h3>
+<table centering border="0" width="100%" cellspacing="0" cellpadding="0">
+
+<th width=17%>Time</th><th width="16%">Speaker</th><th width="22%">Institution</th><th width=33%>Talk Title & Abstract</th><th width=8%>Slides</th><th width=4%>Video</th>
+
+
+
+<tr>
+	<td>9:00  - 9:15</td>
+	<td>Organizers</td>
+	<td>ETH Z&uumlrich</td>
+	<td><div class="talk" data-tooltip="Introduction of participants. Workshop objectives.">Opening Remarks</div></td>
+	<td></td>
+	<td><a href="http://www.youtube.com/watch?v=umyb4XB3Hws" title="eth-opening"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>9:15 - 10:00</td>
+	<td><a href="http://people.epfl.ch/james.larus">James Larus</a></td>
+	<td>EPFL</td>
+	<td><div class="talk" data-tooltip="Sixteen years ago I started the Software Productivity Tools (SPT) group at Microsoft Research, one of the first research groups in what I will call the second wave of software tools. The first wave in the 1970s made many innovative research contributions, some of which are still being reinvented today, but ultimately had little influence on how software was developed. My hope in establishing SPT was to build a new generation of tools that would change the way that software was developed at Microsoft and, from there, in the rest of the world. By any measure, MSR was extremely successful in jumpstarting a diverse and lively research community, but it was far less successful in changing the day-to-day life of a software developer. This talk is an attempt to understand what went right and what went wrong and where we can go from here.">What Happened to the Promise of Software Tools?</div></td>
+	<td><a href="{{"/events/workshop2014/eth-larus.pdf" | relative_url }}" class="pdf" title="eth-larus"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="http://www.youtube.com/watch?v=kO9OYnkeRTM" title="eth-larus"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>10:00 - 10:45</td>
+	<td><a href="http://people.csail.mit.edu/rinard/">Martin Rinard</a></td>
+	<td>MIT</td>
+	<td><div class="talk" data-tooltip="I present two techniques for eliminating software defects: Horizontal Code Transfer (HCT) and Condition Synthesis/Compound Mutations (CSCM).
+
+	HCT works with multiple applications that process the same input file format. It first finds a defect in one of the applications, then locates code in one or more of the other applications that eliminates the defect. It then extracts and transfers this code from the donor application into the recipient application to eliminate the defect in the recipient.  Our implementation generates source-level patches, but can extract and transfer code from stripped binary donor applications with no need for donor source code. It can therefore support a wide range of use cases.
+
+	CSCM works with a test suite that exposes a defect. It automatically generates a search space of potential patches, then searches this space to find patches that enable the application to successfully process all test cases in the test suite. Novel techniques include condition synthesis, which automatically synthesizes expressions that patch incorrect conditions in if statements, and a set of compound mutations that build on condition synthesis to generate a rich and efficiently searchable space of candidate patches. ">Two Techniques for Automatically Eliminating Software Defects</div></td>
+	<td><a href="{{"/events/workshop2014/eth-rinard.pdf" | relative_url }}" class="pdf" title="eth-rinard"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="http://www.youtube.com/watch?v=JeMo-rJAjGU" title="eth-rinard"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>10:45 - 11:15</td>
+	<td></td>
+	<td>Coffee Break</td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+
+<tr>
+	<td>11:15 - 12:00</td>
+	<td><a href="http://www.inf.ethz.ch/personal/basin/">David Basin</a></td>
+	<td>ETH Zurich</td>
+	<td><div class="talk" data-tooltip="Security mechanisms are omnipresent and found at all layers of the hardware and software stack, ranging from memory management hardware to policy decision and enforcement points used in middleware and web services.  A fundamental question is what kinds of security policies can such mechanisms enforce.
+
+	We examine this question for mechanisms that work by execution monitoring.  This covers a wide class of access control mechanisms which intercept actions and prevent unauthorized actions from occurring, based on a security policy.  We will review work in this setting, in particular the seminar work of Fred Schneider on the relationship between enforceable security properties and safety properties. We will clarify limitations in existing work and give necessary and sufficient conditions for a security policy to be enforceable.  In doing so, we build upon ideas from control theory and formal language theory. Furthermore, for different specification languages, we provide results on the problem of deciding whether a given policy is enforceable and synthesizing an enforcement mechanism from an enforceable policy.
+
+	(Joint work with Vincent Juge, Felix Klaedtke and Eugen Zalinescu)">Enforceable Security Policies</div></td>
+	<td><a href="{{"/events/workshop2014/eth-basin.pdf" | relative_url }}" class="pdf" title="eth-basin"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="http://www.youtube.com/watch?v=gyPQCezlLME" title="eth-basin"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>12:00 - 13:30</td>
+	<td></td>
+	<td colspan=2>Lunch</td>
+	<td></td>
+	<td></td>
+</tr>
+
+
+<tr>
+	<td>13:30 - 14:15</td>
+	<td><a href="http://www.cis.upenn.edu/~alur/">Rajeev Alur</a></td>
+	<td>University of Pennsylvania</td>
+	<td><div class="talk" data-tooltip="When should a function mapping strings to strings, or strings to numerical costs, or more generally, strings/trees/infinite-strings to a set of output values with a given set of operations, be considered regular? We have proposed a new machine model of cost register automata, a class of write-only programs, to define such a notion of regularity. The class of regular functions has appealing theoretical properties analogous to regular languages: it is closed under a variety of function transformations, analysis questions such as equivalence and type checking are decidable, and has exact logical and algebraic characterizations. In this talk, I will give an overview of theoretical results as well as emerging applications to program verification and quantitative analysis.">Regular Functions</div></td>
+	<td><a href="{{"/events/workshop2014/eth-alur.pdf" | relative_url }}" class="pdf" title="eth-alur"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="http://www.youtube.com/watch?v=l0OerCcX4TM" title="eth-alur"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>14:15 - 15:00</td>
+	<td><a href="http://people.csail.mit.edu/asolar/">Armando Solar-Lezama</a></td>
+	<td>MIT</td>
+	<td><div class="talk" data-tooltip="This talk will describe how constraint-based synthesis can provide a unifying framework to attack problems as diverse as program optimization, automated grading, and the production of verified code. The talk will present an overview of constraint-based synthesis technology and its implementation in the Sketch synthesis platform, and it will show how this technology can be applied to each of the aforementioned domains. For program optimization, synthesis allows us to raise the level of abstraction of a program, making it possible to apply aggressive optimizations that can even change the algorithmic complexity of a piece of code. In automated grading, synthesis allows us to improve upon the traditional method of grading programs based on a test suite by allowing us to determine the set of modifications needed to make the program correct. Finally, synthesis can aid the development of verified code by deriving code that is easier to prove correct.">Techniques and applications of constraint-based synthesis</div></td>
+	<td><a href="{{"/events/workshop2014/eth-solarlezama.pdf" | relative_url }}" class="pdf" title="eth-solarlezama"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="http://www.youtube.com/watch?v=uWiYdp4lhsM" title="eth-solarlezama"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+
+<tr>
+	<td>15:00 - 15:30</td>
+	<td></td>
+	<td>Coffee Break</td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+
+<tr>
+	<td>15:30 - 16:15</td>
+	<td><a href="http://cs.au.dk/~amoeller/">Anders M&oslashller</a></td>
+	<td>Aarhus University</td>
+	<td><div class="talk" data-tooltip="JavaScript supports a powerful mix of object-oriented and functional programming, which provides flexibility for the programmers but also makes it difficult to reason about the behavior of the programs without actually running them. One of the main challenging for program analysis tools is to handle the complex programming patterns that are found in widely used libraries, such as jQuery, without losing critical precision. Another challenge is the use of dynamic language features, such as 'eval'. This talk presents an overview of the challenges and the techniques used in the TAJS research project that aims to develop sound and effective program analysis techniques for JavaScript web applications.">Program Analysis for JavaScript - Challenges and Techniques</div></td>
+	<td><a href="{{"/events/workshop2014/eth-moeller.pdf" | relative_url }}" class="pdf" title="eth-moeller"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="http://www.youtube.com/watch?v=Cb_aNUEB0As" title="eth-moeller"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>16:15 - 16:45</td>
+	<td><a href="{{ "/people/martin" | relative_url }}">Martin Vechev</a><br></td>
+	<td>ETH Z&uumlrich</td>
+	<td><div class="talk" data-tooltip="The increased availability of massive codebases, sometimes referred to as ``Big Code'', creates a unique opportunity for new kinds of program analysis and synthesis techniques based on statistical reasoning. These approaches will extract useful information from existing codebases and will use that information to provide statistically likely solutions to problems that are difficult or impossible to solve with traditional techniques.
+
+	As an example, I will present several statistical engines developed in our lab which instantiate this vision. In the process, I will highlight the key challenges when designing such systems including the importance of carefully combining and interfacing deep programming language techniques (e.g., static analysis) with powerful machine learning approaches (e.g. graphical models).
+
+	We publicly released one of our statistical engines, called JSNice, available at http://jsnice.org. JSNice automatically de-minifies JavaScript programs by inferring meaningful variable names while at the same time predicting likely types for the program's variables. Since its release, JSNice has gained significant traction in the JavaScript community and is regularly used by thousands of developers worldwide.">Statistical Program Analysis and Synthesis</div></td>
+	<td><a href="{{"/events/workshop2014/eth-vechev.pdf" | relative_url }}" class="pdf" title="eth-vechev"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="http://www.youtube.com/watch?v=-_CvQeXbVGg" title="eth-vechev"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>16:45 - 17:15</td>
+	<td><a href="http://www.pm.inf.ethz.ch/people/pmueller">Peter M&uumlller</a></td>
+	<td>ETH Z&uumlrich</td>
+	<td><div class="talk" data-tooltip="The use of static analysis in mobile development is promising because of its ability to fully automatically detect bugs that arise only under specific environment conditions and that are hard to detect with testing. In this talk, we present TouchGuru, a static analysis tool for Microsofts TouchDevelop platform. We will explain some of the main challenges for the static analysis of mobile applications, give an overview of our solutions, and demonstrate our tool.">TouchGuru - Static Analysis for a Mobile Development Environment</div></td>
+	<td><a href="{{"/events/workshop2014/eth-mueller.pdf" | relative_url }}" class="pdf" title="eth-mueller"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="http://www.youtube.com/watch?v=tmMVfNzxFBo" title="eth-mueller"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+</table>
+
+<h3>October 4 (Saturday)</h3>
+<table centering border="0" width="100%" cellspacing="0" cellpadding="0">
+
+<th width=17%>Time</th>
+<th width="16%">Speaker</th>
+<th width="22%">Institution</th>
+<th width=33%>Talk Title & Abstract</th>
+<th width=8%>Slides</th>
+<th width=4%>Video</th>
+
+<tr>
+	<td>9:00  - 9:15</td>
+	<td>Organizers</td>
+	<td>ETH Z&uumlrich</td>
+	<td><div class="talk" data-tooltip="Introduction to second day.">Opening Remarks </div></td>
+	<td></td>
+	<td></td>
+</tr>
+
+<tr>
+	<td>9:15 - 10:00</td>
+	<td><a href="http://saraswat.org/">Vijay Saraswat</a></td>
+	<td>IBM T.J. Watson Research Center</td>
+	<td><div class="talk" data-tooltip="The rise of big data has seen the emergence of various ad hoc parallel, resilient application programming frameworks that support restricted forms of computation e.g. Hadoop/Map Reduce, Pregel/BSP, Millwheel/Streaming. They enable  programmers to write application code as fragments of sequential code that are oblivious to any issues of explicit concurrency (race conditions, deadlocks) or distribution (node- or link-failure, data locality) -- these issues are handled by the application framework.
+
+	These frameworks themselves are written in imperative languages like Java and C++ that themselves do not support any notion of distributed, resilient execution. In contrast, we show that it is possible to extend the multi-place, concurrent imperative language X10 in very simple but powerful ways to account for node failure. Resilient X10 permits programs to continue executing even when a place fails. While data and most of the control state at the place is lost, Resilient X10 shows how the global control state of the program can still be recovered in such a way that a key semantic principle, Happens Before Invariance, continues to hold. This principle permits the programmer to write clean code that continues to work in the presence of failure. We illustrate with examples, and outline a formal semantics (presented at ECOOP14).">Resilient X10</div></td>
+	<td><a href="{{"/events/workshop2014/eth-saraswat.pdf" | relative_url }}" class="pdf" title="eth-saraswat"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="http://www.youtube.com/watch?v=2RMc4DQp3hE" title="eth-saraswat"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>10:00 - 10:45</td>
+	<td><a href="http://goto.ucsd.edu/~rjhala/"> Ranjit Jhala</a></td>
+	<td>UC San Diego</td>
+	<td><div class="talk" data-tooltip="Traditional program analyses and verifiers work via some combination of Dataflow propagation, Abstract Interpretation and Floyd-Hoard Logics.  These methods are challenged by the presence of increasingly ubiquitous modern software constructs like polymorphic (generic) higher-order functions, and data structures. In contrast, we observe that *type* systems are capable of precisely the kind of analysis needed to analyze the above constructs. We use this observation to develop Liquid Types, a method that uses ideas from type systems to lift program analyses and verifiers up to handle modern software constructs. We illustrate the method and describe a variety of applications drawn from verification of imperative, functional, and dynamic languages.">Types are a Program Analysis' Best Friend</div></td>
+	<td><a href="http://goto.ucsd.edu/~rjhala/talks/ETH14/lhs/Index.lhs.slides.html" class="pdf" title="eth-jhala"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="http://www.youtube.com/watch?v=7YK_rqw_AQk" title="eth-jhala"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>10:45 - 11:15</td>
+	<td></td>
+	<td>Coffee Break</td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+
+<tr>
+	<td>11:15 - 12:00</td>
+	<td><a href="http://www.liafa.jussieu.fr/~abou/">Ahmed Bouajjani</a></td>
+	<td>University Paris 7</td>
+	<td><div class="talk" data-tooltip="Efficient implementations of concurrent objects such as semaphores, locks, atomic registers, and data structures are essential to modern computing.
+
+	Programming them is however error prone: in attempting to minimize synchronization overhead between concurrent object invocations, one risks breaking conformance to reference implementations --- or in formal terms, one risks violating observational refinement. Testing this refinement even within a single execution is intractable, and existing approaches are limited to executions with very few object invocations.
+
+	We develop a polynomial-time (per execution) approximation to refinement checking. The approximation is parameterized by an accuracy $k$ (a natural number) representing the degree to which refinement violations are visible.
+
+	In principle, more violations are detectable as $k$ increases, and in the limit, all are detectable. Our insight for this approximation arises from foundational properties on the partial orders characterizing the happens-before relations between object invocations: they are interval orders, with a well defined measure of complexity, i.e., their length. Approximating the happens-before relation with a possibly-weaker interval order of bounded length can be efficiently implemented by maintaining a bounded number of integer counters.
+
+	In practice, we find that refinement violations can be detected with very small values of $k$, and that our approach scales far beyond existing refinement-checking approaches.
+
+	This is a joint work with Michael Emmi, Constantin Enea, and Jad Hamza. ">On checking observational refinement between libraries of concurrent data structures </div></td>
+	<td><a href="{{"/events/workshop2014/eth-bouajjani.pdf" | relative_url }}" class="pdf" title="eth-bouajjani"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="http://www.youtube.com/watch?v=nrCh7Ch0jFc" title="eth-bouajjani"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>12:00 - 13:30</td>
+	<td></td>
+	<td colspan=2>Lunch</td>
+	<td></td>
+	<td></td>
+</tr>
+
+
+<tr>
+	<td>13:30 - 14:15</td>
+	<td><a href="http://pag.gatech.edu/naik">Mayur Naik</a></td>
+	<td>Georgia Tech</td>
+	<td><div class="talk" data-tooltip="Program analyses conventionally focus on reasoning with hard constraints, enabling them to provide formal guarantees such as soundness or completeness. Modern applications of program analyses demand the need to also reason about soft constraints, for purposes such as striking tradeoffs between scalability and accuracy, reasoning about unknown or missing information, tailoring to diverse clients, and learning from previous runs. This talk presents new analysis questions, search techniques, and empirical results in combining hard and soft reasoning to make program analyses self-adaptive.">Self-Adaptive Program Analysis</div></td>
+	<td><a href="{{"/events/workshop2014/eth-naik.pdf" | relative_url }}" class="pdf" title="eth-naik"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="http://www.youtube.com/watch?v=d4HgMR88PVw" title="eth-naik"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+
+<tr>
+	<td>14:15 - 15:00</td>
+	<td><a href="https://www4.in.tum.de/~broy/">Manfred Broy</a></td>
+	<td>TU Munich</td>
+	<td><div class="talk" data-tooltip="Formalization of notions of software and systems reliability and their specification requires probabilistic system and software models. These have to be tightly integrated with notions of nondeterminism in software and systems modeling and specification. This way a variety of concepts of reliability, correctness and further quality concerns such as availability and safety are formally captured.">Modeling Software and System Reliability</div></td>
+	<td><a href="{{"/events/workshop2014/eth-broy.pdf" | relative_url }}" class="pdf" title="eth-broy"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="http://www.youtube.com/watch?v=XA8eRpR0qQg" title="eth-broy"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+
+<tr>
+	<td>15:00 - 15:10</td>
+	<td>Organizers</td>
+	<td>ETH Z&uumlrich</td>
+	<td>Closing Remarks</td>
+	<td></td>
+	<td></td>
+</tr>
+
+
+</table>
+
+<h2 id="registration">Registration</h2>
+
+
+<table centering border="0" width="100%" cellspacing="0" cellpadding="0">
+
+<th width=33%></th>
+<th width="33%">Early Bird: by Sept 10th 2014</th>
+<th width="34%">Regular fee: after Sept 10th 2014 (latest day: Sept 22, 2015)</th>
+
+<tr>
+	<td>Workshop Fee (Students)</td>
+	<td>70 CHF</td>
+	<td>90 CHF</td>
+</tr>
+
+<tr>
+	<td>Workshop Fee (Regular)</td>
+	<td>110 CHF</td>
+	<td>130 CHF</td>
+</tr>
+</table>
+
+The registration fees include:
+<ul>
+<li> Attendance to all presentations</li>
+<li> Lunches on both days </li>
+<li> Coffee & Snacks </li>
+</ul>
+<p>
+To register, please follow this link: <a href="https://www.registration.ethz.ch/eventolight/evento/dispatch.asp?fct=BeantrageID&Destination=dispatch.asp?fct=AnmeldungEdit$IDAnlass=1082$Dialog=Registration">Workshop Registration</a></p>
+
+<p>
+For information and questions, please contact Mrs. Marlies Weissert: marlies.weissert@inf.ethz.ch
+</p>
+
+
+<h2 id="travel">Travel</h2>
+<p>
+ETH Z&uumlrich is located in the heart of the city and easy to reach.
+</br>
+From <strong>Z&uumlrich HB</strong> (main station): If you arrive by train to Z&uumlrich HB, take either:
+<ul>
+	<li> Tram no. 6 (direction Zoo) from tram stop "Bahnhofstrasse/HB", exit at tram stop "ETH/Universit&aumltsspital" (right next to the ETH main building). Journey time: about 8 minutes or </li>
+	<li> Tram no. 10 (direction Flughafen or Bahnhof Oerlikon) from tram stop "Bahnhofplatz/HB", exit at tram stop "ETH/Universit&aumltsspital". Journey time: about 8 minutes </li>
+</ul>
+</p>
+
+<p>
+From <a href="http://www.flughafen-zuerich.ch/"><strong>Z&uumlrich airport</strong></a>: You can either take the tram to ETH or a train to the city center (Z&uumlrich HB):
+<ul>
+	<li> Tram no. 10 (direction Bahnhofplatz/HB) to tram stop "ETH/Universittsspital". The tram operates daily from 6 a.m to 11 p.m. with trams departing every 7 to 15 minutes. Journey time: 30 minutes </li>
+	<li> S-Bahn/Train: Follow the signs "Bahn/Railway" to the ticket counters and/or ticket machines. You will find instructions in English on the ticket machines. Get a ticket for "Z&uumlrich City" (make sure that the display shows "1 Std"). The machines accept coins as well as bills and gives change (the ticket costs 6.40 CHF). The ticket is valid for 1 hour for all trains to Z&uumlrich as well as for trams and buses in the city (streetcar, Strassenbahn). Take the escalator down to the platforms. Trains to the city center leave approx. every 10 minutes and it takes about 10 minutes to reach the main station.</li>
+</ul>
+</p>
+
+
+<h2 id="accomodation">Accomodation</h2>
+You can check the availability and prices and make reservations for hotels at <a href="http://www.zuerich.com/en/Visitor.html">Z&uumlrich Tourism</a>
+
+<p>
+The following is a list of hotels in walking distance from the workshop venue:
+<ul>
+	<li> <a href="http://www.hotelrex.ch/de/home.asp">Hotel Rex </a> (single room from CHF 150 to CHF 225) </li>
+	<li> <a href="http://www.hotelbristol.ch/">Hotel Bristol </a> (single room from CHF 150 to CHF 200) </li>
+
+	<li> <a href="http://www.hotelbasilea.ch">Hotel Basilea </a> (single room from CHF 195 to CHF 225) </li>
+	<li> <a href="http://hotelrigihof.hotelszurich.it">Leonardo Hotel Rigihof </a>(single room from CHF 240 to CHF 290) </li>
+</ul>
+</p>
+
+<p>
+Some hotels further away:
+<ul>
+	<li> <a href="http://www.ibishotel.com/de/hotel-2942-ibis-zurich-city-west/index.shtml">Hotel Ibis Zurich City West </a> (room rate CHF 129 to CHF 164) </li>
+	<li> <a href=" http://ibisbudgethotel.ibis.com/de/hotel-3184-ibis-budget-zurich-city-west/index.shtml">Hotel Ibis Budget </a> (room rate CHF 85 to CHF 99) </li>
+</ul>
+</p>
+</div>
+
+
+
+

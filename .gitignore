@@ -1,0 +1,12 @@
+.bundle
+.sass-cache
+Icon?
+Gemfile.lock
+_site
+*.gem
+**/*.swp
+**/.DS_Store
+.jekyll-metadata
+*.pdf
+*.ppt
+*.pptx

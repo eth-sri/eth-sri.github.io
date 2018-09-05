@@ -1,0 +1,24 @@
+---
+title: Probabilistic Programming for Security and Privacy
+ref: probabalistic-security
+image: security.png    
+description: Manually writing programs that conform to security and privacy policies is challenging. In this project, we develop novel techniques that leverage the recent advances in probabilistic programming and program synthesis to automatically enforce probabilistic policies, which can be used to protect sensitive user data from highly nontrivial probabilistic inference attacks. Examples include policies that impose probabilistic bounds on the information leaked to attackers and differential privacy policies.
+---
+
+
+
+
+<h2>SPIRE: Synthesis of Probabilistic Privacy Enforcemen</h2>
+
+SPIRE is a novel synthesis approach that automatically transforms a program into one that complies with a given policy, where the policy is defined as a set of probabilistic assertions on the distribution over the program inputs (capturing the attacker belief). The SPIRE approach consists of two ingredients. First, we phrase the problem of determining how much information the program's outputs leak about the secret as probabilistic analysis, and check whether the leakage is within the bounds specified by the policy; we depict the safe bounds in green in the figure above. Second, to enforce the policy and reduce the amount of leaked information, the key idea is to synthesize an enforcement that transforms the program by adding uncertainty to its outputs. We present two synthesis procedures that add uncertainty to the program's outputs as a way of reducing the amount of leaked information: an optimal one based on SMT solving and a greedy one with quadratic running time. Below, you can find the paper and the source code of the SPIRE system.
+
+<h2>Systems</h2>
+The SPIRE system is <a href="https://github.com/eth-srl/SPIRE">available on GitHub</a>. To build and run it, follow the instructions in the README included in the repository.
+
+<br /><br />
+<img src="{{ "assets/images/spire.png" | relative_url }}"></p><br>
+
+
+<h2>Publications</h2>
+
+{% include get-publications.html filter="project" key="probabalistic-security" %}

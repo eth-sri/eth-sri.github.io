@@ -1,0 +1,36 @@
+---
+layout: default
+title: News
+permalink: /news/index.html
+---
+
+
+<article class="page">
+
+  <header class="page-header container">
+  <div class="row">
+    <div class="column column-66">
+      <h1 class="page-title">{{ page.title | escape }}</h1>
+    </div>
+  </div>
+  </header>
+
+
+  <div class="page-content container">
+    <div class="row">
+      <div class="column column-66">
+
+      	<ul class="post-list">
+          {%- for post in site.posts  -%}
+          <li>
+            <div class="post-meta">{{ post.date | date: "%d.%m.%y" }}</div>
+            <div class="post-content">{{ post.content}}</div>
+          </li>
+          {%- endfor -%}
+        </ul>
+
+      </div>
+    </div>      
+  </div>
+</article>
+

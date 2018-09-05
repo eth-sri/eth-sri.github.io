@@ -1,0 +1,23 @@
+{% assign project = site.projects | where:"ref", include.ref  | first %}
+
+
+  {% if include.output == "plain" %}
+    <a href="{{ project.url | relative_url}}">{{project.title}}</a>
+  {% else %}
+  <div class="card card-vertical">
+    
+    <div class="card-img">
+      {% if project.image %} 
+      	<a href="{{ project.url | relative_url}}">
+      		<img src="{{ project.image | prepend: '/assets/projects/' | relative_url}}"/>
+      	</a>
+      {% endif %}
+    </div>
+
+    <div class="card-content">
+      <div class="card-title">{{ project.title }}</div>
+      <a class="card-site button" href="{{ project.url | relative_url}}">View Project</a>
+    </div>
+
+  </div>
+  {% endif %}

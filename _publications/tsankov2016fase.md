@@ -1,0 +1,25 @@
+---
+ref: tsankov2016fase
+title: Functionality-Aware Security Enforcement
+authors: Petar Tsankov, Marco Pistoia, Omer Tripp, Martin Vechev, Pietro Ferrara 
+year: 2016
+venue: ACM ACSAC
+projects: 
+awards:
+bibtex: '@inproceedings{tsankov2016fase,
+  title={FASE: functionality-aware security enforcement},
+  author={Tsankov, Petar and Pistoia, Marco and Tripp, Omer and Vechev, Martin and Ferrara, Pietro},
+  booktitle={Proceedings of the 32nd Annual Conference on Computer Security Applications},
+  pages={471--483},
+  year={2016},
+  organization={ACM}}'
+paper: acsac16fase.pdf
+talk: 
+slides: acsac16fase-slides.pdf
+---
+
+Dynamic information-flow enforcement systems automatically protect applications against confidentiality and integrity threats. Unfortunately, existing solutions cause undesirable side effects, if not crashes, due to unconstrained modification of run-time values (e.g. anonymizing sensitive identifiers even when these are used for authentication).
+
+To address this problem, we present Functionality-Aware Security Enforcement (FASE), a lightweight approach for efficiently securing applications without breaking their functionality. The key idea is to let developers specify functionality constraints and then use a run-time synthesizer to replace sensitive values with constraint-compliant ones. Concretely, FASE consists of: (i) an efficient fine-grained data-flow-tracking engine, (ii) a domain-specific language (DSL) for expressing functionality constraints, (iii) a synthesizer that derives constraint-compliant values at security-sensitive operations, and (iv) an enforcement mechanism that automatically repairs illicit flows at run time.
+
+We instantiated FASE to the problem of securing Android applications. Our experiments show that the FASE system is useful in practice: Its average run-time overhead is <12%; it avoids the crashes, side effects, and run-time errors exhibited by existing solutions; and the constraints in the FASE DSL are readable and concise.

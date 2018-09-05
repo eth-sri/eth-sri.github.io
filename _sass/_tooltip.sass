@@ -1,0 +1,31 @@
+/**
+ * Tooltips
+ */
+[data-tooltip]:hover:after
+    opacity: 1
+    transition: all 0.15s ease 0s
+    visibility: visible
+
+[data-tooltip]:after
+    content: attr(data-tooltip)
+    color: $text-color
+    background-color: #FFF
+    font-size: 12px
+    position: absolute
+    min-width: 300px
+    padding: $spacing-unit/2
+    left: 0%
+    top: 100%
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.1)
+    opacity: 0
+    z-index: 99999
+    visibility: hidden
+    white-space: pre-line
+
+[data-tooltip]
+    position: relative
+
+
+@include media-query($mobile)
+    [data-tooltip]:after
+        left: -100%

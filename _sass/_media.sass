@@ -1,0 +1,25 @@
+/**
+ * Posts
+ */
+.media-item
+  padding: $spacing-unit 0
+  flex-grow: 1
+  max-width: 33%
+
+  .media-image
+    overflow: hidden
+    position: relative
+    padding-bottom: 50%
+    margin-right: $spacing-unit
+    img
+      position: absolute
+
+  .media-title
+    margin-top: $spacing-unit
+    margin-right: $spacing-unit
+    font-weight: bold
+    font-size: 16px
+
+@include media-query($mobile)
+  .media-item
+    max-width: none

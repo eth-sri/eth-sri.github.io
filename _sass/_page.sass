@@ -1,0 +1,81 @@
+/**
+ * Page content
+ */
+
+.page
+  padding-top: 80px
+  width: $site-width
+  margin: 0 auto
+  box-sizing: border-box
+
+
+.page-content
+  padding: $spacing-unit 0
+  flex: 1 0 auto
+  z-index: 1
+  position: relative
+
+
+  .extras
+    font-size: 12px
+    margin: $spacing-unit/2 0
+    label
+      display: block
+      font-weight: bold
+
+.page-title
+  position: relative
+  z-index: 1
+
+.page-img
+  position: relative
+  z-index: 0
+  img
+    position: absolute
+    top: 20px
+    right: 0
+    max-width: 80%
+    z-index: 0
+  &.as-bg img
+    top: 0
+    max-width: none
+    transform: scale(0.33) translate(110%, -110%)
+  &.full-width img
+    width: 80%
+    max-width: none
+
+.page-info
+  font-size: 16px
+  margin-top: $spacing-unit*2
+  z-index: 1
+  position: relative
+
+  .info-line
+    margin: 5px 0
+    display: flex
+    label
+      font-weight: bold
+      width: 85px
+    .info-content
+      display: block
+      flex: 1
+
+@include media-query($mobile)
+  .page
+    width: 100%
+    padding: $spacing-unit
+
+    .page-content
+      padding: 0
+    .page-img
+      img
+        position: static
+        max-width: 100%
+        top: auto
+        right: auto
+        margin-bottom: $spacing-unit
+      &.as-bg img
+        transform: none
+
+      
+

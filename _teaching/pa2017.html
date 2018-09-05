@@ -1,0 +1,64 @@
+---
+title: Program Analysis and Synthesis
+ref: pa2017
+description: Graduate course on program analysis and synthesis for discrete and probabilistic programs.
+semester: Spring 2017
+number: 263-2910-00L
+lecturer: Martin Vechev
+ta: Dimitar Dimitrov, Petar Tsankov
+assistants: 
+edoz: http://www.vvz.ethz.ch/Vorlesungsverzeichnis/lerneinheitPre.do?lerneinheitId=112813&semkez=2017S&lang=en
+session-time-place: 
+lecture-time-place: Mon 13-16, CAB G51
+exercise-time-place: 
+credits: 6
+image: gears.jpeg
+
+---
+
+<h2>Overview </h2>
+<p>
+The last decade has seen an explosion in modern program analysis and synthesis techniques. These techniques are increasingly being used to reason about a vast range of computational paradigms, from finding security flaws in systems software (e.g., drivers) to automating the construction of programs (e.g., for end user programming), to programmable networks, to reliable machine learning models (e.g., probabilistic programming). This course provides a comprehensive introduction to these methods. The course consists of 3 parts:</p>
+
+
+<p>
+<strong>Part I: Theory and Practice of Static Analysis</strong></br>
+Static analysis is the science of creating precise and scalable finite approximations of potentially infinite behaviors so to enable a machine to automatically reason about these. These behaviors may come from programs but also other dynamic systems (e.g., biological). Hence the theory and principles of static analysis are widely applicable. We will cover:
+	<ul>
+		<li><i>Concepts</i>: abstract interpretation, abstract domains, precision vs. asymptotic complexity.</li>
+		<li><i>Applications</i>: JavaScript type checking (as in Facebook's Flow), security analysis, parallelism and concurrency reasoning (e.g., GPU, weak memory).</li>
+	</ul>
+</p>
+
+
+<p>
+<strong>Part II: Theory and Practice of Synthesis</strong></br>
+Modern program synthesis is an approach for automating the construction of programs from (partial) user intent. Recent years have seen exciting breakthroughs in techniques and algorithms that discover complex programs purely from input/output examples, natural language, partial programs (sketches) and many others forms of supervision and intent. Modern program synthesis can be seen as a path towards the ultimate goal of explainable machine learning. We will cover:
+	<ul>
+		<li><i>Concepts</i>: version spaces, counter-example guided inductive synthesis, SMT solvers.</li>
+		<li><i>Applications</i>: programming by example (e.g., Microsoft's FlashFill), programmable networks (e.g., SyNet).
+</li>
+	</ul>
+</p>
+
+
+<p>
+<strong>Part III: Programming Languages (PL) and Machine Learning (ML)</strong></br>
+We will cover the latest and most exciting developments bridging the areas of machine learning and programming languages. These trends include both directions: (i) PL techniques applied to ML problems, and (ii) ML techniques applies to PL tasks (e.g., reasoning about a program). Here, we will cover:
+	<ul>
+		<li><i>Concepts</i>: probabilistic programming, advanced neural network architectures (e.g., Neural Turing Machines), program synthesis with noise.</li>
+		<li><i>Applications</i>: approximate computing, probabilistic code synthesis and de-obfuscation (e.g., http://jsnice.org, http://apk-deguard.com), enforcing security properties.</li>
+	</ul>
+</p>
+
+
+<p>
+<strong>Connections between Topics</strong></br>
+In each of the 3 parts, we will also see how the parts connect. For instance, techniques from Part I are used to compute abstractions that are then fed to techniques from Part III. Similarly, the synthesis techniques from Part II connect with Part III in applications such as enforcing security policies with certain probabilistic guarantees (this has applications to privacy preservation, secure machine learning and other problems).
+</p>
+
+
+<p>
+<strong>Course Project</strong></br>
+To gain a deeper understanding of how to apply these techniques, the course involves a hands-on programming project.
+</p>

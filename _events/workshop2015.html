@@ -1,0 +1,371 @@
+---
+title: Workshop on Software Correctness and Reliability
+ref: workshop2015
+redirect_from: workshop2015.php
+bgimage: /assets/images/eth-zurich-workshop.jpg
+image: 
+dates: Oct 2-3, 2015
+place: ETH Zürich
+venue: Alumni Pavillon, Rämlmistrasse 101
+---
+
+
+
+{% comment %}
+		<li><a href="#workshop">Home</a></li>
+		<li><a href="#schedule">Schedule</a></li>
+		<li><a href="#registration">Registration</a></li>
+		<li><a href="#travel">Travel</a></li>
+		<li><a href="#accomodation">Accomodation</a></li> 
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js'></script>
+<script src="https://www.sri.inf.ethz.ch/js/jquery.scrollTo-1.4.3.1-min.js" type="text/javascript"></script>
+<script src="https://www.sri.inf.ethz.ch/js/tooltipsy.min.js" type="text/javascript"></script>
+<script src="https://www.sri.inf.ethz.ch/js/global.js" type="text/javascript"></script>
+{%endcomment%}
+
+
+<h2>Workshop Information</h2>
+Ensuring that our programs behave correctly and reliably is a fundamental challenge facing computing today. Recent years have seen an explosion of a diverse set of new techniques for ensuring program correctness ranging from verification and synthesis approaches to runtime systems to quantitative reasoning. The aim of the workshop is to provide insight into the latest research advances in the area. In a period of two days, the workshop will host a number of invited speakers who will present research talks related to software reliability and correctness.
+
+<h2>Organizers</h2>
+<p>
+<a href="http://www.pm.inf.ethz.ch/people/personal/pmueller-pers.html">Peter M&uumlller (ETH Z&uumlrich) </a>, <a href="{{ "/people/martin" | relative_url }}">Martin Vechev (ETH Z&uumlrich) </a>
+</br>
+This is the third time the workshop is being held. Materials from the 
+<a href="{{ "/events/workshop2014" | relative_url }}">2014</a> and 
+<a href="{{ "/events/workshop2013" | relative_url }}">2013</a> workshops are also available.
+</p>
+
+
+<h2 id="schedule">Schedule</h2>
+<h3>October 2 (Friday)</h3>
+<table centering border="0" width="100%" cellspacing="0" cellpadding="0">
+
+<th width=17%>Time</th><th width="16%">Speaker</th><th width="22%">Institution</th><th width=33%>Talk Title & Abstract</th><th width=8%>Slides</th><th width=4%>Video</th>
+
+
+
+<tr>
+	<td>9:00  - 9:15</td>
+	<td>Organizers</td>
+	<td>ETH Z&uumlrich</td>
+	<td><div class="talk" data-tooltip="Introduction of participants. Workshop objectives.">Opening Remarks</div></td>
+	<td></td>
+	<td><a href="https://www.youtube.com/watch?v=_g4zFg1KSaw" title="eth-opening"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>9:15 - 10:00</td>
+	<td><a href="http://www.di.ens.fr/~cousot/"> Patrick Cousot</a></td>
+	<td>NYU/ENS</td>
+	<td><div class="talk" data-tooltip="Software correctness proofs are based on mathematical induction, where the main problem is to find an adequate inductive statement. We argue that finite abstractions and finite refinements are inappropriate for static analysis. Infinitary abstraction can find more precise inductive arguments but require to perform abstract induction using extrapolators (widenings and dual widenings) and interpolators (narrowing and dual narrowing). Dual-narrowing generalizes Craig interpolation in First Order Logic pre-ordered by implication to arbitrary abstract domains. An increasing iterative static analysis using extrapolation of successive iterates by widening followed by a decreasing iterative static analysis using interpolation of successive iterates by narrowing (both bounded by the specification) can be further improved by a increasing iterative static analysis using interpolation of iterates with the specification by dual-narrowing until reaching a fixpoint and checking whether it is inductive for the specification.">Abstract Induction</div></td>
+	<td><a href="{{"/events/workshop2015/cousot.pdf" | relative_url }}" class="pdf" title="eth-cousot"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=lM9mRAeN-JY" title="eth-cousot"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>10:00 - 10:45</td>
+	<td><a href="http://www.lst.ethz.ch/people/trg.html">Thomas Gross</a></td>
+	<td>ETH Z&uumlrich</td>
+	<td><div class="talk" data-tooltip="Ahead-of-(execution) time checks by tools as done by compilers or verifiers detect a wide range of software defects and protect software systems against a multitude of attacks. But the walls provided by today's tools have gates: either because an unsafe language trusts user input or because the compilers and verifiers support only a simplified view of the execution platform, e.g., they assume that arithmetic operations do not overflow or exhibit other abnormal behaviour. Such gates, unfortunately, may become an avenue for is an attack, and for this reason, walled cities have relied on guards for additional protection. 
+
+	In this talk I want to focus on the role of dynamic (runtime) checking and argue that we should rething the design of core software systems.  Good guards can be effective to overcome the limitations of leaky walls (or misconstructed gates).  Given the abundance of computing cycles, it appears prudent to rethink the role of the hardware execution engine(s) in supporting reliable software.">Walls, Gates, and Guards</div></td>
+	<td><a href="{{"/events/workshop2015/gross.pdf" | relative_url }}" class="pdf" title="eth-gross"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=O3CMiTYekyQ" title="eth-gross"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>10:45 - 11:15</td>
+	<td></td>
+	<td>Coffee Break</td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+
+<tr>
+	<td>11:15 - 12:00</td>
+	<td><a href="http://profs.sci.univr.it/~giaco/"> Roberto Giacobazzi</a></td>
+	<td>University of Verona (Italy) <br> and IMDEA Software Institute (Spain)</td>
+	<td><div class="talk" data-tooltip="We are interested in proving when a given static analysis of a given program is complete, namely, no imprecision arises when asking some query on the program behavior in the concrete (i.e., for its concrete semantics) or in the abstract (i.e., for its abstract interpretation). Completeness proofs are useful to assign confidence to alarms raised by static analyses. We recall the main results concerbing completeness in Abstract Interpretation and we introduce the completeness class of an abstraction as the set of all programs for which the abstraction is complete. We prove that for any nontrivial abstraction its completeness class is not recursively enumerable and has interesting mathematical properties. We then introduce a sound stratified deductive system to prove the completeness of program analyses over a generic abstract domain. In particular we observe that the only sources of incompleteness are assignments and Boolean tests -- unlikely a common belief in static analysis, joins do not induce incompleteness. The first layer of this proof system is generic, abstraction-agnostic, and it deals with the standard constructs for program composition, that is, sequential composition, branching and guarded iteration. The second layer is instead abstraction-specific: the designer of an abstract domain A provides conditions for completeness in A of assignments and Boolean tests which have to be checked by a suitable static analysis or assumed in the completeness proof as hypotheses. We instantiate the second layer of this proof system first with a generic nonrelational abstraction in order to provide a sound rule for the completeness of assignments. Orthogonally, we instantiate it to the numerical abstract domains of Intervals and Octagons, providing necessary and sufficient conditions for the completeness of their Boolean tests and of assignments for Octagons.">Analysing Completeness in Program Analysis</div></td>
+	<td><a href="{{"/events/workshop2015/giacobazzi.pdf" | relative_url }}" class="pdf" title="eth-giacobazzi"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=sm2MjK1y-t4" title="eth-giacobazzi"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>12:00 - 13:30</td>
+	<td></td>
+	<td colspan=2>Lunch</td>
+	<td></td>
+	<td></td>
+</tr>
+
+
+<tr>
+	<td>13:30 - 14:15</td>
+	<td><a href="http://www.imperial.ac.uk/collegedirectory/index.asp?PeopleID=767740">Cristiano Calcagno</a></td>
+	<td>Facebook/Imperial College</td>
+	<td><div class="talk" data-tooltip="TBD.">Infer: deploying static analysis at Facebook</div></td>
+	<td><a href="{{"/events/workshop2015/calcagno.pdf" | relative_url }}" class="pdf" title="eth-calcagno"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td></td>
+</tr>
+
+<tr>
+	<td>14:15 - 15:00</td>
+	<td><a href="http://researcher.watson.ibm.com/researcher/view.php?person=us-pistoia">Marco Pistoia</a></td>
+	<td>IBM T.J. Watson Research Center</td>
+	<td><div class="talk" data-tooltip="Security auditing of industry-scale software systems mandates automation. Static taint analysis enables deep and exhaustive tracking of suspicious data flows for detection of potential leakage and integrity violations, such as cross-site scripting (XSS), SQL injection (SQLi) and log forging.  Research in this area has taken two directions: program slicing and type systems. Both of these approaches suffer from a high rate of false findings, which limits the usability of analysis tools based on these techniques. Attempts to reduce the number of false findings have resulted in analyses that are either (i) unsound, suffering from the dual problem of false negatives, or (ii) too expensive due to their high precision, thereby failing to scale to real-world applications.
+
+	In this talk, we investigate a novel approach that combines static analysis and machine learning for improving the scalability of static taint analysis and reducing the number of false positives.  From a static analysis perspective, the key observation informing our approach is that taint analysis is a demand-driven problem.  This enables lazy computation of vulnerable information flows, instead of eagerly computing a complete data-flow solution, which is the reason for the traditional dichotomy between scalability and precision.
+
+	With the analysis being scalable to large codebases, the user is still left to review hundreds, if not thousands, of potential warnings, and classify them as either actionable or spurious. This is both burdensome and error prone, leaving developers disenchanted by static security checkers.  We address this challenge by introducing a general technique to refine the output of static security checkers. The key idea is to apply statistical learning to the warnings output by the analysis based on user feedback on a small set of warnings. This leads to an interactive solution, whereby the user classifies a small fragment of the issues reported by the analysis, and the learning algorithm then classifies the remaining warnings automatically. An important aspect of our solution is that it is user centric. The user can express different classification policies, ranging from strong bias toward elimination of false warnings to strong bias toward preservation of true warnings, which our filtering system then executes. ">Combining Static Analysis and Machine Learning for Industrial-quality Information-flow-security Enforcement</div></td>
+	<td><a href="{{"/events/workshop2015/pistoia.pdf" | relative_url }}" class="pdf" title="eth-pistoia"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=0vDwYaov2g4" title="eth-pistoia"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+
+<tr>
+	<td>15:00 - 15:30</td>
+	<td></td>
+	<td>Coffee Break</td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+
+<tr>
+	<td>15:30 - 16:15</td>
+	<td><a href="http://www.inf.usi.ch/faculty/sharygina/">Natasha Sharygina</a></td>
+	<td>University of Lugano</td>
+	<td><div class="talk" data-tooltip="Propositional interpolation is widely used as a means of overapproximation to achieve efficient SAT-based symbolic model checking. Different verification applications exploit interpolants for different purposes; it is unlikely that a single interpolation procedure could provide interpolants fit for all cases. In this talk I will describe the PeRIPLO framework, an interpolating SAT-solver that implements a set of novel techniques to generate and manipulate interpolants for different model checking tasks. I will demonstrate the flexibility of PeRIPLO in two software bounded model checking applications: verification of a given source code incrementally with respect to various properties, and verification of software upgrades with respect to a fixed set of properties. Both applications use interpolation for generating function summaries. Our systematic experimental investigation shows that size and logical strength of interpolants significantly affect verification, that these characteristics depend on the role played by interpolants, and that therefore techniques for tuning size and strength can be used to customize interpolants in different applications.">PeRIPLO: A Framework for Producing Effective Interpolants in SAT-Based Software Verification</div></td>
+	<td><a href="{{"/events/workshop2015/sharygina.pdf" | relative_url }}" class="pdf" title="eth-sharygina"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=jSPofeztOgQ" title="eth-sharygina"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>16:15 - 16:45</td>
+	<td><a href="{{ "/people/martin" | relative_url }}">Martin Vechev </a><br></td>
+	<td>ETH Z&uumlrich</td>
+	<td><div class="talk" data-tooltip="In this talk I will introduce the notion of a commutativity race. A commutativity race occurs when two method invocations happen concurrently yet they do not commute (according to a logical specification). Commutativity races are an elegant concept which generalize classic data races and enable reasoning about concurrent interaction at the library interface. I will then present an approach which takes as input a logical specification that captures commutativity and automatically synthesizes an e!cient concurrency analyzer for that specification. The resulting analyzers have been used to find concurrency errors in large scale production applications. Finally, generalization of classic data race detection leads to many fundamental research questions, which I will discuss, including: black box specification learning, impossibility of simulating race detectors, connections between logical fragments and asymptotic complexity of the analysis, as well as various practical applications.">Commutativity Race Detection: Concepts, Algorithms and Open Problems</div></td>
+	<td><a href="{{"/events/workshop2015/vechev.pdf" | relative_url }}" class="pdf" title="eth-vechev"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=C4nvsmNqh5k" title="eth-vechev"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>16:45 - 17:15</td>
+	<td><a href="http://www.pm.inf.ethz.ch/people/personal/pmueller-pers.html">Peter M&uumlller </a></td>
+	<td>ETH Z&uumlrich</td>
+	<td><div class="talk" data-tooltip="The automation of verification techniques based on first-order logic specifications has benefited greatly from verification infrastructures such as Boogie and Why. These offer an intermediate language that can express diverse language features and verification techniques, as well as back-end tools such as verification condition generators.
+
+	However, these infrastructures are not ideal for verification techniques based on separation logic and other permission logics, because they do not provide direct support for permissions and because existing tools for these logics often prefer symbolic execution over verification condition generation.  Consequently, tool support for these logics is typically developed independently for each technique, dramatically increasing the burden of developing automatic tools for permission-based verification.
+
+	In this talk, we present a verification infrastructure whose intermediate language supports an expressive permission model natively. We provide tool support, including two back-end verifiers, one based on symbolic execution, and one on verification condition generation; this facilitates experimenting with the two prevailing techniques in automated verification. Various existing verification techniques can be implemented via this infrastructure, alleviating much of the burden of building permission-based verifiers, and allowing the developers of higher-level techniques to focus their efforts at the appropriate level of abstraction.">Viper - A Verification Infrastructure for Permission-based Reasoning</div></td>
+	<td><a href="{{"/events/workshop2015/mueller.pdf" | relative_url }}" class="pdf" title="eth-mueller"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=o7CxYvIfU0k" title="eth-mueller"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+</table>
+
+<h3>October 3 (Saturday)</h3>
+<table centering border="0" width="100%" cellspacing="0" cellpadding="0">
+
+<th width=17%>Time</th>
+<th width="16%">Speaker</th>
+<th width="22%">Institution</th>
+<th width=33%>Talk Title & Abstract</th>
+<th width=8%>Slides</th>
+<th width=4%>Video</th>
+
+<tr>
+	<td>9:00  - 9:15</td>
+	<td>Organizers</td>
+	<td>ETH Z&uumlrich</td>
+	<td><div class="talk" data-tooltip="Introduction to second day.">Opening Remarks </div></td>
+	<td></td>
+	<td></td>
+</tr>
+
+<tr>
+	<td>9:15 - 10:00</td>
+	<td><a href="http://vsarkar.rice.edu/">Vivek Sarkar</a></td>
+	<td>Rice University</td>
+	<td><div class="talk" data-tooltip="In this talk, we focus on correctness and reliability challenges for parallel computing that can be captured by the following question:  how easy or difficult is it to avoid, detect, and/or repair bugs when developing a parallel program?  Our claim is that structured parallel programming primitives greatly simplify the task of writing correct and efficient parallel programs.  We support this claim by introducing a family of structured parallel programming models developed in the Habanero Extreme Scale Software Research project at Rice University, and discussing semantic guarantees (e.g., serial elision, deadlock freedom, datarace freedom, functional determinism, structural determinism, permission safety) for different subsets of these structured parallel programs.  We also present recent results for test-driven datarace detection and repair using structured parallelism, as well as the use of gradual permissions for efficient model checking. ">Avoidance, Detection, and Repair of Bugs in Structured Parallel Programs</div></td>
+	<td><a href="{{"/events/workshop2015/sarkar.pdf" | relative_url }}" class="pdf" title="eth-sarkar"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=Bo5zMQUmw_w" title="eth-sarkar"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>10:00 - 10:45</td>
+	<td><a href="http://www.kenmcmil.com/">Ken McMillan</a></td>
+	<td>Microsoft Research</td>
+	<td><div class="talk" data-tooltip="Many techniques have been developed for automated generation of proofs about parameterized systems (or generally, systems that involve unbounded collections of objects). In practice, these methods tend to be fragile, requiring considerable user expertise to apply them effectively. 
+
+	We conjecture that part of this difficulty stems from the opacity of these tools, that is, the difficulty from the user point of view of diagnosing the cause of automated proof search failures. To remedy this situation, we explore the use of visualization techniques that allow a user with domain expertise but no knowledge of the tool's internal decision procedures to diagnose proof failures and propose useful conjectures to guide the proof search effort.   
+	
+	We will observe that the approach makes it possible to interactively discover subtle invariants of distributed protocols, such as the Chord distribute hash table protocol.">Human-machine interaction in invariance proofs</div></td>
+	<td><a href="{{"/events/workshop2015/mcmillan.pdf" | relative_url }}" class="pdf" title="eth-mcmillan"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=O75r29F4b2g" title="eth-mcmillan"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>10:45 - 11:15</td>
+	<td></td>
+	<td>Coffee Break</td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+
+<tr>
+	<td>11:15 - 12:00</td>
+	<td><a href="http://swt.informatik.uni-freiburg.de/staff/podelski">Andreas Podelski</a></td>
+	<td>Freiburg</td>
+	<td><div class="talk" data-tooltip="We present a new approach to automatic program verification. The idea is to first construct the largest possible program that can be proven correct within a space of proofs generated by a finite basis, and then to check whether that program covers every behavior of the program to verified (if not, the basis gets incremented).  The approach has been applied a number of verification problems including safety and liveness of concurrent programs with an unbounded number of threads. We will also present ongoing work on error diagnosis and semantic path coverage for testing.
+
+	This is joint work with Azadeh Farzan (Toronto), Zach Kincaid (Princeton), and Matthias Heizmann, Jochen Hoenicke, and Christian Schilling (Freiburg).">Proof Spaces</div></td>
+	<td><a href="{{"/events/workshop2015/podelski.pdf" | relative_url }}" class="pdf" title="eth-podelski"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=wAXRwi_0HxE" title="eth-podelski"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>12:00 - 13:30</td>
+	<td></td>
+	<td colspan=2>Lunch</td>
+	<td></td>
+	<td></td>
+</tr>
+
+
+<tr>
+	<td>13:30 - 14:15</td>
+	<td><a href="http://research.microsoft.com/en-us/people/akashl/">Akash Lal</a></td>
+	<td>Microsoft Research</td>
+	<td><div class="talk" data-tooltip="A hierarchical program is one with multiple procedures but no loops or recursion. We study the problem of deciding reachability queries in hierarchical programs. This problem is fundamental to verification and most directly applicable to doing bounded reachability in programs, i.e., reachability under a bound on the number of loop iterations and recursive calls.
+ 
+	The usual method of deciding reachability in hierarchical programs is to first  inline all procedures and then do reachability on the resulting single-procedure program.
+
+	Such inlining unfolds the call graph of the program to a tree and may lead to an exponential  increase in the size of the program. We design and evaluate a method called DAG inlining that unfolds the call graph to a DAG instead of a tree by sharing the bodies of procedures at certain points during inlining. DAG inlining can produce much more compact representations than tree inlining. Empirically, we show that it leads to significant improvements in a state-of-the-art verifier.">DAG Inlining: A Decision Procedure for Reachability-Modulo-Theories in Hierarchical Programs</div></td>
+	<td><a href="{{"/events/workshop2015/lal.pdf" | relative_url }}" class="pdf" title="eth-lal"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=RcTy71RDhXE" title="eth-lal"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+
+<tr>
+	<td>14:15 - 15:00</td>
+	<td><a href="http://www.umut-acar.org/">Umut Acar</a></td>
+	<td>Carnegie Melon University</td>
+	<td><div class="talk" data-tooltip="Recent advances in hardware such as the mainstream use of SMP's (multicore) computers, and large-scale data centers have brought parallelism back to the forefront of computing. Parallelism is now common in systems ranging from small (most modern smartphones run multicore chips) to large (Big Data systems). These advances raise important questions on parallelism, both in research and education. 
+
+	Research questions include fundamental problems such as the lack of a universally accepted model for parallel computation as well as the scarcity of system support for writing parallel programs, and everything in between, such as the lack of a broad spectrum of parallel algorithms, programming languages, compilers and run-time systems.  Educational questions concern the lack of course material (textbooks, lectures, assignments) as well as that of experience in teaching parallelism to undergraduate and graduate students.
+
+	In this talk, I will describe some of these challenges and what we are doing about them.  On the research side, I will talk about programming languages and systems that we are developing for writing, compiling, and executing parallel programs.  On the teaching side, I will talk about our work on making parallelism an integral part of the undergraduate curriculum, specifically by re-designing the undergraduate algorithms course around parallel rather than sequential computing, i.e., in a way to make parallelism the default.
+
+	Joint work with Guy Blelloch, Arthur Chargueraud, Matthew Fluet, Margaret Reid-Miller, Stefan Muller, Ram Raghunathan, Mike Rainey, Filip Sieczkowski, Danny Sleator, Kanat Tangwongsan.">Challenges of Parallelism in Research and Teaching</div></td>
+	<td><a href="{{"/events/workshop2015/acar.pdf" | relative_url }}" class="pdf" title="eth-acar"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=aMTSJWj6UX4" title="eth-acar"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+
+<tr>
+	<td>15:00 - 15:45</td>
+	<td><a href="http://patricklam.ca/">Patrick Lam</a></td>
+	<td>University of Waterloo</td>
+	<td><div class="talk" data-tooltip="Test suites are a rich yet untapped source of developer-provided information about desired program behaviour. Presently, tool support for test suites is, for the most part, limited to computing code coverage. I will discuss the potential benefits of applying novel static and dynamic analysis techniques to test suites, both in combination with the system under test as well as on the test suite alone. Test suites could be used to improve the accuracy of dynamic or concolic program analyses, and could provide more context about the program to static analyses. As a specific example of a test-only analysis, I will describe my analysis of test suites to find similar test methods amenable to refactoring.">Static and Dynamic Analysis of Test Suites</div></td>
+	<td><a href="{{"/events/workshop2015/lam.pdf" | relative_url }}" class="pdf" title="eth-lam"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=wblbI9LQdYQ" title="eth-lam"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+
+<tr>
+	<td>15:45 - 15:50</td>
+	<td>Organizers</td>
+	<td>ETH Z&uumlrich</td>
+	<td>Closing Remarks</td>
+	<td></td>
+	<td></td>
+</tr>
+
+
+</table>
+
+<h2 id="registration">Registration</h2>
+
+
+<table centering border="0" width="100%" cellspacing="0" cellpadding="0">
+
+<th width=33%></th>
+<th width="33%">Early Bird: by Sept 1st 2015</th>
+<th width="34%">Regular fee: after Sept 1st 2015 (latest day: Sept 22, 2015)</th>
+
+<tr>
+	<td>Workshop Fee (Students)</td>
+	<td>70 CHF</td>
+	<td>90 CHF</td>
+</tr>
+
+<tr>
+	<td>Workshop Fee (Regular)</td>
+	<td>110 CHF</td>
+	<td>130 CHF</td>
+</tr>
+</table>
+
+The registration fees include:
+<ul>
+<li> Attendance to all presentations</li>
+<li> Lunches on both days </li>
+<li> Coffee & Snacks </li>
+</ul>
+<p>
+To register, please follow this link: <a href="https://www.registration.ethz.ch/eventolight/evento/dispatch.asp?fct=BeantrageID&Destination=dispatch.asp?fct=AnmeldungEdit$IDAnlass=1139$Dialog=Registration">Workshop Registration</a></p>
+
+<p>
+For information and questions, please contact Mrs. Marlies Weissert: marlies.weissert@inf.ethz.ch
+</p>
+
+
+<h2 id="travel">Travel</h2>
+<p>
+ETH Z&uumlrich is located in the heart of the city and easy to reach.
+</br>
+From <strong>Z&uumlrich HB</strong> (main station): If you arrive by train to Z&uumlrich HB, take either:
+<ul>
+	<li> Tram no. 6 (direction Zoo) from tram stop "Bahnhofstrasse/HB", exit at tram stop "ETH/Universit&aumltsspital" (right next to the ETH main building). Journey time: about 8 minutes or </li>
+	<li> Tram no. 10 (direction Flughafen or Bahnhof Oerlikon) from tram stop "Bahnhofplatz/HB", exit at tram stop "ETH/Universit&aumltsspital". Journey time: about 8 minutes </li>
+</ul>
+</p>
+
+<p>
+From <a href="http://www.flughafen-zuerich.ch/"><strong>Z&uumlrich airport</strong></a>: You can either take the tram to ETH or a train to the city center (Z&uumlrich HB):
+<ul>
+	<li> Tram no. 10 (direction Bahnhofplatz/HB) to tram stop "ETH/Universittsspital". The tram operates daily from 6 a.m to 11 p.m. with trams departing every 7 to 15 minutes. Journey time: 30 minutes </li>
+	<li> S-Bahn/Train: Follow the signs "Bahn/Railway" to the ticket counters and/or ticket machines. You will find instructions in English on the ticket machines. Get a ticket for "Z&uumlrich City" (make sure that the display shows "1 Std"). The machines accept coins as well as bills and gives change (the ticket costs 6.40 CHF). The ticket is valid for 1 hour for all trains to Z&uumlrich as well as for trams and buses in the city (streetcar, Strassenbahn). Take the escalator down to the platforms. Trains to the city center leave approx. every 10 minutes and it takes about 10 minutes to reach the main station.</li>
+</ul>
+</p>
+
+
+<h2 id="accomodation">Accomodation</h2>
+You can check the availability and prices and make reservations for hotels at <a href="http://www.zuerich.com/en/Visitor.html">Z&uumlrich Tourism</a>
+
+<p>
+The following is a list of hotels in walking distance from the workshop venue:
+<ul>
+	<li> <a href="http://www.hotelrex.ch/de/home.asp">Hotel Rex </a> (single room from CHF 150 to CHF 225) </li>
+	<li> <a href="http://www.hotelbristol.ch/">Hotel Bristol </a> (single room from CHF 150 to CHF 200) </li>
+
+	<li> <a href="http://www.hotelbasilea.ch">Hotel Basilea </a> (single room from CHF 195 to CHF 225) </li>
+	<li> <a href="http://hotelrigihof.hotelszurich.it">Leonardo Hotel Rigihof </a>(single room from CHF 240 to CHF 290) </li>
+</ul>
+</p>
+
+<p>
+Some hotels further away:
+<ul>
+	<li> <a href="http://www.ibishotel.com/de/hotel-2942-ibis-zurich-city-west/index.shtml">Hotel Ibis Zurich City West </a> (room rate CHF 129 to CHF 164) </li>
+	<li> <a href=" http://ibisbudgethotel.ibis.com/de/hotel-3184-ibis-budget-zurich-city-west/index.shtml">Hotel Ibis Budget </a> (room rate CHF 85 to CHF 99) </li>
+</ul>
+</p>
+</div>
+
+
+
+

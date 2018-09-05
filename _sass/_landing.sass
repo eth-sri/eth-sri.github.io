@@ -1,0 +1,66 @@
+/**
+ * Home
+ */
+
+.landing
+  padding-top: 0px
+  position: relative
+
+  .landing-header
+    padding-bottom: 33%
+    padding-top: 40px
+    width: 100%
+    overflow: hidden
+
+    .landing-banner
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background-size: contain !important
+      z-index: 0
+
+    .landing-header-content
+      width: $site-width
+      margin: 0 auto
+      padding: $spacing-unit 0
+      position: relative
+      box-sizing: border-box
+      z-index: 1
+
+
+    .landing-about
+      background: rgba($color-blue, 0.1)
+      padding: $spacing-unit
+      line-height: 2em
+
+
+  .landing-content
+    box-sizing: border-box
+    width: $site-width
+    margin: 0 auto
+
+
+@include media-query($mobile)
+  .landing
+    .landing-header
+      overflow: visible
+      padding-bottom: 0
+
+      .landing-header-content
+        width: 100%
+        padding: $spacing-unit
+
+      .landing-banner
+        width: 100%
+        position: relative
+        top: auto
+        left: auto
+        padding-bottom: 50%
+        background-position: 0 0 !important
+
+    .landing-content
+      width: 100%
+      padding: $spacing-unit
+      padding-top: 0

@@ -1,0 +1,28 @@
+---
+ref: bielik2015scalable
+title: Scalable Race Detection for Android Applications
+authors: Pavol Bielik, Veselin Raychev, Martin Vechev    
+year: 2015
+venue: ACM OOPSLA
+projects: Research Area 1, Research Area 1
+awards:
+bibtex: '@inproceedings{bielik2015scalable,
+  title={Scalable race detection for android applications},
+  author={Bielik, Pavol and Raychev, Veselin and Vechev, Martin},
+  booktitle={ACM SIGPLAN Notices},
+  volume={50},
+  number={10},
+  pages={332--348},
+  year={2015},
+  organization={ACM}}'
+paper: oopsla15-eventracer-android.pdf
+talk: 
+slides: 
+---
+
+We present a complete end-to-end dynamic analysis system for finding data races in mobile Android applications. The capabilities of our system significantly exceed the state of the art: our system can analyze real-world application interactions in minutes rather than hours, finds errors inherently beyond the reach of existing approaches, while still (critically) reporting very few false positives.
+
+Our system is based on three key concepts: (i) a thorough happens-before model of Android-specific concurrency, (ii) a scalable analysis algorithm for efficiently building and querying the happens-before graph, and (iii) an effective set of domain-specific filters that reduce the number of reported
+data races by several orders of magnitude.
+
+We evaluated the usability and performance of our system on 354 real-world Android applications (e.g., Facebook). Our system analyzes a minute of end-user interaction with the application in about 24 seconds, while current approaches take hours to complete. Inspecting the results for 8 large open-source applications revealed 15 harmful bugs of diverse kinds. Some of the bugs we reported were confirmed and fixed by developers.

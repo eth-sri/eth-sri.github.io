@@ -1,0 +1,31 @@
+{% assign course = site.teaching | where:"ref", include.ref  | first %}
+
+
+  {% if include.output == "horizontal" %}
+  <div class="horizontal-card">
+    <div class="card-content">
+      <a class="card-title" href="{{ course.url | relative_url}}">{{ course.title }}</a>
+      <div class="card-subtitle">{{ course.description }}</div>
+      <div class="card-extra">{{ course.semester }}</div>
+    </div>
+  </div>
+
+    
+  {% else %}
+  <div class="card">
+    
+    <div class="card-img">
+      {% if course.image %} 
+      	<a href="{{ course.url | relative_url}}">
+      		<img src="{{ course.image | prepend: '/assets/images/' | relative_url}}"/>
+      	</a>
+      {% endif %}
+    </div>
+
+    <div class="card-content">
+      <div class="card-title">{{ course.title }}</div>
+      <a class="card-site button" href="{{ course.url | relative_url}}">View Course</a>
+    </div>
+
+  </div>
+  {% endif %}

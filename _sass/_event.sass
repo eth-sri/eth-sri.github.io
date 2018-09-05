@@ -1,0 +1,30 @@
+/**
+ * Event
+ */
+.event
+  
+
+  .landing-header
+    padding-bottom: 20%
+
+    .landing-banner
+      background-size: cover !important
+
+    .landing-info
+      margin-top: $spacing-unit/2
+      color: $color-black
+      .date
+        font-size: 1.4rem
+        font-weight: bold
+      .place
+        font-size: 1rem
+        color: $color-blue
+      .logos
+        margin-top: $spacing-unit
+        display: flex
+
+@include media-query($mobile)
+  .event
+    .landing-header
+      padding-bottom: 0
+      padding-top: 0

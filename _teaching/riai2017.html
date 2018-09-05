@@ -1,0 +1,65 @@
+---
+title: Reliable and Interpretable Artificial Intelligence
+ref: riai2017
+description: Graduate course involving synthesis, neural network analysis and probabilistic programming.
+semester: Fall 2017
+number: 263-2400-00L
+lecturer: Prof. Dr. Martin Vechev
+ta: Dr. Petar Tsankov, Dr. Dana Drachsler-Cohen, Dimitar Dimitrov, Matthew Mirman
+assistants: 
+edoz: http://www.vvz.ethz.ch/lerneinheitPre.do?semkez=2017W&lerneinheitId=118940&lang=en
+session-time-place: 
+lecture-time-place: Tue 10-12, HG E3
+exercise-time-place: Tue 14-15, HG F26.3; Wed 11-12, CAB G59
+credits: 4
+image: ai.png
+
+---
+
+<h2>Overview</h2>
+
+<p>Creating reliable and explainable probabilistic models is a major challenge to solving the artificial intelligence problem. This course covers some of the latest advances that bring us closer to constructing such models. These advances span the areas of program synthesis/induction, programming languages, machine learning, and probabilistic programming. The material consists of three interconnected parts:
+</p>
+
+<p>
+<strong>Part I: Program Synthesis/Induction</strong></br>
+Synthesis is a new frontier in AI where the computer programs itself from user provided examples. Synthesis has significant applications for non-programmers as well as for programmers where it can provide massive productivity increase (e.g., wrangling for data scientists). Modern synthesis techniques excel at learning functions over discrete spaces from (partial) intent. There have been a number of recent, exciting breakthroughs in techniques that discover complex, interpretable/explainable functions from few examples, partial sketches and other forms of supervision. 
+</br>
+Topics covered:
+</br>
+<ul>
+	<li>Theory of program synthesis: version spaces, counter-example guided inductive synthesis (CEGIS) with SAT/SMT, synthesis from noisy examples, learning with few examples, compositional synthesis, lower bounds on learning.</li>
+	<li>Applications of techniques: synthesis for end users (e.g., spreadsheets), data analytics and financial computing, interpretable machine learning models for structured data.</li>
+	<li>Combining neural networks and synthesis.</li>
+</ul>
+</p>
+
+
+<p>
+<strong>Part II: Robustness of Deep Learning</strong></br>
+Deep learning methods based on neural networks have made impressive advances in recent years. A fundamental challenge with these models is that of understanding what the trained neural network has actually learned, for example, how stable / robust the network is to slight variations of the input (e.g., an image or a video), how easy it is to fool the network into mis-classifying obvious inputs, etc. 
+</br>
+Topics covered:
+</br>
+<ul>
+	<li>Basics of neural networks: fully connected, convolutional networks, residual networks, activation functions.</li>
+	<li>Finding adversarial examples in deep learning with SMT.</li>
+	<li>Methods and tools to guarantee robustness of deep nets (e.g., via affine arithmetic, SMT solvers); synthesis of robustness specs.</li>
+</ul>
+</p>
+
+
+<p>
+<strong>Part III: Probabilistic Programming</strong></br>
+Probabilistic programming is an emerging direction whose goal is democratize the construction of probabilistic models. In probabilistic programming, the user specifies a model while inference is left to the underlying solver. The idea is that the higher level of abstraction makes it easier to express, understand and reason about probabilistic models. 
+</br>
+Topics covered:
+</br>
+<ul>
+	<li>Inference: MCMC samplers and tactics (approximate), symbolic inference (exact).</li>
+	<li>Semantics: basic measure theoretic semantics of probability; bridging measure theory and symbolic inference.</li>
+	<li>Frameworks and languages: WebPPL (MIT/Stanford), PSI (ETH), Picture/Venture (MIT), Anglican (Oxford).</li>
+	<li>Synthesis for probabilistic programs: this connects to Part I.</li>
+	<li>Applications of probabilistic programming: using the above solvers for reasoning about bias in machine learning models (connects to Part II), reasoning about computer networks, security protocols, approximate computing, cognitive models, rational agents.</li>
+</ul>
+</p>

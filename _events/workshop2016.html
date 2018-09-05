@@ -1,0 +1,341 @@
+---
+title: Workshop on Software Correctness and Reliability
+ref: workshop2016
+redirect_from: workshop2016.php
+bgimage: /assets/images/eth-zurich-workshop.jpg
+image: /assets/images/workshop16_logo.png
+dates: Oct 7-8, 2016
+place: ETH Zürich
+venue: Alumni Pavillon, Rämlmistrasse 101
+---
+
+
+
+{% comment %}
+		<li><a href="#workshop">Home</a></li>
+		<li><a href="#schedule">Schedule</a></li>
+		<li><a href="#registration">Registration</a></li>
+		<li><a href="#travel">Travel</a></li>
+		<li><a href="#accomodation">Accomodation</a></li> 
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js'></script>
+<script src="https://www.sri.inf.ethz.ch/js/jquery.scrollTo-1.4.3.1-min.js" type="text/javascript"></script>
+<script src="https://www.sri.inf.ethz.ch/js/tooltipsy.min.js" type="text/javascript"></script>
+<script src="https://www.sri.inf.ethz.ch/js/global.js" type="text/javascript"></script>
+{%endcomment%}
+
+
+<h2>Workshop Information</h2>
+Ensuring that our programs behave correctly and reliably is a fundamental challenge facing computing today. Recent years have seen an explosion of a diverse set of new techniques for ensuring program correctness ranging from verification and synthesis approaches to runtime systems to quantitative reasoning. The aim of the workshop is to provide insight into the latest research advances in the area. In a period of two days, the workshop will host a number of invited speakers who will present research talks related to software reliability and correctness.
+
+<h2>Organizers</h2>
+<p>
+<a href="http://www.pm.inf.ethz.ch/people/personal/pmueller-pers.html">Peter M&uumlller (ETH Z&uumlrich) </a>, <a href="{{ "/people/martin" | relative_url }}">Martin Vechev (ETH Z&uumlrich) </a>
+</br>
+This is the fourth time the workshop is being held. Materials from the 
+<a href="{{ "/events/workshop2015" | relative_url }}">2015</a>, 
+<a href="{{ "/events/workshop2014" | relative_url }}">2014</a> and 
+<a href="{{ "/events/workshop2013" | relative_url }}">2013</a> workshops are also available.
+</p>
+
+
+<h2 id="schedule">Schedule</h2>
+<h3>October 7 (Friday)</h3>
+<table centering border="0" width="100%" cellspacing="0" cellpadding="0">
+
+<th width=17%>Time</th><th width="16%">Speaker</th><th width="22%">Institution</th><th width=33%>Talk Title & Abstract</th><th width=8%>Slides</th><th width=4%>Video</th>
+
+
+
+<tr>
+	<td>9:00  - 9:15</td>
+	<td>Organizers</td>
+	<td>ETH Z&uumlrich</td>
+	<td><div class="talk" data-tooltip="Introduction of participants. Workshop objectives.">Opening Remarks </div></td>
+	<td></td>
+	<td><a href="https://www.youtube.com/watch?v=-lS0-txsyLY" title="eth-opening"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>9:15 - 10:00</td>
+	<td><a href="https://emeryberger.com/">Emery Berger</a></td>
+	<td>UMass Amherst</td>
+	<td><div class="talk" data-tooltip="Spreadsheets are by far the most commonly used programming environment in the world; there are more than 750 million users of Microsoft Excel alone. They are widely used in government, scientific, and financial settings; over 95% of US firms use spreadsheets for financial reporting and 85% use them for budgeting and forecasting. At the same time, spreadsheet user interfaces make it easy for users to accidentally introduce both data and formula errors (e.g., by dragging or making copy and paste errors) -- a recent manual audit of a number of spreadsheets found an error rate of over 95%. These errors have had catastrophic consequences, leading to losses of billions of dollars.
+
+	Despite their prevalence and significance, the PL community has largely ignored spreadsheets and there are thus few tools to help debug them. This phenomenon is likely due to the fact that spreadsheet errors are not clear-cut: it is generally not possible to distinguish correct from incorrect spreadsheets, beyond egregious errors like malformed formula syntax or divide-by-zero errors. In this talk, I will discuss these challenges and present work from my group on principled approaches for effectively identifying problems both in spreadsheet data and code.">On the Correctness of Spreadsheets: An Excellent Problem for Programming Language Researchers</div></td>
+	<td><a href="{{"/events/workshop2016/Berger.pdf" | relative_url }}" class="pdf" title="eth-berger"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=rVS3_7GRplo" title="eth-berger"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>10:00 - 10:45</td>
+	<td><a href="http://software.imdea.org/people/gilles.barthe/">Gilles Barthe</a></td>
+	<td>IMDEA Software</td>
+	<td><div class="talk" data-tooltip="Probabilistic couplings are a powerful tool for analyzing the convergence of probabilistic processes. Recently, it has been observed that probabilistic couplings are closely tied to probabilistic relational Hoare logics which have been used to reason about computational security of cryptographic constructions and differential privacy of data-mining algorithms. I will introduce couplings and outline its connection with probabilistic relational program logics, and present recent developments that further leverage this connection.">Relational Program Verification and Probabilistic Couplings</div></td>
+	<td><a href="{{"/events/workshop2016/Barthe.pdf" | relative_url }}" class="pdf" title="eth-barthe"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=pae2t5lPupk" title="eth-barthe"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>10:45 - 11:15</td>
+	<td></td>
+	<td>Coffee Break</td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+
+<tr>
+	<td>11:15 - 12:00</td>
+	<td><a href="http://web.cs.ucdavis.edu/~su/">Zhendong Su</a></td>
+	<td>UC Davis</td>
+	<td><div class="talk" data-tooltip="We describe equivalence modulo inputs (EMI), a general methodology for validating optimizing compilers. The key insight is toexploit the close interplay between (1) dynamically executing a exploit the close interplay between (1) dynamically executing a program on some test input and (2) statically compiling the program to work on all possible input. Indeed, the test input induces a natural collection of the original program's EMI variants, which help test any compiler and specifically target the difficult-to-find miscompilations.
+
+	We have developed a series of gradually sophisticated techniques to generate EMI variants by (1) profiling a program's test executions, and (2) stochastically deleting/inserting/mutating code. Our extensive testing to date has led to 1000+ confirmed bug reports for GCC and LLVM alone, of which 600+ have already been fixed. The EMI concept is widely applicable --- beyond testing compilers, it can be adapted to validate program transformations and analyses, and software in general.">EMI Testing: Finding 1000+ Bugs in GCC and LLVM in 3 Years</div></td>
+	<td><a href="{{"/events/workshop2016/Su.pdf" | relative_url }}" class="pdf" title="eth-su"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=x4JUUlO9XGY" title="eth-su"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>12:00 - 13:30</td>
+	<td></td>
+	<td colspan=2>Lunch</td>
+	<td></td>
+	<td></td>
+</tr>
+
+
+<tr>
+	<td>13:30 - 14:15</td>
+	<td><a href="https://cs.au.dk/~amoeller/">Anders Moeller</a></td>
+	<td>Aarhus</td>
+	<td><div class="talk" data-tooltip="In dynamically typed programming languages, type errors can occur at runtime. Executing the test suites that often accompany programs may provide some confidence about absence of such errors, but generally without any guarantee. We present a program analysis that can check whether a test suite has sufficient coverage to prove a given type-related property, which is particularly challenging for program code with overloading and value dependent types. The analysis achieves a synergy between scalable static analysis and dynamic analysis that goes beyond what can be accomplished by the static analysis alone. Additionally, the analysis provides a new coverage adequacy metric for the completeness of a test suite regarding a family of type-related properties.
+
+	Based on an implementation for Dart, we demonstrate how such a hybrid static/dynamic program analysis can be used for measuring the quality of a test suite with respect to showing absence of type errors and inferring sound call graph information, specifically for program code that is difficult to handle by traditional static analysis techniques.">Analyzing Test Completeness for Dynamic Languages</div></td>
+	<td><a href="{{"/events/workshop2016/Moller.pdf" | relative_url }}" class="pdf" title="eth-moeller"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=8ZFK3fmruwE" title="eth-moeller"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>14:15 - 15:00</td>
+	<td><a href="http://arieg.bitbucket.org/">Arie Gurfinkel</a></td>
+	<td>University of Waterloo</td>
+	<td><div class="talk" data-tooltip="Verification of safety properties, also known as synthesis of safe inductive invariants, is a long standing challenge in Computer Science. While safety verification is undecidable for most realistic programming models, there are many automated techniques that perform well in practice. In this talk, I will present SeaHorn -- a software verification framework for C programs. A distinguishing feature of SeaHorn is a modular design that decouples the concerns of the syntax of the programming language, from its operational and verification semantics. While operational and verification semantics should coincide, this is extremely difficult to achieve in an effective way in practice. SeaHorn builds on several advances in software verification: (a) it contributes an efficient yet precise inter-procedural SMT-based verification algorithm, (b) it provides flexible verification semantics with support for different levels of precision and abstraction, (c) it successfully combines software model checking and abstract interpretation, and (d) it uses the logic of Constrained Horn Clauses as its intermediate verification language.
+
+	SeaHorn provides the users of verification with a powerful automated verification tool, while being an extensible and customizable framework for experimenting with and developing new software verification techniques. ">Algorithmic Logic-Based Verification with SeaHorn</div></td>
+	<td><a href="{{"/events/workshop2016/Gurfinkel.pdf" | relative_url }}" class="pdf" title="eth-gurfinkel"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=_2YF6TyjdxI" title="eth-gurfinkel"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+
+<tr>
+	<td>15:00 - 15:30</td>
+	<td></td>
+	<td>Coffee Break</td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+
+<tr>
+	<td>15:30 - 16:15</td>
+	<td><a href="http://www.cs.umd.edu/~avik/">Avik Chaudhuri</a></td>
+	<td>Facebook</td>
+	<td><div class="talk" data-tooltip="Flow (https://flowtype.org) is a powerful type checker for JavaScript that we built at Facebook, with significant contributions from the open-source community. It is heavily used for web and mobile development at Facebook.
+
+	Flow's overall goal is to maximize developer productivity without cramping the ``flow'' of normal JavaScript development. On the one hand, Flow uses advanced static analysis techniques to understand common JavaScript idioms precisely. This helps it find non-trivial bugs in code and provide code intelligence to editors without requiring significant rewriting or annotations from the developer. On the other hand, Flow uses aggressive parallelization and incrementalization to deliver near-instantaneous response times. This helps it avoid introducing any latency in the usual edit-refresh cycle of rapid JavaScript development.">Flow: Fast and Precise Static Type Checking for JavaScript</div></td>
+	<td><a href="{{"/events/workshop2016/Chadhuri.pdf" | relative_url }}" class="pdf" title="eth-chaudhuri"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=IwVyroc__bM" title="eth-chaudhuri"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>16:15 - 16:45</td>
+	<td><a href="{{ "/people/martin" | relative_url }}">Martin Vechev</a></td><td>ETH Z&uumlrich</td><td><div class="talk" data-tooltip="In this talk, I will give an overview of some of the latest research directions our group is pursuing at the intersection of machine learning and programming languages. I will discuss two general directions:
+
+	Applying and developing new machine learning models for solving programming tasks. This direction leads to new kinds of statistical programming tools that can solve problems in reliability and security that are difficult to solve otherwise.
+
+	I will also discuss the direction of probabilistic programming, our recent PSI exact inference solver and its applications to networks, security and cyber-physical systems.">Machine Learning and Programming Languages: latest directions and research opportunities</div></td>
+	<td><a href="{{"/events/workshop2016/Vechev.pdf" | relative_url }}" class="pdf" title="eth-vechev"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=2VaYwJW5sbE" title="eth-vechev"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>16:45 - 17:15</td>
+	<td><a href="http://www.pm.inf.ethz.ch/people/personal/pmueller-pers.html">Peter M&uumlller</a><br></td>
+	<td>ETH Z&uumlrich</td>
+	<td><div class="talk" data-tooltip="There are numerous separation logics for the verification of programs that use fine-grained concurrency. However, these logics have not been used to build automated verification tools, such that proof efforts have been limited to paper and pencil or interactive theorem provers. In this talk, we will demonstrate how to use Viper, a verification infrastructure for permission-based reasoning, to automate verification in Relaxed Separation Logic (RSL), a logic for the C11 weak memory model. We will show how to encode some core features of RSL in Viper's generic permission logic, which enables the automation of RSL without building dedicated tool support.">Automating Relaxed Separation Logic in Viper</div></td>
+	<td><a href="{{"/events/workshop2016/Muller.pdf" | relative_url }}" class="pdf" title="eth-mueller"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=IV-5vq01_xE" title="eth-mueller"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+</table>
+
+<h3>October 8 (Saturday)</h3>
+<table centering border="0" width="100%" cellspacing="0" cellpadding="0">
+
+<th width=17%>Time</th>
+<th width="16%">Speaker</th>
+<th width="22%">Institution</th>
+<th width=33%>Talk Title & Abstract</th>
+<th width=8%>Slides</th>
+<th width=4%>Video</th>
+
+<tr>
+	<td>9:00  - 9:15</td>
+	<td>Organizers</td>
+	<td>ETH Z&uumlrich</td>
+	<td><div class="talk" data-tooltip="Introduction to second day.">Opening Remarks </div></td>
+	<td></td>
+	<td></td>
+</tr>
+
+<tr>
+	<td>9:15 - 10:00</td>
+	<td><a href="https://www.inf.ethz.ch/personal/markusp/">Markus P&uumlschel</a></td>
+	<td>ETH Z&uumlrich</td>
+	<td><div class="talk" data-tooltip="Many performance-critical computations in communication, control, multimedia processing, machine learning, or graphics fall into the domain of linear algebra. Existing optimized libraries for linear algebra are usually optimized for large scale computation and for uses in scientific computing. For small scale computations in other domains they are often suboptimal. In this talk I present our work on generating optimized linear algebra code directly from a mathematical description using techniques developed in Spiral (www.spiral.net): layers of domain-specific languages to express the mathematics and the use of rewriting systems to reshape the computation at a high level of abstraction to overcome known compiler limitations (Project website: http://www.spiral.net/software/lgen.html).">Computer Generation of Fast Linear Algebra Code</div></td>
+	<td><a href="{{"/events/workshop2016/Puschel.pdf" | relative_url }}" class="pdf" title="eth-pueshel"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=oHPkuCH8R7g" title="eth-pueshel"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+<td>10:00 - 10:45</td>
+<td><a href="http://research.microsoft.com/en-us/um/people/leino/">Rustan Leino</a></td>
+<td>Microsoft Research Redmond</td>
+<td><div class="talk" data-tooltip="">Verification beyond programs</div></td>
+<td><a href="{{"/events/workshop2016/Leino.pdf" | relative_url }}" class="pdf" title="eth-leino"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+<td><a href="https://www.youtube.com/watch?v=2-qJA6ozcJ8" title="eth-leino"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>10:45 - 11:15</td>
+	<td></td>
+	<td>Coffee Break</td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+
+<tr>
+	<td>11:15 - 12:00</td>
+	<td><a href="http://web.science.mq.edu.au/directory/listing/person.htm?id=anabel">Annabelle McIver</a></td>
+	<td>Macquarie University</td>
+	<td><div class="talk" data-tooltip="In computer security, it is frequently necessary in practice to accept some leakage of confidential information. This motivates the development of theories of Quantitative Information Flow aimed at showing that some leaks are small and therefore tolerable.
+
+	In this talk I will describe some recent developments concerning how to measure the severity of information leaks based on new definitions of entropy, and how to apply them to programming language semantics. The ideas are illustrated  by measuring the degree of privacy participants can rely on when they vote using some standard voting protocols.">Quantitative Information Flow:  when are partial breaches of confidentiality insignificant?</div></td>
+	<td><a href="{{"/events/workshop2016/McIver.pdf" | relative_url }}" class="pdf" title="eth-mciver"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=_4x60IPMB0U" title="eth-mciver"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+<tr>
+	<td>12:00 - 13:30</td>
+	<td></td>
+	<td colspan=2>Lunch</td>
+	<td></td>
+	<td></td>
+</tr>
+
+
+<tr>
+	<td>13:30 - 14:15</td>
+	<td><a href="http://www.cs.colorado.edu/~bec/">Bor-Yuh Evan Chang</a></td>
+	<td>University of Colorado</td>
+	<td><div class="talk" data-tooltip="In this talk, we consider the problem of verifying the absence of run-time exceptions from unexpected callback orderings in Android. These defects are particularly pernicious in that they are difficult to diagnose with testing but cause phones to crash.
+
+	This static analysis problem is especially challenging because of the need to reason about the effects of inter-component callback inter-leavings. We address this problem by developing a goal-directed abstract interpretation approach that can selectively abstract the event control-flow to realize an analysis that jumps between relevant callbacks.
+
+	Another challenge to analyzing event-driven software frameworks like Android is that the set of possible callbacks that may be invoked by the framework is not static for all applications but can be dynamically updated by the app through its interaction with the framework. To address this issue, we formalize a model of event-driven frameworks and investigate specification mining techniques from large number of execution traces of apps interacting with the Android framework.">Analyzing, Abstracting, and Mining Event-Driven Systems</div></td>
+	<td><a href="{{"/events/workshop2016/Chang.pdf" | relative_url }}" class="pdf" title="eth-chang"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=joHAaxqLVIk" title="eth-chang"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
+</tr>
+
+
+<tr>
+	<td>14:15 - 14:30</td>
+	<td>Organizers</td>
+	<td>ETH Z&uumlrich</td>
+	<td>Closing Remarks</td>
+	<td></td>
+	<td></td>
+</tr>
+
+
+</table>
+
+<h2 id="registration">Registration</h2>
+
+
+<table centering border="0" width="100%" cellspacing="0" cellpadding="0">
+
+<th width=33%></th>
+<th width="33%">Early Bird: by Sept 9th 2016</th>
+<th width="34%">Regular fee: after Sept 9th 2016 (latest day: Sept 23, 2016)</th>
+
+<tr>
+	<td>Workshop Fee (Students)</td>
+	<td>70 CHF</td>
+	<td>90 CHF</td>
+</tr>
+
+<tr>
+	<td>Workshop Fee (Regular)</td>
+	<td>110 CHF</td>
+	<td>130 CHF</td>
+</tr>
+</table>
+
+The registration fees include:
+<ul>
+<li> Attendance to all presentations</li>
+<li> Lunches on both days </li>
+<li> Coffee & Snacks </li>
+</ul>
+<p>
+To register for the workshop, please send an e-mail to Mrs. Marlies Weissert: marlies.weissert@inf.ethz.ch
+<p>
+
+
+<h2 id="travel">Travel</h2>
+<p>
+ETH Z&uumlrich is located in the heart of the city and easy to reach.
+</br>
+From <strong>Z&uumlrich HB </strong> (main station): If you arrive by train to Z&uumlrich HB, take either:
+<ul>
+	<li> Tram no. 6 (direction Zoo) from tram stop "Bahnhofstrasse/HB", exit at tram stop "ETH/Universit&aumltsspital" (right next to the ETH main building). Journey time: about 8 minutes or </li>
+	<li> Tram no. 10 (direction Flughafen or Bahnhof Oerlikon) from tram stop "Bahnhofplatz/HB", exit at tram stop "ETH/Universit&aumltsspital". Journey time: about 8 minutes </li>
+</ul>
+</p>
+
+<p>
+From <a href="http://www.flughafen-zuerich.ch/"><strong>Z&uumlrich airport</strong></a>: You can either take the tram to ETH or a train to the city center (Z&uumlrich HB):
+<ul>
+	<li> Tram no. 10 (direction Bahnhofplatz/HB) to tram stop "ETH/Universittsspital". The tram operates daily from 6 a.m to 11 p.m. with trams departing every 7 to 15 minutes. Journey time: 30 minutes </li>
+	<li> S-Bahn/Train: Follow the signs "Bahn/Railway" to the ticket counters and/or ticket machines. You will find instructions in English on the ticket machines. Get a ticket for "Z&uumlrich City" (make sure that the display shows "1 Std"). The machines accept coins as well as bills and gives change (the ticket costs 6.40 CHF). The ticket is valid for 1 hour for all trains to Z&uumlrich as well as for trams and buses in the city (streetcar, Strassenbahn). Take the escalator down to the platforms. Trains to the city center leave approx. every 10 minutes and it takes about 10 minutes to reach the main station.</li>
+</ul>
+</p>
+
+
+<h2 id="accomodation">Accomodation</h2>
+You can check the availability and prices and make reservations for hotels at <a href="http://www.zuerich.com/en/Visitor.html">Z&uumlrich Tourism</a>
+
+<p>
+The following is a list of hotels in walking distance from the workshop venue:
+<ul>
+	<li> <a href="http://www.hotelrex.ch/de/home.asp">Hotel Rex </a> (single room from CHF 150 to CHF 225) </li>
+	<li> <a href="http://www.hotelbristol.ch/">Hotel Bristol </a> (single room from CHF 150 to CHF 200) </li>
+
+	<li> <a href="http://www.hotelbasilea.ch">Hotel Basilea </a> (single room from CHF 195 to CHF 225) </li>
+	<li> <a href="http://hotelrigihof.hotelszurich.it">Leonardo Hotel Rigihof </a>(single room from CHF 240 to CHF 290) </li>
+</ul>
+</p>
+
+<p>
+Some hotels further away:
+<ul>
+	<li> <a href="http://www.ibishotel.com/de/hotel-2942-ibis-zurich-city-west/index.shtml">Hotel Ibis Zurich City West </a> (room rate CHF 129 to CHF 164) </li>
+	<li> <a href=" http://ibisbudgethotel.ibis.com/de/hotel-3184-ibis-budget-zurich-city-west/index.shtml">Hotel Ibis Budget </a> (room rate CHF 85 to CHF 99) </li>
+</ul>
+</p>
+</div>
+
+
+
+

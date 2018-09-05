@@ -1,0 +1,474 @@
+---
+title: Parallel Programming
+ref: pp2018
+description: Undergraduate course on parallel programming, co-taught with Prof. Torsten Hoefler.
+semester: Spring 2018
+number: 252-0029-00L
+lecturer: Martin Vechev, Thorsten Hoefler
+ta: Pavol Bielik, Timo Schneider
+assistants: "Pesho Ivanov, Salvatore di Girolamo, Niels Gleinig, Alexandros Nikolaos Ziogas, Johannes de Fine Licht, Alen Stojanov, Tyler Smith, Boss Mike, Felix Schmetz, Mickey Vänskä, Nicolas Ochsner, Srdan Krstic"
+edoz: 
+session-time-place: 
+lecture-time-place: Tue	10-12, ML D 28; Wed 13-15, HG F 5
+exercise-time-place: Wed 15-17 or Fri 10-12
+credits: 
+image: orator.jpg
+
+---
+
+<h2>News</h2>
+<p>
+	21.2.2018: <a href="http://bit.ly/2EHdPMS" target=_blank>Group Assignment is Online</a></br>
+	27.3.2018: [Week 6] Due to Easter the students from Friday exercises can attend an exercise on Wednesday (28.3). The groups are merged as follows:</br>
+	<ul>
+		<li>Fri 10-12 HG G 26.5 -> Wed 15-17 CHN E 46</li>
+		<li>Fri 10-12 ETZ G 91 -> Wed 15-17 ML J 34.1</li>
+		<li>Fri 10-12 LFW E 13 -> Wed 15-17 CHN E 42</li>
+		<li>Fri 10-12 NO D 11 -> Wed 15-17 ML J 34.3</li>
+		<li>Fri 10-12 NO E 11 -> Wed 15-17 ETZ J 91</li>
+		<li>Wed 15-17 ETZ H 91 -> Wed 15-17 ETZ F 91</li>
+	</ul>
+</p>
+
+
+<h2>Overview </h2>
+
+<p>
+The purpose of this course is to introduce students to parallel programming. By the end of the course students will be able to design and implement working parallel programs in traditional (e.g., Java Threads) and emerging parallel programming models. Moreover, students will master fundamental concepts in parallelism and be able to reason about the correctness, performance, and the construction of parallel programs using different parallel programming paradigms (e.g., task parallelism, data parallelism) and mechanisms (e.g., threads, tasks, locks, communication channels). Finally, the course will examine how parallel programming methodologies can be applied in different algorithmic domains by investigating parallelization of algorithms.
+</p>
+
+<p>
+Topics include:
+	<ul>
+		<li>Basic parallel programming concepts</li>
+		<li>Parallel programming using Java</li>
+		<li>Synchronization techniques</li>
+		<li>Case studies of building parallel programs starting from sequential algorithms</li>
+	</ul>
+</p>
+
+
+<h2>Course Content</h2>
+
+<p>
+	<strong>Main text and reference book</strong>
+	<ul>
+		<li>Introduction to Java Programming, 2014. Daniel Liang. ISBN-13: 9780133813463</li>
+		<li>Java Concurrency in Practice, 2006. Brian Goetz, Tim Peierls, Joshua Bloch, Joseph Bowbeer, David Holmes, Doug Lea. ISBN-13: 9780321349606</li>
+		<li>The Art of Multiprocessor Programming, 2011. Maurice Herlihy, Nir Shavit. Morgan Kaufmann. Also available online in the ETH network.</li>
+	</ul>
+</p>
+
+
+<p>
+	<strong>Related resources, text and reference books</strong>
+	<ul>
+		<li><a href="http://homes.cs.washington.edu/~djg/teachingMaterials/spac/sophomoricParallelismAndConcurrency.pdf">Sophomoric Parallelism and Concurrency</a> (from: <a href="http://homes.cs.washington.edu/~djg/teachingMaterials/spac/">spac</a>)</li>
+		<li><a href="http://greenteapress.com/semaphores/">The Little Book of Semaphores</a></li>
+		<li>Programming concurrency on the JVM, 2011. Venkat Subramaniam</li>
+		<li>Structured Parallel Programming: Patterns for Efficient Computation, 2012. Michael McCool, Arch Robison, James Reinders.</li>
+		<li>Patterns for Parallel Programming, 2004. Timothy G. Mattson, Beverly A. Sanders, Berna L. Massingill.</li>
+		<li><a href="http://supertech.csail.mit.edu/cilk/minicourse.ps.gz">A minicourse on multithreaded programming</a>. Charles E. Leiserson, Harald Prokop.</li>
+	</ul>
+</p>
+
+<p>
+	<strong>Introduction to Java books (freely available)</strong>
+	<ul>
+		<li><a href="http://www.greenteapress.com/thinkapjava/">How to Think Like a Computer Scientist</a>, 2012. Allen B. Downey.</li>
+		<li><a href="http://math.hws.edu/javanotes/">Introduction to Programming Using Java</a>, 2011. David J. Eck.</li>
+	</ul>
+</p>
+
+
+<h2>Presentation Schedule</h2>
+
+<p>All course materials are password protected using your ETHZ credentials.</p>
+
+<table centering border="0" width="100%" cellspacing="10" cellpadding="5">
+
+<th width="15%">&ensp; Date</th><th width=55%>Title</th><th width=30%>Slides</th>
+
+<tr>
+<td>&ensp; Feb 20 </td><td>Motivation, topics, organization </td>
+<td>
+<a href="{{"/teaching/pp2018/materials/slides/PP-L01-INTRODUCTION_COURSE_OVERVIEW.pdf" | relative_url }}" class="pdf" title=""><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+
+
+<tr>
+<td>&ensp; Feb 21 </td><td>Java recap </td>
+<td>
+<a href="{{"/teaching/pp2018/materials/slides/PP-L02-JAVA.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+
+<tr>
+<td>&ensp; Feb 27-28 </td><td>Introduction to Threads and Synchronization</td>
+<td>
+<a href="{{"/teaching/pp2018/materials/slides/PP-L03-JAVATHREADS.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+
+<tr>
+<td>&ensp; Mar 6-7 </td><td>Parallel Architectures</td>
+<td>
+<a href="{{"/teaching/pp2018/materials/slides/PP-L04-PARALLELARCH.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+
+<tr>
+<td>&ensp; Mar 14-20 </td><td>Basic Concepts in Parallelism</td>
+<td>
+<a href="{{"/teaching/pp2018/materials/slides/PP-L05-CONCEPTS.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+
+<tr>
+<td>&ensp; Mar 21 </td><td>Parallel Programming Models: Task and Data Parallelism</td>
+<td>
+<a href="{{"/teaching/pp2018/materials/slides/PP-L06-MODELS.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+
+<tr>
+<td>&ensp; Mar 27-28 </td><td>Fork Join Framework and Task Parallel Algorithms</td>
+<td>
+<a href="{{"/teaching/pp2018/materials/slides/PP-L07-FJ.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+
+<tr>
+<td>&ensp; Mar 28 </td><td>Shared memory concurrency, locks and data races</td>
+<td>
+<a href="{{"/teaching/pp2018/materials/slides/PP-L08-RACES.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+
+<tr>
+<td>&ensp; Apr 17 </td><td>Data Races, Solving Mutual Exclusion with Atomic Registers</td>
+<td>
+<a href="{{"/teaching/pp2018/materials/slides/PP-l14-DataRacesAndBehindLocks.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+
+<tr>
+<td>&ensp; Apr 18 </td><td>Solving Mutual Exclusion for many processes, Hardware Primitives for mutual exclusion</td>
+<td>
+<a href="{{"/teaching/pp2018/materials/slides/PP-l15-BehindLocksII.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+
+<tr>
+<td>&ensp; Apr 24 </td><td>Beyond Locks: Deadlocks, Semaphores</td>
+<td>
+<a href="{{"/teaching/pp2018/materials/slides/PP-l16-BeyondLocks.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+
+<tr>
+<td>&ensp; Apr 25 </td><td>Beyond Locks II: Producer-/Consumer, Monitors</td>
+<td>
+<a href="{{"/teaching/pp2018/materials/slides/PP-l17-BeyondLocksII.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+
+<tr>
+<td>&ensp; May 2 </td><td>Beyond Locks III: Readers/Writers Lock, Lock Granularity</td>
+<td>
+<a href="{{"/teaching/pp2018/materials/slides/PP-l18-BeyondLocksIII.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+
+<tr>
+<td>&ensp; May 8 </td><td>Skip Lists and Without Locks I</td>
+<td>
+<a href="{{"/teaching/pp2018/materials/slides/PP-l19-WithoutLocksI.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+
+<tr>
+<td>&ensp; May 9 </td><td>Without Locks II</td>
+<td>
+<a href="{{"/teaching/pp2018/materials/slides/PP-l20-WithoutLocksII.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+
+<tr>
+<td>&ensp; May 15 </td><td>A bit of Concurrency Theory: Linearizability, Sequential Consistency, Consensus</td>
+<td>
+<a href="{{"/teaching/pp2018/materials/slides/PP-l21-ConcurrencyTheory.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+
+<tr>
+<td>&ensp; May 16 </td><td>Sequential Consistency, Consensus + Transactional Memory</td>
+<td>
+<a href="{{"/teaching/pp2018/materials/slides/PP-l22-TransactionalMemory.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+
+<tr>
+<td>&ensp; May 22 </td><td>Transactional Memory and Programming based on Message Passing</td>
+<td>
+<a href="{{"/teaching/pp2018/materials/slides/PP-l23-TM_MessagePassing.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+
+<tr>
+<td>&ensp; May 23 </td><td>Programming Models based on Message Passing II, CSP and MPI</td>
+<td>
+<a href="{{"/teaching/pp2018/materials/slides/PP-l24-MessagePassingII.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+
+<tr>
+<td>&ensp; May 29 </td><td>Message Passing and Parallel Sorting</td>
+<td>
+<a href="{{"/teaching/pp2018/materials/slides/PP-l25-MessagePassing_ParallelAlgorithms.pdf" | relative_url }}" class="pdf" title=""><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+
+<tr>
+<td>&ensp; May 30 </td><td>Parallel Sorting</td>
+<td>
+<a href="{{"/teaching/pp2018/materials/slides/PP-l26-ParallelAlgorithms_II.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+
+</table>
+
+<h2>Exercises</h2>
+
+<p>Students should bring their laptops to the exercise sessions as most of the exercises involve programming.
+</p>
+
+<table centering border="0" width="100%" cellspacing="10" cellpadding="5">
+
+<th width="13%">&ensp; Week</th><th width=45%>Title</th><th width=10%>Due Date</th><th width="12%">Assignment</th><th width=8%">Slides</th><th width="12%">Solution</th>
+
+<tr>
+<td>&ensp; 1</td>
+<td> Introduction </td>
+<td>-</td>
+<td><a href="{{"/teaching/pp2018/materials/exercises/exercise1.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>&ensp; 2</td>
+<td> Java Threads </td>
+<td>7.3</td>
+<td><a href="{{"/teaching/pp2018/materials/exercises/exercise2.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+<a href="{{"/teaching/pp2018/materials/exercises/assignment2.zip" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-download.svg" | relative_url }}" class="svg-icon" border="0" alt="ZIP"></a></td>
+<td><a href="{{"/teaching/pp2018/materials/exercises/exercise2_slides.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a></td>
+<td><a href="{{"/teaching/pp2018/materials/exercises/solution2.zip" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-download.svg" | relative_url }}" class="svg-icon" border="0" alt="ZIP"></a></td>
+</tr>
+
+
+<tr>
+<td>&ensp; 3</td>
+<td> Java Threads II </td>
+<td>12.3</td>
+<td><a href="{{"/teaching/pp2018/materials/exercises/exercise3.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+<a href="{{"/teaching/pp2018/materials/exercises/assignment3.zip" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-download.svg" | relative_url }}" class="svg-icon" border="0" alt="ZIP"></a></td>
+<td><a href="{{"/teaching/pp2018/materials/exercises/exercise3_slides.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a></td>
+<td><a href="{{"/teaching/pp2018/materials/exercises/solution3.zip" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-download.svg" | relative_url }}" class="svg-icon" border="0" alt="ZIP"></a></td>
+</tr>
+
+
+<tr>
+<td>&ensp; 4</td>
+<td> Parallel Models </td>
+<td>19.3</td>
+<td>
+<a href="{{"/teaching/pp2018/materials/exercises/exercise4.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+<td>
+<a href="{{"/teaching/pp2018/materials/exercises/exercise4_slides.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+<td>
+<a href="{{"/teaching/pp2018/materials/exercises/solution4.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+
+
+<tr>
+<td>&ensp; 5</td>
+<td> Task Parallelism </td>
+<td>26.3</td>
+<td><a href="{{"/teaching/pp2018/materials/exercises/exercise5.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+<a href="{{"/teaching/pp2018/materials/exercises/assignment5.zip" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-download.svg" | relative_url }}" class="svg-icon" border="0" alt="ZIP"></a></td>
+<td><a href="{{"/teaching/pp2018/materials/exercises/exercise5_slides.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a></td>
+<td><a href="{{"/teaching/pp2018/materials/exercises/solution5.zip" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-download.svg" | relative_url }}" class="svg-icon" border="0" alt="ZIP"></a>
+<a href="{{"/teaching/pp2018/materials/exercises/solution5.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a></td>
+</tr>
+
+<tr>
+<td>&ensp; 6</td>
+<td> Task Parallelism II </td>
+<td>9.4</td>
+<td><a href="{{"/teaching/pp2018/materials/exercises/exercise6.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+<a href="{{"/teaching/pp2018/materials/exercises/assignment6.zip" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-download.svg" | relative_url }}" class="svg-icon" border="0" alt="ZIP"></a></td>
+<td><a href="{{"/teaching/pp2018/materials/exercises/exercise6_slides.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a></td>
+<td><a href="{{"/teaching/pp2018/materials/exercises/solution6.zip" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-download.svg" | relative_url }}" class="svg-icon" border="0" alt="ZIP"></a></td>
+</tr>
+
+<tr>
+<td>&ensp; 7</td>
+<td> Synchronization and Resource Sharing </td>
+<td>16.4</td>
+<td>
+<a href="{{"/teaching/pp2018/materials/exercises/exercise7.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+<a href="{{"/teaching/pp2018/materials/exercises/assignment7.zip" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-download.svg" | relative_url }}" class="svg-icon" border="0" alt="ZIP"></a></td>
+<td><a href="{{"/teaching/pp2018/materials/exercises/exercise7_slides.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a></td>
+<td><a href="{{"/teaching/pp2018/materials/exercises/solution7.zip" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-download.svg" | relative_url }}" class="svg-icon" border="0" alt="ZIP"></a>
+<a href="{{"/teaching/pp2018/materials/exercises/solution7.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a></td>
+</tr>
+
+
+<tr>
+<td>&ensp; 8</td>
+<td> More on Synchronization</td>
+<td>25.4</td>
+<td><a href="{{"/teaching/pp2018/materials/exercises/exercise8.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+<a href="{{"/teaching/pp2018/materials/exercises/assignment8.zip" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-download.svg" | relative_url }}" class="svg-icon" border="0" alt="ZIP"></a>
+</td>
+<td></td>
+<td><a href="{{"/teaching/pp2018/materials/exercises/solution8.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a></td>
+</tr>
+
+<tr>
+<td>&ensp; 9</td>
+<td> Beyond Locks</td>
+<td>2.5</td>
+<td><a href="{{"/teaching/pp2018/materials/exercises/exercise9.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+<a href="{{"/teaching/pp2018/materials/exercises/assignment9.zip" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-download.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF"></a></td>
+<td></td>
+<td><a href="{{"/teaching/pp2018/materials/exercises/solution9.zip" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-download.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF"></a>
+<a href="{{"/teaching/pp2018/materials/exercises/solution9.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a></td>
+</tr>
+
+
+<tr> 
+<td>&ensp; 10</td>
+<td>Advanced Synchronization Mechanism</td>
+<td>9.5</td>
+<td><a href="{{"/teaching/pp2018/materials/exercises/exercise10.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+<a href="{{"/teaching/pp2018/materials/exercises/assignment10.zip" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-download.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF"></a></td>
+<td></td>
+<td><a href="{{"/teaching/pp2018/materials/exercises/solution10.zip" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-download.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF"></a></td>
+</tr>
+
+<tr>
+<td>&ensp; 11</td>
+<td>Advanced Synchronization Mechanism II</td>
+<td>16.5</td>
+<td><a href="{{"/teaching/pp2018/materials/exercises/exercise11.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+<a href="{{"/teaching/pp2018/materials/exercises/assignment11.zip" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-download.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF"></a></td>
+<td></td>
+<td><a href="{{"/teaching/pp2018/materials/exercises/solution11.zip" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-download.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF"></a></td>
+</tr>
+
+<tr>
+<td>&ensp; 12</td>
+<td>Consensus</td>
+<td>23.5</td>
+<td><a href="{{"/teaching/pp2018/materials/exercises/exercise12.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a></td>
+<td></td>
+<td><a href="{{"/teaching/pp2018/materials/exercises/solution12.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a></td>
+</tr>
+
+<tr>
+<td>&ensp; 13</td>
+<td>Transactional Memory</td>
+<td>29.5</td>
+<td><a href="{{"/teaching/pp2018/materials/exercises/exercise13.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+<a href="{{"/teaching/pp2018/materials/exercises/assignment13.zip" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-download.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF"></a></td>
+<td></td>
+<td><a href="{{"/teaching/pp2018/materials/exercises/solution13.zip" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-download.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF"></a></td>
+</tr>
+
+</table>
+
+<h2>Exams and Grading</h2>
+<p>
+There is a written, centralized exam after the end of the semester. Exercise sessions are not graded.
+	<ul>
+		<li>100% of grade determined by final Exam</li>
+	</ul>
+</p>
+
+<p>
+<strong>Old Exam</strong>
+
+<a href="{{"/teaching/pp2017/materials/exams/bp-questions.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF">2016 Summer Questions</a> <a href="{{"/teaching/pp2017/materials/exams/bp-solution.pdf" | relative_url }}" class="pdf" title=
+""><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF">2016 Summer Solution</a>
+
+</p>

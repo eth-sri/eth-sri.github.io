@@ -1,0 +1,21 @@
+{% assign person = site.people | where:"title", include.title  | first %}
+
+
+  <div class="card">
+    
+    <div class="card-img">
+      {% if person.image %} 
+      <a href="{{ person.url | relative_url}}">
+        <img class="page-img" src="{{ person.image | prepend: '/assets/images/' | relative_url}}"/> 
+      </a>
+      {% endif %}
+    </div>
+
+    <div class="card-content">
+      <div class="card-title">{{ person.title }}</div>
+      {% if person.email %} <div class="card-info">Email: <a href="mailto:{{ person.email }}">{{ person.email }}</a></div>{% endif %}
+      {% if person.room %} <div class="card-info">Room: {{ person.room }}</div>{% endif %}
+      <a class="card-site button" href="{{ person.url | relative_url}}">Personal Site</a>
+    </div>
+
+  </div>

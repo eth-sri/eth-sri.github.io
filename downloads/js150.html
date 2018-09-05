@@ -1,0 +1,82 @@
+---
+layout: page
+title: 150k Javascript Dataset
+---
+
+This dataset is released as a part of 
+<a class="page-link " href="/research/plml">Machine Learning for Programming</a>
+project that aims to create new kinds of programming tools and techniques based on machine learning and statistical models learned over massive codebases. For more information about the project, tools and other resources please visit the main project page.
+
+<h2>Overview</h2>
+<p>
+We provide a dataset consisting of 150'000 JavaScript files and their corresponding parsed ASTs that were used to train and evaluate the DeepSyn tool.
+The JavaScript programs are collected from GitHub repositories by removing duplicate files, removing project forks (copy of another existing repository), keeping only programs that
+parse and we aim to remove obfuscated files.
+For parsing we used the error-tolerant <a href="https://github.com/ternjs/acorn" target=_blank>Acorn parser</a> (using the <a href="https://github.com/ternjs/acorn#distacorn_loosejs" target=_blank>parse_dammit</a> interface).
+The dataset is split into two parts -- 100'000 files used for training and 50'000 files used for evaluation.
+</p>
+
+<h2>Download</h2>
+
+{% include card.html
+  title="Version 1.0"
+  url="http://files.srl.inf.ethz.ch/data/py150.tar.gz"
+  description="An archive of the dataset"
+  output="horizontal"
+  download="http://files.srl.inf.ethz.ch/data/js_dataset.tar.gz"
+%}
+
+The archive contains the following files:
+<ul>
+<li> <strong>[478MB] data.tar.gz</strong> -- 150'000 JavaScript source files
+<li> <strong>[6.6MB] programs_training.txt</strong> -- List of 100'000 filenames (from data.tar.gz) used to build the training dataset, one per line
+<li> <strong>[3.3MB] programs_eval.txt</strong> -- List of 50'000 filenames (from data.tar.gz) used to build the evaluation dataset, one per line
+<li> <strong>[11GB]  programs_training.json</strong> -- Parsed ASTs in JSON format for the files in programs_training.txt, one per line
+<li> <strong>[4.8GB] programs_eval.json</strong> -- Parsed ASTs in JSON format for the files in programs_eval.txt, one per line
+</ul>
+
+<br><br>
+Published research using this dataset may cite the following paper:
+
+<blockquote>Raychev, V., Bielik, P., Vechev, M. and Krause, A. <i>Learning Programs from Noisy Data</i>. In <i>Proceedings of the 43nd Annual
+ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages</i> (2016), POPL ’16, ACM</blockquote>
+
+
+<h2>Download - JS Parser</h2>
+
+{% include card.html
+  title="Version 1.0"
+  url="http://files.srl.inf.ethz.ch/data/js_parser.tar.gz"
+  description="JS Parser"
+  output="horizontal"
+  download="http://files.srl.inf.ethz.ch/data/js_parser.tar.gz"
+%}
+
+<h2>Format</h2>
+Now we briefly explain the JSON format into which each JavaScript AST is serialized. Note that the files programs_training.json and programs_eval.json contain one serialized file per line.
+As an example, given a simple program:
+
+<pre class="prettyprint">
+  console.log("Hello World!");
+</pre>
+
+The serialized AST is as follows:
+
+<pre class="prettyprint">
+[ { "id":0, "type":"Program", "children":[1] }, 
+    { "id":1, "type":"ExpressionStatement", "children":[2] }, 
+      { "id":2, "type":"CallExpression", "children":[3,6] }, 
+        { "id":3, "type":"MemberExpression", "children":[4,5] }, 
+          { "id":4, "type":"Identifier", "value":"console" }, 
+          { "id":5, "type":"Property", "value":"log" }, 
+        { "id":6, "type":"LiteralString", "value":"Hello World!" }, 0]
+</pre>
+
+As can be seen, the json contains array of objects followed by number 0.
+Each object contains several name/value pairs:
+<ul>
+<li> (Required) <strong>id</strong>: unique integer identifying current AST node. 
+<li> (Required) <strong>type</strong>: string containing type of current AST node.
+<li> (Optional) <strong>value</strong>: string containing value (if any) of the current AST node.
+<li> (Optional) <strong>children</strong>: array of integers denoting children (if any) of the current AST node.
+</ul>
