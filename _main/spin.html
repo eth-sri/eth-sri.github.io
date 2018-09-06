@@ -1,0 +1,36 @@
+---
+layout: page
+title: SPIN Models
+---
+
+
+<h2>Artifact</h2>
+
+<p>This page contains SPIN models for a concurrent set algorithm with the instructions of how to use them. The models contains the procedure for checking linearizability with linearization points (fixed and in another thread). The models were used in the following papers:
+</p>
+
+
+{% include get-publications.html filter="id" key="vechev2009experience" %}
+{% include get-publications.html filter="id" key="vechev2008deriving" %}
+
+
+
+
+<h2>Instructions:</h2>
+<ul>
+  <li> Download model: <a href="spin/alg.txt">Model</a> (Right click and Save As)</li>
+  <li> Download shell file: <a href="spin/compile.sh">compile.sh</a> (Right click and Save As) </li>
+  <li> Download SPIN here: <a href="http://spinroot.com/spin/whatispin.html">Download Spin</a></li>
+  <li> Type: "bash compile.sh". </li>
+  <li> You will get as output a file called "test". </li>
+  <li> You can run "test". That should require several gigabytes of memory to complete. <br><font color=red>Note</font>: we only tested these models under Linux </li>
+</ul>
+
+
+<h2>Explanations:</h2>
+<ul>
+  <li>The model contains 2 threads that execute an (unbounded) most-general client (randomly picks an operation and a key).</li>
+  <li>The maximum number of objects (#define NODES 12) is determined by a formula as a function of the number of distinct keys. See comments in the model. This allows us to explore up to a certain number of keys and adjust the number of nodes accordingly.</li>
+  <li>The model contains the checking for linearizability for non-fixed points as described in the papers.</li>
+  <li>The model contains a reference counting garbage collector.</li>
+  <li>Note that the USETRACE macro is commented out. It means that here we only use the method for checking linearizability with linearization points specified.</li>
