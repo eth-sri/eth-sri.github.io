@@ -1,0 +1,22 @@
+---
+title: "CORE: Foundations of Practical Concurrency Analysis"
+ref: core
+image: 
+description: "With the proliferation of concurrent programming, it is increasingly important to develop practical tools for concurrency analysis.  The CORE project is an ongoing investigation of the foundations of concurrency analysis for modern software. Today's programs typically use libraries that implement highly concurrent data structures and hide much of the underlying complexity.  A primary goal of CORE is to enable analysis of the usage of such data structures.  This requires a shift from reasoning about low-level memory access to reasoning about high-level data structure interfaces.  Another vital aspect of program analysis is scaling to realistic programs.  A key tool in designing scalable algorithms is exploiting the structure of the problem at hand.  That is why, CORE aims to understand the interplay between analysis complexity and the concurrency structure present in many programs."
+---
+
+
+<h2>Systems</h2>
+<div class="grid">
+  {% include card.html
+    title="ECRacer/C4"
+    output="vertical"
+    url="http://ecracer.inf.ethz.ch/"
+    image="/assets/systems/ecracer.png"
+    description="A tool that checks whether a given program execution is serializable."
+  %}
+</div>
+
+<h2>Publications</h2>
+
+{% include get-publications.html filter="project" key="core" %}
