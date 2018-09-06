@@ -4,7 +4,7 @@ title: Commutativity Race Detection
 authors: Dimitar Dimitrov, Veselin Raychev, Martin Vechev, Eric Koskinen          
 year: 2014
 venue: ACM PLDI
-projects: "CORE: Foundations of practical concurrency analysis"
+projects: core
 awards:
 bibtex: '@article{dimitrov2014commutativity,
   title={Commutativity race detection},

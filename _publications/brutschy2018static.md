@@ -5,7 +5,7 @@ authors: Lucas Brutschy, Dimitar Dimitrov, Peter Müller, Martin Vechev
 year: 2018
 month: 06
 venue: PLDI
-projects: "CORE: Foundations of practical concurrency analysis"
+projects: core
 awards:
 bibtex: '@inproceedings{brutschy2018static,
   title={Static serializability analysis for causal consistency},
