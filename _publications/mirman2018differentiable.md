@@ -15,7 +15,7 @@ bibtex: '@inproceedings{mirman2018differentiable,
   year={2018}}'
 paper: https://files.sri.inf.ethz.ch/website/papers/icml18-diffai.pdf
 talk: 
-slides: 
+slides: https://eth-sri.github.io/assets/slides/mirman2018differentiable.pdf
 ---
 
 We introduce a scalable method for training robust neural networks based on abstract interpretation. We present several abstract transformers which balance efficiency with precision and show these can be used to train large neural networks that are certifiably robust to adversarial perturbations.
