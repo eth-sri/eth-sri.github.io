@@ -15,7 +15,7 @@ permalink: /research/index.html
   </div>
   </header>
 
-
+  <h2>Current Projects</h2>
   <div class="page-content container">
     <div class="row">
       <div class="column">
@@ -28,6 +28,60 @@ permalink: /research/index.html
 	        {% include get-project.html ref="blockchain-security" %}
 	        {% include get-project.html ref="numerical-analysis" %}
 	       </div>
+
+      </div>
+    </div>      
+  </div>
+
+  <h2>Completed Projects</h2>
+  <div class="page-content container">
+    <div class="row">
+      <div class="column">
+
+        <div class="grid">
+          {% include card.html
+            title="Fender: Programming with Relaxed Memory Models"
+            output="vertical"
+            url="http://practicalsynthesis.github.io/"
+            buttontext="View Project"
+          %}
+
+          {% include card.html
+            title="An Interactive Data Structure Development System"
+            output="vertical"
+            url="http://ait.inf.ethz.ch/projects/2015/InteractiveDebugger/"
+            buttontext="View Project"
+          %}
+
+          {% include card.html
+            title="CORE: Foundations of Practical Concurrency Analysis"
+            output="vertical"
+            url="/research/core/"
+            buttontext="View Project"
+          %}
+
+          {% include card.html
+            title="EventRacer: Analysis of Event-Driven Applications"
+            output="vertical"
+            url="https://eventracer.org/"
+            buttontext="View Project"
+          %}
+
+          {% include card.html
+            title="Quality Virtual Machine"
+            output="vertical"
+            url="/publications/arnold2011qvm"
+            buttontext="View Project"
+          %}
+
+          {% include card.html
+            title="Paraglide: Synthesis of Concurrent Systems"
+            output="vertical"
+            url=""
+            buttontext="View Project"
+          %}
+
+        </div>
 
       </div>
     </div>      
