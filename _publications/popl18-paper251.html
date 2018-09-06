@@ -1,0 +1,99 @@
+---
+layout: page
+title: POPL18-Artifact-Paper251
+---
+
+
+<h2>Artifact</h2>
+
+<p>We provide our artifact in the form of a virtual machine which can be downloaded here.</p>
+
+
+
+{% include card.html
+  title="Paper #251"
+  url="http://files.sri.inf.ethz.ch/popl18-paper251.pdf"
+  output="horizontal"
+  description="A Practical Construction for Decomposing Numerical Abstract Domains"
+  paper="http://files.sri.inf.ethz.ch/popl18-paper251.pdf"
+%}
+
+
+<h2>System Requirements</h2>
+<ol>
+  <li>Make sure you have 64-bit VirtualBox from Oracle.</li>
+  <li>The SeaHorn framework and other dependencies make the virtual machine very large. The virtual machine requires at least 25GB of disk space. </li>
+  <li>We recommend allocating at least 2GB RAM to the virtual machine for analyzing larger benchmarks. </li>
+</ol>
+
+
+<h2>Instructions</h2>
+<ol>
+  <li> Extract the virtual machine from the zip file and open in VirtualBox.</li>
+  <li>The login credentials for the Virtual Machine are:
+    <ul>username: POPL2018</ul>
+    <ul>password: popl2018</ul></li>
+  <li> The benchmarks used in the paper can be found in "POPLBenchmarks" directory. We also provide smaller benchmarks in "loops" directory for precision testing.</li>
+  <li> As the Virtual machine is already large, we did not include all benchmarks from SV-COMP. However, these benchmarks are publicly available <a href="https://github.com/sosy-lab/sv-benchmarks">here.</a></li>
+</ol>
+
+
+<h2>Polyhedra</h2>
+<ol>
+  <li> ELINA does not provide a non-decomposed Polyhedra implementation and thus we chose the PPL implementation which is faster than the NewPolka library included in APRON.</li>
+  <li> Our Polyhedra implementation builds on top of ELINA whereas PPL is called using APRON interface.</li>
+  <li> The source code for our library, ELINA and PPL wrapper can be found in "ELINA/elina_poly_generic", "ELINA/elina_poly" and "apron/ppl" directories respectively. </li>
+  <li> It is possible to test our operators outside the seahorn analyzer. The test file "elina_test_poly.c" generates random test cases for a number of Polyhedra operators. The corresponding executable "elina_test_poly" requires two command line arguments : (a) dim: number of variables and (b) nbcons: number of constraints. </li>
+  <li> Our Polyhedra implementation maintains semantic equivalence for all operators with ELINA and PPL if there are no integer overflows. In case of an overflow, all considered libraries produce the string "exception". Note that overflow handling has improved for both our implementation and ELINA since the submission of the paper so the number of overflows detected would be less than reported in the paper (Our implementation still produces lesser overflows than ELINA and PPL on the considered benchmarks). </li>
+</ol>
+
+
+<h2>Octagons</h2>
+<ol>
+  <li> The Octagon implementation of ELINA can be configured to run without decomposition. This implementation uses better algorithms with less complexity for the most expensive closure operator and is thus faster than the corresponding PPL and APRON implementations.</li>
+  <li> Our Octagon implementation builds on top of ELINA.</li>
+  <li> The source code for our library, ELINA Decomposed and ELINA Non-Decomposed can be found in "ELINA/elina_oct_generic", "ELINA/elina_oct_decomposed" and "ELINA/elina_oct_non_decomposed" directories respectively. </li>
+  <li> It is possible to test our operators outside the seahorn analyzer. The test file "elina_test_oct.c" generates random test cases for a number of Octagon operators. The corresponding executable "elina_test_oct" requires two arguments : (a) dim: number of variables and (b) nbcons: number of constraints. </li>
+  <li>Our implementation produces Octagons that are semantically equivalent (but syntactically different) with those produced by both ELINA Decomposed and Non-Decomposed for all Octagon operators except widening. This is because Octagon widening produces different results for semantically equivalent but syntactically different Octagons. The invariants produced by our implementation are semantically the same as without decomposition on most of the benchmarks considered in the paper. </li>
+  <li>Note that our implementation requires fewer constraints to encode the same semantic Octagon than ELINA Decomposed and ELINA Non-Decomposed.</li>
+</ol>
+
+
+<h2>Zones</h2>
+<ol>
+  <li> Both PPL and ELINA do not have Zones implementation so we created our own baseline non-decomposed implementation.</li>
+  <li> Both our baseline and decomposed Zones implementation build on top of APRON.</li>
+  <li> The source code for the baseline and decomposed version can be found in "apron/zones" and "apron/zones_generic" directories respectively. </li>
+  <li> It is possible to test our operators outside the seahorn analyzer. The test file "elina_test_zones.c" generates random test cases for a number of Zones operators. The corresponding executable "elina_test_zones" requires two arguments : (a) dim: number of variables and (b) nbcons: number of constraints. </li>
+  <li>As for Octagons, our implementation produces Zones that are semantically equivalent (but syntactically different) with those produced by the baseline for all Zones operators except widening. The invariants produced by our implementation are semantically the same as without decomposition on most of the benchmarks considered in the paper. </li>
+  <li>Note that our implementation requires fewer constraints to encode the same semantic Zone than the baseline.</li>
+</ol>
+
+
+<h2>Compilation</h2>
+<p>All libraries can be compiled by running "compile.sh" in "scripts" directory.</p>
+
+
+<h2>Precision testing</h2>
+<ol>
+  <li>The analysis is intra-procedural and produces invariants in the form of sub-polyhedra constraints for each basic block in the function. The variables correspond to LLVM bitcode and thus they have unusual names in the invariants. LLVM can also produce different variable names for the same file on different runs. </li>
+  <li> Since the analysis on larger benchmarks produce very large invariants, we provide smaller benchmarks in the "loops" directory. Running "sudo compare.sh" in "scripts" directory runs the Polyhedra, Octagon and Zones analysis with all libraries on these small benchmarks and collects results in "Compare" directory.</li>
+  <li>The generated invariants are small and it is possible to manually compare them.</li>
+</ol>
+
+
+<h2>Reproducing results</h2>
+<ol>
+  <li>For reproducing results reported in the paper, run "sudo measurement.sh" in "scripts" directory. It runs the Zones analysis with all libraries on all benchmarks followed by Octagon and Polyhedra.  </li>
+  <li>  The invariants are collected in "Results" directory. </li>
+  <li> Unix's "time" command is used to display memory consumption (as maximum resident set size) on the terminal. Note that it can also report the total time used by the process which includes time for preprocessing and parsing with LLVM which is not part of the Sub-Polyhedra analysis. We report the time for the Sub-Polyhedra analysis separately on the terminal. (it is also present in the generated files) along with the invariants. </li>
+  <li> We set a default timeout limit of 6000 sec per benchmark, it is trivial to change this limit as per convenience in "measurement.sh".</li>
+</ol>
+
+
+<h2>Caveats</h2>
+<ol>
+  <li> The analysis runs slower on the virtual machine and the timings vary considerably. On our machine, we observed that the slower libraries (e.g., PPL) run upto 10x slower on the virtual machines. The slowdown for our implementation was upto 2x.</li>
+  <li> For some benchmarks, seahorn crashes after the Sub-Polyhedra analysis completes. However, this is not due to Sub-Polyhedra analysis.</li>
+  <li> The "mtd_ubi" benchmarks runs longer with Octagon analysis than with Polyhedra. This is because the Octagon widening takes longer to converge on this benchmark than Polyhedra widening.</li>
+</ol>
