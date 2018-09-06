@@ -2,6 +2,12 @@
 layout: default
 ---
 
+<script type="text/javascript">
+  if (window.location.href.endsWith('.php')) {
+    window.location.href = window.location.href.substring(0, window.location.href.length - 4);
+  }
+</script>
+
 <style type="text/css" media="screen">
   .container {
     margin: 10px auto;
