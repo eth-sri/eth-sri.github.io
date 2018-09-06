@@ -1,0 +1,29 @@
+---
+layout: page
+title: Deterministic concurrency synthesis
+---
+
+
+<h2>Installing the DPS tool from source:</h2>
+
+<ul>
+  <li> You need Ubuntu (12.04) to use the DPS tool. Download it from <a href="dps/dps.tar.bz2">here</a> and follow the instructions below.</li>
+  <li> Extract the archive. Go to directory dps/bench and execute ./build.sh there. This compiles the testing benchmarks.</li>
+  <li>Go to the dps directory. Edit build.sh as follows:</li>
+
+  <ul>
+    <li>The variable BENCHMARKS contains a list of benchmarks to run on (keep in mind that Crypt requires 12GB of RAM).</li>
+    <li>The variable OPTIONS determines the type of synthesis:
+    <ul>
+      <li>tsc_trans2 - this generates the most fine-grained constraints by not requiring an ordering specification, or </li>
+      <li>rw_avoidconflict_tsc_trans2 - this includes the specification where reads go after write on a variable (unless this creates a confict).</li>
+    </ul>
+    </li>
+  </ul>
+  <li>Finally, run ./build.sh and wait a few minutes.</li>
+  <li>The output files are out_JGF*.txt </li>
+</ul>
+
+
+<h2>Virtual Machine with DPS preinstalled</h2>
+<p>If you want to directly download a VM image for VirtualBox with DPS in it, go <a href="{{ "/dpsvm" | relative_url }}">here</a>.</p>

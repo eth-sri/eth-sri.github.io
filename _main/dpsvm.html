@@ -1,0 +1,35 @@
+---
+layout: page
+title: Deterministic concurrency synthesis
+---
+
+
+<h2>Virtual Machine with DPS preinstalled</h2>
+
+<ul>
+  <li>Note: we tested the Virtual Machine, by giving it 14GB of RAM. Make sure your host machine has 16GB or more.</li>
+  <li>Download the virtual machine image from <a href="dps/DPSBox.tar.bz2">here</a></li>
+  <li>Untar it and run it in VirtualBox.</li>
+  <li>Login
+    <ul>
+      <li>User: dps</li>
+      <li>Password: DPSpassword</li>
+    </ul></li>
+  <li>The tool is in a subdirectory dps of the home directory. Run "cd dps".</li>
+  <li>Run ./build.sh</li>
+  <li>The output files are out_JGF*.txt 
+    <ul>
+      <li>To see the number of determinizations, you can run "grep models *.txt".</li>
+    </ul></li>
+  <li>Optional: if you want to only run some benchmarks, you can edit build.sh in the dps/ directory.
+    <ul>
+      <li>The variable BENCHMARKS contains a list of benchmarks to run on (keep in mind that Crypt requires 12GB of RAM).</li>
+      <li>The variable OPTIONS determines the type of synthesis:</li>
+      <ul>
+        <li>tsc_trans2 - this generates the most fine-grained constraints by not requiring an ordering specification, or</li>
+        <li>rw_avoidconflict_tsc_trans2 - this includes the specification where reads go after write on a variable (unless this creates a confict).</li>
+      </ul>
+    </ul></li>
+</ul>
+
+<strong>If you want to download the source code only, click <a href="{{ "/dps" | relative_url }}"">here</a>.</strong>
