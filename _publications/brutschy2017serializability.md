@@ -4,7 +4,7 @@ title: "Serializability for Eventual Consistency: Criterion, Analysis, and Appli
 authors: Lucas Brutschy, Dimitar Dimitrov, Peter Müller, Martin Vechev
 year: 2017
 venue: ACM POPL
-projects: "CORE: Foundations of practical concurrency analysis"
+projects: core
 awards:
 bibtex: "@inproceedings{brutschy2017serializability,
   title={Serializability for eventual consistency: criterion, analysis, and applications},

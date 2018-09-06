@@ -4,7 +4,7 @@ title: Learning Commutativity Specifications
 authors: Timon Gehr, Dimitar Dimitrov, Martin Vechev     
 year: 2015
 venue: CAV
-projects: "CORE: Foundations of practical concurrency analysis"
+projects: core
 awards:
 bibtex: '@inproceedings{gehr2015learning,
   title={Learning commutativity specifications},

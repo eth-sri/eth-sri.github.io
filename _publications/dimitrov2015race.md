@@ -4,7 +4,7 @@ title: Race Detection in Two Dimensions
 authors: Dimitar Dimitrov, Martin Vechev, Vivek Sarkar       
 year: 2015
 venue: ACM SPAA
-projects: "CORE: Foundations of practical concurrency analysis"
+projects: core
 awards:
 bibtex: '@inproceedings{dimitrov2015race,
   title={Race detection in two dimensions},
