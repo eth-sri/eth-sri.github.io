@@ -47,7 +47,7 @@ collections:
   media:
     output: false
     permalink: /:collection/:name
-  events:
+  workshops:
     output: true
     permalink: /:name
 
@@ -82,7 +82,7 @@ defaults:
   -
     scope:
       path: ""
-      type: events
+      type: workshops
     values:
       layout: event
 
