@@ -1,0 +1,55 @@
+---
+layout: event
+title: "PLDI'15 Tutorial: Machine Learning for Code Analytics"
+ref: ml4code-tutorial
+redirect_from: ml4code-tutorial.php
+bgimage: /assets/images/eth-zurich-workshop.jpg
+image:
+dates: June 14, 2015, 2 - 3:30 pm and 4 - 6 pm
+place: PLDI WT G
+venue: Oregon Convention Center
+---
+
+<h2>Overview</h2>
+<p>
+The increased availability of massive codebases, sometimes referred to as "Big Code", creates a unique opportunity for new kinds of programming tools and techniques based on statistical models. These approaches will extract useful information from existing codebases and will use that information to provide statistically likely solutions to problems that are difficult or impossible to solve with traditional techniques.
+</p>
+<p>The tutorial is <strong>self-contained</strong> and will include both:</p>
+<ul>
+  <li><strong>Theory</strong>: an introduction to several machine learning models suitable for learning from programs, and</li>
+  <li><strong>Practice</strong>: a hands-on session showing how to apply the theory for building statistical programming tools. 
+  <br>
+  For this task, we will use the recently released <a href="http://www.nice2predict.org">Nice2Predict</a> framework.</li>
+</ul>
+
+
+{% include card.html
+  title="Tutorial Slides"
+  url="PLDI15-TUTORIAL.pdf"
+  output="horizontal"
+  description="The slides for the tutorial are available here."
+  slides="PLDI15-TUTORIAL.pdf"
+%}
+
+
+<h2>Objectives </h2>
+<p>By the end of the tutorial, the participant should have:</p>
+  <ul>
+    <li> Learned the fundamentals, pros and cons of several machine learning models.</li>
+    <li> Learned how to combine these models with programming languages concepts.</li>
+    <li> Learned how to build a statistical programming tool using the concepts in the tutorial.</li>
+   </ul>
+
+<h2>Tutorial Outline:</h2>
+  <h3>Theory (Part I)</h3>
+    <ul>
+      <li><i>Machine Learning Models:</i> Graphical models (e.g., Markov Networks, Conditional Random Fields) and Language models (e.g., n-gram models)</li>
+      <li><i>Prediction/Inference:</i> MAP inference, Max-marginals, Belief Propagation, Optimal and Approximate algorithms.</li>
+      <li><i>Training/Learning:</i> Discriminative and generative training; Structured SVM learning, Dealing with partition functions, Asymptotic complexity</li>
+    </ul>
+
+  <h3>Practice (Part II)</h3>
+    <ul>
+      <li>Learning from Programs with Graphical Models</li>
+      <li>Building a statistical programming tool using the <a href="http://www.nice2predict.org">Nice2Predict</a> framework.</li>
+    </ul>
