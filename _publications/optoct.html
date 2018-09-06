@@ -1,0 +1,46 @@
+---
+layout: page
+title: PLDI15-Artifact
+---
+
+
+<h2>Artifact</h2>
+
+<p>We provide two forms of our artifact which are as follows:</p>
+<ol>
+  <li>Windows from <a href="http://files.srl.inf.ethz.ch/POPL2018.zip">here</a>.</li>
+  <li>Tar file for installation on linux machines from <a href="http://files.srl.inf.ethz.ch/optoct/pldi15-art-compressed.tar">here</a>.</li>
+</ol>
+
+
+
+{% include card.html
+  title="Paper #236"
+  url="https://www.sri.inf.ethz.ch/papers/pldi15.pdf"
+  output="horizontal"
+  description="Making Numerical Program Analysis Fast"
+  paper="https://www.sri.inf.ethz.ch/papers/pldi15.pdf"
+%}
+
+
+<h2>Instructions</h2>
+<ul>
+  <li>Virtual Machine
+    <ol>
+      <li>Make sure you have 64-bit VirtualBox from Oracle.</li>
+      <li>As some of the benchmarks take a lot of memory, make sure to give as much RAM as possible to the Virtual Machine (CRYPT benchmark in DPS Analyzer requires upto 12GB).</li>
+      <li>The login credentials for the Virtual Machine are:
+        <ul>username: pldi15</ul>
+        <ul>password: pldi15</ul></li>
+      <li>Once the virtual Machine starts, go to the folder "pldi15-artifact" and open "Evaluation" file for instructions on how to compile the optoctagons library and run the analyzers.</li>
+      <li>The virtual machine is the slower alternative as it does not support Intel's AVX Intrinsics. We measured upto 50% slowdown for optoctagons in virtual machine (running on the same machine). Some libraries used in Analyzers also run slowly in virtual machine so the speedup  for end to end program analysis is also reduced. </li>
+    </ol>
+  </li> 
+  </br>
+  <li>Tar File (Preferably for 64-bit Linux) 
+    <ol>  
+      <li>Extract the tar file.</li>
+      <li>Go to the folder "pldi15-artifact" and open "Evaluation" file for instructions on how to compile the optoctagons library and run the analyzers.</li>
+    </ol>
+  </li>
+</ul>
