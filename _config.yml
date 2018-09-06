@@ -50,6 +50,9 @@ collections:
   workshops:
     output: true
     permalink: /:name
+  main:
+    output: true
+    permalink: /:name
 
 defaults:
   -
