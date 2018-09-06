@@ -1,0 +1,26 @@
+---
+layout: page
+title: "Deguard"
+---
+
+<a href="http://www.apk-deguard.com"><img src="{{ "/assets/systems/deguard.jpg" | relative_url }}" style="width:28%;"></a>
+</br></br>
+<p>
+DeGuard (<a href="http://www.apk-deguard.com">http://www.apk-deguard.com</a>) is a novel system for statistical deobfuscation of Android APKs, developed at the Secure, Reliable, and Intelligent Systems Lab, ETH Zurich, the same group which developed the widely used <a href="http://jsnice.org">JSNice system</a>. Similarly to JSNice, DeGuard is based on powerful probabilistic graphical models learned from thousands of open source programs. Using these models, DeGuard recovers important information in Android APKs, including method and class names as well as third-party libraries. DeGuard can reveal string decoders and classes that handle sensitive data in Android malware.
+</p>
+
+<h2>What is the Technology Behind DeGuard?</h2>
+
+DeGuard is developed as part of the <a href="{{ "/projects/plml" | relative_url }}">Machine Learning for Programming project</a> at ETH Zurich. In particular, DeGuard is built on top of the open source <a href="http://nice2predict.org">Nice2Predict</a> framework. A paper describing how DeGuard works is available here: <a href="papers/deguard.pdf">DeGuard CCS'16 paper</a>. For more information on this general direction, including invited and keynote talks, tutorials, and papers, see <a href="{{ "/projects/plml" | relative_url }}">here</a>.
+
+<h2>Contact Us</h2>
+<p>If you are interested in using DeGuard with larger APK files or have other suggestions, please contact: 
+<a href="mailto:martin.vechev@inf.ethz.ch" target="_top">Martin Vechev</a>.</p>
+
+<h2>People behind DeGuard</h2>
+<div class="grid">
+	{% include get-person.html title="Benjamin Bichsel" %}
+    {% include get-person.html title="Petar Tsankov" %}
+    {% include get-person.html title="Veselin Raychev" %}
+    {% include get-person.html title="Prof. Dr. Martin Vechev" %}
+</div>
