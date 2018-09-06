@@ -120,7 +120,7 @@ If you would like to upload and display any personal files on your page, remembe
 You can include the information of a lab member on a particular page. Pull them in using the following code:
 
 ```
-{% include get-person.html title="Jimmy" %}
+{% include get-person.html title="Jimmy Foo" %}
 ```
 
 
