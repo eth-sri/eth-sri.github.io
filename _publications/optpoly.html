@@ -1,0 +1,122 @@
+---
+layout: page
+title: POPL17-Artifact-Paper238
+---
+
+
+<h2>Artifact</h2>
+
+<p> We provide our artifact in the form of a virtual machine which can be downloaded <a href="optpoly/POPL2017.zip">here</a>.
+</p>
+
+
+
+{% include card.html
+  title="Paper #238"
+  url="https://www.sri.inf.ethz.ch/optpoly/popl17-paper238.pdf"
+  output="horizontal"
+  description="Fast Polyhedra Abstract Domain"
+  paper="https://www.sri.inf.ethz.ch/optpoly/popl17-paper238.pdf"
+%}
+
+
+<h2>System Requirements</h2>
+<ol>
+  <li>Make sure you have 64-bit VirtualBox from Oracle.</li>
+  <li>The SeaHorn framework has a number of dependencies which require around 10GB of disk space. We recommended allocating at least 20GB of disk space to the virtual machine.</li>
+  <li>The analysis with newpolka requires large amount of RAM memory (as reported in the paper). Allocate at least 10GB to the virtual machine for analyzing larger benchmarks. </li>
+</ol>
+
+
+<h2>Instructions</h2>
+<ol>
+  <li> Extract the virtual machine from the zip file and open in VirtualBox.</li>
+  <li>The login credentials for the Virtual Machine are:
+    <ul>username: POPL2017</ul>
+    <ul>password: popl2017</ul></li>
+  <li> The source code for our library (optpoly) and newpolka can be found in "apron/optpoly" and "apron/newpolka" directories respectively. </li>
+  <li> To install optpoly, go to "apron/optpoly" and type "make" and then "sudo make install". </li>
+  <li> To install newpolka, go to "apron/newpolka" and type "make allRll" and then "sudo make install". </li>
+  <li> The benchmarks used in the paper can be found in "POPLBenchmarks" directory. We also provide smaller benchmarks in "loops" directory for correctness testing.</li>
+  <li> As the Virtual machine is already large, we did not include all benchmarks from SV-COMP. However, these benchmarks are publicly available <a href="https://github.com/sosy-lab/sv-benchmarks">here.</a></li>
+</ol>
+
+
+<h2>Correctness testing</h2>
+<ol>
+  <li>The analysis is intra-procedural and produces invariants in the form of polyhedra constraints for each basic block in the function. The variables correspond to llvm bitcode and thus they have unusual names in the invariants.</li>
+  <li> As there is no canonical form for polyhedra, the invariants computed by optpoly may be syntactically different from those produced by newpolka, although they represent the same polyhedron (unless either newpolka or optpoly produces integer overflow). For example, {x-y=2, z-y=3} and {x-y=2, z-x=1} are syntactically different but represent the same polyhedra.</li>
+  <li> Since the analysis with newpolka does not finish on most benchmarks reported in the paper, we provide smaller benchmarks in the "loops" directory. The script "verify.sh" in "scripts" directory runs the analysis with both optpoly and newpolka on these small benchmarks and collects results in "Verify/optpoly" and "Verify/newpolka" directories.</li>
+  <li>The generated invariants are small and it is possible to manually compare them.</li>
+  <li> In the case of integer overflow with either library, the corresponding file will contain "exception" string. </li>
+</ol>
+
+
+<h2>Reproducing results</h2>
+<ol>
+  <li>For reproducing results reported in the paper, run "measurement.sh" in "scripts" directory. It runs the analysis on all benchmarks with optpoly first and then with newpolka.  </li>
+  <li>The invariants are collected in "Results/optpoly" and "Results/newpolka" directories. </li>
+  <li> Unix's "time" command is used to display memory consumption (as maximum resident set size) on the terminal. Note that it can also report the total time used by the process which includes time for preprocessing and parsing with llvm which is not part of the Polyhedra analysis. We report the time for the Polyhedra analysis separately on the terminal. (it is also present in the generated files) </li>
+  <li> We set a default timeout limit of 6000 sec per benchmark, it is trivial to change this limit as per convenience in "measurement.sh".</li>
+</ol>
+
+
+<h2>Caveats</h2>
+<ol>
+  <li>The analysis runs slower on the virtual machine and the timings vary considerably. We measured timings from 71 sec to 120 sec during separate runs for "usb_core_main0" benchmark with optpoly. The "net_ppp" benchmark is also around three times slower with optpoly.</li>
+  <li>For some benchmarks, seahorn crashes after the Polyhedra analysis completes. However, this is not due to optpoly or newpolka.</li>
+  <li> There is typo in table 2, for the mtd-ubi benchmark, the analysis time with optpoly should be 4 sec instead of 23.</li>
+</ol>
+
+
+<h2>Compilation</h2>
+<p>All libraries can be compiled by running "compile.sh" in "scripts" directory.</p>
+
+
+<h2>Precision testing</h2>
+<ol>
+  <li>The analysis is intra-procedural and produces invariants in the form of sub-polyhedra constraints for each basic block in the function. The variables correspond to LLVM bitcode and thus they have unusual names in the invariants. LLVM can also produce different variable names for the same file on different runs. </li>
+  <li> Since the analysis on larger benchmarks produce very large invariants, we provide smaller benchmarks in the "loops" directory. Running "sudo compare.sh" in "scripts" directory runs the Polyhedra, Octagon and Zones analysis with all libraries on these small benchmarks and collects results in "Compare" directory.</li>
+  <li>The generated invariants are small and it is possible to manually compare them.</li>
+</ol>
+
+
+<h2>Reproducing results</h2>
+<ol>
+  <li>For reproducing results reported in the paper, run "sudo measurement.sh" in "scripts" directory. It runs the Zones analysis with all libraries on all benchmarks followed by Octagon and Polyhedra.  </li>
+  <li>  The invariants are collected in "Results" directory. </li>
+  <li> Unix's "time" command is used to display memory consumption (as maximum resident set size) on the terminal. Note that it can also report the total time used by the process which includes time for preprocessing and parsing with LLVM which is not part of the Sub-Polyhedra analysis. We report the time for the Sub-Polyhedra analysis separately on the terminal. (it is also present in the generated files) along with the invariants. </li>
+  <li> We set a default timeout limit of 6000 sec per benchmark, it is trivial to change this limit as per convenience in "measurement.sh".</li>
+</ol>
+
+
+<h2>Caveats</h2>
+<ol>
+  <li> The analysis runs slower on the virtual machine and the timings vary considerably. On our machine, we observed that the slower libraries (e.g., PPL) run upto 10x slower on the virtual machines. The slowdown for our implementation was upto 2x.</li>
+  <li> For some benchmarks, seahorn crashes after the Sub-Polyhedra analysis completes. However, this is not due to Sub-Polyhedra analysis.</li>
+  <li> The "mtd_ubi" benchmarks runs longer with Octagon analysis than with Polyhedra. This is because the Octagon widening takes longer to converge on this benchmark than Polyhedra widening.</li>
+</ol>
+
+
+<h2>Additional statistics</h2>
+<p>We performed additional experiments to gather more statistics which were not reported earlier, but will be included in the final version of the paper. For each join point during analysis with optpoly, we measured the total number of variables (|X|), the number of variables in the largest block in the output (|S|) and the number of blocks in the output partition (nb). In the table below, we report the max and the average of these. We also report the fraction of times the output partition was trivial.</p>
+
+<table centering border="0" width="100%" cellspacing="0" cellpadding="0">
+
+<th width=10%>Benchmark</th> <th width="10%">Max(|X|)</th><th width=10%>Avg(|X|)</th><th width="10%">Max(|S|)</th><th width=10%> Avg(|S|) </th><th width=10%> Max(nb) </th><th width=10%> Avg(nb) </th> <th width=10%> trivial/total </th>
+<tr><td>firewire_firedtv</td> <td>159</td> <td>80</td>  <td>24</td>      <td>5</td>   <td>31</td>      <td>6</td>   <td>10/577 </td></tr>
+<tr><td>net_fddi_skfp</td>   <td>589</td><td>111</td> <td>89</td>      <td>24</td>  <td>89</td>  <td>15</td>    <td>76/5163 </td></tr>
+<tr><td>mtd_ubi </td>     <td> 528</td>    <td>60</td>  <td>111</td>       <td>10</td>  <td>57</td>  <td>12</td>    <td>27/2518</td></tr>
+<tr><td>usb_core_main0</td>  <td>365</td>    <td>72</td>  <td>267</td>       <td>29</td>  <td>61</td>  <td>15</td>    <td>80/14594</td></tr>
+<tr><td>tty_synclinkmp</td>  <td> 332</td>   <td>47</td>  <td>48</td>      <td> 8</td>  <td>34</td>  <td>10</td>    <td>23/3862</td></tr>
+<tr><td>scsi_advansys</td>   <td> 282 </td>  <td>67</td>        <td>117 </td>        <td>11</td>  <td>82</td>  <td>19</td>    <td>11/2315</td></tr>
+<tr><td>staging_vt6656</td>    <td>675 </td> <td>53</td>  <td>204 </td>        <td>10</td>  <td>62</td>  <td>6</td>   <td>35/1330</td></tr>
+<tr><td>net_ppp </td>      <td> 218 </td>    <td>59</td>        <td>112</td>         <td>33</td>  <td>19</td>       <td>5</td>    <td>1/2350</td></tr>
+<tr><td>p10_l00 </td>     <td>303</td>       <td>184</td> <td>234 </td>        <td>59</td>  <td>38</td>     <td>29</td>   <td>0/601</td></tr>
+<tr><td>p16_l40 </td>     <td>188</td>       <td>125</td> <td>86  </td>        <td>39</td>  <td>53</td>   <td>38</td>   <td>4/186</td></tr>
+<tr><td>p12_l57 </td>         <td>921</td>   <td>371</td>       <td>461 </td>        <td>110</td> <td>68</td>   <td>28</td>   <td>4/914</td></tr>
+<tr><td>p13_l53 </td>      <td>1631</td>     <td>458</td> <td>617 </td>        <td>149</td> <td>78</td>   <td>28</td>   <td>5/1325</td></tr>
+<tr><td>p19_l59 </td>    <td> 1272</td>     <td>476</td>  <td>867 </td>        <td>250</td> <td>65</td>       <td>21</td>   <td>9/1754</td></tr>
+<tr><td>ddv_all </td>        <td> 45</td>   <td>22</td> <td>7 </td>        <td>2</td>   <td>14</td>    <td>8</td>   <td>5/124</td></tr>
+
+</table>
