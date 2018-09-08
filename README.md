@@ -2,7 +2,7 @@
 
 ## Notice
 
-All larger files, including pdfs of papers/slides, should be uploaded to the file server https://files.sri.inf.ethz.ch/
+All larger files, including pdfs of papers/slides, should be uploaded to the file server https://files.sri.inf.ethz.ch/ in directory '/import/vechev/h1/htdocs-srl/website'. 
 
 ## Overview
 
@@ -32,11 +32,11 @@ The types of content on the site:
 ## Storage areas
 The main folder for storage is `/assets`. It contains stock icons, logos and images from the old site. However, some types of content have their own corresponding storage area, usually at the root level of the site. This includes the following folders:
 
-*  `/events`: stores the materials from events (e.g., slides from workshops)
-*  `/papers`: stores the actual publications
+
+
 *  `/people`: stores each lab member's individual files
-*  `/papers`: stores the slides relevant to publications
-*  `/teaching`: stores the materials of each course (e.g., slides, exercises, solutions, exams, project files)
+
+All other types of resources such as publication pdfs, slides, teaching materials should be uploaded on the file server in '/import/vechev/h1/htdocs-srl/website' 
 
 
 ## General Editing
@@ -126,7 +126,7 @@ You can include the information of a lab member on a particular page. Pull them 
 
 ### Publications
 Where to edit: `\_publications`\
-Storage areas: `\papers`, `\slides`
+Storage areas: `/import/vechev/h1/htdocs-srl/website/papers`, `/import/vechev/h1/htdocs-srl/website/slides`
 
 The main publications list (publications.html) contains all papers authored by Martin.
 
@@ -134,11 +134,11 @@ You may create files under `\_publications` for your own papers.
 
 To create a new publication:
 1. Create a reference name (e.g., jimmy2019ai). Use the same reference name in the html filename (e.g., jimmy2019ai.html), and for the 'ref' field in the front matter of the html file. 
-2. If your publication is not already available on an external site, upload it as a PDF file to the `\papers` folder, and specify the file name for the 'paper' field in the front matter of the html file. 
+2. Upload the publication on the file server and specify the full url as 'paper' field. 
 If your publication is already uploaded to an external site, simply provide the URL for the 'paper' field.
 3. A talk is a recorded presentation for your publication, and it's always assumed to have been uploaded to an external site (e.g. Youtube). Provide its URL in the 'talk' field in the front matter of the html file. 
-4.  If you have presentation slides for your publication, and it's not already available on an external site, upload it as a PDF or presentation file to the `\slides` folder, and specify the file name for the 'slides' field in the front matter of the html file. 
-If your publication is already uploaded to an external site, simply provide the URL for the 'slides' field.
+4.  If you have presentation slides for your publication, upload them on the file server and specify 'slides' field with their url. 
+
 
 ```yaml
 ---
@@ -235,7 +235,7 @@ You can change the output style:
 
 ### Teaching
 Where to edit: `\_teaching`\
-Storage areas: `\teaching`
+Storage areas: `/import/vechev/h1/htdocs-srl/website/teaching`
 
 Courses are listed on the teaching.html page, and are pulled in one by one:
 
@@ -257,7 +257,7 @@ Remember to specify the proper "alt" tag for your file.
 
 #### Events
 Where to edit: `\_events`\
-Storage areas: `\events`
+Storage areas: `/import/vechev/h1/htdocs-srl/website/events`
 
 Events are special in that they do not contain the main menu of the site. 
 
