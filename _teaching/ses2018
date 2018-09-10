@@ -1,0 +1,30 @@
+---
+title: Software Engineering Seminar
+ref: ses2018
+description: Covers latest research trends in the field of programming languages and software engineering.
+semester: Fall 2018
+number: 252-2600-05L
+lecturer: Prof. Dr. Martin Vechev, Dr. Dana Drachsler Cohen
+assistants:
+edoz: http://www.vvz.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?lerneinheitId=124898&semkez=2018W&ansicht=KATALOGDATEN&lang=en
+session-time-place: Mon 13-15, CHN G 46
+lecture-time-place:
+exercise-time-place:
+credits: 2
+image: orator.jpg
+
+---
+
+<h2>Overview </h2>
+<p>
+The main goal of this seminar is to introduce students to the latest research trends in the field of programming languages and systems, including:
+	<ul>
+		<li>Core automated program analysis and synthesis techniques (e.g., new algorithms, combinations with machine learning).</li>
+		<li>Inter-disciplinary applications of these techniques to a variety of challenges in system reliability, security and performance (e.g., reasoning about networks).</li>
+	</ul>
+</p>
+
+
+<p>The seminar is carried out as a set of presentations (2 each lecture) chosen from a set of available papers (available below). The grade is determined as a function of the presentation, handling questions and answers, and participation.
+</p>
+
