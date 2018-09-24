@@ -2,7 +2,13 @@
 
 ## Notice
 
-All larger files, including pdfs of papers/slides, should be uploaded to the file server https://files.sri.inf.ethz.ch/ in directory '/import/vechev/h1/htdocs-srl/website'. 
+All larger files, including pdfs of papers/slides, should be uploaded to the file server.
+
+```
+$ ssh websrl@web-login.inf.ethz.ch
+[websrl@web-login htdocs-srl]$ cd /import/vechev/h1/htdocs-srl/website
+```
+Upload you files to the '/import/vechev/h1/htdocs-srl/website' directory. All files are then available under https://files.sri.inf.ethz.ch/ url. For example, file in '/import/vechev/h1/htdocs-srl/website/slides/deguard-androidsec17.pdf' is available at https://files.sri.inf.ethz.ch/website/slides/deguard-androidsec17.pdf
 
 ## Overview
 
