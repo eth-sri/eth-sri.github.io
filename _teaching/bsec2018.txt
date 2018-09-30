@@ -11,12 +11,12 @@ Oct 31	Foundations and Tools for the Static Analysis of Ethereum smart contracts
 Nov 7	An Empirical Analysis of Traceability in the Monero Blockchain	https://arxiv.org/pdf/1704.04299/	Mark Ballandies	Benjamin	benjamin.bichsel@inf.ethz.ch
 Nov 7	CALYPSO: Auditable Sharing of Private Data over Blockchains	https://eprint.iacr.org/2018/209.pdf	Selma Steinhoff	Sam	samuel.steffen@inf.ethz.ch
 Nov 14	RapidChain: Scaling Blockchain via Full Sharding	https://eprint.iacr.org/2018/460.pdf	Alexandre Cavaleri	Petar	petar.tsankov@inf.ethz.ch
-					
+Nov 14	S-gram: Towards Semantic-Aware Security Auditing For Ethereum Smart Contracts	https://dl.acm.org/citation.cfm?id=3240728	Guanju Li	Petar	petar.tsankov@inf.ethz.ch
 			 		
 			 		
 Nov 28	Scilla: a Smart Contract Intermediate-Level LAnguage	https://arxiv.org/abs/1801.00687	Johannes Kapfhammer	Petar	petar.tsankov@inf.ethz.ch
 	Online Detection of Effectively Callback Free Objects with Applications to Smart Contracts	https://www.cs.tau.ac.il/research/yoni.zohar/popl18.pdf	 		
-	S-gram: Towards Semantic-Aware Security Auditing For Ethereum Smart Contracts	https://dl.acm.org/citation.cfm?id=3240728	 		
+					
 	SECURIFY: Practical Security Analysis of Smart Contracts	https://files.sri.inf.ethz.ch/website/papers/ccs18-securify.pdf	 		
 	MadMax: Surviving Out-of-Gas Conditions in Ethereum Smart Contracts	http://www.nevillegrech.com/madmax-oopsla18.pdf	 		
 	Enter the Hydra: Towards Principled Bug Bounties and Exploit-Resistant Smart Contracts	https://www.usenix.org/system/files/conference/usenixsecurity18/sec18-breidenbach.pdf	 		
