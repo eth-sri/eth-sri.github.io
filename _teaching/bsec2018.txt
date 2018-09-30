@@ -12,7 +12,7 @@ Nov 7	An Empirical Analysis of Traceability in the Monero Blockchain	https://arx
 Nov 7	CALYPSO: Auditable Sharing of Private Data over Blockchains	https://eprint.iacr.org/2018/209.pdf	Selma Steinhoff	Sam	samuel.steffen@inf.ethz.ch
 Nov 14	RapidChain: Scaling Blockchain via Full Sharding	https://eprint.iacr.org/2018/460.pdf	Alexandre Cavaleri	Petar	petar.tsankov@inf.ethz.ch
 Nov 14	S-gram: Towards Semantic-Aware Security Auditing For Ethereum Smart Contracts	https://dl.acm.org/citation.cfm?id=3240728	Guanju Li	Petar	petar.tsankov@inf.ethz.ch
-			 		
+Nov 21	Ekiden: A Platform for Confidentiality-Preserving, Trustworthy, and Performant Smart Contracts	https://arxiv.org/pdf/1804.05141.pdf	Shivam Srivastava	Dana	dana.drachsler@inf.ethz.ch
 			 		
 Nov 28	Scilla: a Smart Contract Intermediate-Level LAnguage	https://arxiv.org/abs/1801.00687	Johannes Kapfhammer	Petar	petar.tsankov@inf.ethz.ch
 	Online Detection of Effectively Callback Free Objects with Applications to Smart Contracts	https://www.cs.tau.ac.il/research/yoni.zohar/popl18.pdf	 		
@@ -22,5 +22,3 @@ Nov 28	Scilla: a Smart Contract Intermediate-Level LAnguage	https://arxiv.org/ab
 	Enter the Hydra: Towards Principled Bug Bounties and Exploit-Resistant Smart Contracts	https://www.usenix.org/system/files/conference/usenixsecurity18/sec18-breidenbach.pdf	 		
 	Erays: Reverse Engineering Ethereum’s Opaque Smart Contracts	https://www.usenix.org/system/files/conference/usenixsecurity18/sec18-zhou.pdf	 		
 	BitML: a calculus for Bitcoin smart contracts	https://eprint.iacr.org/2018/122.pdf			
-	Ekiden: A Platform for Confidentiality-Preserving, Trustworthy, and Performant Smart Contracts	https://arxiv.org/pdf/1804.05141.pdf			
-	DelegaTEE: Brokered Delegation Using Trusted Execution Environments	https://www.usenix.org/system/files/conference/usenixsecurity18/sec18-matetic.pdf			
