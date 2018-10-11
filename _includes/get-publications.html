@@ -1,16 +1,11 @@
-{% assign sorted_publications = site.publications | sort:"year" | sort:"month" | reverse %}
-{% assign current_year = 0 %}
+{% assign sorted_publications = site.publications | group_by:"year" | sort:"name" | reverse %}
 
 
-{% for publication in sorted_publications %}
+{% for year in sorted_publications %}
+  <h2>{{year.name}}</h2>
+  {% assign sorted_publications_by_year = year.items | sort: "month" %}
+  {% for publication in sorted_publications_by_year %}
 
-
-  {% unless include.filter %}
-    {% if current_year != publication.year %}
-      {% assign current_year = publication.year %}
-      <h2>{{current_year}}</h2>
-    {% endif %}
-  {% endunless %}
 
 
   {% if include.filter == 'person' %}
@@ -71,4 +66,5 @@
     </div>
 
   </div>
+  {% endfor %}
 {% endfor %}
