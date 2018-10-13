@@ -22,7 +22,7 @@
 
 {% for year in sorted_publications %}
 
-  {% assign sorted_publications_by_year = year.items | sort: "month" %}
+  {% assign sorted_publications_by_year = year.items | sort: "month" | reverse %}
   {% if sorted_publications_by_year.size  > 0 %}
 
   <h2>{{year.name}}</h2>
