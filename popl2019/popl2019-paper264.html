@@ -31,11 +31,21 @@ An Abstract Domain for Certifying Neural Networks <br><a href="http://files.srl.
 <li> The benchmarks used in the paper can be found in "CAV2018/Benchmarks" directory.</li>
 <li> As the Virtual machine is already large, we did not include the learning data as well as the benchmarks used for training. </li>
  </ol>
-<br><b> Analyzer <br></b>
-<li>The Source code for our abstract domain can be found in "DeepPoly/ELINA/fppoly" directory.</li>
-<li>We have precompiled SeaHorn as it has a number of dependencies. The executable is located in "seahorn/build/run/bin" directory.</li>
+<br><b> Neural Networks <br></b>
+<li>The MNIST feedforward and convolutional network used in our evaluation can be found in the "DeepPoly/nets/mnist/feedforward" and "DeepPoly/nets/mnist/conv" directories respectively.</li>
+<li>Similarly the CIFAR neural networks can be found in the "DeepPoly/nets/cifar/feedforward" and "DeepPoly/nets/cifar/conv" directories.</li>
 
-<br><b>Polyhedra libraries<br> </b>
+
+<br><b> Specs <br></b>
+<li>The images for the MNIST networks can be found in "DeepPoly/specs/mnist" directory. This folder has three subdirectories: 
+<ul>The "null2" directory contains the 10 original images used in our evaluation</ul>
+<ul>The "L_infinity" directory contains the L_infinity robustness specifications for the 10 images with different epsilons (specified in the name) </ul>
+<ul>The "total_tight" directory contains the brightness specifications with different epsilons. The value of epsilon can be determined by subtraction the number in the name of the file from 1, e.g. img0_spec_black0.915.txt corresponds to im0 perturbed with an epsilon of 0.085.</ul></li>
+<li>Similarly the CIFAR specs can be found in the "DeepPoly/specs/cifar/null2", "DeepPoly/specs/cifar/L_infinity", and "DeepPoly/specs/cifar/total_tight" directories. </li> 
+<li> Note that the range of images for the CIFAR dataset is -0.5 to 0.5 compard to 0 to 1 for MNIST.</li>
+
+
+<br><b>Analyzers<br> </b>
 <ol>
 <li> Our approximate Polyhedra implementations build on top of ELINA.
 <li> The source code for ELINA Polyhedra library, Poly-RL, Poly-Fixed and Poly-Init can be found in "ELINA/elina_poly", "ELINA/poly_rl", "ELINA/poly_fixed" and "ELINA/poly_init" directories respectively. </li>
