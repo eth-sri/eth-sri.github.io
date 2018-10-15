@@ -7,11 +7,11 @@
 
 <b>Artifact </b><br><br>
 
-We provide our artifact in the form of a virtual machine running Ubuntu 18.04 which can be downloaded <a href="http://files.srl.inf.ethz.ch/CAV2018.ova">here</a>.
+We provide our artifact in the form of a virtual machine running Ubuntu 18.04 which can be downloaded <a href="http://files.srl.inf.ethz.ch/POPL2019.ova">here</a>.
 We prepared the virtual machine on a 10 Core 3.3 GHz  Intel i9-7900X Processor running Ubuntu 17.10. We allocated 4 GB of RAM to the virtual machine.
 
 <br><br><b>Paper #264</b><br>
-An Abstract Domain for Certifying Neural Networks <br><a href="http://files.srl.inf.ethz.ch/cav18-paper259.pdf" class="pdf"><img src="images/pdf.png" class=pdf-load border="0" alt="PDF" noborder></a> </li>
+An Abstract Domain for Certifying Neural Networks <br><a href="http://files.srl.inf.ethz.ch/popl19-paper264.pdf" class="pdf"><img src="images/pdf.png" class=pdf-load border="0" alt="PDF" noborder></a> </li>
  
 
 <br><br><br><b>System Requirements<br> </b>
@@ -54,14 +54,14 @@ An Abstract Domain for Certifying Neural Networks <br><a href="http://files.srl.
 <ul>The source code for handling the rotations can be found in the directory "DeepPoly/refinement".</ul>
 </li>
 <li> FastLin
-<ul> We have adapted the parser for <a href="https://github.com/huanzhang12/CertifiedReLURobustness"> FastLin </a> to work with our networks. The analyzers stays the same.</ul>
-<ul> The files "DeepPoly/analyzers/fastlin_L_infinity_mnist.py" and "DeepPoly/analyzers/fastlin_brighness_mnist.py" verify the robustness of MNIST feedforward network against L_infinity and brightness attacks.</ul>
-<ul> The files "DeepPoly/analyzers/fastlin_L_infinity_cifar.py" and "DeepPoly/analyzers/fastlin_brighness_cifar.py" verify the robustness of CIFAR feedforward network against L_infinity and brightness attacks.</ul>
+<ul> We have adapted the parser for <a href="https://github.com/huanzhang12/CertifiedReLURobustness"> FastLin </a> to work with our networks. The analysis stays the same.</ul>
+<ul> The files "DeepPoly/analyzers/fastlin_L_infinity_mnist.py" and "DeepPoly/analyzers/fastlin_brighness_mnist.py" respectively verify the robustness of MNIST feedforward network against L_infinity and brightness attacks.</ul>
+<ul> The files "DeepPoly/analyzers/fastlin_L_infinity_cifar.py" and "DeepPoly/analyzers/fastlin_brighness_cifar.py" respectively verify the robustness of CIFAR feedforward network against L_infinity and brightness attacks.</ul>
 </li>
 <li> AI2 </li>
 <ul>The source code for AI2 can be found in the directory "ai2/nn_ai".</ul>
 <ul> AI2 can work with Interval, Polyhedra, and Zonotope domains. We have already compiled AI2 to work with the Zonotope domain implementation from ELINA (the best known configuration for AI2) found in "DeepPoly/ELINA/elina_zonotope".</ul></li>
-<li> Fastlin takes an original image and then perturbs it with a given epsilon whereas DeepPoly and AI2 work directly the robustness specification files. </li>
+<li> Fastlin takes an original image and then perturbs it with a given epsilon whereas DeepPoly and AI2 work directly the specification files in the "L_infinity" and "total_tight" directories. </li>
 </ol>
 
 
@@ -79,12 +79,6 @@ An Abstract Domain for Certifying Neural Networks <br><a href="http://files.srl.
 	<li> The analysis runs slower on the virtual machine and the timings vary considerably. We have observed upto 2x slowdowns for the analysis of larger networks. </li>
 
 	</ol>
-
-	  
-
-
-
-
 
                 </div>
         </div>
