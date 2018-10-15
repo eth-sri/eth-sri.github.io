@@ -39,40 +39,42 @@ An Abstract Domain for Certifying Neural Networks <br><a href="http://files.srl.
 <br><b> Specs <br></b>
 <li>The images for the MNIST networks can be found in "DeepPoly/specs/mnist" directory. This folder has three subdirectories: 
 <ul>The "null2" directory contains the 10 original images used in our evaluation</ul>
-<ul>The "L_infinity" directory contains the L_infinity robustness specifications for the 10 images with different epsilons (specified in the name) </ul>
-<ul>The "total_tight" directory contains the brightness specifications with different epsilons. The value of epsilon can be determined by subtraction the number in the name of the file from 1, e.g. img0_spec_black0.915.txt corresponds to im0 perturbed with an epsilon of 0.085.</ul></li>
+<ul>The "L_infinity" directory contains the L_infinity robustness specifications for the 10 images with 6 different epsilons (specified in the name) </ul>
+<ul>The "total_tight" directory contains the brightness specifications for the 10 images with 6 different epsilons. The epsilon value for a given specification file can be determined by subtracting the number in the name of the file from 1, e.g., img0_spec_black0.915.txt corresponds to img0 perturbed with an epsilon of 0.085.</ul>
+<ul> The "rotations" directory contains the L_infinity norm perturbed image for the rotation attack.</li>
 <li>Similarly the CIFAR specs can be found in the "DeepPoly/specs/cifar/null2", "DeepPoly/specs/cifar/L_infinity", and "DeepPoly/specs/cifar/total_tight" directories. </li> 
 <li> Note that the range of images for the CIFAR dataset is -0.5 to 0.5 compard to 0 to 1 for MNIST.</li>
 
 
 <br><b>Analyzers<br> </b>
 <ol>
-<li> Our approximate Polyhedra implementations build on top of ELINA.
-<li> The source code for ELINA Polyhedra library, Poly-RL, Poly-Fixed and Poly-Init can be found in "ELINA/elina_poly", "ELINA/poly_rl", "ELINA/poly_fixed" and "ELINA/poly_init" directories respectively. </li>
-<li> The "ELINA/poly_rl" directory contains "weights.txt" file which contains the learned weights for the Q-function with linear function approximation. Poly-RL requires "weights.txt" to be in the folder in which the analysis is running. We have copied "weights.txt" in the directories containing benchmarks.</li>
-<li> It is possible to test our operators outside the seahorn analyzer. The test file "elina_test_poly.c" in the respective directories generates random test cases for a number of Polyhedra operators. The corresponding executable "elina_test_poly" requires two command line arguments : (a) dim: number of variables and (b) nbcons: number of constraints. </li>
-
+<li> DeepPoly </li>
+<ul> The analysis with our abstract domain for the feedforward and convolutional networks can be found in the files "DeepPoly/analyzers/deeppoly_ffn.py" and "DeepPoly/analyzers/deeppoly_conv.py" directory.</ul> 
+<ul>The abstract domain implementation builds on top of the ELINA library. The domain implementation can be found in the "DeepPoly/ELINA/fppoly" directory. We have already precompiled and install ELINA in the virtual machine. </ul>
+</li>
+<li> FastLin
+<ul> We have adapted the parser for <a href="https://github.com/huanzhang12/CertifiedReLURobustness"> FastLin </a> to work with our networks. The analyzers stays the same.</ul>
+<ul> The files "DeepPoly/analyzers/fastlin_L_infinity_mnist.py" and "DeepPoly/analyzers/fastlin_brighness_mnist.py" verify the robustness of MNIST feedforward network against L_infinity and brightness attacks.</ul>
+<ul> The files "DeepPoly/analyzers/fastlin_L_infinity_cifar.py" and "DeepPoly/analyzers/fastlin_brighness_cifar.py" verify the robustness of CIFAR feedforward network against L_infinity and brightness attacks.</ul>
+</li>
+<li> AI2 </li>
+<ul>The source code for AI2 can be found in the directory "ai2/nn_ai".</ul>
+<ul> AI2 can work with Interval, Polyhedra, and Zonotope domains. We have already compiled AI2 to work with the Zonotope domain implementation from ELINA (the best known configuration for AI2) found in "DeepPoly/ELINA/elina_zonotope".</ul></li>
+<li> Fastlin takes an original image and then perturbs it with a given epsilon whereas DeepPoly and AI2 work directly the robustness specification files. </li>
 </ol>
 
 
 
 <br><b>Reproducing results<br> </b>
 <ol>
-<li>For reproducing results reported in the paper, run "sudo run.sh" in "CAV2018" directory. It compiles, installs and runs the ELINA Polyhedra analysis on all benchmarks followed by Poly-RL, Poly-Fixed and Poly-Init.  </li>
- <li>  The invariants and runtimes are collected in "results" directory. </li>
-<li>After completing the analysis, the script first shows the runtimes in cycles of all libraries on all benchmarks. The timings can be converted to seconds through dividing by CPU frequency. No runtime is reported in case of a timeout or crash.</li>
-<li>The script then shows the precision in percentage of all approximate libraries on all benchmarks with respect to ELINA. It also shows the number of program points on which an approximate implementation produces same or better fixpoints and the total number of program points on which invariants are comapred.</li>
-<li>SeaHorn can be invoked with Polyhedra analysis without "run.sh" by using the command "/home/cav2018/seahorn/build/run/bin/sea pf --crab --crab=opt-pk-elina filename". The shared object produced by all Polyhedra implementations has the same name so make sure to first install the desired implementation in "/usr/local/lib".  </li>
-<li> We also included 5 benchmarks from product lines category in the directory "CAV2018/product-lines". ELINA times out on all of these. It is possible to run them directly as explained above or by modifying "run.sh" to use "product-lines" instead of "Benchmarks" directory. More benchmarks on which ELINA times out can be found <a href="https://github.com/sosy-lab/sv-benchmarks/tree/master/c/product-lines">here</a> with the prefix "email_spec0", "email_spec1", "email_spec8", and "email_spec9" and "email_spec11".</li>
-<li> We set a default timeout limit of 3600 sec per benchmark, it is trivial to change this limit as per convenience in "run.sh".</li>
+<li>For reproducing results reported in the paper, run "sudo run.sh" in "DeepPoly/scripts" directory. It first runs DeepPoly analysis on all MNIST and CIFAR networks with L_infinity and brightness specifications, followed by FastLin (only feedforward networks considered) and AI2.  </li>
+ <li>  The verification and timing results are collected in the "results" directory. The files ending with "robustness" contains the verification results and "timing" contains the runtime in seconds. If the neural network is robust under an adverserial attack then "verified" is printed otherwise "Failed" is printed.</li>
+<li> The "run.sh" script also produces a summary of the results comparing the robustness and runtimes of all three analyzers in the "DeepPoly/result_summary" directory. The summary files ending with "robustness" contain the percentage of specifications proved to be robust for each analyzer per epsilon value whereas the files ending with "timing" contain the average runtime in seconds per epsilon value. </li>
+<li> Note that for the analysis of a given neural network under a given attack, if an analyzer runs out of memory or is stopped by the user, the script "run.sh" will continue with the next specification however no summary file will be produced. However, it is still possible to view the results for the other specification in the "results" directory. This can happen for example in the evaluation of the convolutional networks where AI2 frequently either runs out of memory or takes too long.</li>
 </ol>
 
 <br><b>Caveats<br> </b><ol>
-	<li> The analysis runs slower on the virtual machine and the timings vary considerably. For benchmarks that run faster with ELINA, we observed that there was little speedup with Poly-RL. </li>
-<li> Since Poly-Init takes random actions, the timing and precision varies. Thus, the obtained timing and precision values from the virtual machine may be significantly different than the ones reported in the paper.</li>
-	<li> For some benchmarks, seahorn crashes after the Polyhedra analysis completes. However, this is due to the SMT solver and not because of Polyhedra analysis.</li>
-<li> For "ata_pata", "ideapad_laptop" and "net_ppp" benchmarks, the analysis seems to crash before it can write all invariants on the virtual machine (the Polyhedra analysis finishes), thus the number of program points at which the fixpoints are compared are less than reported in the paper. We found that on the virtual machine, invariants were produced for 230, 377 and 580 program points respectively on these benchmarks instead of 262, 461 and 680 as reprted in the paper. Thus, the precision of our approximations on these benchmarks may differ from the ones reported in the paper.</li>
-<li>If less memory is available than recommended, then the analysis may crash before it completes and thus the reported precision will be significanlty less. </li>
+	<li> The analysis runs slower on the virtual machine and the timings vary considerably. We have observed upto 2x slowdowns for the analysis of larger networks. </li>
 
 	</ol>
 
