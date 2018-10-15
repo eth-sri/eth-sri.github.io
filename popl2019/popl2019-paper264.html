@@ -51,6 +51,7 @@ An Abstract Domain for Certifying Neural Networks <br><a href="http://files.srl.
 <li> DeepPoly </li>
 <ul> The analysis with our abstract domain for the feedforward and convolutional networks can be found in the files "DeepPoly/analyzers/deeppoly_ffn.py" and "DeepPoly/analyzers/deeppoly_conv.py" directory.</ul> 
 <ul>The abstract domain implementation builds on top of the ELINA library. The domain implementation can be found in the "DeepPoly/ELINA/fppoly" directory. We have already precompiled and install ELINA in the virtual machine. </ul>
+<ul>The source code for handling the rotations can be found in the directory "DeepPoly/refinement".</ul>
 </li>
 <li> FastLin
 <ul> We have adapted the parser for <a href="https://github.com/huanzhang12/CertifiedReLURobustness"> FastLin </a> to work with our networks. The analyzers stays the same.</ul>
@@ -67,10 +68,11 @@ An Abstract Domain for Certifying Neural Networks <br><a href="http://files.srl.
 
 <br><b>Reproducing results<br> </b>
 <ol>
-<li>For reproducing results reported in the paper, run "sudo run.sh" in "DeepPoly/scripts" directory. It first runs DeepPoly analysis on all MNIST and CIFAR networks with L_infinity and brightness specifications, followed by FastLin (only feedforward networks considered) and AI2.  </li>
+<li>For reproducing results for the L_infinity and brightness attacks reported in the paper, run "sudo run.sh" in "DeepPoly/scripts" directory. It first runs DeepPoly analysis on all MNIST and CIFAR networks with L_infinity and brightness specifications, followed by FastLin (only feedforward networks considered) and AI2.  </li>
  <li>  The verification and timing results are collected in the "results" directory. The files ending with "robustness" contains the verification results and "timing" contains the runtime in seconds. If the neural network is robust under an adverserial attack then "verified" is printed otherwise "Failed" is printed.</li>
 <li> The "run.sh" script also produces a summary of the results comparing the robustness and runtimes of all three analyzers in the "DeepPoly/result_summary" directory. The summary files ending with "robustness" contain the percentage of specifications proved to be robust for each analyzer per epsilon value whereas the files ending with "timing" contain the average runtime in seconds per epsilon value. </li>
 <li> Note that for the analysis of a given neural network under a given attack, if an analyzer runs out of memory or is stopped by the user, the script "run.sh" will continue with the next specification however no summary file will be produced. However, it is still possible to view the results for the other specification in the "results" directory. This can happen for example in the evaluation of the convolutional networks where AI2 frequently either runs out of memory or takes too long.</li>
+<li> For reproducing the result for the rotation specifications, first run "experiments.sh" in the "DeepPoly/refinement" folder, this will run the rotation algorithm with different number of batches and batch sizes and generate the corresponding rotated images. Next run "run_experiments.sh", this will run the DeepPoly analysis on the different rotated images and print the verification result and the runtime in seconds.
 </ol>
 
 <br><b>Caveats<br> </b><ol>
