@@ -38,51 +38,51 @@ An Abstract Domain for Certifying Neural Networks <br><a href="http://files.srl.
 
 
 <br><b> Specs <br></b>
-<li>The images for the MNIST networks can be found in "DeepPoly/specs/mnist" directory. This folder has three subdirectories: 
-<ul>The "null2" directory contains the 10 original images used in our evaluation</ul>
-<ul>The "L_infinity" directory contains the L_infinity robustness specifications for the 10 images with 6 different epsilons (specified in the name) </ul>
-<ul>The "total_tight" directory contains the brightness specifications for the 10 images with 6 different epsilons. The epsilon value for a given specification file can be determined by subtracting the number in the name of the file from 1, e.g., img0_spec_black0.915.txt corresponds to img0 perturbed with an epsilon of 0.085.</ul>
-<ul> The "rotations" directory contains the L_infinity norm perturbed image for the rotation attack.</li>
+<li>The images for the MNIST networks can be found in "DeepPoly/specs/mnist" directory. This folder has the following subdirectories: 
+<ul>The "null2" directory contains the 10 original images used in our evaluation.</ul>
+<ul>The "L_infinity" directory contains the L_infinity robustness specifications for the 10 images with 6 different epsilons (specified in the name). </ul>
+<ul>The "total_tight" directory contains the brightness specifications for the 10 images with 6 different epsilons. The epsilon value for a given brightness specification file can be determined by subtracting the number in the name of the file from 1, e.g., img0_spec_black0.915.txt corresponds to img0 perturbed with an epsilon of 0.085.</ul>
+<ul>The "rotations" directory contains the L_infinity norm perturbed image for the rotation attack.</li>
 <li>Similarly the CIFAR specs can be found in the "DeepPoly/specs/cifar/null2", "DeepPoly/specs/cifar/L_infinity", and "DeepPoly/specs/cifar/total_tight" directories. </li> 
-<li> Note that the range of images for the CIFAR dataset is -0.5 to 0.5 compard to 0 to 1 for MNIST.</li>
+<li> Note that the range of images for the CIFAR dataset is -0.5 to 0.5 compared to 0 to 1 for the MNIST.</li>
 
 
 <br><b>Analyzers<br> </b>
 <ol>
 <li> DeepPoly </li>
-<ul> The analysis with our abstract domain for the feedforward and convolutional networks can be found in the files "DeepPoly/analyzers/deeppoly_ffn.py" and "DeepPoly/analyzers/deeppoly_conv.py".</ul> 
-<ul>The abstract domain implementation builds on top of the ELINA library. The domain implementation can be found in the "DeepPoly/ELINA/fppoly" directory. </ul>
-<ul> We have also implemented a parallel version of our domain in the directory "ELINA/fppoly-parallel". The analysis with the parallelized implementation runs upto 10x faster than with the sequential implementation on our machine. For using the parallelized version, the virtual machine needs to be configured by going to "settings/system/processor" and enabling the use of multiple processors and the implementation needs to be compiled and installed by running "make" and "sudo make install" in the "ELINA/fppoly-parallel" directory. This may help in analyzing CIFAR convolutional network whose analysis with DeepPoly with the sequential implementation is time consuming. </ul>
+<ul> The analysis with our abstract domain for the feedforward and convolutional networks can be found in the files "DeepPoly/analyzers/deeppoly_ffn.py" and "DeepPoly/analyzers/deeppoly_conv.py" respectively.</ul> 
+<ul>The abstract domain implementation builds on top of the ELINA library. Our domain implementation can be found in the "DeepPoly/ELINA/fppoly" directory. </ul>
+<ul> We have also implemented a parallel version of our domain in the directory "ELINA/fppoly-parallel". The analysis with the parallelized implementation ran upto 10x faster than with the sequential implementation on our machine. For using the parallelized version, navigate to "settings/system/processor" and set the desired number of processors. Using the parallel domain implementation may help in analyzing CIFAR convolutional network whose analysis with DeepPoly based on the sequential implementation is time consuming. </ul>
 <ul>The source code for handling the rotations can be found in the directory "DeepPoly/refinement".</ul>
 </li>
 <li> FastLin
-<ul> We have adapted the parser for <a href="https://github.com/huanzhang12/CertifiedReLURobustness"> FastLin </a> to work with our networks. The analysis stays the same.</ul>
+<ul> We have adapted the <a href="https://github.com/huanzhang12/CertifiedReLURobustness"> FastLin </a> parser to work with our networks. The analysis stays the same.</ul>
 <ul> The files "DeepPoly/analyzers/fastlin_L_infinity_mnist.py" and "DeepPoly/analyzers/fastlin_brighness_mnist.py" respectively verify the robustness of MNIST feedforward network against L_infinity and brightness attacks.</ul>
 <ul> The files "DeepPoly/analyzers/fastlin_L_infinity_cifar.py" and "DeepPoly/analyzers/fastlin_brighness_cifar.py" respectively verify the robustness of CIFAR feedforward network against L_infinity and brightness attacks.</ul>
 </li>
 <li> AI2 </li>
 <ul>The source code for AI2 can be found in the directory "ai2/nn_ai".</ul>
-<ul> AI2 can work with Interval, Polyhedra, and Zonotope domains. The best known configuration for AI2 is with the ELINA zonotope domain found in "DeepPoly/ELINA/elina_zonotope".</ul></li>
-<li> Fastlin takes an original image and then perturbs it with a given epsilon whereas DeepPoly and AI2 work directly the specification files in the "L_infinity" and "total_tight" directories. </li>
+<ul> AI2 can work with Interval, Polyhedra, and Zonotope domains. The best known configuration for AI2 is with the ELINA zonotope domain found in "DeepPoly/ELINA/elina_zonotope". . </ul></li>
+<li> Fastlin takes an original image and then perturbs it with a given epsilon whereas DeepPoly and AI2 directly take the adversarial region from the specification files in the "L_infinity" and "total_tight" directories. </li>
 </ol>
 
 
 
 <br><b>Reproducing results<br> </b>
 <ol>
-<li>Go to the "DeepPoly/ELINA" folder and run "make" followed by "sudo make install". This will isntall the sequential version of our library. To install the parallelized version, go to the "DeepPoly/ELINA/fppoly_parallel" folder and run "make" followed by "sudo make install".</li>
-<li> Go to the "ai2/nn_ai" folder and run "./buildapron.sh" followed by "./build.sh -version=OPT_ZONO" to build AI2 with the ELINA zonotope domain.
-<li>For reproducing results for the L_infinity and brightness attacks reported in the paper, run "sudo run.sh" in "DeepPoly/scripts" directory. Its runs DeepPoly analysis on all MNIST and CIFAR networks with L_infinity and brightness specifications, followed by FastLin (only feedforward networks considered) and AI2.  </li>
-<li>The script first displays the analyzer type, then the network type on the screen. Next it displays the robustness property being verified which includes the name of the image, the epsilon used and the type of attack. Note that for the brightness attack, the script displays "1-epsilon" for DeepPoly and AI2 and "epsilon" for FastLin. </li>
- <li>  The verification and timing results are collected in the "results" directory. The files ending with "robustness" contains the verification results and "timing" contains the runtime in seconds. If the neural network is robust under an adverserial attack then "verified" is printed otherwise "Failed" is printed.</li>
-<li> The "run.sh" script also produces a summary of the results comparing the robustness and runtimes of all three analyzers in the "DeepPoly/result_summary" directory. The summary files ending with "robustness" contain the percentage of specifications proved to be robust for each analyzer per epsilon value whereas the files ending with "timing" contain the average runtime in seconds per epsilon value. </li>
-<li> Note that for the analysis of a given neural network under a given attack, if an analyzer runs out of memory or is stopped by the user, the script "run.sh" will continue with the next specification however no summary file will be produced (or the results may be inconsistent). However, it is still possible to view the results for the other specification in the "results" directory. This can happen for example when running AI2 on the CIFAR convolutional networks where it frequently either runs out of memory.</li>
-<li> For reproducing the result for the rotation specifications, first run "experiments.sh" in the "DeepPoly/refinement" folder, this will run the rotation algorithm with different number of batches and batch sizes and generate the corresponding rotated images. Next run "run_experiments.sh", this will run the DeepPoly analysis on the different rotated images and print the verification result and the runtime in seconds.
+<li>Go to the "DeepPoly/ELINA" folder and run "make" followed by "sudo make install". This will inatall the sequential version of our library. To install the parallelized version, go to the "DeepPoly/ELINA/fppoly_parallel" folder and run "make" followed by "sudo make install".</li>
+<li> Go to the "ai2/nn_ai" folder and run "./buildapron.sh" followed by "./build.sh -version=OPT_ZONO" to build AI2 with the ELINA zonotope domain. The README file provides information on building AI2 with other domain implementations. </li>
+<li>Our results for the L_infinity and brightness attacks reported in the paper can be reproduced by running "sudo ./run.sh" command in "DeepPoly/scripts" directory. It runs DeepPoly analysis on all MNIST and CIFAR networks with L_infinity and brightness specifications, followed by FastLin (works on only feedforward networks) and AI2.  </li>
+<li>The script first displays the analyzer type and the network name on the screen. Next it displays the robustness property being verified which includes the name of the image, the epsilon used and the type of attack. Note that for the brightness attack, the script displays "1-epsilon" for DeepPoly and AI2 and "epsilon" for FastLin. </li>
+ <li> The verification and timing results are collected in the "results" directory. The files ending with "robustness" contain the verification results. If the neural network is robust under an adversarial attack then "verified" is printed otherwise "Failed" is printed. The files ending with "timing" contain the runtime in seconds. </li>
+<li> The "run.sh" script also produces a summary of the results comparing the robustness and the average runtimes per network of all three analyzers in the "DeepPoly/result_summary" directory. The summary files ending with "robustness" contain the percentage of specifications proved to be robust for each analyzer per epsilon value whereas the files ending with "timing" contain the average runtime in seconds per epsilon value. </li>
+<li> Note that if an analyzer runs out of memory or is stopped by the user while analyzing a given neural network under an adversarial attack, the script "run.sh" will continue the analysis on the next adversarial region however no (or inconsistent) summary file will be produced for the given network under the considered attack. However, it is still possible to view the results for the other specification in the "results" directory. This can happen for example when analyzing the CIFAR convolutional network with AI2 where it frequently runs out of memory.</li>
+<li> Our results for the rotation specifications can be reproduced by first running "./experiments.sh" in the "DeepPoly/refinement" folder. This will run the rotation algorithm with different values of batches and batch sizes considered in our experiments and generate the corresponding rotated images. Next run "./run_experiments.sh", this will run the DeepPoly analysis on the generated rotated images and print the verification result and the runtime in seconds.
 </ol>
 
 <br><b>Caveats<br> </b><ol>
 	
-	<li> The analysis runs slower on the virtual machine than on the host processor. The processor used for preparing the virtual machine is faster than the one used for evaluation. For smaller benchmarks, we observed that DeepPoly and FastLin can produce smaller runtimes even on the virtual machine on this processor. However, we observed upto 2x slowdowns for the analysis of larger networks on the virtual machine.</li>
+	<li> The analysis runs slower on the virtual machine than on the host processor. Our processor for preparing the virtual machine is faster than the one used for evaluation. For smaller benchmarks, we observed that DeepPoly and FastLin can produce smaller runtimes even on the virtual machine on this processor. However, we observed upto 2x slowdowns over our evaluation in the paper for the analysis of the larger networks on the virtual machine.</li>
 	
 	</ol>
 
