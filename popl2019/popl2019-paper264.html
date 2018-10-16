@@ -53,6 +53,7 @@ An Abstract Domain for Certifying Neural Networks <br><a href="http://files.srl.
 <li> DeepPoly </li>
 <ul> The analysis with our abstract domain for the feedforward and convolutional networks can be found in the files "DeepPoly/analyzers/deeppoly_ffn.py" and "DeepPoly/analyzers/deeppoly_conv.py" directory.</ul> 
 <ul>The abstract domain implementation builds on top of the ELINA library. The domain implementation can be found in the "DeepPoly/ELINA/fppoly" directory. We have already precompiled and install ELINA in the virtual machine. </ul>
+<ul> We have also implemented a parallel version of our domain in the directory "ELINA/fppoly-parallel". The analysis with the parallelized implementation runs upto 10x faster than with the sequential implementation. For using the parallelized version, the virtual machine needs to be configured as described <a href="https://askubuntu.com/questions/365615/how-do-i-enable-multiple-cores-in-my-virtual-enviroment"> here </a> and the implementation needs to be compiled and installed by running "make" and "sudo make install" in the "ELINA/fppoly-parallel" directory. This may help in analyzing CIFAR convolutional network which takes quite long to run with the sequential implementation. </ul>
 <ul>The source code for handling the rotations can be found in the directory "DeepPoly/refinement".</ul>
 </li>
 <li> FastLin
