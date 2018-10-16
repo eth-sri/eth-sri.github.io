@@ -62,7 +62,7 @@ An Abstract Domain for Certifying Neural Networks <br><a href="http://files.srl.
 </li>
 <li> AI2 </li>
 <ul>The source code for AI2 can be found in the directory "ai2/nn_ai".</ul>
-<ul> AI2 can work with Interval, Polyhedra, and Zonotope domains. We have already configured AI2 to work with the Zonotope domain implementation from ELINA (the best known configuration for AI2) found in "DeepPoly/ELINA/elina_zonotope".</ul></li>
+<ul> AI2 can work with Interval, Polyhedra, and Zonotope domains. The best known configuration for AI2 is with the ELINA zonotope domain found in "DeepPoly/ELINA/elina_zonotope".</ul></li>
 <li> Fastlin takes an original image and then perturbs it with a given epsilon whereas DeepPoly and AI2 work directly the specification files in the "L_infinity" and "total_tight" directories. </li>
 </ol>
 
@@ -71,6 +71,7 @@ An Abstract Domain for Certifying Neural Networks <br><a href="http://files.srl.
 <br><b>Reproducing results<br> </b>
 <ol>
 <li>Go to the "DeepPoly/ELINA" folder and run "make" followed by "sudo make install". This will isntall the sequential version of our library. To install the parallelized version, go to the "DeepPoly/ELINA/fppoly_parallel" folder and run "make" followed by "sudo make install".</li>
+<li> Go to the "ai2/nn_ai" folder and run "./buildapron.sh" followed by "./build.sh -version=OPT_ZONO" to build AI2 with the ELINA zonotope domain.
 <li>For reproducing results for the L_infinity and brightness attacks reported in the paper, run "sudo run.sh" in "DeepPoly/scripts" directory. Its runs DeepPoly analysis on all MNIST and CIFAR networks with L_infinity and brightness specifications, followed by FastLin (only feedforward networks considered) and AI2.  </li>
 <li>The script first displays the analyzer type, then the network type on the screen. Next it displays the robustness property being verified which includes the name of the image, the epsilon used and the type of attack. Note that for the brightness attack, the script displays "1-epsilon" for DeepPoly and AI2 and "epsilon" for FastLin. </li>
  <li>  The verification and timing results are collected in the "results" directory. The files ending with "robustness" contains the verification results and "timing" contains the runtime in seconds. If the neural network is robust under an adverserial attack then "verified" is printed otherwise "Failed" is printed.</li>
