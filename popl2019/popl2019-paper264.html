@@ -80,7 +80,7 @@ An Abstract Domain for Certifying Neural Networks <br><a href="http://files.srl.
 
 <br><b>Caveats<br> </b><ol>
 	
-	<li> The processor used for preparing the virtual machine is faster than the one used for evaluation. Thus for smaller benchmarks, we observed that DeepPoly and FastLin can produce smaller runtimes even on the virtual machine. However, We have observed upto 2x slowdowns for the analysis of larger networks on the virtual machine.</li>
+	<li> The analysis runs slower on the virtual machine than on the host processor. The processor used for preparing the virtual machine is faster than the one used for evaluation. For smaller benchmarks, we observed that DeepPoly and FastLin can produce smaller runtimes even on the virtual machine on this processor. However, we observed upto 2x slowdowns for the analysis of larger networks on the virtual machine.</li>
 	
 	</ol>
 
