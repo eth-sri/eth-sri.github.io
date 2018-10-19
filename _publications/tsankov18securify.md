@@ -10,7 +10,7 @@ awards:
 bibtex: ''
 paper: https://files.sri.inf.ethz.ch/website/papers/ccs18-securify.pdf
 talk: 
-slides: 
+slides: https://files.sri.inf.ethz.ch/website/slides/ccs18-securify-slides.pdf
 ---
 
 Permissionless blockchains allow the execution of arbitrary programs (called smart contracts), enabling mutually untrusted entities to interact without relying on trusted third parties. Despite their potential, repeated security concerns have shaken the trust in handling billions of USD by smart contracts. 
