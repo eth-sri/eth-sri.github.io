@@ -3,6 +3,7 @@ ref: bielik2018inferui
 title: Robust Relational Layouts Synthesis from Examples for Android
 authors: Pavol Bielik, Marc Fischer, Martin Vechev 
 year: 2018
+month: 11
 venue: ACM OOPSLA
 projects: plml
 awards:
