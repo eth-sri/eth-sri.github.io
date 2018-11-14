@@ -10,7 +10,7 @@ awards:
 bibtex: ''
 paper: https://files.sri.inf.ethz.ch/website/papers/ccs18-debin.pdf
 talk: 
-slides: 
+slides: https://files.sri.inf.ethz.ch/website/slides/ccs18-debin-slides.pdf
 ---
 
 We present a novel approach for predicting debug information in stripped binaries. Using machine learning, we first train probabilistic models on thousands of non-stripped binaries and then use these models to predict properties of meaningful elements in unseen stripped binaries. Our focus is on recovering symbol names, types and locations, which are critical source-level information wiped off during compilation and stripping.
