@@ -5,7 +5,7 @@ authors: Gagandeep Singh, Timon Gehr, Matthew Mirman, Markus Püschel, Martin Ve
 year: 2018
 month: 12
 venue: NIPS
-projects: numerical-analysis
+projects: safeai
 awards:
 bibtex:
 paper: https://files.sri.inf.ethz.ch/website/papers/DeepZ.pdf
