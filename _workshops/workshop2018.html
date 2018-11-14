@@ -28,7 +28,7 @@ Ensuring that our programs behave correctly and reliably is a fundamental challe
 
 <h2>Organizers</h2>
 <p>
-<a href="http://www.pm.inf.ethz.ch/people/personal/pmueller-pers.html">Peter M&uumlller (ETH Z&uumlrich) </a>, <a href="{{ "/people/martin" | relative_url }}">Martin Vechev (ETH Z&uumlrich) </a>, <a href="http://web.cs.ucdavis.edu/~su/">Zhendong Su (ETH Z&uumlrich)</a>
+<a href="http://www.pm.inf.ethz.ch/people/personal/pmueller-pers.html">Peter M&uumlller (ETH Z&uumlrich) </a>, <a href="{{ "/people/martin" | relative_url }}">Martin Vechev (ETH Z&uumlrich) </a>, <a href="https://people.inf.ethz.ch/suz/">Zhendong Su (ETH Z&uumlrich)</a>
 </br>
 This is the sixth time the workshop is being held (formerly Workshop on Software Correctness and Reliability).  Materials from the
 <a href="{{ "/workshop2017" | relative_url }}">2017</a>,
@@ -65,8 +65,8 @@ This is the sixth time the workshop is being held (formerly Workshop on Software
 	<td><a href="http://www.cs.umd.edu/~mwh/"><div class="talk" style="font-weight: normal;" data-tooltip="Michael W. Hicks is a Professor in the Computer Science department and recently completed a three-year term as Chair of ACM SIGPLAN, the Special Interest Group in Programming Languages. His research focuses on using programming languages and analyses to improve the security, reliability, and availability of software. He has explored the design of new programming languages and analysis tools for helping programmers find bugs and software vulnerabilities, and explored technologies to shorten patch application times by allowing software upgrades without downtime. Recently he has been looking at synergies between cryptography and programming languages, as well techniques involving random testing and probabilistic reasoning. He also led the development of a new security-oriented programming contest, 'build-it, break-it, fix-it,' which has been offered to the public and to students of his Coursera class on Software Security. He blogs at http://www.pl-enthusiast.net/.">Michael Hicks</div></a></td>
 	<td>Maryland, USA</td>
 	<td><div class="talk" style="color: #0079AF;" data-tooltip="Numeric static analysis for Java has a broad range of potentially useful applications, including array bounds checking and resource usage estimation. However, designing a scalable numeric static analysis for real-world Java programs presents a multitude of design choices, each of which may interact with others. For example, an analysis could handle method calls via either a top-down or bottom-up interprocedural analysis. Moreover, this choice could interact with how we choose to represent aliasing in the heap and/or whether we use a relational numeric domain, e.g., convex polyhedra. In this paper, we present a family of abstract interpretation-based numeric static analyses for Java and systematically evaluate the impact of 162 analysis configurations on the DaCapo benchmark suite. Our experiment considered the precision and performance of the analyses for discharging array bounds checks. We found that top-down analysis is generally a better choice than bottom-up analysis, and that using access paths to describe heap objects is better than using summary objects corresponding to points-to analysis locations. Moreover, these two choices are the most significant, while choices about the numeric domain, representation of abstract objects, and context-sensitivity make much less difference to the precision/performance tradeoff.">Evaluating Design Tradeoffs in Numeric Static Analysis for Java</div></td>
-	<td></td>
-	<td></td>
+	<td><a href="{{"https://files.sri.inf.ethz.ch/website/events/workshop2018/slides-hicks.pdf" | relative_url }}" class="pdf" title="slides-hicks"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=2Rp2yH4v964&list=PLn9KV9ACrihj3jW2LVwMdSTXuQxxDmiD-&index=1" title="eth-hicks"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
 </tr>
 
 <tr>
@@ -74,8 +74,8 @@ This is the sixth time the workshop is being held (formerly Workshop on Software
 	<td><a href="http://web.cs.ucla.edu/~harryxu/">Harry Xu</a></td>
 	<td>UCLA, USA</td>
 	<td><div class="talk" style="color: #0079AF;" data-tooltip="Static program analysis has been widely used in academia and industry to find bugs, security vulnerabilities, and optimization opportunities.  Despite significant progresses on algorithmic design, existing analysis techniques often cannot scale to large codebases, are difficult to implement/understand by regular developers, and are incapable of analyzing programs involving multiple languages. I will talk about a project that revisits these problems from a data-driven perspective and develops novel system solutions that can make static analyses easy-to-implement, support large codebases, and support programs written in multiple languages. In particular, I will focus on two graph systems we have developed: Graspan and Grapple. Graspan is a disk-based parallel graph system that supports efficient and scalable CFL-reachability computation over very large program graphs, while Grapple is a graph engine designed to support efficient and scalable context-sensitive and path-sensitive static analysis. We have used these tools to analyze a variety of large-scale software systems, such as the Linux kernel (C), the PostgreSQL database (C), and Apache Hadoop (Java), and found numerous bugs in recent versions of these systems. Our results also demonstrate that the analysis implementations based on our graph engines have an order of magnitude fewer lines of code than their traditional counterparts and yet are much more efficient.">Systemized Program Analysis - A Big Data Perspective on Scalable, Easy-to-Implement, and Multilingual Static Analysis</div></td>
-	<td></td>
-	<td></td>
+	<td><a href="{{"https://files.sri.inf.ethz.ch/website/events/workshop2018/slides-xu.pdf" | relative_url }}" class="pdf" title="slides-xu"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=O0vZaX7RWFs&list=PLn9KV9ACrihj3jW2LVwMdSTXuQxxDmiD-&index=2" title="eth-xu"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
 </tr>
 
 <tr>
@@ -92,8 +92,8 @@ This is the sixth time the workshop is being held (formerly Workshop on Software
 	<td><a href="https://www.microsoft.com/en-us/research/people/nswamy/">Nikhil Swamy</a></td>
 	<td>Microsoft Research</td>
 	<td><div class="talk" style="color: #0079AF;" data-tooltip="For program verification at scale, proof automation is just as important as user-control of automation heuristics and proof stability. Whereas SMT-based program verifiers offer good automation on various classes of problems, they provide users with little control and large proofs can be unpredictable. Further, proofs in logics outside SMT-automatable theories are difficult or impossible. On the other hand, scripting proofs with tactics has been a tradition in interactive theorem proving for decades. However, building application-specific tactics can require a significant effort. Meta-F* is a new metaprogramming framework embedded within the F* proof assistant. It promotes a combination of SMT- and tactic-based proofs for dependently typed, higher order, effectful programs. Drawing on experience with Project Everest, an ongoing effort to verify a secure communication stack in F*, we show that scripting only those parts of proofs that SMT solvers handle poorly improves overall proof robustness and automation at a relatively low cost for the tactic programmer.">Meta-F*: Proof Automation with SMT, Tactics, and Metaprograms</div></td>
-	<td></td>
-	<td></td>
+	<td><a href="{{"https://files.sri.inf.ethz.ch/website/events/workshop2018/slides-swamy.pdf" | relative_url }}" class="pdf" title="slides-swamy"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=46f5skPRic0&index=3&list=PLn9KV9ACrihj3jW2LVwMdSTXuQxxDmiD-" title="eth-swamy"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
 </tr>
 
 <tr>
@@ -114,8 +114,8 @@ This is the sixth time the workshop is being held (formerly Workshop on Software
 	In this talk, we present a recent line of work on the automated synthesis and discovery of specifications that overcome many of the deficiencies found in existing methods. Our main contribution is a formulation of the problem as a data-driven one that leverages off-the-shelf machine learning algorithms and theorem provers to generate useful candidate specifications that can be used as part of an automated verification pipeline.  We highlight several instantiations of this approach, including inference of sophisticated shape specifications for functional data structure verification, and predicate inference in CHC (Constrained Horn Clause) systems to enable verification of numeric programs.
 
 	Experimental results indicate that our techniques are both efficient and effective, capable of automatically producing useful and verifiable specifications over a range of complex real-world programs, going well beyond the capabilities of existing solutions.">Learning to Specify</div></td>
-	<td></td>
-	<td></td>
+	<td><a href="{{"https://files.sri.inf.ethz.ch/website/events/workshop2018/slides-jagannathan.pdf" | relative_url }}" class="pdf" title="slides-jagannathan"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=Atm4-DHUpXc&list=PLn9KV9ACrihj3jW2LVwMdSTXuQxxDmiD-&index=4" title="eth-jagannathan"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
 </tr>
 
 <tr>
@@ -124,7 +124,7 @@ This is the sixth time the workshop is being held (formerly Workshop on Software
 	<td>MIT, USA</td>
 	<td><div class="talk" style="color: #0079AF;" data-tooltip="Programmable analog devices are a powerful new computing substrate that are especially appropriate for performing computationally intensive simulations of dynamical systems. Until recently, the de-facto standard for programming these devices required hardware specialists to manually program the analog device to model the dynamical system of interest. In this talk, I will present Arco, a compiler that automatically configures analog devices to perform dynamical system simulation, and Jaunt, a compilation technique that that scales dynamical system parameters to change the speed of the simulation and render the resulting simulation physically realizable given the operating constraints of the analog hardware platform.  These techniques capture the domain knowledge required to fully exploit the capabilities of reconfigurable analog devices, eliminating a key obstacle to the widespread adoption of these devices.">Compiling Dynamical Systems for Efficient Simulation on Reconfigurable Analog Computers</div></td>
 	<td></td>
-	<td></td>
+	<td><a href="https://www.youtube.com/watch?v=AXJdHkf_2Hc&list=PLn9KV9ACrihj3jW2LVwMdSTXuQxxDmiD-&index=5" title="eth-achour"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
 </tr>
 
 
@@ -139,11 +139,11 @@ This is the sixth time the workshop is being held (formerly Workshop on Software
 
 <tr>
 	<td>15:30 - 16:00</td>
-	<td><a href="http://web.cs.ucdavis.edu/~su/"><div class="talk" style="font-weight: normal;" data-tooltip="Zhendong Su is a Professor in Computer Science at ETH Zurich. Previously, he was a Professor in Computer Science and a Chancellor's Fellow at UC Davis. He received his PhD in Computer Science from UC Berkeley.  His research spans programming languages and compilers, software engineering, computer security, deep learning and education technologies.  His work was recognized by an ACM SIGSOFT Impact Paper Award, a Google Scholar Classic Paper (2017) Award, multiple best/distinguished paper awards at top venues, an ACM CACM Research Highlight, an NSF CAREER Award, a UC Davis Outstanding Faculty Award, and multiple industrial faculty awards.  He serves on the steering committees of ISSTA and ESEC/FSE, served as an Associate Editor for ACM TOSEM, co-chaired SAS 2009, program chaired ISSTA 2012, and program co-chaired SIGSOFT FSE 2016.">Zhendong Su</div></a></td>
+	<td><a href="https://people.inf.ethz.ch/suz/"><div class="talk" style="font-weight: normal;" data-tooltip="Zhendong Su is a Professor in Computer Science at ETH Zurich. Previously, he was a Professor in Computer Science and a Chancellor's Fellow at UC Davis. He received his PhD in Computer Science from UC Berkeley.  His research spans programming languages and compilers, software engineering, computer security, deep learning and education technologies.  His work was recognized by an ACM SIGSOFT Impact Paper Award, a Google Scholar Classic Paper (2017) Award, multiple best/distinguished paper awards at top venues, an ACM CACM Research Highlight, an NSF CAREER Award, a UC Davis Outstanding Faculty Award, and multiple industrial faculty awards.  He serves on the steering committees of ISSTA and ESEC/FSE, served as an Associate Editor for ACM TOSEM, co-chaired SAS 2009, program chaired ISSTA 2012, and program co-chaired SIGSOFT FSE 2016.">Zhendong Su</div></a></td>
 	<td>ETH Z&uumlrich</td>
 	<td><div class="talk" style="color: #0079AF;" data-tooltip="This talk introduces mathematical execution (ME), a general approach for testing numerical software. ME captures a desired testing objective via a representing function and transforms automated testing to the minimization of the representing function (which is solved via mathematical optimization).  Critically, ME systematically directs input space exploration by only executing the representing function to avoid the intractable static/symbolic reasoning of numerical code.  To demonstrate ME's power and promise, this talk describes ME-based algorithms for solving floating-point constraints and coverage-based testing of numerical code that lead to drastically improved results over the state-of-the-art.">	Numerical Program Analysis via Mathematical Execution</div></td>
 	<td></td>
-	<td></td>
+	<td><a href="https://www.youtube.com/watch?v=uW7uCWPSI1Q&index=6&list=PLn9KV9ACrihj3jW2LVwMdSTXuQxxDmiD-" title="eth-su"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
 </tr>
 
 <tr>
@@ -151,8 +151,8 @@ This is the sixth time the workshop is being held (formerly Workshop on Software
 	<td><a href="{{ "/people/martin" | relative_url }}">Martin Vechev</a></td>
 	<td>ETH Z&uumlrich</td>
 	<td><div class="talk" style="color: #0079AF;" data-tooltip="In this talk, I will discuss some of the ongoing research efforts in our group which aim to make deep learning more reliable and explainable. In the process I will outline several open problems in the space.">Safe Deep Learning: progress and open problems</div></td>
-	<td></td>
-	<td></td>
+	<td><a href="{{"https://files.sri.inf.ethz.ch/website/events/workshop2018/slides-vechev.pdf" | relative_url }}" class="pdf" title="slides-vechev"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=PZWAqZP-77M&index=7&list=PLn9KV9ACrihj3jW2LVwMdSTXuQxxDmiD-" title="eth-vechev"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
 </tr>
 
 <tr>
@@ -160,8 +160,8 @@ This is the sixth time the workshop is being held (formerly Workshop on Software
 	<td><a href="http://www.pm.inf.ethz.ch/people/personal/pmueller-pers.html">Peter M&uumlller</a></td>
 	<td>ETH Z&uumlrich</td>
 	<td><div class="talk" style="color: #0079AF;" data-tooltip="CTL is a temporal logic commonly used to express program properties. Most of the existing approaches for proving CTL properties only support certain classes of programs, limit their scope to a subset of CTL, or do not directly support certain existential CTL formulas. This talk presents an abstract interpretation framework for proving CTL properties that does not suffer from these limitations. Our approach automatically infers sufficient preconditions, and thus provides useful information even when a program satisfies a property only for some inputs. We systematically derive a program semantics that precisely captures CTL properties by abstraction of the operational trace semantics of a program. We then leverage existing abstract domains based on piecewise-defined functions to derive decidable abstractions that are suitable for static program analysis.">Abstract Interpretation of CTL Properties</div></td>
-	<td></td>
-	<td></td>
+	<td><a href="{{"https://files.sri.inf.ethz.ch/website/events/workshop2018/slides-mueller.pdf" | relative_url }}" class="pdf" title="slides-mueller"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=SzbYS41EDmI&index=8&list=PLn9KV9ACrihj3jW2LVwMdSTXuQxxDmiD-" title="eth-mueller"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
 </tr>
 </table>
 
@@ -189,8 +189,8 @@ This is the sixth time the workshop is being held (formerly Workshop on Software
 	<td><a href="https://www.st.cs.uni-saarland.de/zeller/"><div class="talk" style="font-weight: normal;" data-tooltip="Andreas Zeller is Faculty at the Center for IT-Security, Privacy, and Accountability (CISPA), and professor for Software Engineering at Saarland University, both in Saarbrücken, Germany. In 2010, Zeller was inducted as Fellow of the ACM for his contributions to automated debugging and mining software archives, for which he also obtained the ACM SIGSOFT Outstanding Research Award in 2018.  His current work focuses on specification mining and test case generation, funded by grants from DFG and the European Research Council (ERC).">Andreas Zeller</div></a></td>
 	<td>Saarland, Germany</td>
 	<td><div class="talk" style="color: #0079AF;" data-tooltip="Model-based testing techniques allow for a thorough exploration of the program behavior, but require a model in the first place. Model inference techniques, on the other hand, promise to extract suitable models from program executions, but require these very executions in the first place. Is there a way out of this chicken-and-egg problem? In this talk, I suggest to conduct both testing and inference at the system interface, which allows a clear distinction between valid and invalid inputs, and effectively allows to both test and infer models at the same time. Given only a program without any sample inputs, our AUTOGRAM prototype uses parser-directed test generation to infer a context-free grammar that models the program input; this grammar can be immediately used to synthesize millions of valid inputs.">Advances in Grammar Mining and Testing</div></td>
-	<td></td>
-	<td></td>
+	<td><a href="{{"https://files.sri.inf.ethz.ch/website/events/workshop2018/slides-zeller.pdf" | relative_url }}" class="pdf" title="slides-zeller"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=2MXqTob07KQ&list=PLn9KV9ACrihj3jW2LVwMdSTXuQxxDmiD-&index=9" title="eth-zeller"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
 </tr>
 
 <tr>
@@ -199,7 +199,7 @@ This is the sixth time the workshop is being held (formerly Workshop on Software
 <td>Purdue, USA</td>
 <td><div class="talk" style="color: #0079AF;" data-tooltip="Artificial intelligence and machine learning models are becoming an integral part of modern computing systems. Just like software inevitably has bugs, models have bugs too, leading to poor classification/ prediction accuracy or security vulnerabilities. In this talk, I will present our recent work on AI model debugging and adversarial sample attack detection. Inspired by software debugging, we propose a model debugging technique that works by first conducting model state differential analysis to identify the internal features of the model that are responsible for model bugs and then performing training input selection that is similar to program input selection in regression testing. Our results show that the technique can improve model accuracy by 10-15% with very little additional training time, even for off-the-shelf well-trained models. Adversarial sample attacks perturb benign inputs to induce DNN misbehaviors. We argue that adversarial sample attacks are deeply entangled with interpretability of DNN models: while classification results on benign inputs can be reasoned based on the human perceptible features/attributes, results on adversarial samples can hardly be explained. I will talk about an adversarial sample detection technique for face recognition models, based on interpretability. It can achieve 94% detection accuracy for 7 different kinds of attacks with 9.91% false positives on benign inputs.">Analyzing AI Model Internals for Debugging and Adversarial Sample Attack Detection</div></td>
 <td></td>
-<td></td>
+<td><a href="https://www.youtube.com/watch?v=FG3m7n562C8&list=PLn9KV9ACrihj3jW2LVwMdSTXuQxxDmiD-&index=10" title="eth-zhang"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
 </tr>
 
 <tr>
@@ -217,7 +217,7 @@ This is the sixth time the workshop is being held (formerly Workshop on Software
 	<td>Microsoft Research</td>
 	<td><div class="talk" style="color: #0079AF;" data-tooltip="Deep Learning has been the crucial step forward in perceptual tasks such as the understanding of images, speech and natural language. So far, it has had less impact on the practice of Software Engineering, where it is competing with a wide variety of mature, existing methods based on logic and deduction. I will discuss how these two worlds can be combined, as well as present first results that can show the way towards practical tools. Finally, I will report on user experience problems arising from the use of Deep Learning in Software Engineering tools.">Understanding and Generating Source Code with Deep Learning</div></td>
 	<td></td>
-	<td></td>
+	<td><a href="https://www.youtube.com/watch?v=SWozYU_DUtA&list=PLn9KV9ACrihj3jW2LVwMdSTXuQxxDmiD-&index=11" title="eth-brockschmidt"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
 </tr>
 
 <tr>
@@ -234,8 +234,8 @@ This is the sixth time the workshop is being held (formerly Workshop on Software
 	<td><a href="https://yanniss.github.io/"><div class="talk" style="font-weight: normal;" data-tooltip="Yannis Smaragdakis (http://smaragd.org) is a Professor at the University of Athens. Prior to that he had a 10+ year faculty career in the US, most recently as an Associate Professor at the University of Massachusetts, Amherst. His interests include program analysis and testing (especially pointer analysis, static-dynamic analysis combinations, and invariant inference); declarative and extensible languages (especially program generators, generics/templates, and applications of the Datalog language); and languages and tools for systems (especially multi-threading, parallel and distributed computing, and program locality). Large parts of his FC++ project have been integrated into the Boost C++ libraries, and he continues to maintain strong ties to industrial development and open-source projects. His latest work includes the Doop framework for the analysis of Java bytecode, as well as other related projects for program analysis algorithms expressed declaratively, in the Datalog language. Smaragdakis has served on the SIGPLAN Executive Committee and was the Program Chair of OOPSLA'16. He is a recipient of an NSF Career award, ERC Consolidator and Proof-of-Concept grants, and best/distinguished paper or artifact awards at ECOOP'18, OOPSLA'15, ISSTA'12, ASE'07, ISSTA'06, GPCE'04, USENIX'99.">Yannis Smaragdakis</div></a></td>
 	<td>Athens, Greece</td>
 	<td><div class="talk" style="color: #0079AF;" data-tooltip="The talk will discuss the general declarative points-to analysis approach of the Doop framework and then present some recent developments. The main emphasis will be on a defensive may-point-to analysis approach, which offers soundness even in the presence of arbitrary opaque code (e.g., reflection, dynamic loading, native code). It may be surprising that this goal is even achievable, so we will emphasize the unique architecture of the analysis and of its soundness guarantee.">Declarative Static Analysis and Zombies (ok, Soundness)</div></td>
-	<td></td>
-	<td></td>
+	<td><a href="{{"https://files.sri.inf.ethz.ch/website/events/workshop2018/slides-smaragdakis.pdf" | relative_url }}" class="pdf" title="slides-smaragdakis"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=RHqQUWhjpsI&list=PLn9KV9ACrihj3jW2LVwMdSTXuQxxDmiD-&index=12" title="eth-smaragdakis"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
 </tr>
 
 <tr>
@@ -243,8 +243,8 @@ This is the sixth time the workshop is being held (formerly Workshop on Software
 	<td><a href="http://plrg.kaist.ac.kr/ryu"><div class="talk" style="font-weight: normal;" data-tooltip="Sukyoung Ryu is an associate professor in the School of Computing at Korea Advanced Institute of Science and Technology (KAIST).  Her research interests are in programming languages and program analysis. She is a recipient of various awards including the Google Faculty Research Award and best paper awards in conferences. She received her Ph.D. in Computer Science from KAIST, worked at Harvard University and Sun Microsystems Laboratories.">Sukyoung Ryu</div></a></td>
 	<td>KAIST, Korea</td>
 	<td><div class="talk" style="color: #0079AF;" data-tooltip="We present novel attacks and security vulnerabilities exploiting the weak semantics of Solidity.  We describe which semantics of Solidity enables the attacks, how we make the attacks, and concrete case samples of the attacks.  These attacks are powerful enough to pollute the values in persistent storage and to change control flows of smart contracts. Our evaluation with more than 22,000 Solidity contracts from Etherscan shows that the attacks are practically applicable to real-world smart contracts. Our manual investigation also confirms that 27.75% of our dataset indeed contain security vulnerabilities.  We are currently disclosing these vulnerable semantics of Solidity to Ethereum.">Vulnerable Semantics of Solidity</div></td>
-	<td></td>
-	<td></td>
+	<td><a href="{{"https://files.sri.inf.ethz.ch/website/events/workshop2018/slides-ryu.pdf" | relative_url }}" class="pdf" title="slides-ryu"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=Y4EqL0bdHl0&index=13&list=PLn9KV9ACrihj3jW2LVwMdSTXuQxxDmiD-" title="eth-ryu"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
 </tr>
 
 <tr>
@@ -263,7 +263,7 @@ This is the sixth time the workshop is being held (formerly Workshop on Software
 	<td>Microsoft Research</td>
 	<td><div class="talk" style="color: #0079AF;" data-tooltip="High-performance systems software often contains assembly language code.  It's easy to make mistakes when writing or modifying assembly language code, so formal verification can help ensure the security and reliability of systems containing hand-written assembly language.  This talk will present work on Vale -- Verified Assembly Language for Everest.  Vale provides a Hoare logic for assembly language, allowing programmers to annotate x86, x64, and ARM code with preconditions and postconditions used to verify the functional correctness of the code.  Vale builds on existing automated tools like Dafny, F*, and Z3 to specify correctness and verify code.  Programmers specify semantics for assembly language instructions in Dafny or F*; verification conditions are checked using the Z3 SMT solver.  As part of the Everest and HACL* projects to verify TLS and cryptographic implementations, Vale has been used to verify high-performance assembly language code for SHA, AES, and Poly1305.">Verifying assembly language with Vale</div></td>
 	<td></td>
-	<td></td>
+	<td><a href="https://www.youtube.com/watch?v=znUAkXEO1mA&list=PLn9KV9ACrihj3jW2LVwMdSTXuQxxDmiD-&index=14" title="eth-hawblitzel"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
 </tr>
 
 <tr>
@@ -271,8 +271,8 @@ This is the sixth time the workshop is being held (formerly Workshop on Software
 	<td><a href="https://www.cs.cmu.edu/~mfredrik/">Matt Fredrikson</a></td>
 	<td>CMU, USA</td>
 	<td><div class="talk" style="color: #0079AF;" data-tooltip="The use of machine learning to make decisions that impact people has become common, with applications to areas like criminal justice, child welfare, and medicine. This trend has generated excitement and interest, but has also been accompanied by legitimate concerns about the threat that these systems pose to values such as privacy and fairness. Among the primary factors leading to such concerns is the fact that these systems are opaque, meaning that it is difficult to explain their behavior, and in particular why a certain decision was made. Opacity poses a challenge for developers, users, and auditors who wish account for these systems' behavior. In this talk, we show that privacy and fairness violations can often be viewed in terms of an inappropriate of individuals' personal information. Central to this approach is a notion of 'proxy use', which characterizes programs that employ strong predictors of a protected information type, rather than making direct, explicit use of the data in question. Viewing machine learning models as programs that operate on random data, we describe techniques that identify proxy use in a general class of models, and illustrate how these techniques provide a form of transparency by isolating and explaining behaviors that amount to privacy and fairness violations. We conclude by showing that these explanations can be put to use in removing certain types of undesirable behavior from models, often without compromising their performance.">Explaining Privacy and Fairness Violations in Data-Driven Systems</div></td>
-	<td></td>
-	<td></td>
+	<td><a href="{{"https://files.sri.inf.ethz.ch/website/events/workshop2018/slides-fredrikson.pdf" | relative_url }}" class="pdf" title="slides-fredrikson"><img src="{{ "/assets/icons/icon-slides.svg" | relative_url }}" class="svg-icon" border="0" alt="PDF" noborder></a></td>
+	<td><a href="https://www.youtube.com/watch?v=rYu_3tMAV_o&list=PLn9KV9ACrihj3jW2LVwMdSTXuQxxDmiD-&index=15" title="eth-fredrikson"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
 </tr>
 
 <tr>
