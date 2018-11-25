@@ -22,6 +22,7 @@ rss: rss
 # - username: jekyll2
 #   instance: example.com
 
+url: https://sri.inf.ethz.ch
 
 show_excerpts: false # set to true to show excerpts on the homepage
 
