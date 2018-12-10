@@ -33,7 +33,7 @@ layout: default
 
           <div class="grid">
             {% assign sorted_media = site.media | sort:"date" | reverse %}
-            {%- for media in sorted_media limit: 3  -%}
+            {%- for media in sorted_media limit: 6 %}
             <div class="media-item">
               <div class="media-image">
                 <a href="{{ media.link }}">
@@ -54,7 +54,7 @@ layout: default
         <h2>News</h2>
 
         <ul class="post-list">
-          {%- for post in site.posts limit: 5  -%}
+          {%- for post in site.posts limit: 6 -%}
           <li>
             <div class="post-meta">{{ post.date | date: "%d.%m.%y" }}</div>
             <div class="post-content">{{ post.content}}</div>
