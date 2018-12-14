@@ -14,8 +14,8 @@ bibtex: '@inproceedings{bielik2018inferui,
   year={2018},
   organization={ACM}}'
 paper: https://files.sri.inf.ethz.ch/website/papers/bielik18-inferui.pdf
-talk: 
-slides: 
+talk: https://www.youtube.com/watch?v=bgvbN-wIg28
+slides: https://files.sri.inf.ethz.ch/website/slides/oopsla18_inferui.pdf
 ---
 
 We present a novel approach for synthesizing robust relational layouts from examples. Given an application design consisting of a set of views and their location on the screen, we synthesize a relational layout that when rendered, places the components at that same location.
