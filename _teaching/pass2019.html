@@ -1,0 +1,239 @@
+---
+title: Program Analysis for System Security and Reliability
+ref: pass2019
+description: Graduate course illustrating how to apply analysis and synthesis techniques in the domains of blockchain, computer networks and deep learning.
+semester: Spring 2019
+number: 263-2925-00L
+lecturer: Prof. Dr. Martin Vechev
+ta: Dr. Petar Tsankov, Dr. Dana Drachsler Cohen, Matthew Mirman, Max Baeder, Dimitar Dimitrov
+assistants: 
+edoz: 
+http://www.vvz.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?lerneinheitId=129091&semkez=2019S&ansicht=KATALOGDATEN&lang=en
+session-time-place:
+lecture-time-place: Mon 13-15, CAB G61
+exercise-time-place: Mon 15-16, CAB G61
+credits: 5
+image: pass.png
+
+---
+
+<h2>Overview</h2>
+
+<p>
+The course introduces modern automated analysis and synthesis techniques (both, deterministic and probabilistic) and shows how to apply these methods to build reliable and secure systems spanning many different domains (e.g., blockchain, networks, machine learning).
+</p>
+
+<p><b>Objectives</b></br>
+<ol>
+	<li>Understand how classic automated analysis and synthesis techniques work, including discrete and probabilistic methods.</li>
+	<li>Understand how to apply these methods to either attack or certify systems in various domains, e.g., blockchain, networks, machine learning models, etc.</li>
+	<li>Understand the state-of-the-art in the area as well as future trends.</li>
+</ol>
+</p>
+
+In terms of methods, we will cover the following comprehensive set:
+<ul>
+	<li> Declarative methods for expressive fixed point computation via Datalog. </li>
+	<li> Iterative methods for computing fixed points of infinite-state systems via Abstract Interpretation.</li>
+	<li> Analysis methods for large-scale automated testing and reasoning via Symbolic Execution and Fuzzing.</li>
+	<li> SMT based symbolic reasoning for automatically deciding logical formulas.</li>
+	<li> Discrete Exact Probabilistic Inference for computing densities.</li>
+	<li> Counter-Example guided inductive synthesis (CEGIS) for discovering new specifications and programs.</li>
+</ul>
+<p>
+We will also show how to apply these methods to build secure and reliable systems, across 3 application domains:
+
+<p><b>Part I: Computer Networks</b></br>
+
+<ul>
+	<li> Symbolic Reasoning about computer networks  (e.g., <a href="http://www.batfish.org">Batfish</a>): the goal will be to prove that networks satisfy key properties (e.g., reachability between hosts). We will look at how to apply the reasoning systems for both traditional networks and state-of-the-art software-defined networks (e.g., P4). </li>
+	<li> Synthesis for computer networks (e.g., <a href="https://synet.ethz.ch/">SyNET</a>): the goal will be to show how to apply SMT and CEGIS methods in order to automatically synthesize configurations which lead to desirable behaviors, thus automating the job of the network operator.</li>
+	<li> Probabilistic inference for computer networks: we will show how to apply modern discrete probabilistic inference (e.g., PSI: <a href="http://psisolver.org">PSI Solver</a>) so to reason about probabilistic properties of networks (e.g., probability of a packet reaching a destination if links fail).</li>
+</ul>
+</p>
+
+<p><b>Part II: Blockchain Security</b></br>
+
+<ul>
+	<li> We will cover existing blockchains (e.g., <a href="https://ethereum.org/foundation">Ethereum</a>), how they work, what the core security issues are, and how these can lead to massive financial losses.</li>
+	<li> We will then discuss the latest state-of-the-art automated reasoning tools  (e.g., <a href="https://securify.ch">Securify</a>) for ensuring that smart contracts running on top of blockchains are secure and reliable, and which ensure that such losses cannot happen. Concretely, we will study how to apply AI (Abstract Interpretation), Symbolic Execution and Fuzzing so to ensure correctness and discover critical bugs.</li>
+	<li> We will also study the latest automated deep verification systems (e.g., Dagger) for checking custom (temporal) properties of smart contracts. These systems are already used in production (based on symbolic execution and abstraction) and we will illustrate their operation on real-world use cases.</li>
+</ul>
+</p>
+
+<p><b>Part III: Security and Machine Learning</b></br>
+
+<ul>
+	<li> We will show how to use probabilistic inference to ensure the probabilistic security of systems, including differential privacy.</li>
+	<li> We will discuss how to use machine learning models (e.g., graphical models) for security applications, in particular de-obfuscation of binaries, Android APKs and JavaScript (e.g., based on <a href="http://apk-deguard.com">DeGuard</a>, <a href="http://jsnice.org">JSNice</a>, and Debin: <a href="https://debin.ai">DeBIN</a>).</li>
+	<li> Finally, we will discuss adversarial Deep Learning and how to generate attacks on deep learning models which fool the neural network.</li>
+</ul>
+
+To gain a deeper understanding, the course will involve a hands-on programming project where the methods studied in the class will be applied.
+</p>
+
+
+<!--
+<h2>Project Description</h2>
+
+<p>Please see the <a href="/teaching/pass2018/passproject.php">project description here</a>.</p>
+
+
+<h2>Lectures</h2>
+<table centering border="0" width="100%" cellspacing="0" cellpadding="0">
+<th width=7%>No.</th> <th width="10%">Date</th><th width=43%>Content</th><th width="12%">Slides</th><th width=15%> Exercises </th><th width=13%> Solutions </th>
+
+<tr>
+<td>1</td>
+<td>Feb 19</td><td><a href="{{"/teaching/pass2018/intro.pdf" | relative_url }}" class="pdf" title="intro">Introduction</a></td>
+<td>
+<a href="{{"/teaching/pass2018/intro.pdf" | relative_url }}" class="pdf" title="intro"><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Feb 26</td><td><a href="{{"/teaching/pass2018/lecture2-network-analysis.pdf" | relative_url }}" class="pdf" title="intro">Verification: Datalog, network-wide configuration analysis</a></td>
+<td>
+<a href="{{"/teaching/pass2018/lecture2-network-analysis.pdf" | relative_url }}" class="pdf" title="lecture slides"><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+<a href="{{"/teaching/pass2018/lecture2-network-analysis.zip" | relative_url }}" class="zip" title="code"><img src="{{"/assets/images/zip.gif" | relative_url}}" class=pdf-load border="0" alt="ZIP"></a>
+</td>
+<td>
+<a href="{{"/teaching/pass2018/exercise01.pdf" | relative_url }}" class="pdf" title="exercise01"><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+<td>
+<a href="{{"/teaching/pass2018/solution01.pdf" | relative_url }}" class="pdf" title="solution01"><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Mar 5</td><td><a href="{{"/teaching/pass2018/lecture3-network-synthesis.pdf" | relative_url }}" class="pdf" title="lecture 3">Network-wide configuration synthesis</a></td>
+<td>
+<a href="{{"/teaching/pass2018/lecture3-network-synthesis.pdf" | relative_url }}" class="pdf" title="lecture slides"><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+<a href="{{"/teaching/pass2018/lecture3-network-synthesis.zip"  | relative_url }}" class="zip" title="code"><img src="{{"/assets/images/zip.gif" | relative_url}}" class=pdf-load border="0" alt="ZIP"></a>
+</td>
+<td>
+<a href="{{"/teaching/pass2018/exercise02.pdf" | relative_url }}" class="pdf" title="exercise02"><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+<td>
+<a href="{{"/teaching/pass2018/solution02.pdf" | relative_url }}" class="pdf" title="solution02"><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+<a href="{{"/teaching/pass2018/ex02.zip" | relative_url }}" class="zip" title="solution02 files"><img src="{{"/assets/images/zip.gif" | relative_url}}" class="pdf-load" border="0" alt="ZIP"></a>
+</td>
+</tr>
+
+
+<tr>
+<td>4</td>
+<td>Mar 12</td><td><a href="{{"/teaching/pass2018/LECTURE4_PROBABILISTIC.pdf" | relative_url }}" class="pdf" title="lecture 4">Probabilistic Network Analysis</a></td>
+<td>
+<a href="{{"/teaching/pass2018/LECTURE4_PROBABILISTIC.pdf" | relative_url }}" class="pdf" title="lecture slides"><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a><a href="{{"/teaching/pass2018/bayonet.pdf" | relative_url }}" class="pdf" title="lecture slides"><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+<td>
+<a href="{{"/teaching/pass2018/exercise03.pdf" | relative_url }}" class="pdf" title="exercise03"><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+<td>
+<a href="{{"/teaching/pass2018/solution03.pdf" | relative_url }}" class="pdf" title="solution03"><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+<a href="{{"/teaching/pass2018/sol3.psi" | relative_url }}" class="psi" title="solution03 subproblem 3.2"><img src="{{"/assets/images/psi.png" | relative_url }}" class="linux-doc" border="0" alt="PSI"></a>
+<a href="{{"/teaching/pass2018/sol3_observe.psi" | relative_url }}" class="psi" title="solution03 subproblem 3.3"><img src="{{"/assets/images/psi.png" | relative_url }}" class="linux-doc" border="0" alt="PSI"></a>
+</td>
+</tr>
+
+
+<tr>
+<td>5</td>
+<td>Mar 19</td><td><a href="{{"/teaching/pass2018/lecture5-intro-blockchain.pdf" | relative_url }}" class="pdf" title="lecture 5">Blockchains and smart contracts</a></td>
+<td>
+<a href="{{"/teaching/pass2018/lecture5-intro-blockchain.pdf" | relative_url }}" class="pdf" title="lecture slides"><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+<td>
+<a href="{{"/teaching/pass2018/exercise04.pdf" | relative_url }}" class="pdf" title="exercise04"><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+<td>
+<a href="{{"/teaching/pass2018/solution04.pdf" | relative_url }}" class="pdf" title="solution04"><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>Mar 26</td><td><a href="{{"/teaching/pass2018/lecture6-smart-contract-security.pdf" | relative_url }}" class="pdf" title="lecture 6">Security of smart contracts</a></td>
+<td>
+<a href="{{"/teaching/pass2018/lecture6-smart-contract-security.pdf" | relative_url }}" class="pdf" title="lecture slides"><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+<td>
+<a href="{{"/teaching/pass2018/exercise05.pdf" | relative_url }}" class="pdf" title="exercise05"><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+<a href="{{"/teaching/pass2018/exercise05.zip" | relative_url }}" class="zip" title="exercise05 files"><img src="{{"/assets/images/zip.gif" | relative_url}}" class="pdf-load" border="0" alt="ZIP"></a>
+</td>
+<td><a href="{{"/teaching/pass2018/solution05.pdf" | relative_url }}" class="pdf" title="solution05"><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a></td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>Apr 9</td><td><a href="{{"/teaching/pass2018/LECTURE7_NN_AND_ADV_EX.pdf" | relative_url }}" class="pdf" title="lecture 7">Neural Networks and adversarial examples I</a></td>
+<td>
+<a href="{{"/teaching/pass2018/LECTURE7_NN_AND_ADV_EX.pdf" | relative_url }}" class="pdf" title="lecture slides"><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+<td>
+<a href="{{"/teaching/pass2018/exercise06.pdf" | relative_url }}" class="pdf" title="exercise06"><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+<td><a href="{{"/teaching/pass2018/solution06.pdf" | relative_url }}" class="pdf" title="solution06"><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a></td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>Apr 23</td><td><a href="{{"/teaching/pass2018/LECTURE8_ADV_EX_ROBUSTNESS.pdf" | relative_url }}" class="pdf" title="lecture 8">Adversarial examples and robustness II</a></td>
+<td>
+<a href="{{"/teaching/pass2018/LECTURE8_ADV_EX_ROBUSTNESS.pdf" | relative_url }}" class="pdf" title="lecture slides"><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+<td>
+<a href="{{"/teaching/pass2018/exercise07.pdf" | relative_url }}" class="pdf" title="exercise07"�><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+<td><a href="{{"/teaching/pass2018/solution07.pdf" | relative_url }}" class="pdf" title="solution07"><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a></td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>Apr 30</td><td><a href="{{"/teaching/pass2018/LECTURE9_AI2.pdf" | relative_url }}" class="pdf" title="lecture 9">AI2: Scalable Certification of Deep Learning</a></td>
+<td>
+<a href="{{"/teaching/pass2018/LECTURE9_AI2.pdf" | relative_url }}" class="pdf" title="lecture slides"><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+<td>
+<a href="{{"/teaching/pass2018/exercise08.pdf" | relative_url }}" class="pdf" title="exercise08"><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+<td><a href="{{"/teaching/pass2018/solution08.pdf" | relative_url }}" class="pdf" title="solution08"><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a></td>
+
+</tr>
+
+<tr>
+<td>10</td>
+<td>May 7</td><td><a href="{{"/teaching/pass2018/lecture10-spire.pdf" | relative_url }}" class="pdf" title="lecture 10">Synthesis of probabilistic privacy enforcement</a></td>
+<td>
+<a href="{{"/teaching/pass2018/lecture10-spire.pdf" | relative_url }}" class="pdf" title="lecture slides"><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+<td>
+<a href="{{"/teaching/pass2018/Exercise9.pdf" | relative_url }}" class="pdf" title="exercise09"<9d><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+<td>
+<a href="{{"/teaching/pass2018/Solution9.pdf" | relative_url }}" class="pdf" title="solution09"<9d><img src="{{"/assets/icons/icon-pdf.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>May 14</td><td><a href="{{"/teaching/pass2018/bigcode.pdf" | relative_url }}" class="pdf" title="lecture 11">Statistical Deobfuscation with Big Code</a></td>
+<td>
+<a href="{{"/teaching/pass2018/bigcode.pdf" | relative_url }}" class="pdf" title="lecture slides"><img src="{{"/assets/icons/icon-slides.svg" | relative_url}}" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+
+
+
+</table>
+
+-->
