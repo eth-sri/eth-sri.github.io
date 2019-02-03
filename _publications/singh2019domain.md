@@ -10,7 +10,7 @@ awards:
 bibtex:
 paper: https://files.sri.inf.ethz.ch/website/papers/DeepPoly.pdf
 talk: 
-slides: 
+slides: https://files.sri.inf.ethz.ch/website/slides/DeepPoly.pdf
 ---
 
 We present a novel method for scalable and precise certification of deep neural networks. The key technical insight behind our approach is a new abstract domain which combines floating point polyhedra with intervals and is equipped with abstract transformers specifically tailored to the setting of neural networks. Concretely, we introduce new transformers for affine transforms, the rectified linear unit (ReLU), sigmoid, tanh, and maxpool functions.
