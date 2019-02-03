@@ -8,9 +8,9 @@ venue: NIPS
 projects: safeai
 awards:
 bibtex:
-paper: https://files.sri.inf.ethz.ch/website/papers/DeepZ.pdf
+paper: https://files.sri.inf.ethz.ch/website/slides/DeepZ.pdf
 talk: 
-slides: 
+slides: https://files.sri.inf.ethz.ch/website/papers/DeepZ.pdf
 ---
 
 
