@@ -15,7 +15,7 @@ bibtex: '@inproceedings{cusumano2018incremental,
   year={2018},
   organization={ACM}}'
 paper: https://files.sri.inf.ethz.ch/website/papers/pldi18_interemental_inference_for_probabilistic_programs.pdf
-talk: 
+talk: https://www.youtube.com/watch?v=OUrpqXm7CxA
 slides: 
 ---
 
