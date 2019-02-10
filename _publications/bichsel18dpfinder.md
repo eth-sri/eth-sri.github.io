@@ -9,7 +9,7 @@ projects: probabilistic-programming
 awards:
 bibtex: ''
 paper: https://files.sri.inf.ethz.ch/website/papers/ccs18-dpfinder.pdf
-talk: 
+talk: https://www.youtube.com/watch?v=Jwe0oCSlaMk
 slides: https://files.sri.inf.ethz.ch/website/slides/ccs18-dpfinder-slides.pdf
 ---
 

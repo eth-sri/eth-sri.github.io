@@ -9,7 +9,7 @@ projects: blockchain-security
 awards:
 bibtex: ''
 paper: https://files.sri.inf.ethz.ch/website/papers/ccs18-securify.pdf
-talk: 
+talk: https://www.youtube.com/watch?v=7v-bd9maqm8
 slides: https://files.sri.inf.ethz.ch/website/slides/ccs18-securify-slides.pdf
 ---
 

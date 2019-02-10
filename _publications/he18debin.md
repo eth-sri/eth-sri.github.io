@@ -9,7 +9,7 @@ projects: plml
 awards:
 bibtex: ''
 paper: https://files.sri.inf.ethz.ch/website/papers/ccs18-debin.pdf
-talk: 
+talk: https://www.youtube.com/watch?v=x1x_KtS-5Hs
 slides: https://files.sri.inf.ethz.ch/website/slides/ccs18-debin-slides.pdf
 ---
 
