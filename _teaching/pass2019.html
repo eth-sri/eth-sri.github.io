@@ -18,11 +18,12 @@ image: pass.png
 
 <h2>Overview</h2>
 
-<p>Security issues and privacy breaches in modern systems (blockchains, datacenters, AI, etc.) result in billions of losses due to hacks and system downtime. This course introduces state-of-the-art automated techniques and demonstrates how they are applied to build reliable and secure systems.
+<p>Security issues and privacy breaches in modern systems (blockchains, datacenters, AI, etc.) result in billions of losses due to hacks and system downtime. This course introduces the security issues in such modern systems and covers state-of-the-art automated techniques (developed in the past few years) that can are applied to build more secure and reliable systems. The course has a practical focus and covers systems build by recent ETH Spin-offs (<a target="_blank" href="https://chainsecurity.com">ChainSecurity</a> and <a target="_blank" href="https://deepcode.ai">DeepCode</a>).
 </p>
 
 <p><b>Objectives</b></br>
 <ol>
+  <li> Learn about security issues in modern systems -- blockchains, smart contracts, AI-based systems (e.g., autonomous cars), data centers -- and why they are challenging to address.</li>
   <li> Understand how classic automated analysis and synthesis techniques work, including discrete and probabilistic methods. </li>
   <li> Understand how to apply these methods to either attack or certify systems. </li>
   <li> Understand how state-of-the-art tools and frameworks for automated reasoning are used to build reliable and secure systems. </li>
@@ -32,38 +33,42 @@ image: pass.png
 <p><b>Part I: Security of Blockchains</b></br>
 
 <ul>
-<li> We will cover existing blockchains (e.g., <a href="https://ethereum.org/foundation">Ethereum</a>, Bitcoin), how they work, what the core security issues are, and how these have led to massive financial losses.  </li>
-<li> We will discuss the state-of-the-art security tools (e.g., <a href="https://securify.ch">Securify</a>) for ensuring that smart contracts are free of security vulnerabilities.  </li>
+<li> We will cover existing blockchains (e.g., <a target="_blank" href="https://ethereum.org/foundation">Ethereum</a>, Bitcoin), how they work, what the core security issues are, and how these have led to massive financial losses.  </li>
+<li>We will show how to extract useful information about smart contracts and transactions using interactive analysis frameworks for querying blockchains (e.g. Google's <a target="_blank" href="https://cloud.google.com/blog/products/data-analytics/ethereum-bigquery-public-dataset-smart-contract-analytics">Ethereum BigQuery</a>).</li>
+<li> We will discuss the state-of-the-art security tools (e.g., <a target="_blank" href="https://securify.ch">Securify</a>) for ensuring that smart contracts are free of security vulnerabilities.  </li>
 <li> We will study the latest automated reasoning systems (e.g., Dagger) for checking custom (temporal) properties of smart contracts and illustrate their operation on real-world use cases.  </li>
-<li> We will study the underlying methods for automated reasoning and testing (e.g., abstract interpretation, symbolic execution, fuzzing) are used to build such tools.  </li>
 </ul>
 
-<p><b>Part II: Data Privacy</b></br>
+<p><b>Part II: Machine Learning for Security</b></br>
+<ul>
+<li> We will discuss how machine learning models for structured prediction are used to address security tasks, including de-obfuscation of binaries (<a target="_blank" href="https://debin.ai">DeBIN</a>), Android APKs (<a target="_blank" href="http://apk-deguard.com">DeGuard</a>) and JavaScript (<a target="_blank" href="http://jsnice.org">JSNice</a>). </li>
+<li>We will study to leverage program abstractions in combination with clustering techniques to learn security rules for cryptography APIs from large codebases.</li>
+<li>We will study how to automatically learn to identify security vulnerabilities related to the handling of untrusted inputs (cross-Site scripting, SQL injection, path traversal, remote code execution) from large codebases.</li>
+</ul>
 
+<!--
 <ul>
 <li> We will study how cryptographic primitives such as zkSNARKs are used to enforce data privacy for smart contracts deployed on public blockchains.  </li>
-<li> We will show how probabilistic solvers (e.g. PSI: <a href="http://psisolver.org">PSI Solver</a>) can be used to test and verify the differential privacy of probabilistically algorithms (e.g. data processing algorithms).  </li>
+<li> We will show how probabilistic solvers (e.g. PSI: <a target="_blank" href="http://psisolver.org">PSI Solver</a>) can be used to test and verify the differential privacy of probabilistically algorithms (e.g. data processing algorithms).  </li>
 <li> We will study how state-of-the-art program synthesis techniques are used automatically transforms programs and data queries to enforce privacy policies. </li>
 </ul>
+-->
 
-<p><b>Part III: Machine Learning for Security</b></br>
+<p><b>Part III: Security of Datacenters and Networks</b></br>
 
 <ul>
-<li> We will discuss how machine learning models for structured prediction are used to address security tasks, including de-obfuscation of binaries (<a href="https://debin.ai">DeBIN</a>), Android APKs (<a href="http://apk-deguard.com">DeGuard</a>) and JavaScript (<a href="http://jsnice.org">JSNice</a>). </li>
-<li> We will study to use program abstractions in combination with machine learning techniques to learn useful security rules from large codebases.  </li>
+<li>We will show how to ensure that datacenters and ISPs are secured using declarative reasoning methods (e.g., Datalog). We will also see how to automatically synthesize secure configurations (e.g. using <a target="_blank" href="https://synet.ethz.ch/">SyNET</a> and <a target="_blank" href="https://netcomplete.ethz.ch/">NetComplete</a>) which lead to desirable behaviors, thus automating the job of the network operator and avoiding critical errors.</li>
+<li>We will discuss how to apply modern discrete probabilistic inference (e.g., <a target="_blank" href="https://psisolver.org/">PSI</a> and <a target="_blank" href="https://github.com/eth-sri/bayonet">Bayonet</a>) so to reason about probabilistic network properties (e.g., the probability of a packet reaching a destination if links fail).</li>
 </ul>
 
+<p><b>Part IV: Security of AI-based Systems</b></br>
 <ul>
-
-<p><b>Part IV: Security of Datacenters and Networks</b></br>
-
-<ul>
-<li> We will show how to ensure that datacenters and ISPs are secured using declarative reasoning methods (e.g., Datalog). We will also cover the intersection of automated reasoning and software-defined networks such as P4.
-<li> We will discuss how to automatically synthesize secure configurations which lead to desirable behaviors, thus automating the job of the network operator and avoiding critical errors.
-<li> We will discuss how to apply modern discrete probabilistic inference so to reason about probabilistic network properties (e.g., probability of a packet reaching a destination if links fail).
+<li>We will look into the security issues related to modern systems that combine machine learning models (e.g., neural networks) within traditional systems such as cars, airplanes, and medical systems.</li>
+<li>We will learn state-of-the-art techniques for security testing and certifying modern AI-based systems.</li>
 </ul>
 
-
+<br>
+<p><b>Course Project</b></br>
 <p>
 To gain a deeper understanding, the course will involve a hands-on programming project where the methods studied in the class will be applied.
 </p>
