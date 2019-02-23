@@ -1,4 +1,4 @@
-Mar 8	Blockchains	Bitcoin: A Peer-to-Peer Electronic Cash System	https://bitcoin.org/bitcoin.pdf	Tobias Holenstein	Dana	dana.drachsler@inf.ethz.ch
+Mar 8	Blockchains	Bitcoin: A Peer-to-Peer Electronic Cash System	https://bitcoin.org/bitcoin.pdf	Martina Forster	Dana	dana.drachsler@inf.ethz.ch
 Mar 8	Blockchains	Ethereum: A Secure decentralized generalized transaction ledger	https://gavwood.com/paper.pdf	Yoel Zweig	Dimitar	dimitar.dimitrov@inf.ethz.ch
 Mar 15	Privacy	Zerocash: Decentralized Anonymous Payments from Bitcoin	http://zerocash-project.org/media/pdf/zerocash-oakland2014.pdf		Benjamin	benjamin.bichsel@inf.ethz.ch
 Mar 15	Scalability	The Bitcoin Lightning Network: Scalable Off-Chain Instant Payments	https://lightning.network/lightning-network-paper.pdf		Gagandeep	gsingh@inf.ethz.ch
