@@ -1,9 +1,9 @@
 ---
 ref: singh2019refinement
-title: Robustness Certification with Refinement
+title: Boosting Robustness Certification of Neural Networks
 authors: Gagandeep Singh, Timon Gehr, Markus Püschel, Martin Vechev
 year: 2019
-month: 05
+month: 02
 venue: ICLR
 projects: safeai
 awards:
