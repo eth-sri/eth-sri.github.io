@@ -1,9 +1,9 @@
-Mar 8	Blockchains	Bitcoin: A Peer-to-Peer Electronic Cash System	https://bitcoin.org/bitcoin.pdf		Dana	dana.drachsler@inf.ethz.ch
-Mar 8	Blockchains	Ethereum: A Secure decentralized generalized transaction ledger	https://gavwood.com/paper.pdf		Dimitar	dimitar.dimitrov@inf.ethz.ch
+Mar 8	Blockchains	Bitcoin: A Peer-to-Peer Electronic Cash System	https://bitcoin.org/bitcoin.pdf	Martina Forster	Dana	dana.drachsler@inf.ethz.ch
+Mar 8	Blockchains	Ethereum: A Secure decentralized generalized transaction ledger	https://gavwood.com/paper.pdf	Yoel Zweig	Dimitar	dimitar.dimitrov@inf.ethz.ch
 Mar 15	Privacy	Zerocash: Decentralized Anonymous Payments from Bitcoin	http://zerocash-project.org/media/pdf/zerocash-oakland2014.pdf		Benjamin	benjamin.bichsel@inf.ethz.ch
-Mar 15	Scalability	The Bitcoin Lightning Network: Scalable Off-Chain Instant Payments	https://lightning.network/lightning-network-paper.pdf		Matthew	matthew.mirman@inf.ethz.ch
+Mar 15	Scalability	The Bitcoin Lightning Network: Scalable Off-Chain Instant Payments	https://lightning.network/lightning-network-paper.pdf		Gagandeep	gsingh@inf.ethz.ch
 Mar 22	Scalability	Arbitrum: Scalable, private smart contracts	https://www.usenix.org/system/files/conference/usenixsecurity18/sec18-kalodner.pdf		Samuel	samuel.steffen@inf.ethz.ch
-Mar 22	Scalability	General State Channel Networks	https://dl.acm.org/citation.cfm?id=3243856		Mislav	bmislav@student.ethz.ch
+Mar 22	Scalability	General State Channel Networks	https://dl.acm.org/citation.cfm?id=3243856		Gagandeep	gsingh@inf.ethz.ch
 Mar 29	Performance	A Detailed and Real-time Performance Monitoring Framework for Blockchain Systems	http://delivery.acm.org/10.1145/3190000/3183546/p134-zheng.pdf?ip=195.176.113.115&id=3183546&acc=ACTIVE%20SERVICE&key=FC66C24E42F07228%2EA04051DB0C098788%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&__acm__=1550252202_209f0e2d8915aced86f1909b542c67d9		Pesho	pesho@inf.ethz.ch
 Mar 29	Attacks	teEther: Gnawing at Ethereum to Automatically Exploit Smart Contracts	https://www.usenix.org/system/files/conference/usenixsecurity18/sec18-krupp.pdf		Jingxuan	jingxuan.he@inf.ethz.ch
 Apr 5	Attacks	Finding The Greedy, Prodigal, and Suicidal Contracts at Scale	https://arxiv.org/pdf/1802.06038.pdf		Jingxuan	jingxuan.he@inf.ethz.ch
@@ -11,12 +11,12 @@ Apr 5	Routing attacks	SABRE: Protecting Bitcoin against Routing Attacks	https://
 Apr 12	Static analysis	SECURIFY: Practical Security Analysis of Smart Contracts	https://files.sri.inf.ethz.ch/website/papers/ccs18-securify.pdf		Dana	dana.drachsler@inf.ethz.ch
 Apr 12	Dynamic analysis	Online Detection of Eectively Callback Free Objects with	https://www.cs.tau.ac.il/research/yoni.zohar/popl18.pdf		Dimitar	dimitar.dimitrov@inf.ethz.ch
 May 3	Dynamic analysis	Exploiting The Laws of Order in Smart Contracts	https://arxiv.org/pdf/1810.11605.pdf		Petar	petar.tsankov@inf.ethz.ch
-May 3	Symbolic analysis	Osiris: Hunting for Integer Bugs in Ethereum Smart Contracts	https://orbilu.uni.lu/bitstream/10993/36757/1/osiris.pdf		Gagandeep	gsingh@inf.ethz.ch
-May 10	Gas analysis	MadMax: Surviving Out-of-Gas Conditions in Ethereum Smart Contracts	https://yanniss.github.io/eth-oopsla18.pdf		Matthew	matthew.mirman@inf.ethz.ch
-May 10	Gas analysis	Gastap: A Gas Analyzer for Smart Contracts	https://arxiv.org/pdf/1811.10403.pdf		Marc	marcfisc@student.ethz.ch
-May 17	Gas analysis	Computing Exact Worst-Case Gas Consumption for Smart Contracts	https://www.inf.usi.ch/postdoc/hyvarinen/publications/MarescottiBHAS_ISOLA2018.pdf		Gagandeep	gsingh@inf.ethz.ch
+May 3	Symbolic analysis	Osiris: Hunting for Integer Bugs in Ethereum Smart Contracts	https://orbilu.uni.lu/bitstream/10993/36757/1/osiris.pdf		Benjamin	benjamin.bichsel@inf.ethz.ch
+May 10	Gas analysis	MadMax: Surviving Out-of-Gas Conditions in Ethereum Smart Contracts	https://yanniss.github.io/eth-oopsla18.pdf		Samuel	samuel.steffen@inf.ethz.ch
+May 10	Gas analysis	Gastap: A Gas Analyzer for Smart Contracts	https://arxiv.org/pdf/1811.10403.pdf		Dimitar	dimitar.dimitrov@inf.ethz.ch
+May 17	Gas analysis	Computing Exact Worst-Case Gas Consumption for Smart Contracts	https://www.inf.usi.ch/postdoc/hyvarinen/publications/MarescottiBHAS_ISOLA2018.pdf		Pesho	pesho@inf.ethz.ch
 May 17	Verification	Formal Specification and Verification of Smart Contracts for Azure Blockchain	https://arxiv.org/abs/1812.08829		Petar	petar.tsankov@inf.ethz.ch
 May 24	Verification	SMT-Based Verification of Solidity Smart Contracts	https://link.springer.com/content/pdf/10.1007%2F978-3-030-03427-6_28.pdf		Benjamin	benjamin.bichsel@inf.ethz.ch
 May 24	Languages	Scilla: a Smart Contract Intermediate-Level LAnguage	https://ilyasergey.net/papers/scilla-overview.pdf		Petar	petar.tsankov@inf.ethz.ch
 May 31	Languages	IELE: An Intermediate-Level Blockchain Language Designed and Implemented Using Formal Semantics	http://fsl.cs.illinois.edu/FSL/papers/2018/kasampalis-guth-moore-serbanuta-serbanuta-filaretti-rosu-johnson-2018-tr/kasampalis-guth-moore-serbanuta-serbanuta-filaretti-rosu-johnson-2018-tr-public.pdf		Dana	dana.drachsler@inf.ethz.ch
-May 31	Languages	BitML: a calculus for Bitcoin smart contracts	https://eprint.iacr.org/2018/122.pdf		Timon	timon.gehr@inf.ethz.ch
+May 31	Languages	BitML: a calculus for Bitcoin smart contracts	https://eprint.iacr.org/2018/122.pdf		Gagandeep	gsingh@inf.ethz.ch
