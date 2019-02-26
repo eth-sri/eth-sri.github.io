@@ -1,13 +1,9 @@
 from z3 import *
 
-EMAIL='email'
-NAME='name'
-CHOICES='choices'
-
 choices = {}
 names = {}
 
-for line in open('choices.txt', 'r').readlines():
+for line in open('bsec2019_choices.txt', 'r').readlines():
 	tokens = line.split('\t')
 	choices[tokens[1]] = [tokens[3], tokens[4], tokens[5], tokens[6], tokens[7]]
 	names[tokens[1]] = tokens[2]
