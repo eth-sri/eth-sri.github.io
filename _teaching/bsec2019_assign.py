@@ -27,7 +27,7 @@ for email in choices.keys():
 		sum_of_scores = score
 	else:
 		sum_of_scores += score
-	opt.add(score < 5)
+	opt.add(score < 4)
 
 opt.add(z3.Distinct([assignments[x] for x in assignments.keys()]))
 
