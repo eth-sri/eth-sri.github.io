@@ -8,7 +8,7 @@ venue: ICLR
 projects: safeai
 awards:
 bibtex:
-paper: https://files.sri.inf.ethz.ch/website/papers/RefineAI.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/RefineZono.pdf
 talk:
 slides:
 ---
