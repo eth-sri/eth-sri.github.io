@@ -1,7 +1,7 @@
 ---
 ref: chibotaru2019pldi
 title: "Scalable Taint Specification Inference with Big Code"
-authors: Victor Chibotaru, Benjamin Bichsel, Veselin Raychev, and Martin Vechev
+authors: Victor Chibotaru, Benjamin Bichsel, Veselin Raychev, Martin Vechev
 year: 2019
 month: 06
 venue: PLDI
