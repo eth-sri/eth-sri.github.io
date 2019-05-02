@@ -66,5 +66,32 @@ function test2() payable public {
 <br><br>
 </li>
 
+
+<li>
+Is z considered tainted at the end of the function? The fact that the transaction reached the assignment to z and terminated successfully, instead reverting due to an out-of-gas exception, leaks information about msg.value:
+<xmp>
+function bar () public payable {
+  uint x = msg.value;
+  while (x < 100) {}
+  uint z = 1;
+}
+</xmp>
+<br>
+<em>Answer:</em> 
+You can assume that all transactions terminate successfully. Termination-sensitive information flow analysis does exist as a notion, but goes beyond the scope of the project. The value of z is therefore considered untainted in this example.
+<br><br>
+</li>
+
+<li>
+Can we assume that the IR is produced from Solidity code, and not customly written directly in the IR representation.
+<br>
+<em>Answer:</em> 
+You can assume that the IR you analyze was produced from Solidity code.
+<br><br>
+</li>
+
+
+
+
 </ul>
 
