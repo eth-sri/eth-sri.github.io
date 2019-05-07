@@ -10,7 +10,7 @@ awards:
 bibtex:
 paper: https://files.sri.inf.ethz.ch/website/papers/DeepZ.pdf
 talk: 
-slides: https://files.sri.inf.ethz.ch/website/slides/DeepZ.pdf
+poster: https://files.sri.inf.ethz.ch/website/slides/DeepZ.pdf
 ---
 
 
