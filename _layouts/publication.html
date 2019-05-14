@@ -42,6 +42,13 @@ layout: default
 
 
 		</div>
+
+    <div class="column column-33 ">
+      <div class="page-img full-width">
+        {% if page.image %} <img src="{{ page.image | prepend: '/assets/images/' | relative_url}}"/> {% endif %}
+      </div>
+    </div>
+
 	</div>
   </header>
 

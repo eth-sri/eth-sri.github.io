@@ -1,0 +1,97 @@
+---
+title: Q&A Static Taint Analysis Project
+ref: pass2019-project-qa
+---
+
+This document contains questions by students and answers by the TAs.
+<br><br><br>
+
+<ul>
+
+<li>
+Why does this contract fail to compile?
+<xmp>
+  function main() public payable {
+      uint a = 0;
+      for (uint i = 0; i < 10; i++) {
+          a = a + 1;
+      }
+      sink(a); // Safe
+  }
+</xmp>
+
+<br>
+<em>Answer:</em> This was due to a bug in the code template. It is fixed in the latest commit in the <a href="https://gitlab.inf.ethz.ch/ptsankov/pass2019-project">Gitlab repository</a> of the code template.
+<br><br>
+</li>
+
+
+<li>
+Is this function Safe or Tainted?
+<xmp>
+function test1() payable public {
+  int256 tmp = 2;
+  if (msg.value > 4) {
+    tmp = 2;
+  }
+  sink(tmp);
+}
+</xmp>
+
+<br>
+<em>Answer:</em> This contract is Safe. Examples like this can be tricky to handle, especially if computations are involved (you are not expected to model arithmetic operations in the solution).
+<br><br>
+</li>
+
+
+
+<li>
+Is this function Safe or Tainted?
+<xmp>
+function test2() payable public {
+  int256 tmp = 1;
+  if (msg.value > 4) {
+    tmp = tmp + 2;
+  }
+  if (tmp > 0) {
+    sink(54);
+  } else {
+    sink(9);
+  }
+}
+</xmp>
+
+<br>
+<em>Answer:</em> This contract is Safe, because the sink arguments are constants (do not depend on msg.sender and msg.value) and the execution of the sinks do not depend on msg.sender and msg.value.
+<br><br>
+</li>
+
+
+<li>
+Is z considered tainted at the end of the function? The fact that the transaction reached the assignment to z and terminated successfully, instead reverting due to an out-of-gas exception, leaks information about msg.value:
+<xmp>
+function bar () public payable {
+  uint x = msg.value;
+  while (x < 100) {}
+  uint z = 1;
+}
+</xmp>
+<br>
+<em>Answer:</em> 
+You can assume that all transactions terminate successfully. Termination-sensitive information flow analysis does exist as a notion, but goes beyond the scope of the project. The value of z is therefore considered untainted in this example.
+<br><br>
+</li>
+
+<li>
+Can we assume that the IR is produced from Solidity code, and not customly written directly in the IR representation.
+<br>
+<em>Answer:</em> 
+You can assume that the IR you analyze was produced from Solidity code.
+<br><br>
+</li>
+
+
+
+
+</ul>
+
