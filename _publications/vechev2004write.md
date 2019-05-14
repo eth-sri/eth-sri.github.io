@@ -13,7 +13,7 @@ bibtex: '@inproceedings{vechev2004write,
   pages={13--24},
   year={2004},
   organization={ACM}}'
-paper: Vechev04Barriers.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/Vechev04Barriers.pdf
 talk: 
 slides: 
 ---
