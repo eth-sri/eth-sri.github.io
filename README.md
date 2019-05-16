@@ -1,5 +1,5 @@
 # SRI Website
-fix
+
 ## Notice
 
 All larger files, including pdfs of papers/slides, should be uploaded to the file server.
