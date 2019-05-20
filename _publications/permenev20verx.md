@@ -3,7 +3,8 @@
   title: "VerX: Functional Verification of Smart Contracts"
   authors: Anton Permenev, Dimitar Dimitrov, Petar Tsankov, Dana Drachsler-Cohen, Martin Vechev
   year: 2020
-  venue: IEEE S&P 2018
+  month: 01
+  venue: IEEE S&P
   projects: 
   awards:
   bibtex:
