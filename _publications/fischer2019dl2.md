@@ -5,6 +5,7 @@ authors: Marc Fischer, Mislav Balunovic, Dana Drachsler-Cohen, Timon Gehr, Ce Zh
 year: 2019
 month: 06
 venue: ICML
+project: safeai
 bibtex: '@inproceedings{fischer2019dl2,
   title={DL2: Training and Querying Neural Networks with Logic},
   author={Marc Fischer, Mislav Balunovic, Dana Drachsler-Cohen, Timon Gehr, Ce Zhang, Martin Vechev},
