@@ -1,6 +1,6 @@
 ---
 ref: fischer2019dl2
-title: DL2: Training and Querying Neural Networks with Logic
+title: "DL2: Training and Querying Neural Networks with Logic"
 authors: Marc Fischer, Mislav Balunovic, Dana Drachsler-Cohen, Timon Gehr, Ce Zhang, Martin Vechev
 year: 2019
 month: 06
