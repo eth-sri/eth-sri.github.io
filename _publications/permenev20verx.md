@@ -9,6 +9,7 @@
   awards:
   bibtex:
   paper: https://files.sri.inf.ethz.ch/website/papers/sp20-verx.pdf
+  image: assets/images/verx-paper.png  
   talk:
   slides:
 ---
