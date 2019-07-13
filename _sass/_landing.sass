@@ -4,13 +4,13 @@
 
 .landing
   padding-top: 0px
-  position: relative
 
   .landing-header
     padding-bottom: 40%
     padding-top: 40px
     width: 100%
     overflow: hidden
+    position: relative
 
     .landing-banner
       position: absolute
@@ -22,7 +22,7 @@
       z-index: 0
 
     .landing-header-content
-      width: $site-width
+      width: $full-width
       margin: 0 auto
       padding: $spacing-unit 0
       position: relative
@@ -31,18 +31,19 @@
 
 
     .landing-about
-      background: rgba($color-blue, 0.1)
+      background: rgba($color-blue, 0.15)
       padding: $spacing-unit
       line-height: 2em
+      color: darken($text-color, 15%)
 
 
   .landing-content
     box-sizing: border-box
-    width: $site-width
+    width: $full-width
     margin: 0 auto
 
 
-@include media-query($mobile)
+@include media-query($mobile-break)
   .landing
     .landing-header
       overflow: visible

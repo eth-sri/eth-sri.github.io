@@ -4,7 +4,7 @@
 
 .page
   padding-top: 80px
-  width: $site-width
+  width: $full-width
   margin: 0 auto
   box-sizing: border-box
 
@@ -60,7 +60,12 @@
       display: block
       flex: 1
 
-@include media-query($mobile)
+
+@include media-query($full-width-break)
+  .page
+    width: $mobile
+
+@include media-query($mobile-break)
   .page
     width: 100%
     padding: $spacing-unit

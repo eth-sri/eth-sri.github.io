@@ -4,7 +4,7 @@
 .site-header
   padding-top: 80px
   min-height: 50px
-  width: $site-width
+  width: $full-width
   margin: 0 auto
   display: flex
   position: relative
@@ -32,7 +32,16 @@
       color: $color-blue
 
 
-@include media-query($mobile)
+@include media-query($full-width-break)
+  .site-header
+    width: $mobile
+
+    .site-nav
+      margin: 8px $spacing-unit
+      .page-link
+        margin-left: $spacing-unit/2
+
+@include media-query($mobile-break)
   .site-header
     width: 100%
     display: block
@@ -43,7 +52,7 @@
 
     .site-nav
       text-align: left
-      margin-left: $spacing-unit
+      margin-left: $spacing-unit*1.5
       margin-top: $spacing-unit/2
       .page-link
         display: block
