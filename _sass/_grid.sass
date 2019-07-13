@@ -5,8 +5,8 @@
 // .container is main centered wrapper with a max width of 112.0rem (1120px)
 .container
 	margin: 0 auto
-	max-width: 100%
-	padding: 0px
+	max-width: $mobile
+	padding: 0
 	position: relative
 	width: 100%
 
@@ -50,13 +50,12 @@
 	.column
 		display: block
 		flex: 1
+		box-sizing: border-box
 		margin-left: 0
 		max-width: 100%
 		width: 100%
 
 
-
-		
 
 		// .column-* vertically aligns an individual .column
 		.column-top
@@ -68,13 +67,19 @@
 		.column-center
 			align-self: center
 
-// Larger than mobile screen
-@media (min-width: $mobile) // Safari desktop has a bug using `rem`, but Safari mobile works
 
+@media (min-width: $full-width-break) // Safari desktop has a bug using `rem`, but Safari mobile works
+	.container
+		max-width: $full-width
+
+
+// Larger than mobile screen
+@media (min-width: $mobile-break) // Safari desktop has a bug using `rem`, but Safari mobile works
 	.row
 		flex-direction: row
 		margin-left: -1.0rem
 		width: calc(100% + 2.0rem)
+
 
 		.column
 			margin-bottom: inherit
@@ -87,6 +92,14 @@
 			&.column-10
 				flex: 0 0 10%
 				max-width: 10%
+
+			&.column-14
+				flex: 0 0 13.888%
+				max-width: 13.888%
+
+			&.column-17
+				flex: 0 0 16.666%
+				max-width: 16.666%
 
 			&.column-20
 				flex: 0 0 20%
@@ -104,6 +117,10 @@
 			&.column-40
 				flex: 0 0 40%
 				max-width: 40%
+
+			&.column-42
+				flex: 0 0 41.6666%
+				max-width: 41.6666%
 
 			&.column-50
 				flex: 0 0 50%
@@ -126,13 +143,24 @@
 				flex: 0 0 80%
 				max-width: 80%
 
+			&.column-83
+				flex: 0 0 83.3333%
+				max-width: 83.3333%
+
 			&.column-90
 				flex: 0 0 90%
 				max-width: 90%
 
 			// Column Offsets
+
+			&.column-offset-8
+				margin-left: 8.3333%
+
 			&.column-offset-10
 				margin-left: 10%
+
+			&.column-offset-17
+				margin-left: 16.666%
 
 			&.column-offset-20
 				margin-left: 20%
