@@ -26,14 +26,11 @@ layout: default
 
   <div class="landing-content container">
     <div class="row">
-      <div class="column column-66">
-
+      <div class="column">
         <h2>In the Media</h2>
-
-
           <div class="grid">
             {% assign sorted_media = site.media | sort:"date" | reverse %}
-            {%- for media in sorted_media limit: 6 %}
+            {%- for media in sorted_media limit: 8 %}
             <div class="media-item">
               <div class="media-image">
                 <a href="{{ media.link }}">
@@ -44,28 +41,9 @@ layout: default
             </div>
             {%- endfor -%}
           </div>
-
-
-
-      </div>
-
-      <div class="column">
-
-        <h2>News</h2>
-
-        <ul class="post-list">
-          {%- for post in site.posts limit: 6 -%}
-          <li>
-            <div class="post-meta">{{ post.date | date: "%d.%m.%y" }}</div>
-            <div class="post-content">{{ post.content}}</div>
-          </li>
-          {%- endfor -%}
-        </ul>
-        <div style="text-align: center;"><a class="button" href="{{"/news" | relative_url }}">See all News</a></div>
-      </div>
-
-
-    </div>
+          <!-- <div style="text-align: center;"><a class="button" href="{{"/news" | relative_url }}">See all Media</a></div> -->
+        </div>
+     </div>
   </div>
 </article>
 
