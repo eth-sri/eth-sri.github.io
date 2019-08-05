@@ -1,8 +1,9 @@
 ---
 layout: post
 date:   2019-01-18
-category: news
-image: 
+link: "https://www.coindesk.com/ethereums-constantinople-upgrade-faces-delay-due-to-security-vulnerability"
+category: media
+image: coindesk.png
 ---
 
 [ChainSecurity](https://chainsecurity.com) prevents a serious [security issue](https://medium.com/chainsecurity/constantinople-enables-new-reentrancy-attack-ace4088297d9) in Ethereum's planned upgrade: 
