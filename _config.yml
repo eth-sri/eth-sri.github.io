@@ -45,9 +45,6 @@ collections:
   teaching:
     output: true
     permalink: /:collection/:name
-  media:
-    output: false
-    permalink: /:collection/:name
   workshops:
     output: true
     permalink: /:name

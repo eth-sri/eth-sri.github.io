@@ -29,7 +29,7 @@ layout: default
       <div class="column">
         <h2>News</h2>
           <div class="grid">
-            {% assign sorted_media = site.media | sort:"date" | reverse %}
+            {% assign sorted_media = site.posts | | where: "categories","media" | sort:"date" | reverse %}
             {%- for media in sorted_media limit: 8 %}
             <div class="media-item">
               <div class="media-image">
@@ -37,11 +37,11 @@ layout: default
                   <img src="{{ media.image | prepend: '/assets/media/' | relative_url}}"/>
                 </a>
               </div>
-              <div class="media-title"><a href="{{ media.link }}">{{ media.title}}</a></div>
+              <div class="media-title"><a href="{{ media.link }}">{{ media.content}}</a></div>
             </div>
             {%- endfor -%}
           </div>
-          <!-- <div style="text-align: center;"><a class="button" href="{{"/news" | relative_url }}">See all Media</a></div> -->
+          <div style="text-align: center;"><a class="button" href="{{"/news" | relative_url }}">See all News &amp; Media</a></div>
         </div>
      </div>
   </div>
