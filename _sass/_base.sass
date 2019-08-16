@@ -97,6 +97,11 @@ h1
   color: $color-black
   margin-left: -4px
 
+@include media-query($full-width-break)
+  h1
+    font-size: 40px
+    margin-left: 0
+
 @include media-query($mobile-break)
   h1
     font-size: 32px

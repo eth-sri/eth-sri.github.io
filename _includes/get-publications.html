@@ -19,13 +19,12 @@
 
 {% assign sorted_publications = filtered_publications | group_by:"year" | sort:"name" | reverse %}
 
-
 {% for year in sorted_publications %}
 
   {% assign sorted_publications_by_year = year.items | sort: "month" | reverse %}
   {% if sorted_publications_by_year.size  > 0 %}
 
-  <h2>{{year.name}}</h2>
+  <h2 id="{{year.name}}">{{year.name}}</h2>
   
   {% for publication in sorted_publications_by_year %}
 
