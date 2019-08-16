@@ -7,9 +7,6 @@
   .landing-header
     padding-bottom: 20%
 
-    h1
-      margin-left: $spacing-unit
-
     .landing-banner
       background-size: cover !important
 
@@ -26,8 +23,31 @@
         margin-top: $spacing-unit
         display: flex
 
+  .landing-content
+    box-sizing: border-box
+    width: $full-width
+    margin: 0 auto
+
+
+@include media-query($full-width-break)
+  .event
+
+    .landing-content
+      width: $mobile
+      padding-top: 0
+
+
+
 @include media-query($mobile-break)
   .event
     .landing-header
+      overflow: visible
       padding-bottom: 0
-      padding-top: 0
+
+    .landing-content
+      width: 100%
+      padding-top: $spacing-unit/2
+
+
+
+
