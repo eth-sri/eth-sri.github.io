@@ -11,11 +11,10 @@ layout: default
       <div class="page-info">
         {% if page.edoz %} <div class="info-line"><label>Edoz:</label><a href="{{ page.edoz }}" target="_blank">Open in Course Catalogue</a></div>  {% endif %}
         {% if page.assistants %} <div class="info-line"><label>Assistants:</label><div class="info-content">{% include get-linked-persons.html persons=page.assistants %}</div></div>  {% endif %}
-
         {% if page.semester %} <div class="info-line"><label>Semester:</label>{{ page.semester }}</div>  {% endif %}
         {% if page.number %} <div class="info-line"><label>Number:</label>{{ page.number }}</div>  {% endif %}
         {% if page.lecturer %} <div class="info-line"><label>Lecturer:</label>{% include get-linked-persons.html persons=page.lecturer %}</div>  {% endif %}
-        {% if page.ta %} <div class="info-line"><label>TA:</label>{% include get-linked-persons.html persons=page.ta %}</div>  {% endif %}
+        {% if page.ta %} <div class="info-line"><label>TA:</label><div class="info-content">{% include get-linked-persons.html persons=page.ta %}</div></div>  {% endif %}
         {% if page.session-time-place %} <div class="info-line"><label>Session:</label>{{ page.session-time-place }}</div>  {% endif %}
         {% if page.lecture-time-place %} <div class="info-line"><label>Lecture:</label>{{ page.lecture-time-place }}</div>  {% endif %}
         {% if page.exercise-time-place %} <div class="info-line"><label>Exercise:</label>{{ page.exercise-time-place }}</div>  {% endif %}

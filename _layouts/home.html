@@ -7,29 +7,28 @@ layout: default
 
 
   <header class="landing-header ">
-    <div class="landing-banner" style="background:url('{{ site.baseurl }}/assets/images/group-2018-12-final.jpg') 0 200px no-repeat"></div>
+    <!---<div class="landing-banner" style="background:url('{{ site.baseurl }}/assets/images/group-2018-12-final.jpg') 0 200px no-repeat"></div>-->
     <div class="landing-header-content container">
       <div class="row">
         <div class="column column-50 ">
-          <h1 class="landing-title">{{ site.title | escape }}</h1>
+          <!-- <h1 class="landing-title">{{ site.title | escape }}</h1> -->
+			<img src="assets/images/group-2018-smaller.png">
         </div>
         <div class="column column-50">
           <div class="landing-about">
-		  The Secure, Reliable, and Intelligent Systems Lab (SRI) is a research group in the <a href="https://www.inf.ethz.ch/" target="_blank">Department of Computer Science</a> at ETH Zurich. We are also part of the <a href="http://ice.ethz.ch/" target="_blank">ETH ICE center</a> on interdisciplinary research. Our group works on topics spanning the intersection of artificial intelligence, automated reasoning and security. We have released various systems on these topics, widely used in both industry and academia, including <a href="http://jsnice.org" target="_blank">JSNice</a>, <a href="http://www.apk-deguard.com" target="_blank">APK Deguard</a>, <a href="https://psisolver.org/" target="_blank">PSI</a>, <a href="https://securify.ch/" target="_blank">Securify</a>, <a href="http://nice2predict.org/" target="_blank">Nice2Predict</a> and others. Our research also led to two startups: <a href="http://deepcode.ai/" target="_blank">DeepCode.ai</a> and <a href="https://chainsecurity.com" target="_blank">ChainSecurity</a>. Please see our <a href="{{ "/research" | relative_url }}">Research Projects</a> and <a href="/publications" target="_blank">Publications</a> to learn more.
+		  The Secure, Reliable, and Intelligent Systems Lab (SRI) is a research group in the <a href="https://www.inf.ethz.ch/" target="_blank">Department of Computer Science</a> at ETH Zurich and part of the <a href="http://ice.ethz.ch/" target="_blank">ETH ICE center</a>. We work at the broad intersection of machine learning and formal reasoning with applications to safe artificial intelligence, probabilistic and quantum programming, AI-driven coding, security and others. Our work led to two ETH spin-offs: <a href="http://deepcode.ai/" target="_blank">DeepCode.ai</a> and <a href="https://chainsecurity.com" target="_blank">ChainSecurity</a>. Please see <a href="{{ "/research" | relative_url }}">Research</a> and <a href="/publications" target="_blank">Publications</a> to learn more.
           </div>
         </div>
       </div>
     </div>
   </header>
 
-
-
   <div class="landing-content container">
     <div class="row">
       <div class="column">
         <h2>News</h2>
           <div class="grid">
-            {% assign sorted_media = site.media | sort:"date" | reverse %}
+            {% assign sorted_media = site.posts | | where: "categories","media" | sort:"date" | reverse %}
             {%- for media in sorted_media limit: 8 %}
             <div class="media-item">
               <div class="media-image">
@@ -37,11 +36,11 @@ layout: default
                   <img src="{{ media.image | prepend: '/assets/media/' | relative_url}}"/>
                 </a>
               </div>
-              <div class="media-title"><a href="{{ media.link }}">{{ media.title}}</a></div>
+              <div class="media-title"><a href="{{ media.link }}">{{ media.content}}</a></div>
             </div>
             {%- endfor -%}
           </div>
-          <!-- <div style="text-align: center;"><a class="button" href="{{"/news" | relative_url }}">See all Media</a></div> -->
+          <div style="text-align: center;"><a class="button" href="{{"/news" | relative_url }}">See all News &amp; Media</a></div>
         </div>
      </div>
   </div>
