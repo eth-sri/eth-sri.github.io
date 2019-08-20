@@ -1,8 +1,9 @@
 ---
 layout: default
-title: News
+title: News & Media
 permalink: /news/index.html
 ---
+
 
 
 <article class="page">
@@ -23,7 +24,23 @@ permalink: /news/index.html
       	<ul class="post-list">
           {%- for post in site.posts  -%}
           <li>
+
             <div class="post-meta">{{ post.date | date: "%d.%m.%y" }}</div>
+            
+
+              {% if post.image %}
+              <div class="post-image">
+
+              {% if post.link %}  
+              <a href="{{ post.link }}">
+              {% endif %}
+                <img src="{{ post.image | prepend: '/assets/media/' | relative_url}}"/>
+              {% if post.link %}  
+              </a>
+              {% endif %}
+              </div>
+              {% endif %}
+            
             <div class="post-content">{{ post.content}}</div>
           </li>
           {%- endfor -%}
