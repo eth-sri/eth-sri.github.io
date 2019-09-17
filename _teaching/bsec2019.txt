@@ -1,15 +1,24 @@
-Mar 8	Blockchains	Bitcoin: A Peer-to-Peer Electronic Cash System	https://bitcoin.org/bitcoin.pdf	Martina Forster	Dana	dana.drachsler@inf.ethz.ch
-Mar 8	Blockchains	Ethereum: A Secure decentralized generalized transaction ledger	https://gavwood.com/paper.pdf	Yoel Zweig	Dimitar	dimitar.dimitrov@inf.ethz.ch
-Mar 15	Privacy	Zerocash: Decentralized Anonymous Payments from Bitcoin	http://zerocash-project.org/media/pdf/zerocash-oakland2014.pdf	Elizaveta Tretiakova	Benjamin	benjamin.bichsel@inf.ethz.ch
-Mar 15	Scalability	The Bitcoin Lightning Network: Scalable Off-Chain Instant Payments	https://lightning.network/lightning-network-paper.pdf	Marco Tollini	Gagandeep	gsingh@inf.ethz.ch
-Mar 22	Scalability	Arbitrum: Scalable, private smart contracts	https://www.usenix.org/system/files/conference/usenixsecurity18/sec18-kalodner.pdf	Stefan Tiegel	Samuel	samuel.steffen@inf.ethz.ch
-Mar 22	Scalability	General State Channel Networks	https://dl.acm.org/citation.cfm?id=3243856	Lara Bruseghini	Gagandeep	gsingh@inf.ethz.ch
-Mar 29						
-Mar 29	Attacks	teEther: Gnawing at Ethereum to Automatically Exploit Smart Contracts	https://www.usenix.org/system/files/conference/usenixsecurity18/sec18-krupp.pdf	Joël Schneider	Jingxuan	jingxuan.he@inf.ethz.ch
-Apr 5	Attacks	Finding The Greedy, Prodigal, and Suicidal Contracts at Scale	https://arxiv.org/pdf/1802.06038.pdf	Julia Badertscher	Petar	petar.tsankov@inf.ethz.ch
-Apr 5	Routing attacks	SABRE: Protecting Bitcoin against Routing Attacks	https://vanbever.eu/pdfs/vanbever_sabre_ndss_2019.pdf	Elia Schudel	Samuel	samuel.steffen@inf.ethz.ch
-Apr 12	Static analysis	SECURIFY: Practical Security Analysis of Smart Contracts	https://files.sri.inf.ethz.ch/website/papers/ccs18-securify.pdf	Theo Giovanna	Dana	dana.drachsler@inf.ethz.ch
-Apr 12	Gas analysis	Computing Exact Worst-Case Gas Consumption for Smart Contracts	https://www.inf.usi.ch/postdoc/hyvarinen/publications/MarescottiBHAS_ISOLA2018.pdf	Lili Georgieva	Pesho	pesho@inf.ethz.ch
-May 3	Verification	SMT-Based Verification of Solidity Smart Contracts	https://link.springer.com/content/pdf/10.1007%2F978-3-030-03427-6_28.pdf	Lara Kohler	Maximilian	mbaader@student.ethz.ch
-May 3	Symbolic analysis	Osiris: Hunting for Integer Bugs in Ethereum Smart Contracts	https://orbilu.uni.lu/bitstream/10993/36757/1/osiris.pdf	Raphael Wegner	Benjamin	benjamin.bichsel@inf.ethz.ch
-May 10	Gas analysis	MadMax: Surviving Out-of-Gas Conditions in Ethereum Smart Contracts	https://yanniss.github.io/eth-oopsla18.pdf	Luis Wyss	Petar	petar.tsankov@inf.ethz.ch
+Oct 2	Platform	Bitcoin: A peer-to-peer electronic cash system	https://bitcoin.org/bitcoin.pdf			
+Oct 2	Platform	Ethereum: A secure decentralized generalised transaction ledger	https://ethereum.github.io/yellowpaper/paper.pdf			
+Oct 9	Protocols	The honey badger of BFT protocols	https://infoscience.epfl.ch/record/222858/files/199.pdf			
+Oct 9	Protocols	Bitcoin-NG: A scalable blockchain protocol	https://www.usenix.org/system/files/conference/nsdi16/nsdi16-paper-eyal.pdf			
+Oct 16	Attack	teEther: Gnawing at Ethereum to automatically exploit smart contracts	https://www.usenix.org/system/files/conference/usenixsecurity18/sec18-krupp.pdf			
+Oct 16	Fuzzing	Learning to fuzz from symbolic execution with application to smart contracts				
+Oct 23	Attack	The art of the scam: Demystifying honeypots in Ethereum smart contracts	https://www.usenix.org/system/files/sec19-torres.pdf			
+Oct 23	Attack	The anatomy of a cryptocurrency pump-and-dump scheme	https://www.usenix.org/system/files/sec19-xu-jiahua_0.pdf			
+Oct 30	Dynamic analysis	Online detection of effectively callback free objects with applications to smart contracts	https://arxiv.org/abs/1801.04032			
+Oct 30	Verification	VerX: Safety verification of smart contracts	https://files.sri.inf.ethz.ch/website/papers/sp20-verx.pdf			
+Nov 6	Attack	Osiris: Hunting for integer bugs in Ethereum smart contracts	https://orbilu.uni.lu/bitstream/10993/36757/1/osiris.pdf			
+Nov 6	Verification	VeriSmart: A highly precise safety verifier for Ethereum smart contracts	https://arxiv.org/abs/1908.11227			
+Nov 13	Networks	Hijacking Bitcoin: Routing attacks on cryptocurrencies	https://arxiv.org/pdf/1605.07524v2.pdf			
+Nov 13	Networks	SABRE: Protecting Bitcoin against routing attacks	https://vanbever.eu/pdfs/vanbever_sabre_ndss_2019.pdf			
+Nov 20	Static analysis	MadMax: surviving out-of-gas conditions in Ethereum smart contracts	http://dl.acm.org/citation.cfm?doid=3288538.3276486			
+Nov 20	Static analysis	Securify: Practical security analysis of smart contracts	https://files.sri.inf.ethz.ch/website/papers/ccs18-securify.pdf			
+Nov 27	Privacy	Zerocash: Decentralized anonymous payments from Bitcoin	http://zerocash-project.org/media/pdf/zerocash-oakland2014.pdf			
+Nov 27	Privacy	An empirical analysis of traceability in the Monero blockchain	https://doi.org/10.1515/popets-2018-0025			
+Dec 4	Privacy	Arbitrum: Scalable, private smart contracts	https://www.usenix.org/system/files/conference/usenixsecurity18/sec18-kalodner.pdf			
+Dec 4	Privacy	Specifying and enforcing data privacy in smart contracts				
+Dec 11	Reverse engineering	Erays: Reverse engineering Ethereum's opaque smart contracts	https://www.usenix.org/system/files/conference/usenixsecurity18/sec18-zhou.pdf			
+Dec 11	Reverse engineering	Gigahorse: Thorough, declarative decompilation of smart contracts	https://yanniss.github.io/gigahorse-icse19.pdf			
+Dec 18	Languages	BitML: A calculus for Bitcoin smart contracts	https://eprint.iacr.org/2018/122.pdf			
+Dec 18	Languages	Safer smart contract programming with Scilla	https://ilyasergey.net/papers/scilla-oopsla19.pdf			
