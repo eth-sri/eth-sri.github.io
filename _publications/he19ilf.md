@@ -5,7 +5,7 @@
   year: 2019
   month: 11
   venue: ACM CCS
-  projects: blockchain-security
+  projects: blockchain-security, plml
   awards:
   bibtex:
   paper: 
