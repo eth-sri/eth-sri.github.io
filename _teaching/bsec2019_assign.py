@@ -3,10 +3,10 @@ from z3 import *
 choices = {}
 names = {}
 
-for line in open('bsec2019_choices.txt', 'r').readlines():
+for line in open('bsec2019_choices_fall.txt', 'r').readlines():
 	tokens = line.split('\t')
-	choices[tokens[1]] = [tokens[3], tokens[4], tokens[5], tokens[6], tokens[7]]
-	names[tokens[1]] = tokens[2]
+	choices[tokens[1]] = [tokens[3].strip(), tokens[4].strip(), tokens[5].strip(), tokens[6].strip(), tokens[7].strip()]
+	names[tokens[1]] = tokens[2].strip()
 
 papers = list(set([choices[email][i] for i in range(5) for email in choices.keys()]))
 paper2id = {}
@@ -27,7 +27,7 @@ for email in choices.keys():
 		sum_of_scores = score
 	else:
 		sum_of_scores += score
-	opt.add(score < 4)
+	opt.add(score < 6)
 
 opt.add(z3.Distinct([assignments[x] for x in assignments.keys()]))
 
