@@ -8,7 +8,7 @@
   projects: blockchain-security
   awards:
   bibtex:
-  paper: 
+  paper: https://files.sri.inf.ethz.ch/website/papers/ccs19-zkay.pdf
   image: 
   talk:
   slides:
