@@ -8,7 +8,7 @@
   projects: blockchain-security, plml
   awards:
   bibtex:
-  paper: 
+  paper: https://files.sri.inf.ethz.ch/website/papers/ccs19-ilf.pdf
   image: 
   talk:
   slides:
