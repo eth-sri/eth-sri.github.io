@@ -13,7 +13,7 @@ bibtex: '@inproceedings{baader2019universal,
   year={2019}}'
 paper: https://arxiv.org/abs/1909.13846
 slides:
-image: 
+image: assets/images/baader2019universal.jpg
 talk: 
 ---
 
