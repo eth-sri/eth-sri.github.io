@@ -1,6 +1,6 @@
 ---
 ref: singh2019krelu
-title:  "Precise and Scalable Convex Relaxations for Robustness Certification"
+title:  "k-ReLU: Beyond Neuron-Level Convex Relaxations for Certification"
 projects: safeai
 authors: Gagandeep Singh, Rupanshu Ganvir, Markus Püschel, Martin Vechev
 year: 2019
