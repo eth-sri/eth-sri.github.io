@@ -66,7 +66,7 @@ This is the seventh time the workshop is being held (formerly Workshop on Softwa
     <td>KAIST, Korea</td>
 	<td><div class="talk" style="color: #0079AF;" data-tooltip="Probabilistic programming is the idea of writing models from statistics and machine learning using program notations and reasoning about these models using generic inference engines. Recently its combination with deep learning has been explored intensely, which led to the development of so called deep probabilistic programming languages, such as Pyro, Edward and ProbTorch. At the core of this development lie inference engines based on stochastic variational inference algorithms. When asked to find information about the posterior distribution of a model written in such a language, these algorithms convert this posterior-inference query into an optimisation problem and solve it approximately by a form of gradient ascent or descent. In this paper, we analyse one of the most fundamental and versatile variational inference algorithms, called score estimator or REINFORCE, using tools from denotational semantics and program analysis. We formally express what this algorithm does on models denoted by programs, and expose implicit assumptions made by the algorithm on the models. The violation of these assumptions may lead to an undefined optimisation objective or the loss of convergence guarantee of the optimisation process. We then describe rules for proving these assumptions, which can be automated by static program analyses. Some of our rules use nontrivial facts from continuous mathematics, and let us replace requirements about integrals in the assumptions, such as integrability of functions defined in terms of programs' denotations, by conditions involving differentiation or boundedness, which are much easier to prove automatically (and manually). Following our general methodology, we have developed a static program analysis for the Pyro programming language that aims at discharging the assumption about what we call model-guide support match. Our analysis is applied to the eight representative model-guide pairs from the Pyro webpage, which include sophisticated neural network models such as AIR. It finds a bug in two of these cases, and shows that the assumptions are met in the others. This is joint work with Wonyeol Lee and Hangyeol Yu (KAIST, South Korea) and Xavier Rival (INRIA Paris/CNRS/ENS/PSL Research University, France).">Towards Verified Stochastic Variational Inference for Probabilistic Programs</div></td>
 	<td></td>
-	<td></td>
+	<td><a href="https://youtu.be/XsSKaHL2PRU" title="eth-jagannathan"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
 </tr>
 
 <tr>
@@ -75,7 +75,7 @@ This is the seventh time the workshop is being held (formerly Workshop on Softwa
 	<td>UIUC, USA</td>
 	<td><div class="talk" style="color: #0079AF;" data-tooltip="Probabilistic programming languages offer an intuitive way to model uncertainty by representing complex probability models as simple probabilistic programs. Thus, even a programmer with a limited exposure to statistical machine learning can benefit from powerful probabilistic inference. In effect, the programmer only needs to write a high-level model in a programming language with support for random sampling and conditioning on data. The underlying probabilistic programming system (which executes the high-level probabilistic programs) hides the complexity of inference algorithms away from the program developer. While the research community has focused primarily on improving expressiveness of probabilistic languages and efficiency of inference algorithms, analyses of probabilistic programs and techniques for debugging probabilistic software will have a key role in improving programmer productivity in this emerging domain. In this talk, I will present our recent work on testing probabilistic programming systems and tools for analyzing robustness of probabilistic programs.">Analysis and Testing for Probabilistic Programming</div></td>
 	<td></td>
-	<td></td>
+	<td><a href="https://youtu.be/Rgp02o-FF_0" title="eth-jagannathan"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
 </tr>
 
 <tr>
@@ -91,9 +91,9 @@ This is the seventh time the workshop is being held (formerly Workshop on Softwa
 	<td>11:15 - 12:00</td>
     <td><a href="http://web.mit.edu/marcoct/www/">Marco<br>Cusumano-Towner</a></td>
 	<td>MIT, USA</td>
-	<td><div class="talk" style="color: #0079AF;" data-tooltip="Applications of Bayesian inference in fields like robotics and computer vision often require specialized real-time approximate inference implementations, and practitioners in these fields must make trade offs between the approximation error and performance characteristics of their implementation. This talk will introduce two probabilistic programming tools aimed at supporting performance-constrained inference applications. The first part of the talk will introduce Gen, a general-purpose probabilistic programming system that achieves flexibility and efficiency via several novel language constructs, including an interface for encapsulating hand-optimized inference code, and interoperable modeling languages that strike different flexibility/efficiency trade-offs. The second part of the talk will introduce the Auxiliary Inference Divergence Estimator (AIDE), which measures the KL divergence between the output distributions of two sampling programs. AIDE can be used offline to evaluate the approximation error of a fast real-time inference algorithm against gold-standard inference algorithm on specific user-selected inference problems.">Probabilistic programming tools for developing and evaluating specialized approximate inference programs</div></td>
+	<td><div class="talk" style="color: #0079AF;" data-tooltip="Applications of Bayesian inference in fields like robotics and computer vision often require specialized real-time approximate inference implementations, and practitioners in these fields must make trade offs between the approximation error and performance characteristics of their implementation. This talk will introduce two probabilistic programming tools aimed at supporting performance-constrained inference applications. The first part of the talk will introduce Gen, a general-purpose probabilistic programming system that achieves flexibility and efficiency via several novel language constructs, including an interface for encapsulating hand-optimized inference code, and interoperable modeling languages that strike different flexibility/efficiency trade-offs. The second part of the talk will introduce the Auxiliary Inference Divergence Estimator (AIDE), which measures the KL divergence between the output distributions of two sampling programs. AIDE can be used offline to evaluate the approximation error of a fast real-time inference algorithm against gold-standard inference algorithm on specific user-selected inference problems.">Towards Probabilistic Programming for Reliable Machine Perception</div></td>
 	<td></td>
-	<td></td>
+	<td><a href="https://youtu.be/Exk8I8uoRqA" title="eth-jagannathan"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
 </tr>
 
 <tr>
@@ -108,9 +108,9 @@ This is the seventh time the workshop is being held (formerly Workshop on Softwa
 	<td>13:30 - 14:15</td>
     <td><a href="http://people.cs.uchicago.edu/~shanlu/"><div class="talk" style="font-weight: normal;" data-tooltip="Shan Lu received her Ph.D. from University of Illinois in 2008, and is currently a Professor at the University of Chicago working on improving software reliability and efficiency.  Shan has won Alfred P. Sloan Research Fellow, NSF Career Award, and co-authored many award papers (2 Best Papers at OSDI'16 and FAST'13; 3 SIGSOFT Distinguished Papers at ICSE'19, ICSE'15, and FSE'14, a SIGPLAN Research Highlight at PLDI'11, and an IEEE Micro Top Picks at ASPLOS'06). Shan serves as the Chair of ACM-SIGOPS, the Associate Editor for IEEE Computer Architecture Letters, and the program co-chair for OSDI 2020.">Shan Lu</div></a></td>
 	<td>Chicago, USA</td>
-	<td><div class="talk" style="color: #0079AF;" data-tooltip="Bugs have always been a big threat to the reliability and efficiency of software systems. In the era of big data and cloud computing, they continue to take effect, but often with new forms. This talk will first discuss our recent study of Microsoft Azure incidents, understanding what led to production cloud service incidents. It will then go into details about two types of interesting bugs, (1) memory and persistent data races in the cloud and (2) inefficiencies in Object-Relational Mapping systems. Good understanding of these bugs has led to our tools discovering more than 1000 bugs in latest versions of popular open-source applications.">Why do big data and cloud systems stop (slow down)?</div></td>
+	<td><div class="talk" style="color: #0079AF;" data-tooltip="Bugs have always been a big threat to the reliability and efficiency of software systems. In the era of big data and cloud computing, they continue to take effect, but often with new forms. This talk will first discuss our recent study of Microsoft Azure incidents, understanding what led to production cloud service incidents. It will then go into details about two types of interesting bugs, (1) memory and persistent data races in the cloud and (2) inefficiencies in Object-Relational Mapping systems. Good understanding of these bugs has led to our tools discovering more than 1000 bugs in latest versions of popular open-source applications.">Why Do Big Data and Cloud Systems Stop (Slow Down)?</div></td>
 	<td></td>
-	<td></td>
+	<td><a href="https://youtu.be/OP_7XCnBsJE" title="eth-jagannathan"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
 </tr>
 
 <tr>
@@ -137,7 +137,7 @@ This is the seventh time the workshop is being held (formerly Workshop on Softwa
 	<td>ETH Z&uumlrich</td>
 	<td><div class="talk" style="color: #0079AF;" data-tooltip="Databases are used ubiquitously for storing, processing and retrieving data.  Software applications access them using database management systems (DBMS), which support dialects of a domain-specific language, namely the Structured Query Language (SQL). Thus, the reliability of DBMS is critical for application safety and correctness. This talk presents our ongoing work on developing effective techniques to tackle the challenging problem of testing production DBMS. We specifically target logic bugs in DBMS, such as when a processed SQL query returns an incorrect record.  This talk presents pivoted query synthesis (PQS), a novel, fully automated, highly effective technique, and our experience applying PQS in finding over 100 confirmed/fixed bugs in three mature, widely-used DBMS, SQLite, MySQL, and PostgreSQL.">Testing Database Management Systems via Pivoted Query Synthesis</div></td>
 	<td></td>
-	<td></td>
+	<td><a href="https://youtu.be/yzENTaWe7qg" title="eth-jagannathan"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
 </tr>
 
 <tr>
@@ -146,7 +146,7 @@ This is the seventh time the workshop is being held (formerly Workshop on Softwa
 	<td>ETH Z&uumlrich</td>
 	<td><div class="talk" style="color: #0079AF;" data-tooltip="In this talk, I will introduce new automated reasoning methods for proving that deep neural networks satisfy a given specification (e.g., robustness against perturbations or other safety properties). These methods are based on abstract interpretation (specifically, new numerical approximations which scale to large networks) as well as combinations of these methods with mixed integer linear solvers. In the process, I will also briefly discuss how to apply these techniques not only for verification but also for training provably robust networks. The talk is based on results published at NIPS’18, POPL’19, and ICLR’19.">Safe and Robust Deep Learning</div></td>
 	<td></td>
-	<td></td>
+	<td><a href="https://youtu.be/layudJun8_U" title="eth-jagannathan"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
 </tr>
 
 <tr>
@@ -155,7 +155,7 @@ This is the seventh time the workshop is being held (formerly Workshop on Softwa
 	<td>ETH Z&uumlrich</td>
 	<td><div class="talk" style="color: #0079AF;" data-tooltip="Producing reliable systems software is a major challenge, plagued by the ubiquitous problems of shared mutable state, pointer aliasing, dynamic memory management, and subtle concurrency issues such as race conditions; even expert programmers struggle to tame the wide variety of reasons why their programs may not behave as they intended. Formal verification offers potential solutions to many of these problems, but typically at a very high price: the mathematical techniques employed are highly-complex, and difficult for even expert researchers to understand and apply. The relatively-new Rust programming language is designed to help with the former problem: a powerful ownership type system requires programmers to specify and restrict their discipline for referencing heap locations, providing in return the strong guarantee* that code type-checked by this system will be free from dangling pointers, unexpected aliasing, race conditions and the like. While this rules out a number of common errors, the question of whether a program behaves as intended remains. In this talk, I’ll give an overview of the Prusti project, which leverages Rust’s type system and compiler analyses for formal verification. By combining the rich information available about a type-checked Rust program with separate user-specification of intended behaviour, Prusti enables a user to verify functional correctness of their code without interacting with a complex program logic; in particular, specifications and all interactions with our implemented tool are at the level of abstraction of Rust expressions. (*almost – see the talk!)">Prusti – Deductive Verification for Rust</div></td>
 	<td></td>
-	<td></td>
+	<td><a href="https://youtu.be/gG7SKBIF9Qw" title="eth-jagannathan"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
 </tr>
 </table>
 
@@ -193,7 +193,7 @@ This is the seventh time the workshop is being held (formerly Workshop on Softwa
     <td>Berkeley, USA</td>
     <td><div class="talk" style="color: #0079AF;" data-tooltip="From banking to social networking websites, we interact with data-intensive applications every day. Such applications rely on databases for persistent storage, but the separation between the application and the database layer makes it difficult to satisfy end-to-end goals such as performance and correctness. In this talk, I will show how examining the programming system and the database management system in tandem allows developers to build data-intensive applications and systems that are both performant and correct. To illustrate, I will discuss two projects: verified lifting, a methodology that enables applications to leverage optimization exposed by different programming interfaces, and Cosette, a tool for system developers to validate the correctness of their query transformations. Using real-world examples, I will show that these tools enable system builders to reason about the correctness of their optimization, and allow orders of magnitude performance improvement while preserving the same programming interface to the developer.">Building Verified and Performant Data-Intensive Applications</div></td>
     <td></td>
-    <td></td>
+    <td><a href="https://youtu.be/kl5TLTigoQg" title="eth-jagannathan"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
 </tr>
 
 <tr>
@@ -211,7 +211,7 @@ This is the seventh time the workshop is being held (formerly Workshop on Softwa
 	<td>Rutgers, USA</td>
 	<td><div class="talk" style="color: #0079AF;" data-tooltip="This talk will describe parallelism profilers and advisers being developed in my group for various parallel programming models. As a parallelism profiler, our prototypse pinpoint regions with serialization bottlenecks, scheduling overheads, and secondary effects of execution.  As an adviser, they identify regions that matter in improving parallelism. To accomplish these objectives, we propose a performance model that captures series-parallel relationships between various dynamic execution fragments of tasks and includes fine-grained measurement of computation in those fragments. Using this performance model, our what-if analyses mimic the effect of parallelization and identify regions that improve the parallelism of the program while considering the cost of parallel execution. Its differential analyses perform fine-grained differencing of an oracle and the observed performance model to identify static regions experiencing secondary effects of execution.">A Case for Parallelism Advisers and Profilers with What-If Analyses</div></td>
 	<td></td>
-	<td></td>
+	<td><a href="https://youtu.be/ZjQWQdk9hC8" title="eth-jagannathan"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
 </tr>
 
 <tr>
@@ -228,7 +228,7 @@ This is the seventh time the workshop is being held (formerly Workshop on Softwa
 	<td>Wisconsin, USA</td>
 	<td><div class="talk" style="color: #0079AF;" data-tooltip="Algorithms consume our personal data and make decisions that affect our lives. How can we make sure that these algorithms do not leak our private data? How do we make sure they are fair? Over the past few years, we have been exploring this question through the lens of automated verification and synthesis. In this talk, I will discuss automated techniques for proving the correctness of randomized algorithms and apply them to differentially private mechanisms, which have seen numerous applications in privacy-preserving data analysis as well as ensuring forms of fairness in decision-making. Technically, I will demonstrate how powerful SMT solvers, which revolutionized automated verification of traditional programs, can be applied to reasoning about randomized algorithms.">Privacy and Automated Verification</div></td>
 	<td></td>
-	<td></td>
+	<td><a href="https://youtu.be/DnYzPTenf9I" title="eth-jagannathan"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
 </tr>
 
 <tr>
@@ -237,7 +237,7 @@ This is the seventh time the workshop is being held (formerly Workshop on Softwa
 	<td>Utah, USA</td>
 	<td><div class="talk" style="color: #0079AF;" data-tooltip="Virtually all real-valued computations are carried out using floating-point data types and operations. With the current emphasis of system development often being on computational efficiency, developers as well as compilers are increasingly attempting to optimize floating-point routines. Reasoning about the correctness of these optimizations is complicated, and requires error analysis procedures with different characteristics and trade-offs. In my talk, I will motivate the need for such analyses. Then, I will present both a dynamic and a rigorous static analysis we developed for estimating errors of floating-point routines. Finally, I will describe how we extended our rigorous static analysis into a procedure for mixed-precision tuning of floating-point routines.">Analysis and Synthesis of Floating-Point Routines</div></td>
 	<td></td>
-	<td></td>
+	<td><a href="https://youtu.be/S5hC9EbwNlU" title="eth-jagannathan"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
 </tr>
 
 <tr>
@@ -255,7 +255,7 @@ This is the seventh time the workshop is being held (formerly Workshop on Softwa
 	<td>CMU, USA</td>
 	<td><div class="talk" style="color: #0079AF;" data-tooltip="This talk presents Nomos, a programming language that has been designed from scratch to address the unique challenges of programming digital contracts: describing and enforcing protocols of interaction, controlling resource usage, and tracking linear assets. To describe and enforce protocols, Nomos is based on shared binary session types rooted in linear logic. To control resource usage, it uses resource-aware session types and automatic amortized resource analysis (AARA), a type-based technique for inferring resource bounds. To track linear assets, Nomos employs a linear type system that prevents assets from being duplicated or discarded. The talk reviews AARA and session types, highlights the main design choices, and illustrates the concepts with example contracts.">Resource-Aware Session Types for Programming Digital Contracts</div></td>
     <td></td>
-	<td></td>
+	<td><a href="https://youtu.be/65VEt5BSldQ" title="eth-jagannathan"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"></a></td>
 </tr>
 
 <tr>
