@@ -7,7 +7,7 @@ month: 05
 venue: ICLR
 projects: safeai
 awards:
-bibtex:'@incollection{singh2019krelu,
+bibtex:'@incollection{singh2019refinement,
   title = {Boosting Robustness Certification of Neural Networks},
   author = {Singh, Gagandeep and Gehr, Timon and Püschel, Markus and Vechev, Martin},
   booktitle =  {International Conference on Learning Representations (ICLR)},
