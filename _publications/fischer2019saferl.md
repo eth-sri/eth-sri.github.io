@@ -13,7 +13,7 @@ bibtex: '@inproceedings{fischer2019saferl,
   year={2019}}'
 paper: https://arxiv.org/abs/1911.00887
 slides:
-image:assets/images/fischer2019saferl.png
+image: assets/images/fischer2019saferl.png
 talk: 
 ---
 
