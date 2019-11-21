@@ -1,14 +1,14 @@
 ---
 ref: fischer2019saferl
 title: "Online Robustness Training for Deep Reinforcement Learning"
-authors: Marc Fischer, Matthew Mirman, Martin Vechev
+authors: Marc Fischer, Matthew Mirman, Steven Stalder, Martin Vechev
 year: 2019
 month: 11
 venue: arXiv
 projects: safeai
 bibtex: '@inproceedings{fischer2019saferl,
   title={Online Robustness Training for Deep Reinforcement Learning},
-  author={Marc Fischer, Matthew Mirman, Martin Vechev},
+  author={Marc Fischer, Matthew Mirman, Steven Stalder, Martin Vechev},
   journal={arXiv preprint arXiv:1911.00887},
   year={2019}}'
 paper: https://arxiv.org/abs/1911.00887
