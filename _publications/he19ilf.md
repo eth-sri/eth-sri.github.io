@@ -11,7 +11,7 @@
   paper: https://files.sri.inf.ethz.ch/website/papers/ccs19-ilf.pdf
   image: assets/images/ilf-logo.png
   talk:
-  slides:
+  slides: https://files.sri.inf.ethz.ch/website/slides/ccs19-ilf-slides.pdf
 ---
 
 Fuzzing and symbolic execution are two complementary techniques for discovering software vulnerabilities. Fuzzing is fast and scalable, but can be ineffective when it fails to randomly select the right inputs. Symbolic execution is thorough but slow and often does not scale to deep program paths with complex path conditions.
