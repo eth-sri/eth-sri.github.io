@@ -1,4 +1,4 @@
-﻿---
+---
 ref: singh2019krelu
 title:  "Beyond the Single Neuron Convex Barrier for Neural Network Certification"
 projects: safeai
