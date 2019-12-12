@@ -13,6 +13,7 @@ bibtex: '@incollection{singh2019krelu,
 }'
 paper: https://files.sri.inf.ethz.ch/website/papers/neurips19_krelu.pdf
 slides: https://files.sri.inf.ethz.ch/website/slides/kPoly.pdf
+image: assets/images/krelu.jpg
 venue: NeurIPS
 ---
 We propose a new parametric framework, called k-ReLU, for computing precise and scalable convex relaxations used to certify neural networks. The key idea is to approximate the output of multiple ReLUs in a layer jointly instead of separately. This joint relaxation captures dependencies between the inputs to different ReLUs in a layer and thus overcomes the convex barrier imposed by the single neuron
