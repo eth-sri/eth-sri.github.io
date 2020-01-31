@@ -4,7 +4,7 @@ title: "Adversarial Training and Provable Defenses: Bridging the Gap"
 authors: Mislav Balunovic, Martin Vechev
 year: 2020
 month: 4
-venue: ICLR
+venue: ICLR (Oral)
 projects: safeai
 bibtex: '@inproceedings{balunovic2020adversarial,
   title={Adversarial Training and Provable Defenses: Bridging the Gap},
