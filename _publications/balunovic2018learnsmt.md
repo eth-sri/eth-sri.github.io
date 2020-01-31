@@ -15,7 +15,7 @@ bibtex: '@incollection{fastSMT,
   url = {http://papers.nips.cc/paper/8233-learning-to-solve-smt-formulas.pdf}
 }'
 paper: https://files.sri.inf.ethz.ch/website/papers/fastsmt-2018.pdf
-venue: NIPS (oral)
+venue: NeurIPS (Oral)
 talk: https://bit.ly/2BbpQtz
 slides: https://files.sri.inf.ethz.ch/website/slides/neurips18_fastsmt.pdf
 ---
