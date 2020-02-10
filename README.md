@@ -215,6 +215,7 @@ Currently, there are reference names for the following projects:
 | Programmable Networks     | programmable-networks   |
 | Blockchain Security       | blockchain-security      |
 | Fast Numerical Abstract Domains     | numerical-analysis    |
+| Computational Biology               | computational-biology |
 
 You can create a number of sections to showcase various aspects of the project, such as associated startups, systems, publications and talks. 
 
