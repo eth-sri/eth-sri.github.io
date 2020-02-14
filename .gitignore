@@ -10,3 +10,4 @@ _site
 *.pdf
 *.ppt
 *.pptx
+minima.gemspec
