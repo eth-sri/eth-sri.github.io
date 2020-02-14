@@ -1,0 +1,84 @@
+---
+title: Program Analysis for System Security and Reliability
+ref: pass2020
+description: Graduate course illustrating how to apply program analysis and synthesis techniques for securing smart contracts, computer networks, and systems.
+semester: Spring 2020
+number: 263-2925-00L
+lecturer: Dr. Petar Tsankov
+ta: Maximilian Baader, Mislav Balunovic, Jingxuan He, Matthew Mirman
+assistants: 
+edoz: http://www.vvz.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?lerneinheitId=136822&semkez=2020S&lang=en
+session-time-place:
+lecture-time-place: Mon 14-16, CAB G61
+exercise-time-place: Tue 15-16, CAB G61
+credits: 6
+image: pass.png
+
+---
+
+<h2>Overview</h2>
+
+<p>Security issues and privacy breaches in modern systems (blockchains, datacenters, AI, etc.) result in billions of losses due to hacks and system downtime. This course introduces the security issues in such modern systems and covers state-of-the-art automated techniques (developed in the past few years) that can are applied to build more secure and reliable systems. The course has a practical focus and covers systems build by successful ETH spin-offs (<a target="_blank" href="https://chainsecurity.com">ChainSecurity</a>, which was acquired by PwC, and <a target="_blank" href="https://deepcode.ai">DeepCode</a>).
+</p>
+
+<p><b>Objectives</b></br>
+<ol>
+  <li> Learn about security issues in modern systems -- blockchains, smart contracts, data centers -- and why they are challenging to address.</li>
+  <li> Understand how the latest automated analysis techniques work, both discrete and probabilistic.</li>
+  <li> Understand how these techniques combine with machine-learning methods, both supervised and unsupervised. </li>
+  <li> Understand how to use these methods to build reliable and secure modern systems. </li>
+  <li> Learn about new open problems that if solved can lead to research and commercial impact. </li>
+</ol>
+</p>
+
+<p><b>Part I: Security of Blockchains</b></br>
+
+<ul>
+<li>We will cover existing blockchains (e.g., <a target="_blank" href="https://ethereum.org/foundation">Ethereum</a>, <a href="https://bitcoin.org/bitcoin.pdf">Bitcoin</a>), how they work, what the core security issues are, and how these have led to massive financial losses.  </li>
+<li>We will show how to extract useful information about smart contracts and transactions using interactive analysis frameworks for querying blockchains (e.g. Google's <a target="_blank" href="https://cloud.google.com/blog/products/data-analytics/ethereum-bigquery-public-dataset-smart-contract-analytics">Ethereum BigQuery</a>).</li>
+<li> We will discuss the state-of-the-art security tools (e.g., <a target="_blank" href="https://securify.ch">Securify</a>) for ensuring that smart contracts are free of security vulnerabilities.  </li>
+<li> We will study the latest automated reasoning systems (e.g., <a target="_blank" href="https://verx.ch">VerX</a>) for checking custom (temporal) properties of smart contracts and illustrate their operation on real-world use cases.  </li>
+</ul>
+
+<p><b>Part II: Security of Datacenters and Networks</b></br>
+
+<ul>
+<li>We will show how to ensure that datacenters and ISPs are secured using declarative reasoning methods (e.g., Datalog). We will also see how to automatically synthesize secure configurations (e.g. using <a target="_blank" href="https://synet.ethz.ch/">SyNET</a> and <a target="_blank" href="https://netcomplete.ethz.ch/">NetComplete</a>) which lead to desirable behaviors, thus automating the job of the network operator and avoiding critical errors.</li>
+<li>We will discuss how to apply modern discrete probabilistic inference (e.g., <a target="_blank" href="https://psisolver.org/">PSI</a> and <a target="_blank" href="https://github.com/eth-sri/bayonet">Bayonet</a>) so to reason about probabilistic network properties (e.g., the probability of a packet reaching a destination if links fail).</li>
+</ul>
+
+<p><b>Part III: Machine Learning for Security</b></br>
+<ul>
+<li> We will discuss how machine learning models for structured prediction are used to address security tasks, including de-obfuscation of binaries (<a target="_blank" href="https://debin.ai">DeBIN</a>), Android APKs (<a target="_blank" href="http://apk-deguard.com">DeGuard</a>) and JavaScript (<a target="_blank" href="http://jsnice.org">JSNice</a>). </li>
+<li>We will study to leverage program abstractions in combination with clustering techniques to learn security rules for cryptography APIs from large codebases.</li>
+<li>We will study how to automatically learn to identify security vulnerabilities related to the handling of untrusted inputs (cross-Site scripting, SQL injection, path traversal, remote code execution) from large codebases.</li>
+</ul>
+
+<!-- <p><b>Part IV: Security of AI-based Systems</b></br>
+<ul>
+<li>We will look into the security issues related to modern systems that combine machine learning models (e.g., neural networks) within traditional systems such as cars, airplanes, and medical systems.</li>
+<li>We will learn state-of-the-art techniques for security testing and certifying modern AI-based systems.</li>
+</ul> -->
+
+<h2>Course Project</h2>
+
+The course involve a hands-on programming project where the methods studied in the class will be applied.
+<p>
+You can work on the project in a group consisting of at most 2 students.
+</p>
+
+<h2>Lectures</h2>
+<table centering border="0" width="100%" cellspacing="0" cellpadding="0">
+<th width=5%>No.</th> <th width="8%">Date</th><th width=41%>Content</th><th width="12%">Slides</th><th width=15%> Exercises </th><th width=13%> Solutions </th>
+
+<tr>
+<td>1</td>
+<td>Feb 17</td>
+<td>Introduction</td>
+<td><a href="#" class="pdf" title="intro"><img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF"></a></td>
+<td></td>
+<td></td>
+</tr>
+
+
+</table>
