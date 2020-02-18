@@ -11,7 +11,7 @@ bibtex: '@inproceedings{balunovic2020adversarial,
   author={Mislav Balunovic, Martin Vechev},
   journal={International Conference on Learning Representations},
   year={2020}}'
-paper: https://openreview.net/forum?id=SJxSDxrKDr
+paper: https://files.sri.inf.ethz.ch/website/papers/iclr2020-colt.pdf
 slides:
 talk: 
 ---
