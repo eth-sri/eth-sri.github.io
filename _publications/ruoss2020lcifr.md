@@ -10,7 +10,7 @@ awards:
 bibtex: '@misc{ruoss2020learning,
     title = {Learning Certified Individually Fair Representations},
     author = {Ruoss, Anian and Balunovic, Mislav and Fischer, Marc and Vechev, Martin},
-    year = {2020}
+    year = {2020},
     url = {https://arxiv.org/abs/2002.10312}
 }'
 paper: https://arxiv.org/pdf/2002.10312
