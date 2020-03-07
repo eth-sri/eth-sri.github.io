@@ -11,7 +11,7 @@ bibtex: '@inproceedings{baader2020universal,
   author={Maximilian Baader, Matthew Mirman, Martin Vechev},
   journal={ICLR},
   year={2020}}'
-paper: https://openreview.net/forum?id=B1gX8kBtPr
+paper: https://files.sri.inf.ethz.ch/website/papers/iclr2020-universal.pdf
 slides:
 image: assets/images/baader2019universal2.jpg
 talk: 
