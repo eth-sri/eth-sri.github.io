@@ -3,7 +3,7 @@ layout: post
 date:   2020-03-16
 category: media
 link: "https://ethz.ch/services/en/service/safety-security-health-environment/health-protection/coronavirus.html"
-image: corona_link.jpg
+image: corona-link.jpg
 ---
 
 
