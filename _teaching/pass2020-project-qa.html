@@ -33,6 +33,34 @@ This document contains common questions by students and answers by the TAs.
 	<em>Answer:</em> Nothing is stored at S10 because it is a store statement.
 	<br><br>
 </li>
+
+<li>
+    Do we need to model the precise semantics of expressions (e.g., arithmetics)?
+    <br>
+    <em>Answer:</em> No. You only need to track explicit data flow along computations. The additional examplese 8-10 in the project description illustrate this point.
+    <br><br>
+</li>
+<li>
+    Do we need to consider non-reachable code?
+    <br>
+    <em>Answer:</em> No, we will not have test cases with non-reachable code.
+    <br><br>
+</li>
+<li>
+    Do we need to go back to previous statements after we identify a guard?
+    <br>
+    <em>Answer:</em> Yes. After you identify a guard, you clear the taint tag of function arguments and message values, and re-analyze previous statements. We add example 11 in the project description to illustrate this point.
+    <br><br>
+</li>
+<li>
+    Suppose we have the following if-else branch "if (cond) {...} else {...}", where "cond" is a guard. Which branch is guarded?
+    <br>
+    <em>Answer:</em> Both branches are guarded. For the true branch, the guard is "cond". For the false branch, the guard is "!cond". We add example 12 in the project description to illustrate this point
+    <br><br>
+</li>
+
+
+
 <!-- 
 
 <li>
