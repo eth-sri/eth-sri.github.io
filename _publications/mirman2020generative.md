@@ -1,6 +1,6 @@
 ---
 ref: mirman2020generative
-title: "https://arxiv.org/abs/2004.14756"
+title: "Robustness Certification of Generative Models"
 authors: Mathew Mirman, Timon Gehr, Martin Vechev 
 year: 2020
 venue: arXiv
