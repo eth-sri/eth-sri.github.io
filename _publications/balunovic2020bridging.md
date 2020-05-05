@@ -12,8 +12,9 @@ bibtex: '@inproceedings{balunovic2020adversarial,
   journal={International Conference on Learning Representations},
   year={2020}}'
 paper: https://files.sri.inf.ethz.ch/website/papers/iclr2020-colt.pdf
-slides:
-talk: 
+slides: https://files.sri.inf.ethz.ch/website/slides/iclr2020-colt.pdf
+image: assets/images/colt.png
+talk: https://iclr.cc/virtual_2020/poster_SJxSDxrKDr.html
 ---
 
 We propose a new method to train neural networks based on a novel combination of adversarial training and provable defenses. The key idea is to model training as a procedure which includes both, the verifier and the adversary. In every iteration, the verifier aims to
