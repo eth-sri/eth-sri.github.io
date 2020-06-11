@@ -14,7 +14,7 @@ bibtex: "@article{ivanov2020astarix,
   year={2020},
   publisher={Cold Spring Harbor Laboratory}
 }"
-paper: https://www.biorxiv.org/content/10.1101/2020.01.22.915496v1.full.pdf
+paper: https://www.biorxiv.org/content/10.1101/2020.01.22.915496v2.full.pdf
 talk: 
 slides:
 ---
