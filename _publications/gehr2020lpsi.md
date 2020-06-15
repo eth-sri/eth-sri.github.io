@@ -14,7 +14,7 @@ bibtex: '@inproceedings{gehr_lpsi_2020,
 	doi = {10.1145/3385412.3386006},
 	booktitle = {Proceedings of the 41st {ACM} {SIGPLAN} {Conference} on {Programming} {Language} {Design} and {Implementation}},
 	publisher = {ACM},
-	author = {Bichsel, Benjamin and Baader, Maximilian and Gehr, Timon and Vechev, Martin},
+	author = {Gehr, Timon and Steffen, Samuel and Vechev, Martin},
 	month = jun,
 	year = {2020}
 }
