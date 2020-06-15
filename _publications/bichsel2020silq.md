@@ -7,7 +7,7 @@ month: 06
 venue: PLDI
 projects: quantum
 awards:
-bibtex: '@inproceedings{bichsel_silq_2020,
+bibtex: '@inproceedings{bichsel2020silq,
 	title = {Silq: {A} {High}-{Level} {Quantum} {Language} with {Safe} {Uncomputation} and {Intuitive} {Semantics}},
 	isbn = {978-1-4503-7613-6},
 	url = {https://dl.acm.org/doi/10.1145/3385412.3386007},

@@ -7,8 +7,8 @@ month: 06
 venue: PLDI
 projects: probabilistic-programming
 awards:
-bibtex: '@inproceedings{gehr_lpsi_2020,
-	title = {$\lambda$PSI: {Exact} {Inference} {for} {Higher-order} {Probabilistic} {Programs}},
+bibtex: '@inproceedings{gehr2020lpsi,
+	title = {$\lambda${P}{S}{I}: {Exact} {Inference} for {Higher}-{Order} {Probabilistic} {Programs}},
 	isbn = {978-1-4503-7613-6},
 	url = {https://dl.acm.org/doi/10.1145/3385412.3386006},
 	doi = {10.1145/3385412.3386006},
