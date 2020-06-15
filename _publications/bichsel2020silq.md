@@ -1,6 +1,6 @@
 ---
 ref: bichsel2020silq
-title: "Silq: A High-Level Quantum Language withSafe Uncomputation and Intuitive Semantics"
+title: "Silq: A High-Level Quantum Language with Safe Uncomputation and Intuitive Semantics"
 authors: Benjamin Bichsel, Maximilian Baader, Timon Gehr, Martin Vechev
 year: 2020
 month: 06
@@ -16,8 +16,7 @@ bibtex: '@inproceedings{bichsel_silq_2020,
 	publisher = {ACM},
 	author = {Bichsel, Benjamin and Baader, Maximilian and Gehr, Timon and Vechev, Martin},
 	month = jun,
-	year = {2020},
-	pages = {286--300}
+	year = {2020}
 }
 '
 paper: https://files.sri.inf.ethz.ch/website/papers/pldi20-silq.pdf
