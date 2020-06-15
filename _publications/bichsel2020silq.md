@@ -5,7 +5,7 @@ authors: Benjamin Bichsel, Maximilian Baader, Timon Gehr, Martin Vechev
 year: 2020
 month: 06
 venue: PLDI
-projects: Quantum
+projects: quantum
 awards:
 bibtex: '@inproceedings{bichsel_silq_2020,
 	title = {Silq: {A} {High}-{Level} {Quantum} {Language} with {Safe} {Uncomputation} and {Intuitive} {Semantics}},
