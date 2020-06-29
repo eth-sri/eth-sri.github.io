@@ -7,4 +7,4 @@ image: corona.png
 ---
 
 
-[]() Please follow the protection instructions of the Federal Office of Public Health (FOPH) 
+[]() Please follow the protection instructions of the Federal Office of Public Health (FOPH). Use the [central website](https://ethz.ch/services/en/service/safety-security-health-environment/health-protection/coronavirus.html) to keep informed about coronavirus measures taken by ETH Zurich.  	 
