@@ -8,7 +8,7 @@
   projects: programmable-networks
   awards:
   bibtex:
-  paper:
+  paper: https://files.sri.inf.ethz.ch/website/papers/sigcomm20-netdice.pdf
   image: 
   talk:
   slides:
