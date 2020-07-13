@@ -11,6 +11,7 @@ bibtex: '@incollection{raphael2020,
   booktitle = {International Conference on Machine Learning (ICML)},
   year = {2020}
 }'
+slides: https://files.sri.inf.ethz.ch/website/slides/raphaelicml.pdf
 venue: ICML
 ---
 We develop an effective generation of adversarial attacks on neural models that output a sequence of probability distributions rather than a sequence of single values. This setting includes recently
