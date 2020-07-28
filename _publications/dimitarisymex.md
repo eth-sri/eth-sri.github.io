@@ -13,7 +13,7 @@ bibtex: '@misc{dimitrov2020scalable,
     archivePrefix={arXiv},
     primaryClass={cs.LG}
 }'
-paper: https://files.sri.inf.ethz.ch/website/papers/dimitarisymex.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/symex.pdf
 slides: 
 venue: Arxiv
 ---
