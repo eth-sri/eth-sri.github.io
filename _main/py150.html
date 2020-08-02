@@ -3,7 +3,7 @@ layout: page
 title: 150k Python Dataset
 ---
 
-This dataset is released as a part of 
+This dataset is released as a part of
 <a class="page-link " href="/research/plml">Machine Learning for Programming</a> project that aims to create new kinds of programming tools and techniques based on machine learning and statistical models learned over massive codebases. For more information about the project, tools and other resources please visit the main project page.
 
 <h2>Overview</h2>
@@ -14,6 +14,7 @@ parse and have at most 30'000 nodes in the AST and we aim to remove obfuscated f
 For parsing, we used the Python AST parser included in Python 2.7. We also include the parser as part of our dataset.
 The dataset is split into two parts -- 100'000 files used for training and 50'000 files used for evaluation.
 </p>
+
 
 <h2>Download</h2>
 
@@ -32,6 +33,12 @@ The archive contains the following files:
 <li> <strong>python50k_eval.json</strong> -- Parsed ASTs in JSON format. This is a dataset for evaluation.
 </ul>
 
+{% include card.html
+title="Redistributable Version [June 2020]"
+url="https://github.com/google-research-datasets/eth_py150_open"
+description="Redistributable version containing subset of the original repositories and files."
+output="horizontal"
+%}
 
 <h2>Download - Source Files</h2>
 
