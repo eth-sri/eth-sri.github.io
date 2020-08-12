@@ -10,7 +10,11 @@ layout: default
       <h3 class="page-subtitle">{% include get-linked-persons.html persons=page.authors %} </h3>
 
       {{ page.venue }} {{ page.year }} <br />
-      {% if page.awards %} <br />{{ page.awards }} {% endif %}
+      {% if page.awards %}
+      <br/>
+      <span><img style="height: 18px; width: 18px;" src="/assets/images/award.png" title="CC BY 4.0 by @fontawesome - https://fontawesome.com"></span> <font color="#d74141">{{ page.awards }}</font>
+      <br/>      
+      {% endif %}
 
       <div class="card-links" style="margin-top: 30px; margin-bottom: 30px; margin-left: -10px">
           {% if page.slides %}
