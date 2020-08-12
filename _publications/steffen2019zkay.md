@@ -7,7 +7,21 @@
   venue: ACM CCS
   projects: blockchain-security
   awards:
-  bibtex:
+  bibtex: '@inproceedings{steffen2019zkay
+    author = {Steffen, Samuel and Bichsel, Benjamin and Gersbach, Mario and Melchior, Noa and Tsankov, Petar and Vechev, Martin},
+    title = {Zkay: Specifying and Enforcing Data Privacy in Smart Contracts},
+    year = {2019},
+    isbn = {9781450367479},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/3319535.3363222},
+    doi = {10.1145/3319535.3363222},
+    booktitle = {Proceedings of the 2019 ACM SIGSAC Conference on Computer and Communications Security},
+    pages = {1759–1776},
+    numpages = {18},
+    location = {London, United Kingdom},
+    series = {CCS ’19}
+    }'
   paper: https://files.sri.inf.ethz.ch/website/papers/ccs19-zkay.pdf
   image: 
   talk:

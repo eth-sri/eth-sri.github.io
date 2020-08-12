@@ -7,7 +7,21 @@
   venue: ACM SIGCOMM
   projects: programmable-networks
   awards: Best Student Paper Award
-  bibtex:
+  bibtex: '@inproceedings{steffen2020netdice,
+    author = {Steffen, Samuel and Gehr, Timon and Tsankov, Petar and Vanbever, Laurent and Vechev, Martin},
+    title = {Probabilistic Verification of Network Configurations},
+    year = {2020},
+    isbn = {9781450379557},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/3387514.3405900},
+    doi = {10.1145/3387514.3405900},
+    booktitle = {Proceedings of the Annual Conference of the ACM Special Interest Group on Data Communication on the Applications, Technologies, Architectures, and Protocols for Computer Communication},
+    pages = {750–764},
+    numpages = {15},
+    location = {Virtual Event, USA},
+    series = {SIGCOMM ’20}
+    }'
   paper: https://files.sri.inf.ethz.ch/website/papers/sigcomm20-netdice.pdf
   image: 
   talk:
