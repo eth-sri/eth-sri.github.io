@@ -6,7 +6,7 @@
   month: 8
   venue: ACM SIGCOMM
   projects: programmable-networks
-  awards:
+  awards: Best Student Paper Award
   bibtex:
   paper: https://files.sri.inf.ethz.ch/website/papers/sigcomm20-netdice.pdf
   image: 
