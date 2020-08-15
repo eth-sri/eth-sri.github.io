@@ -16,7 +16,7 @@ bibtex: '@inproceedings{
          url={https://openreview.net/forum?id=BJl07ySKvS}
          }'
 paper: https://files.sri.inf.ethz.ch/website/papers/laich20guiding.pdf
-talk: 
+talk: https://iclr.cc/virtual_2020/poster_BJl07ySKvS.html
 slides: 
 ---
 
