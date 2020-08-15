@@ -4,20 +4,19 @@ title: Adversarial Robustness for Code
 authors: Pavol Bielik, Martin Vechev 
 year: 2020
 month: 2
-venue: ArXiv
+venue: ACM ICML
 projects: plml
 awards:
-bibtex: '@misc{bielik2020adversarial,
-             title={Adversarial Robustness for Code},
-             author={Pavol Bielik and Martin Vechev},
-             year={2020},
-             eprint={2002.04694},
-             archivePrefix={arXiv},
-             primaryClass={cs.LG}
-}'
-paper: https://arxiv.org/pdf/2002.04694.pdf
-talk: 
-slides: 
+bibtex: '@InProceedings{bielik20robust,
+           title = 	 {Adversarial Robustness for Code},
+           author = 	 {Pavol Bielik and Martin Vechev},
+           booktitle = 	 {Proceedings of The 37rd International Conference on Machine Learning},           
+           year = 	 {2020},           
+           series = 	 {ICML'20},    
+         }'
+paper: https://files.sri.inf.ethz.ch/website/papers/icml20_robust.pdf
+talk: https://icml.cc/virtual/2020/poster/6485
+slides: https://files.sri.inf.ethz.ch/website/slides/icml20_robust.pdf
 ---
 
 We propose a novel technique which addresses the challenge of learning accurate and robust models of code in a principled way. Our method consists of three key components: (i) learning to abstain from making a prediction if uncertain, (ii) adversarial training, and (iii) representation refinement which learns the program parts relevant for the prediction and abstracts the rest. These components are used to iteratively train multiple models, each of which learns a suitable program representation necessary to make robust predictions on a different subset of the dataset.
