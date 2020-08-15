@@ -7,18 +7,16 @@ month: 2
 venue: ACM ICML
 projects: plml
 awards:
-bibtex: '@InProceedings{bielik20robust,
+bibtex: "@InProceedings{bielik20robust,
            title = 	 {Adversarial Robustness for Code},
            author = 	 {Pavol Bielik and Martin Vechev},
            booktitle = 	 {Proceedings of The 37rd International Conference on Machine Learning},           
            year = 	 {2020},           
            series = 	 {ICML'20},    
-         }'
+}"
 paper: https://files.sri.inf.ethz.ch/website/papers/icml20_robust.pdf
 talk: https://icml.cc/virtual/2020/poster/6485
 slides: https://files.sri.inf.ethz.ch/website/slides/icml20_robust.pdf
 ---
 
-We propose a novel technique which addresses the challenge of learning accurate and robust models of code in a principled way. Our method consists of three key components: (i) learning to abstain from making a prediction if uncertain, (ii) adversarial training, and (iii) representation refinement which learns the program parts relevant for the prediction and abstracts the rest. These components are used to iteratively train multiple models, each of which learns a suitable program representation necessary to make robust predictions on a different subset of the dataset.
-
-We instantiated our approach to the task of type inference for dynamically typed languages and demonstrate its effectiveness by learning a model that achieves 88% accuracy and 84% robustness. Further, our evaluation shows that using the combination of all three components is key to obtaining accurate and robust models.
+Machine learning and deep learning in particular has been recently used to successfully address many tasks in the domain of code such as finding and fixing bugs, code completion, decompilation, type inference and many others. However, the issue of adversarial robustness of models for code has gone largely unnoticed. In this work, we explore this issue by: (i) instantiating adversarial attacks for code (a domain with discrete and highly structured inputs), (ii) showing that, similar to other domains, neural models for code are vulnerable to adversarial attacks, and (iii) combining existing and novel techniques to improve robustness while preserving high accuracy.
