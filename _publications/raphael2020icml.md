@@ -13,6 +13,7 @@ bibtex: '@incollection{raphael2020,
 }'
 paper: https://files.sri.inf.ethz.ch/website/papers/raphaelicml.pdf
 slides: https://files.sri.inf.ethz.ch/website/slides/raphaelicml.pdf
+talk: https://icml.cc/virtual/2020/poster/5838
 venue: ICML
 ---
 We develop an effective generation of adversarial attacks on neural models that output a sequence of probability distributions rather than a sequence of single values. This setting includes recently
