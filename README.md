@@ -14,6 +14,7 @@ Upload you files to the '/import/vechev/h1/htdocs-srl/website' directory. All fi
 
 The site is built on [Jekyll](https://jekyllrb.com/), a static site generator. The templating language is [Liquid](https://shopify.github.io/liquid/). 
 
+To serve the webpage locally, run `jekyll serve`.
 
 ## Installation
 

@@ -11,3 +11,4 @@ _site
 *.ppt
 *.pptx
 minima.gemspec
+/.jekyll-cache
