@@ -1,24 +1,24 @@
-Oct 2	Platform	Bitcoin: A peer-to-peer electronic cash system	https://bitcoin.org/bitcoin.pdf	Piero Guicciardi	Gagandeep	gsingh@inf.ethz.ch
-Oct 2	Platform	Ethereum: A secure decentralized generalised transaction ledger	https://ethereum.github.io/yellowpaper/paper.pdf	Christina Puthenkalam	Gagandeep	gsingh@inf.ethz.ch
-Oct 9	Protocols	The honey badger of BFT protocols	https://infoscience.epfl.ch/record/222858/files/199.pdf	Fanlin Wang	Beni	benjamin.bichsel@inf.ethz.ch
-Oct 9	Protocols	Bitcoin-NG: A scalable blockchain protocol	https://www.usenix.org/system/files/conference/nsdi16/nsdi16-paper-eyal.pdf	Raphael Eikenberg	Beni	benjamin.bichsel@inf.ethz.ch
-Oct 16	Attack	teEther: Gnawing at Ethereum to automatically exploit smart contracts	https://www.usenix.org/system/files/conference/usenixsecurity18/sec18-krupp.pdf	Luca Dolfi	Jingxuan	jingxuan.he@inf.ethz.ch
-Oct 16	Fuzzing	Learning to fuzz from symbolic execution with application to smart contracts		Anna Schmidt-Rohr	Jingxuan	jingxuan.he@inf.ethz.ch
-Oct 23	Attack	The art of the scam: Demystifying honeypots in Ethereum smart contracts	https://www.usenix.org/system/files/sec19-torres.pdf	Philippe Panhaleux	Jingxuan	jingxuan.he@inf.ethz.ch
-Oct 23	Attack	The anatomy of a cryptocurrency pump-and-dump scheme	https://www.usenix.org/system/files/sec19-xu-jiahua_0.pdf	Philip Douw	Jingxuan	jingxuan.he@inf.ethz.ch
-Oct 30	Dynamic analysis	Online detection of effectively callback free objects with applications to smart contracts	https://arxiv.org/abs/1801.04032		Gagandeep	gsingh@inf.ethz.ch
-Oct 30	Verification	VerX: Safety verification of smart contracts	https://files.sri.inf.ethz.ch/website/papers/sp20-verx.pdf	Kenan Besic	Petar	petar.tsankov@inf.ethz.ch
-Nov 6	Attack	Osiris: Hunting for integer bugs in Ethereum smart contracts	https://orbilu.uni.lu/bitstream/10993/36757/1/osiris.pdf	Rudolf Loretan	Gagandeep	gsingh@inf.ethz.ch
-Nov 6	Verification	VeriSmart: A highly precise safety verifier for Ethereum smart contracts	https://arxiv.org/abs/1908.11227	Lorenz Gorse	Petar	petar.tsankov@inf.ethz.ch
-Nov 13	Networks	Hijacking Bitcoin: Routing attacks on cryptocurrencies	https://arxiv.org/pdf/1605.07524v2.pdf	Andrea Ziani	Pesho	pesho@inf.ethz.ch
-Nov 13	Networks	SABRE: Protecting Bitcoin against routing attacks	https://vanbever.eu/pdfs/vanbever_sabre_ndss_2019.pdf	David Diserens	Pesho	pesho@inf.ethz.ch
-Nov 20	Static analysis	MadMax: surviving out-of-gas conditions in Ethereum smart contracts	http://dl.acm.org/citation.cfm?doid=3288538.3276486	Ioannis Sachinoglou	Petar	petar.tsankov@inf.ethz.ch
-Nov 20	Static analysis	Securify: Practical security analysis of smart contracts	https://files.sri.inf.ethz.ch/website/papers/ccs18-securify.pdf	George Mtui	Petar	petar.tsankov@inf.ethz.ch
-Nov 27	Privacy	Zerocash: Decentralized anonymous payments from Bitcoin	http://zerocash-project.org/media/pdf/zerocash-oakland2014.pdf	Alì El Wahsh	Beni	benjamin.bichsel@inf.ethz.ch
-Nov 27	Privacy	An empirical analysis of traceability in the Monero blockchain	https://doi.org/10.1515/popets-2018-0025	Abdolahad Noori Zehmakan	Beni	benjamin.bichsel@inf.ethz.ch
-Dec 4	Privacy	Arbitrum: Scalable, private smart contracts	https://www.usenix.org/system/files/conference/usenixsecurity18/sec18-kalodner.pdf	Meghana M Reddy	Sam	samuel.steffen@inf.ethz.ch
-Dec 4	Privacy	Specifying and enforcing data privacy in smart contracts			Sam	samuel.steffen@inf.ethz.ch
-Dec 11	Reverse engineering	Erays: Reverse engineering Ethereum's opaque smart contracts	https://www.usenix.org/system/files/conference/usenixsecurity18/sec18-zhou.pdf	Filippo Graziano	Pesho	pesho@inf.ethz.ch
-Dec 11	Reverse engineering	Gigahorse: Thorough, declarative decompilation of smart contracts	https://yanniss.github.io/gigahorse-icse19.pdf		Pesho	pesho@inf.ethz.ch
-Dec 18	Languages	BitML: A calculus for Bitcoin smart contracts	https://eprint.iacr.org/2018/122.pdf		Sam	samuel.steffen@inf.ethz.ch
-Dec 18	Languages	Safer smart contract programming with Scilla	https://ilyasergey.net/papers/scilla-oopsla19.pdf		Sam	samuel.steffen@inf.ethz.ch
+TBD		Effective Concurrency Testing for Distributed Systems	http://www.cs.columbia.edu/~junfeng/papers/morpheus-asplos20.pdf	TBD	Manuel	manuel.rigger@inf.ethz.ch
+TBD		Finding Semantic Bugs in File Systems with an Extensible Fuzzing Framework	https://dl.acm.org/doi/10.1145/3341301.3359662	TBD	Manuel	manuel.rigger@inf.ethz.ch
+TBD		Fuzzing: On the Exponential Cost of Vulnerability Discovery	https://mboehme.github.io/paper/FSE20.EmpiricalLaw.pdf	TBD	Dominik	dominik.winterer@inf.ethz.ch
+TBD		Boosting Fuzzer Efficiency: An Information Theoretic Perspective	https://mboehme.github.io/paper/FSE20.Entropy.pdf	TBD	Dominik	dominik.winterer@inf.ethz.ch
+TBD		PMEvo: portable inference of port mappings for out-of-order processors by evolutionary optimization	https://dl.acm.org/doi/abs/10.1145/3385412.3385995	TBD	Theo	theodoros.theodoridis@inf.ethz.ch 
+TBD		Towards an API for the real numbers	https://dl.acm.org/doi/abs/10.1145/3385412.3386037	TBD	Theo	theodoros.theodoridis@inf.ethz.ch 
+TBD		Effective Floating-Point Analysis via Weak-Distance Minimization	https://dl.acm.org/doi/pdf/10.1145/3314221.3314632	TBD	Daming	daming.zou@inf.ethz.ch 
+TBD		Detecting Floating-Point Errors via Atomic Conditions	https://dl.acm.org/doi/pdf/10.1145/3371128	TBD	Daming	daming.zou@inf.ethz.ch 
+TBD		Editable AI: Mixed Human-AI Authoring of Code Patterns	https://ieeexplore.ieee.org/document/8818871	TBD	Sverrir	sverrir.thorgeirsson@inf.ethz.ch   
+TBD		Unexpected Tokens: A Review of Programming Error Messages and Design Guidelines for the Future	https://dl.acm.org/doi/10.1145/3304221.3325539	TBD	Sverrir	sverrir.thorgeirsson@inf.ethz.ch   
+TBD		Semantic Code Search via Equational Reasoning	https://dl.acm.org/doi/pdf/10.1145/3385412.3386001	TBD	Shaohua	shaohua.li@inf.ethz.ch  
+TBD		Learning Nonlinear Loop Invariants with Gated Continuous Logic Networks	https://dl.acm.org/doi/pdf/10.1145/3385412.3385986	TBD	Shaohua	shaohua.li@inf.ethz.ch  
+TBD		A Study of the Learnability of Relational Properties: Model Counting Meets Machine Learning (MCML)	https://dl.acm.org/doi/abs/10.1145/3385412.3386015	TBD	Petar	petar.tsankov@inf.ethz.ch
+TBD		Behavioral Simulation for Smart Contracts	https://dl.acm.org/doi/abs/10.1145/3385412.3386022	TBD	Petar	petar.tsankov@inf.ethz.ch
+TBD		zkay: Specifying and Enforcing Data Privacy in Smart Contracts	https://dl.acm.org/doi/10.1145/3319535.3363222	TBD	Sam	samuel.steffen@inf.ethz.ch
+TBD		Unsupervised learning of API aliasing specifications	https://dl.acm.org/doi/10.1145/3314221.3314640	TBD	Sam	samuel.steffen@inf.ethz.ch
+TBD		Silq: A High-Level Quantum Language with Safe Uncomputation and Intuitive Semantics	https://dl.acm.org/doi/abs/10.1145/3385412.3386007	TBD	Benjamin	benjamin.bichsel@inf.ethz.ch
+TBD		λPSI: Exact Inference for Higher-Order Probabilistic Programs	https://dl.acm.org/doi/abs/10.1145/3385412.3386006	TBD	Benjamin	benjamin.bichsel@inf.ethz.ch
+TBD		Typilus: Neural Type Hints	https://dl.acm.org/doi/abs/10.1145/3385412.3385997	TBD	Momchil	momchil.peychev@inf.ethz.ch
+TBD		Blended, Precise Semantic Program Embeddings	https://dl.acm.org/doi/abs/10.1145/3385412.3385999	TBD	Momchil	momchil.peychev@inf.ethz.ch
+TBD		Pangolin: Incremental Hybrid Fuzzing with Polyhedral Path Abstraction	https://www.computer.org/csdl/proceedings-article/sp/2020/349700b199/1j2Lgf6tL4Q	TBD	Jingxuan	jingxuan.he@inf.ethz.ch
+TBD		CacheQuery: Learning Replacement Policies from Hardware Caches	https://dl.acm.org/doi/abs/10.1145/3385412.3386008	TBD	Jingxuan	jingxuan.he@inf.ethz.ch
+TBD		Learning to Describe Scenes with Programs 	https://openreview.net/pdf?id=SyNPk2R9K7	TBD	Dimitar	dimitadi@inf.ethz.ch
+TBD		p4v: practical verification for programmable data planes	https://dl.acm.org/doi/10.1145/3230543.3230582	TBD	Dimitar	dimitadi@inf.ethz.ch
