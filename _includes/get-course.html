@@ -17,7 +17,7 @@
     <div class="card-img">
       {% if course.image %} 
       	<a href="{{ course.url | relative_url}}">
-      		<img src="{{ course.image | prepend: '/assets/images/' | relative_url}}"/>
+      		<img src="{{ course.image | relative_url}}"/>
       	</a>
       {% endif %}
     </div>
