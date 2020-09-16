@@ -7,7 +7,7 @@ TBD		Towards an API for the real numbers	https://dl.acm.org/doi/abs/10.1145/3385
 TBD		Effective Floating-Point Analysis via Weak-Distance Minimization	https://dl.acm.org/doi/pdf/10.1145/3314221.3314632	TBD	Daming	daming.zou@inf.ethz.ch 
 TBD		Detecting Floating-Point Errors via Atomic Conditions	https://dl.acm.org/doi/pdf/10.1145/3371128	TBD	Daming	daming.zou@inf.ethz.ch 
 TBD		Editable AI: Mixed Human-AI Authoring of Code Patterns	https://ieeexplore.ieee.org/document/8818871	TBD	Sverrir	sverrir.thorgeirsson@inf.ethz.ch   
-TBD		Unexpected Tokens: A Review of Programming Error Messages and Design Guidelines for the Future	https://dl.acm.org/doi/10.1145/3304221.3325539	TBD	Sverrir	sverrir.thorgeirsson@inf.ethz.ch   
+TBD		Compiler Error Messages Considered Unhelpful: The Landscape of Text-Based Programming Error Message Research	https://dl.acm.org/doi/pdf/10.1145/3344429.3372508	TBD	Sverrir	sverrir.thorgeirsson@inf.ethz.ch   
 TBD		Semantic Code Search via Equational Reasoning	https://dl.acm.org/doi/pdf/10.1145/3385412.3386001	TBD	Shaohua	shaohua.li@inf.ethz.ch  
 TBD		Learning Nonlinear Loop Invariants with Gated Continuous Logic Networks	https://dl.acm.org/doi/pdf/10.1145/3385412.3385986	TBD	Shaohua	shaohua.li@inf.ethz.ch  
 TBD		A Study of the Learnability of Relational Properties: Model Counting Meets Machine Learning (MCML)	https://dl.acm.org/doi/abs/10.1145/3385412.3386015	TBD	Petar	petar.tsankov@inf.ethz.ch
