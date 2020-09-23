@@ -1,24 +1,16 @@
-TBD		Effective Concurrency Testing for Distributed Systems	http://www.cs.columbia.edu/~junfeng/papers/morpheus-asplos20.pdf	TBD	Manuel	manuel.rigger@inf.ethz.ch
-TBD		Finding Semantic Bugs in File Systems with an Extensible Fuzzing Framework	https://dl.acm.org/doi/10.1145/3341301.3359662	TBD	Manuel	manuel.rigger@inf.ethz.ch
-TBD		Fuzzing: On the Exponential Cost of Vulnerability Discovery	https://mboehme.github.io/paper/FSE20.EmpiricalLaw.pdf	TBD	Dominik	dominik.winterer@inf.ethz.ch
-TBD		Boosting Fuzzer Efficiency: An Information Theoretic Perspective	https://mboehme.github.io/paper/FSE20.Entropy.pdf	TBD	Dominik	dominik.winterer@inf.ethz.ch
-TBD		PMEvo: portable inference of port mappings for out-of-order processors by evolutionary optimization	https://dl.acm.org/doi/abs/10.1145/3385412.3385995	TBD	Theo	theodoros.theodoridis@inf.ethz.ch 
-TBD		Towards an API for the real numbers	https://dl.acm.org/doi/abs/10.1145/3385412.3386037	TBD	Theo	theodoros.theodoridis@inf.ethz.ch 
-TBD		Effective Floating-Point Analysis via Weak-Distance Minimization	https://dl.acm.org/doi/pdf/10.1145/3314221.3314632	TBD	Daming	daming.zou@inf.ethz.ch 
-TBD		Detecting Floating-Point Errors via Atomic Conditions	https://dl.acm.org/doi/pdf/10.1145/3371128	TBD	Daming	daming.zou@inf.ethz.ch 
-TBD		Editable AI: Mixed Human-AI Authoring of Code Patterns	https://ieeexplore.ieee.org/document/8818871	TBD	Sverrir	sverrir.thorgeirsson@inf.ethz.ch   
-TBD		Compiler Error Messages Considered Unhelpful: The Landscape of Text-Based Programming Error Message Research	https://dl.acm.org/doi/pdf/10.1145/3344429.3372508	TBD	Sverrir	sverrir.thorgeirsson@inf.ethz.ch   
-TBD		Semantic Code Search via Equational Reasoning	https://dl.acm.org/doi/pdf/10.1145/3385412.3386001	TBD	Shaohua	shaohua.li@inf.ethz.ch  
-TBD		Learning Nonlinear Loop Invariants with Gated Continuous Logic Networks	https://dl.acm.org/doi/pdf/10.1145/3385412.3385986	TBD	Shaohua	shaohua.li@inf.ethz.ch  
-TBD		A Study of the Learnability of Relational Properties: Model Counting Meets Machine Learning (MCML)	https://dl.acm.org/doi/abs/10.1145/3385412.3386015	TBD	Petar	petar.tsankov@inf.ethz.ch
-TBD		Behavioral Simulation for Smart Contracts	https://dl.acm.org/doi/abs/10.1145/3385412.3386022	TBD	Petar	petar.tsankov@inf.ethz.ch
-TBD		zkay: Specifying and Enforcing Data Privacy in Smart Contracts	https://dl.acm.org/doi/10.1145/3319535.3363222	TBD	Sam	samuel.steffen@inf.ethz.ch
-TBD		Unsupervised learning of API aliasing specifications	https://dl.acm.org/doi/10.1145/3314221.3314640	TBD	Sam	samuel.steffen@inf.ethz.ch
-TBD		Silq: A High-Level Quantum Language with Safe Uncomputation and Intuitive Semantics	https://dl.acm.org/doi/abs/10.1145/3385412.3386007	TBD	Benjamin	benjamin.bichsel@inf.ethz.ch
-TBD		λPSI: Exact Inference for Higher-Order Probabilistic Programs	https://dl.acm.org/doi/abs/10.1145/3385412.3386006	TBD	Benjamin	benjamin.bichsel@inf.ethz.ch
-TBD		Typilus: Neural Type Hints	https://dl.acm.org/doi/abs/10.1145/3385412.3385997	TBD	Momchil	momchil.peychev@inf.ethz.ch
-TBD		Blended, Precise Semantic Program Embeddings	https://dl.acm.org/doi/abs/10.1145/3385412.3385999	TBD	Momchil	momchil.peychev@inf.ethz.ch
-TBD		Pangolin: Incremental Hybrid Fuzzing with Polyhedral Path Abstraction	https://www.computer.org/csdl/proceedings-article/sp/2020/349700b199/1j2Lgf6tL4Q	TBD	Jingxuan	jingxuan.he@inf.ethz.ch
-TBD		CacheQuery: Learning Replacement Policies from Hardware Caches	https://dl.acm.org/doi/abs/10.1145/3385412.3386008	TBD	Jingxuan	jingxuan.he@inf.ethz.ch
-TBD		Learning to Describe Scenes with Programs 	https://openreview.net/pdf?id=SyNPk2R9K7	TBD	Dimitar	dimitadi@inf.ethz.ch
-TBD		p4v: practical verification for programmable data planes	https://dl.acm.org/doi/10.1145/3230543.3230582	TBD	Dimitar	dimitadi@inf.ethz.ch
+6 Oct		Effective Concurrency Testing for Distributed Systems	http://www.cs.columbia.edu/~junfeng/papers/morpheus-asplos20.pdf	Philippe Voinov	Manuel	manuel.rigger@inf.ethz.ch
+6 Oct		Fuzzing: On the Exponential Cost of Vulnerability Discovery	https://mboehme.github.io/paper/FSE20.EmpiricalLaw.pdf	Michel Weber	Dominik	dominik.winterer@inf.ethz.ch
+13 Oct		Boosting Fuzzer Efficiency: An Information Theoretic Perspective	https://mboehme.github.io/paper/FSE20.Entropy.pdf	Lorenz Hetzel	Dominik	dominik.winterer@inf.ethz.ch
+13 Oct		PMEvo: portable inference of port mappings for out-of-order processors by evolutionary optimization	https://dl.acm.org/doi/abs/10.1145/3385412.3385995	Christian Ulmann	Theo	theodoros.theodoridis@inf.ethz.ch 
+20 Oct		Towards an API for the real numbers	https://dl.acm.org/doi/abs/10.1145/3385412.3386037	Anqi Li	Theo	theodoros.theodoridis@inf.ethz.ch 
+20 Oct		Effective Floating-Point Analysis via Weak-Distance Minimization	https://dl.acm.org/doi/pdf/10.1145/3314221.3314632	Teodor Ionescu	Daming	daming.zou@inf.ethz.ch 
+27 Oct		Editable AI: Mixed Human-AI Authoring of Code Patterns	https://ieeexplore.ieee.org/document/8818871	Ting-Yu Chen	Sverrir	sverrir.thorgeirsson@inf.ethz.ch   
+27 Oct		Compiler Error Messages Considered Unhelpful: The Landscape of Text-Based Programming Error Message Research	https://dl.acm.org/doi/pdf/10.1145/3344429.3372508	Pascal Maillard	Sverrir	sverrir.thorgeirsson@inf.ethz.ch   
+3 Nov		Semantic Code Search via Equational Reasoning	https://dl.acm.org/doi/pdf/10.1145/3385412.3386001	Ruben Fischer	Shaohua	shaohua.li@inf.ethz.ch  
+3 Nov		p4v: practical verification for programmable data planes	https://dl.acm.org/doi/10.1145/3230543.3230582	Janis Peyer	Dimitar	dimitadi@inf.ethz.ch
+10 Nov		zkay: Specifying and Enforcing Data Privacy in Smart Contracts	https://dl.acm.org/doi/10.1145/3319535.3363222	Andrei Herasimau	Sam	samuel.steffen@inf.ethz.ch
+10 Nov		Learning to Describe Scenes with Programs 	https://openreview.net/pdf?id=SyNPk2R9K7	Minesh Patel	Dimitar	dimitadi@inf.ethz.ch
+17 Nov		Pangolin: Incremental Hybrid Fuzzing with Polyhedral Path Abstraction	https://www.computer.org/csdl/proceedings-article/sp/2020/349700b199/1j2Lgf6tL4Q	Jonas Hansen	Jingxuan	jingxuan.he@inf.ethz.ch
+17 Nov		CacheQuery: Learning Replacement Policies from Hardware Caches	https://dl.acm.org/doi/abs/10.1145/3385412.3386008	Cedric Ettlin	Jingxuan	jingxuan.he@inf.ethz.ch
+24 Nov		Typilus: Neural Type Hints	https://dl.acm.org/doi/abs/10.1145/3385412.3385997	Dimitri Wessels	Momchil	momchil.peychev@inf.ethz.ch
+24 Nov		Behavioral Simulation for Smart Contracts	https://dl.acm.org/doi/abs/10.1145/3385412.3386022	Niharika Singh	Petar	petar.tsankov@inf.ethz.ch
