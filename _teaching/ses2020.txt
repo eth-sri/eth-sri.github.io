@@ -1,12 +1,12 @@
 6 Oct		Effective Concurrency Testing for Distributed Systems	http://www.cs.columbia.edu/~junfeng/papers/morpheus-asplos20.pdf	Philippe Voinov	Manuel	manuel.rigger@inf.ethz.ch
 6 Oct		Fuzzing: On the Exponential Cost of Vulnerability Discovery	https://mboehme.github.io/paper/FSE20.EmpiricalLaw.pdf	Michel Weber	Dominik	dominik.winterer@inf.ethz.ch
 13 Oct		Boosting Fuzzer Efficiency: An Information Theoretic Perspective	https://mboehme.github.io/paper/FSE20.Entropy.pdf	Lorenz Hetzel	Dominik	dominik.winterer@inf.ethz.ch
-13 Oct		PMEvo: portable inference of port mappings for out-of-order processors by evolutionary optimization	https://dl.acm.org/doi/abs/10.1145/3385412.3385995	Christian Ulmann	Theo	theodoros.theodoridis@inf.ethz.ch 
-20 Oct		Towards an API for the real numbers	https://dl.acm.org/doi/abs/10.1145/3385412.3386037	Anqi Li	Theo	theodoros.theodoridis@inf.ethz.ch 
-20 Oct		Effective Floating-Point Analysis via Weak-Distance Minimization	https://dl.acm.org/doi/pdf/10.1145/3314221.3314632	Teodor Ionescu	Daming	daming.zou@inf.ethz.ch 
-27 Oct		Editable AI: Mixed Human-AI Authoring of Code Patterns	https://ieeexplore.ieee.org/document/8818871	Ting-Yu Chen	Sverrir	sverrir.thorgeirsson@inf.ethz.ch   
-27 Oct		Compiler Error Messages Considered Unhelpful: The Landscape of Text-Based Programming Error Message Research	https://dl.acm.org/doi/pdf/10.1145/3344429.3372508	Pascal Maillard	Sverrir	sverrir.thorgeirsson@inf.ethz.ch   
-3 Nov		Semantic Code Search via Equational Reasoning	https://dl.acm.org/doi/pdf/10.1145/3385412.3386001	Ruben Fischer	Shaohua	shaohua.li@inf.ethz.ch  
+13 Oct		PMEvo: portable inference of port mappings for out-of-order processors by evolutionary optimization	https://dl.acm.org/doi/abs/10.1145/3385412.3385995	Christian Ulmann	Theo	theodoros.theodoridis@inf.ethz.ch
+20 Oct		Towards an API for the real numbers	https://dl.acm.org/doi/abs/10.1145/3385412.3386037	Anqi Li	Theo	theodoros.theodoridis@inf.ethz.ch
+20 Oct		Effective Floating-Point Analysis via Weak-Distance Minimization	https://dl.acm.org/doi/pdf/10.1145/3314221.3314632	Teodor Ionescu	Daming	daming.zou@inf.ethz.ch
+27 Oct		Editable AI: Mixed Human-AI Authoring of Code Patterns	https://ieeexplore.ieee.org/document/8818871	Ting-Yu Chen	Sverrir	sverrir.thorgeirsson@inf.ethz.ch
+27 Oct		Compiler Error Messages Considered Unhelpful: The Landscape of Text-Based Programming Error Message Research	https://dl.acm.org/doi/pdf/10.1145/3344429.3372508	Pascal Maillard	Sverrir	sverrir.thorgeirsson@inf.ethz.ch
+3 Nov		Semantic Code Search via Equational Reasoning	https://dl.acm.org/doi/pdf/10.1145/3385412.3386001	Ruben Fischer	Shaohua	shaohua.li@inf.ethz.ch
 3 Nov		p4v: practical verification for programmable data planes	https://dl.acm.org/doi/10.1145/3230543.3230582	Janis Peyer	Dimitar	dimitadi@inf.ethz.ch
 10 Nov		zkay: Specifying and Enforcing Data Privacy in Smart Contracts	https://dl.acm.org/doi/10.1145/3319535.3363222	Andrei Herasimau	Sam	samuel.steffen@inf.ethz.ch
 10 Nov		Learning to Describe Scenes with Programs 	https://openreview.net/pdf?id=SyNPk2R9K7	Minesh Patel	Dimitar	dimitadi@inf.ethz.ch
