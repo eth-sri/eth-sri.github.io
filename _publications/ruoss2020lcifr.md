@@ -3,15 +3,15 @@ ref: ruoss2020lcifr
 title: Learning Certified Individually Fair Representations
 authors: Anian Ruoss, Mislav Balunovic, Marc Fischer, Martin Vechev
 year: 2020
-month: 02
-venue: arXiv
+month: 12
+venue: NeurIPS
 projects: safeai
 awards:
-bibtex: '@misc{ruoss2020learning,
+bibtex: '@incollection{ruoss2020learning,
     title = {Learning Certified Individually Fair Representations},
     author = {Ruoss, Anian and Balunovic, Mislav and Fischer, Marc and Vechev, Martin},
-    year = {2020},
-    url = {https://arxiv.org/abs/2002.10312}
+	booktitle = {Advances in Neural Information Processing Systems 33},
+    year = {2020}
 }'
 paper: https://arxiv.org/pdf/2002.10312
 talk: 
