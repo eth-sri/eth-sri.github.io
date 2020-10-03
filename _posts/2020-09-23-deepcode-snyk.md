@@ -1,7 +1,7 @@
 ---
 layout: post
 date:   2020-09-23
-category: news
+category: media
 link: "https://ethz.ch/en/news-and-events/eth-news/news/2020/09/deepcode.html"
 image: dc-snyk2.png
 ---
