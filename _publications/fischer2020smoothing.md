@@ -6,6 +6,7 @@ year: 2020
 month: 12
 venue: NeurIPS
 projects: safeai
+image: assets/images/fischer2020smoothing.png
 awards:
 bibtex: '@incollection{fischer2020transformationsmoothing,
     title = {Certified Defense to Image Transformations via Randomized Smoothing},
