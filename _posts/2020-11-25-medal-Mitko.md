@@ -3,7 +3,7 @@ layout: post
 date:   2020-11-25
 category: media
 link: "https://inf.ethz.ch/news-and-events/spotlights/2020/11/eth-medal-doctoral-thesis.html/"
-image: dimitar.png
+image: dimitar.jpg
 ---
 
 
