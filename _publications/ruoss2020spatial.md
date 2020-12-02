@@ -2,9 +2,9 @@
 ref: ruoss2020spatial
 title: Efficient Certification of Spatial Robustness
 authors: Anian Ruoss, Maximilian Baader, Mislav Balunovic, Martin Vechev
-year: 2020
-month: 9
-venue: arXiv
+year: 2021
+month: 2
+venue: AAAI
 projects: safeai
 awards:
 bibtex: '@misc{ruoss2020spatial,
