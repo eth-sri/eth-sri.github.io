@@ -6,7 +6,7 @@ year: 2020
 month: 02
 venue: NSDI
 projects: programmable-networks
-awards:
+awards: 2021 IETF/IRTF Applied Networking Research Prize
 bibtex: '@inproceedings{birkner2020config2spec,
   title={Config2Spec: Mining Network Specifications from Network Configurations},
   author={Birkner, R{\"u}diger and Drachsler-Cohen, Dana and Vanbever, Laurent and Vechev, Martin},
