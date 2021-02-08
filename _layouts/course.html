@@ -9,7 +9,7 @@ layout: default
 			<h1 class="page-title">{{ page.title | escape }}</h1>
       
       <div class="page-info">
-        {% if page.edoz %} <div class="info-line"><label>Edoz:</label><a href="{{ page.edoz }}" target="_blank">Open in Course Catalogue</a></div>  {% endif %}
+        {% if page.edoz %} <div class="info-line"><label>VVZ:</label><a href="{{ page.edoz }}" target="_blank">Open in Course Catalogue</a></div>  {% endif %}
         {% if page.assistants %} <div class="info-line"><label>Assistants:</label><div class="info-content">{% include get-linked-persons.html persons=page.assistants %}</div></div>  {% endif %}
         {% if page.semester %} <div class="info-line"><label>Semester:</label>{{ page.semester }}</div>  {% endif %}
         {% if page.number %} <div class="info-line"><label>Number:</label>{{ page.number }}</div>  {% endif %}
