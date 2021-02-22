@@ -5,7 +5,7 @@ authors: Benjamin Bichsel, Timon Gehr, Martin Vechev
 year: 2018
 month: 04
 venue: ESOP
-projects: Research Area 1, Research Area 1
+projects: probabilistic-programming
 awards:
 bibtex: '@inproceedings{bichsel2018fine,
   title={Fine-grained Semantics for Probabilistic Programs},
