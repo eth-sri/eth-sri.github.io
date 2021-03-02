@@ -4,11 +4,11 @@ title: "Metha: Network Verifiers Need To Be Correct Too!"
 authors: Rüdiger Birkner, Tobias Brodmann, Petar Tsankov, Laurent Vanbever, Martin Vechev
 year: 2021
 month: 04
-venue: NSDI
+venue: USENIX NSDI
 projects: programmable-networks
 awards:
 bibtex: 
-paper: 
+paper: https://files.sri.inf.ethz.ch/website/papers/metha-nsdi21.pdf
 talk: 
 slides: 
 ---
