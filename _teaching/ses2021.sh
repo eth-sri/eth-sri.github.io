@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cat ses2021.txt| awk -F '\t' '{print "<tr>\n\t<td>"$1"</td>\n\t<td><a href=\""$4"\" target=\"_blank\">"$3"</a></td>\n\t<td>"$5"</td>\n\t<td></td>\n\t<td><a href=\"mailto:"$7"\">"$6"</a></td>\n</tr>"}'
+cat ses2021.txt| awk -F '\t' '{print "<tr>\n\t<td>"$1"</td>\n\t<td><a href=\""$3"\" target=\"_blank\">"$2"</a></td>\n\t<td>"$4"</td>\n\t<td></td>\n\t<td><a href=\"mailto:"$6"\">"$5"</a></td>\n</tr>"}'
