@@ -16,4 +16,4 @@ of March.
 ## Project Groups
 
 The project group assignments can be found
-[here]https://files.sri.inf.ethz.ch/website/teaching/rse2021/project/groups/).
+[here](https://files.sri.inf.ethz.ch/website/teaching/rse2021/project/groups/).
