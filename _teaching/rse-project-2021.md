@@ -12,3 +12,8 @@ image: assets/images/sae.png
 
 Further details on the content of the project will be published here by the end
 of March.
+
+## Project Groups
+
+The project group assignments can be found
+[here]https://files.sri.inf.ethz.ch/website/teaching/rse2021/project/groups/).
