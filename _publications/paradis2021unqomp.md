@@ -7,7 +7,6 @@ month: 06
 venue: PLDI
 projects: quantum
 awards:
-bibtex: ''
 paper: https://files.sri.inf.ethz.ch/website/papers/pldi21-unqomp.pdf
 ---
 
