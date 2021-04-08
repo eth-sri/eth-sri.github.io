@@ -15,8 +15,10 @@ This is the starting point for the RSE project.
 This document is available both
 [online](https://www.sri.inf.ethz.ch/teaching/rse-project-2021) and in your
 [group repository](#project-repository), under
-`resources/project-description/project.md`. In contrast to the online version,
-your group repository will contain working links to relevant repository files.
+`resources/project-description/project.md`.
+
+> NOTE: In contrast to the online version, your group repository will contain
+**working links** to relevant repository files.
 
 ## Changes
 
