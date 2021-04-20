@@ -36,6 +36,7 @@
       <a class="card-title" href="{{ publication.url | relative_url}}">{{ publication.title }}</a>
       <div class="card-subtitle">{{ publication.authors }}</div>
       <div class="card-extra">{{ publication.venue }} {{ publication.year }} 
+		{% if publication.authors contains "*" %}<span style="font-weight: normal;">* Same contribution</span>{% endif %}
         {% if publication.awards %}
         <span style="margin-left: 4pt;"><img style="height: 18px; width: 18px;" src="/assets/images/award.png" title="CC BY 4.0 by @fontawesome - https://fontawesome.com"></span> <font color="#d74141">{{ publication.awards }}</font>
         {% endif %}
