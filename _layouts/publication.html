@@ -10,6 +10,10 @@ layout: default
       <h3 class="page-subtitle">{% include get-linked-persons.html persons=page.authors %} </h3>
 
       {{ page.venue }} {{ page.year }} <br />
+	  {% if page.authors contains "*" %}
+		<br/>
+		<div class="page-subtitle">* Same contribution</div>
+	  {% endif %}
       {% if page.awards %}
       <br/>
       <span><img style="height: 18px; width: 18px;" src="/assets/images/award.png" title="CC BY 4.0 by @fontawesome - https://fontawesome.com"></span> <font color="#d74141">{{ page.awards }}</font>
