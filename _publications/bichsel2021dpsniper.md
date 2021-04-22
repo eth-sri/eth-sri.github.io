@@ -9,6 +9,8 @@ projects: probabilistic-programming
 awards:
 bibtex: ''
 paper: https://files.sri.inf.ethz.ch/website/papers/sp21-dpsniper.pdf
+talk: https://www.youtube.com/watch?v=jeyPqqgwNC8&list=PLWjm4hHpaNg7WjYyCnj7nHFvHWXmHfm4u
+slides: https://files.sri.inf.ethz.ch/website/slides/sp21-dpsniper-slides.pdf
 ---
 
 We present DP-Sniper, a practical black-box method that automatically finds violations of differential privacy.
