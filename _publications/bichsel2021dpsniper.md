@@ -9,7 +9,7 @@ projects: probabilistic-programming
 awards:
 bibtex: ''
 paper: https://files.sri.inf.ethz.ch/website/papers/sp21-dpsniper.pdf
-talk: https://www.youtube.com/watch?v=jeyPqqgwNC8&list=PLWjm4hHpaNg7WjYyCnj7nHFvHWXmHfm4u
+talk: https://www.youtube.com/watch?v=M1O-omGZ2QE&list=PLWjm4hHpaNg7WjYyCnj7nHFvHWXmHfm4u&index=1
 slides: https://files.sri.inf.ethz.ch/website/slides/sp21-dpsniper-slides.pdf
 ---
 
