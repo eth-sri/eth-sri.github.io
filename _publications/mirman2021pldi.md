@@ -13,7 +13,7 @@ bibtex: '@inproceedings{mirman2021pldi,
   booktitle={Proceedings of the 42nd ACM SIGPLAN Conference on Programming Language Design and Implementation},
   year={2021},
   organization={ACM}}'
-paper: 
+paper: https://files.sri.inf.ethz.ch/website/papers/mirman2021pldi.pdf
 slides: 
 ---
 
