@@ -1,6 +1,6 @@
 ---
 ref: he21namer 
-title: "Learning Fast and Precise Numerical Analysis"
+title: "Learning to Find Naming Issues with Big Code and Small Supervision"
 authors: Jingxuan He, Cheng-Chun Lee, Veselin Raychev, Martin Vechev
 year: 2021
 month: 06
