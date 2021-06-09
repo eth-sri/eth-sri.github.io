@@ -1,7 +1,7 @@
 ---
 ref: birkner2021baitfish
 title: "Metha: Network Verifiers Need To Be Correct Too!"
-authors: Rüdiger Birkner, Tobias Brodmann, Petar Tsankov, Laurent Vanbever, Martin Vechev
+authors: Rüdiger Birkner*, Tobias Brodmann*, Petar Tsankov, Laurent Vanbever, Martin Vechev
 year: 2021
 month: 04
 venue: USENIX NSDI
