@@ -1,5 +1,5 @@
 ---
-ref:fischer2021segmentation 
+ref: fischer2021segmentation 
 title: "Scalable Certified Segmentation via Randomized Smoothing"
 authors: Marc Fischer, Maximilian Baader,  Martin Vechev
 year: 2021
