@@ -5,7 +5,7 @@ authors: Matthew Mirman, Alexander Hägele, Timon Gehr, Pavol Bielik, Martin Vec
 year: 2021
 month: 04
 venue: PLDI
-projects: safeai
+projects: safeai, plml
 awards:
 bibtex: '@inproceedings{mirman2021pldi,
   title={Robustness Certification with Generative Models},
