@@ -7,10 +7,11 @@ month: 2
 venue: AAAI
 projects: safeai
 awards:
-bibtex: '@misc{ruoss2020spatial,
+bibtex: '@inproceedings{ruoss2020spatial,
     title = {Efficient Certification of Spatial Robustness},
     author = {Ruoss, Anian and Baader, Maximilian and Balunovic, Mislav and Vechev, Martin},
-    year = {2020},
+	booktitle = {Thirty-Fifth {AAAI} Conference on Artificial Intelligence, {AAAI} 2021},
+    year = {2021},
     url = {https://arxiv.org/abs/2009.09318}
 }'
 paper: https://arxiv.org/pdf/2009.09318
