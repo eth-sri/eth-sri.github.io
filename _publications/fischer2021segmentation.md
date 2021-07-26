@@ -12,6 +12,7 @@ bibtex: '@incollection{fischer2021scalable,
          author = { Fischer, Marc and Baader, Maximilian and Vechev, Martin},
          booktitle = {International Conference on Machine Learning (ICML)}, year = {2021} }'
 paper: https://files.sri.inf.ethz.ch/website/papers/fischer2021segmentation.pdf
+slides: https://files.sri.inf.ethz.ch/website/papers/fischer2021segmentation-poster.pdf
 image: assets/images/fischer2021segmentation.png
 ---
 
