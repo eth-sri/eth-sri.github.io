@@ -14,7 +14,7 @@ bibtex: '@incollection{fischer2020transformationsmoothing,
 	booktitle = {Advances in Neural Information Processing Systems 33},
     year = {2020}
 }'
-paper: https://files.sri.inf.ethz.ch/website/papers/fischer2020smoothing.pdf
+paper: https://arxiv.org/pdf/2002.12463.pdf
 talk: 
 slides: https://files.sri.inf.ethz.ch/website/papers/fischer2020smoothing-poster.pdf
 ---
