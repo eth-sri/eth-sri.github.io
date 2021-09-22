@@ -5,7 +5,7 @@ TBD	Detecting Floating-Point Errors via Atomic Conditions	https://dl.acm.org/doi
 TBD	Who’s Debugging the Debuggers? Exposing Debug Information Bugs in Optimized Binaries	https://dl.acm.org/doi/abs/10.1145/3445814.3446695	TBD	Theo	theodoros.theodoridis@inf.ethz.ch
 TBD	Exploring the Space of Optimization Sequences for Code-size Reduction: Insights and Tools	https://dl.acm.org/doi/10.1145/3446804.3446849	TBD	Theo	theodoros.theodoridis@inf.ethz.ch
 TBD	Refinement Reflection: Complete Verification with SMT	https://ranjitjhala.github.io/static/refinement_reflection.pdf	TBD	Dominik	dominik.winterer@inf.ethz.ch
-TBD	Alive2: Bounded Translation Validation for LLVM	https://dl.acm.org/doi/pdf/10.1145/3468264.3473932	TBD	Dominik	dominik.winterer@inf.ethz.ch
+TBD	Alive2: Bounded Translation Validation for LLVM	https://www.cs.utah.edu/~regehr/alive2-pldi21.pdf	TBD	Dominik	dominik.winterer@inf.ethz.ch
 TBD	Quickly Generating Diverse Valid Test Inputs with Reinforcement Learning	https://ieeexplore.ieee.org/document/9284117	TBD	Reza	reza.sefidgar@inf.ethz.ch
 TBD	Coverage Guided, Property Based Testing	https://dl.acm.org/doi/10.1145/3360607	TBD	Reza	reza.sefidgar@inf.ethz.ch
 TBD	Semantic Fuzzing with Zest	https://dl.acm.org/doi/10.1145/3293882.3330576	TBD	Zuming	zuming.jiang@inf.ethz.ch
