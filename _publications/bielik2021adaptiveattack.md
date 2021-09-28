@@ -3,7 +3,7 @@ ref: bielik2021adaptiveattacks
 title: Automated Discovery of Adaptive Attacks on Adversarial Defenses
 authors: Chengyuan Yao, Pavol Bielik, Petar Tsankov, Martin Vechev 
 year: 2021
-month: 6
+month: 07
 venue: AutoML@ICML (Oral)
 projects: safeai
 awards:
