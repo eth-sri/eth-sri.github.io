@@ -1,22 +1,22 @@
-TBD	Dataflow-Based Pruning for Speeding up Superoptimization	https://dl.acm.org/doi/pdf/10.1145/3428245	TBD	Manuel	manuel.rigger@inf.ethz.ch
-TBD	Metamorphic Testing of Datalog Engines	https://dl.acm.org/doi/10.1145/3468264.3468573	TBD	Manuel	manuel.rigger@inf.ethz.ch
-TBD	Detecting Numerical Bugs in Neural Network Architectures	https://dl.acm.org/doi/10.1145/3368089.3409720	TBD	Daming	daming.zou@inf.ethz.ch
-TBD	Detecting Floating-Point Errors via Atomic Conditions	https://dl.acm.org/doi/10.1145/3371128	TBD	Daming	daming.zou@inf.ethz.ch
-TBD	Who’s Debugging the Debuggers? Exposing Debug Information Bugs in Optimized Binaries	https://dl.acm.org/doi/abs/10.1145/3445814.3446695	TBD	Theo	theodoros.theodoridis@inf.ethz.ch
-TBD	Exploring the Space of Optimization Sequences for Code-size Reduction: Insights and Tools	https://dl.acm.org/doi/10.1145/3446804.3446849	TBD	Theo	theodoros.theodoridis@inf.ethz.ch
-TBD	Refinement Reflection: Complete Verification with SMT	https://ranjitjhala.github.io/static/refinement_reflection.pdf	TBD	Dominik	dominik.winterer@inf.ethz.ch
-TBD	Alive2: Bounded Translation Validation for LLVM	https://www.cs.utah.edu/~regehr/alive2-pldi21.pdf	TBD	Dominik	dominik.winterer@inf.ethz.ch
-TBD	Quickly Generating Diverse Valid Test Inputs with Reinforcement Learning	https://ieeexplore.ieee.org/document/9284117	TBD	Reza	reza.sefidgar@inf.ethz.ch
-TBD	Coverage Guided, Property Based Testing	https://dl.acm.org/doi/10.1145/3360607	TBD	Reza	reza.sefidgar@inf.ethz.ch
-TBD	Semantic Fuzzing with Zest	https://dl.acm.org/doi/10.1145/3293882.3330576	TBD	Zuming	zuming.jiang@inf.ethz.ch
-TBD	GREYONE: Data Flow Sensitive Fuzzing	https://www.usenix.org/system/files/sec20-gan.pdf	TBD	Zuming	zuming.jiang@inf.ethz.ch
-TBD	Detecting Violations of Differential Privacy	https://arxiv.org/pdf/1805.10277.pdf	TBD	Benjamin	benjamin.bichsel@inf.ethz.ch
-TBD	DP-Sniper: Black-Box Discovery of Differential Privacy Violations using Classifiers	https://files.sri.inf.ethz.ch/website/papers/sp21-dpsniper.pdf	TBD	Benjamin	benjamin.bichsel@inf.ethz.ch
-TBD	Compiler Validation via Equivalence Modulo Inputs	https://dl.acm.org/doi/pdf/10.1145/2666356.2594334	TBD	Anouk	anouk.paradis@inf.ethz.ch
-TBD	Stochastic Superoptimization	https://cs.stanford.edu/people/eschkufz/docs/asplos_13.pdf	TBD	Anouk	anouk.paradis@inf.ethz.ch
-TBD	Logic and Lattices for Distributed Programming	https://dl.acm.org/doi/pdf/10.1145/2391229.2391230	TBD	Luca	luca.beurer-kellner@inf.ethz.ch
-TBD	Static Analysis of Shape in TensorFlow Programs	https://drops.dagstuhl.de/opus/volltexte/2020/13172/pdf/LIPIcs-ECOOP-2020-15.pdf	TBD	Luca	luca.beurer-kellner@inf.ethz.ch
-TBD	Concolic Program Repair	https://dl.acm.org/doi/10.1145/3453483.3454051	TBD	Dimitar	dimitar.iliev.dimitrov@inf.ethz.ch
-TBD	Blended, Precise Semantic Program Embeddings	https://dl.acm.org/doi/pdf/10.1145/3385412.3385999	TBD	Dimitar	dimitar.iliev.dimitrov@inf.ethz.ch
-TBD	NetComplete: Practical Network-Wide Configuration Synthesis with Autocompletion	https://netcomplete.ethz.ch/files/netcomplete-nsdi2018.pdf	TBD	Sam	samuel.steffen@inf.ethz.ch
-TBD	zkay: Specifying and Enforcing Data Privacy in Smart Contracts	https://files.sri.inf.ethz.ch/website/papers/ccs19-zkay.pdf	TBD	Sam	samuel.steffen@inf.ethz.ch
+13 Oct	Detecting Numerical Bugs in Neural Network Architectures	https://dl.acm.org/doi/10.1145/3368089.3409720	Jonas Derissen	Daming	daming.zou@inf.ethz.ch
+13 Oct	Detecting Floating-Point Errors via Atomic Conditions	https://dl.acm.org/doi/10.1145/3371128	Remo Zumsteg	Daming	daming.zou@inf.ethz.ch
+20 Oct	Dataflow-Based Pruning for Speeding up Superoptimization	https://dl.acm.org/doi/pdf/10.1145/3428245	Andri Hunkeler	Manuel	manuel.rigger@inf.ethz.ch
+20 Oct	Metamorphic Testing of Datalog Engines	https://dl.acm.org/doi/10.1145/3468264.3468573	Gregory Rozanski	Manuel	manuel.rigger@inf.ethz.ch
+27 Oct	Who’s Debugging the Debuggers? Exposing Debug Information Bugs in Optimized Binaries	https://dl.acm.org/doi/abs/10.1145/3445814.3446695	Jonas Maier	Theo	theodoros.theodoridis@inf.ethz.ch
+27 Oct	Exploring the Space of Optimization Sequences for Code-size Reduction: Insights and Tools	https://dl.acm.org/doi/10.1145/3446804.3446849	Tim Weisser	Theo	theodoros.theodoridis@inf.ethz.ch
+3 Nov	Refinement Reflection: Complete Verification with SMT	https://ranjitjhala.github.io/static/refinement_reflection.pdf	Cedric Gebistorf	Dominik	dominik.winterer@inf.ethz.ch
+3 Nov	Alive2: Bounded Translation Validation for LLVM	https://www.cs.utah.edu/~regehr/alive2-pldi21.pdf	Robin Rudin	Dominik	dominik.winterer@inf.ethz.ch
+10 Nov	Quickly Generating Diverse Valid Test Inputs with Reinforcement Learning	https://ieeexplore.ieee.org/document/9284117	Alex Thillen	Reza	reza.sefidgar@inf.ethz.ch
+10 Nov	Coverage Guided, Property Based Testing	https://dl.acm.org/doi/10.1145/3360607	Malte Wächter	Reza	reza.sefidgar@inf.ethz.ch
+17 Nov	Semantic Fuzzing with Zest	https://dl.acm.org/doi/10.1145/3293882.3330576	Luca Maier	Zuming	zuming.jiang@inf.ethz.ch
+17 Nov	GREYONE: Data Flow Sensitive Fuzzing	https://www.usenix.org/system/files/sec20-gan.pdf	Leandra Willi	Zuming	zuming.jiang@inf.ethz.ch
+24 Nov	Logic and Lattices for Distributed Programming	https://dl.acm.org/doi/pdf/10.1145/2391229.2391230	Michael Hartmann	Luca	luca.beurer-kellner@inf.ethz.ch
+24 Nov	Static Analysis of Shape in TensorFlow Programs	https://drops.dagstuhl.de/opus/volltexte/2020/13172/pdf/LIPIcs-ECOOP-2020-15.pdf	Nicolae Binica	Luca	luca.beurer-kellner@inf.ethz.ch
+1 Dec	Detecting Violations of Differential Privacy	https://arxiv.org/pdf/1805.10277.pdf	Alexandre Reol	Benjamin	benjamin.bichsel@inf.ethz.ch
+1 Dec	DP-Sniper: Black-Box Discovery of Differential Privacy Violations using Classifiers	https://files.sri.inf.ethz.ch/website/papers/sp21-dpsniper.pdf	Moritz Reihs	Benjamin	benjamin.bichsel@inf.ethz.ch
+8 Dec	Compiler Validation via Equivalence Modulo Inputs	https://dl.acm.org/doi/pdf/10.1145/2666356.2594334	Marvin Thomet	Anouk	anouk.paradis@inf.ethz.ch
+8 Dec	Stochastic Superoptimization	https://cs.stanford.edu/people/eschkufz/docs/asplos_13.pdf	Michael Keller	Anouk	anouk.paradis@inf.ethz.ch
+15 Dec	Concolic Program Repair	https://dl.acm.org/doi/10.1145/3453483.3454051	Curdin Schenkel	Dimitar	dimitar.iliev.dimitrov@inf.ethz.ch
+15 Dec	Blended, Precise Semantic Program Embeddings	https://dl.acm.org/doi/pdf/10.1145/3385412.3385999	Robin Hänni	Dimitar	dimitar.iliev.dimitrov@inf.ethz.ch
+22 Dec	NetComplete: Practical Network-Wide Configuration Synthesis with Autocompletion	https://netcomplete.ethz.ch/files/netcomplete-nsdi2018.pdf	Otar Regös	Sam	samuel.steffen@inf.ethz.ch
+22 Dec	zkay: Specifying and Enforcing Data Privacy in Smart Contracts	https://files.sri.inf.ethz.ch/website/papers/ccs19-zkay.pdf	Elitsa Popova	Sam	samuel.steffen@inf.ethz.ch
