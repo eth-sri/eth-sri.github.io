@@ -10,7 +10,7 @@ layout: page
 
 <b>Artifact </b><br><br>
 
-We provide our artifact in the form of a virtual machine running Ubuntu 18.04 which will be ready for download soon<!-- <a href="http://files.srl.inf.ethz.ch/POPL2022.ova">here</a>-->.
+We provide our artifact in the form of a virtual machine running Ubuntu 18.04 which can be downloaded <a href="http://files.srl.inf.ethz.ch/popl2022-paper329_vm">here</a>.
 We prepared the virtual machine on a 16 Core 3.6 GHz Intel i9-9900K Processor with NVIDIA RTX 2080 Ti. <!We allocated 4 GB of RAM to the virtual machine.!>
 
 <br><br><b>Paper #329</b><br>
@@ -20,8 +20,8 @@ PRIMA: General and Precise Neural Network Certification via Scalable Convex Hull
  
 	<ol>
 	<li>Make sure you have 64-bit VirtualBox from Oracle.</li>
-	<li> The virtual machine requires at least 8 GB of disk space. </li>
-	<li>We recommend allocating at least 32 GB RAM to the virtual machine for analyzing larger benchmarks. </li>
+	<li> The virtual machine requires at least 20 GB of disk space. </li>
+	<li>We recommend allocating at least 16 GB RAM to the virtual machine for analyzing larger benchmarks. </li>
 	</ol>
 
 <br><b>Instructions<br> </b>
@@ -32,63 +32,49 @@ PRIMA: General and Precise Neural Network Certification via Scalable Convex Hull
 		<ul>password: paper329</ul></li>
  </ol>
 <br><b> Neural Networks <br></b>
-<li>All MNIST networks used in our evaluation can be found in the "eran/nets/mnist" directory.</li>
-<li>Similarly, all CIFAR and DAVE neural networks can be found in the "eran/nets/cifar10" and "eran/nets/DAVE" directories, respectively.</li>
+<li>All MNIST networks used in our evaluation can be found in the "prima_popl_artifact/prima/eran/nets/mnist" directory.</li>
+<li>Similarly, all CIFAR and DAVE neural networks can be found in the "prima_popl_artifact/prima/eran/nets/cifar10" and "prima_popl_artifact/prima/eran/nets/DAVE" directories, respectively.</li>
 
 
 <br><b> Specs <br></b>
-<li>The images for the MNIST networks can be found in "eran/data/mnist_test_full.csv". The following subsets were used:
+<li>The images for the MNIST networks can be found in "prima_popl_artifact/prima/eran/data/mnist_test_full.csv". The following subsets were used:
 <ul>The first 1000 images for the main results reported on ReLU networks (Table 2).</ul>
 <ul>The first 100 images for the evaluation of hyperparameters in Table 4.</ul>
 <ul>The first 100 images for all results reported on Tanh and Sigmoid networks (Table 5).</ul>
 <li>For CIFAR10, we use the following specs:
-<ul>The first 1000 images of the test set ("eran/data/cifar10_test_full.csv") for the main results reported in Table 2.</ul>
-<ul>The 100 images Wang et. al. 2021 provide for the evaluation of Beta-CROWN for CNN-A-Mix ("eran/data/cifar10_test_a_mix.csv") and CNN-B-Adv ("eran/data/cifar10_test_b_adv.csv") for the comparison in Table 3.</ul>
-<li>The DAVE images corresponding the frames of video 4 can be found in the "eran/data/dave/test".</li>
+<ul>The first 1000 images of the test set ("prima_popl_artifact/prima/eran/data/cifar10_test_full.csv") for the main results reported in Table 2.</ul>
+<ul>The 100 images Wang et. al. 2021 provide for the evaluation of Beta-CROWN for CNN-A-Mix ("prima_popl_artifact/prima/eran/data/cifar10_test_a_mix.csv") and CNN-B-Adv ("prima_popl_artifact/prima/eran/data/cifar10_test_b_adv.csv") for the comparison in Table 3.</ul>
+<li>The DAVE images corresponding the frames of video 4 can be found in the "prima_popl_artifact/prima/eran/data/dave/all".</li>
 
-<!--
+
 <br><b>Analyzers<br> </b>
 <ol>
-<li> DeepPoly </li>
-<ul> The analysis with our abstract domain for the feedforward and convolutional networks can be found in the files "DeepPoly/analyzers/deeppoly_ffn.py" and "DeepPoly/analyzers/deeppoly_conv.py" respectively.</ul> 
-<ul>The abstract domain implementation builds on top of the ELINA library. Our domain implementation can be found in the "DeepPoly/ELINA/fppoly" directory. </ul>
-<ul> We have also implemented a parallel version of our domain in the directory "ELINA/fppoly-parallel". The analysis with the parallelized implementation ran upto 10x faster than with the sequential implementation on our machine. For using the parallelized version, navigate to "settings/system/processor" and set the desired number of processors. Using the parallel domain implementation may help in analyzing CIFAR convolutional network whose analysis with DeepPoly based on the sequential implementation is time consuming. </ul>
-<ul>The source code for handling the rotations can be found in the directory "DeepPoly/refinement".</ul>
-</li>
-<li> FastLin
-<ul> We have adapted the <a href="https://github.com/huanzhang12/CertifiedReLURobustness"> FastLin </a> parser to work with our networks. The analysis stays the same.</ul>
-<ul> The files "DeepPoly/analyzers/fastlin_L_infinity_mnist.py" and "DeepPoly/analyzers/fastlin_brighness_mnist.py" respectively verify the robustness of MNIST feedforward network against L_infinity and brightness attacks.</ul>
-<ul> The files "DeepPoly/analyzers/fastlin_L_infinity_cifar.py" and "DeepPoly/analyzers/fastlin_brighness_cifar.py" respectively verify the robustness of CIFAR feedforward network against L_infinity and brightness attacks.</ul>
-</li>
-<li> AI2 </li>
-<ul>The source code for AI2 can be found in the directory "ai2/nn_ai".</ul>
-<ul> AI2 can work with Interval, Polyhedra, and Zonotope domains. The best known configuration for AI2 is with the ELINA zonotope domain found in "DeepPoly/ELINA/elina_zonotope". . </ul></li>
-<li> Fastlin takes an original image and then perturbs it with a given epsilon whereas DeepPoly and AI2 directly take the adversarial region from the specification files in the "L_infinity" and "total_tight" directories. </li>
+<li> PRIMA
+<ul> PRIMA is integrated into the ERAN framework, it can be run by specifying the domain "refinepoly" (or "refinegpupoly"). The corresponding source code can be found in the directory "prima_popl_artifact/prima/eran/tf_verify".</ul>
+<li> DeepPoly
+<ul> DeepPoly is integrated into the ERAN framework, it can be run by specifying the domain "deeppoly". The corresponding source code can be found in the directory "prima_popl_artifact/prima/eran/tf_verify".</ul>
+<li> GPUPoly
+<ul> GPUPoly is integrated into the ERAN framework, it can be run by specifying the domain "gpupoly". The corresponding source code can be found in the directory "prima_popl_artifact/prima/eran/tf_verify".</ul>
+<li> kPoly
+<ul> kPoly is also based on the ERAN framework, but requires an older version of ELINA not compatible with the current ERAN code. Hence we include the source code in the separate directory "prima_popl_artifact/kpoly/eran".</ul>
 </ol>
 
 
 
 <br><b>Reproducing results<br> </b>
 <ol>
-<li>Go to the "DeepPoly/ELINA" folder and run "make" followed by "sudo make install". This will inatall the sequential version of our library. To install the parallelized version, go to the "DeepPoly/ELINA/fppoly_parallel" folder and run "make" followed by "sudo make install".</li>
-<li> Go to the "ai2/nn_ai" folder and run "./buildapron.sh" followed by "./build.sh -version=OPT_ZONO" to build AI2 with the ELINA zonotope domain. The README file provides information on building AI2 with other domain implementations. </li>
-<li>Our results for the L_infinity and brightness attacks reported in the paper can be reproduced by running "sudo ./run.sh" command in "DeepPoly/scripts" directory. It runs DeepPoly analysis on all MNIST and CIFAR networks with L_infinity and brightness specifications, followed by FastLin (works on only feedforward networks) and AI2.  </li>
-<li>The script first displays the analyzer type and the network name on the screen. Next it displays the robustness property being verified which includes the name of the image, the epsilon used and the type of attack. Note that for the brightness attack, the script displays "1-epsilon" for DeepPoly and AI2 and "epsilon" for FastLin. </li>
- <li> The verification and timing results are collected in the "results" directory. The files ending with "robustness" contain the verification results. If the neural network is robust under an adversarial attack then "verified" is printed otherwise "Failed" is printed. The files ending with "timing" contain the runtime in seconds. </li>
-<li> The "run.sh" script also produces a summary of the results comparing the robustness and the average runtimes per network of all three analyzers in the "DeepPoly/result_summary" directory. The summary files ending with "robustness" contain the percentage of specifications proved to be robust for each analyzer per epsilon value whereas the files ending with "timing" contain the average runtime in seconds per epsilon value. </li>
-<li> Note that if an analyzer runs out of memory or is stopped by the user while analyzing a given neural network under an adversarial attack, the script "run.sh" will continue the analysis on the next adversarial region however no (or inconsistent) summary file will be produced for the given network under the considered attack. However, it is still possible to view the results for the other specification in the "results" directory. This can happen for example when analyzing the CIFAR convolutional network with AI2 where it frequently runs out of memory.</li>
-<li> Our results for the rotation specifications can be reproduced by first running "./experiments.sh" in the "DeepPoly/refinement" folder. This will run the rotation algorithm with different values of batches and batch sizes considered in our experiments and generate the corresponding rotated images. Next run "./run_experiments.sh", this will run the DeepPoly analysis on the generated rotated images and print the verification result and the runtime in seconds. </li>
-<li> Obtaining results on all benchmarks with "AI2" might be time consuming. One can obtain partital results by commenting out "./run_abstract_domains_mnist.sh ai2" and "./run_abstract_domains_cifar.sh ai2" from "./run.sh". </li>
-<li> The sequential version of DeepPoly runs slow on "CIFAR" convolutional network. One can avoid running DeepPoly on this network by commenting out the last three for loops for the convolutional network in the file "run_abstract_domains_cifar.sh".</li>
+<li>To reproduce all PRIMA results with using GPU go to the directory "prima_popl_artifact/prima/eran/tf_verify" and run "bash run_all_experiments_no_gpu.sh".</li>
+<li>To reproduce all PRIMA results with the configurations used to obtain the results reported in the paper, a GPU is needed. Hence this is not possible in the VirtualMachine. However we provide all the corresponding configs in "prima_popl_artifact/prima/eran/tf_verify/run_all_experiments.sh" and note that all ERAN code is published and can be found <a href="https://github.com/eth-sri/eran">here.</a> </li>
+<li> To reproduce all kPoly baselines, go to the directory "prima_popl_artifact/kpoly/eran/tf_verify" and run "bash run_kPoly.sh". </li>
+<li> As both reproducing our results and the baselines takes multiple weeks of runtime even with a strong CPU outside of a virtual machine, we provide our log files for the reviewers convenience. Please find all logs for PRIMA results at "prima_popl_artifact/prima/eran/experiment_logs_prerun" and all logs for baselines at "prima_popl_artifact/prima/eran/baseline_logs". </li>
 </ol>
 
--->
-
-<br><b>Caveats<br> </b><ol>
-	
-	<li> The analysis runs slower on the virtual machine than on the host processor. As we use timeouts to interrupt our analysis after a predetermined runtime, this can reduce the obtained certified accuracy and increase average runtime.</li>
-	
-	</ol>
+<br><b>Caveats<br></b>
+<ol>
+<li> The analysis runs slower on the virtual machine than on the host processor. As we use timeouts to interrupt our analysis after a predetermined runtime, this can reduce the obtained certified accuracy and increase average runtime.</li>
+<li> All convolutional networks use GPUPoly to compute the input regions used to compute multi-neuron constraints. While using DeepPoly instead yields the same result the runtime is significantly slower, especially for ConvBig and the autonomous driving networks.</li>	
+<li> Recomputing all results even with GPU access takes multiple weeks. Hence, we have provided the log files corresponding to our results and the baselines we report as described above for the reviewers convenience.</li>	
+</ol>
 
                 </div>
         </div>
