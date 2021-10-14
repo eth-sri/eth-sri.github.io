@@ -3,7 +3,7 @@ layout: post
 date:   2021-10-14
 category: media
 link: "https://www.sri.inf.ethz.ch/workshop2021"
-image: lattice-flow.png
+image: wsdsss21.jpg
 ---
 
 
