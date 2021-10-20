@@ -9,6 +9,8 @@ projects: plml
 awards:
 bibtex:
 paper: https://files.sri.inf.ethz.ch/website/papers/pldi21-namer.pdf
+talk: https://www.pldi21.org/poster_pldi.112.html
+slides: https://files.sri.inf.ethz.ch/website/papers/pldi21-namer-poster.pdf
 ---
 
 We introduce a new approach for finding and fixing naming issues in source code. The method is based on a careful combination of unsupervised and supervised procedures: (i) unsupervised mining of patterns from Big Code that express common naming idioms. Program fragments violating such idioms indicates likely naming issues, and (ii) supervised learning of a classifier on a small labeled dataset which filters potential false positives from the violations.
