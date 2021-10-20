@@ -10,7 +10,7 @@
   bibtex:
   paper: https://files.sri.inf.ethz.ch/website/papers/ccs19-ilf.pdf
   image: assets/images/ilf-logo.png
-  talk:
+  talk: https://dl.acm.org/doi/10.1145/3319535.3363230#sec-supp
   slides: https://files.sri.inf.ethz.ch/website/slides/ccs19-ilf-slides.pdf
 ---
 
