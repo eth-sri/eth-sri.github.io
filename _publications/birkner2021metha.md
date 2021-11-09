@@ -9,8 +9,8 @@ projects: programmable-networks
 awards:
 bibtex: 
 paper: https://files.sri.inf.ethz.ch/website/papers/metha-nsdi21.pdf
-talk: 
-slides: 
+talk: https://www.youtube.com/watch?v=ZuXMZAxJJTA
+slides: https://files.sri.inf.ethz.ch/website/slides/rbirkner-nsdi21-slides.pdf
 ---
 
 Network analysis and verification tools are often a godsend for network operators as they free them from the fear of introducing outages or security breaches. As with any complex software though, these tools can (and often do) have bugs. For the operators, these bugs are not necessarily problematic except if they affect the precision of the network model. In that case, the tool output might be wrong: it might fail to detect actual configuration errors and/or report non-existing ones.

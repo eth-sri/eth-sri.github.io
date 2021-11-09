@@ -14,8 +14,8 @@ bibtex: '@inproceedings{birkner2020config2spec,
   year={2020},
   organization={USENIX$\}$ Association}}'
 paper: https://files.sri.inf.ethz.ch/website/papers/nsdi20.pdf
-talk: 
-slides: 
+talk: https://www.youtube.com/watch?v=dqlVshM7DVk
+slides: https://files.sri.inf.ethz.ch/website/slides/rbirkner-nsdi20-slides.pdf 
 ---
 
 Network verification and configuration synthesis are promising approaches to make networks more reliable and secure by enforcing a set of policies. However, these approaches require a formal and precise description of the intended network behavior, imposing a major barrier to their adoption: network operators are not only reluctant to write formal specifications, but often do not even know what these specifications are.
