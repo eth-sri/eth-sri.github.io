@@ -15,7 +15,7 @@ bibtex: '@inproceedings{birkner2018net2text,
   organization={USENIX$\}$ Association}}'
 paper: https://files.sri.inf.ethz.ch/website/papers/nsdi18.pdf
 talk: https://www.youtube.com/watch?v=OrGIc4_TYq8
-slides: 
+slides: https://files.sri.inf.ethz.ch/website/slides/rbirkner-nsdi18-slides.pdf 
 ---
 
 Today network operators spend a significant amount of time struggling to understand how their network forwards traffic. Even simple questions such as “How is my network handling Google traffic?” often require operators to manually bridge large semantic gaps between lowlevel forwarding rules distributed across many routers and the corresponding high-level insights.
