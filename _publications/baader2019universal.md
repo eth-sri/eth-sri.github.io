@@ -12,7 +12,7 @@ bibtex: '@inproceedings{baader2020universal,
   journal={ICLR},
   year={2020}}'
 paper: https://files.sri.inf.ethz.ch/website/papers/iclr2020-universal.pdf
-slides:
+slides:https://files.sri.inf.ethz.ch/website/papers/iclr2020-slides.pdf
 image: assets/images/baader2019universal2.jpg
 talk: 
 ---
