@@ -1,7 +1,7 @@
 ---
 ref: jovanovic2021certified
 title: "Certified Defenses: Why Tighter Relaxations May Hurt Training"
-authors: Nikola Jovanovic*, Mislav Balunovic*, Maximilian Baader, Martin Vechev
+authors: Nikola Jovanović*, Mislav Balunović*, Maximilian Baader, Martin Vechev
 year: 2021
 month: 6
 venue: arXiv
