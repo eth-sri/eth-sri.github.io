@@ -7,6 +7,20 @@ month: 6
 venue: PLDI
 projects: safeai
 awards:
+bibtex: '@inproceedings{bonaert2021transformers,
+	title     = {Fast and precise certification of transformers},
+  url       = {https://doi.org/10.1145/3453483.3454056},
+  doi       = {10.1145/3453483.3454056},
+	booktitle = {{PLDI} '21: 42nd {ACM} {SIGPLAN} International Conference on Programming
+               Language Design and Implementation, Virtual Event, Canada, June 20-25,
+               2021},
+	publisher = {ACM},
+	author    = {Gregory Bonaert and
+               Dimitar I. Dimitrov and
+               Maximilian Baader and
+               Martin T. Vechev},
+	year = {2021}
+}'
 paper: https://files.sri.inf.ethz.ch/website/papers/pldi21-transformers.pdf
 slides: https://files.sri.inf.ethz.ch/website/slides/pldi21-fast-and-precise-transformer-certification.pdf
 ---
