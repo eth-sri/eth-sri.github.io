@@ -20,7 +20,8 @@ bibtex: '@inproceedings{bonaert2021transformers,
                Maximilian Baader and
                Martin T. Vechev},
 	year = {2021}
-}'
+}
+'
 paper: https://files.sri.inf.ethz.ch/website/papers/pldi21-transformers.pdf
 slides: https://files.sri.inf.ethz.ch/website/slides/pldi21-fast-and-precise-transformer-certification.pdf
 ---
