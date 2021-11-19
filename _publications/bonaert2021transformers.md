@@ -7,7 +7,7 @@ month: 6
 venue: PLDI
 projects: safeai
 awards:
-bibtex: '@inproceedings{bonaert2021transformers,
+bibtex: "@inproceedings{bonaert2021transformers,
 	title     = {Fast and precise certification of transformers},
   url       = {https://doi.org/10.1145/3453483.3454056},
   doi       = {10.1145/3453483.3454056},
@@ -20,8 +20,7 @@ bibtex: '@inproceedings{bonaert2021transformers,
                Maximilian Baader and
                Martin T. Vechev},
 	year = {2021}
-}
-'
+}"
 paper: https://files.sri.inf.ethz.ch/website/papers/pldi21-transformers.pdf
 slides: https://files.sri.inf.ethz.ch/website/slides/pldi21-fast-and-precise-transformer-certification.pdf
 ---
