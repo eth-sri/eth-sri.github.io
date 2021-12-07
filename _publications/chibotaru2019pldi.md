@@ -15,6 +15,7 @@ bibtex: '@inproceedings{chibotaru2019pldi,
   organization={ACM}}'
 paper: https://files.sri.inf.ethz.ch/website/papers/scalable-taint-specification-inference-pldi2019.pdf
 slides: 
+talk: https://www.youtube.com/watch?v=47GyG1HEzMs
 ---
 
 We present a new scalable, semi-supervised method for inferring taint analysis specifications by learning from a large dataset of programs. Taint specifications capture the role of library APIs (source, sink, sanitizer) and are a critical ingredient of any taint analyzer that aims to detect security violations based on information flow.
