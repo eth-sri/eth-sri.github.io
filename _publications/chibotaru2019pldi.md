@@ -14,7 +14,7 @@ bibtex: '@inproceedings{chibotaru2019pldi,
   year={2019},
   organization={ACM}}'
 paper: https://files.sri.inf.ethz.ch/website/papers/scalable-taint-specification-inference-pldi2019.pdf
-slides: 
+slides: https://files.sri.inf.ethz.ch/website/papers/scalable-taint-specification-inference-pldi2019-slides.pdf
 talk: https://www.youtube.com/watch?v=47GyG1HEzMs
 ---
 
