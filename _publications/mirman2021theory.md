@@ -13,7 +13,7 @@ bibtex: '@misc{mirman2021theory,
   archivePrefix={arXiv}, primaryClass={cs.LG},
   year={2021}}'
 paper: https://files.sri.inf.ethz.ch/website/papers/mirman2021fundamental.pdf
-image: assets/images/mirman2021fundamental.png
+image: assets/images/mirman2021theory.png
 ---
 
 
