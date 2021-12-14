@@ -1,12 +1,12 @@
 ---
-ref: mirman2021fundamental
+ref: mirman2021theory
 title: "The Fundamental Limits of Interval Arithmetic for Neural Networks"
 authors: Matthew Mirman, Maximilian Baader, Martin Vechev
 year: 2021
 month: 12
 venue: arXiv
 projects: safeai
-bibtex: '@misc{mirman2021fundamental,
+bibtex: '@misc{mirman2021theory,
   title={The Fundamental Limits of Interval Arithmetic for Neural Networks},
   author={Matthew Mirman, Maximilian Baader, Martin Vechev},
   eprint={2112.05235}, 
