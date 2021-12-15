@@ -1,5 +1,5 @@
 ---
-ref: mirman2021theory
+ref: mirman2021impossibility
 title: "The Fundamental Limits of Interval Arithmetic for Neural Networks"
 authors: Matthew Mirman, Maximilian Baader, Martin Vechev
 year: 2021
@@ -13,7 +13,7 @@ bibtex: '@misc{mirman2021theory,
   archivePrefix={arXiv}, primaryClass={cs.LG},
   year={2021}}'
 paper: https://files.sri.inf.ethz.ch/website/papers/mirman2021fundamental.pdf
-image: assets/images/mirman2021theory.png
+image: assets/images/mirman2021impossibility.png
 ---
 
 
