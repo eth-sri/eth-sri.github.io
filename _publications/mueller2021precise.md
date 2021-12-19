@@ -13,6 +13,7 @@ bibtex: '@misc{müller2021precise,
       eprint={2103.03638},
       archivePrefix={arXiv},
       primaryClass={cs.AI}}'
+blogpost: prima
 paper: https://files.sri.inf.ethz.ch/website/papers/mueller2021precise.pdf
 #slides: https://files.sri.inf.ethz.ch/website/slides/iclr2020-colt.pdf
 #image: assets/images/colt.png

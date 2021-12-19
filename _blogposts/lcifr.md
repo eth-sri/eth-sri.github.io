@@ -159,4 +159,4 @@ the practical effectiveness of our method.
 
 ## Acknowledgments
 
-I would like to thank all my collaborators.
+I would like to thank all my collaborators. 
