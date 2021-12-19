@@ -3,7 +3,7 @@ layout: blogpost
 category: paper
 pub-ref: bielik2015scalable
 title: "How to PRIMA?"
-blogpost_authors: "Mark Muller" 
+blogpost-authors: "Mark Muller" 
 date:   2021-09-01
 thumbnail: thumb2.svg
 ---
