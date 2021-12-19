@@ -1,0 +1,21 @@
+$grey-color:         #757575;
+$grey-color-darkish: darken($grey-color, 15%);
+$brand-color:        #2a7ae2;
+$details-background-color: #dbdbdb;
+
+details {
+    border-radius: 10px;
+    padding: 0px 8px;
+    margin-bottom: 15px;
+}
+details[open] {
+    background: $details-background-color;
+    padding: 0px 8px 8px 8px;
+}
+summary {
+    margin: 0px 0px 8px 0px;
+    outline:none;
+}
+details summary {
+    color: $brand-color;
+}
