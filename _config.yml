@@ -36,6 +36,9 @@ minima:
 collections:
   newsposts:
     output: false
+  blogposts:
+    output: true
+    permalink: /blog/:name
   publications:
     output: true
     permalink: /:collection/:name
@@ -56,6 +59,12 @@ collections:
     permalink: /:name
 
 defaults:
+  -
+    scope:
+      path: ""
+      type: blogposts
+    values:
+      layout: blogpost
   -
     scope:
       path: ""
