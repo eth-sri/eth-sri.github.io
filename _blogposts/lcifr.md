@@ -2,38 +2,25 @@
 layout: blogpost
 category: paper
 pub-ref: ruoss2020lcifr
-title: "How to enforce certified individual fairness?"
+title: "How to enforce individual fairness?"
 blogpost-authors: "Mislav Balunovic" 
 date:   2020-09-01
 thumbnail: thumb1.svg
 usemathjax: true
 tldr: >
-    Fair representation learning provides an effective way of enforcing fairness
-    constraints without compromising utility for downstream users.
-    A desirable family of such fairness constraints, each requiring similar
-    treatment for similar individuals, is known as individual fairness.
-    In this work, we introduce the first method that enables data consumers to
-    obtain certificates of individual fairness for existing and new data points.
-    The key idea is to map similar individuals to close latent representations and
-    leverage this latent proximity to certify individual fairness.
-    That is, our method enables the data producer to learn and certify a
+    We introduce the first method that enables data consumers to
+    obtain certificates of individual fairness for existing and new data points. 
+    Our method enables the data producer to learn and certify a
     representation where for a data point all similar individuals are at
-    $$\ell_\infty$$-distance at most $$\epsilon$$, thus allowing data consumers to
-    certify individual fairness by proving $$\epsilon$$-robustness of their
+    $\ell_\infty$-distance at most $\epsilon$, thus allowing data consumers to
+    certify individual fairness by proving $\epsilon$-robustness of their
     classifier.
-    Our experimental evaluation on five real-world datasets and several fairness
-    constraints demonstrates the expressivity and scalability of our approach.
 
 ---
 
-<b>TL;DR:</b> {{page.tldr}}
-
-[comment]: <> (This is the end of TLDR, now starts the main content.)
+[comment]: <> (This is how to write comments.)
 
 ## Introduction
-
-![](/assets/blog/lcifr_overview.png)
-***Figure 1.** Conceptual overview of our framework.The left side shows the component corresponding to the data producer who learns an encoder $$f_\theta$$ which maps the entire set of individuals $$S_\phi(x)$$ that are similar to individual $$x$$, according to the similarity notion $$\phi$$, to points near $$f_\theta(x)$$ in the latent space. The data producer then computes an $$\ell_\infty$$-bounding box $$\mathbb{B}_\infty$$ around the latent set of similar individuals $$f_\theta(S_\phi(x))$$ with center $$z = f_\theta(x)$$ and radius $$\epsilon$$ and passes it to the data consumer.*
 
 
 The increased use of machine learning in sensitive domains (e.g., crime risk
@@ -60,6 +47,12 @@ defines fairness for the particular task at hand, a \emph{data producer} who
 processes sensitive user data and transforms it into another representation,
 and a \emph{data consumer} who performs predictions based on the new
 representation.
+
+
+![](/assets/blog/lcifr_overview.png)
+***Figure 1.** Conceptual overview of our framework.The left side shows the component corresponding to the data producer who learns an encoder $f_\theta$ which maps the entire set of individuals $S_\phi(x)$ that are similar to individual $x$, according to the similarity notion $\phi$, to points near $f_\theta(x)$ in the latent space. The data producer then computes an $\ell_\infty$-bounding box $\mathbb{B}_\infty$ around the latent set of similar individuals $f_\theta(S_\phi(x))$ with center $z = f_\theta(x)$ and radius $\epsilon$ and passes it to the data consumer.* 
+
+This is the illustration.
 
 ## Trying the code
 
@@ -99,13 +92,13 @@ $$
 
 As introduced earlier, our setting consists of three parties.
 The first party is a data regulator who defines similarity measures for the
-input and the output denoted as $$\phi$$ and $$\mu$$, respectively.
-The properties $$\phi$$ and $$\mu$$ are problem-specific and can be expressed in a
+input and the output denoted as $\phi$ and $\mu$, respectively.
+The properties $\phi$ and $\mu$ are problem-specific and can be expressed in a
 rich logical fragment which we describe later in~\cref{sec:training}.
-For example, for classification tasks $$\mu$$ could denote equal classification
-(\ie $$\mu(M(x), M(x')) = 1 \iff M(x) = M(x')$$) or classifying $$M(x)$$ and
-$$M(x')$$ to the same label group; for regressions tasks $\mu$ could evaluate
-to 1 if $$\|M(x) - M(x')\| \leq 0.1$$ and 0 otherwise.
+For example, for classification tasks $\mu$ could denote equal classification
+(\ie $\mu(M(x), M(x')) = 1 \iff M(x) = M(x')$) or classifying $M(x)$ and
+$M(x')$ to the same label group; for regressions tasks $\mu$ could evaluate
+to 1 if $\|M(x) - M(x')\| \leq 0.1$ and 0 otherwise.
 We focus on equal classification in the classification setting for the
 remainder of this work.
 

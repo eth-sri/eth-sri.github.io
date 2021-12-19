@@ -2,11 +2,20 @@
 layout: blogpost
 category: paper
 pub-ref: bielik2015scalable
-title: "How to PRIMA?"
-blogpost-authors: "Mark Muller" 
+title: "Improving neural network certification"
+blogpost-authors: "Mark Niklas Müller" 
 date:   2021-09-01
-thumbnail: thumb2.svg
+thumbnail: prima_thumb.png
+usemathjax: true
+tldr: >
+    We design PRIMA, a precise and scalable neural network verifier, which can
+    handle different activation functions, realistic network architectures and
+    relevant specifications. PRIMA computes precise convex abstractions involving
+    multiple neurons via novel convex hull approximation algorithms that leverage
+    concepts from computational geometry.
 ---
+
+## Content
 
 We design PRIMA, a precise and scalable neural network verifier, which can
 handle different activation functions, realistic network architectures and
@@ -18,6 +27,6 @@ Now let's go into more details.
 
 More stuff.
 
-### Acknowledgements
+## Acknowledgements
 
 Thanks to paper authors.
