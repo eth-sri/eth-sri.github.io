@@ -1,9 +1,20 @@
 ---
 layout: blogpost
-date:   2021-09-01
-category: 
-image: 
-draft: false
+category: paper
+paper_ref: bielik2015scalable
+title: "How to DP?"
+blogpost_authors: "Benjamin Bichsel"
+date:   2022-09-01
+thumbnail: thumb3.png
 ---
 
-test mock dp sniper
+This is the first paragraph TLDR of DP Sniper.
+
+Now let's go into more details.
+<img src="/assets/blog/lcifr_overview.png"/>
+
+More stuff.
+
+[Abc]({{"/abc"|relative_url}}) LCIFR
+
+Ack: ...
