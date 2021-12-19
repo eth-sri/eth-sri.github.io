@@ -8,13 +8,16 @@ date:   2021-09-01
 thumbnail: thumb2.svg
 ---
 
-This is the first paragraph TLDR of PRIMA.
+We design PRIMA, a precise and scalable neural network verifier, which can
+handle different activation functions, realistic network architectures and
+relevant specifications. PRIMA computes precise convex abstractions involving
+multiple neurons via novel convex hull approximation algorithms that leverage
+concepts from computational geometry.
 
 Now let's go into more details.
-<img src="lcifr_overview | preped: '/assets/blog/' | relative_url}}"/>
 
 More stuff.
 
-[Abc]({{"/abc"|relative_url}}) LCIFR
+### Acknowledgements
 
-Ack: ...
+Thanks to paper authors.
