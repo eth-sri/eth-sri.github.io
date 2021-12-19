@@ -28,53 +28,29 @@
   
   {% for publication in sorted_publications_by_year %}
 
+    <!-- must assign as we can't directly capture these in the include-->
+    {% assign pub-title = publication.title %}
+    {% assign pub-url = publication.url %}
+    {% assign pub-description = publication.authors %}
+    {% capture pub-extra %}
+      {{ publication.venue }} 
+      {{ publication.year }} 
+      {% if publication.authors contains "*" %}<span style="font-weight: normal;">* Equal contribution</span>{% endif %}
+      {% if publication.awards %} <span style="margin-left: 4pt;"><img style="height: 18px; width: 18px;" src="/assets/images/award.png" title="CC BY 4.0 by @fontawesome - https://fontawesome.com"></span> <font color="#d74141">{{ publication.awards }}</font> {% endif %}
+    {% endcapture %}
+    {% assign pub-ref = publication.ref %}
 
-
-  <div class="horizontal-card">
-
-    <div class="card-content">
-      <a class="card-title" href="{{ publication.url | relative_url}}">{{ publication.title }}</a>
-      <div class="card-subtitle">{{ publication.authors }}</div>
-      <div class="card-extra">{{ publication.venue }} {{ publication.year }} 
-		{% if publication.authors contains "*" %}<span style="font-weight: normal;">* Equal contribution</span>{% endif %}
-        {% if publication.awards %}
-        <span style="margin-left: 4pt;"><img style="height: 18px; width: 18px;" src="/assets/images/award.png" title="CC BY 4.0 by @fontawesome - https://fontawesome.com"></span> <font color="#d74141">{{ publication.awards }}</font>
-        {% endif %}
-      </div>
-    </div>
-
-    <div class="card-links">
-
-        {% if publication.slides %}
-          {% assign slides_link = publication.slides %}
-
-          {% unless slides_link contains 'http' %}
-            {% assign slides_link = '/slides/' | append: slides_link %}
-          {% endunless %}
-
-            <a href="{{ slides_link | relative_url }}" target="_blank"><img class="svg-icon" src="{{ '/assets/icons/icon-slides.svg' | relative_url }}"><br />Slides</a>
-        {% endif %}
-
-
-        {% if publication.talk %}
-            <a href="{{ publication.talk | relative_url }}" target="_blank"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"><br />Talk</a>
-        {% endif %}
-
-        {% if publication.paper %}
-          {% assign pub_link = publication.paper %}
-
-          {% unless pub_link contains 'http' %}
-            {% assign pub_link = 'papers/' | append: pub_link %}
-          {% endunless %}
-
-            <a href="{{ pub_link | relative_url }}" target="_blank"><img class="svg-icon" src="{{ '/assets/icons/icon-pdf.svg' | relative_url }}"><br />Paper</a>
-        {% endif %}
-
-
-    </div>
-
-  </div>
+    {% include card.html
+      output="horizontal"
+      title=pub-title
+      url=pub-url
+      description=pub-description
+      extra=pub-extra
+      card-links-style=""
+      pub-ref=pub-ref
+    %}
 
   {% endfor %}
+  
   {% endif %}
 {% endfor %}
