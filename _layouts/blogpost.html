@@ -4,52 +4,60 @@ layout: default
 <article class="page">
 
   <header class="page-header container">
+	<img src="{{ page.thumbnail | prepend: '/assets/blog/' | relative_url}}"/>
+	
 	<div class="row">
 		<div class="column column-66">
 			<h1 class="page-title">{{ page.title | escape }}</h1>
-      <h3 class="page-subtitle">{% include get-linked-persons.html persons=page.authors %} </h3>
-
-      {{ page.venue }} {{ page.year }} <br />
-	  {% if page.authors contains "*" %}
-		<br/>
-		<div class="page-subtitle">* Equal contribution</div>
-	  {% endif %}
-      {% if page.awards %}
-      <br/>
-      <span><img style="height: 18px; width: 18px;" src="/assets/images/award.png" title="CC BY 4.0 by @fontawesome - https://fontawesome.com"></span> <font color="#d74141">{{ page.awards }}</font>
-      <br/>      
-      {% endif %}
-
-      <div class="card-links" style="margin-top: 30px; margin-bottom: 30px; margin-left: -10px">
-          {% if page.slides %}
-            {% assign slides_link = page.slides %}
-
-            {% unless slides_link contains 'http' %}
-              {% assign slides_link = 'slides/' | append: slides_link %}
-            {% endunless %}
-
-              <a href="{{ slides_link | relative_url }}" target="_blank"><img class="svg-icon" src="{{ '/assets/icons/icon-slides.svg' | relative_url }}"><br />Slides</a>
-          {% endif %}
+			<h3 class="page-subtitle">{% include get-linked-persons.html persons=page.blogpost_authors %} </h3>
 
 
-          {% if page.talk %}
-              <a href="{{ page.talk | relative_url }}" target="_blank"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"><br />Talk</a>
-          {% endif %}
+      <!-- <div class="card-links" style="margin-top: 30px; margin-bottom: 30px; margin-left: -10px"> -->
+      <!--     {% if page.slides %} -->
+      <!--       {% assign slides_link = page.slides %} -->
 
-          {% if page.paper %}
-            {% assign pub_link = page.paper %}
+      <!--       {% unless slides_link contains 'http' %} -->
+      <!--         {% assign slides_link = 'slides/' | append: slides_link %} -->
+      <!--       {% endunless %} -->
 
-            {% unless pub_link contains 'http' %}
-              {% assign pub_link = 'papers/' | append: pub_link %}
-            {% endunless %}
+      <!--         <a href="{{ slides_link | relative_url }}" target="_blank"><img class="svg-icon" src="{{ '/assets/icons/icon-slides.svg' | relative_url }}"><br />Slides</a> -->
+      <!--     {% endif %} -->
 
-              <a href="{{ pub_link | relative_url }}" target="_blank"><img class="svg-icon" src="{{ '/assets/icons/icon-pdf.svg' | relative_url }}"><br />Paper</a>
-          {% endif %}
-        </div>
+
+      <!--     {% if page.talk %} -->
+      <!--         <a href="{{ page.talk | relative_url }}" target="_blank"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"><br />Talk</a> -->
+      <!--     {% endif %} -->
+
+      <!--     {% if page.paper %} -->
+      <!--       {% assign pub_link = page.paper %} -->
+
+      <!--       {% unless pub_link contains 'http' %} -->
+      <!--         {% assign pub_link = 'papers/' | append: pub_link %} -->
+      <!--       {% endunless %} -->
+
+      <!--         <a href="{{ pub_link | relative_url }}" target="_blank"><img class="svg-icon" src="{{ '/assets/icons/icon-pdf.svg' | relative_url }}"><br />Paper</a> -->
+      <!--     {% endif %} -->
+      <!--   </div> -->
 
 
 
-		</div>
+		
+	{% assign publication = site.publications | where:"ref", page.pub-ref | first %}
+	{% assign pub-poster = publication.poster %}
+	{% assign pub-slides = publication.slides %}
+	{% assign pub-talk = publication.talk %}
+	{% assign pub-paper = publication.paper %}
+	{% assign pub-code = publication.code %}
+    <div class="card-links" style="margin-top: 30px; margin-bottom: 30px; margin-left: -10px">
+      {% include publication-links.html
+        poster=pub-poster
+        slides=pub-slides
+        talk=pub-talk
+        paper=pub-paper
+        code=pub-code
+      %}
+	  	</div>
+    </div>
 
     <div class="column column-33 ">
       <div class="page-img full-width">
@@ -57,7 +65,10 @@ layout: default
         <a href="{{ page.image | relative_url}}"> <img src="{{ page.image | relative_url}}"/></a> {% endif %}
       </div>
     </div>
-
+	</div>
+	
+	<div class="row">
+	  {{ page.date | date: "%d.%m.%y" }}
 	</div>
   </header>
 
@@ -68,14 +79,6 @@ layout: default
 
 
     <hr />
-    {% if page.projects %}
-      <div class="extras">
-        <label>Research Projects</label>
-        {% include get-project.html ref=page.projects output="plain" %}
-      </div>
-    {% endif %}
-
-    {% if page.bibtex %} <div class="extras"><label>Bibtex</label>{{ page.bibtex }}</div>  {% endif %}
 
       </div>
     </div>
