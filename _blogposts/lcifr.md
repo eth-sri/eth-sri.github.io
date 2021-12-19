@@ -3,29 +3,30 @@ layout: blogpost
 category: paper
 pub-ref: ruoss2020lcifr
 title: "How to enforce certified individual fairness?"
-blogpost_authors: "Mislav Balunovic" 
+blogpost-authors: "Mislav Balunovic" 
 date:   2020-09-01
 thumbnail: thumb1.svg
 usemathjax: true
-tldr:|
-Fair representation learning provides an effective way of enforcing fairness
-constraints without compromising utility for downstream users.
-A desirable family of such fairness constraints, each requiring similar
-treatment for similar individuals, is known as individual fairness.
-In this work, we introduce the first method that enables data consumers to
-obtain certificates of individual fairness for existing and new data points.
-The key idea is to map similar individuals to close latent representations and
-leverage this latent proximity to certify individual fairness.
-That is, our method enables the data producer to learn and certify a
-representation where for a data point all similar individuals are at
-$$\ell_\infty$$-distance at most $$\epsilon$$, thus allowing data consumers to
-certify individual fairness by proving $$\epsilon$$-robustness of their
-classifier.
-Our experimental evaluation on five real-world datasets and several fairness
-constraints demonstrates the expressivity and scalability of our approach.
+tldr: >
+    Fair representation learning provides an effective way of enforcing fairness
+    constraints without compromising utility for downstream users.
+    A desirable family of such fairness constraints, each requiring similar
+    treatment for similar individuals, is known as individual fairness.
+    In this work, we introduce the first method that enables data consumers to
+    obtain certificates of individual fairness for existing and new data points.
+    The key idea is to map similar individuals to close latent representations and
+    leverage this latent proximity to certify individual fairness.
+    That is, our method enables the data producer to learn and certify a
+    representation where for a data point all similar individuals are at
+    $$\ell_\infty$$-distance at most $$\epsilon$$, thus allowing data consumers to
+    certify individual fairness by proving $$\epsilon$$-robustness of their
+    classifier.
+    Our experimental evaluation on five real-world datasets and several fairness
+    constraints demonstrates the expressivity and scalability of our approach.
 
 ---
 
+<b>TL;DR:</b> {{page.tldr}}
 
 [comment]: <> (This is the end of TLDR, now starts the main content.)
 
