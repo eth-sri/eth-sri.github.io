@@ -4,85 +4,50 @@ layout: default
 <article class="page">
 
   <header class="page-header container">
-	<img src="{{ page.thumbnail | prepend: '/assets/blog/' | relative_url}}"/>
+	<img src="{{ page.thumbnail | prepend: '/assets/blog/' | relative_url}}" style="display: block; width: 20%; margin: auto;"/>
 	
 	<div class="row">
-		<div class="column column-66">
-			<h1 class="page-title">{{ page.title | escape }}</h1>
-			<h3 class="page-subtitle">{% include get-linked-persons.html persons=page.blogpost-authors %} </h3>
+		<div class="column column-66" style="display: block; margin: auto;">
+			<h1 class="page-title" style="text-align: center">{{ page.title | escape }}</h1>
+			<h3 class="page-subtitle">
+        {% include get-linked-persons.html persons=page.blogpost-authors %} 
+      </h3>
+			<h4 class="page-subtitle">
+        {{ page.date | date: "%B %-d, %Y" }}
+      </h4>
 
+      <div class="tldr"> {{page.tldr}} </div>
 
-      <!-- <div class="card-links" style="margin-top: 30px; margin-bottom: 30px; margin-left: -10px"> -->
-      <!--     {% if page.slides %} -->
-      <!--       {% assign slides_link = page.slides %} -->
-
-      <!--       {% unless slides_link contains 'http' %} -->
-      <!--         {% assign slides_link = 'slides/' | append: slides_link %} -->
-      <!--       {% endunless %} -->
-
-      <!--         <a href="{{ slides_link | relative_url }}" target="_blank"><img class="svg-icon" src="{{ '/assets/icons/icon-slides.svg' | relative_url }}"><br />Slides</a> -->
-      <!--     {% endif %} -->
-
-
-      <!--     {% if page.talk %} -->
-      <!--         <a href="{{ page.talk | relative_url }}" target="_blank"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"><br />Talk</a> -->
-      <!--     {% endif %} -->
-
-      <!--     {% if page.paper %} -->
-      <!--       {% assign pub_link = page.paper %} -->
-
-      <!--       {% unless pub_link contains 'http' %} -->
-      <!--         {% assign pub_link = 'papers/' | append: pub_link %} -->
-      <!--       {% endunless %} -->
-
-      <!--         <a href="{{ pub_link | relative_url }}" target="_blank"><img class="svg-icon" src="{{ '/assets/icons/icon-pdf.svg' | relative_url }}"><br />Paper</a> -->
-      <!--     {% endif %} -->
-      <!--   </div> -->
-
-
-
-		
-	{% assign publication = site.publications | where:"ref", page.pub-ref | first %}
-	{% assign pub-poster = publication.poster %}
-	{% assign pub-slides = publication.slides %}
-	{% assign pub-talk = publication.talk %}
-	{% assign pub-paper = publication.paper %}
-	{% assign pub-code = publication.code %}
-    <div class="card-links" style="margin-top: 30px; margin-bottom: 30px; margin-left: -10px">
-      {% include publication-links.html
-        poster=pub-poster
-        slides=pub-slides
-        talk=pub-talk
-        paper=pub-paper
-        code=pub-code
-      %}
-	  	</div>
-    </div>
-
-    <div class="column column-33 ">
-      <div class="page-img full-width">
-        {% if page.image %}
-        <a href="{{ page.image | relative_url}}"> <img src="{{ page.image | relative_url}}"/></a> {% endif %}
+      {% assign publication = site.publications | where:"ref", page.pub-ref | first %}
+      {% assign pub-poster = publication.poster %}
+      {% assign pub-slides = publication.slides %}
+      {% assign pub-talk = publication.talk %}
+      {% assign pub-paper = publication.paper %}
+      {% assign pub-code = publication.code %}
+      <div class="card-links" style="display: block; margin-top: 30px;">
+        {% include publication-links.html
+          poster=pub-poster
+          slides=pub-slides
+          talk=pub-talk
+          paper=pub-paper
+          code=pub-code
+        %}
       </div>
     </div>
-	</div>
-	
-	<div class="row">
-	  {{ page.date | date: "%d.%m.%y" }}
-	</div>
+
+    
+  </div>
+
+
   </header>
 
-  <div class="page-content">
-    <div class="row">
+  <div class="page-content" style="padding: 0">
+    <div class="row" style="justify-content: center;">
       <div class="column column-66">
-            {{ content }}
-
-
-    <hr />
-
+          {{ content }}
+          <hr/>
       </div>
     </div>
   </div>
-
 
 </article>

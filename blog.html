@@ -1,13 +1,14 @@
 ---
 layout: default
 title: SRI Blog
+usemathjax: true
 ---
 
 <article class="page">
 
   <header class="page-header container">
   <div class="row">
-    <div class="column column-66">
+    <div class="column column-90">
       <h1 class="page-title">{{ page.title | escape }}</h1>
     </div>
   </div>
@@ -15,32 +16,36 @@ title: SRI Blog
 
 
   <div class="page-content container">
-    <div class="row">
-      <div class="column column-66">
+    <div class="row">   
+      <div class="column column-90">
 
       	<ul class="newspost-list">
           {%- for blogpost in site.blogposts reversed -%}
           <li>
+          <div style="box-shadow: 0.2rem 0.4rem 0.8rem 0.2rem rgb(0 0 0 / 7%);
+          border-bottom: 1px solid rgba(0,0,0,0.1); width:90%">
 
-            <div class="newspost-meta">{{ blogpost.date | date: "%d.%m.%y" }}</div>
+            <div style="float:left; width:25%; margin-top: 2%">
+              <img src="{{ blogpost.thumbnail | prepend: '/assets/blog/' | relative_url}}" style="width:80%; padding: 10%"/>
+            </div>
 
-              {{blogpost.tldr}}
-              
-              {% if blogpost.thumbnail %}
-              HAS IMAGE
-              <div class="newspost-image">
-
-              {% if blogpost.link %}  
-              <a href="{{ blogpost.link }}">
-              {% endif %}
-                <img src="{{ blogpost.thumbnail | prepend: '/assets/blog/' | relative_url}}"/>
-              {% if blogpost.link %}  
-              </a>
-              {% endif %}
+            <div style="float:right; width:75%; margin-top: 2%">
+              <div style="font-size: 28px; font-weight: bold;">
+                <a href="{{ blogpost.id | relative_url}}">{{blogpost.title}}</a>
               </div>
-              {% endif %}
-            
-            <!-- <div class="newspost-content">{{ blogpost.content}}</div> -->
+              
+              <div style="font-style: italic">
+                {% include get-linked-persons.html persons=blogpost.blogpost-authors %}
+              </div>
+
+              <p style="text-align:justify; padding:3%; padding-right: 10%;">
+
+                {{blogpost.tldr}}
+              
+              </p>
+            </div>
+
+          </div>
           </li>
           {%- endfor -%}
         </ul>
