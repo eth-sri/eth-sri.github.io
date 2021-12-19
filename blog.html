@@ -25,21 +25,23 @@ permalink: /blog/index.html
 
             <div class="newspost-meta">{{ blogpost.date | date: "%d.%m.%y" }}</div>
 
-              {% if blogpost.image %}
+              {{blogpost.excerpt}}
+              
+              {% if blogpost.thumbnail %}
               HAS IMAGE
               <div class="newspost-image">
 
               {% if blogpost.link %}  
               <a href="{{ blogpost.link }}">
               {% endif %}
-                <img src="{{ blogpost.image | prepend: '/assets/blog/' | relative_url}}"/>
+                <img src="{{ blogpost.thumbnail | prepend: '/assets/blog/' | relative_url}}"/>
               {% if blogpost.link %}  
               </a>
               {% endif %}
               </div>
               {% endif %}
             
-            <div class="newspost-content">{{ blogpost.content}}</div>
+            <!-- <div class="newspost-content">{{ blogpost.content}}</div> -->
           </li>
           {%- endfor -%}
         </ul>
