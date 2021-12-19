@@ -1,9 +1,9 @@
 ---
 layout: blogpost
 category: paper
-paper_ref: bielik2015scalable
+pub-ref: bielik2015scalable
 title: "How to DP?"
-blogpost_authors: "Benjamin Bichsel"
+blogpost-authors: "Benjamin Bichsel"
 date:   2022-09-01
 thumbnail: thumb3.png
 ---
