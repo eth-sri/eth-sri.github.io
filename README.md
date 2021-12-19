@@ -54,7 +54,7 @@ At the top of each content file is the front matter, which is YAML style data st
 
 ```yaml
 ---
-layout: post
+layout: newspost
 date:   2012-06-01
 category: news
 ---
@@ -189,9 +189,9 @@ See the [Research Projects](#research-projects) section for existing project ref
 
 
 ### News
-Where to edit: `\_posts`
+Where to edit: `\_newsposts`
 
-To add a news item, simply add it as a file in the `\_posts` folder. Make sure to name the file to include the appropriate date, so that the item appears in the right spot on the news feed.
+To add a news item, simply add it as a file in the `\_newsposts` folder. Make sure to name the file to include the appropriate date, so that the item appears in the right spot on the news feed.
 
 
 ### Media
