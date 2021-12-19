@@ -1,7 +1,7 @@
 ---
 layout: blogpost
 category: paper
-pub-ref: bielik2015scalable
+pub-ref: mueller2021precise
 title: "Improving neural network certification"
 blogpost-authors: "Mark Niklas Müller" 
 date:   2021-09-01

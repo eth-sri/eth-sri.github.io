@@ -1,7 +1,7 @@
 ---
 layout: blogpost
 category: paper
-pub-ref: bielik2015scalable
+pub-ref: bichsel2021dpsniper
 usemathjax: true
 title: "DP is sometimes not really DP"
 blogpost-authors: "Benjamin Bichsel, Samuel Steffen"
