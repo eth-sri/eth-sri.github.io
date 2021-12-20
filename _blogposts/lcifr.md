@@ -3,7 +3,7 @@ layout: blogpost
 category: paper
 pub-ref: ruoss2020lcifr
 title: "How to enforce individual fairness?"
-blogpost-authors: "Mislav Balunovic" 
+blogpost-authors: "Mislav Balunovic, Mislav Balunovic, Martin Vechev, Mislav Balunovic, Nikola Jovanović, Anian Ruoss" 
 date:   2020-09-01
 thumbnail: thumb1.svg
 usemathjax: true
@@ -22,12 +22,14 @@ tldr: >
 
 ## Introduction
 
-
-The increased use of machine learning in sensitive domains (e.g., crime risk
-assessment~\cite{brennan2009compas}, ad targeting~\cite{datta2015automated},
-and credit scoring~\cite{khandani2010consumer}) has raised concerns that
-methods learning from data can reinforce human bias, discriminate, and
-lack fairness~\cite{sweeney2013discrimination,bolukbasi2016man,barocas2016big}.
+This blog post is based on our recent work
+[LCIFR](/publications/{{page.pub-ref}}), presented at [NeurIPS
+2020](https://neurips.cc/Conferences/2020). The increased use of machine
+learning in sensitive domains (e.g., crime risk
+assessment~\cite{brennan2009compas}, ad targeting~\cite{datta2015automated}, and
+credit scoring~\cite{khandani2010consumer}) has raised concerns that methods
+learning from data can reinforce human bias, discriminate, and lack
+fairness~\cite{sweeney2013discrimination,bolukbasi2016man,barocas2016big}.
 
 		This is some block
 		This is some block
@@ -104,6 +106,9 @@ remainder of this work.
 
 The goal of treating similar individuals as similarly as possible can then be
 formulated as finding a classifier $M$ which maximizes
+
+[comment]: <> (There must be an empty row before and after a non-inline math block ($$) otherwise it doesn't work) 
+
 $$
 \begin{equation*}
     \quad \mathbb{E}_{x \sim D} \left[
@@ -116,9 +121,9 @@ Here is some another random equation
 
 $$
 \begin{align*}
-  & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
-  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
-  & (x_1, \ldots, x_n) \left( \begin{array}{ccc}
+   \phi(x,y) &= \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right) \\
+  &= \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) \\ 
+  &= (x_1, \ldots, x_n) \left( \begin{array}{ccc}
       \phi(e_1, e_1) & \cdots & \phi(e_1, e_n) \\
       \vdots & \ddots & \vdots \\
       \phi(e_n, e_1) & \cdots & \phi(e_n, e_n)
