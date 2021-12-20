@@ -17,7 +17,7 @@ usemathjax: true
 
   <div class="page-content container">
     <div class="row">   
-      <div class="column column-90">
+      <div class="column column-80">
 
       	<ul class="newspost-list">
           {%- for blogpost in site.blogposts reversed -%}
@@ -34,7 +34,7 @@ usemathjax: true
                 <a href="{{ blogpost.id | relative_url}}">{{blogpost.title}}</a>
               </div>
               
-              <div style="font-style: italic">
+              <div style="font-style: italic; padding-right: 10%;">
                 {% include get-linked-persons.html persons=blogpost.blogpost-authors %}
               </div>
 
