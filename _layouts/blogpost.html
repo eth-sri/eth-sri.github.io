@@ -4,38 +4,44 @@ layout: default
 <article class="page">
 
   <header class="page-header container">
-	<img src="{{ page.thumbnail | prepend: '/assets/blog/' | relative_url}}" style="display: block; width: 20%; margin: auto;"/>
+	<img src="{{ page.thumbnail | prepend: '/assets/blog/' | relative_url}}" style="display: block; width: 25%; margin: auto;"/>
 	
 	<div class="row">
 		<div class="column column-66" style="display: block; margin: auto;">
 			<h1 class="page-title" style="text-align: center">{{ page.title | escape }}</h1>
-			<h3 class="page-subtitle">
-        {% include get-linked-persons.html persons=page.blogpost-authors %} 
-      </h3>
-			<h4 class="page-subtitle">
-        {{ page.date | date: "%B %-d, %Y" }}
-      </h4>
+
+      <div style="display: flex; margin: 1% 2%">
+        <div style="flex: 0.7; margin-right: 3%">
+          <h3 class="page-subtitle">
+            {% include get-linked-persons.html persons=page.blogpost-authors %} 
+          </h3>
+          <h4 class="page-subtitle">
+            {{ page.date | date: "%B %-d, %Y" }}
+          </h4>
+        </div>
+  
+        <div class="" style="margin-left: auto;">
+          {% assign publication = site.publications | where:"ref", page.pub-ref | first %}
+          {% assign pub-poster = publication.poster %}
+          {% assign pub-slides = publication.slides %}
+          {% assign pub-talk = publication.talk %}
+          {% assign pub-paper = publication.paper %}
+          {% assign pub-code = publication.code %}
+          <div class="card-links" style="margin-left: auto; margin-right: 0px;">
+            {% include publication-links.html
+              poster=pub-poster
+              slides=pub-slides
+              talk=pub-talk
+              paper=pub-paper
+              code=pub-code
+            %}
+          </div>
+        </div>
+      </div>
 
       <div class="tldr"> {{page.tldr}} </div>
 
-      {% assign publication = site.publications | where:"ref", page.pub-ref | first %}
-      {% assign pub-poster = publication.poster %}
-      {% assign pub-slides = publication.slides %}
-      {% assign pub-talk = publication.talk %}
-      {% assign pub-paper = publication.paper %}
-      {% assign pub-code = publication.code %}
-      <div class="card-links" style="display: block; margin-top: 30px;">
-        {% include publication-links.html
-          poster=pub-poster
-          slides=pub-slides
-          talk=pub-talk
-          paper=pub-paper
-          code=pub-code
-        %}
-      </div>
     </div>
-
-    
   </div>
 
 
@@ -43,7 +49,7 @@ layout: default
 
   <div class="page-content" style="padding: 0">
     <div class="row" style="justify-content: center;">
-      <div class="column column-66">
+      <div class="column column-66" style="justify-content: center;">
           {{ content }}
           <hr/>
       </div>
