@@ -14,7 +14,7 @@ bibtex: '@misc{müller2021precise,
       archivePrefix={arXiv},
       primaryClass={cs.AI}}'
 paper: https://files.sri.inf.ethz.ch/website/papers/mueller2021precise.pdf
-#slides: https://files.sri.inf.ethz.ch/website/slides/iclr2020-colt.pdf
+slides: https://files.sri.inf.ethz.ch/website/slides/POPL2022_prima.pdf
 #image: assets/images/colt.png
 #talk: https://iclr.cc/virtual_2020/poster_SJxSDxrKDr.html
 ---
