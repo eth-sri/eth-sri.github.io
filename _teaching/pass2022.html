@@ -1,0 +1,404 @@
+---
+title: Program Analysis for System Security and Reliability
+ref: pass2022
+description: Graduate course illustrating how to develop and apply program analysis and machine learning methods for securing modern software.
+semester: Spring 2022
+number: 263-2925-00L
+lecturer: Prof. Dr. Martin Vechev
+head-ta: Maximilian Baader
+ta: Mislav Balunovic, Jingxuan He, Nikola Jovanović, Luca Beurer-Kellner
+assistants:
+edoz: http://www.vvz.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?lerneinheitId=159153&semkez=2022S&ansicht=LEHRVERANSTALTUNGEN&lang=en
+session-time-place:
+lecture-time-place: Tue 16-18,
+exercise-time-place: Thu 13-14,
+image: assets/images/pass.png
+credits: 7
+
+---
+
+<h2>Overview</h2>
+
+<p>Security issues in modern systems (blockchains, datacenters, deep learning, etc.) result in billions of losses due to hacks and system downtime. This course introduces fundamental techniques (ranging from automated analysis, machine learning, synthesis, zero-knowledge and their combinations) that can be applied in practice so to build more secure and reliable modern systems. All of these techniques are heavily used in practice and form the basis of some of the most the advanced analysis engines built by successful ETH spin-offs (<a target="_blank" href="https://chainsecurity.com">ChainSecurity</a> (acquired by PwC) and <a target="_blank" href="https://deepcode.ai">DeepCode</a> (acquired by Snyk, a billion dollar security company), as well as other world-class systems.
+</p>
+
+<p><b>Objectives</b></br>
+<ol>
+  <li> Understand the fundamental techniques used to create modern security and reliability analysis engines that are used worldwide.</li>
+  <li> Understand how symbolic techniques are combined with machine learning (e.g., deep learning, reinforcement learning) so to create new kinds of learning-based analyzers</li>
+  <li> Understand how to quantify and fix security and reliability issues in modern deep learning models.</li> 
+  <li> Understand open research questions from both theoretical and practical perspectives. </li>
+</ol>
+</p>
+
+<p><b>Part I: Fundamentals of Automated Security Analysis with Applications to Smart Contracts</b></br>
+
+<ul>
+	<li> We will introduce fundamental analysis methods: fuzzing (including combinations with reinforcement learning), symbolic execution, predication abstraction, and Datalog. </li>
+	<li> We will show how these methods can be used to build some of the most popular, state-of-the-art automated security analysis and verification systems for blockchain smart contracts (e.g., <a target="_blank" href="https://securify.ch">Securify</a>, <a target="_blank" href="https://verx.ch">VerX</a>).</li>
+</ul>
+
+<p><b>Part II: Security and Reliability of Datacenter and Network Programs </b></br>
+
+<ul>
+	<li>We will show how to ensure that datacenters and ISPs are secured using declarative reasoning methods (e.g., Datalog) as introduced in Part I. </li>
+	<li>We will also show how to automatically synthesize secure configurations (e.g. using <a target="_blank" href="https://synet.ethz.ch/">SyNET</a> and <a target="_blank" href="https://netcomplete.ethz.ch/">NetComplete</a>) which lead to desirable behaviors, thus automating the job of the network operator and avoiding critical errors.</li>
+</ul>
+
+<p><b>Part III: Machine Learning for Automated Security Analysis and Repair</b></br>
+<ul>
+	<li>We will illustrate how to automatically learn interpretable models expressed in Datalog from billions of lines of code and fixes to this code, which form the basis of new kinds of security analyzers.</li>
+	<li>We will study how to automatically learn to identify security vulnerabilities related to the handling of untrusted inputs (cross-Site scripting, SQL injection, path traversal, remote code execution) from large codebases.</li>
+	<li> We will also cover how to use machine learning models in order to automatically repair software errors (essentially a step towards the machine writing code).</li>
+</ul>
+
+<p><b>Part IV: Security and Reliability of Deep Learning Models</b></br>
+<ul>
+	<li>We will study (black box) methods to quantify the robustness of large scale deep learning models. </li>
+	<li>We will study methods to patch and fix deep learning models.</li>
+	<li>We will study methods to monitor the online behavior of deep learning models.</li>
+</ul>
+
+<h2>Course Project</h2>
+The course involve a hands-on programming project where the methods studied in the class will be applied. You can work on the project in a group consisting of at most 2 students. Registration is closed.
+<br><br>
+The description of the course project can be found <a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/project/pass2021-project-description.pdf">here</a>.
+<br><br>
+Deadlines:
+
+<table centering border="0" width="50%" cellspacing="0" cellpadding="0">
+<tr><td>Group registration</td><td>6PM CEST, March 28, 2021</td></tr>
+<tr><td>Project announcement</td><td>6PM CEST, March 30, 2021</td></tr>
+<tr><td>Preliminary deadline (optional)</td><td>6PM CEST, May 16, 2021</td></tr>
+<tr><td>Preliminary feedback </td><td>6PM CEST, May 23, 2021</td></tr>
+<tr><td>Final deadline</td><td>6PM CEST, June 6, 2021</td></tr>
+</table>
+
+
+<h2>Lectures</h2>
+
+<p>Use your NETHZ account to access the slides.</p>
+
+<table centering border="0" width="100%" cellspacing="0" cellpadding="0">
+	<th width=5%>No.</th> <th width="8%">Date</th><th width=41%>Content</th><th width="10%">Slides</th><th width=10%>Exercises</th><th width=10%>Solutions</th><th width=10%> Recording</th>
+
+	<tr>
+		<td>1</td><td>Feb 23</td><td>Introduction</td>
+		<td> 
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/slides/L1-intro.pdf" class="pdf" title="Introduction">
+				<img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF">
+			</a>
+		</td>
+		<td> 
+			No Exercise
+		</td>
+		<td> 
+			&nbsp;
+		</td>
+		<td> 
+			<a href="https://polybox.ethz.ch/index.php/s/gOi2yc1y6qGDC8X" target="_blank">
+				<img class="svg-icon" src="/assets/icons/icon-video.svg">
+			</a>
+		</td>
+	</tr>
+
+	<tr>
+		<td>2</td><td>Mar 2</td><td>Datalog and static analysis</td>
+		<td> 
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/slides/L2-datalog-static-analysis.pdf" class="pdf" title="Datalog and static analysis">
+				<img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF">
+			</a>
+		</td>
+		<td> 
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/exercises/Exercise01.pdf" class="pdf" title="Exercise 1: Static Analysis in Datalog">
+				<img src="/assets/icons/icon-pdf.svg" class="svg-icon" border="0" alt="PDF"></a>
+		</td>
+		<td> 
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/exercises/Solution01.pdf" class="pdf" title="Solution to Exercise 1: Static Analysis in Datalog"> 
+				<img src="/assets/icons/icon-pdf.svg" class="svg-icon" border="0" alt=PDF>
+			</a>
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/exercises/Resources01.zip" class="pdf" title="Resources to Exercise1">
+				<img src="/assets/icons/icon-download.svg" class="svg-icon" alt="PDF" border="0">
+			</a>
+		</td>
+		<td>
+			<a href="https://polybox.ethz.ch/index.php/s/1JxGuPfXshNm5nR" target="_blank">
+				<img class="svg-icon" src="/assets/icons/icon-video.svg">
+			</a>
+		</td>
+	</tr>
+
+	<tr>
+		<td>3</td><td>Mar 9</td><td>Fuzzing</td>
+		<td> 
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/slides/L3-fuzzing.pdf" class="pdf" title="Fuzzing">
+				<img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF">
+			</a>
+		</td>
+		<td> 
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/exercises/Exercise02.pdf" class="pdf" title="Exercise 2: Smart Contract Fuzzing">
+				<img src="/assets/icons/icon-pdf.svg" class="svg-icon" border="0" alt="PDF">
+			</a>
+		</td>
+		<td> 
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/exercises/Solution02.pdf" class="pdf" title="Solution to Exercise 2: Smart Contract Fuzzing"> 
+				<img src="/assets/icons/icon-pdf.svg" class="svg-icon" border="0" alt=PDF>
+			</a>
+		</td>
+		<td> 
+			<a href="https://polybox.ethz.ch/index.php/s/J1ZZeoH7JI5tdLb" target="_blank">
+				<img class="svg-icon" src="/assets/icons/icon-video.svg">
+			</a>
+		</td>
+	</tr>
+
+	<tr>
+		<td>4</td><td>Mar 16</td><td>Linear Temporal Logic</td>
+		<td> 
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/slides/L4-ltl.pdf" class="pdf" title="Linear Temporal Logic">
+				<img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF">
+			</a>
+		</td>
+		<td> 
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/exercises/Exercise03.pdf" class="pdf" title="Exercise 3: Linear Temporal Logic">
+				<img src="/assets/icons/icon-pdf.svg" class="svg-icon" border="0" alt="PDF">
+			</a>
+		</td>
+		<td> 
+      <a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/exercises/Solution3.pdf" class="pdf" title="Solution 3: Linear Temporal Logic">
+				<img src="/assets/icons/icon-pdf.svg" class="svg-icon" border="0" alt="PDF">
+			</a>
+		</td>
+		<td> 
+			<a href="https://polybox.ethz.ch/index.php/s/jnZwBP3RxeQxgct" target="_blank">
+				<img class="svg-icon" src="/assets/icons/icon-video.svg">
+			</a>
+		</td>
+	</tr>
+  
+    <tr>
+		<td>5</td><td>Mar 23</td><td>Safety verification</td>
+		<td> 
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/slides/L5-verification.pdf" class="pdf" title="Safety verification">
+				<img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF">
+			</a>
+		</td>
+		<td> 
+			No Exercise
+		</td>
+		<td> 
+			&nbsp;
+		</td>
+		<td> 
+			<a href="https://polybox.ethz.ch/index.php/s/F9LY6b6Y3wUyny9" target="_blank">
+				<img class="svg-icon" src="/assets/icons/icon-video.svg">
+			</a>
+		</td>
+	</tr>
+
+	<tr>
+		<td>6</td><td>Mar 30</td><td>Zkay</td>
+		<td> 
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/slides/L6-zkay.pdf" class="pdf" title="Zkay">
+				<img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF">
+			</a>
+		</td>
+		<td> 
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/exercises/Exercise04.pdf" class="pdf" title="Exercise 4: Zero-Knowledge Proofs"> 
+				<img src="/assets/icons/icon-pdf.svg" class="svg-icon" border="0" alt=PDF>
+			</a>
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/exercises/Exercise04.zip" class="pdf" title="Resources to Exercise 4">
+				<img src="/assets/icons/icon-download.svg" class="svg-icon" alt="PDF" border="0">
+			</a>
+		</td>
+		<td> 
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/exercises/Solution04.pdf" class="pdf" title="Solution to Exercise 4: Zero-Knowledge Proofs"> 
+				<img src="/assets/icons/icon-pdf.svg" class="svg-icon" border="0" alt=PDF>
+			</a>
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/exercises/Solution04.zip" class="pdf" title="Resources to Solution 4">
+				<img src="/assets/icons/icon-download.svg" class="svg-icon" alt="PDF" border="0">
+			</a>
+		</td>
+		<td> 
+			<a href="https://polybox.ethz.ch/index.php/s/3wVaojIF2nLd4eY" target="_blank">
+				<img class="svg-icon" src="/assets/icons/icon-video.svg">
+			</a>
+		</td>
+	</tr>
+
+	<tr>
+		<td>7</td><td>Apr 13</td><td>Network analysis</td>
+		<td> 
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/slides/L7-network-analysis.pdf" class="pdf" title="Network analysis">
+				<img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF">
+			</a>
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/slides/L7-code.tar.bz2" class="pdf" title="Resources to Lecture 7">
+				<img src="/assets/icons/icon-download.svg" class="svg-icon" alt="PDF" border="0">
+			</a>
+		</td>
+		<td> 
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/exercises/Exercise05.pdf" class="pdf" title="Exercise 5: Network Verification"> 
+				<img src="/assets/icons/icon-pdf.svg" class="svg-icon" border="0" alt=PDF>
+			</a>
+		</td>
+		<td> 
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/exercises/Solution05.pdf" class="pdf" title="Solution to Exercise 5: Network Verification">
+				<img src="/assets/icons/icon-pdf.svg" class="svg-icon" border="0" alt=PDF>
+			</a>
+		</td>
+		<td> 
+			<a href="https://polybox.ethz.ch/index.php/s/iddBKklf2HHSWs4" target="_blank">
+				<img class="svg-icon" src="/assets/icons/icon-video.svg">
+			</a>
+		</td>
+	</tr>
+
+	<tr>
+		<td>8</td><td>Apr 20</td><td>Network synthesis</td>
+		<td> 
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/slides/L8-network-synthesis.pdf" class="pdf" title="Network synthesis">
+				<img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF">
+			</a>
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/slides/L8-code.tar.bz2" class="pdf" title="Resources to Lecture 8">
+				<img src="/assets/icons/icon-download.svg" class="svg-icon" alt="PDF" border="0">
+			</a>
+		</td>
+		<td>
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/exercises/Exercise06.pdf" class="pdf" title="Exercise 6: Network synthesis"> 
+				<img src="/assets/icons/icon-pdf.svg" class="svg-icon" border="0" alt=PDF>
+			</a>
+		</td>
+		<td> 
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/exercises/Solution06.pdf" class="pdf" title="Solution to Exercise 6: Network synthesis">
+				<img src="/assets/icons/icon-pdf.svg" class="svg-icon" border="0" alt=PDF>
+			</a>
+
+		</td>
+		<td> 
+			<a href="https://polybox.ethz.ch/index.php/s/gaibugW3bxmGAox" target="_blank">
+				<img class="svg-icon" src="/assets/icons/icon-video.svg">
+			</a>
+		</td>
+	</tr>
+
+	<tr>
+		<td>9</td><td>Apr 27</td><td>Datalog at DeepCode</td>
+		<td> 
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/slides/L9-deepcode.pdf" class="pdf" title="Datalog at DeepCode">
+				<img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF">
+			</a>
+		</td>
+		<td>
+			No Exercise
+		</td>
+		<td> 
+			&nbsp;
+		</td>
+		<td> 
+			<a href="https://polybox.ethz.ch/index.php/s/p4P9HDuATSrWKwZ" target="_blank">
+				<img class="svg-icon" src="/assets/icons/icon-video.svg">
+			</a>
+		</td>
+	</tr>
+
+	<tr>
+		<td>10</td><td>May 4</td><td>Machine Learning for Program Analysis</td>
+		<td> 
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/slides/L10-learning.pdf" class="pdf" title="Machine Learning for Program Analysis">
+				<img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF">
+			</a>
+		</td>
+		<td>
+			No Exercise
+		</td>
+		<td> 
+			&nbsp;
+		</td>
+		<td> 
+			<a href="https://polybox.ethz.ch/index.php/s/ZW72IL3pUmoP3Zk" target="_blank">
+				<img class="svg-icon" src="/assets/icons/icon-video.svg">
+			</a>
+		</td>
+	</tr>
+
+	<tr>
+		<td>11</td><td>May 11</td><td>Machine Learning for Bug Detection & Fix</td>
+		<td> 
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/slides/L11-detection-fix.pdf" class="pdf" title="Machine Learning for Bug Detection & Fix">
+				<img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF">
+			</a>
+		</td>
+		<td>
+			No Exercise
+		</td>
+		<td> 
+			&nbsp;
+		</td>
+		<td> 
+			<a href="https://polybox.ethz.ch/index.php/s/EnCMaJANCajGR67" target="_blank">
+				<img class="svg-icon" src="/assets/icons/icon-video.svg">
+			</a>
+		</td>
+	</tr>
+
+	<tr>
+		<td>12</td><td>May 18</td><td>Black-Box Model Robustness</td>
+		<td> 
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/slides/L12-ai.pdf" class="pdf" title="Black-Box Model Robustness">
+				<img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF">
+			</a>
+		</td>
+		<td>
+      		<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/exercises/Exercise7.pdf" class="pdf" title="Exercise 7: Black-Box Model Robustness"> 
+				<img src="/assets/icons/icon-pdf.svg" class="svg-icon" border="0" alt=PDF>
+			</a>
+		</td>
+		<td> 
+      <a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/exercises/Solution7.pdf" class="pdf" title="Solution 7: Black-Box Model Robustness"> 
+				<img src="/assets/icons/icon-pdf.svg" class="svg-icon" border="0" alt=PDF>
+			</a>
+		</td>
+		<td> 
+			<a href="https://polybox.ethz.ch/index.php/s/kNtRkPIgv7gTmWl" target="_blank">
+				<img class="svg-icon" src="/assets/icons/icon-video.svg">
+			</a>
+		</td>
+	</tr>
+
+	<tr>
+		<td>13</td><td>May 25</td><td>Blind Spots and Model Patching</td>
+		<td> 
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/slides/L13-ai.pdf" class="pdf" title="Blind Spots and Model Patching">
+				<img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF">
+			</a>
+		</td>
+		<td>
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/exercises/Exercise08.pdf" class="pdf" title="Exercise 8: Blind Spots & Model Patching"> 
+				<img src="/assets/icons/icon-pdf.svg" class="svg-icon" border="0" alt=PDF>
+			</a>
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/exercises/exercise8.zip" class="pdf" title="Exercise 8: Jupyter Notebook">
+				<img src="/assets/icons/icon-download.svg" class="svg-icon" alt="ZIP" border="0">
+			</a>
+		</td>
+		<td> 
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/exercises/Solution08.pdf" class="pdf" title="Solution 8: Blind Spots & Model Patching"> 
+				<img src="/assets/icons/icon-pdf.svg" class="svg-icon" border="0" alt=PDF>
+			</a>
+		</td>
+		</td>
+		<td> 
+			<a href="https://polybox.ethz.ch/index.php/s/2dahx1CoxHHNBw3" target="_blank">
+				<img class="svg-icon" src="/assets/icons/icon-video.svg">
+			</a>
+		</td>
+	</tr>
+
+
+</table>
+
+
+<h2>Past exams</h2>
+
+The exam from last year is available <a href="https://files.sri.inf.ethz.ch/website/teaching/pass2021/exam-solutions2020.pdf">here</a>.
+
+
