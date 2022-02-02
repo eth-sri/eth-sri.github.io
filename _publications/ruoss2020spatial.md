@@ -1,7 +1,7 @@
 ---
 ref: ruoss2020spatial
 title: Efficient Certification of Spatial Robustness
-authors: Anian Ruoss, Maximilian Baader, Mislav Balunovic, Martin Vechev
+authors: Anian Ruoss, Maximilian Baader, Mislav Balunović, Martin Vechev
 year: 2021
 month: 2
 venue: AAAI
@@ -9,7 +9,7 @@ projects: safeai
 awards:
 bibtex: '@inproceedings{ruoss2020spatial,
     title = {Efficient Certification of Spatial Robustness},
-    author = {Ruoss, Anian and Baader, Maximilian and Balunovic, Mislav and Vechev, Martin},
+    author = {Ruoss, Anian and Baader, Maximilian and Balunović, Mislav and Vechev, Martin},
 	booktitle = {Thirty-Fifth {AAAI} Conference on Artificial Intelligence, {AAAI} 2021},
     year = {2021},
     url = {https://arxiv.org/abs/2009.09318}

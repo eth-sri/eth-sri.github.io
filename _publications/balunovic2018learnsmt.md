@@ -1,12 +1,12 @@
 ---
 ref: balunovic2018learnsmt
 title: Learning to Solve SMT Formulas
-authors: Mislav Balunovic, Pavol Bielik, Martin Vechev
+authors: Mislav Balunović, Pavol Bielik, Martin Vechev
 year: 2018
 month: 12
 bibtex: '@incollection{fastSMT,
   title = {Learning to Solve SMT Formulas},
-  author = {Balunovic, Mislav and Bielik, Pavol and Vechev, Martin},
+  author = {Balunović, Mislav and Bielik, Pavol and Vechev, Martin},
   booktitle = {Advances in Neural Information Processing Systems 31},
   editor = {S. Bengio and H. Wallach and H. Larochelle and K. Grauman and N. Cesa-Bianchi and R. Garnett},
   pages = {10337--10348},

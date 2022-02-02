@@ -1,14 +1,14 @@
 ---
 ref: fischer2019dl2
 title: "DL2: Training and Querying Neural Networks with Logic"
-authors: Marc Fischer, Mislav Balunovic, Dana Drachsler-Cohen, Timon Gehr, Ce Zhang, Martin Vechev
+authors: Marc Fischer, Mislav Balunović, Dana Drachsler-Cohen, Timon Gehr, Ce Zhang, Martin Vechev
 year: 2019
 month: 06
 venue: ICML
 projects: safeai
 bibtex: '@inproceedings{fischer2019dl2,
   title={DL2: Training and Querying Neural Networks with Logic},
-  author={Marc Fischer, Mislav Balunovic, Dana Drachsler-Cohen, Timon Gehr, Ce Zhang, Martin Vechev},
+  author={Marc Fischer, Mislav Balunović, Dana Drachsler-Cohen, Timon Gehr, Ce Zhang, Martin Vechev},
   booktitle={International Conference on Machine Learning},
   year={2019}}'
 paper: https://files.sri.inf.ethz.ch/website/papers/icml19-dl2.pdf
