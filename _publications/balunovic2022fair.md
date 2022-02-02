@@ -2,9 +2,9 @@
 ref: balunovic2021fair
 title: "Fair Normalizing Flows"
 authors: Mislav Balunovic, Anian Ruoss, Martin Vechev
-year: 2021
-month: 6
-venue: arXiv
+year: 2022
+month: 4
+venue: ICLR
 projects: safeai
 bibtex: '@misc{balunović2021fair,
       title={Fair Normalizing Flows}, 
