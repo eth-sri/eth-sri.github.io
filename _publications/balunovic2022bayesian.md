@@ -1,7 +1,7 @@
 ---
 ref: balunovic2021bayesian
 title: "Bayesian Framework for Gradient Leakage"
-authors: Mislav Balunovic, Dimitar I. Dimitrov, Robin Staab, Martin Vechev
+authors: Mislav Balunović, Dimitar I. Dimitrov, Robin Staab, Martin Vechev
 year: 2022
 month: 4
 venue: ICLR

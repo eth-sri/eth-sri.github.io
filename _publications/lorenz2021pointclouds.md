@@ -1,7 +1,7 @@
 ---
 ref: lorenz2021pointclouds
 title: Robustness Certification for Point Cloud Models
-authors: Tobias Lorenz, Anian Ruoss, Mislav Balunovic, Gagandeep Singh, Martin Vechev
+authors: Tobias Lorenz, Anian Ruoss, Mislav Balunović, Gagandeep Singh, Martin Vechev
 year: 2021
 month: 10
 venue: ICCV
@@ -9,7 +9,7 @@ projects: safeai
 awards:
 bibtex: '@inproceedings{lorenz2021pointclouds,
     title = {Robustness Certification for Point Cloud Models},
-    author = {Lorenz, Tobias and Ruoss, Anian and Balunovic, Mislav and Singh, Gagandeep and Vechev, Martin},
+    author = {Lorenz, Tobias and Ruoss, Anian and Balunović, Mislav and Singh, Gagandeep and Vechev, Martin},
 	booktitle = {2021 {IEEE/CVF} International Conference on Computer Vision, {ICCV} 2021},
     year = {2021},
     url = {https://arxiv.org/abs/2103.16652}
