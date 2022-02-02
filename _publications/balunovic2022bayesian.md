@@ -2,9 +2,9 @@
 ref: balunovic2021bayesian
 title: "Bayesian Framework for Gradient Leakage"
 authors: Mislav Balunovic, Dimitar I. Dimitrov, Robin Staab, Martin Vechev
-year: 2021
-month: 11
-venue: NeurIPS Workshop on New Frontiers in Federated Learning
+year: 2022
+month: 4
+venue: ICLR
 projects: safeai
 bibtex: '@misc{balunovic2021bayesian,
       title={Bayesian Framework for Gradient Leakage}, 
