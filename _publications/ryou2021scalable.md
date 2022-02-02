@@ -1,7 +1,7 @@
 ---
 ref: ryou2021scalable
 title: Scalable Polyhedral Verification of Recurrent Neural Networks
-authors: Wonryong Ryou, Jiayu Chen, Mislav Balunovic, Gagandeep Singh, Andrei Dan, Martin Vechev
+authors: Wonryong Ryou, Jiayu Chen, Mislav Balunović, Gagandeep Singh, Andrei Dan, Martin Vechev
 year: 2021
 month: 07
 venue: CAV
@@ -9,7 +9,7 @@ projects: safeai
 awards:
 bibtex: '@inproceedings{ryou2021scalable,
   title={Scalable Polyhedral Verification of Recurrent Neural Networks},
-  author={Wonryong Ryou and Jiayu Chen and Mislav Balunovic and Gagandeep Singh and Andrei Dan and Martin Vechev},
+  author={Wonryong Ryou and Jiayu Chen and Mislav Balunović and Gagandeep Singh and Andrei Dan and Martin Vechev},
   booktitle={International Conference on Computer Aided Verification},
   year={2021},
   organization={Springer}}'
