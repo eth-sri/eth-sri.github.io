@@ -7,7 +7,7 @@
   <div class="card card-vertical">
     
     <div class="card-img">
-      {% if project.image %} 
+      {% if project.image and include.img != "none" %} 
       	<a href="{{ project.url | relative_url}}">
       		<img src="{{ project.image | prepend: '/assets/projects/' | relative_url}}"/>
       	</a>
