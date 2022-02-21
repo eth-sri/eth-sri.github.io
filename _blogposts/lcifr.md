@@ -53,7 +53,7 @@ To define similarity of two individuals, we allow both categorical (e.g. individ
 ![](/assets/blog/lcifr/lcifr_overview.gif){: .blog-img-100}
 
 {:.image-caption}
-***Figure 1.** Conceptual overview of our framework.The left side shows the component corresponding to the data producer who learns an encoder $f_\theta$ which maps the entire set of individuals that are similar to individual $x$, according to the similarity notion $\phi$, to points near $z = f_\theta(x)$ in the latent space. The data producer then computes an $\ell_\infty$-bounding box around the latent set of similar individuals with center $z = f_\theta(x)$ and radius $\epsilon$ and passes it to the data consumer.*
+***Overiew of LCIFR.** Conceptual overview of our framework.The left side shows the component corresponding to the data producer who learns an encoder $f_\theta$ which maps the entire set of individuals that are similar to individual $x$, according to the similarity notion $\phi$, to points near $z = f_\theta(x)$ in the latent space. The data producer then computes an $\ell_\infty$-bounding box around the latent set of similar individuals with center $z = f_\theta(x)$ and radius $\epsilon$ and passes it to the data consumer.*
 
 <!-- We show overview of our approach in Figure 1. -->
 <!-- Given some fairness constraint, we want to train an individually fair representation and use it to -->
@@ -92,7 +92,7 @@ our results indicate that LCIFR is highly effective in providing certificates of
 ![](/assets/blog/lcifr/lcifr_results.svg){: .blog-img-50}
 
 {:.image-caption}
-***Figure 2.** Experimental evaluation of LCIFR on several common fairness datasets using Noise constraint (more details in the paper). For each dataset, LCIFR can train a classifier with high utility and high certified individual fairness.*
+***Experimental results.** Experimental evaluation of LCIFR on several common fairness datasets using Noise constraint (more details in the paper). For each dataset, LCIFR can train a classifier with high utility and high certified individual fairness.*
 
 ### Summary
 
