@@ -7,13 +7,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   viewBox="0 0 26.899437 32.5"
+   viewBox="0 0 9.9079927 9.9088879"
    version="1.1"
    id="svg4659"
-   sodipodi:docname="icon-blogpost.svg"
+   sodipodi:docname="icon-blogpost-tria.svg"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
-   width="26.899437"
-   height="32.5">
+   width="9.9079924"
+   height="9.9088879">
   <metadata
      id="metadata4663">
     <rdf:RDF>
@@ -39,9 +39,9 @@
      inkscape:window-height="1355"
      id="namedview4661"
      showgrid="false"
-     inkscape:zoom="28.606061"
-     inkscape:cx="13.857639"
-     inkscape:cy="17.783547"
+     inkscape:zoom="20.227539"
+     inkscape:cx="35.435501"
+     inkscape:cy="-11.566106"
      inkscape:window-x="2560"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -68,30 +68,12 @@
      id="a"
      class="a"
      clip-path="url(#b)"
-     transform="translate(-3)">
-    <g
-       class="b"
-       transform="translate(3)"
-       id="g4654"
-       style="fill:none">
-      <path
-         class="d"
-         d="M 5.652,0 H 18.37 l 8.478,8.478 v 18.37 A 5.652,5.652 0 0 1 21.2,32.5 H 5.652 A 5.652,5.652 0 0 1 0,26.848 V 5.652 A 5.652,5.652 0 0 1 5.652,0 Z"
-         id="path4650"
-         inkscape:connector-curvature="0"
-         style="stroke:none" />
-      <path
-         class="e"
-         d="m 21.195654,30.5 c 2.013809,0 3.652168,-1.638359 3.652168,-3.65217 V 9.3066797 L 17.541143,2 H 5.652173 C 3.6383629,2 2.0000031,3.63836 2.0000031,5.6521702 V 26.84783 c 0,2.013811 1.6383598,3.65217 3.6521699,3.65217 h 15.543481 m 0,2 H 5.652173 C 2.5305631,32.5 3.0020142e-6,29.96944 3.0020142e-6,26.84783 V 5.6521702 C 3.0020142e-6,2.53057 2.5305631,0 5.652173,0 h 12.717389 l 8.47826,8.47826 v 18.36957 c 0,3.12161 -2.530559,5.65217 -5.652168,5.65217 z"
-         id="path4652"
-         inkscape:connector-curvature="0"
-         style="fill:#c3c3c3;stroke:none" />
-    </g>
+     transform="translate(-13.486606,-2.6601768)">
     <path
        class="c"
-       d="m 21.413,0.003 8.478,8.479 A 1.275,1.275 0 0 1 28.478,9.895 H 22.826 A 2.826,2.826 0 0 1 20,7.069 V 1.417 a 1.275,1.275 0 0 1 1.413,-1.414 z"
+       d="m 14.908161,2.6686277 8.478,8.4789993 a 1.275,1.275 0 0 1 -1.413,1.413 h -5.652 a 2.826,2.826 0 0 1 -2.826,-2.8259997 V 4.0826277 a 1.275,1.275 0 0 1 1.413,-1.414 z"
        id="path4656"
-       style="fill:#9b00ff;fill-opacity:1"
+       style="fill:#9b00ff;fill-opacity:0.7"
        inkscape:connector-curvature="0" />
   </g>
 </svg>
