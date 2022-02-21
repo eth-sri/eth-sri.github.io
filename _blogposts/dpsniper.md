@@ -15,7 +15,7 @@ tldr: >
     vulnerabilities of naively implemented algorithms: we detect that
     a supposedly 0.1-differentially private implementation of the Laplace
     mechanism actually does not satisfy even 0.25-differential privacy.\
-blurb: We are campers. We snipe everything. 
+teaser: We are campers. We snipe everything. 
 draft: false
 ---
 
