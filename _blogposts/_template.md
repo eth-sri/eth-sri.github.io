@@ -5,7 +5,7 @@ pub-ref: ruoss2020lcifr
 title: "How to enforce individual fairness?"
 blogpost-authors: "Mislav Balunovic, Mislav Balunovic, Martin Vechev, Mislav Balunovic, Nikola Jovanović, Anian Ruoss" 
 date:   2020-09-01
-thumbnail: thumb1.svg
+thumbnail: _thumbnails/lcifr.svg
 usemathjax: true
 tldr: >
     We introduce the first method that enables data consumers to
@@ -15,7 +15,7 @@ tldr: >
     $\ell_\infty$-distance at most $\epsilon$, thus allowing data consumers to
     certify individual fairness by proving $\epsilon$-robustness of their
     classifier.
-
+draft: true
 ---
 
 [comment]: <> (This is how to write comments.)
