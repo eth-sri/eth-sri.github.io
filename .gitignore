@@ -13,3 +13,5 @@ _site
 minima.gemspec
 /.jekyll-cache
 *~
+.history/
+.vscode/
