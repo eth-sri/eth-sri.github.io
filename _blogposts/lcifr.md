@@ -12,6 +12,7 @@ tldr: >
     The key idea is to use a form of adversarial training to search for counter-examples to the individual fairness condition, and then use
     these examples to improve the model. Our results show that LCIFR can train classifiers with high certified individual fairness, while also achieving high utility.
 teaser:  LCIFR is a method for training fair representations with provable certificates of individual fairness.
+tweet-id: 1447996320741007362
 draft: false
 ---
 
