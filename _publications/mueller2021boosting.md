@@ -1,7 +1,7 @@
 ---
 ref: mueller2021boosting
 title: "Certify or Predict: Boosting Certified Robustness with Compositional Architectures"
-authors: Mark Niklas Müller, Mislav Balunovic, Martin Vechev
+authors: Mark Niklas Müller, Mislav Balunović, Martin Vechev
 year: 2021
 month: 5
 venue: ICLR 
@@ -9,7 +9,7 @@ projects: safeai
 bibtex: '@inproceedings{
 	mueller2021boosting,
 	title={Boosting Certified Robustness of Deep Networks via a Compositional Architecture},
-	author={Mark Niklas Mueller and Mislav Balunovic and Martin Vechev},
+	author={Mark Niklas Mueller and Mislav Balunović and Martin Vechev},
 	booktitle={International Conference on Learning Representations},
 	year={2021}}'
 paper: https://files.sri.inf.ethz.ch/website/papers/mueller2021boosting.pdf

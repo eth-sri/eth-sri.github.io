@@ -1,0 +1,111 @@
+---
+title: Program Analysis for System Security and Reliability
+ref: pass2022
+description: Graduate course illustrating how to develop and apply program analysis and machine learning methods for securing modern software.
+semester: Spring 2022
+number: 263-2925-00L
+lecturer: Prof. Dr. Martin Vechev
+head-ta: Maximilian Baader
+ta: Mislav Balunović, Jingxuan He, Nikola Jovanović, Luca Beurer-Kellner
+assistants:
+edoz: http://www.vvz.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?lerneinheitId=159153&semkez=2022S&ansicht=LEHRVERANSTALTUNGEN&lang=en
+session-time-place:
+lecture-time-place: Thu 16-18, Location TBD
+exercise-time-place: Thu 13-14, Location TBD
+image: assets/images/pass.png
+credits: 7
+
+---
+
+<h2>Overview</h2>
+
+<p>Security issues in modern systems (blockchains, datacenters, deep learning,
+etc.) result in billions of losses due to hacks and system downtime. This course
+introduces fundamental techniques (ranging over automated analysis, machine
+learning, synthesis, zero-knowledge, differential privacy, and their
+combinations) that can be applied in practice so to build more secure and
+reliable modern systems.
+	
+All of these techniques are heavily used in practice and form the basis of some
+of the most the advanced analysis engines built by successful ETH spin-offs (<a
+target="_blank" href="https://chainsecurity.com">ChainSecurity</a> (acquired by
+PwC) and <a target="_blank" href="https://deepcode.ai">DeepCode</a> (acquired by
+Snyk, a billion dollar security company), as well as other world-class systems.
+</p>
+
+<p><b>Objectives</b></br>
+<ol>
+  <li> Understand the fundamental techniques used to create modern security and reliability analysis engines that are used worldwide.</li>
+  <li> Understand how symbolic techniques are combined with machine learning (e.g., deep learning, reinforcement learning) so to create new kinds of learning-based analyzers</li>
+  <li> Understand how to quantify and fix security and reliability issues in modern deep learning models.</li> 
+  <li> Understand open research questions from both theoretical and practical perspectives. </li>
+</ol>
+</p>
+
+<p><b>Part I: Fundamentals of Automated Security Analysis with Applications to Smart Contracts</b></br>
+
+<ul>
+	<li> We will introduce fundamental analysis methods: fuzzing (including combinations with reinforcement learning), symbolic execution, predication abstraction, and Datalog. </li>
+	<li> We will show how these methods can be used to build some of the most popular, state-of-the-art automated security analysis and verification systems for blockchain smart contracts (e.g., <a target="_blank" href="https://securify.ch">Securify</a>, <a target="_blank" href="https://verx.ch">VerX</a>).</li>
+</ul>
+
+<p><b>Part II: Security and Reliability of Datacenter and Network Programs </b></br>
+
+<ul>
+	<li>We will show how to ensure that datacenters and ISPs are secured using declarative reasoning methods (e.g., Datalog) as introduced in Part I. </li>
+	<li>We will also show how to automatically synthesize secure configurations (e.g. using <a target="_blank" href="https://synet.ethz.ch/">SyNET</a> and <a target="_blank" href="https://netcomplete.ethz.ch/">NetComplete</a>) which lead to desirable behaviors, thus automating the job of the network operator and avoiding critical errors.</li>
+</ul>
+
+<p><b>Part III: Machine Learning for Automated Security Analysis and Repair</b></br>
+<ul>
+	<li>We will illustrate how to automatically learn interpretable models expressed in Datalog from billions of lines of code and fixes to this code, which form the basis of new kinds of security analyzers.</li>
+	<li>We will study how to automatically learn to identify security vulnerabilities related to the handling of untrusted inputs (cross-Site scripting, SQL injection, path traversal, remote code execution) from large codebases.</li>
+	<li> We will also cover how to use machine learning models in order to automatically repair software errors (essentially a step towards the machine writing code).</li>
+</ul>
+
+<p><b>Part IV: Security and Reliability of Machine Learning Models</b></br>
+<ul>
+	<li>We will introduce differential privacy, and systematic ways to find
+	violations of differential privacy.</li>
+	<li>We will study (black box) methods to quantify the robustness of large scale deep learning models.</li>
+</ul>
+
+<h2>Course Project</h2>
+The course involve a hands-on programming project where the methods studied in the class will be applied. You can work on the project in a group consisting of at most 2 students.
+
+<br><br>
+Deadlines:
+
+<table centering border="0" width="50%" cellspacing="0" cellpadding="0">
+<tr><td>Group registration</td><td>TBD</td></tr>
+<tr><td>Project announcement</td><td>TBD</td></tr>
+<tr><td>Preliminary deadline (optional)</td><td>TBD</td></tr>
+<tr><td>Preliminary feedback </td><td>TBD</td></tr>
+<tr><td>Final deadline</td><td>TBD</td></tr>
+</table>
+
+
+<h2>Lectures</h2>
+
+<p>Use your NETHZ account to access the slides.</p>
+
+<table centering border="0" width="100%" cellspacing="0" cellpadding="0">
+	<th width=5%>No.</th> <th width="8%">Date</th><th width=41%>Content</th><th width="10%">Slides</th><th width=10%>Exercises</th><th width=10%>Solutions</th><th width=10%> Recording</th>
+
+	<tr>
+		<td>1</td><td>Feb 24</td><td>Introduction</td>
+		<td> 
+			
+		</td>
+		<td> 
+			No Exercise
+		</td>
+		<td> 
+			&nbsp;
+		</td>
+		<td> 
+		</td>
+	</tr>
+
+
+</table>

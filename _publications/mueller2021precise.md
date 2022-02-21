@@ -15,9 +15,9 @@ bibtex: '@misc{müller2021precise,
       primaryClass={cs.AI}}'
 blogpost: prima
 paper: https://files.sri.inf.ethz.ch/website/papers/mueller2021precise.pdf
-#slides: https://files.sri.inf.ethz.ch/website/slides/iclr2020-colt.pdf
-#image: assets/images/colt.png
-#talk: https://iclr.cc/virtual_2020/poster_SJxSDxrKDr.html
+slides: https://files.sri.inf.ethz.ch/website/slides/POPL2022_prima.pdf
+image: assets/images/SBLM_full.png
+talk: https://youtu.be/g-spitYZmg0?t=9339
 ---
 
 Formal verification of neural networks is critical for their safe adoption in real-world applications. However, designing a precise and scalable verifier which can handle different activation functions, realistic network architectures and relevant specifications remains an open and difficult challenge.
