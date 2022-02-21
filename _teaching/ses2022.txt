@@ -1,0 +1,20 @@
+11 Mar	Exposing Cache Timing Side-Channel Leaks through Out-of-Order Symbolic Execution	https://dl.acm.org/doi/10.1145/3428215	Silas Walker	Theo	theodoros.theodoridis@inf.ethz.ch
+11 Mar	zkay: Specifying and Enforcing Data Privacy in Smart Contracts	https://dl.acm.org/doi/10.1145/3319535.3363222	Jan Kleine	Sam	samuel.steffen@inf.ethz.ch
+18 Mar	p4v: Practical Verification for Programmable Data Planes	https://dl.acm.org/doi/10.1145/3230543.3230582	Liming Han	Dimitar	dimitar.iliev.dimitrov@inf.ethz.ch
+18 Mar	Automated policy synthesis for system call sandboxing	https://web.eecs.umich.edu/~xwangsd/pubs/oopsla20.pdf	Matteo Kamm	Jingxuan	jingxuan.he@inf.ethz.ch
+25 Mar	Silq: A High-Level Quantum Language with Safe Uncomputation and Intuitive Semantics	https://dl.acm.org/doi/abs/10.1145/3385412.3386007	Guilherme Rito	Benjamin	benjamin.bichsel@inf.ethz.ch
+25 Mar	λPSI: Exact Inference for Higher-Order Probabilistic Programs	https://dl.acm.org/doi/abs/10.1145/3385412.3386006	Manuel Nowack	Benjamin	benjamin.bichsel@inf.ethz.ch
+1 Apr	EVA: an encrypted vector arithmetic language and compiler for efficient homomorphic computation	https://dl.acm.org/doi/10.1145/3385412.3386023	Matthew Weingarten	Sam	samuel.steffen@inf.ethz.ch
+1 Apr	Assertion-Based Optimization of Quantum Programs	https://htor.inf.ethz.ch/publications/img/haener-quantum-optimizations.pdf	Nora Hossle	Anouk	anouk.paradis@inf.ethz.ch
+15 Apr	GenSynth: Synthesizing Datalog Programs without Language Bias	https://www.cis.upenn.edu/~mhnaik/papers/aaai21.pdf	Youyuan Lu	Momchil	momchil.peychev@inf.ethz.ch
+15 Apr	Hoppity: Learning Graph Transformations to Detect and Fix Bugs in Programs	https://openreview.net/pdf?id=SJeqs6EFvB	Rik de Graaff	Momchil	momchil.peychev@inf.ethz.ch
+22 Apr	Adding Interactive Visual Syntax to Textual Code	https://dl.acm.org/doi/abs/10.1145/3428290	Daniel Sparber	Sverrir	sverrir.thorgeirsson@inf.ethz.ch
+22 Apr	Using Hypotheses as a Debugging Aid	https://ieeexplore.ieee.org/document/9127273	Amro Abdrabo	Sverrir	sverrir.thorgeirsson@inf.ethz.ch
+29 Apr	egg: Fast and Extensible Equality Saturation	https://dl.acm.org/doi/pdf/10.1145/3434304	Ellen Arlt	Dominik	dominik.winterer@inf.ethz.ch
+29 Apr	Random Testing for C and C++ Compilers with YARPGen	https://dl.acm.org/doi/pdf/10.1145/3428264	Pascal Huber	Dominik	dominik.winterer@inf.ethz.ch
+6 May	An Approach to Generate Correctly Rounded Math Librariesfor New Floating Point Variants	https://dl.acm.org/doi/abs/10.1145/3434310	Jiale Chen	Daming	daming.zou@inf.ethz.ch
+6 May	Discovering Discrepancies in Numerical Libraries	https://dl.acm.org/doi/abs/10.1145/3395363.3397380	Johannes de Fine Licht	Daming	daming.zou@inf.ethz.ch
+20 May	Flow2Vec: Value-Flow-Based Precise Code Embedding	https://dl.acm.org/doi/pdf/10.1145/3428301	Xindi Zuo	Shaohua	shaohua.li@inf.ethz.ch
+20 May	A Study of the Learnability of Relational Properties: Model Counting Meets Machine Learning (MCML)	https://dl.acm.org/doi/10.1145/3385412.3386015	Grzegorz Kwasniewski	Shaohua	shaohua.li@inf.ethz.ch
+27 May	Symbolic execution with SymCC: Don't interpret, compile!	https://www.usenix.org/system/files/sec20-poeplau.pdf	Jannik Gartmann	Theo	theodoros.theodoridis@inf.ethz.ch
+27 May	Understanding and Automatically Detecting Conflicting Interactions between Smart Home IoT Applications	https://dl.acm.org/doi/pdf/10.1145/3368089.3409682	Mike Marti	Pinjia	pinjia.he@inf.ethz.ch

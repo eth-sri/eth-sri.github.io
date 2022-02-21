@@ -1,0 +1,24 @@
+---
+layout: default
+title: SafeAI Publication Feed
+permalink: /publications/safeai_summary.html
+---
+
+{% capture query %} item.projects contains 'safeai'{% endcapture %}
+{% assign filtered_publications = site.publications | where_exp:"item", query %}
+{% assign sorted_publications = filtered_publications | group_by:"year" | sort:"name" | reverse %}
+
+<pre>
+{% for year in sorted_publications %} {% assign sorted_publications_by_year = year.items | sort: "month" | reverse %} {% for publication in sorted_publications_by_year %}
+        {% if publication.paper %}
+          {% assign pub_link = publication.paper %}
+          {% unless pub_link contains 'http' %}
+            {% assign pub_link = 'papers/' | append: pub_link %}
+          {% endunless %}
+	{% else %}
+	  {% assign pub_link = '' %}
+        {% endif %}
+    &lt;a target="_blank" id="clicky" href="https://www.sri.inf.ethz.ch{{ publication.url }}"&gt;{{ publication.title }}&lt;/a&gt;, &lt;a href="{{ pub_link }}" target="_blank"&gt;{{ publication.venue }} {{ publication.year }}&lt;/a&gt;&lt;br&gt;
+    {{ publication.authors }}
+    &lt;br&gt;&lt;br&gt;{% endfor %}{% endfor %}
+</pre>
