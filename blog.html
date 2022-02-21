@@ -22,27 +22,28 @@ usemathjax: true
       	<ul class="newspost-list">
           {%- for blogpost in site.blogposts reversed -%}
           <li>
-          <div style="box-shadow: 0.2rem 0.4rem 0.8rem 0.2rem rgb(0 0 0 / 7%);
-          border-bottom: 1px solid rgba(0,0,0,0.1); width:90%">
+          <div class="blogpost-box">
 
             <div style="float:left; width:25%; margin-top: 2%">
-              <img src="{{ blogpost.thumbnail | prepend: '/assets/blog/' | relative_url}}" style="width:80%; padding: 10%"/>
+              <img src="{{ blogpost.thumbnail | prepend: '/assets/blog/' | relative_url}}" style="width:80%; padding: 0 10%"/>
             </div>
 
-            <div style="float:right; width:75%; margin-top: 2%">
+            <div style="float:left; width:72%; margin-top: 2%">
               <div style="font-size: 28px; font-weight: bold;">
                 <a href="{{ blogpost.id | relative_url}}">{{blogpost.title}}</a>
               </div>
               
-              <div style="font-style: italic; padding-right: 10%;">
+              <div style="font-style: italic; padding-right: 3%;">
                 {% include get-linked-persons.html persons=blogpost.blogpost-authors %}
               </div>
 
-              <p style="text-align:justify; padding:3%; padding-right: 10%;">
-
+              <p style="text-align:justify; padding:3%; padding-right: 3%;">
                 {{blogpost.tldr}}
-              
               </p>
+            </div>
+
+            <div class="blogpost-box-tria">
+              <img src="{{ '/assets/icons/icon-blogpost-tria.svg' | relative_url}}" style="vertical-align: top; width:100%;"/>
             </div>
 
           </div>

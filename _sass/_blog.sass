@@ -1,17 +1,54 @@
+
+$blog-color: #9b00ffff;
+$blog-color-light: #9b00ff2e;
+
+.blogpost-box	
+
+	border-bottom: 2px solid rgba(0,0,0,0.1)
+	width: 90%
+
+	box-shadow: 0.2rem 0.4rem 0.8rem 0.2rem #00000011
+
+.blogpost-box-tria
+	float: right
+	width: 3%
+	box-shadow: 0.4rem -0.4rem 1rem 0.3rem #ffffff
+
+
 .tldr::before
-	content: "TL;DR:"
+	content: "TLDR:"
 	font-weight: bold
 
 .tldr
 	font-style: italic
-	border-width: 1px
+	font-family: Raleway
+	color: #404040
+	border-width: 0px
+	background-color: $blog-color-light
 	border-style: solid 
 	padding: 2% 5%
 	text-align: justify
+	margin-top: 20px
+	line-height: 1.6
 
 .caption
 	padding: 0 5%
 
-.img-leftwrap
-	margin: 5px 15px 5px 5px
-	float: left
+%blog-img
+	display: block
+	margin-left: auto
+	margin-right: auto
+	margin-top: 30px
+	margin-bottom: 10px
+
+.blog-img-50
+	@extend %blog-img
+	width: 50%
+
+.blog-img-100
+	@extend %blog-img
+
+.image-caption
+	padding: 0 3%
+	border-left: thick solid $blog-color-light
+	margin-bottom: 30px

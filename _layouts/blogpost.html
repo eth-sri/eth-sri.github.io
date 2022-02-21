@@ -1,20 +1,34 @@
 ---
 layout: default
 ---
-<article class="page">
+<article class="page" style="font-size: 18px">
+  <style type="text/css">
+    h3 {
+      font-size: 20px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      font-family: Raleway;
+    }
+    h4 {
+      font-size: 20px;
+      margin: 0 0;
+      font-family: Raleway;
+    }
+  </style>
+
 
   <header class="page-header container">
-	<img src="{{ page.thumbnail | prepend: '/assets/blog/' | relative_url}}" style="display: block; width: 10%; margin: auto;"/>
+	<img src="{{ page.thumbnail | prepend: '/assets/blog/' | relative_url}}" style="display: block; width: 15%; margin: auto;"/>
 	
 	<div class="row">
-		<div class="column column-66" style="display: block; margin: auto;">
-			<h1 class="page-title" style="text-align: center">{{ page.title | escape }}</h1>
+		<div class="column column-75" style="display: block; margin: auto;">
+			<h1 class="page-title" style="text-align: center; font-weight: bold; font-size: 54px">{{ page.title | escape }}</h1>
 
       <div style="display: flex; margin: 1% 2%">
         <div style="flex: 0.7; margin-right: 3%">
-          <h3 class="page-subtitle">
+          <h4 class="page-subtitle">
             {% include get-linked-persons.html persons=page.blogpost-authors %} 
-          </h3>
+          </h4>
           <h4 class="page-subtitle">
             {{ page.date | date: "%B %-d, %Y" }}
           </h4>
@@ -49,7 +63,7 @@ layout: default
 
   <div class="page-content" style="padding: 0">
     <div class="row" style="justify-content: center;">
-      <div class="column column-66" style="justify-content: center;">
+      <div class="column column-75" style="justify-content: center; text-align: justify; font-size: 18px; font-family: Raleway; color: #404040">
           {{ content }}
           <hr/>
       </div>
