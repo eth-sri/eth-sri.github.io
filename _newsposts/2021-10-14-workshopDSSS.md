@@ -7,4 +7,4 @@ image: wsdsss21.jpg
 ---
 
 
-[]() Ensuring that our programs behave securely and reliably is a fundamental challenge today. The aim of this workshop is to provide insight into the latest research advances. See [website](https://www.sri.inf.ethz.ch/workshop2021) for details.  
+[]() Ensuring that our programs behave securely and reliably is a fundamental challenge. The aim of this workshop is to provide insight into latest research advances. See [website](https://www.sri.inf.ethz.ch/workshop2021) for details.  
