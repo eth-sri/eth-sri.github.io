@@ -1,10 +1,18 @@
 {% assign persons = include.persons | split: ", " %}
 {% for person in persons %}
+   <!-- search in people/ -->
   {% capture query %} item.title contains '{{ person | remove: 'Dr.' | remove: 'Prof.' | remove: '*' | escape | strip }}'{% endcapture %}
   {% assign found_person = site.people | where_exp:"item", query | first %}
   {% if found_person != nil %}
     <a href="{{ found_person.url | relative_url}}">{{person}}</a>{% unless forloop.last %},&nbsp;{% endunless %}
   {% else %}
-    {{person}}{% unless forloop.last %},&nbsp;{% endunless %}
+    <!-- search in _data/students.yml -->
+    {% capture query %} item.name contains '{{ person | remove: 'Dr.' | remove: 'Prof.' | remove: '*' | escape | strip }}'{% endcapture %}
+    {% assign found_person = site.data.students | where_exp:"item", query | first %}
+    {% if found_person != nil %}
+      <a href="{{ found_person.url}}">{{person}}</a>{% unless forloop.last %},&nbsp;{% endunless %}
+    {% else %}
+      {{person}}{% unless forloop.last %},&nbsp;{% endunless %}
+    {% endif %}
   {% endif %}
 {% endfor %}
