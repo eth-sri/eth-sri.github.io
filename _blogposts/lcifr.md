@@ -11,7 +11,7 @@ tldr: >
     In this blog post we discuss LCIFR, a method for training fair representations with provable certificates of individual fairness.
     The key idea is to use a form of adversarial training to search for counter-examples to the individual fairness condition, and then use
     these examples to improve the model. Our results show that LCIFR can train classifiers with high certified individual fairness, while also achieving high utility.
-blurb:  LCIFR is a method for training fair representations with provable certificates of individual fairness.
+teaser:  LCIFR is a method for training fair representations with provable certificates of individual fairness.
 draft: false
 ---
 
