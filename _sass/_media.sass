@@ -1,24 +1,31 @@
 /**
  * Media Newsposts
  */
+.media-column
+  margin-bottom: 0%
+
 .media-item
   padding: $spacing-unit 0
-  flex-grow: 1
-  max-width: 25%
+  width: 100%
+  display: flex
 
   .media-image
-    overflow: hidden
-    position: relative
-    padding-bottom: 50%
+    flex: 1
+    max-width: 50%
+    height: 100%
     margin-right: $spacing-unit
-    img
-      position: absolute
+
+  .media-image-blog
+    padding-left: 25%
+    padding-right: 25%
 
   .media-title
-    margin-top: $spacing-unit
+    vertical-align: middle
+    flex: 1
+    max-width: 50%
     margin-right: $spacing-unit
-    font-weight: bold
-    font-size: 16px
+    font-size: 1.1em
+    line-height: 1.6em
 
 @include media-query($mobile-break)
   .media-item

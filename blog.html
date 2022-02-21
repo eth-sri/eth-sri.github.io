@@ -7,22 +7,22 @@ usemathjax: true
 <article class="page">
 
   <header class="page-header container">
-  <div class="row">
-    <div class="column column-90">
-      <h1 class="page-title">{{ page.title | escape }}</h1>
-    </div>
-  </div>
   </header>
 
 
   <div class="page-content container">
     <div class="row">   
       <div class="column column-80">
+      
+      <div style="width: 90%">
+        <img src="{{ 'logo-blog.svg' | prepend: '/assets/images/' | relative_url }}" alt="{{ site.title | escape }}" style="display:block; margin:auto; width:40%">
+      </div>
 
       	<ul class="newspost-list">
-          {%- for blogpost in site.blogposts reversed -%}
+          {% assign blogposts = site.blogposts | where:"draft","false" %}
+          {%- for blogpost in blogposts reversed -%}
           <li>
-          <div class="blogpost-box">
+          <div class="blogpost-box blog-colored-links">
 
             <div style="float:left; width:25%; margin-top: 2%">
               <img src="{{ blogpost.thumbnail | prepend: '/assets/blog/' | relative_url}}" style="width:80%; padding: 0 10%"/>
