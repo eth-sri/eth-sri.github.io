@@ -7,12 +7,12 @@ $blog-color-light: #9b00ff2e
 	border-bottom: 2px solid rgba(0,0,0,0.1)
 	width: 90%
 
-	box-shadow: 0.2rem 0.4rem 0.8rem 0.2rem #00000011
+	box-shadow: 0.2rem 0.4rem 0.8rem 0.2rem #00000033
 
 .blogpost-box-tria
 	float: right
 	width: 3%
-	box-shadow: 0.4rem -0.4rem 1rem 0.3rem #ffffff
+	box-shadow: 0.4rem -0.4rem 1rem 0.6rem #ffffff
 
 
 .tldr::before
@@ -52,3 +52,10 @@ $blog-color-light: #9b00ff2e
 	padding: 0 3%
 	border-left: thick solid $blog-color-light
 	margin-bottom: 30px
+
+.blog-colored-links
+	a
+		color: lighten($blog-color, 15%)
+		text-decoration: none
+		&:hover
+			color: lighten($blog-color, 0%)

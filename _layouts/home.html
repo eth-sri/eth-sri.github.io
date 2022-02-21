@@ -37,24 +37,52 @@ layout: default
 
   <div class="landing-content container">
     <div class="row">
+
+
       <div class="column">
-        <h2>News</h2>
-          <div class="grid">
-            {% assign sorted_media = site.newsposts | where: "categories","media" | sort:"date" | reverse %}
-            {%- for media in sorted_media limit: 8 %}
-            <div class="media-item">
-              <div class="media-image">
-                <a href="{{ media.link }}">
-                  <img src="{{ media.image | prepend: '/assets/media/' | relative_url}}"/>
+        <h2 style="font-size: 18px">Latest Blog Posts</h2>
+        <div class="media-column">
+          {% assign sorted_blogposts = site.blogposts | where: "draft","false" | sort:"date" | reverse %}
+          {%- for blogpost in sorted_blogposts limit: 4 %}
+          <div class="media-item">
+            <div class="media-image">
+              <div class="media-image-blog">
+                <a href="{{ blogpost.url }}">
+                  <img src="{{ blogpost.thumbnail | prepend: '/assets/blog/'}}"/>
                 </a>
               </div>
-              <div class="media-title"><a href="{{ media.link }}">{{ media.content}}</a></div>
             </div>
-            {%- endfor -%}
+            <div class="media-title"><a href="{{ blogpost.url }}">{{ blogpost.title}}</a>: {{blogpost.blurb}}</div>
           </div>
-          <div style="text-align: center;"><a class="button" href="{{"/news" | relative_url }}">See all News &amp; Media</a></div>
+          {%- endfor -%}
         </div>
-     </div>
+      </div>
+
+      <div class="column">
+        <h2 style="font-size: 18px">Latest News</h2>
+        <div class="media-column">
+          {% assign soted_newsposts = site.newsposts | where: "categories","media" | sort:"date" | reverse %}
+          {%- for newspost in soted_newsposts limit: 4 %}
+          <div class="media-item">
+            <div class="media-image">
+              <a href="{{ newspost.link }}">
+                <img src="{{ newspost.image | prepend: '/assets/media/' | relative_url}}"/>
+              </a>
+            </div>
+            <div class="media-title"><a href="{{ newspost.link }}">{{ newspost.content}}</a></div>
+          </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="column">
+        <div style="text-align: center; margin: auto; width: 80%"><a style="display:block; text-align: center; width: 80%" class="button" href="{{"/news" | relative_url }}">See all Blog Posts</a></div>
+      </div>
+      <div class="column">
+        <div style="text-align: center; margin: auto; width: 80%"><a style="display:block; text-align: center; width: 80%" class="button" href="{{"/news" | relative_url }}">See all News &amp; Media</a></div>
+      </div>
   </div>
 </article>
 
