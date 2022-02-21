@@ -49,9 +49,11 @@ Our approach, named LCIFR (standing for Learning Certified Individually Fair Rep
 The function $\phi$ is application-specific and could be determined based on the background knowledge about the data or the existing fairness regulations.
 To define similarity of two individuals, we allow both categorical (e.g. individuals that have the same occupation) or numerical (e.g. individuals that differ by at most 10 in age) conditions, as well as their combinations using conjunctions and disjunctions.
 
-![](/assets/blog/lcifr/lcifr_overview.gif)
+
+![](/assets/blog/lcifr/lcifr_overview.gif){: .blog-img-100}
+
+{:.image-caption}
 ***Figure 1.** Conceptual overview of our framework.The left side shows the component corresponding to the data producer who learns an encoder $f_\theta$ which maps the entire set of individuals that are similar to individual $x$, according to the similarity notion $\phi$, to points near $z = f_\theta(x)$ in the latent space. The data producer then computes an $\ell_\infty$-bounding box around the latent set of similar individuals with center $z = f_\theta(x)$ and radius $\epsilon$ and passes it to the data consumer.*
-<br/><br/>
 
 <!-- We show overview of our approach in Figure 1. -->
 <!-- Given some fairness constraint, we want to train an individually fair representation and use it to -->
@@ -87,11 +89,10 @@ For each dataset we consider Noise constraint which considers two individuals si
 We always report accuracy of the auxiliary classifier trained on top of the representation, together with percentage of certified individuals.
 our results indicate that LCIFR is highly effective in providing certificates of individual fairness without significantly sacrificing classification accuracy.
 
-![](/assets/blog/lcifr/lcifr_results.svg){: .img-leftwrap}
+![](/assets/blog/lcifr/lcifr_results.svg){: .blog-img-50}
+
+{:.image-caption}
 ***Figure 2.** Experimental evaluation of LCIFR on several common fairness datasets using Noise constraint (more details in the paper). For each dataset, LCIFR can train a classifier with high utility and high certified individual fairness.*
-
-<br/><br/><br/><br/><br/><br/>
-
 
 ### Summary
 
