@@ -4,13 +4,14 @@ category: paper
 pub-ref: ruoss2020lcifr
 title: "How to enforce individual fairness?"
 blogpost-authors: "Mislav Balunović, Anian Ruoss" 
-date:   2020-09-01
+date:   2022-02-01
 thumbnail: _thumbnails/lcifr.svg
 usemathjax: true
 tldr: >
-    In this blog post we discuss LCIFR, a method for training fair representations with provable certificates of individual fairness.
+    In this blog post we discuss LCIFR, a method for learning fair representations with provable certificates of individual fairness.
+    Fair representations allow data owners to pre-process their data so that they can guarantee fairness of any downstream task using this data.
     The key idea is to use a form of adversarial training to search for counter-examples to the individual fairness condition, and then use
-    these examples to improve the model. Our results show that LCIFR can train classifiers with high certified individual fairness, while also achieving high utility.
+    these examples to improve the representations. Our results show that classifiers trained using LCIFR representations have high certified individual fairness, while also achieving high utility.
 teaser:  LCIFR is a method for training fair representations with provable certificates of individual fairness.
 tweet-id: 1447996320741007362
 draft: false
@@ -55,14 +56,14 @@ To define similarity of two individuals, we allow both categorical (e.g. individ
 ![](/assets/blog/lcifr/lcifr_overview.gif){: .blog-img-100}
 
 {:.image-caption}
-***Overiew of LCIFR.** Conceptual overview of our framework.The left side shows the component corresponding to the data producer who learns an encoder $f_\theta$ which maps the entire set of individuals that are similar to individual $x$, according to the similarity notion $\phi$, to points near $z = f_\theta(x)$ in the latent space. The data producer then computes an $\ell_\infty$-bounding box around the latent set of similar individuals with center $z = f_\theta(x)$ and radius $\epsilon$ and passes it to the data consumer.*
+***Conceptual overview of LCIFR.** The left side shows data producer who learns an encoder $f_\theta$ which maps the entire set of individuals that are similar to individual $x$ to points near $z = f_\theta(x)$ in the latent space. The data producer then computes a bounding box around the latent set of similar individuals with center $z = f_\theta(x)$ and radius $\epsilon$ and passes it to the data consumer.*
 
 <!-- We show overview of our approach in Figure 1. -->
 <!-- Given some fairness constraint, we want to train an individually fair representation and use it to -->
 <!-- obtain a certificate of individual fairness for the end-to-end model (involving both the representation and the classifier). -->
 
-A high-level overview of our approach is shown in Figure 1.
-One party, called data producer, wants to learn an encoder $f_\theta$ which can transform the original data $x$ into a new representation $z = f_\theta(x)$ such that any classifier $h_\psi$, provided by another party called data consumer, which is using this new representation $z$ as an input is fair.
+A high-level overview of our approach is shown in the above figure.
+One party, called data producer, wants to learn an encoder $f_\theta$ which transforms the original data $x$ into a new representation $z = f_\theta(x)$ such that any classifier $h_\psi$, provided by another party called data consumer, which is using this new representation $z$ as an input is fair.
 The core idea of our approach is to train a network $f_\theta$ that maps similar individuals $x$ and $x'$ close together in the latent space.
 Formally, given some threshold $\delta$, we want to train $f_\theta$ such that:
 
@@ -74,34 +75,38 @@ $$
 $$
 
 Of course, requiring only the above allows for trivial solution - just map all inputs to a single point.
-However, such a representation would not be useful for any downstream task as predicting an input-specific label from such representation is not possible with accuracy better than random.
+However, such a representation would provide no utility for any downstream task as e.g. predicting an input-specific label from such representation is not possible with accuracy better than random.
+Thus, we can notice that fairness and utility are sometimes competing objectives, and we have to balance between them during training.
 To ensure having useful representations, we additionally train an auxiliary classifier $h_\psi$ on top of the learned representations.
 To train the encoder, we use [DL2](https://www.sri.inf.ethz.ch/publications/fischer2019dl2) to repeatedly search for counter-examples to the above condition as DL2 allows us to translate logical expression to a differentiable loss.
-We then use a form of adversarial training: after counterexamples are found, we combine DL2 loss and classification loss, and then use gradient descent to modify the encoder parameters to make it more likely to satisfy the individual fairness condition while keeping classification accuracy high.
+We then use a form of adversarial training: after counterexamples are found, we combine DL2 loss and classification loss, and then use gradient descent to modify the encoder parameters to make it more likely to satisfy the individual fairness condition while keeping classification utility high.
 
 
-As training with DL2 results in a network that is only empirically fair, our next task is to actually prove fairness.
-To certify individual fairness of the end-to-end model for some input $x$, we search for the smallest $\epsilon$ such that $$\phi(x, x') \implies ||f_\theta(x) - f_\theta(x')||_{\infty} \leq \epsilon$$, and then we certify that classifier $h_\psi$ is robust to $\ell_\infty$ perturbations of size up to $\epsilon$.
+As training with DL2 results in a network that is only empirically fair, the next task is to actually prove fairness.
+To certify individual fairness of the end-to-end model (encapsulating both encoder $f_\theta$ and classifier $h_\psi$) for some input $x$, data producer searches for the smallest $\epsilon$ such that $$\phi(x, x') \implies ||f_\theta(x) - f_\theta(x')||_{\infty} \leq \epsilon$$, and then passes both representation $z = f_\theta(x)$ and radius $\epsilon$ to the data consumer.
+Then, data consumer certifies that classifier $h_\psi$ is robust to $\ell_\infty$ perturbations of size up to $\epsilon$.
 Both of these steps can be preformed efficiently using [mixed-integer linear programming](https://arxiv.org/abs/1711.07356), as networks typically used in fairness tasks are relatively small.
 
 ### Experiments
 
 We evaluated LCIFR on several datasets commonly used in the fairness literature: Adult, Compas, German, Health and Law School.
-For each dataset we consider Noise constraint which considers two individuals similar if all of their normalized numerical features differ by at most 0.3 (e.g. in Adult dataset this would correspond to difference in age of 3.95).
-We always report accuracy of the auxiliary classifier trained on top of the representation, together with percentage of certified individuals.
-our results indicate that LCIFR is highly effective in providing certificates of individual fairness without significantly sacrificing classification accuracy.
+We always report accuracy of the auxiliary classifier trained on top of the learned representations as a task utility, together with percentage of certified individuals.
 
 ![](/assets/blog/lcifr/lcifr_results.svg){: .blog-img-50}
 
 {:.image-caption}
 ***Experimental results.** Experimental evaluation of LCIFR on several common fairness datasets using Noise constraint (more details in the paper). For each dataset, LCIFR can train a classifier with high utility and high certified individual fairness.*
 
+In the above figure we show our results obtained on Noise constraint which considers two individuals similar if all of their normalized numerical features differ by at most 0.3 (e.g. in Adult dataset this would correspond to difference in age of 3.95).
+our results indicate that LCIFR is highly effective in providing certificates of individual fairness without significantly sacrificing classification accuracy.
+
 ### Summary
 
-In this blog post we described LCIFR, a method for learning certified individually fair representations introduced in our [NeurIPS 2020 paper](https://arxiv.org/abs/2002.10312).
+In this blog post we described LCIFR, a method for learning certified individually fair representations.
 The first ingredient of our method was to define individual fairness using similarity based on logical constraints.
 We can then use DL2 to train the encoder to map similar individuals close together in the latent space, while ensuring that latent representations are informative for the downstream classification task.
 Experimentally, we showed that LCIFR can provide certificates of individual fairness on several datasets while keeping classification accuracy high.
+If you are interested in more details please check out our [NeurIPS 2020 paper](https://arxiv.org/abs/2002.10312).
 
 ### Acknowledgements
 
