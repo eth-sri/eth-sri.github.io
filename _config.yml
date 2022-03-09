@@ -1,4 +1,4 @@
-title: Secure, Reliable, and Intelligent Systems Lab
+title: SRI Lab
 email: your-email@domain.com
 google_analytics: UA-27751621-1
 
@@ -112,3 +112,8 @@ theme: minima
 plugins:
  - jekyll-feed
  - jekyll-seo-tag
+
+feed:
+  collections:
+    blogposts:
+      path: "/blog/feed.xml"
