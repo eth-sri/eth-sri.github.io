@@ -142,7 +142,7 @@ Here is some GIF:
 
 ![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
 
-{:.image-caption}
+{:.blogpost-caption}
 ***Figure 2.** This is how to write caption*
 
 
