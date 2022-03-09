@@ -1,15 +1,97 @@
-
-.blogpost-box	
-	border-bottom: 2px solid rgba(0,0,0,0.1)
+/* blog page */
+	
+.blog-logo
 	width: 90%
 
+.blog-logoimg
+	display: block; 
+	margin: auto; 
+	width: 40%;
+
+.blog-list
+  margin-left: 0
+  padding-top: $spacing-unit
+  li
+    list-style-type: none
+    display: flex
+    padding-top: $spacing-unit
+
+.blog-list-box	
+	border-bottom: 2px solid rgba(0,0,0,0.1)
+	width: 90%
 	box-shadow: 0.2rem 0.4rem 0.8rem 0.2rem #00000033
 
-.blogpost-box-tria
-	float: right
-	width: 3%
-	box-shadow: 0.4rem -0.4rem 1rem 0.6rem #ffffff
+	.blog-list-thumbnail
+		float: left 
+		width: 25%
+		margin-top: 2%
+	
+	.blog-list-thumbnailimg
+		width: 80%
+		padding: 0 10%
 
+	.blog-list-content
+		float: left
+		width: 72%
+		margin-top: 2%
+	
+	.blog-list-title
+		font-size: 28px
+		font-weight: bold
+	
+	.blog-list-authors
+		font-style: italic
+		padding-right: 3%
+	
+	.blog-list-tldr
+		text-align: justify 
+		padding: 3%
+
+	.blog-list-tria
+		float: right
+		width: 3%
+		box-shadow: 0.4rem -0.4rem 1rem 0.6rem #ffffff
+
+	.blog-list-triaimg
+		vertical-align: top
+		width: 100%
+
+/* blogpost */
+
+.blogpost
+	font-size: 18px
+
+.blogpost-thumbnail
+	display: block
+	width: 15%
+	margin: auto
+
+.blogpost-headerblock
+	margin-bottom: inherit
+	padding: 0 1.0rem
+	max-width: 75%
+	display: block
+	margin: auto
+
+.blogpost-title
+	text-align: center
+	font-weight: bold
+	font-size: 54px
+
+.blogpost-subtitle
+	display: flex 
+	margin: 1% 2%
+
+	.blogpost-subtitle-left
+		flex: 0.7
+		margin-right: 3%
+	
+	.blogpost-subtitle-right
+		margin-left: auto
+	
+	.blogpost-subtitle-links
+		margin-left: auto 
+		margin-right: 0
 
 .tldr::before
 	content: "TLDR:"
@@ -28,28 +110,40 @@
 	margin-bottom: 20px
 	line-height: 1.6
 
-.caption
-	padding: 0 5%
+.blogpost-row
+	justify-content: center
 
-%blog-img
+.blogpost-col
+	margin-bottom: inherit
+	padding: 0 1.0rem
+	max-width: 75%
+	justify-content: center
+	text-align: justify 
+	font-size: 18px
+	font-family: Raleway
+	color: #404040
+
+.blogpost-cta
+	text-align: center
+	display: block
+
+/* to be used from .md blogpost content files */
+
+.blogpost-caption
+	padding: 0 3%
+	border-left: thick solid $color-blue
+	margin-bottom: 30px
+
+%blogpost-img
 	display: block
 	margin-left: auto
 	margin-right: auto
 	margin-top: 30px
 	margin-bottom: 10px
 
-.blog-img-50
-	@extend %blog-img
+.blogpost-img50
+	@extend %blogpost-img
 	width: 50%
 
-.blog-img-100
-	@extend %blog-img
-
-.image-caption
-	padding: 0 3%
-	border-left: thick solid $color-blue
-	margin-bottom: 30px
-
-.blogpost-cta
-	text-align: center
-	display: block
+.blogpost-img100
+	@extend %blogpost-img
