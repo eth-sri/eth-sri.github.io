@@ -14,36 +14,37 @@ usemathjax: true
     <div class="row">   
       <div class="column column-80">
       
-      <div style="width: 90%">
-        <img src="{{ 'logo-blog.svg' | prepend: '/assets/images/' | relative_url }}" alt="{{ site.title | escape }}" style="display:block; margin:auto; width:40%">
+      <div class="blog-logo">
+        <img class="blog-logoimg" src="{{ 'logo-blog.svg' | prepend: '/assets/images/' | relative_url }}" alt="{{ site.title | escape }}">
       </div>
-
-      	<ul class="newspost-list">
+  
+          <ul class="blog-list">
           {% assign blogposts = site.blogposts | where:"draft","false" %}
           {%- for blogpost in blogposts reversed -%}
           <li>
-          <div class="blogpost-box blog-colored-links">
+          <div class="blog-list-box">
 
-            <div style="float:left; width:25%; margin-top: 2%">
-              <img src="{{ blogpost.thumbnail | prepend: '/assets/blog/' | relative_url}}" style="width:80%; padding: 0 10%"/>
+            <div class="blog-list-thumbnail">
+              <img src="{{ blogpost.thumbnail | prepend: '/assets/blog/' | relative_url}}" class="blog-list-thumbnailimg" />
             </div>
 
-            <div style="float:left; width:72%; margin-top: 2%">
-              <div style="font-size: 28px; font-weight: bold;">
+
+            <div class="blog-list-content">
+              <div class="blog-list-title">
                 <a href="{{ blogpost.id | relative_url}}">{{blogpost.title}}</a>
               </div>
               
-              <div style="font-style: italic; padding-right: 3%;">
+              <div class="blog-list-authors">
                 {% include get-linked-persons.html persons=blogpost.blogpost-authors %}
               </div>
 
-              <p style="text-align:justify; padding:3%; padding-right: 3%;">
+              <p class="blog-list-tldr">
                 {{blogpost.tldr}}
               </p>
             </div>
 
-            <div class="blogpost-box-tria">
-              <img src="{{ '/assets/icons/icon-blogpost-tria.svg' | relative_url}}" style="vertical-align: top; width:100%;"/>
+            <div class="blog-list-tria">
+              <img src="{{ '/assets/icons/icon-blogpost-tria.svg' | relative_url}}" class="blog-list-triaimg"/>
             </div>
 
           </div>

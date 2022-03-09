@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<article class="page" style="font-size: 18px">
+<article class="page blogpost">
   <style type="text/css">
     h3 {
       font-size: 20px;
@@ -18,15 +18,15 @@ layout: default
 
 
   <header class="page-header container">
-	<img src="{{ page.thumbnail | prepend: '/assets/blog/' | relative_url}}" style="display: block; width: 15%; margin: auto;"/>
+	<img src="{{ page.thumbnail | prepend: '/assets/blog/' | relative_url}}" class="blogpost-thumbnail"/>
 	
 	<div class="row">
-		<div class="column column-75" style="display: block; margin: auto;">
-			<h1 class="page-title" style="text-align: center; font-weight: bold; font-size: 54px">{{ page.title | escape }}</h1>
+		<div class="blogpost-headerblock">
+			<h1 class="page-title blogpost-title">{{ page.title | escape }}</h1>
 
-      <div style="display: flex; margin: 1% 2%">
-        <div style="flex: 0.7; margin-right: 3%">
-          <h4 class="page-subtitle blog-colored-links">
+      <div class="blogpost-subtitle">
+        <div class="blogpost-subtitle-left">
+          <h4 class="page-subtitle">
             {% include get-linked-persons.html persons=page.blogpost-authors %} 
           </h4>
           <h4 class="page-subtitle">
@@ -34,14 +34,14 @@ layout: default
           </h4>
         </div>
   
-        <div class="" style="margin-left: auto;">
+        <div class="blogpost-subtitle-right">
           {% assign publication = site.publications | where:"ref", page.pub-ref | first %}
           {% assign pub-poster = publication.poster %}
           {% assign pub-slides = publication.slides %}
           {% assign pub-talk = publication.talk %}
           {% assign pub-paper = publication.paper %}
           {% assign pub-code = publication.code %}
-          <div class="card-links" style="margin-left: auto; margin-right: 0px;">
+          <div class="card-links blogpost-subtitle-links">
             {% include publication-links.html
               poster=pub-poster
               slides=pub-slides
@@ -60,10 +60,8 @@ layout: default
 
 
   </header>
-
-  <div class="page-content" style="padding: 0">
-    <div class="row" style="justify-content: center;">
-      <div class="column column-75" style="justify-content: center; text-align: justify; font-size: 18px; font-family: Raleway; color: #404040">
+    <div class="row blogpost-row">
+      <div class="blogpost-col">
         
           {{ content }}
           <hr/>
@@ -81,6 +79,5 @@ layout: default
           <hr/>
       </div>
     </div>
-  </div>
 
 </article>
