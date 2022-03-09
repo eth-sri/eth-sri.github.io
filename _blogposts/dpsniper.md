@@ -14,8 +14,8 @@ tldr: >
     We show that DP-Sniper is effective in exploiting floating-point 
     vulnerabilities of naively implemented algorithms: we detect that
     a supposedly 0.1-differentially private implementation of the Laplace
-    mechanism actually does not satisfy even 0.25-differential privacy.\
-teaser: We are campers. We snipe everything. 
+    mechanism actually does not satisfy even 0.25-differential privacy.
+excerpt: We are campers. We snipe everything. 
 draft: false
 ---
 
