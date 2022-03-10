@@ -36,70 +36,69 @@ layout: default
   </header>
 
   <div class="landing-content container">
-    <div class="row headers-separate">
-      <div class="column">
-        <h2 style="font-size: 18px">Latest Blog Posts</h2>
-      </div>
+
+    <div class="row">
       <div class="column">
         <h2 style="font-size: 18px">Latest News</h2>
       </div>
     </div>
 
-    <div class="row headers-joint">
-      <div class="column">
-        <h2 style="font-size: 18px">Latest News &amp; Blog Posts</h2>
-      </div>
-    </div>
-
-    {% assign sorted_blogposts = site.blogposts | where: "draft","false" | sort:"date" | reverse %}
     {% assign sorted_newsposts = site.newsposts | where: "categories","media" | sort:"date" | reverse %}
 
-    {%- for blogpost in sorted_blogposts limit: 4 %}
-    <div class="row">
+    {%- for i in (0 .. 3) %}
 
+      {% if i == 0 or i == 2 %} <div class="row"> {% endif %}
+      {% assign newspost = sorted_newsposts[i] %}
       <div class="media-item">
-
-        <div class="media-thumbnail-blog">
-          <a href="{{ blogpost.url }}"> <img src="{{ blogpost.thumbnail | prepend: '/assets/blog/'}}"/> </a>
-        </div>
-
-        <div class="media-excerpt-blog">
-          <a href="{{ blogpost.url }}">{{ blogpost.title}}</a>: {{blogpost.excerpt}}
-        </div>
-
-      </div>
-
-      {% assign newspost = sorted_newsposts[forloop.index0] %}
-
-      <div class="media-item">
-
         <div class="media-thumbnail-news">
           <a href="{{ newspost.link }}"> <img src="{{ newspost.image | prepend: '/assets/media/' | relative_url}}"/> </a>
         </div>
-
         <div class="media-excerpt-news">
           <a href="{{ newspost.link }}">{{ newspost.content}}</a>
         </div>
-
       </div>
+      {% if i == 1 or i == 3 %} </div> {% endif %}
 
-    </div>
     {%- endfor -%}
 
     <div class="row">
-
-      <div class="column">
-        <div class="div-see-all">
-          <a class="button btn-see-all" href="{{"/blog" | relative_url }}">See all Blog Posts</a>
-        </div>
-      </div>
-
       <div class="column">
         <div class="div-see-all">
           <a class="button btn-see-all" href="{{"/news" | relative_url }}">See all News &amp; Media</a>
         </div>
       </div>
+    </div>
+    
+    <div class="row">
+      <div class="column">
+        <h2 style="font-size: 18px">Latest Blog Posts</h2>
+      </div>
+    </div>
 
+    {% assign sorted_blogposts = site.blogposts | where: "draft","false" | sort:"date" | reverse %}
+
+    {%- for i in (0 .. 3) %}
+
+      {% if i == 0 or i == 2 %} <div class="row"> {% endif %}
+      {% assign blogpost = sorted_blogposts[i] %}
+      <div class="media-item">
+        <div class="media-thumbnail-blog">
+          <a href="{{ blogpost.url }}"> <img src="{{ blogpost.thumbnail | prepend: '/assets/blog/'}}"/> </a>
+        </div>
+        <div class="media-excerpt-blog">
+          <a href="{{ blogpost.url }}">{{ blogpost.title}}</a>: {{blogpost.excerpt}}
+        </div>
+      </div>
+      {% if i == 1 or i == 3 %} </div> {% endif %}
+
+    {%- endfor -%}
+
+    <div class="row">
+      <div class="column">
+        <div class="div-see-all">
+          <a class="button btn-see-all" href="{{"/blog" | relative_url }}">See all Blog Posts</a>
+        </div>
+      </div>
     </div>
 
   </div>
