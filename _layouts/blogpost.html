@@ -60,17 +60,20 @@ layout: default
 
 
   </header>
-    <div class="row blogpost-row">
+    <div class="blogpost-row">
       <div class="blogpost-col">
         
           {{ content }}
           <hr/>
           <div class="blogpost-cta">
+
+            {% if page.tweet-id %}
             <a href="{{ page.tweet-id | prepend: 'https://twitter.com/the_sri_lab/status/' }}">Discuss this post on Twitter <svg class="social-icon">
               <use xlink:href="/assets/minima-social-icons.svg#twitter"></use>
             </svg> </a> 
             
             <b>&nbsp;&nbsp;|&nbsp;&nbsp;</b> 
+            {% endif %}
 
             <a href="/blog/feed.xml"> Subscribe to our Atom feed <svg class="social-icon">
               <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
