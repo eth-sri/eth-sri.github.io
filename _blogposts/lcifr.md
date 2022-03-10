@@ -12,7 +12,9 @@ tldr: >
     Fair representations allow data owners to pre-process their data so that they can guarantee fairness of any downstream task using this data.
     The key idea is to use a form of adversarial training to search for counter-examples to the individual fairness condition, and then use
     these examples to improve the representations. Our results show that classifiers trained using LCIFR representations have high certified individual fairness, while also achieving high utility.
-excerpt:  LCIFR is a method for training fair representations with provable certificates of individual fairness.
+excerpt: >
+    In this blog post we discuss our recent work LCIFR, a method for learning fair representations with provable certificates of individual fairness
+    for any downstream task using this data.
 
 draft: false
 tweet-id: 1447996320741007362

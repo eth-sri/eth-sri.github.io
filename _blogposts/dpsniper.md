@@ -15,7 +15,10 @@ tldr: >
     vulnerabilities of naively implemented algorithms: we detect that
     a supposedly 0.1-differentially private implementation of the Laplace
     mechanism actually does not satisfy even 0.25-differential privacy.
-excerpt: We present a system that automatically finds violations of differential privacy.
+excerpt: >
+    We present DP-Sniper, a system that automatically finds violations of differential privacy,
+    by training a classifier to predict if an observed output was likely generated from one of
+    two possible inputs.
 
 draft: false
 tweet-id: 1447996320741007362
