@@ -30,7 +30,8 @@ After a commit, GitHub should re-generate the site (usually in under a minute, b
 The types of content on the site:
 
 - People 
-- Posts (News)
+- Blog Posts
+- News Posts
 - Media (News with photos)
 - Research Projects
 - Publications 
@@ -39,7 +40,6 @@ The types of content on the site:
 
 ## Storage areas
 The main folder for storage is `/assets`. It contains stock icons, logos and images from the old site. However, some types of content have their own corresponding storage area, usually at the root level of the site. This includes the following folders:
-
 
 
 *  `/people`: stores each lab member's individual files
@@ -134,7 +134,8 @@ You can include the information of a lab member on a particular page. Pull them 
 
 ### Publications
 Where to edit: `\_publications`\
-Storage areas: `/import/vechev/h1/htdocs-srl/website/papers`, `/import/vechev/h1/htdocs-srl/website/slides`
+Storage areas: `/import/vechev/h1/htdocs-srl/website/papers`, `/import/vechev/h1/htdocs-srl/website/slides`, `/import/vechev/h1/htdocs-srl/website/posters`
+Make sure to keep slides and posters properly placed.
 
 The main publications list (publications.html) contains all papers authored by Martin.
 
@@ -187,6 +188,11 @@ You can tag multiple research projects into a single publication.
 
 See the [Research Projects](#research-projects) section for existing project reference names.
 
+
+### Blog Posts
+Where to edit: `\_blogposts`
+
+To add a blog post follow the [Guidelines Doc](https://docs.google.com/document/d/1Gk5bx133f0bnjzbS7PiUMOj-6fhAGP8lV6ZPUL2S1yo/edit?usp=sharing).
 
 ### News
 Where to edit: `\_newsposts`
