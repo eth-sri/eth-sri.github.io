@@ -13,7 +13,9 @@ tldr: >
     relevant specifications. PRIMA computes precise convex abstractions involving
     multiple neurons via novel convex hull approximation algorithms that leverage
     concepts from computational geometry.
-excerpt: By leveraging tight multi-neuron constraints we can boost the certified robustness of networks.
+excerpt: >
+    We discuss our novel neural network verifier which boosts the certified robustness
+    of networks by leveraging tight multi-neuron constraints.
 
 draft: false
 tweet-id: 1447996320741007362

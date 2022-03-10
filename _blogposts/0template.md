@@ -8,11 +8,9 @@ date: 2022-02-01
 thumbnail: _thumbnails/lcifr.svg
 usemathjax: true
 tldr: >
-    In this blog post we discuss LCIFR, a method for learning fair representations with provable certificates of individual fairness.
-    Fair representations allow data owners to pre-process their data so that they can guarantee fairness of any downstream task using this data.
-    The key idea is to use a form of adversarial training to search for counter-examples to the individual fairness condition, and then use
-    these examples to improve the representations. Our results show that classifiers trained using LCIFR representations have high certified individual fairness, while also achieving high utility.
-excerpt:  LCIFR is a method for training fair representations with provable certificates of individual fairness.
+    The TLDR is for the blogpost page, aim for 4-5 sentences. In this blog post we discuss LCIFR, a method for learning fair representations with provable certificates of individual fairness. Fair representations allow data owners to pre-process their data so that they can guarantee fairness of any downstream task using this data. The key idea is to use a form of adversarial training to search for counter-examples to the individual fairness condition, and then use these examples to improve the representations. Our results show that classifiers trained using LCIFR representations have high certified individual fairness, while also achieving high utility.
+excerpt: >
+    The excerpt is for the home page, aim for 1-2 sentences or 3-5 lines on the homepage. LCIFR is a method for training fair representations with provable certificates of individual fairness.
 
 draft: true
 tweet-id:
