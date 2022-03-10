@@ -4,7 +4,7 @@ category: paper
 pub-ref: ruoss2020lcifr
 title: "How to enforce individual fairness?"
 blogpost-authors: "Mislav Balunović, Anian Ruoss" 
-date:   2022-02-01
+date: 2022-02-01
 thumbnail: _thumbnails/lcifr.svg
 usemathjax: true
 tldr: >
@@ -13,8 +13,9 @@ tldr: >
     The key idea is to use a form of adversarial training to search for counter-examples to the individual fairness condition, and then use
     these examples to improve the representations. Our results show that classifiers trained using LCIFR representations have high certified individual fairness, while also achieving high utility.
 excerpt:  LCIFR is a method for training fair representations with provable certificates of individual fairness.
-tweet-id: 1447996320741007362
+
 draft: false
+tweet-id: 1447996320741007362
 ---
 
 As machine learning is being increasingly used in sensitive domains such as crime risk assessment, hiring or credit scoring,
