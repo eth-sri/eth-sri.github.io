@@ -6,7 +6,7 @@ year: 2022
 month: 4
 venue: ICLR (Spotlight)
 projects: safeai
-bibtex: '@misc{horváth2021boosting,
+bibtex: '@misc{horvath2022boosting,
       title={Boosting Randomized Smoothing with Variance Reduced Classifiers}, 
       author={Miklós Z. Horváth and Mark Niklas Müller and Marc Fischer and Martin Vechev},
       booktitle={International Conference on Learning Representations},
