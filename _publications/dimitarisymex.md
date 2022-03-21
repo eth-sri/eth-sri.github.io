@@ -1,10 +1,10 @@
 ---
 ref: dimitar::2020
-title:  "Scalable Inference of Symbolic Adversarial Examples"
+title:  "Provably Robust Adversarial Examples"
 projects: safeai
 authors: Dimitar I. Dimitrov, Gagandeep Singh, Timon Gehr, Martin Vechev
-year: 2020
-month: 07
+year: 2022
+month: 4
 bibtex: '@misc{dimitrov2020scalable,
     title={Scalable Inference of Symbolic Adversarial Examples},
     author={Dimitar I. Dimitrov and Gagandeep Singh and Timon Gehr and Martin Vechev},
@@ -15,7 +15,7 @@ bibtex: '@misc{dimitrov2020scalable,
 }'
 paper: https://files.sri.inf.ethz.ch/website/papers/symex.pdf
 slides: 
-venue: Arxiv
+venue: ICLR
 ---
 We present a novel method for generating symbolic adversarial examples: input regions \emph{guaranteed} to only contain adversarial examples for the given neural network. These regions can generate real-world adversarial examples as they summarize trillions of adversarial examples.
 	
