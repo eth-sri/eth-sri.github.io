@@ -40,7 +40,7 @@ layout: default
       <div class="column">
         <h2>News</h2>
           <div class="grid">
-            {% assign sorted_media = site.posts | | where: "categories","media" | sort:"date" | reverse %}
+            {% assign sorted_media = site.posts | where: "categories","media" | sort:"date" | reverse %}
             {%- for media in sorted_media limit: 8 %}
             <div class="media-item">
               <div class="media-image">
