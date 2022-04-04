@@ -82,6 +82,10 @@
 	display: flex 
 	margin: 1% 2%
 
+	.blogpost-subtitle-center
+		flex: 1
+		text-align: center
+
 	.blogpost-subtitle-left
 		flex: 0.7
 		margin-right: 3%
@@ -93,7 +97,7 @@
 		margin-left: auto 
 		margin-right: 0
 
-.tldr::before
+.tldr-labeled::before
 	content: "TLDR:"
 	font-weight: bold
 
@@ -109,6 +113,13 @@
 	margin-top: 20px
 	margin-bottom: 20px
 	line-height: 1.6
+
+.tldr-meta-subposts
+	font-family: Raleway
+	color: #404040
+	text-align: justify
+	line-height: 1.6
+	margin-top: 20px
 
 .blogpost-row
 	display: flex
@@ -150,3 +161,27 @@
 
 .blogpost-img100
 	@extend %blogpost-img
+
+/* meta blogposts */ 
+
+.subpost-box
+	width: 100%
+	display: block
+	overflow: hidden
+
+	.subpost-thumbnail
+		float: left 
+		width: 25%
+		margin-top: 2%
+	
+	.subpost-thumbnailimg
+		width: 80%
+		padding: 0 10%
+
+	.subpost-info
+		float: left
+		width: 75%
+		margin-top: 2%
+
+.paper-award
+	color: #DAA520
