@@ -16,6 +16,9 @@ tldr: >
 excerpt: >
     We discuss our novel neural network verifier which boosts the certified robustness
     of networks by leveraging tight multi-neuron constraints.
+keywords: neural network certification, convex relaxations, computational geometry
+conf-url: https://icml.cc/virtual/2021/poster/9327
+conf-info: Spotlight - Mon Jul 20, 19:30 GMT+2 (Deep Learning Theory 4) | Poster - Tue Jul 20, 18:00 GMT+2 (Poster Session 4)
 
 draft: false
 tweet-id: 1447996320741007362
