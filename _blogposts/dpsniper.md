@@ -19,6 +19,9 @@ excerpt: >
     We present DP-Sniper, a system that automatically finds violations of differential privacy,
     by training a classifier to predict if an observed output was likely generated from one of
     two possible inputs.
+keywords: differential privacy
+conf-url: https://icml.cc/virtual/2021/poster/9327
+conf-info: Poster - Tue Jul 20, 18:00 GMT+2 (Poster Session 4)
 
 draft: false
 tweet-id: 1447996320741007362
