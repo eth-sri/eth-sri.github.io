@@ -10,7 +10,7 @@ usemathjax: true
 tldr: >
     With MN-BaB, our new state-of-the-art neural network verifier, we leverage precise multi-neuron constraints together with the Branch-and-Bound approach for verification to allow us to verify networks with higher natural accuracy.
 excerpt: >
-    Learn more how multi-neuron constraints can be used in a Branch-and-Bound approach to build a state-of-the-art complete neural network verifier.
+    Learn more about how multi-neuron constraints can be used in a Branch-and-Bound approach to build a state-of-the-art complete neural network verifier.
 
 draft: true
 tweet-id:
@@ -49,9 +49,9 @@ $$
 ### Background: Branch-and-Bound for Neural Network Verification
 Although there are many potential ways to tackle the verification problem, many recent advances in the field can be formulated as a Branch-and-Bound algorithm, as shown in [Branch and Bound for Piecewise Linear Neural Network Verification](https://arxiv.org/pdf/1909.06588.pdf). 
 
-The high-level motivation is the following: the optimization problem in Eq. 1 would be efficiently solveable if not for the non-linear constraints of the ReLU function. Since a ReLU function is piece-wise linear and composed of only two linear functions, we can make a case distinction on a single ReLU node being "active" (input is larger equal 0) or inactive (input is less than 0) and prove the property for each case while only having to deal with a linear constraint. 
+The high-level motivation is the following: the optimization problem in Eq. 1 would be efficiently solvable if not for the non-linear constraints of the ReLU function. Since a ReLU function is piece-wise linear and composed of only two linear functions, we can make a case distinction between a single ReLU node being "active" (input $\geq 0$) or inactive (input $< 0$) and prove the property for each case while only having to deal with a linear constraint. 
 
-In the limit case where all ReLU nodes are split, the verification problem has all linear constraints and can be solved efficiently. In practice splitting all ReLU nodes would be computationally intractable for all interesting verification problems, since the number of subproblems to be solved in the resulting Branch-and-Bound tree is exponential in the number of ReLU neurons in the network. To overcome this, we make use of the fact that if for a subproblem we can find a lower bound to Eq. 1 that is larger than 0, we do not have to split it any further, and thus prune the Branch-and-Bound tree significantly.
+In the limit case where all ReLU nodes are split, the verification problem has all linear constraints and can be solved efficiently. In practice, splitting all ReLU nodes would be computationally intractable for all interesting verification problems since the number of subproblems to be solved in the resulting Branch-and-Bound tree is exponential in the number of ReLU neurons in the network. To overcome this, we make use of the fact that if for a subproblem we can find a lower bound to Eq. 1 that is larger than 0, we do not have to split it any further, and thus prune the Branch-and-Bound tree significantly.
 
 In pseudo-code the algorithm looks as follows:
 {% highlight python %}
@@ -127,7 +127,7 @@ The intuitive argument why multi-neuron constraints help verification performanc
 A second advantage of using multi-neuron constraints is that their benefit is more pronounced the more dependencies there are between neurons in the same layer. 
 Most benchmarks in the field, for example [VNNComp](https://sites.google.com/view/vnn2021), consider networks that were specifically trained to be easily verifiable through adversarial or certified training. Such training methods, while facilitating easier verification, reduce the amount of intra-layer dependencies between neurons compared to normally trained networks (which is partly what makes them easier to verify). They also, however significantly hurt natural accuracy, making the resulting networks less interesting for practical applications. Therefore, if we want to verify networks with high natural accuracy (and more intra-layer dependencies), the benefits of multi-neuron constraints are even more pronounced.
 ### Experiments
-Here we present an ablation study of all individual components of MN-BaB. First the first 100 test images of the [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) dataset, we aim to prove that there is no adversarial example within an $l_\infty$ ball of radius $\epsilon=1/255$ around them. We report both the number of verified samples (within a timeout of 600 seconds), as well as the average runtime for verifying the samples.
+Here we present an ablation study of all individual components of MN-BaB. On the first 100 test images of the [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) dataset, we aim to prove that there is no adversarial example within an $l_\infty$ ball of radius $\epsilon=1/255$ around them. We report both the number of verified samples (within a timeout of 600 seconds), as well as the average runtime for verifying the samples.
 We consider two networks of identical architecture that only differ in the strength of their adversarial training method. ResNet6-A is weakly regularized while ResNet6-B is more strongly regularized, i.e. employs stronger adversarial training.
 
 ![Alt Text](/assets/blog/mn-bab/ablation_study.png){: .blogpost-img80}
@@ -145,7 +145,7 @@ As verified accuracy and mean runtime are very coarse performance metrics, we al
 {: .blogpost-caption}
 *The ratio of the number of subproblems solved during Branch-and-Bound without vs. with multi-neuron constraints.*
 
-On average the number of subproblems is reduced by over two orders of magnitude and for every property the number of subproblems is less with multi-neuron constraints than without.
+On average the number of subproblems is reduced by over two orders of magnitude and for every property, the number of subproblems is less with multi-neuron constraints than without.
 
 **Effectiveness of Active Constraint Score Branching**
 
