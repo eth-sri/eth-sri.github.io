@@ -55,7 +55,6 @@ In the limit where all ReLU nodes are split, the verification problem becomes fu
 
 In pseudo-code the algorithm looks as follows:
 {% highlight python %}
-      
     def verify_with_branch_and_bound(network, input_region, output_property) -> bool:
       problem_instance = (input_region, output_property)
 
@@ -84,13 +83,13 @@ To solve the optimization problem in Eq. 1 efficiently, we want to replace the n
 
 If we consider just a single neuron, the tightest such linear relaxation, is the convex hull of the function in its input output space, illsutrated below:
 
-![Alt Text](/assets/blog/mn-bab/DeepPoly.png){: .blogpost-img100}
+![DeepPoly ReLU abstraction](/assets/blog/mn-bab/DeepPoly.png){: .blogpost-img50}
 
 
 However, considering one neuron at a time comes with a fundamental precision limit, called the [(single-neuron) convex relaxation barrier](https://proceedings.neurips.cc/paper/2019/hash/246a3c5544feb054f3ea718f61adfa16-Abstract.html). It has since been shown, that this limit can be overcome by considering multiple neurons jointly, thereby capturing interactions between these neurons and obtaining tighter bounds. We use the efficiently computable multi-neuron constraints from [PRIMA](https://www.sri.inf.ethz.ch/publications/mueller2021precise), which can be expressed as a conjunction of linear constraints over the joint
 input and output space of a ReLU layer. We illustrate the difference in tightness below:
 
-![Alt Text](/assets/blog/mn-bab/PRIMA.png){: .blogpost-img100}
+![PRIMA ReLU abstraction](/assets/blog/mn-bab/PRIMA.png){: .blogpost-img50}
 
 ### MN-BaB
 
@@ -145,7 +144,7 @@ While most established benchmarks (e.g., from [VNNComp](https://sites.google.com
 Here, we study the effect of MN-BaB's components in an ablation study on the first 100 test images of the [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) dataset. We aim to prove that there is no adversarial example within an $l_\infty$ ball of radius $\epsilon=1/255$ and report the number of verified samples (within a timeout of 600 seconds) and the corresponding average runtime.
 We consider two networks of identical architecture that only differ in the strength of their adversarial training method. ResNet6-A is weakly regularized while ResNet6-B is more strongly regularized, i.e. employs stronger adversarial training.
 
-![Alt Text](/assets/blog/mn-bab/ablation_study.png){: .blogpost-img80}
+![Alt Text](/assets/blog/mn-bab/ablation_study.png){: .blogpost-img50}
 
 {: .blogpost-caption}
 *Evaluating the effect of multi-neuron constraints (MNCs), Active Constraint Score (ACS) branching, and Cost Adjusted Branching (CAB) on MN-BaB. BaBSR is another branching method that is used as a baseline.*
