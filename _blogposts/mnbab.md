@@ -154,7 +154,7 @@ As expected, we observe that both multi-neuron constraints and Active Constraint
 As a more fine grained measure of performance, we analyze the ratio of runtimes and number of subproblems required for verification on a per-property level on ResNet6-A, below.
 
 **Effectiveness of Multi-Neuron Constraints**
-![Alt Text](/assets/blog/mn-bab/ResNet6-A_n_subproblems_ratio_w_wo_MNC.pdf){: .blogpost-img100}
+![Alt Text](/assets/blog/mn-bab/ResNet6-A_n_subproblems_ratio_w_wo_MNC.png){: .blogpost-img50}
 
 {: .blogpost-caption}
 *The ratio of the number of subproblems solved during Branch-and-Bound without vs. with multi-neuron constraints.*
@@ -163,7 +163,7 @@ Using multi-neuron constraints reduces the number of subproblems required to pro
 
 **Effectiveness of Active Constraint Score Branching**
 
-![Alt Text](/assets/blog/mn-bab/ResNet6-A_n_subproblems_ratio_branching.pdf){: .blogpost-img100}
+![Alt Text](/assets/blog/mn-bab/ResNet6-A_n_subproblems_ratio_branching.png){: .blogpost-img50}
 
 {: .blogpost-caption}
 *The ratio of the number of subproblems solved during Branch-and-Bound with BaBSR vs. ACS.*
@@ -172,7 +172,7 @@ Using Active Constraint Score branching instead of BaBSR reduces the number of s
 
 **Effectiveness of Cost Adjusted Branching**
 
-![Alt Text](/assets/blog/mn-bab/ResNet6-A_cab_runtime_comparison_p4c_acs.pdf){: .blogpost-img100}
+![Alt Text](/assets/blog/mn-bab/ResNet6-A_cab_runtime_comparison_p4c_acs.png){: .blogpost-img50}
 
 {: .blogpost-caption}
 *Effect of Cost Adjusted Branching on mean verification time with ACS.*
