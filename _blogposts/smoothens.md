@@ -50,36 +50,38 @@ As shown in the illustration below, ensembling reduces the prediction's variance
 {:.blogpost-caption}
 ***Illustration of the prediction landscape** of base models $f$ where colors represent classes. The bars show the class probabilities of the corresponding smoothed classifiers. The individual models (left, middle) predict the same class for $x$ as their ensemble (right). However, the ensemble's lower bound on the majority class' probability $\underline{p_A}$ is increased, leading to improved robustness through RS.*
 
-Formally we can introduce a random variable $z_i$ for the logit difference between class $c_A$ and the other classes $c_i$. Now, we can compute its variance ratio between the predictions of the ensemble of $k$ classifiers ($\sigma^2(k)$) and a single classifier ($\sigma^2(1)$) to
+Formally we can introduce a random variable $z_i$ for the logit difference between class $c_A$ and the other classes $c_i$. Now, we can compute its variance depending on the number $k$ of ensembled classifiers ($\sigma^2(k)$), normalized by that of a single classifier ($\sigma^2(1)$):
 
 $$\frac{\sigma^2(k)}{\sigma^2(1)} = \frac{1 + \zeta_{} (k-1)}{k} \xrightarrow {k \to \infty} \zeta,$$
 
-where $\zeta$ corresponds to the correlation between the classifiers. We observe that for weakly correlated classifiers, the variance is significantly reduced. Using Chebychev's inequality we can translate this reduction in variance into an increase in the lower bound to the success probability of the majority class $1$:
+where $\zeta$ corresponds to the correlation between the classifiers. We observe that for weakly correlated classifiers, the variance is significantly reduced. 
+Using Chebychev's inequality we can translate this reduction in variance into an increase in the lower bound to the success probability of the majority class $c_A$:
 
-$$p_{A} \geq 1  -  \sum_{i \neq A} \frac{\sigma_i(k)^2}{(z)^{\,2}}% = 1$$
+$$p_{A} \geq 1  -  \sum_{i \neq A} \frac{\sigma_i(k)^2}{\bar{z}_i^{\,2}}% = 1$$
 
-**Continue here**Instead assuming Gaussian distributions and estimating all parameters from real ResNet20, we obtain the following:
+We see that it goes towards 1 quadratically, as variance is reduced. Assuming a Gaussian distributions and estimating all its parameters from real ResNet20, we obtain the following distribution over the classification margin:
 
 
 ![Illustration of classification margin variance reduction with increased number of ensembled classifiers](/assets/blog/smooth_ens/runner_up_margin.png){: .blogpost-img30}
 
-**Classification Margin** The prediction of a model is determined by the difference between its logits. We call this difference the classification margin. Below we show the distribution over the logit differnce between the class with the highest and second highest score. Where the area under the curves to the left of the black line corresponds to the probability of predicting the runner-up class $p_B$ and the area to the right of the black line to the probability of predicting the majority class $p_A$. We observe that reducing the variance over perturbations significantly increases the success probability of the majority class without changing the mean, corresponding to the prediction of the unperturbed sample.
-
 
 <!--
+**Classification Margin** As the prediction of a model is determined by the classification margin $z$,. Below we show the distribution over the logit differnce between the class with the highest and second highest score. Where the area under the curves to the left of the black line corresponds to the probability of predicting the runner-up class $p_B$ and the area to the right of the black line to the probability of predicting the majority class $p_A$. We observe that reducing the variance over perturbations significantly increases the success probability of the majority class without changing the mean, corresponding to the prediction of the unperturbed sample.
+
 ![Illustration of increase in success probability with number of ensembled classifiers](/assets/blog/smooth_ens/succes_prob.png){: .blogpost-img20}
 
 **Success Probability** Translating the classification margin distribution to success probabilities, we obtain the blue curve below, compared to an actually measured curve in orange. We observe that the success probability increases notably with the number of ensembled classifiers. 
 -->
 
 
+
+**Certified Radius** As the predictions of a model is determined by its classification margin $z$, we can first compute the corresponding success probabilities $p_A$ and then a probability distribution over the $\ell_2$-radius we can certify using RS. 
+
 ![Illustration of increase in certifiable radius number of ensembled classifiers](/assets/blog/smooth_ens/cert_rad_distr.png){: .blogpost-img30}
 
+We observe that ensembling increases the certified radius to a much larger degree than simply increasing the number of samples evaluated for randomized smoothing.
 
-**Certified Radius** Using the success probabilities, we can compute a probability distribution over the certified $\ell_2$-radius. We observe that ensembling increases the certified radius to a much larger degree, than simply increasing the number of samples evaluated for randomized smoothing.
-
-
-> TLDR: <a name="tldrensemble"></a> Ensembling $k$ classifiers differing only in the random seed used for training yields a classifier with significantly reduced variance over random perturbations. Without (necessarily) changing the natural accuracy, this increases the certified radius and thereby certified accuracy significantly, even when correcting for the increased compute.
+> **TLDR**: <a name="tldrensemble"></a> Ensembling $k$ classifiers, differing only in the random seed used for training, yields a classifier with significantly reduced variance over random perturbations. Without (necessarily) changing the natural accuracy, this increases the certified radius and thereby certified accuracy significantly, even when correcting for the increased compute.
 
 ### Experimental Evaluation
 
@@ -87,24 +89,29 @@ We conduct experiments on ImageNet and CIFAR-10 using a wide range of training m
 
 **CIFAR-10**
 
-{: .blogpost-wrap}
-While using an ensemble of ResNet110's clearly outperforms an individual one, most of this improvement is already obtained when ensembling only five models. Even an ensemble of just three ResNet20's outperform a single ResNet110, despite requiring significantly less compute for training and inference. Using more samples with just a single network barely improves the certified radius at all, unless mathematically necessary to achieve a sufficiently high confidence level.
-![Illustration of increase in ACR with number of ensembled classifiers](/assets/blog/smooth_ens/acr_cifar_050_3.png){: .blogpost-img15}
-![Comparison of certified radius of using more samples instead of ensembling.](/assets/blog/smooth_ens/sample_experiment_cifar.png){: .blogpost-img20}
+![Illustration of increase in ACR with number of ensembled classifiers](/assets/blog/smooth_ens/acr_cifar_050_blog.png){: .blogpost-img25}
+
+Using an ensemble of up to 10 ResNet110's clearly outperforms the best constituting model (currently SOTA). Even an ensemble of just three ResNet20's outperform a single ResNet110, despite requiring significantly less compute for training and inference. 
+
+![Comparison of certified radius of using more samples instead of ensembling.](/assets/blog/smooth_ens/sample_experiment_cifar.png){: .blogpost-img25}
+
+Using more samples with just a single network barely improves the certified radius at all, unless mathematically necessary to achieve a sufficiently high confidence level.
 
 
 **ImageNet**
 
-{: .blogpost-wrap}
-On ImageNet, an ensemble of just three ResNet50's is enough to improve over the current state-of-the-art by more than 10%.
-![Illustration of increase in ACR with number of ensembled classifiers](/assets/blog/smooth_ens/acr_in_100.png){: .blogpost-img20}
+![Illustration of increase in ACR with number of ensembled classifiers](/assets/blog/smooth_ens/acr_in_100_blog.png){: .blogpost-img25}
 
-> TLDR: Ensembles outperform their best constituting model consistently across a wide range of settings, obtaining a new state-of-the-art.
+{: .blogpost-wrap}
+On ImageNet, an ensemble of just three ResNet50's improves over the current state-of-the-art by more than 10%.
+
+
+> **TLDR**: Ensembles outperform their best constituting model consistently across a wide range of settings, obtaining a new state-of-the-art.
 
 ### Summary
 
 We propose a theoretically motivated and statistically sound approach to construct low variance base classifiers for Randomized Smoothing by ensembling. We show theoretically and empirically why this approach significantly increases certified accuracy yielding state-of-the-art results.
 If you are interested in more details please check out our [ICLR 2022 paper](https://www.sri.inf.ethz.ch/publications/horvath2022boosting).
 
-There, we also introduce an adaptive sampling mechanism, allowing us to reduce certification costs up to 55-fold for predetermined radii
+<!--There, we also introduce an adaptive sampling mechanism, allowing us to reduce certification costs up to 55-fold for predetermined radii-->
 
