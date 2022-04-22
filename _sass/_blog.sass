@@ -155,12 +155,82 @@
 	margin-top: 30px
 	margin-bottom: 10px
 
+
+.blogpost-img10
+	@extend %blogpost-img
+	width: 10%
+
+.blogpost-img15
+	@extend %blogpost-img
+	width: 15%
+
+.blogpost-img20
+	@extend %blogpost-img
+	width: 20%
+
+.blogpost-img25
+	@extend %blogpost-img
+	width: 25%
+
+.blogpost-img30
+	@extend %blogpost-img
+	width: 30%
+
+.blogpost-img40
+	@extend %blogpost-img
+	width: 40%
+
 .blogpost-img50
 	@extend %blogpost-img
 	width: 50%
 
 .blogpost-img100
 	@extend %blogpost-img
+
+
+@media (min-width: $mobile-break)
+	.blogpost-wrap
+		display: flex
+		width: 100%
+		align-items: top 
+
+	.blogpost-wrap > *
+		display: block
+		float: left
+
+	.blogpost-wrap > img
+		margin-left: 10px
+		margin-right: 10px
+		margin-top: 0px
+		margin-bottom: 0px
+		flex-grow: 0
+		flex-shrink: 0
+		align-self: flex-start
+
+	.blogpost-wrap > .blogpost-img10
+		flex-basis: 10%
+
+	.blogpost-wrap > .blogpost-img15
+		flex-basis: 15%
+
+	.blogpost-wrap > .blogpost-img20
+		flex-basis: 20%
+
+	.blogpost-wrap > .blogpost-img25
+		flex-basis: 25%
+
+	.blogpost-wrap > .blogpost-img30
+		flex-basis: 30%
+
+	.blogpost-wrap > .blogpost-img40
+		flex-basis: 40%
+
+	.blogpost-wrap > .blogpost-img50
+		flex-basis: 50%
+
+	.blogpost-wrap > .blogpost-img100
+		flex-basis: 100%
+
 
 /* meta blogposts */ 
 
