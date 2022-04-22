@@ -92,7 +92,7 @@ layout: default
 
 
               <h3> 
-                {{publication.title}} 
+				<a href="{{publication.blogpost}}">{{publication.title}}</a>
                 {% if blogpost.conf-info contains 'Spotlight' %}(<span class="paper-award">Spotlight</span>){% endif %}
                 {% if blogpost.conf-info contains 'Oral' %}(<span class="paper-award">Oral</span>){% endif %}
               </h3>
