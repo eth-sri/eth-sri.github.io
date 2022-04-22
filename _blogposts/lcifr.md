@@ -3,7 +3,7 @@ layout: blogpost
 category: paper
 pub-ref: ruoss2020lcifr
 title: "How to enforce individual fairness?"
-blogpost-authors: "Mislav Balunović, Anian Ruoss" 
+blogpost-authors: "Mislav Balunović" 
 date: 2022-02-01
 thumbnail: _thumbnails/lcifr.svg
 usemathjax: true
