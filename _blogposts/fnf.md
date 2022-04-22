@@ -17,6 +17,9 @@ conf-info: Oral - Wed Jul 20, 19:00 GMT+2 (Reinforcement Learning 4) | Poster - 
 
 draft: true
 tweet-id:
+keywords: fair representation learning, normalizing flows
+conf-url: https://iclr.cc/virtual/2022/poster/7045
+conf-info: Poster - Mon Apr 25 19:30 UTC+2
 ---
 
 As machine learning is being increasingly used in scenarios that can negatively affect humans, such as credit scoring or crime risk assessment, it has become clear that these predictive models often discriminate and can negatively affect humans.
