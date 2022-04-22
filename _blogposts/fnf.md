@@ -12,9 +12,6 @@ tldr: >
 excerpt: >
     The excerpt is for the home page, aim for 1-2 sentences or 3-5 lines on the homepage. LCIFR is a method for training fair representations with provable certificates of individual fairness.
 keywords: fair representation learning, certified individual fairness
-conf-url: https://icml.cc/virtual/2021/poster/9327
-conf-info: Oral - Wed Jul 20, 19:00 GMT+2 (Reinforcement Learning 4) | Poster - Tue Jul 20, 18:00 GMT+2 (Poster Session 1)
-
 draft: true
 tweet-id:
 keywords: fair representation learning, normalizing flows

@@ -11,12 +11,11 @@ tldr: >
     Recent work has challenged notion that federated learning preserves data privacy by showing that various attacks can reconstruct original data from gradient updates. In this post, we investigate what is the optimal reconstruction attack and we show how it connects to previously proposed attacks. Furthermore, we also show that most of the existing defenses are not effective against strong attacks. Our findings indicate that the construction of effecive defenses and their evaluation remains an open problem.
 excerpt: >
     The excerpt is for the home page, aim for 1-2 sentences or 3-5 lines on the homepage. LCIFR is a method for training fair representations with provable certificates of individual fairness.
-keywords: fair representation learning, certified individual fairness
-conf-url: https://icml.cc/virtual/2021/poster/9327
-conf-info: Oral - Wed Jul 20, 19:00 GMT+2 (Reinforcement Learning 4) | Poster - Tue Jul 20, 18:00 GMT+2 (Poster Session 1)
-
+keywords: federated learning, privacy, gradient leakage
 draft: true
 tweet-id:
+conf-url: https://iclr.cc/virtual/2022/poster/6934
+conf-info: Poster - Wed Apr 27 19:30 UTC+2
 ---
 
 Federated learning has become the most widely used approach to collaboratively train machine learning models without requiring training data to leave devices of the individual users.
@@ -28,7 +27,7 @@ In our work, we investigate what is the optimal attack for reconstructing data f
 
 Goal of federated learning is to train a model $h_\theta$ through a collaborative procedure involving different clients, without data leaving individual client devices.
 Typically $h_\theta$ is a neural network with parameters $\theta$, classifying an input $x$ to a label $y$.
-We assume that pairs $(x, y)$ are coming from a distribution $\mathcal{D}$ with a marginal distribution $p(x)$.
+We assume that pairs $(x, y)$ are coming from a distribution $\mathcal{D}$.
 In the standard federated learning setting, there are $n$ clients with loss functions $l_1, ..., l_n$, who are trying to jointly solve the optimization problem and find parameters $\theta$ which minimizes their average loss:
 
 $$
@@ -40,7 +39,7 @@ $$
 In a single training step, each client $i$ first computes $\nabla_{\theta} l_i(h_\theta(x_i), y_i)$ on a batch of data $(x_i, y_i)$, then sends these to the central server that performs a gradient descent step to obtain the new parameters $\theta' = \theta - \frac{\alpha}{n} \sum_{i=1}^n \nabla_{\theta} l_i(h_\theta(x_i), y_i)$, where $\alpha$ is a learning rate.
 We will consider a scenario where each client reports, instead of the true gradient $\nabla_{\theta} l_i(h_\theta(x_i), y_i)$, a noisy gradient $g$ sampled from a distribution $p(g|x)$, which we call a defense mechanism.
 This setup is fairly general and captures common defenses such as [DP-SGD](https://arxiv.org/abs/1607.00133).
-In this post, we are interesting in the privacy issue of federated learning: can the input $x$ be recovered from gradient update $g$?
+In this post, we are interested in the privacy issue of federated learning: can the input $x$ be recovered from gradient update $g$?
 More specifically, we are interested in analyzing the Bayes optimal attack and connecting it to the attacks from prior work.
 
 
@@ -122,7 +121,15 @@ We measure [PSNR](https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio) of t
 {:.blogpost-caption}
 ***Bayes optimal attack compared to other attacks.** We consider several different defenses with adding Gaussian or Laplacian noise or pruning and show that Bayes optimal attack is typically the best.*
 
-We can observe that Bayes optimal adversary generally performs best, showing that the optimal attack needs to leverage structure of the probability distribution of the gradients induced by the defense.
+We observe that Bayes optimal adversary generally performs best, showing that the optimal attack needs to leverage structure of the probability distribution of the gradients induced by the defense.
 Note that, in the case of Gaussian defense, $\ell_2$ and Bayes attacks are equivalent up to a constant factor, and it is expected that they achieve a similar result.
 In all other cases, Bayes optimal adversary outperforms the other attacks.
-Overall, this experiment provides empirical support for our theoretical results, confirming practical utility of the Bayes optimal adversary.
+Overall, this experiment provides empirical support for our theory, confirming practical utility of the Bayes optimal adversary.
+
+### Summary
+
+In this blog post we considered the problem of privacy in federated learning and investigated the Bayes optimal adversary which tries to reconstruct original data from the gradient updates.
+We derived form of this adversary and showed that attacks proposed in prior work are different approximations of this optimal adversary.
+Experimentally, we showed that existing defenses do not protect against strong attackers, and that deriving good defense remains an open challenge.
+Furthermore, we showed that Bayes optimal adversary is stronger than other attacks when it can exploit structure in probability distributions, confirming our theoretical results.
+For more details, please check out our [ICLR 2022 paper](https://arxiv.org/abs/2111.04706).
