@@ -71,7 +71,7 @@ We see that it goes towards 1 quadratically, as variance is reduced. Assuming a 
 
 We observe that ensembling increases the certified radius to a much larger degree than simply increasing the number of samples evaluated for randomized smoothing.
 
-> **TLDR**: <a name="tldrensemble"></a> Ensembling $k$ classifiers, differing only in the random seed used for training, yields a classifier with significantly reduced variance over random perturbations. Without (necessarily) changing the natural accuracy, this increases the certified radius and thereby certified accuracy significantly, even when correcting for the increased compute.
+<!-- > **TLDR**: <a name="tldrensemble"></a> Ensembling $k$ classifiers, differing only in the random seed used for training, yields a classifier with significantly reduced variance over random perturbations. Without (necessarily) changing the natural accuracy, this increases the certified radius and thereby certified accuracy significantly, even when correcting for the increased compute. -->
 
 ### Experimental Evaluation
 
@@ -96,7 +96,8 @@ Using more samples with just a single network barely improves the certified radi
 On ImageNet, an ensemble of just three ResNet50's improves over the current state-of-the-art by more than 10%.
 
 
-> **TLDR**: Ensembles outperform their best constituting model consistently across a wide range of settings, obtaining a new state-of-the-art.
+<!-- > **TLDR**: 
+-->
 
 ### Summary
 
