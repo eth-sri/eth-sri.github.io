@@ -54,7 +54,7 @@ Formally we can introduce a random variable $z_i$ for the logit difference betwe
 
 $$\frac{\sigma^2(k)}{\sigma^2(1)} = \frac{1 + \zeta_{} (k-1)}{k} \xrightarrow {k \to \infty} \zeta,$$
 
-where $\zeta$ corresponds to the correlation between the classifiers. We observe that for weakly correlated classifiers, the variance is significantly reduced. 
+where $\zeta$, a small constant, corresponds to the correlation between the classifiers. We observe that for weakly correlated classifiers, the variance is significantly reduced. 
 Using Chebychev's inequality we can translate this reduction in variance into an increase in the lower bound to the success probability of the majority class $c_A$:
 
 $$p_{A} \geq 1  -  \sum_{i \neq A} \frac{\sigma_i(k)^2}{\bar{z}_i^{\,2}}% = 1$$
@@ -63,16 +63,6 @@ We see that it goes towards 1 quadratically, as variance is reduced. Assuming a 
 
 
 ![Illustration of classification margin variance reduction with increased number of ensembled classifiers](/assets/blog/smooth_ens/runner_up_margin.png){: .blogpost-img30}
-
-
-<!--
-**Classification Margin** As the prediction of a model is determined by the classification margin $z$,. Below we show the distribution over the logit differnce between the class with the highest and second highest score. Where the area under the curves to the left of the black line corresponds to the probability of predicting the runner-up class $p_B$ and the area to the right of the black line to the probability of predicting the majority class $p_A$. We observe that reducing the variance over perturbations significantly increases the success probability of the majority class without changing the mean, corresponding to the prediction of the unperturbed sample.
-
-![Illustration of increase in success probability with number of ensembled classifiers](/assets/blog/smooth_ens/succes_prob.png){: .blogpost-img20}
-
-**Success Probability** Translating the classification margin distribution to success probabilities, we obtain the blue curve below, compared to an actually measured curve in orange. We observe that the success probability increases notably with the number of ensembled classifiers. 
--->
-
 
 
 **Certified Radius** As the predictions of a model is determined by its classification margin $z$, we can first compute the corresponding success probabilities $p_A$ and then a probability distribution over the $\ell_2$-radius we can certify using RS. 
@@ -112,6 +102,3 @@ On ImageNet, an ensemble of just three ResNet50's improves over the current stat
 
 We propose a theoretically motivated and statistically sound approach to construct low variance base classifiers for Randomized Smoothing by ensembling. We show theoretically and empirically why this approach significantly increases certified accuracy yielding state-of-the-art results.
 If you are interested in more details please check out our [ICLR 2022 paper](https://www.sri.inf.ethz.ch/publications/horvath2022boosting).
-
-<!--There, we also introduce an adaptive sampling mechanism, allowing us to reduce certification costs up to 55-fold for predetermined radii-->
-
