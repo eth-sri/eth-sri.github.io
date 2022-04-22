@@ -8,7 +8,7 @@ date: 2022-04-15
 thumbnail: _thumbnails/smooth_ens.png
 usemathjax: true
 tldr: >
-    In this blog post, we theoretically motivate why ensembles are particularly suitable base models for constructing certifiably robust classifiers via Randomized Smoothing (RS). We also share emperical results, which obtain state-of-the-art results in multiple settings. The key insight is that the reduced variance of ensembles over the perturbations introduced in RS leads to signicantly more consistent classications for a given input. This, in turn, leads to substantially increased certiable radii for samples close to the decision boundary.
+    In this blog post, we theoretically motivate why ensembles are particularly suitable base models for constructing certifiably robust classifiers via Randomized Smoothing (RS). We also share emperical results, which obtain state-of-the-art results in multiple settings. The key insight is that the reduced variance of ensembles over the perturbations introduced in RS leads to signicantly more consistent classications for a given input. This, in turn, leads to substantially increased certifiable radii for samples close to the decision boundary.
 excerpt: >
     We theoretically motivate why and show empirically that, ensembles are particularly suitable base models for Randomized Smoothing, due to the variance reduction across the perturbations introduced during Randomized Smoothing.
 keywords: randomized smoothing, certified robustness, ensembles
@@ -19,10 +19,10 @@ draft: false
 tweet-id:
 ---
 
-Deep neural networks often achieve excellent accuracy on data $x$ from the distribution they were trained on, they have been shown to be very sensitive to slightly perturbed inputs $x+ \delta$, called adversarial examples. This severely limits their applicability to safety-critical domains.
+Deep neural networks often achieve excellent accuracy on data $x$ from the distribution they were trained on. However, they have been shown to be very sensitive to slightly perturbed inputs $x+ \delta$, called adversarial examples. This severely limits their applicability to safety-critical domains.
 Heuristic defenses against this vulnerability have been shown to be breakable, highlighting the need for provable robustness guarantees. 
 
-A promising method providing such guarantees for large networks is [Randomized Smoothing](https://arxiv.org/abs/1902.02918) (RS). The core idea is to provide probabilistic robustness guarantees with arbitrarily high confidence by adding noise to the input of a base classifier and computing the majority vote of the classification over the perturbed inputs using Monte Carlo sampling.
+A promising method providing such guarantees for large networks is [Randomized Smoothing](https://arxiv.org/abs/1902.02918) (RS). The core idea is to obtain probabilistic robustness guarantees with arbitrarily high confidence by adding noise to the input of a base classifier and computing the majority vote of the classification over a large numer of perturbed inputs using Monte Carlo sampling.
 
 In this blog post we consider *applying RS to ensembles* as base classifiers and explain why they are a particularly suitable choice. For this, we will first give a short recap on Randomized Smoothing, before explaining our approach and discussing our theoretical results. Finally we show that our approach yields a new state-of-the-art in most settings, often even while using less compute than current methods.
 
@@ -30,11 +30,11 @@ In this blog post we consider *applying RS to ensembles* as base classifiers and
 We consider a (soft) base classifier $f \colon \mathbb{R}^d \mapsto \mathbb{R}^{n}$ predicting a numerical score for each class and let $$F(x) := \text{arg max}_{i} \, f_{i}(x)$$ denote the corresponding hard classifier $\mathbb{R}^d \mapsto [1, \dots, n]$. Randomized Smoothing (RS) takes a base classifier, evaluates it on perturbed inputs and predicts the majority classification over those predictions. The bigger the difference between the probability of the most likely and second most likely class, the more robust the resulting classifier.
 
 Formally, we write $$G(x) := \text{arg max}_c \, \mathcal{P}_{\epsilon \sim \mathbb{N}(0, \sigma_{\epsilon}^2 I)}(F(x + \epsilon) = c)$$ for the smoothed classifier.
-This smoothed classifier is guaranteed to be robust $G(x + \delta) = c_A$ to all perturbations $\delta$ satisfying $\lVert \delta \rVert_2 < R$ with $R := \sigma_{\epsilon}(\Phi^{-1}(\underline{p_A})$ for the majority class $c_A$, $\underline{p_A}$ lower bounding to its success probability $\mathcal{P}_{\epsilon}(F(x + \epsilon) = c_A) \geq \underline{p_A}$ and inverse [Gaussian CDF](https://en.wikipedia.org/wiki/Normal_distribution#Cumulative_distribution_functions) $\Phi^{-1}$. As $\underline{p_A}$ increases, so does $R$.
+This smoothed classifier is guaranteed to be robust, i.e., predict $G(x + \delta) = c_A$ under all perturbations $\delta$ satisfying $\lVert \delta \rVert_2 < R$ with $R := \sigma_{\epsilon}\Phi^{-1}(\underline{p_A})$ for the majority class $c_A$, the lower bound $\underline{p_A}$ to its success probability $\mathcal{P}_{\epsilon}(F(x + \epsilon) = c_A) \geq \underline{p_A}$ and the inverse [Gaussian CDF](https://en.wikipedia.org/wiki/Normal_distribution#Cumulative_distribution_functions) $\Phi^{-1}$. As $\underline{p_A}$ increases, so does $R$.
 
 ### Ensembles
 
-Instead of a single model $f$, here we now consider a soft ensemble of $k$ models $\\{ f^l \\}_{l=1}^k$:
+Instead of a single model $f$, we now consider a soft ensemble of $k$ models $\\{ f^l \\}_{l=1}^k$:
 
 $$\bar{f}(x) = \frac{1}{k} \sum_{l=1}^{k} f^l(x)$$
 
@@ -42,66 +42,41 @@ We obtain  different models $f^l$ by varying only the random seed and thus initi
 
 ### Variance Reduction via Ensembles for Randomized Smoothing
 Now, we will show theoretically why ensembles are particularly suitable base models. 
-As show in the illustration below, ensembling reduced the variance of the prediction when RS is evaluated, leading to a larger certification radius $R$. For a high level summary, feel free to directly skip to the [TLDR](#tldrensemble).
+As shown in the illustration below, ensembling reduces the prediction's variance over the noise introduced in RS, leading to a larger certification radius $R$. For a high level summary, feel free to directly skip to the [TLDR](#tldrensemble).
 
 ![Prediciton landscape of two individual models and an ensemble.](/assets/blog/smooth_ens/main.png){: .blogpost-img100}
 
 
 {:.blogpost-caption}
-***Illustration of the prediction landscape** of base models $F$ where colors represent classes. The bars show the class probabilities of the corresponding smoothed classifiers. The individual models (left, middle) predict the same class for $x$ as their ensemble (right). However, the ensemble's lower bound on the majority class' probability $\underline{p_A}$ is increased, leading to improved robustness through RS.*
+***Illustration of the prediction landscape** of base models $f$ where colors represent classes. The bars show the class probabilities of the corresponding smoothed classifiers. The individual models (left, middle) predict the same class for $x$ as their ensemble (right). However, the ensemble's lower bound on the majority class' probability $\underline{p_A}$ is increased, leading to improved robustness through RS.*
 
-Formally we can introduce a random variable $z$ for the logit difference between class $c_A$ and the runner up class $c_B$.
+Formally we can introduce a random variable $z_i$ for the logit difference between class $c_A$ and the other classes $c_i$. Now, we can compute its variance ratio between the predictions of the ensemble of $k$ classifiers ($\sigma^2(k)$) and a single classifier ($\sigma^2(1)$) to
 
-Formally, we can show that ensembling $k$ individual classifiers $f^l$ 
+$$\frac{\sigma^2(k)}{\sigma^2(1)} = \frac{1 + \zeta_{} (k-1)}{k} \xrightarrow {k \to \infty} \zeta,$$
 
-. This yields more consistent predictions for $c_A$ under the perturbations applied in RS. Letting $\frac{\sigma^2(k)}$ denote the variance of this is how far I got before you asked me to push.
+where $\zeta$ corresponds to the correlation between the classifiers. We observe that for weakly correlated classifiers, the variance is significantly reduced. Using Chebychev's inequality we can translate this reduction in variance into an increase in the lower bound to the success probability of the majority class $1$:
 
-$$\frac{\sigma^2(k)}{\sigma^2(1)} = \frac{1 + \zeta_{} (k-1)}{k} \xrightarrow {k \to \infty} \zeta$$
+$$p_{A} \geq 1  -  \sum_{i \neq A} \frac{\sigma_i(k)^2}{(z)^{\,2}}% = 1$$
 
-<!--#### Single classifier-->
-<!--We model the predictions of an individual classifier $f^l$ on a single arbitrary but fixed sample $x$ with Gaussian perturbations $\epsilon \sim \mathbb{N}(0, \sigma_{\epsilon}^2 I)$ as-->
-
-<!--$$y^l = y^l_p + y^l_c,$$-->
-
-<!--where $y^l_c$ is the classifier's prediction on the unperturbed sample and models the stochasticity in weight initialization and training with random noise augmentation and $y^l_p$ describes the effect of the random perturbations $\epsilon$ applied during RS. We model the clean component $y_c$ (distribution over classifiers) with mean $$c = \mathbb{E}_l[f^l(x)]$$ and covariance $\Sigma_c$. We assume the perturbation effect $y_p$ to be zero-mean and have covariance $\Sigma_{p}$. As $y_c$ models the global training effects and $y_p$ models the local behavior under small perturbations, we assume them to be independent.-->
-
-<!--#### Ensembles-->
-
-<!--Now, we construct an ensemble of $k$ such classifiers, using soft-voting to compute $\bar{y} = \frac{1}{k} \sum_{l=1}^k y^l.$ As we consider similar classifiers, differing only in the random seed used for training, we assume that the correlation between the logits of different classifiers has a similar structure but smaller magnitude than the correlation between logits of one classifier. Therefore, we parametrize the covariance between $y_c^i$ and $y_c^j$ for classifiers $i\neq j$ with $\zeta_c \Sigma_c$ and similarly between $y_p^i$ and $y_p^j$ with $\zeta_p \Sigma_p$ for $\zeta_c, \zeta_p \in [0,1]$. With the correlation coefficients $\zeta_c$ and $\zeta_p$, this construction captures the range from no correlation ($\zeta = 0$) to perfect correlation ($\zeta = 1$).-->
-
-<!--<!-1--The prediction of a model is determined by the difference between its logits. We call this difference the classification margin. We can now compute its statistics based on the assumptions made above as a function of the number of ensembled classifiers $k$:-->
-
-<!--\begin{align*}-->
-<!--	\mathbb{E}[\bar{z}_i] &= \mathbb{E}[z_i] = c_1 - c_i\\-->
-<!--	\text{Var}[\bar{z}_i] &= \underbrace{\frac{k + 2 \binom{k}{2}\zeta_p}{k^2} (\sigma^2_{p,1} + \sigma^2_{p,i} - 2 \rho_{p,1i} \sigma_{p,1} \sigma_{p,i})}_{\sigma^2_p(k)} + \underbrace{\frac{k + 2 \binom{k}{2}\zeta_c}{k^2} (\sigma^2_{c,1} + \sigma^2_{c,i} - 2 \rho_{c,1i} \sigma_{c,1} \sigma_{c,i})}_{\sigma^2_c(k)}.-->
-<!--\end{align*}-->
-<!----1->-->
-
-<!--#### Variance Reduction-->
-<!--Based on these assumptions, we can compute the variance of the ensembles predictions split into a component associated with the clean prediction $\sigma^2_c(k)$ and the perturbation effect $\sigma^2_p(k)$, both as functions of the ensemble size $k$. Dropping the indices, we find that both of these components scale with ensemble size as:-->
-
-<!--$$\frac{\sigma^2(k)}{\sigma^2(1)} = \frac{1 + \zeta_{} (k-1)}{k} \xrightarrow {k \to \infty} \zeta$$-->
-
-Note that, both variance component ratios go towards their corresponding correlation coefficients $\zeta_c$ and $\zeta_p$ as ensemble size grows. We can now use Chebychev's inequality and the union bound to determine a lower bound to the success probability of the majority class $1$ as:
-
-$$p_{1} \geq 1 - \sum_{i=2}^m \mathcal{P} \big(|\bar{z}_{i} - c_1 + c_i| \geq t_i \, \sigma_i(k)\big) \geq 1  -  \sum_{i=2}^m \frac{\sigma_i(k)^2}{(c_1 - c_i)^{\,2}}% = 1$$
-
-Instead assuming Gaussian distributions and estimating all parameters from real ResNet20, we obtain the following:
+**Continue here**Instead assuming Gaussian distributions and estimating all parameters from real ResNet20, we obtain the following:
 
 
-{: .blogpost-wrap}
-<span>**Classification Margin** The prediction of a model is determined by the difference between its logits. We call this difference the classification margin. Below we show the distribution over the logit differnce between the class with the highest and second highest score. Where the area under the curves to the left of the black line corresponds to the probability of predicting the runner-up class $p_B$ and the area to the right of the black line to the probability of predicting the majority class $p_A$. We observe that reducing the variance over perturbations significantly increases the success probability of the majority class without changing the mean, corresponding to the prediction of the unperturbed sample.</span>
-![Illustration of classification margin variance reduction with increased number of ensembled classifiers](/assets/blog/smooth_ens/runner_up_margin.png){: .blogpost-img25}
+![Illustration of classification margin variance reduction with increased number of ensembled classifiers](/assets/blog/smooth_ens/runner_up_margin.png){: .blogpost-img30}
+
+**Classification Margin** The prediction of a model is determined by the difference between its logits. We call this difference the classification margin. Below we show the distribution over the logit differnce between the class with the highest and second highest score. Where the area under the curves to the left of the black line corresponds to the probability of predicting the runner-up class $p_B$ and the area to the right of the black line to the probability of predicting the majority class $p_A$. We observe that reducing the variance over perturbations significantly increases the success probability of the majority class without changing the mean, corresponding to the prediction of the unperturbed sample.
 
 
-
-{: .blogpost-wrap}
-<span>**Success Probability** Translating the classification margin distribution to success probabilities, we obtain the blue curve below, compared to an actually measured curve in orange. We observe that the success probability increases notably with the number of ensembled classifiers. </span>
+<!--
 ![Illustration of increase in success probability with number of ensembled classifiers](/assets/blog/smooth_ens/succes_prob.png){: .blogpost-img20}
 
-{: .blogpost-wrap}
-<span>**Certified Radius** Using the success probabilities, we can compute a probability distribution over the certified $\ell_2$-radius. We observe that ensembling increases the certified radius to a much larger degree, than simply increasing the number of samples evaluated for randomized smoothing.</span>
+**Success Probability** Translating the classification margin distribution to success probabilities, we obtain the blue curve below, compared to an actually measured curve in orange. We observe that the success probability increases notably with the number of ensembled classifiers. 
+-->
+
+
 ![Illustration of increase in certifiable radius number of ensembled classifiers](/assets/blog/smooth_ens/cert_rad_distr.png){: .blogpost-img30}
+
+
+**Certified Radius** Using the success probabilities, we can compute a probability distribution over the certified $\ell_2$-radius. We observe that ensembling increases the certified radius to a much larger degree, than simply increasing the number of samples evaluated for randomized smoothing.
 
 
 > TLDR: <a name="tldrensemble"></a> Ensembling $k$ classifiers differing only in the random seed used for training yields a classifier with significantly reduced variance over random perturbations. Without (necessarily) changing the natural accuracy, this increases the certified radius and thereby certified accuracy significantly, even when correcting for the increased compute.
