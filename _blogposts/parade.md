@@ -18,7 +18,7 @@ keywords: adversarial examples, robustness
 conf-url: https://iclr.cc/virtual/2022/poster/6160
 conf-info: Poster - Tue Apr 26, 17:30 GMT (Poster Session 5)
 
-draft: true
+draft: false
 tweet-id:
 ---
 
@@ -42,10 +42,13 @@ def fib(n):
   	 return 1
   return fib(n-1) + fib(n-2)
 {% endhighlight %}
-
 You can embed both static images and gifs. For a full-width image use `.blogpost-img100`, for a centered 50% width image `.blogpost-img50`. Similarly, always use `.blogpost-caption` to properly format captions:
 
-![Alt Text](/assets/blog/lcifr/lcifr_overview.gif){: .blogpost-img100}
+
+
+
+
+<iframe src="/assets/blog/parade/over.svg" style="border: none;"></iframe>
 
 {:.blogpost-caption}
 ***Conceptual overview of LCIFR.** This is a full-width gif. Start captions with a bold caption heading.*
