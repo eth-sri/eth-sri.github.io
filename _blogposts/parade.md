@@ -60,7 +60,7 @@ Later in the results section we have a 50% image.
 Inline latex always works. For example, for classification tasks $\mu$ could denote equal classification (i.e., $\mu(M(x), M(x')) = 1 \iff M(x) = M(x')$) or classifying $M(x)$ and $M(x')$ to the same label group. For block latex you can use `equation*` and `align*` as follows.
 
 [comment]: <> (There must be an empty row before and after a non-inline math block ($$) otherwise it doesn't work!) 
-
+<iframe src="/assets/blog/parade/under.svg" style="border: none;;width: 100%;height: 264pt;"></iframe>
 $$
 \begin{equation*}
     \quad \mathbb{E}_{x \sim D} \left[
@@ -128,7 +128,8 @@ For the results try to visualize stuff and not do tables, if you really must thi
 
 Here is the promised 50% image:
 
-<iframe src="/assets/blog/parade/under.svg" style="border: none;;width: 100%;height: 264pt;"></iframe>
+
+<iframe src="/assets/blog/parade/poly.svg" style="border: none;;width: 100%;height: 240pt;"></iframe>
 
 
 
