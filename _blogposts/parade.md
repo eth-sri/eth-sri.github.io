@@ -48,7 +48,7 @@ You can embed both static images and gifs. For a full-width image use `.blogpost
 
 
 
-<iframe src="/assets/blog/parade/over.svg" style="border: none;"></iframe>
+<iframe src="/assets/blog/parade/over.svg" style="border: none;;width: 100%;height: 200pt;"></iframe>
 
 {:.blogpost-caption}
 ***Conceptual overview of LCIFR.** This is a full-width gif. Start captions with a bold caption heading.*
@@ -128,7 +128,9 @@ For the results try to visualize stuff and not do tables, if you really must thi
 
 Here is the promised 50% image:
 
-![Alt Text](/assets/blog/lcifr/lcifr_results.svg){: .blogpost-img50}
+<iframe src="/assets/blog/parade/under.svg" style="border: none;;width: 100%;height: 264pt;"></iframe>
+
+
 
 {: .blogpost-caption}
 ***Experimental results.** Experimental evaluation of LCIFR on several common fairness datasets using Noise constraint (more details in the paper). For each dataset, LCIFR can train a classifier with high utility and high certified individual fairness.*
