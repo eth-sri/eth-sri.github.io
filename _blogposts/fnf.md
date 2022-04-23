@@ -10,7 +10,7 @@ usemathjax: true
 tldr: >
     Fair Normalizing Flows (FNF) are a new approach for encoding data into a new representation in order to ensure fairness and utility in downstream tasks. In practical cases, when we can estimate the probability density of the inputs, FNF guarantees that adversary cannot recover the sensitive attribute from the learned representations. FNF addresses limitation of existing approaches for which stronger adversaries can still recover sensitive attributes. We show that FNF can effectively balance fairness and accuracy on a variety of relevant datasets.
 excerpt: >
-    The excerpt is for the home page, aim for 1-2 sentences or 3-5 lines on the homepage. LCIFR is a method for training fair representations with provable certificates of individual fairness.
+    Fair Normalizing Flows (FNF) are a new approach for encoding data into a new representation in order to ensure fairness and utility in downstream tasks.
 keywords: fair representation learning, certified individual fairness
 draft: true
 tweet-id:
@@ -19,10 +19,10 @@ conf-url: https://iclr.cc/virtual/2022/poster/7045
 conf-info: Poster - Mon Apr 25 19:30 UTC+2
 ---
 
-As machine learning is being increasingly used in scenarios that can negatively affect humans, such as credit scoring or crime risk assessment, it has become clear that these predictive models often discriminate and can negatively affect humans.
+As machine learning is being increasingly used in scenarios that affect humans, such as credit scoring or crime risk assessment, it has become clear that these predictive models often discriminate and can be unfair.
 It is thus increasingly important to design methods that help models make fair decisions, either by pre-processing the input data, in-processing the model or post-processing the predictions.
-In our work, we propose a new pre-processing approach to encode existing data into new, unbiased representations that have high utility, but do not allow for reconstructing sensitive attributes.
-Our approach, named Fair Normalizing Flows (FNF) is based on learning a bijective encoder for each group, where groups are created on different values of sensitive attribute.
+In our work, we propose a new pre-processing approach to encode existing data into new, unbiased representations that have high utility, but do not allow for reconstructing sensitive attributes such as race or gender.
+Our approach, named Fair Normalizing Flows (FNF) is based on learning a bijective encoder for each group (where groups are determined based on the sensitive attribute).
 Using bijective encoders enables us to obtain guarantees on maximum accuracy that *any* adversary can have when predicting the sensitive attribute.
 
 
@@ -32,9 +32,10 @@ Consider a case of a company with several teams that would like to build ML mode
 One option would be for each team to train their own model and enforce fairness of the model by themselves.
 However, the teams might not have the same definition of fairness or they might even lack expertise to train fair models.
 [*Fair representation learning*](https://sanmi.cs.illinois.edu/documents/Representation_Learning_Fairness_NeurIPS19_Tutorial.pdf) is a data pre-processing technique that transforms data into a new representation such that any classifier trained on top of this representation is fair.
-Using representation learning enables us to pre-process data only once, and then give processed data to each team so that they can train their own model on this new data, while knowing that the model is fair, according to a single pre-defined fairness definition. 
+Using representation learning enables us to pre-process data only once, and then give processed data to each team so that they can train their own model on this new data, while knowing that the model is fair, according to a single, pre-defined fairness definition. 
 The key question here is how to ensure that sensitive attributes cannot be recovered from the learned representations.
-Typically, [prior work](https://arxiv.org/abs/1802.06309) has checked that this is the case by training additional adversarial model which is trying to predict the sensitive attribute from the representations, but several [recent](https://arxiv.org/abs/1808.06640) [papers](https://arxiv.org/abs/2101.04108) have shown that stronger adversaries can often in fact still recover the sensitive attributes.
+Typically, [prior work](https://arxiv.org/abs/1802.06309) has checked that this is the case by jointly learning representations and an auxiliary adversarial model which is trying to predict the sensitive attribute from the representations.
+However, while these representations protect against adversaries considered during training, several [recent](https://arxiv.org/abs/1808.06640) [papers](https://arxiv.org/abs/2101.04108) have shown that stronger adversaries can often in fact still recover the sensitive attributes.
 Our work tackles this issue by proposing non-adversarial fair representation learning approach based on normalizing flows which can in certain cases *guarantee* that no adversary can reconstruct the sensitive attributes.
 
 ### Motivation
@@ -124,6 +125,7 @@ We provide more experimental results in our paper, including experiments with di
 As mentioned earlier, FNF provides provable upper bound on the maximum accuracy of the adversary trying to recover the sensitive attribute, for the estimated probability densities of the input distribution.
 We show our upper bound on the adversarial accuracy computed from the statistical distance using the estimated densities (diagonal dashed line), together with adversarial accuracies obtained by training an adversary, a multilayer perceptron (MLP) with two hidden layers of 50 neurons, for each model from the figure.
 We can observe that FNF can successfully bound accuracy of the strong adversaries, even though the guarantees were computed on the estimated distributions.
+In our paper, we also experiment with using FNF for other tasks such as algorithmic recourse and transfer learning.
 
 
 ### Summary
