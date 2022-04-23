@@ -8,7 +8,7 @@ date: 2022-04-21
 thumbnail: _thumbnails/mnbab.svg
 usemathjax: true
 tldr: >
-    MN-BaB is our most recent neural network verifier, especially effective on networks with high natural accuracy, i.e. weakly regularized ones obtained by natural training. The verifier uses precise multi-neuron constraints within the Branch-and-Bound paradigm, and utilizes a GPU-based solver, allowing it to efficiently verify more properties of interest.
+    MN-BaB is our most recent neural network verifier that combines precise multi-neuron constraints within the Branch-and-Bound paradigm in one fully GPU-based solver. This allows the verifier to achieve state-of-the-art performance on current benchmarks and perform especially well on networks that were not trained to be easily verifiable and as a result, have high natural accuracy.
 excerpt: >
     Learn more about how multi-neuron constraints can be used in a Branch-and-Bound framework to build a state-of-the-art complete neural network verifier.
 
@@ -16,7 +16,7 @@ draft: true
 tweet-id:
 ---
 
-This blog post explains the high-level ideas and intuitions behind our most recent neural network verifier [MN-BaB](https://files.sri.inf.ethz.ch/website/papers/ferrari2022complete.pdf). First, we introduce the neural network verification problem. Then, we  present the so-called Branch-and-Bound approach for solving them and outline the main ideas behind multi-neuron constraints, before combining the two in our new verifier MN-BaB. We conclude with some experimental results and insights on  why using multi-neuron constraints is key for verification of challenging networks with high natural accuracy.
+This blog post explains the high-level concepts and intuitions behind our most recent neural network verifier [MN-BaB](https://files.sri.inf.ethz.ch/website/papers/ferrari2022complete.pdf). First, we introduce the neural network verification problem. Then, we  present the so-called Branch-and-Bound approach for solving them and outline the main ideas behind multi-neuron constraints, before combining the two in our new verifier MN-BaB. We conclude with some experimental results and insights on  why using multi-neuron constraints is key for the verification of challenging networks with high natural accuracy.
 
 ### Neural Network Verification
 In a nutshell, the neural network verification problem can be stated as follows:
@@ -27,7 +27,7 @@ To formalize this a bit, we consider: a network $f: \mathcal{X} \to \mathcal{Y}$
 
  $$f(x) \in \mathcal{P}, \forall  x \in \mathcal{D}.$$
 
-For the sake of explanation, we consider a fully connected $L$-layer network with ReLU activations, but note that we can handle all common architectures. <!--as the Branch-and-Bound framework only yields complete verifiers for piecewise linear activation functions but remark that our approach applies to a wide class of activations including ReLU, Sigmoid, Tanh, MaxPool, and others.--> We denote the weights and biases of neurons in the $i$-th layer as $W^{(i)}$ and $b^{(i)}$ and define the neural network as 
+For the sake of explanation, we consider a fully connected $L$-layer network with ReLU activations but note that we can handle all common architectures. <!--as the Branch-and-Bound framework only yields complete verifiers for piecewise linear activation functions but remark that our approach applies to a wide class of activations including ReLU, Sigmoid, Tanh, MaxPool, and others.--> We denote the weights and biases of neurons in the $i$-th layer as $W^{(i)}$ and $b^{(i)}$ and define the neural network as 
 
 $$f(x) := \hat{z}^{(L)}(x), \qquad \hat{z}^{(i)}(x) := W^{(i)}z^{(i-1)}(x) + b^{(i)}, \qquad z^{(i)}(x) := \max(0, \hat{z}^{(i)}(x)).$$
 
@@ -51,7 +51,7 @@ Recently, the Branch-and-Bound approach, first described for this task in [Branc
 
 The high-level motivation is the following: the optimization problem in Eq. 1 would be efficiently solvable if not for the non-linearity of the ReLU function. Since a ReLU function is piecewise linear and composed of only two linear regions, we can make a case distinction between a single ReLU node being "active" (input $\geq 0$) or inactive (input $< 0$) and prove the property on the resulting cases where the ReLU behaves linearly. 
 
-In the limit where all ReLU nodes are split, the verification problem becomes fully linear and can be solved efficiently. However, the number of subproblems to be solved in the resulting Branch-and-Bound tree is exponential in the number of ReLU neurons that we split on. Therefore, splitting all ReLU nodes is computationally intractable for all interesting verification problems. To tackle this problem, we prune this Branch-and-Bound tree using the insight that we do not have to split a subproblem further, once we find a lower bound that is $>0$.
+In the limit where all ReLU nodes are split, the verification problem becomes fully linear and can be solved efficiently. However, the number of subproblems to be solved in the resulting Branch-and-Bound tree is exponential in the number of ReLU neurons on which we split. Therefore, splitting all ReLU nodes is computationally intractable for all interesting verification problems. To tackle this problem, we prune this Branch-and-Bound tree using the insight that we do not have to split a subproblem further, once we find a lower bound that is $>0$.
 
 In pseudo-code, the Branch-and-Bound algorithm looks as follows:
 {% highlight python %}
@@ -76,7 +76,7 @@ In pseudo-code, the Branch-and-Bound algorithm looks as follows:
 
 {% endhighlight %}
 
-To define one particular verification method that follows the Branch-and-Bound approach, all we have to do is instantiate the **branch()** and **bound()** functions.
+To define one particular verification method that follows the Branch-and-Bound approach, such as MN-BaB, all we have to do is instantiate the **branch()** and **bound()** functions.
 
 ### Background: Multi-Neuron Constraints 
 Before we do that, we need to understand multi-neuron constraints, the key building block of MN-BaB.
@@ -108,9 +108,9 @@ $$ \min_{x \in \mathcal{D}} a_{inp}x + c^{(0)} \geq a_{inp}x_0 - \lVert a_{inp} 
 
 To arrive at a linear lower bound of the output in terms of the input, we start with the trivial lower bound $f(x) \geq z^{(L)}W + b^{(L)}$ and replace $z^{(L)}$ with symbolic, linear bounds depending only on the previous layer's values $z^{(L-1)}$. We proceed in this manner recursively until we obtain an expression only in terms of the inputs of the network.
 
-These so-called linear relaxations of the different layer types determine the precision of the obtained bounding method. While affine layers (e.g., fully connected, convolutional, avg. pooling, normalization) can be captured exactly, non-linear activation layers remain challenging and are where most of the magic that differentiates MN-BaB happens. Most importantly, MN-BaB is able to enforce MNCs in an efficiently optimizable fashion. The full details are given in the [paper](https://files.sri.inf.ethz.ch/website/papers/ferrari2022complete.pdf), but are rather technical and notation heavy, so we will skip them here.
+These so-called linear relaxations of the different layer types determine the precision of the obtained bounding method. While affine layers (e.g., fully connected, convolutional, avg. pooling, normalization) can be captured exactly, non-linear activation layers remain challenging and are where most of the magic that differentiates MN-BaB happens. Most importantly, MN-BaB is able to enforce MNCs in an efficiently optimizable fashion. The full details are given in the [paper](https://files.sri.inf.ethz.ch/website/papers/ferrari2022complete.pdf) but are rather technical and notation heavy, so we will skip them here.
 
-To derive the linear relaxations for activation layers, we need bounds on the inputs of those layers. In order to compute these lower and upper bounds on every neuron, we apply the procedure described above to every neuron in the network, starting from the first activation layer.
+To derive the linear relaxations for activation layers, we need bounds on the inputs of those layers ($l_x$ and $u_x$ in the illustrations). In order to compute these lower and upper bounds on every neuron, we apply the procedure described above to every neuron in the network, starting from the first activation layer.
 
 Note that if those input bounds for a ReLU node are either both negative or both positive, the corresponding activation function becomes linear and we do not have to split this node during the Branch-and-Bound process. We call such nodes "stable" and correspondingly nodes where the input bounds contain zero "unstable".
 
@@ -163,7 +163,7 @@ As a more fine-grained measure of performance, we analyze the ratio of runtimes 
 ![Alt Text](/assets/blog/mn-bab/ResNet6-A_n_subproblems_ratio_branching.png){: .blogpost-img40}
 
 {: .blogpost-wrap}
-<span>**Effectiveness of Cost Adjusted Branching**: We investigate the effect of Cost Adjusted Branching on mean verification time with ACS. Using Cost Adjusted Branching further reduces the verification time by 50%. It is particularly effective in combination with the ACS scores and multi-neuron constraints, where bounding costs vary more significantly.</span>
+<span>**Effectiveness of Cost Adjusted Branching**: Finally, we investigate the effect of Cost Adjusted Branching on mean verification time with ACS. Using Cost Adjusted Branching further reduces the verification time by 50%. It is particularly effective in combination with the ACS scores and multi-neuron constraints, where bounding costs vary more significantly.</span>
 ![Alt Text](/assets/blog/mn-bab/ResNet6-A_cab_runtime_comparison_p4c_acs.png){: .blogpost-img40}
 
 
