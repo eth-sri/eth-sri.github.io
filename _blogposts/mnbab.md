@@ -8,11 +8,11 @@ date: 2022-04-21
 thumbnail: _thumbnails/mnbab.svg
 usemathjax: true
 tldr: >
-    MN-BaB is our most recent neural network verifier that combines precise multi-neuron constraints within the Branch-and-Bound paradigm in one fully GPU-based solver. This allows the verifier to achieve state-of-the-art performance on current benchmarks and perform especially well on networks that were not trained to be easily verifiable and as a result, have high natural accuracy.
+    MN-BaB is our most recent neural network verifier and combines precise multi-neuron constraints within the Branch-and-Bound paradigm in one fully GPU-based solver. This combination of the two most successful verifier paradigms allows us to achieve state-of-the-art performance on current benchmarks and perform especially well on networks that were not trained to be easily verifiable and as a result have high natural accuracy.
 excerpt: >
     Learn more about how multi-neuron constraints can be used in a Branch-and-Bound framework to build a state-of-the-art complete neural network verifier.
 
-draft: true
+draft: false
 tweet-id:
 ---
 
@@ -21,7 +21,7 @@ This blog post explains the high-level concepts and intuitions behind our most r
 ### Neural Network Verification
 In a nutshell, the neural network verification problem can be stated as follows:
 
-*Given a network and an input, prove that in a small region around that input no [adversarial example](https://openai.com/blog/adversarial-example-research/) exists.*
+*Given a network and an input, prove that all points in a small region around that input are classified correctly, i.e., that no [adversarial example](https://openai.com/blog/adversarial-example-research/) exists.*
 
 To formalize this a bit, we consider: a network $f: \mathcal{X} \to \mathcal{Y}$, an input region $\mathcal{D} \subseteq \mathcal{X}$, and a linear property $\mathcal{P}\subseteq \mathcal{Y}$ over the output neurons $y\in\mathcal{Y}$, and we try to prove that
 
@@ -31,12 +31,12 @@ For the sake of explanation, we consider a fully connected $L$-layer network wit
 
 $$f(x) := \hat{z}^{(L)}(x), \qquad \hat{z}^{(i)}(x) := W^{(i)}z^{(i-1)}(x) + b^{(i)}, \qquad z^{(i)}(x) := \max(0, \hat{z}^{(i)}(x)).$$
 
-Where $z^{(0)}(x) = x$ denotes the input. For readability, we omit the dependency of intermediate activations on $x$ from here on.
+Where $z^{(0)}(x) = x$ denotes the input, $\hat{z}$ are the pre-activation values, and $z$ the post-activation values. For readability, we omit the dependency of intermediate activations on $x$ from here on.
 
 Let $\mathcal{D}$ be an $\ell_\infty$ ball around an input point $x_0$ of radius $\epsilon$: 
 $$\mathcal{D}_\epsilon(x_0) = \left\{ x \in \mathcal{X} \mid \lVert x - x_0\rVert _{\infty} \leq  \epsilon \right\}.$$
 
-Since we can encode any linear property over output neurons into an additional affine layer, we can simplify the general formulation to $f(x) \in \mathcal{P}$ to $f(x) > {0}$. Any such property can now be verified by proving that a lower bound to the following optimization problem is greater than $0$:
+Since we can encode any linear property over output neurons into an additional affine layer, we can simplify the general formulation of $f(x) \in \mathcal{P}$ to $f(x) > {0}$. Any such property can now be verified by proving that a lower bound to the following optimization problem is greater than $0$:
 
 $$
 \begin{align*}
@@ -79,20 +79,21 @@ In pseudo-code, the Branch-and-Bound algorithm looks as follows:
 To define one particular verification method that follows the Branch-and-Bound approach, such as MN-BaB, all we have to do is instantiate the **branch()** and **bound()** functions.
 
 ### Background: Multi-Neuron Constraints 
-Before we do that, we need to understand multi-neuron constraints, the key building block of MN-BaB.
+Before we do that, we need to understand multi-neuron constraints, the second key building block of MN-BaB.
 
 To bound the optimization problem in Eq. 1 efficiently, we want to replace the non-linear constraint $z = \max({0}, \hat{z})$ with its so-called linear relaxation, i.e., a set of linear constraints that is satisfied for all points satisfying the original non-linear constraint. If we consider just a single neuron, the tightest such linear relaxation is the convex hull of the function in its input-output space:
 
-![DeepPoly ReLU abstraction](/assets/blog/mn-bab/DeepPoly.png){: .blogpost-img50}
+![Convex hull ReLU abstraction](/assets/blog/mn-bab/ConvexHull.png){: .blogpost-img50}
 
 
-However, considering one neuron at a time comes with a fundamental precision limit, called the [(single-neuron) convex relaxation barrier](https://proceedings.neurips.cc/paper/2019/hash/246a3c5544feb054f3ea718f61adfa16-Abstract.html). It has since been [shown](https://www.sri.inf.ethz.ch/publications/singh2019krelu), that this limit can be overcome by considering multiple neurons jointly, thereby capturing interactions between these neurons and obtaining tighter bounds. We use the efficiently computable *multi-neuron constraints* (MNCs) from [PRIMA](https://www.sri.inf.ethz.ch/publications/mueller2021precise), which can be expressed as a conjunction of linear constraints over the joint
-input and output space of a ReLU layer.
+However, considering one neuron at a time comes with a fundamental precision limit, called the [(single-neuron) convex relaxation barrier](https://proceedings.neurips.cc/paper/2019/hash/246a3c5544feb054f3ea718f61adfa16-Abstract.html). It has since been [shown](https://www.sri.inf.ethz.ch/publications/singh2019krelu), that this limit can be overcome by considering multiple neurons jointly, thereby capturing interactions between these neurons and obtaining tighter bounds. We illustrate this improvement, showing ae projection of the 4d input-output space of two neurons, below.
 
 ![PRIMA ReLU abstraction](/assets/blog/mn-bab/PRIMA.png){: .blogpost-img50}
 
 {: .blogpost-caption}
 *The difference in tightness between the tightest single-neuron, and a multi-neuron relaxation.*
+
+We use the efficiently computable *multi-neuron constraints* (MNCs) from [PRIMA](https://www.sri.inf.ethz.ch/publications/mueller2021precise), which can be expressed as a conjunction of linear constraints over the joint
 
 ### MN-BaB: Bounding
 
