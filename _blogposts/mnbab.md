@@ -47,7 +47,7 @@ $$
 $$
 
 ### Background: Branch-and-Bound for Neural Network Verification
-Recently, the Branch-and-Bound approach, first described for this task in [Branch and Bound for Piecewise Linear Neural Network Verification](https://arxiv.org/pdf/1909.06588.pdf), has been popularized. At a high level, it is based on splitting the hard optimization problem of Eq. 1 into multiple easier subproblems by adding additional constraints until we can show the desired bound of $f(x) > 0$ on them.
+Recently, the *Branch-and-Bound* (**BaB**) approach, first described for this task in [Branch and Bound for Piecewise Linear Neural Network Verification](https://arxiv.org/pdf/1909.06588.pdf), has been popularized. At a high level, it is based on splitting the hard optimization problem of Eq. 1 into multiple easier subproblems by adding additional constraints until we can show the desired bound of $f(x) > 0$ on them.
 
 The high-level motivation is the following: the optimization problem in Eq. 1 would be efficiently solvable if not for the non-linearity of the ReLU function. Since a ReLU function is piecewise linear and composed of only two linear regions, we can make a case distinction between a single ReLU node being "active" (input $\geq 0$) or inactive (input $< 0$) and prove the property on the resulting cases where the ReLU behaves linearly. 
 
@@ -79,7 +79,7 @@ In pseudo-code, the Branch-and-Bound algorithm looks as follows:
 To define one particular verification method that follows the Branch-and-Bound approach, such as MN-BaB, all we have to do is instantiate the **branch()** and **bound()** functions.
 
 ### Background: Multi-Neuron Constraints 
-Before we do that, we need to understand multi-neuron constraints, the second key building block of MN-BaB.
+Before we do that, we need to understand *multi-neuron constraints* (**MNCs**), the second key building block of MN-BaB.
 
 To bound the optimization problem in Eq. 1 efficiently, we want to replace the non-linear constraint $z = \max({0}, \hat{z})$ with its so-called linear relaxation, i.e., a set of linear constraints that is satisfied for all points satisfying the original non-linear constraint. If we consider just a single neuron, the tightest such linear relaxation is the convex hull of the function in its input-output space:
 
@@ -93,7 +93,7 @@ However, considering one neuron at a time comes with a fundamental precision lim
 {: .blogpost-caption}
 *The difference in tightness between the tightest single-neuron, and a multi-neuron relaxation.*
 
-We use the efficiently computable *multi-neuron constraints* (MNCs) from [PRIMA](https://www.sri.inf.ethz.ch/publications/mueller2021precise), which can be expressed as a conjunction of linear constraints over the joint
+We use the efficiently computable *multi-neuron constraints* (MNCs) from [PRIMA](https://www.sri.inf.ethz.ch/publications/mueller2021precise), which can be expressed as a conjunction of linear constraints over the joint input-output space.
 
 ### MN-BaB: Bounding
 
@@ -103,13 +103,13 @@ Following [previous](https://files.sri.inf.ethz.ch/website/papers/DeepPoly.pdf) 
 
 $$ \min_{x \in \mathcal{D}} f(x) \geq \min_{x \in \mathcal{D}} a_{inp}x + c_{inp}$$
 
-The minimization over $x \in \mathcal{D}$ has a closed form solution given by [Hölder's inequality](https://en.wikipedia.org/wiki/Hölder%27s_inequality):
+There, the minimization over $x \in \mathcal{D}_\infty$ has a closed form solution given by [Hölder's inequality](https://en.wikipedia.org/wiki/Hölder%27s_inequality):
 
 $$ \min_{x \in \mathcal{D}} a_{inp}x + c^{(0)} \geq a_{inp}x_0 - \lVert a_{inp} \rVert_1 \epsilon + c_{inp}$$
 
-To arrive at a linear lower bound of the output in terms of the input, we start with the trivial lower bound $f(x) \geq z^{(L)}W + b^{(L)}$ and replace $z^{(L)}$ with symbolic, linear bounds depending only on the previous layer's values $z^{(L-1)}$. We proceed in this manner recursively until we obtain an expression only in terms of the inputs of the network.
+To arrive at such a linear lower bound of the output in terms of the input, we start with the trivial lower bound $f(x) \geq z^{(L)}W + b^{(L)}$ and replace $z^{(L)}$ with symbolic, linear bounds depending only on the previous layer's values $z^{(L-1)}$. We proceed in this manner recursively until we obtain an expression only in terms of the inputs of the network.
 
-These so-called linear relaxations of the different layer types determine the precision of the obtained bounding method. While affine layers (e.g., fully connected, convolutional, avg. pooling, normalization) can be captured exactly, non-linear activation layers remain challenging and are where most of the magic that differentiates MN-BaB happens. Most importantly, MN-BaB is able to enforce MNCs in an efficiently optimizable fashion. The full details are given in the [paper](https://files.sri.inf.ethz.ch/website/papers/ferrari2022complete.pdf) but are rather technical and notation heavy, so we will skip them here.
+This backsubstitution is based on so-called linear relaxations of the different layer types. They are what determines the precision of the obtained bounding method. While affine layers (e.g., fully connected, convolutional, avg. pooling, normalization) can be captured exactly, non-linear activation layers remain challenging and their encoding is what differentiates MN-BaB. Most importantly, MN-BaB is able to enforce MNCs in an efficiently optimizable fashion. The full details are given in the [paper](https://files.sri.inf.ethz.ch/website/papers/ferrari2022complete.pdf) but are rather technical and notation heavy, so we will skip them here.
 
 To derive the linear relaxations for activation layers, we need bounds on the inputs of those layers ($l_x$ and $u_x$ in the illustrations). In order to compute these lower and upper bounds on every neuron, we apply the procedure described above to every neuron in the network, starting from the first activation layer.
 
@@ -122,29 +122,29 @@ Note that if those input bounds for a ReLU node are either both negative or both
 
 ### MN-BaB: Branching
 
-The **branch()** method takes a problem instance and splits it into two subproblems. This means deciding which unstable ReLU node to split and adding additional constraints to both resulting subproblems enforcing $<0$ or $\geq0$, on the input of the split neuron.
+The **branch()** method takes a problem instance and splits it into two subproblems. This means deciding which unstable ReLU node to split and adding additional constraints to both resulting subproblems enforcing $\hat{z}<0$ or $\hat{z}\geq0$, on the input of the split neuron.
 
 ![Alt Text](/assets/blog/mn-bab/split_constraints.png){: .blogpost-img80}
 
 {: .blogpost-caption}
 *The split constraints that are added to the generated subproblems.*
 
-The choice of which node to split has a significant impact on how many subproblems we have to consider during the Branch-and-Bound process until we can prove a property. Therefore, we aim to choose a neuron that minimizes the total number of problems we have to consider. To do this, we define a proxy score trying to capture the bound improvement resulting from any particular split. Note that the optimal branching decision depends on the bounding method that is used, as different bounding methods might profit differently from additional constraints resulting from the split.
+The choice of which node to split has a significant impact on how many subproblems we have to consider during the Branch-and-Bound process until we can prove a property. Therefore, we aim to choose a neuron that minimizes the total number of problems we have to consider. To this end, we define a proxy score trying to capture the bound improvement resulting from any particular split. Note that the optimal branching decision depends on the bounding method that is used, as different bounding methods might profit differently from additional constraints resulting from the split.
 
-As our bounding method relies on MNCs, we design a proxy score that is specifically tailored to them, called the Active Constraint Score (ACS). ACS determines the sensitivity of the final optimization objective with respect to the MNCs and then, for each node, computes the cumulative sensitivity of all constraints containing that node. We then split the node with the highest cumulative sensitivity.
+As our bounding method relies on MNCs, we design a proxy score that is specifically tailored to them, called the *Active Constraint Score* (**ACS**). ACS determines the sensitivity of the final optimization objective with respect to the MNCs and then, for each node, computes the cumulative sensitivity of all constraints containing that node. We then split the node with the highest cumulative sensitivity.
 
-We further propose Cost Adjusted Branching (CAB) to scale this branching score by the expected cost of performing a particular split. This cost can differ significantly, as only the intermediate bounds after the split layer have to be recomputed, making splits in later layers computationally cheaper.
+We further propose *Cost Adjusted Branching* (**CAB**) to scale this branching score by the expected cost of performing a particular split. This cost can differ significantly, as only the intermediate bounds after the split layer have to be recomputed, making splits in later layers computationally cheaper.
 
 ### Why use multi-neuron constraints?
 
 Using MNCs for bounding, while making the bounds more precise, is computationally costly. The intuitive argument why it still helps verification performance is that the number of subproblems solved during Branch-and-Bound grows exponentially with the depth of the subproblem tree. A more precise bounding method that can verify subproblems earlier (at a smaller depth), can therefore save us exponentially many subproblems that we do not need to solve, which more than compensates for the increased computational cost.
 
 This benefit is more pronounced the larger the considered network and the more dependencies there are between neurons in the same layer. 
-Most established benchmarks (e.g., from [VNNComp](https://sites.google.com/view/vnn2021)) are based on very small networks or use training methods designed for ease of verification at the cost of natural accuracy, to make their certification tractable. This makes them less representative of networks used in practice. Therefore, we suggest focusing on larger, more challenging networks with higher natural accuracy (and more intra-layer dependencies) for the evaluation of the next generation of verifiers. There, the benefits of MNCs are particularly pronounced, leading us to believe that they represent a promising direction.
+Most established benchmarks (e.g., from [VNNComp](https://sites.google.com/view/vnn2021)) are based on very small networks or use training methods designed for ease of verification at the cost of natural accuracy. While this makes their certification tractable, they are less representative of networks used in practice. Therefore, we suggest focusing on larger, more challenging networks with higher natural accuracy (and more intra-layer dependencies) for the evaluation of the next generation of verifiers. There, the benefits of MNCs are particularly pronounced, leading us to believe that they represent a promising direction.
 
 ### Experiments
-We studied the effect of MN-BaB's components in an ablation study on the first 100 test images of the [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) dataset. We aimed to prove that there is no adversarial example within an $l_\infty$ ball of radius $\epsilon=1/255$ and reported the number of verified samples (within a timeout of 600 seconds) and the corresponding average runtime.
-We considered two networks of identical architecture that only differ in the strength of their adversarial training method. ResNet6-A is weakly regularized while ResNet6-B is more strongly regularized, i.e. employs stronger adversarial training.
+We study the effect of MN-BaB's components in an ablation study on the first 100 test images of the [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) dataset. We aim to prove that there is no adversarial example within an $\ell_\infty$ ball of radius $\epsilon=1/255$ and report the number of verified samples (within a timeout of 600 seconds) and the corresponding average runtime.
+We consider two networks of identical architecture that only differ in the strength of their adversarial training method. ResNet6-A is weakly regularized while ResNet6-B is more strongly regularized, i.e. employs stronger adversarial training.
 
 ![Alt Text](/assets/blog/mn-bab/ablation_study.png){: .blogpost-img50}
 
