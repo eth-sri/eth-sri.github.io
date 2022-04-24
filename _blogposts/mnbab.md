@@ -86,7 +86,7 @@ To bound the optimization problem in Eq. 1 efficiently, we want to replace the n
 ![Convex hull ReLU abstraction](/assets/blog/mn-bab/ConvexHull.png){: .blogpost-img50}
 
 
-However, considering one neuron at a time comes with a fundamental precision limit, called the [(single-neuron) convex relaxation barrier](https://proceedings.neurips.cc/paper/2019/hash/246a3c5544feb054f3ea718f61adfa16-Abstract.html). It has since been [shown](https://www.sri.inf.ethz.ch/publications/singh2019krelu), that this limit can be overcome by considering multiple neurons jointly, thereby capturing interactions between these neurons and obtaining tighter bounds. We illustrate this improvement, showing ae projection of the 4d input-output space of two neurons, below.
+However, considering one neuron at a time comes with a fundamental precision limit, called the [(single-neuron) convex relaxation barrier](https://proceedings.neurips.cc/paper/2019/hash/246a3c5544feb054f3ea718f61adfa16-Abstract.html). It has since been [shown](https://www.sri.inf.ethz.ch/publications/singh2019krelu), that this limit can be overcome by considering multiple neurons jointly, thereby capturing interactions between these neurons and obtaining tighter bounds. We illustrate this improvement, showing a projection of the 4d input-output space of two neurons, below.
 
 ![PRIMA ReLU abstraction](/assets/blog/mn-bab/PRIMA.png){: .blogpost-img50}
 
