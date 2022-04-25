@@ -73,20 +73,22 @@ We experimented with two different types of provably robust adversarial examples
 We note **PARADE** is highly effective - it generates regions successfully for all but $1$ image for which the classical adversarial attacks succeeded. Further, the regions generated contain a very large set of adversarial examples that are infeasible to generate individually.
 Finally, we note that the polyhedral adversarial examples take more time to generate but contain more examples. Calculating the exact number of concrete attacks within the polyhedral regions is computationally hard so instead we approximate the number as precisely as possible from above and below using boxes.
  
-Next, we show the results for provably robust adversarial examples to geometric changes: 
+Next, we show the results for adversarial examples provably robust to geometric changes: 
+
 | Network   | Transform | PARADE<br/>Box<br/>\# Regions | PARADE<br/>Box<br/>Time | PARADE<br/>Box<br/>\# Attacks |
 |-------------|-------:|----------:|------:|----------:|
-| MNIST<br/>ConvSmall | Rot($17^{\circ}$) + Scale($18$) + Shear($0.03$) | 51/54 | 774s | $10^{96} < \cdot < 10^{195}$ |
-| MNIST<br/>ConvSmall | SC(20) T(-1.7,1.7,-1.7,1.7) | 51/56 | 521s | $10^{71} < \cdot < 10^{160}$ |
-| MNIST<br/>ConvSmall | SC(20) R(13) B(10, 0.05) | 40/48 | 370s | $10^{70} < \cdot < 10^{455}$ |
-| MNIST<br/>ConvBig | R(10) SC(15) SH(0.03) | 44/50 | 835s | $10^{77} < \cdot < 10^{205}$ |
-| MNIST<br/>ConvBig  | SC(20) T(0,1,0,1) | 42/46 | 441s | $10^{64} < \cdot < 10^{174}$ |
-| MNIST<br/>ConvBig | SC(15) R(9) B(5, 0.05) | 46/52 | 537s | $10^{119} < \cdot < 10^{545}$ |
-| CIFAR-10<br/>ConvSmall  | R(2.5) SC(10) SH(0.02) | 29/29 | $10^{599} < \cdot < 10^{1173}$ |
-| CIFAR-10<br/>ConvSmall  | SC(10) T(0,1,0,1) | 32/32 | $10^{66} < \cdot < 10^{174}$ |
-| CIFAR-10<br/>ConvSmall  | SC(5) R(8) B(1, 0.01) | 21/25 | $10^{513} < \cdot < 10^{2187}$ |
+| MNIST<br/>ConvSmall | Rotate + Scale + Shear | 51/54 | 774s | $10^{96} < \cdot < 10^{195}$ |
+| MNIST<br/>ConvSmall | Scale + Translate2D | 51/56 | 521s | $10^{71} < \cdot < 10^{160}$ |
+| MNIST<br/>ConvSmall | Scale + Rotate + Brightness | 40/48 | 370s | $10^{70} < \cdot < 10^{455}$ |
+| MNIST<br/>ConvBig | Rotate + Scale + Shear | 44/50 | 835s | $10^{77} < \cdot < 10^{205}$ |
+| MNIST<br/>ConvBig  | Scale + Translate2D | 42/46 | 441s | $10^{64} < \cdot < 10^{174}$ |
+| MNIST<br/>ConvBig | Scale + Rotate + Brightness | 46/52 | 537s | $10^{119} < \cdot < 10^{545}$ |
+| CIFAR-10<br/>ConvSmall  | Rotate + Scale + Shear | 29/29 | 1369s | $10^{599} < \cdot < 10^{1173}$ |
+| CIFAR-10<br/>ConvSmall  | Scale + Translate2D | 32/32 | 954s | $10^{66} < \cdot < 10^{174}$ |
+| CIFAR-10<br/>ConvSmall  | Scale + Rotate + Brightness | 21/25 | 1481s | $10^{513} < \cdot < 10^{2187}$ |
 
-
+We see that again **PARADE** is capable of generating examples for most images where classical adversarial attacks succeeded. We note that we use [*DeepG*](https://www.sri.inf.ethz.ch/publications/balunovic2019geometric) for verification. 
+Since DeepG generates image polyhedra, we have to approximate the number of concrete attacks similarly to **PARADE Poly** above. We also note that DeepG is more computationally expensive resulting is longer runtime for our algorithm, as well. 
 
 ### Visualizing PARADE regions
 ![](/assets/blog/parade/visualize.svg){: .blogpost-img100}
