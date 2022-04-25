@@ -19,7 +19,7 @@ keywords: fair representation learning, certified individual fairness
 conf-url: https://icml.cc/virtual/2021/poster/9327
 conf-info: Oral - Wed Jul 20, 19:00 GMT+2 (Reinforcement Learning 4) | Poster - Tue Jul 20, 18:00 GMT+2 (Poster Session 1)
 
-draft: false 
+draft: true 
 tweet-id: 1447996320741007362
 ---
 
