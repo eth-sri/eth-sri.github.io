@@ -13,7 +13,7 @@ bibtex: '@incollection{ruoss2020learning,
 	booktitle = {Advances in Neural Information Processing Systems 33},
     year = {2020}
 }'
-blogpost: lcifr
+<!--blogpost: lcifr-->
 paper: https://arxiv.org/pdf/2002.10312
 talk: 
 slides: https://files.sri.inf.ethz.ch/website/slides/neurips2020-lcifr.pdf
