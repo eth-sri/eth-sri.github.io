@@ -14,6 +14,9 @@ excerpt: >
 
 draft: false
 tweet-id:
+keywords: certified robustness, adversarial examples
+conf-url: https://iclr.cc/virtual/2022/poster/6097
+conf-info: Poster - Wed Apr 27 11:30 UTC+2
 ---
 
 This blog post explains the high-level concepts and intuitions behind our most recent neural network verifier [MN-BaB](https://files.sri.inf.ethz.ch/website/papers/ferrari2022complete.pdf). First, we introduce the neural network verification problem. Then, we  present the so-called Branch-and-Bound approach for solving it and outline the main ideas behind multi-neuron constraints, before combining the two in our new verifier MN-BaB. We conclude with some experimental results and insights on  why using multi-neuron constraints is key for the verification of challenging networks with high natural accuracy.
