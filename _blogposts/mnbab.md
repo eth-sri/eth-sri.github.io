@@ -5,14 +5,14 @@ pub-ref: ferrari2022complete
 title: "Multi-Neuron Relaxation Guided Branch-and-Bound"
 blogpost-authors: "Claudio Ferrari, Mark Niklas Müller, Nikola Jovanović"
 date: 2022-04-21
-thumbnail: _thumbnails/mnbab.svg
+thumbnail: thumbnails/mnbab.svg
 usemathjax: true
 tldr: >
     MN-BaB is our most recent neural network verifier that combines precise multi-neuron constraints within the Branch-and-Bound paradigm in one fully GPU-based solver. This combination of the two most successful verifier paradigms allows us to achieve state-of-the-art performance on current benchmarks and perform especially well on networks that were not trained to be easily verifiable and as a result have high natural accuracy.
 excerpt: >
     Learn more about how multi-neuron constraints can be used in a Branch-and-Bound framework to build a state-of-the-art complete neural network verifier.
 
-draft: true
+draft: false 
 tweet-id:
 keywords: certified robustness, adversarial examples
 conf-url: https://iclr.cc/virtual/2022/poster/6097

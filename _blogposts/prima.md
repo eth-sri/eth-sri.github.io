@@ -5,7 +5,7 @@ pub-ref: mueller2021precise
 title: "Crushing the convex barrier and certifying more"
 blogpost-authors: "Mark Niklas Müller" 
 date: 2021-09-01
-thumbnail: _thumbnails/prima.svg
+thumbnail: thumbnails/prima.svg
 usemathjax: true
 tldr: >
     We design PRIMA, a precise and scalable neural network verifier, which can
@@ -20,7 +20,7 @@ keywords: neural network certification, convex relaxations, computational geomet
 conf-url: https://icml.cc/virtual/2021/poster/9327
 conf-info: Spotlight - Mon Jul 20, 19:30 GMT+2 (Deep Learning Theory 4) | Poster - Tue Jul 20, 18:00 GMT+2 (Poster Session 4)
 
-draft: true
+draft: false 
 tweet-id: 1447996320741007362
 ---
 

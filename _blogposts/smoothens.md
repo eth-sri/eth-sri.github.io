@@ -5,7 +5,7 @@ pub-ref: horvath2022boosting
 title: "Boosting Randomized Smoothing with Variance Reduced Classifiers"
 blogpost-authors: "Mark Niklas Müller, Marc Fischer" 
 date: 2022-04-15
-thumbnail: _thumbnails/smooth_ens.png
+thumbnail: thumbnails/smooth_ens.png
 usemathjax: true
 tldr: >
     Ensembles are particularly suitable base models for constructing certifiably robust classifiers via Randomized Smoothing (RS). Here, we motivate this result theoretically and share empirical results, showing that they obtain state-of-the-art results in multiple settings. The key insight is that the reduced variance of ensembles over the perturbations introduced in RS leads to significantly more consistent classifications for a given input. This, in turn, leads to substantially increased certifiable radii for samples close to the decision boundary.
@@ -15,7 +15,7 @@ keywords: randomized smoothing, certified robustness, ensembles
 conf-url: https://iclr.cc/virtual/2022/spotlight/6328
 conf-info: Spotlight - Thu Apr 28, 19:30 UTC+2
 
-draft: true
+draft: false 
 tweet-id:
 ---
 
