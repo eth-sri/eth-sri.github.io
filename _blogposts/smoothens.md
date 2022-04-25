@@ -8,7 +8,7 @@ date: 2022-04-15
 thumbnail: _thumbnails/smooth_ens.png
 usemathjax: true
 tldr: >
-    In this blogpost, we show that ensembles are particularly suitable base models for constructing certifiably robust classifiers via Randomized Smoothing (RS). We first motivate this result theoretically before sharing empirical results, showing that they obtain state-of-the-art results in multiple settings. The key insight is that the reduced variance of ensembles over the perturbations introduced in RS leads to significantly more consistent classifications for a given input. This, in turn, leads to substantially increased certifiable radii for samples close to the decision boundary.
+    Ensembles are particularly suitable base models for constructing certifiably robust classifiers via Randomized Smoothing (RS). Here, we motivate this result theoretically and share empirical results, showing that they obtain state-of-the-art results in multiple settings. The key insight is that the reduced variance of ensembles over the perturbations introduced in RS leads to significantly more consistent classifications for a given input. This, in turn, leads to substantially increased certifiable radii for samples close to the decision boundary.
 excerpt: >
     We theoretically motivate why and show empirically that, ensembles are particularly suitable base models for Randomized Smoothing, due to the variance reduction across the perturbations introduced during Randomized Smoothing.
 keywords: randomized smoothing, certified robustness, ensembles
