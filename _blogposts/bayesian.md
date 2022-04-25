@@ -8,7 +8,7 @@ date: 2022-04-20
 thumbnail: _thumbnails/bayesian_blog_thumb.svg
 usemathjax: true
 tldr: >
-    Recent work has challenged notion that federated learning preserves data privacy by showing that various attacks can reconstruct original data from gradient updates. In this post, we investigate what is the optimal reconstruction attack and we show how it connects to previously proposed attacks. Furthermore, we also show that most of the existing defenses are not effective against strong attacks. Our findings indicate that the construction of effecive defenses and their evaluation remains an open problem.
+    Recent work has challenged notion that federated learning preserves data privacy by showing that various attacks can reconstruct original data from gradient updates. In this post, we investigate what is the optimal reconstruction attack and we show how it connects to previously proposed attacks. Furthermore, we also show that most of the existing defenses are not effective against strong attacks. Our findings indicate that the construction of effective defenses and their evaluation remains an open problem.
 excerpt: >
     The excerpt is for the home page, aim for 1-2 sentences or 3-5 lines on the homepage. LCIFR is a method for training fair representations with provable certificates of individual fairness.
 keywords: federated learning, privacy, gradient leakage
@@ -28,7 +28,7 @@ In our work, we investigate what is the optimal attack for reconstructing data f
 Goal of federated learning is to train a model $h_\theta$ through a collaborative procedure involving different clients, without data leaving individual client devices.
 Typically $h_\theta$ is a neural network with parameters $\theta$, classifying an input $x$ to a label $y$.
 We assume that pairs $(x, y)$ are coming from a distribution $\mathcal{D}$.
-In the standard federated learning setting, there are $n$ clients with loss functions $l_1, ..., l_n$, who are trying to jointly solve the optimization problem and find parameters $\theta$ which minimizes their average loss:
+In the standard federated learning setting, there are $n$ clients with loss functions $l_1, ..., l_n$, who are trying to jointly solve the optimization problem and find parameters $\theta$ which minimize their average loss:
 
 $$
 \begin{equation*}
@@ -63,7 +63,7 @@ $$
 \end{equation}
 $$
 
-We can then manipulate with this expression and show that $$R(f) = 1 - \mathbb{E}_g \int_{B(f(g), \delta)} p(x|g) \,dx$$.
+We can then manipulate this expression and show that $$R(f) = 1 - \mathbb{E}_g \int_{B(f(g), \delta)} p(x|g) \,dx$$.
 This allows us to work out what is the optimal adverasary $f$ which minimizes the adversarial risk $R(f)$:
 
 $$
@@ -101,7 +101,7 @@ Below we show our reconstructions for each defense, evaluated on CIFAR-10 datase
 
 
 {:.blogpost-caption}
-***Reconstructions on defended networks.**We attack models defended by Soteria, ATS and PRECODE using strong attacks. Our reconstructions are very close to the original images, showing that these defenses do not reliably protect privacy, especially early in training.*
+***Reconstructions on defended networks.** We attack models defended by Soteria, ATS and PRECODE using strong attacks. Our reconstructions are very close to the original images, showing that these defenses do not reliably protect privacy, especially early in training.*
 
 Each defense introduces a different $p(g|x)$ which we use to derive an approximation of Bayes optimal adversary.
 Our results indicate that these defenses do not reliably protect privacy under gradient leakage, especially in the early stages of the training.
