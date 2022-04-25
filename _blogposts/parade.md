@@ -60,6 +60,19 @@ The procedure is concludes when the verifier succeeds. We outline the procedure 
 
 ### Experiments
 
+We experimented with two different types of provably robust adversarial examples - robust to pixel intensity changes ($\ell\_\infty$ changes) and to geometric changes. We show the pixel intensity experiment below:
+
+| Network   | $\epsilon$ | PARADE Box<br/>\# Regions | PARADE Box<br/>Time | PARADE Box<br/>\# Attacks | PARADE Poly<br/>\# Regions | PARADE Poly<br/> Time | PARADE<br/>Poly<br/>\# Attacks |
+|-------------|-------:|----------:|------:|----------:|----------:|------:|---------------:|
+| MNIST<br/>8x200 | 0.045 | 53/53 | 114s | $10^{121}$ | 53/53 | 1556s | $10^{121} < \cdot < 10^{191}$ |
+| MNIST<br/>ConvSmall | 0.12 | 32/32 | 74s | $10^{494}$ | 32/32 | 141s | $10^{494} < \cdot < 10^{561}$ |
+| MNIST<br/>ConvBig | 0.05 | 28/29 | 880s | $10^{137}$ | 28/29 | 5636s | $10^{137} < \cdot < 10^{173}$ |
+| CIFAR-10<br/>ConvSmall | 0.006 | 44/44 | 113s | $10^{486}$ | 44/44 | 264s | $10^{486} < \cdot < 10^{543}$ |
+| CIFAR-10<br/>ConvBig  | 0.008 | 36/36 | 404s | $10^{573}$ | 36/36 | 610s | $10^{573} < \cdot < 10^{654}$ |
+
+We note **PARADE** is highly effective - it generates regions successfully for all but $1$ image for which the classical adversarial attacks succeeded. Further, the regions generated contain a very large set of adversarial examples that are infeasible to generate individually.
+Finally, we note that the polyhedral adversarial examples take more time to generate but contain more examples. Calculating the exact number of concrete attacks within the polyhedral regions is computationally hard so instead we approximate the number as precisely as possible from above and below using boxes. 
+
 ### Visualizing PARADE regions
 ![](/assets/blog/parade/visualize.svg){: .blogpost-img100}
 
