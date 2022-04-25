@@ -19,7 +19,7 @@ bibtex: '@inproceedings{bichsel2020silq,
 	year = {2020}
 }
 '
-blogpost: silq
+<!--blogpost: silq-->
 paper: https://files.sri.inf.ethz.ch/website/papers/pldi20-silq.pdf
 ---
 

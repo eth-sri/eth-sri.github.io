@@ -8,7 +8,7 @@ venue: IEEE S&P
 projects: probabilistic-programming diff-privacy
 awards:
 bibtex: ''
-blogpost: dpsniper
+<!--blogpost: dpsniper-->
 paper: https://files.sri.inf.ethz.ch/website/papers/sp21-dpsniper.pdf
 talk: https://www.youtube.com/watch?v=M1O-omGZ2QE&list=PLWjm4hHpaNg7WjYyCnj7nHFvHWXmHfm4u&index=1
 slides: https://files.sri.inf.ethz.ch/website/slides/sp21-dpsniper-slides.pdf
