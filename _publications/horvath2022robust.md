@@ -8,7 +8,7 @@ venue: SRML@ICLR
 projects: safeai
 #bibtex: '@misc{horvath2022robust,
 #      title={Robust and Accurate - Compositional Architectures for Randomized Smoothing}, 
-#      author={Miklós Z. Horváth and Mark Niklas Müller and Marc Fischer and Martin Vechev},
+#      author={Mikl{\'o}s Z. Horv{\'a}th and Mark Niklas M{\"{u}}ller and Marc Fischer and Martin Vechev},
 #      booktitle={ICLR 2022 Workshop on Socially Responsible Machine Learning},
 #      year={2022}
 #      }'

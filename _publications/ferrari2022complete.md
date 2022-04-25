@@ -9,7 +9,7 @@ projects: safeai
 bibtex: '@inproceedings{
 	ferrari2022complete,
 	title={Complete Verification via Multi-Neuron Relaxation Guided Branch-and-Bound},
-	author={Claudio Ferrari and Mark Niklas Mueller and Nikola Jovanović and Martin Vechev},
+	author={Claudio Ferrari and Mark Niklas M{\"{u}}ller and Nikola Jovanović and Martin Vechev},
 	booktitle={International Conference on Learning Representations},
 	year={2022}}'
 paper: https://files.sri.inf.ethz.ch/website/papers/ferrari2022complete.pdf
