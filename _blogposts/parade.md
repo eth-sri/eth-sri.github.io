@@ -22,10 +22,13 @@ draft: true
 tweet-id:
 ---
 
-
-{:.blogpost-caption}
-***Conceptual overview of LCIFR.** This is a full-width gif. Start captions with a bold caption heading.*
-
+<img src="/assets/blog/parade/motivation.svg" class="blogpost-img100" style="height: 200pt;">
+On the image above we show an image of the digit $0$ from MNIST ($x\_\text{orig}$) and a region around it in red that depicts the set of geometrically perturbed images for which we expect a given neural network to be robust. 
+Further, in green we depict a subregion where the neural network is not robust. Traditionally, in order to assess the robustness of the network one uses adversarial attacks to generate the examples $x_1$ and $x_2$. 
+While robustness can be assessed that way, the information that the whole green region is adversarial is lost. This in turn might lead to never-seen-before network behaviour in the future. 
+One advantage of the classical approach of assessing robustness, however,  is that generating $x_1$ and $x_2$ is fast. In contrast, generating the green region is computationally infeasible.
+In this work, we present an algorithm called **PARADE** that exploits classical adversarial attacks to generate as large as possible regions that are provably adversarial. Similarly to the green region in the figure, these regions summarize many indvidual advarsarial attacks while also being practical to compute. 
+We call them provably robust adversarial examples. 
 
 ### Algorithm overview
 There are three main steps to **PARADE**. First, we generate an initial box region that might contain non-adversarial points using off-the-shelf adversarial attacks. 
