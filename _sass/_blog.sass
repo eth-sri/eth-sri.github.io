@@ -1,0 +1,257 @@
+/* blog page */
+	
+.blog-logo
+	width: 90%
+
+.blog-logoimg
+	display: block
+	margin: auto
+	width: 40%
+
+.blog-list
+	margin-left: 0
+	padding-top: $spacing-unit
+	li
+		list-style-type: none
+		display: flex
+		padding-top: $spacing-unit
+
+.blog-list-box	
+	border-bottom: 2px solid rgba(0,0,0,0.1)
+	width: 90%
+	box-shadow: 0.2rem 0.4rem 0.8rem 0.2rem #00000033
+
+	.blog-list-thumbnail
+		float: left 
+		width: 25%
+		margin-top: 2%
+	
+	.blog-list-thumbnailimg
+		width: 80%
+		padding: 0 10%
+
+	.blog-list-content
+		float: left
+		width: 72%
+		margin-top: 2%
+	
+	.blog-list-title
+		font-size: 28px
+		font-weight: bold
+	
+	.blog-list-authors
+		font-style: italic
+		padding-right: 3%
+	
+	.blog-list-tldr
+		text-align: justify 
+		padding: 3%
+
+	.blog-list-tria
+		float: right
+		width: 3%
+		box-shadow: 0.4rem -0.4rem 1rem 0.6rem #ffffff
+
+	.blog-list-triaimg
+		vertical-align: top
+		width: 100%
+
+/* blogpost */
+
+.blogpost
+	font-size: 18px
+
+.blogpost-thumbnail
+	display: block
+	width: 15%
+	margin: auto
+
+.blogpost-headerblock
+	margin-bottom: inherit
+	padding: 0 1.0rem
+	max-width: 75%
+	display: block
+	margin: auto
+
+.blogpost-title
+	text-align: center
+	font-weight: bold
+	font-size: 54px
+
+.blogpost-subtitle
+	display: flex 
+	margin: 1% 2%
+
+	.blogpost-subtitle-center
+		flex: 1
+		text-align: center
+
+	.blogpost-subtitle-left
+		flex: 0.7
+		margin-right: 3%
+	
+	.blogpost-subtitle-right
+		margin-left: auto
+	
+	.blogpost-subtitle-links
+		margin-left: auto 
+		margin-right: 0
+
+.tldr-labeled::before
+	content: "TLDR:"
+	font-weight: bold
+
+.tldr
+	font-style: italic
+	font-family: Raleway
+	color: #404040
+	border-width: 0px
+	background-color: $color-blue-light
+	border-style: solid 
+	padding: 2% 5%
+	text-align: justify
+	margin-top: 20px
+	margin-bottom: 20px
+	line-height: 1.6
+
+.tldr-meta-subposts
+	font-family: Raleway
+	color: #404040
+	text-align: justify
+	line-height: 1.6
+	margin-top: 20px
+
+.blogpost-row
+	display: flex
+	padding: 0
+	width: 100%
+	justify-content: center
+
+.blogpost-col
+	margin-bottom: inherit
+	padding: 0 1.0rem
+	max-width: 75%
+	justify-content: center
+	text-align: justify 
+	font-size: 18px
+	font-family: Raleway
+	color: #404040
+
+.blogpost-cta
+	text-align: center
+	display: block
+
+/* to be used from .md blogpost content files */
+
+.blogpost-caption
+	padding: 0 3%
+	border-left: thick solid $color-blue
+	margin-bottom: 30px
+
+%blogpost-img
+	display: block
+	margin-left: auto
+	margin-right: auto
+	margin-top: 30px
+	margin-bottom: 10px
+
+
+.blogpost-img10
+	@extend %blogpost-img
+	width: 10%
+
+.blogpost-img15
+	@extend %blogpost-img
+	width: 15%
+
+.blogpost-img20
+	@extend %blogpost-img
+	width: 20%
+
+.blogpost-img25
+	@extend %blogpost-img
+	width: 25%
+
+.blogpost-img30
+	@extend %blogpost-img
+	width: 30%
+
+.blogpost-img40
+	@extend %blogpost-img
+	width: 40%
+
+.blogpost-img50
+	@extend %blogpost-img
+	width: 50%
+
+.blogpost-img100
+	@extend %blogpost-img
+
+
+@media (min-width: $mobile-break)
+	.blogpost-wrap
+		display: flex
+		width: 100%
+		align-items: top 
+
+	.blogpost-wrap > *
+		display: block
+		float: left
+
+	.blogpost-wrap > img
+		margin-left: 10px
+		margin-right: 10px
+		margin-top: 0px
+		margin-bottom: 0px
+		flex-grow: 0
+		flex-shrink: 0
+		align-self: flex-start
+
+	.blogpost-wrap > .blogpost-img10
+		flex-basis: 10%
+
+	.blogpost-wrap > .blogpost-img15
+		flex-basis: 15%
+
+	.blogpost-wrap > .blogpost-img20
+		flex-basis: 20%
+
+	.blogpost-wrap > .blogpost-img25
+		flex-basis: 25%
+
+	.blogpost-wrap > .blogpost-img30
+		flex-basis: 30%
+
+	.blogpost-wrap > .blogpost-img40
+		flex-basis: 40%
+
+	.blogpost-wrap > .blogpost-img50
+		flex-basis: 50%
+
+	.blogpost-wrap > .blogpost-img100
+		flex-basis: 100%
+
+
+/* meta blogposts */ 
+
+.subpost-box
+	width: 100%
+	display: block
+	overflow: hidden
+
+	.subpost-thumbnail
+		float: left 
+		width: 25%
+		margin-top: 2%
+	
+	.subpost-thumbnailimg
+		width: 80%
+		padding: 0 10%
+
+	.subpost-info
+		float: left
+		width: 75%
+		margin-top: 2%
+
+.paper-award
+	color: #DAA520

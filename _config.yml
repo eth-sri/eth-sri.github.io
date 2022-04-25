@@ -1,12 +1,11 @@
-title: Secure, Reliable, and Intelligent Systems Lab
+title: SRI Lab
 email: your-email@domain.com
 google_analytics: UA-27751621-1
 
 # social links
-twitter:
-  username: "the_sri_lab"
-github_username:  jekyll
-rss: rss
+twitter_username: "the_sri_lab"
+#github_username:  jekyll
+#rss: rss
 # dribbble_username: jekyll
 # facebook_username: jekyll
 # flickr_username: jekyll
@@ -34,6 +33,11 @@ minima:
 
 
 collections:
+  newsposts:
+    output: false
+  blogposts:
+    output: true
+    permalink: /blog/:name
   publications:
     output: true
     permalink: /:collection/:name
@@ -54,6 +58,12 @@ collections:
     permalink: /:name
 
 defaults:
+  -
+    scope:
+      path: ""
+      type: blogposts
+    values:
+      layout: blogpost
   -
     scope:
       path: ""
@@ -102,3 +112,8 @@ theme: minima
 plugins:
  - jekyll-feed
  - jekyll-seo-tag
+
+feed:
+  collections:
+    blogposts:
+      path: "/blog/feed.xml"

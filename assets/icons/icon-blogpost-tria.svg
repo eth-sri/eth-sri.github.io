@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 9.9079927 9.9088879"
+   version="1.1"
+   id="svg4659"
+   sodipodi:docname="icon-blogpost-tria.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   width="9.9079924"
+   height="9.9088879">
+  <metadata
+     id="metadata4663">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1003"
+     id="namedview4661"
+     showgrid="false"
+     inkscape:zoom="20.227539"
+     inkscape:cx="26.462585"
+     inkscape:cy="-11.739137"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="a"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <defs
+     id="defs4648">
+    <style
+       id="style4643">.a{clip-path:url(#b);}.b{fill:none;}.c{fill:#ff3100;}.d,.e{stroke:none;}.e{fill:#c3c3c3;}</style>
+    <clipPath
+       id="b">
+      <rect
+         width="33"
+         height="33"
+         id="rect4645"
+         x="0"
+         y="0" />
+    </clipPath>
+  </defs>
+  <g
+     id="a"
+     class="a"
+     clip-path="url(#b)"
+     transform="translate(-13.486606,-2.6601768)">
+    <path
+       class="c"
+       d="m 14.908161,2.6686277 8.478,8.4789993 a 1.275,1.275 0 0 1 -1.413,1.413 h -5.652 a 2.826,2.826 0 0 1 -2.826,-2.8259997 V 4.0826277 a 1.275,1.275 0 0 1 1.413,-1.414 z"
+       id="path4656"
+       style="fill:#0079af;fill-opacity:1"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

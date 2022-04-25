@@ -1,0 +1,154 @@
+---
+layout: default
+---
+<article class="page blogpost">
+  <style type="text/css">
+    h3 {
+      font-size: 20px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      font-family: Raleway;
+    }
+    h4 {
+      font-size: 20px;
+      margin: 0 0;
+      font-family: Raleway;
+    }
+  </style>
+
+
+  <header class="page-header container">
+	<img src="{{ page.thumbnail | prepend: '/assets/blog/' | relative_url}}" class="blogpost-thumbnail"/>
+	
+	<div class="row">
+		<div class="blogpost-headerblock">
+			<h1 class="page-title blogpost-title">{{ page.title | escape }}</h1>
+
+      <div class="blogpost-subtitle">
+
+        {% if page.category == "meta" %}
+
+          <div class="blogpost-subtitle-center">
+            <h4 class="page-subtitle"> Aggregated by {% include get-linked-persons.html persons=page.blogpost-authors %} </h4>
+            <h4 class="page-subtitle"> {{ page.date | date: "%B %-d, %Y" }} </h4>
+          </div>
+
+        {% else %}
+
+        <div class="blogpost-subtitle-left">
+          <h4 class="page-subtitle">
+            {% include get-linked-persons.html persons=page.blogpost-authors %} 
+          </h4>
+          <h4 class="page-subtitle">
+            {{ page.date | date: "%B %-d, %Y" }}
+          </h4>
+        </div>
+  
+        <div class="blogpost-subtitle-right">
+          {% assign publication = site.publications | where:"ref", page.pub-ref | first %}
+          {% assign pub-poster = publication.poster %}
+          {% assign pub-slides = publication.slides %}
+          {% assign pub-talk = publication.talk %}
+          {% assign pub-paper = publication.paper %}
+          {% assign pub-code = publication.code %}
+          <div class="card-links blogpost-subtitle-links">
+            {% include publication-links.html
+              poster=pub-poster
+              slides=pub-slides
+              talk=pub-talk
+              paper=pub-paper
+              code=pub-code
+            %}
+          </div>
+        </div>
+
+        {% endif %}
+
+      </div>
+
+      {% if page.category == "meta" %}
+        <div class="tldr"> {{page.tldr}} </div>
+      {% else %}
+        <div class="tldr tldr-labeled"> {{page.tldr}} </div>
+      {% endif %}
+
+    </div>
+  </div>
+  </header>
+
+    <div class="blogpost-row">
+      <div class="blogpost-col">
+        
+          {{ content }}
+          
+          {% if page.category == "meta" %}
+            {% assign names = page.subposts | split: ", " %}
+
+            {%- for name in names -%}
+              {% assign url = name | prepend: '/blog/' %}
+              {% assign blogpost = site.blogposts | where:"url", url | first %}
+              {% assign publication = site.publications | where:"ref", blogpost.pub-ref | first %}
+
+
+
+              <h3> 
+				<a href="{{publication.blogpost}}">{{publication.title}}</a>
+                {% if blogpost.conf-info contains 'Spotlight' %}(<span class="paper-award">Spotlight</span>){% endif %}
+                {% if blogpost.conf-info contains 'Oral' %}(<span class="paper-award">Oral</span>){% endif %}
+              </h3>
+              <div class="subpost-box">
+                <div class="subpost-thumbnail">
+                  <img src="{{ blogpost.thumbnail | prepend: '/assets/blog/' | relative_url}}" class="subpost-thumbnailimg" />
+                </div>
+                <div class="subpost-info">
+                  <b>Authors</b>: {% include get-linked-persons.html persons=publication.authors %}  <br>
+                  <b>Keywords</b>: {{blogpost.keywords}} <br>
+                  <b>Conference Page</b>: <a href="{{blogpost.conf-url}}">{{blogpost.conf-url}}</a> <br>
+                  {% assign confinfo = blogpost.conf-info | split: "|" %}
+                  {%- for info in confinfo -%}
+                    {{info}} <br>
+                  {% endfor %}
+                </div>
+              </div>
+              <div class="tldr-meta-subposts tldr-labeled"> {{blogpost.tldr}} </div>
+              {% assign pub-blogpost = publication.blogpost %}
+              {% assign pub-poster = publication.poster %}
+              {% assign pub-slides = publication.slides %}
+              {% assign pub-talk = publication.talk %}
+              {% assign pub-paper = publication.paper %}
+              {% assign pub-code = publication.code %}
+              <div class="card-links" style="margin-top: 20px;">
+                {% include publication-links.html
+                  blogpost=pub-blogpost
+                  poster=pub-poster
+                  slides=pub-slides
+                  talk=pub-talk
+                  paper=pub-paper
+                  code=pub-code
+                %}
+              </div>
+              <hr>
+            {% endfor %}
+
+          {% endif %}
+
+          <hr/>
+          <div class="blogpost-cta">
+
+            {% if page.tweet-id %}
+            <a href="{{ page.tweet-id | prepend: 'https://twitter.com/the_sri_lab/status/' }}">Discuss this post on Twitter <svg class="social-icon">
+              <use xlink:href="/assets/minima-social-icons.svg#twitter"></use>
+            </svg> </a> 
+            
+            <b>&nbsp;&nbsp;|&nbsp;&nbsp;</b> 
+            {% endif %}
+
+            <a href="/blog/feed.xml"> Subscribe to our Atom feed <svg class="social-icon">
+              <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+            </svg> </a> 
+          </div>
+          <hr/>
+      </div>
+    </div>
+
+</article>

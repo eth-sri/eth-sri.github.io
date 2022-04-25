@@ -4,6 +4,7 @@
     <a href="{{ "/" | relative_url }}" class="site-logo"><img src="{{ '/assets/images/sri-logo.svg' | relative_url }}" alt="{{ site.title | escape }}"></a>
 
       <nav class="site-nav">
+        <a class="page-link {% if page.url contains 'blog' %}active{% endif %}" href="{{ '/blog/' | relative_url }}"><b>Blog</b></a>
         <a class="page-link {% if page.url contains 'people' %}active{% endif %}" href="{{ '/people/' | relative_url }}">People</a>
         <a class="page-link {% if page.url contains 'thesis' %}active{% endif %}" href="{{ '/thesis-topics/' | relative_url }}">MSc Thesis @ SRI</a>
         <a class="page-link {% if page.url contains 'research' %}active{% endif %}" href="{{ '/research/' | relative_url }}">Research</a>

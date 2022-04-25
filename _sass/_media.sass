@@ -1,25 +1,56 @@
 /**
- * Posts
+ * Media Newsposts
  */
+
 .media-item
-  padding: $spacing-unit 0
-  flex-grow: 1
-  max-width: 25%
+  padding: 20px 30px
+  width: 100%
+  display: flex
+  flex-direction: row
 
-  .media-image
-    overflow: hidden
-    position: relative
-    padding-bottom: 50%
-    margin-right: $spacing-unit
-    img
-      position: absolute
+.media-thumbnail
+  height: 100%
 
-  .media-title
-    margin-top: $spacing-unit
-    margin-right: $spacing-unit
-    font-weight: bold
-    font-size: 16px
+.media-thumbnail-blog
+  @extend .media-thumbnail
+  flex: 1 1 25%
 
-@include media-query($mobile-break)
-  .media-item
-    max-width: none
+.media-thumbnail-news
+  @extend .media-thumbnail
+  flex: 1 1 50%
+
+.media-excerpt
+  vertical-align: middle
+  font-size: 1.1em
+  line-height: 1.6em
+  padding: 0 0 2% 5%
+
+.media-excerpt-blog
+  @extend .media-excerpt
+  flex: 1 1 75%
+
+.media-excerpt-news
+  @extend .media-excerpt
+  flex: 1 1 50%
+
+.div-see-all
+  margin: auto
+  width: 50%
+
+.btn-see-all
+  display: block
+
+
+.headers-separate
+  display: none
+
+.headers-joint
+  display: flex
+
+@media (min-width: $mobile-break)
+  .headers-separate
+    display: flex
+  
+  .headers-joint
+    display: none
+

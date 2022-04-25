@@ -21,27 +21,26 @@ permalink: /news/index.html
     <div class="row">
       <div class="column column-66">
 
-      	<ul class="post-list">
-          {%- for post in site.posts  -%}
+      	<ul class="newspost-list">
+          {%- for newspost in site.newsposts reversed -%}
           <li>
 
-            <div class="post-meta">{{ post.date | date: "%d.%m.%y" }}</div>
-            
+            <div class="newspost-meta">{{ newspost.date | date: "%d.%m.%y" }}</div>
 
-              {% if post.image %}
-              <div class="post-image">
+              {% if newspost.image %}
+              <div class="newspost-image">
 
-              {% if post.link %}  
-              <a href="{{ post.link }}">
+              {% if newspost.link %}  
+              <a href="{{ newspost.link }}">
               {% endif %}
-                <img src="{{ post.image | prepend: '/assets/media/' | relative_url}}"/>
-              {% if post.link %}  
+                <img src="{{ newspost.image | prepend: '/assets/media/' | relative_url}}"/>
+              {% if newspost.link %}  
               </a>
               {% endif %}
               </div>
               {% endif %}
             
-            <div class="post-content">{{ post.content}}</div>
+            <div class="newspost-content">{{ newspost.content}}</div>
           </li>
           {%- endfor -%}
         </ul>

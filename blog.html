@@ -1,0 +1,59 @@
+---
+layout: default
+title: SRI Blog
+usemathjax: true
+---
+
+<article class="page">
+
+  <header class="page-header container">
+  </header>
+
+
+  <div class="page-content container">
+    <div class="row">   
+      <div class="column column-80">
+      
+      <div class="blog-logo">
+        <img class="blog-logoimg" src="{{ 'logo-blog.svg' | prepend: '/assets/images/' | relative_url }}" alt="{{ site.title | escape }}">
+      </div>
+  
+          <ul class="blog-list">
+          {% assign blogposts = site.blogposts | where:"draft","false" %}
+          {%- for blogpost in blogposts reversed -%}
+          <li>
+          <div class="blog-list-box">
+
+            <div class="blog-list-thumbnail">
+              <img src="{{ blogpost.thumbnail | prepend: '/assets/blog/' | relative_url}}" class="blog-list-thumbnailimg" />
+            </div>
+
+
+            <div class="blog-list-content">
+              <div class="blog-list-title">
+                <a href="{{ blogpost.id | relative_url}}">{{blogpost.title}}</a>
+              </div>
+              
+              <div class="blog-list-authors">
+                {% include get-linked-persons.html persons=blogpost.blogpost-authors %}
+              </div>
+
+              <p class="blog-list-tldr">
+                {{blogpost.tldr}}
+              </p>
+            </div>
+
+            <div class="blog-list-tria">
+              <img src="{{ '/assets/icons/icon-blogpost-tria.svg' | relative_url}}" class="blog-list-triaimg"/>
+            </div>
+
+          </div>
+          </li>
+          {%- endfor -%}
+        </ul>
+
+      </div>
+    </div>      
+  </div>
+</article>
+

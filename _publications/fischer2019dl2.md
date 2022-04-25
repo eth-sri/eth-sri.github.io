@@ -12,7 +12,7 @@ bibtex: '@inproceedings{fischer2019dl2,
   booktitle={International Conference on Machine Learning},
   year={2019}}'
 paper: https://files.sri.inf.ethz.ch/website/papers/icml19-dl2.pdf
-slides: https://files.sri.inf.ethz.ch/website/papers/icml19-dl2-poster.pdf
+poster: https://files.sri.inf.ethz.ch/website/posters/icml19-dl2-poster.pdf
 image: assets/images/dl2-poster.jpg
 talk: https://www.facebook.com/icml.imls/videos/2250364101882755/?t=4791
 ---
