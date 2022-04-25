@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="149.54401"
+   height="24"
+   viewBox="0 0 149.54401 24"
+   version="1.1"
+   id="svg31"
+   sodipodi:docname="logo-blog.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+  <metadata
+     id="metadata35">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1003"
+     id="namedview33"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="5.8074805"
+     inkscape:cx="50.675969"
+     inkscape:cy="16.993697"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg31" />
+  <defs
+     id="defs5">
+    <clipPath
+       id="clip-logo-blog">
+      <rect
+         width="169"
+         height="44"
+         id="rect2"
+         x="0"
+         y="0" />
+    </clipPath>
+  </defs>
+  <g
+     id="logo-blog"
+     clip-path="url(#clip-logo-blog)"
+     style="fill:#0079af;fill-opacity:1"
+     transform="translate(-7,-8)">
+    <path
+       id="Path_759"
+       data-name="Path 759"
+       d="m 16.8,-9.554 v 9.17 h 2.146 v -11.1 c 0,-0.136 -0.034,-0.2 -0.238,-0.2 H 12.07 c -0.1,0 -0.2,0.034 -0.2,0.17 l -0.034,1.721 c 0,0.17 0.068,0.2 0.238,0.238 z"
+       transform="translate(137.598,31.724)"
+       style="fill:#0079af;fill-opacity:1"
+       inkscape:connector-curvature="0" />
+    <g
+       id="Group_287"
+       data-name="Group 287"
+       transform="translate(34.564,8)"
+       style="fill:#0079af;fill-opacity:1">
+      <g
+         id="Group_273"
+         data-name="Group 273"
+         style="fill:#0079af;fill-opacity:1">
+        <path
+           id="Path_746"
+           data-name="Path 746"
+           d="M 65.511,11.895 A 18.772,18.772 0 0 0 59.879,9.684 c -4,-1 -4.684,-1.789 -4.684,-3.211 0,-1.789 1.737,-3.158 3.895,-3.158 2.421,0 3.895,1.211 4.158,3.368 l 0.053,0.579 h 4.053 V 6.579 C 67.354,2.579 64.196,0 59.301,0 54.669,0 51.143,2.842 51.143,6.579 A 5.67,5.67 0 0 0 53.247,11 c 1.263,1 2.526,1.368 5.263,2 l 0.421,0.105 a 10.812,10.812 0 0 1 3.526,1.263 2.826,2.826 0 0 1 1.474,2.579 c 0,1.895 -2.263,3.684 -4.684,3.684 a 4.7,4.7 0 0 1 -3.211,-1 3.475,3.475 0 0 1 -1.526,-2.842 V 16.105 H 50.3 l 0.053,0.737 c 0.21,4.263 3.789,7.158 8.894,7.158 5.053,0 8.737,-3 8.737,-7.105 a 6.52,6.52 0 0 0 -2.473,-5 z"
+           transform="translate(-50.3)"
+           style="fill:#0079af;fill-opacity:1"
+           inkscape:connector-curvature="0" />
+      </g>
+      <g
+         id="Group_274"
+         data-name="Group 274"
+         transform="translate(43.105,0.368)"
+         style="fill:#0079af;fill-opacity:1">
+        <rect
+           id="Rectangle_99"
+           data-name="Rectangle 99"
+           width="4.053"
+           height="23.158001"
+           style="fill:#0079af;fill-opacity:1"
+           x="0"
+           y="0" />
+      </g>
+      <g
+         id="Group_275"
+         data-name="Group 275"
+         transform="translate(20.632,0.368)"
+         style="fill:#0079af;fill-opacity:1">
+        <path
+           id="Path_747"
+           data-name="Path 747"
+           d="m 101.763,15.595 c 4.263,-0.684 7.158,-3.474 7.158,-7.158 A 7.681,7.681 0 0 0 103.763,1.542 C 101.5,0.7 100.079,0.7 96.974,0.7 H 89.5 v 23.158 h 4.053 V 4.068 H 97.5 c 2.526,0 3.421,0.105 4.895,0.789 a 4.123,4.123 0 0 1 2.526,3.526 4.261,4.261 0 0 1 -2.579,3.579 c -1.263,0.579 -2.421,0.684 -5.737,0.684 h -2.631 l 10.211,11.211 h 5.211 z"
+           transform="translate(-89.5,-0.7)"
+           style="fill:#0079af;fill-opacity:1"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+    <g
+       id="Group_288"
+       data-name="Group 288"
+       transform="translate(7,9.368)"
+       style="fill:#0079af;fill-opacity:1">
+      <path
+         id="Path_748"
+         data-name="Path 748"
+         d="M 18.565,10.289 H 6.947 C 4.473,10.289 3.736,9.552 1.579,7.394 L 0,5.816 1.316,4.5 2.895,6.079 c 2.052,2.053 2.368,2.368 4.052,2.368 h 11.618 z"
+         transform="translate(0,-4.5)"
+         style="fill:#0079af;fill-opacity:1"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       id="Group_289"
+       data-name="Group 289"
+       transform="translate(16.053,18.617)"
+       style="fill:#0079af;fill-opacity:1">
+      <rect
+         id="Rectangle_100"
+         data-name="Rectangle 100"
+         width="13.722"
+         height="1.842"
+         style="fill:#0079af;fill-opacity:1"
+         x="0"
+         y="0" />
+    </g>
+    <g
+       id="Group_290"
+       data-name="Group 290"
+       transform="translate(10.684,21.55)"
+       style="fill:#0079af;fill-opacity:1">
+      <path
+         id="Path_749"
+         data-name="Path 749"
+         d="M 25.459,31.658 23.88,30.079 C 21.827,28.026 21.512,27.711 19.775,27.711 H 12.368 C 9.894,27.711 9.157,26.974 7,24.816 L 8.316,23.5 c 2.053,2.053 2.368,2.368 4.105,2.368 h 7.407 c 2.474,0 3.211,0.737 5.368,2.895 l 1.579,1.579 z"
+         transform="translate(-7,-23.5)"
+         style="fill:#0079af;fill-opacity:1"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       id="Group_291"
+       data-name="Group 291"
+       transform="translate(86.807,8)"
+       style="fill:#0079af;fill-opacity:1">
+      <path
+         id="Path_750"
+         data-name="Path 750"
+         d="m 224.968,2.9 h 3.105 a 6.714,6.714 0 0 1 4.158,1 4.041,4.041 0 0 1 1.474,3 3.878,3.878 0 0 1 -1.895,3.211 c -0.895,0.526 -1.895,0.684 -4,0.684 h -0.579 V 12.9 h 0.526 c 2.526,0 3.368,0.105 4.474,0.526 a 4.219,4.219 0 0 1 2.737,3.947 4.492,4.492 0 0 1 -2.526,3.895 9.9,9.9 0 0 1 -4.316,0.632 h -0.895 v 2.105 h 1.158 c 3.263,0 4.526,-0.263 6.158,-1.368 a 6.249,6.249 0 0 0 2.684,-5.263 5.922,5.922 0 0 0 -3.842,-5.684 5.474,5.474 0 0 0 2.579,-4.632 c 0,-3.789 -2.947,-6.158 -7.579,-6.158 H 222.6 v 23.158 h 2.316 V 2.9 Z"
+         transform="translate(-222.6,-0.9)"
+         style="fill:#0079af;fill-opacity:1"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       id="Group_292"
+       data-name="Group 292"
+       transform="translate(104.07,8)"
+       style="fill:#0079af;fill-opacity:1">
+      <g
+         id="Group_281"
+         data-name="Group 281"
+         transform="translate(3.593,21.105)"
+         style="fill:#0079af;fill-opacity:1">
+        <rect
+           id="Rectangle_101"
+           data-name="Rectangle 101"
+           width="8.3540001"
+           height="2.105"
+           style="fill:#0079af;fill-opacity:1"
+           x="0"
+           y="0" />
+      </g>
+      <g
+         id="Group_282"
+         data-name="Group 282"
+         style="fill:#0079af;fill-opacity:1">
+        <rect
+           id="Rectangle_102"
+           data-name="Rectangle 102"
+           width="2.316"
+           height="23.158001"
+           style="fill:#0079af;fill-opacity:1"
+           x="0"
+           y="0" />
+      </g>
+    </g>
+    <path
+       id="Path_758"
+       data-name="Path 758"
+       d="m 11.594,-22.814 c -5.916,0 -10.234,4.692 -10.234,11.526 0,6.698 3.808,11.628 10.302,11.628 5.882,0 10.2,-4.386 10.166,-11.7 -0.034,-6.422 -3.842,-11.454 -10.234,-11.454 z M 3.5,-11.288 c 0,-5.814 3.98,-9.5 8.06,-9.5 4.454,0 8.09,4.234 8.09,9.5 0.034,5.406 -3.4,9.576 -7.92,9.576 -4.896,0 -8.23,-4.646 -8.23,-9.576 z"
+       transform="translate(114.365,31)"
+       style="fill:#0079af;fill-opacity:1"
+       inkscape:connector-curvature="0" />
+    <path
+       id="Path_757"
+       data-name="Path 757"
+       d="m 15.883,-1.722 h -2.725 a 9.406,9.406 0 0 1 -9.8,-9.4 c 0,-5.644 4.457,-9.621 10.237,-9.553 a 12.012,12.012 0 0 1 5.372,0.871 c 0.1,0.068 0.2,0.034 0.2,-0.136 v -1.688 c 0,-0.17 -0.034,-0.272 -0.17,-0.34 a 13.388,13.388 0 0 0 -5.406,-0.85 c -7.242,0 -12.24,4.556 -12.24,11.7 C 1.36,-4.658 5.44,0.34 13.158,0.34 h 2.725 z"
+       transform="translate(137.365,31)"
+       style="fill:#0079af;fill-opacity:1"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

@@ -8,7 +8,7 @@ month: 12
 venue: NeurIPS
 projects: safeai
 paper: https://files.sri.inf.ethz.ch/website/papers/neurips19-deepg.pdf
-slides: https://files.sri.inf.ethz.ch/website/papers/neurips19-deepg-poster.pdf
+poster: https://files.sri.inf.ethz.ch/website/posters/neurips19-deepg-poster.pdf
 image: assets/images/balunovic2019geometric.png
 bibtex: '@incollection{balunovic2019geometric,
   title = {Certifying Geometric Robustness of Neural Networks},
