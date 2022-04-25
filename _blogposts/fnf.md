@@ -5,14 +5,14 @@ pub-ref: balunovic2022fair
 title: "Encoding sensitive data with guarantees"
 blogpost-authors: "Mislav Balunović" 
 date: 2022-04-20
-thumbnail: _thumbnails/fnf_blog_thumb.svg
+thumbnail: thumbnails/fnf_blog_thumb.svg
 usemathjax: true
 tldr: >
     Fair Normalizing Flows (FNF) are a new approach for encoding data into a new representation in order to ensure fairness and utility in downstream tasks. In practical cases, when we can estimate the probability density of the inputs, FNF guarantees that adversary cannot recover the sensitive attribute from the learned representations. FNF addresses limitation of existing approaches for which stronger adversaries can still recover sensitive attributes. We show that FNF can effectively balance fairness and accuracy on a variety of relevant datasets.
 excerpt: >
     Fair Normalizing Flows (FNF) are a new approach for encoding data into a new representation in order to ensure fairness and utility in downstream tasks.
 keywords: fair representation learning, certified individual fairness
-draft: true
+draft: false 
 tweet-id:
 keywords: fair representation learning, normalizing flows
 conf-url: https://iclr.cc/virtual/2022/poster/7045

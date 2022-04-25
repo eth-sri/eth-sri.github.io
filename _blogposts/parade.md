@@ -5,7 +5,7 @@ pub-ref: dimitrov2022provably
 title: "Generating provably robust adversarial examples"
 blogpost-authors: "Dimitar I. Dimitrov" 
 date: 2022-04-21
-thumbnail: _thumbnails/parade.svg
+thumbnail: thumbnails/parade.svg
 usemathjax: true
 tldr: >
     We introduce the concept of provably robust adversarial examples in deep neural networks. These are adversarial examples that are generated together with a region around them proven to be robust to a set of perturbations.

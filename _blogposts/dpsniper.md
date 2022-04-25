@@ -5,7 +5,7 @@ pub-ref: bichsel2021dpsniper
 title: "DP is sometimes not really DP"
 blogpost-authors: "Benjamin Bichsel, Samuel Steffen"
 date: 2021-09-01
-thumbnail: _thumbnails/dpsniper.svg
+thumbnail: thumbnails/dpsniper.svg
 usemathjax: true
 tldr: >
     DP-Sniper automatically finds violations of differential 
@@ -23,7 +23,7 @@ keywords: differential privacy
 conf-url: https://icml.cc/virtual/2021/poster/9327
 conf-info: Poster - Tue Jul 20, 18:00 GMT+2 (Poster Session 4)
 
-draft: true
+draft: false 
 tweet-id: 1447996320741007362
 ---
 
