@@ -23,7 +23,7 @@ In a nutshell, the neural network verification problem can be stated as follows:
 
 *Given a network and an input, prove that all points in a small region around that input are classified correctly, i.e., that no [adversarial example](https://openai.com/blog/adversarial-example-research/) exists.*
 
-To formalize this a bit, we consider: a network $f: \mathcal{X} \to \mathcal{Y}$, an input region $\mathcal{D} \subseteq \mathcal{X}$, and a linear property $\mathcal{P}\subseteq \mathcal{Y}$ over the output neurons $y\in\mathcal{Y}$, and we try to prove that
+To formalize this a bit, we consider a network $f: \mathcal{X} \to \mathcal{Y}$, an input region $\mathcal{D} \subseteq \mathcal{X}$, and a linear property $\mathcal{P}\subseteq \mathcal{Y}$ over the output neurons $y\in\mathcal{Y}$, and we try to prove that
 
  $$f(x) \in \mathcal{P}, \forall  x \in \mathcal{D}.$$
 
@@ -103,13 +103,13 @@ Following [previous](https://files.sri.inf.ethz.ch/website/papers/DeepPoly.pdf) 
 
 $$ \min_{x \in \mathcal{D}} f(x) \geq \min_{x \in \mathcal{D}} a_{inp}x + c_{inp}$$
 
-There, the minimization over $x \in \mathcal{D}$ has a closed form solution given by [Hölder's inequality](https://en.wikipedia.org/wiki/Hölder%27s_inequality):
+There, the minimization over $x \in \mathcal{D}$ has a closed-form solution given by [Hölder's inequality](https://en.wikipedia.org/wiki/Hölder%27s_inequality):
 
 $$ \min_{x \in \mathcal{D}} a_{inp}x + c^{(0)} \geq a_{inp}x_0 - \lVert a_{inp} \rVert_1 \epsilon + c_{inp}$$
 
 To arrive at such a linear lower bound of the output in terms of the input, we start with the trivial lower bound $f(x) \geq z^{(L)}W + b^{(L)}$ and replace $z^{(L)}$ with symbolic, linear bounds depending only on the previous layer's values $z^{(L-1)}$. We proceed in this manner recursively until we obtain an expression only in terms of the inputs of the network.
 
-These so-called linear relaxations of the different layer types determine the precision of the obtained bounding method. While affine layers (e.g., fully connected, convolutional, avg. pooling, normalization) can be captured exactly, non-linear activation layers remain challenging and their encoding is what differentiates MN-BaB. Most importantly, MN-BaB is able to enforce MNCs in an efficiently optimizable fashion. The full details are given in the [paper](https://files.sri.inf.ethz.ch/website/papers/ferrari2022complete.pdf) but are rather technical and notation heavy, so we will skip them here.
+These so-called linear relaxations of the different layer types determine the precision of the obtained bounding method. While affine layers (e.g., fully connected, convolutional, avg. pooling, normalization) can be captured exactly, non-linear activation layers remain challenging and their encoding is what differentiates MN-BaB. Most importantly, MN-BaB enforces MNCs in an efficiently optimizable fashion. The full details are given in the [paper](https://files.sri.inf.ethz.ch/website/papers/ferrari2022complete.pdf) but are rather technical and notation-heavy, so we will skip them here.
 
 To derive the linear relaxations for activation layers, we need bounds on the inputs of those layers ($l_x$ and $u_x$ in the illustrations). In order to compute these lower and upper bounds on every neuron, we apply the procedure described above to every neuron in the network, starting from the first activation layer.
 
@@ -127,7 +127,7 @@ The **branch()** method takes a problem instance and splits it into two subprobl
 ![Alt Text](/assets/blog/mn-bab/split_constraints.png){: .blogpost-img80}
 
 {: .blogpost-caption}
-*The split constraints that are added to the generated subproblems.*
+*Illustration of the split constraints that are added to the generated subproblems.*
 
 The choice of which node to split has a significant impact on how many subproblems we have to consider during the Branch-and-Bound process until we can prove a property. Therefore, we aim to choose a neuron that minimizes the total number of problems we have to consider. To do this, we define a proxy score trying to capture the bound improvement resulting from any particular split. Note that the optimal branching decision depends on the bounding method that is used, as different bounding methods might profit differently from additional constraints resulting from the split.
 
