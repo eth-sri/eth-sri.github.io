@@ -62,7 +62,7 @@ The procedure is concludes when the verifier succeeds. We outline the procedure 
 
 We experimented with two different types of provably robust adversarial examples - robust to pixel intensity changes ($\ell\_\infty$ changes) and to geometric changes. We show the pixel intensity experiment below:
 
-| Network   | $\epsilon$ | PARADE Box<br/>\# Regions | PARADE Box<br/>Time | PARADE Box<br/>\# Attacks | PARADE Poly<br/>\# Regions | PARADE Poly<br/> Time | PARADE<br/>Poly<br/>\# Attacks |
+| Network   | $\epsilon$ | PARADE<br/>Box<br/>\# Regions | PARADE<br/>Box<br/>Time | PARADE<br/>Box<br/>\# Attacks | PARADE<br/>Poly<br/>\# Regions | PARADE<br/>Poly<br/> Time | PARADE<br/>Poly<br/>\# Attacks |
 |-------------|-------:|----------:|------:|----------:|----------:|------:|---------------:|
 | MNIST<br/>8x200 | 0.045 | 53/53 | 114s | $10^{121}$ | 53/53 | 1556s | $10^{121} < \cdot < 10^{191}$ |
 | MNIST<br/>ConvSmall | 0.12 | 32/32 | 74s | $10^{494}$ | 32/32 | 141s | $10^{494} < \cdot < 10^{561}$ |
@@ -71,7 +71,22 @@ We experimented with two different types of provably robust adversarial examples
 | CIFAR-10<br/>ConvBig  | 0.008 | 36/36 | 404s | $10^{573}$ | 36/36 | 610s | $10^{573} < \cdot < 10^{654}$ |
 
 We note **PARADE** is highly effective - it generates regions successfully for all but $1$ image for which the classical adversarial attacks succeeded. Further, the regions generated contain a very large set of adversarial examples that are infeasible to generate individually.
-Finally, we note that the polyhedral adversarial examples take more time to generate but contain more examples. Calculating the exact number of concrete attacks within the polyhedral regions is computationally hard so instead we approximate the number as precisely as possible from above and below using boxes. 
+Finally, we note that the polyhedral adversarial examples take more time to generate but contain more examples. Calculating the exact number of concrete attacks within the polyhedral regions is computationally hard so instead we approximate the number as precisely as possible from above and below using boxes.
+ 
+Next, we show the results for provably robust adversarial examples to geometric changes: 
+| Network   | Transform | PARADE<br/>Box<br/>\# Regions | PARADE<br/>Box<br/>Time | PARADE<br/>Box<br/>\# Attacks |
+|-------------|-------:|----------:|------:|----------:|
+| MNIST<br/>ConvSmall | Rot($17^{\circ}$) + Scale($18$) + Shear($0.03$) | 51/54 | 774s | $10^{96} < \cdot < 10^{195}$ |
+| MNIST<br/>ConvSmall | SC(20) T(-1.7,1.7,-1.7,1.7) | 51/56 | 521s | $10^{71} < \cdot < 10^{160}$ |
+| MNIST<br/>ConvSmall | SC(20) R(13) B(10, 0.05) | 40/48 | 370s | $10^{70} < \cdot < 10^{455}$ |
+| MNIST<br/>ConvBig | R(10) SC(15) SH(0.03) | 44/50 | 835s | $10^{77} < \cdot < 10^{205}$ |
+| MNIST<br/>ConvBig  | SC(20) T(0,1,0,1) | 42/46 | 441s | $10^{64} < \cdot < 10^{174}$ |
+| MNIST<br/>ConvBig | SC(15) R(9) B(5, 0.05) | 46/52 | 537s | $10^{119} < \cdot < 10^{545}$ |
+| CIFAR-10<br/>ConvSmall  | R(2.5) SC(10) SH(0.02) | 29/29 | $10^{599} < \cdot < 10^{1173}$ |
+| CIFAR-10<br/>ConvSmall  | SC(10) T(0,1,0,1) | 32/32 | $10^{66} < \cdot < 10^{174}$ |
+| CIFAR-10<br/>ConvSmall  | SC(5) R(8) B(1, 0.01) | 21/25 | $10^{513} < \cdot < 10^{2187}$ |
+
+
 
 ### Visualizing PARADE regions
 ![](/assets/blog/parade/visualize.svg){: .blogpost-img100}
