@@ -23,7 +23,7 @@ draft: true
 tweet-id: 1447996320741007362
 ---
 
-As machine learning is being increasingly used in sensitive domains such as crime risk assessment, hiring or credit scoring,
+Asmachine learning is being increasingly used in sensitive domains such as crime risk assessment, hiring or credit scoring,
 community has become more aware of the potential of these systems to reinforce bias and discriminate.
 Data owners often face the challenge that their data can be used in downstream applications whose developers are potentially unaware of fairness issues or simply lack expertise to address these problems.
 In this blog post, we present a method which enables data owners to pre-process their data so that any downstream application has guarantee of individual fairness.
