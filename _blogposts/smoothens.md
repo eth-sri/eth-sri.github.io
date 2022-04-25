@@ -13,7 +13,7 @@ excerpt: >
     We theoretically motivate why and show empirically that, ensembles are particularly suitable base models for Randomized Smoothing, due to the variance reduction across the perturbations introduced during Randomized Smoothing.
 keywords: randomized smoothing, certified robustness, ensembles
 conf-url: https://iclr.cc/virtual/2022/spotlight/6328
-conf-info: Spotlight - Thu Apr 28, 19:30 UTC+2
+conf-info: Spotlight - Thu Apr 28, 19:30 UTC+2 (Poster Session 11)
 
 draft: false 
 tweet-id:

@@ -16,7 +16,7 @@ draft: false
 tweet-id:
 keywords: fair representation learning, normalizing flows
 conf-url: https://iclr.cc/virtual/2022/poster/7045
-conf-info: Poster - Mon Apr 25 19:30 UTC+2
+conf-info: Poster - Mon Apr 25 19:30 UTC+2 (Poster Session 2)
 ---
 
 As machine learning is being increasingly used in scenarios that affect humans, such as credit scoring or crime risk assessment, it has become clear that these predictive models often discriminate and can be unfair.

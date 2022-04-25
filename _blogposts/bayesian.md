@@ -15,7 +15,7 @@ keywords: federated learning, privacy, gradient leakage
 draft: false 
 tweet-id:
 conf-url: https://iclr.cc/virtual/2022/poster/6934
-conf-info: Poster - Wed Apr 27 19:30 UTC+2
+conf-info: Poster - Wed Apr 27 19:30 UTC+2 (Poster Session 8)
 ---
 
 Federated learning has become the most widely used approach to collaboratively train machine learning models without requiring training data to leave devices of the individual users.
