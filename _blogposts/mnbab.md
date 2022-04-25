@@ -8,7 +8,7 @@ date: 2022-04-21
 thumbnail: _thumbnails/mnbab.svg
 usemathjax: true
 tldr: >
-    MN-BaB is our most recent neural network verifier and combines precise multi-neuron constraints within the Branch-and-Bound paradigm in one fully GPU-based solver. This combination of the two most successful verifier paradigms allows us to achieve state-of-the-art performance on current benchmarks and perform especially well on networks that were not trained to be easily verifiable and as a result have high natural accuracy.
+    MN-BaB is our most recent neural network verifier that combines precise multi-neuron constraints within the Branch-and-Bound paradigm in one fully GPU-based solver. This combination of the two most successful verifier paradigms allows us to achieve state-of-the-art performance on current benchmarks and perform especially well on networks that were not trained to be easily verifiable and as a result have high natural accuracy.
 excerpt: >
     Learn more about how multi-neuron constraints can be used in a Branch-and-Bound framework to build a state-of-the-art complete neural network verifier.
 
@@ -16,7 +16,7 @@ draft: false
 tweet-id:
 ---
 
-This blog post explains the high-level concepts and intuitions behind our most recent neural network verifier [MN-BaB](https://files.sri.inf.ethz.ch/website/papers/ferrari2022complete.pdf). First, we introduce the neural network verification problem. Then, we  present the so-called Branch-and-Bound approach for solving them and outline the main ideas behind multi-neuron constraints, before combining the two in our new verifier MN-BaB. We conclude with some experimental results and insights on  why using multi-neuron constraints is key for the verification of challenging networks with high natural accuracy.
+This blog post explains the high-level concepts and intuitions behind our most recent neural network verifier [MN-BaB](https://files.sri.inf.ethz.ch/website/papers/ferrari2022complete.pdf). First, we introduce the neural network verification problem. Then, we  present the so-called Branch-and-Bound approach for solving it and outline the main ideas behind multi-neuron constraints, before combining the two in our new verifier MN-BaB. We conclude with some experimental results and insights on  why using multi-neuron constraints is key for the verification of challenging networks with high natural accuracy.
 
 ### Neural Network Verification
 In a nutshell, the neural network verification problem can be stated as follows:
@@ -93,7 +93,7 @@ However, considering one neuron at a time comes with a fundamental precision lim
 {: .blogpost-caption}
 *The difference in tightness between the tightest single-neuron, and a multi-neuron relaxation.*
 
-We use the efficiently computable *multi-neuron constraints* (MNCs) from [PRIMA](https://www.sri.inf.ethz.ch/publications/mueller2021precise), which can be expressed as a conjunction of linear constraints over the joint input-output space.
+We use the efficiently computable *multi-neuron constraints* from [PRIMA](https://www.sri.inf.ethz.ch/publications/mueller2021precise), which can be expressed as a conjunction of linear constraints over the joint input-output space.
 
 ### MN-BaB: Bounding
 
@@ -103,13 +103,13 @@ Following [previous](https://files.sri.inf.ethz.ch/website/papers/DeepPoly.pdf) 
 
 $$ \min_{x \in \mathcal{D}} f(x) \geq \min_{x \in \mathcal{D}} a_{inp}x + c_{inp}$$
 
-There, the minimization over $x \in \mathcal{D}_\infty$ has a closed form solution given by [Hölder's inequality](https://en.wikipedia.org/wiki/Hölder%27s_inequality):
+There, the minimization over $x \in \mathcal{D}$ has a closed form solution given by [Hölder's inequality](https://en.wikipedia.org/wiki/Hölder%27s_inequality):
 
 $$ \min_{x \in \mathcal{D}} a_{inp}x + c^{(0)} \geq a_{inp}x_0 - \lVert a_{inp} \rVert_1 \epsilon + c_{inp}$$
 
 To arrive at such a linear lower bound of the output in terms of the input, we start with the trivial lower bound $f(x) \geq z^{(L)}W + b^{(L)}$ and replace $z^{(L)}$ with symbolic, linear bounds depending only on the previous layer's values $z^{(L-1)}$. We proceed in this manner recursively until we obtain an expression only in terms of the inputs of the network.
 
-This backsubstitution is based on so-called linear relaxations of the different layer types. They are what determines the precision of the obtained bounding method. While affine layers (e.g., fully connected, convolutional, avg. pooling, normalization) can be captured exactly, non-linear activation layers remain challenging and their encoding is what differentiates MN-BaB. Most importantly, MN-BaB is able to enforce MNCs in an efficiently optimizable fashion. The full details are given in the [paper](https://files.sri.inf.ethz.ch/website/papers/ferrari2022complete.pdf) but are rather technical and notation heavy, so we will skip them here.
+These so-called linear relaxations of the different layer types determine the precision of the obtained bounding method. While affine layers (e.g., fully connected, convolutional, avg. pooling, normalization) can be captured exactly, non-linear activation layers remain challenging and their encoding is what differentiates MN-BaB. Most importantly, MN-BaB is able to enforce MNCs in an efficiently optimizable fashion. The full details are given in the [paper](https://files.sri.inf.ethz.ch/website/papers/ferrari2022complete.pdf) but are rather technical and notation heavy, so we will skip them here.
 
 To derive the linear relaxations for activation layers, we need bounds on the inputs of those layers ($l_x$ and $u_x$ in the illustrations). In order to compute these lower and upper bounds on every neuron, we apply the procedure described above to every neuron in the network, starting from the first activation layer.
 
@@ -129,7 +129,7 @@ The **branch()** method takes a problem instance and splits it into two subprobl
 {: .blogpost-caption}
 *The split constraints that are added to the generated subproblems.*
 
-The choice of which node to split has a significant impact on how many subproblems we have to consider during the Branch-and-Bound process until we can prove a property. Therefore, we aim to choose a neuron that minimizes the total number of problems we have to consider. To this end, we define a proxy score trying to capture the bound improvement resulting from any particular split. Note that the optimal branching decision depends on the bounding method that is used, as different bounding methods might profit differently from additional constraints resulting from the split.
+The choice of which node to split has a significant impact on how many subproblems we have to consider during the Branch-and-Bound process until we can prove a property. Therefore, we aim to choose a neuron that minimizes the total number of problems we have to consider. To do this, we define a proxy score trying to capture the bound improvement resulting from any particular split. Note that the optimal branching decision depends on the bounding method that is used, as different bounding methods might profit differently from additional constraints resulting from the split.
 
 As our bounding method relies on MNCs, we design a proxy score that is specifically tailored to them, called the *Active Constraint Score* (**ACS**). ACS determines the sensitivity of the final optimization objective with respect to the MNCs and then, for each node, computes the cumulative sensitivity of all constraints containing that node. We then split the node with the highest cumulative sensitivity.
 
