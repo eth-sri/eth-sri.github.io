@@ -2,13 +2,13 @@
 ref: ivanov2022seeds
 title: "Fast and Optimal Sequence-to-Graph Alignment Guided by Seeds"
 authors: Pesho Ivanov, Benjamin Bichsel, Martin Vechev
-year: 2021
-month: 11
-venue: bioRxiv
+year: 2022
+month: 5
+venue: RECOMB
 projects: computational-biology
 awards:
 bibtex: 
-paper: https://www.biorxiv.org/content/10.1101/2021.11.05.467453v1
+paper: https://www.biorxiv.org/content/10.1101/2021.11.05.467453
 talk: 
 slides:
 ---
