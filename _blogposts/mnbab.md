@@ -13,7 +13,7 @@ excerpt: >
     Learn more about how multi-neuron constraints can be used in a Branch-and-Bound framework to build a state-of-the-art complete neural network verifier.
 
 draft: false 
-tweet-id:
+tweet-id: 1518639020070383618
 keywords: certified robustness, adversarial examples
 conf-url: https://iclr.cc/virtual/2022/poster/6097
 conf-info: Poster - Wed Apr 27 11:30 UTC+2 (Poster Session 7)
