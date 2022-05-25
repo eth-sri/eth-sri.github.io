@@ -2,7 +2,7 @@
 layout: blogpost
 category: paper
 pub-ref: ferrari2022complete
-title: "Multi-Neuron Relaxation Guided Branch-and-Bound"
+title: "Multi-neuron relaxation guided branch-and-bound"
 blogpost-authors: "Claudio Ferrari, Mark Niklas Müller, Nikola Jovanović"
 date: 2022-04-21
 thumbnail: thumbnails/mnbab.svg
@@ -13,7 +13,7 @@ excerpt: >
     Learn more about how multi-neuron constraints can be used in a Branch-and-Bound framework to build a state-of-the-art complete neural network verifier.
 
 draft: false 
-tweet-id:
+tweet-id: 1518639020070383618
 keywords: certified robustness, adversarial examples
 conf-url: https://iclr.cc/virtual/2022/poster/6097
 conf-info: Poster - Wed Apr 27 11:30 UTC+2 (Poster Session 7)
