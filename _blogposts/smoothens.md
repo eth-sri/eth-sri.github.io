@@ -2,7 +2,7 @@
 layout: blogpost
 category: paper
 pub-ref: horvath2022boosting
-title: "Boosting Randomized Smoothing with Variance Reduced Classifiers"
+title: "Boosting randomized smoothing with variance reduced classifiers"
 blogpost-authors: "Mark Niklas Müller, Marc Fischer" 
 date: 2022-04-15
 thumbnail: thumbnails/smooth_ens.png
@@ -16,7 +16,7 @@ conf-url: https://iclr.cc/virtual/2022/spotlight/6328
 conf-info: Spotlight - Thu Apr 28, 19:30 UTC+2 (Poster Session 11)
 
 draft: false 
-tweet-id:
+tweet-id: 1518645825664172035
 ---
 
 Deep neural networks often achieve excellent accuracy on data $x$ from the distribution they were trained on. However, they have been shown to be very sensitive to slightly perturbed inputs $x+ \delta$, called adversarial examples. This severely limits their applicability to safety-critical domains.
