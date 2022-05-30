@@ -1,5 +1,5 @@
 ---
-ref: horvath2022boosting
+ref: horvath2022derand
 title: "(De-)Randomized Smoothing for Decision Stump Ensembles"
 authors: Miklós Z. Horváth*, Mark Niklas Müller*, Marc Fischer, Martin Vechev
 year: 2022
@@ -7,6 +7,13 @@ month: 5
 venue: arXiv
 projects: safeai
 paper: https://arxiv.org/abs/2205.13909
+bibtex: '@misc{horvath2022derand,
+	  doi = {10.48550/ARXIV.2205.13909},
+	  author = {Horváth, Miklós Z. and Müller, Mark Niklas and Fischer, Marc and Vechev, Martin},
+	  title = {(De-)Randomized Smoothing for Decision Stump Ensembles},
+	  publisher = {arXiv},
+	  year = {2022},
+	}'
 //code: https://github.com/eth-sri/smoothing-ensembles
 //blogpost: smoothens
 ---
