@@ -9,9 +9,10 @@
   awards:
   bibtex:
   paper: https://files.sri.inf.ethz.ch/website/papers/ccs21-learch.pdf
+  code: https://github.com/eth-sri/learch
   image: 
   talk:
-  slides:
+  slides: https://files.sri.inf.ethz.ch/website/slides/ccs21-learch-full.pdf
 ---
 
 Symbolic execution is a powerful technique that can generate tests steering program execution into desired paths. However, the scalability of symbolic execution is often limited by path explosion, i.e., the number of symbolic states representing the paths under exploration quickly explodes as execution goes on. Therefore, the effectiveness of symbolic execution engines hinges on the ability to select and explore the right symbolic states.

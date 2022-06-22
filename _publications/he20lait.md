@@ -11,6 +11,7 @@ bibtex:
 paper: https://files.sri.inf.ethz.ch/website/papers/pldi20-lait.pdf
 talk: https://www.youtube.com/watch?v=ObkjUoA7yho
 slides: https://files.sri.inf.ethz.ch/website/slides/pldi2020-lait-slides.pdf
+code: https://github.com/eth-sri/ELINA/blob/master/README_lait.md
 ---
 
 Numerical abstract domains are a key component of modern static analyzers. Despite recent advances, precise analysis with highly expressive domains remains too costly for many real-world programs. To address this challenge, we introduce a new data-driven method, called LAIT, that produces a faster and more scalable numerical analysis without significant loss of precision. Our approach is based on the key insight that sequences of abstract elements produced by the analyzer contain redundancy which can be exploited to increase performance without compromising precision significantly. Concretely, we present an iterative learning algorithm that learns a neural policy that identifies and removes redundant constraints at various points in the sequence. We believe that our method is generic and can be applied to various numerical domains.
