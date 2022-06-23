@@ -1,5 +1,5 @@
 ---
-ref: he22bugds
+ref: he22bugshift
 title: "On Distribution Shift in Learning-based Bug Detectors"
 authors: Jingxuan He, Luca Beurer-Kellner, Martin Vechev
 year: 2022
