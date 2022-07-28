@@ -18,6 +18,7 @@
   image: 
   talk:
   slides:
+  code: https://github.com/eth-sri/zkay
 ---
 
 Recent work introduces zkay, a system for specifying and enforcing data privacy in smart contracts. While the original prototype implementation of zkay (v0.1) demonstrates the feasibility of the approach, its proof-of-concept implementation suffers from severe limitations such as insecure encryption and lack of important language features.

@@ -26,6 +26,7 @@
   image: 
   talk:
   slides: https://files.sri.inf.ethz.ch/website/papers/talk-zkay-ccs-2019-web.pdf
+  code: https://github.com/eth-sri/zkay
 ---
 
 Privacy concerns of smart contracts are a major roadblock preventing their wider adoption. A promising approach to protect private data is hiding it with cryptographic primitives and then enforcing correctness of state updates by Non-Interactive Zero-Knowledge (NIZK) proofs. Unfortunately, NIZK statements are less expressive than smart contracts, forcing developers to keep some functionality in the contract. This results in scattered logic, split across contract code and NIZK statements, with unclear privacy guarantees.
