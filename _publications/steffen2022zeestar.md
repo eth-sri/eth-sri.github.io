@@ -12,6 +12,7 @@
   image: 
   talk:
   slides: https://files.sri.inf.ethz.ch/website/papers/talk-zeestar-sp-2022-web.pdf
+  code: https://github.com/eth-sri/zkay
 ---
 
 Data privacy is a key concern for smart contracts handling sensitive data. The existing work zkay addresses this concern by allowing developers without cryptographic expertise to enforce data privacy. However, while zkay avoids fundamental limitations of other private smart contract systems, it cannot express key applications that involve operations on foreign data.

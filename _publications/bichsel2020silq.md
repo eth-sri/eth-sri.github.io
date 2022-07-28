@@ -21,6 +21,7 @@ bibtex: '@inproceedings{bichsel2020silq,
 '
 <!--blogpost: silq-->
 paper: https://files.sri.inf.ethz.ch/website/papers/pldi20-silq.pdf
+code: https://github.com/eth-sri/silq
 ---
 
 Existing quantum languages force the programmer to work at a low level of abstraction leading to unintuitive and cluttered code. A fundamental reason is that dropping temporary values from the program state requires explicitly applying quantum operations that safely uncompute these values.

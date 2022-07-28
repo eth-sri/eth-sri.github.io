@@ -11,6 +11,7 @@ bibtex: ''
 paper: https://files.sri.inf.ethz.ch/website/papers/ccs18-dpfinder.pdf
 talk: https://www.youtube.com/watch?v=Jwe0oCSlaMk
 slides: https://files.sri.inf.ethz.ch/website/slides/ccs18-dpfinder-slides.pdf
+code: https://github.com/eth-sri/dp-finder
 ---
 
 We present DP-Finder, a novel approach and system that automat- ically derives lower bounds on the differential privacy enforced by algorithms. Lower bounds are practically useful as they can show tightness of existing upper bounds or even identify incorrect upper bounds. Computing a lower bound involves searching for a coun- terexample, defined by two neighboring inputs and a set of outputs, that identifies a large privacy violation. This is an inherently hard problem as finding such a counterexample involves inspecting a large (usually infinite) and sparse search space.

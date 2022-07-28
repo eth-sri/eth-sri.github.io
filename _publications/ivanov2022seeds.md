@@ -11,6 +11,7 @@ bibtex:
 paper: https://www.biorxiv.org/content/10.1101/2021.11.05.467453
 talk: 
 slides:
+code: https://github.com/eth-sri/astarix
 ---
 
 We present a novel A* seed heuristic enabling fast and optimal sequence-to-graph
