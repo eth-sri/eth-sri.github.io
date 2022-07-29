@@ -26,6 +26,7 @@
   image: 
   talk: https://polybox.ethz.ch/index.php/s/2Kl3RZYgKCE7W4Z
   slides: https://files.sri.inf.ethz.ch/website/papers/talk-netdice-sigcomm-2020-web.pdf
+  code: https://github.com/nsg-ethz/netdice
 ---
 
 Not all important network properties need to be enforced all the time. Often, what matters instead is the fraction of time / probability these properties hold. Computing the probability of a property in a network relying on complex inter-dependent routing protocols is challenging and requires determining all failure scenarios for which the property is violated. Doing so at scale and accurately goes beyond the capabilities of current network analyzers.
