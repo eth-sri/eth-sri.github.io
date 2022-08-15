@@ -1,0 +1,21 @@
+---
+ref: mirman2022fundamental
+title: The Fundamental Limits of Neural Networks for Interval Certified Robustness
+authors: Matthew Mirman, Maximilian Baader, Martin Vechev
+year: 2022
+venue: TMLR
+projects: Research Area 1, Research Area 1
+awards: 
+bibtex: '@inproceedings{mirman2022fundamental,
+  title={The Fundamental Limits of Neural Networks for Interval Certified Robustness},
+  author={Mirman, Matthew and Baader, Maximilian and Vechev, Martin},
+  year={2022},
+  organization={TMLR}}'
+paper: https://openreview.net/pdf?id=fsacLLU35V
+talk: 
+slides: 
+---
+
+Interval analysis (or interval bound propagation, IBP) is a popular technique for verifying and training provably robust deep neural networks, a fundamental challenge in the area of reliable machine learning. However, despite substantial efforts, progress on addressing this key challenge has stagnated, calling into question whether interval analysis is a viable path forward.
+
+In this paper we present a fundamental result on the limitation of neural networks for interval analyzable robust classification. Our main theorem shows that non-invertible functions can not be built such that interval analysis is precise everywhere. Given this, we derive a paradox: while every dataset can be robustly classified, there are simple datasets that can not be provably robustly classified with interval analysis.
