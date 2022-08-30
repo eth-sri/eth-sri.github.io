@@ -7,6 +7,15 @@ month: 11
 venue: ACM CCS
 projects: safeai
 awards:
+bibtex: '@inproceedings{jovanovic2022phoenix,
+    author = {Jovanović, Nikola and Fischer, Marc and Steffen, Samuel Vechev, Martin},
+    title = {Private and Reliable Neural Network Inference},
+    year = {2022},
+    publisher = {Association for Computing Machinery},
+    booktitle = {Proceedings of the 2022 ACM SIGSAC Conference on Computer and Communications Security},
+    location = {Los Angeles, U.S.A.},
+    series = {CCS ’22}
+}'
 ---
 
 Reliable neural networks (NNs) provide important inference-time reliability guarantees such as fairness and robustness. Complementarily, privacy-preserving NN inference protects the privacy of client data. So far these two emerging areas have been largely disconnected, yet their combination will be increasingly important.
