@@ -16,6 +16,8 @@ bibtex: '@inproceedings{jovanovic2022phoenix,
     location = {Los Angeles, U.S.A.},
     series = {CCS ’22}
 }'
+paper: https://files.sri.inf.ethz.ch/website/papers/ccs22-phoenix.pdf
+code: https://github.com/eth-sri/phoenix
 ---
 
 Reliable neural networks (NNs) provide important inference-time reliability guarantees such as fairness and robustness. Complementarily, privacy-preserving NN inference protects the privacy of client data. So far these two emerging areas have been largely disconnected, yet their combination will be increasingly important.
