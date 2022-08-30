@@ -7,7 +7,7 @@
   venue: ACM CCS
   projects: blockchain-security
   awards:
-  paper:
+  paper: https://files.sri.inf.ethz.ch/website/papers/ccs22-zapper.pdf
   image:
   talk:
   slides:
