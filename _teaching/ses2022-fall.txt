@@ -1,0 +1,22 @@
+TBD	ZeeStar: Private Smart Contracts by Homomorphic Encryption and Zero-knowledge Proofs	https://ieeexplore.ieee.org/document/9833732	TBD	Sam	samuel.steffen@inf.ethz.ch
+TBD	EVA: an encrypted vector arithmetic language and compiler for efficient homomorphic computation	https://dl.acm.org/doi/10.1145/3385412.3386023	TBD	Sam	samuel.steffen@inf.ethz.ch
+TBD	A Static Analyzer for Detecting Tensor Shape Errors in Deep Neural Network Training Code	https://arxiv.org/pdf/2112.09037.pdf	TBD	Benjamin	benjamin.bichsel@inf.ethz.ch
+TBD	Scalable Taint Specification Inference with Big Code	https://files.sri.inf.ethz.ch/website/papers/scalable-taint-specification-inference-pldi2019.pdf	TBD	Benjamin	benjamin.bichsel@inf.ethz.ch
+TBD	Explaining Mispredictions of Machine Learning Models using Rule Induction	https://dl.acm.org/doi/10.1145/3468264.3468614	TBD	Momchil	momchil.peychev@inf.ethz.ch
+TBD	CodeBERT: A Pre-Trained Model for Programming and Natural Languages	https://aclanthology.org/2020.findings-emnlp.139/	TBD	Momchil	momchil.peychev@inf.ethz.ch
+TBD	The Adverse Effects of Code Duplication in Machine Learning Models of Code	https://dl.acm.org/doi/pdf/10.1145/3359591.3359735	TBD	Luca	luca.beurer-kellner@inf.ethz.ch
+TBD	Synchromesh: Reliable Code Generation from Pre-trained Language Models	https://openreview.net/pdf?id=KmtVD97J43e	TBD	Luca	luca.beurer-kellner@inf.ethz.ch
+TBD	Gauntlet: Finding Bugs in Compilers for Programmable Packet Processing	https://www.usenix.org/conference/osdi20/presentation/ruffy	TBD	Anouk	anouk.paradis@inf.ethz.ch
+TBD	Type-Directed Program Synthesis for RESTful APIs	https://cseweb.ucsd.edu/~npolikarpova/publications/pldi22.pdf	TBD	Anouk	anouk.paradis@inf.ethz.ch
+TBD	TOGA: A Neural Method for Test Oracle Generation	https://dl.acm.org/doi/10.1145/3510003.3510141	TBD	Shaohua	shaohua.li@inf.ethz.ch
+TBD	Finding typing compiler bugs	https://dl.acm.org/doi/10.1145/3519939.3523427	TBD	Shaohua	shaohua.li@inf.ethz.ch
+TBD	BOLT: a practical binary optimizer for data centers and beyond	https://dl.acm.org/doi/10.5555/3314872.3314876	TBD	Theo	theodoros.theodoridis@inf.ethz.ch
+TBD	An Experience with Code-Size Optimization for Production iOS Mobile Applications	https://ieeexplore.ieee.org/document/9370306	TBD	Theo	theodoros.theodoridis@inf.ethz.ch
+TBD	“Synthesizing Input Grammars”: A Replication Study	https://dl.acm.org/doi/abs/10.1145/3519939.3523716	TBD	Dominik	dominik.winterer@inf.ethz.ch
+TBD	Murxla: A Modular and Highly Extensible API Fuzzer for SMT Solvers	https://link.springer.com/chapter/10.1007/978-3-031-13188-2_5	TBD	Dominik	dominik.winterer@inf.ethz.ch
+TBD	Random Testing for C and C++ Compilers with YARPGen	https://dl.acm.org/doi/pdf/10.1145/3428264	TBD	Chengyu	chengyu.zhang@inf.ethz.ch
+TBD	Well-Typed Programs Can Go Wrong: A Study of Typing-Related Bugs in JVM Compilers	https://dl.acm.org/doi/pdf/10.1145/3485500	TBD	Chengyu	chengyu.zhang@inf.ethz.ch
+TBD	Automatic Generation of Programming Exercises and Code Explanations Using Large Language Models	https://dl.acm.org/doi/10.1145/3501385.3543957	TBD	Sverrir	sverrir.thorgeirsson@inf.ethz.ch
+TBD	Synthesis of Web Layouts from Examples	https://dl.acm.org/doi/10.1145/3468264.3468533	TBD	Sverrir	sverrir.thorgeirsson@inf.ethz.ch
+TBD	BEACON : Directed Grey-Box Fuzzing with Provable Path Pruning	https://ieeexplore.ieee.org/document/9833751	TBD	Zu-Ming	zuming.jiang@inf.ethz.ch
+TBD	Effective Seed Scheduling for Fuzzing with Graph Centrality Analysis	https://ieeexplore.ieee.org/document/9833761	TBD	Zu-Ming	zuming.jiang@inf.ethz.ch
