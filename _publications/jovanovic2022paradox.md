@@ -6,14 +6,11 @@ year: 2022
 month: 10
 venue: TMLR
 projects: safeai
-bibtex: '@inproceedings{
-    jovanovic2022paradox,
+bibtex: '@inproceedings{jovanovic2022paradox,
     title={On The Paradox of Certified Training},
     author={Nikola Jovanovi\'{c} and Mislav Balunovi\'{c} and Maximilian Baader and Martin Vechev},
     booktitle={Transactions on Machine Learning Research},
-    year={2022}
-}
-}'
+    year={2022}}'
 paper: https://files.sri.inf.ethz.ch/website/papers/jovanovic2022paradox.pdf
 code: https://github.com/eth-sri/paradox
 ---
