@@ -51,7 +51,7 @@ layout: default
       </div>
     </div>
 
-    {% assign sorted_blogposts = site.blogposts | where: "draft","false" | sort:"date" | reverse %}
+    {% assign sorted_blogposts = site.blogposts | sort:"date" | reverse %}
     {% assign sorted_newsposts = site.newsposts | where: "categories","media" | sort:"date" | reverse %}
 
     {%- for blogpost in sorted_blogposts limit: 4 %}

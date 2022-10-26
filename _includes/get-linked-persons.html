@@ -6,7 +6,7 @@
     <a href="{{ found_person.url | relative_url}}">{{person}}</a>{% unless forloop.last %},&nbsp;{% endunless %}
   {% else %}
     {% capture query %} item.name contains '{{ person | remove: 'Dr.' | remove: 'Prof.' | remove: '*' | escape | strip }}'{% endcapture %}
-    {% assign found_person = site.data.students | where_exp:"item", query | first %}
+    {% assign found_person = site.data.externals | where_exp:"item", query | first %}
     {% if found_person != nil %}
       <a href="{{ found_person.url}}">{{person}}</a>{% unless forloop.last %},&nbsp;{% endunless %}
     {% else %}

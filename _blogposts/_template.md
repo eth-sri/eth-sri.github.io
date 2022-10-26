@@ -15,11 +15,10 @@ keywords: fair representation learning, certified individual fairness
 conf-url: https://icml.cc/virtual/2021/poster/9327
 conf-info: Oral - Wed Jul 20, 19:00 GMT+2 (Reinforcement Learning 4) | Poster - Tue Jul 20, 18:00 GMT+2 (Poster Session 1)
 
-draft: true
 tweet-id:
 ---
 
-This is some intro paragraph text motivating the whole thing. Always make sure that all the metadata is set correctly and `draft: true` while the post is not ready to be released. This was also an example of inline code.
+This is some intro paragraph text motivating the whole thing. Always make sure that all the metadata is set correctly and that your blogpost is not on the master branch until it is ready. This was also an example of inline code.
 
 [comment]: <> (This is how to write comments.)
 
@@ -38,7 +37,7 @@ def fib(n):
   if n == 1 or n == 2:
   	 return 1
   return fib(n-1) + fib(n-2)
-{% endhighlight %}
+{% endhighlight %} 
 
 You can embed both static images and gifs. For a full-width image use `.blogpost-img100`, for a centered 50% width image `.blogpost-img50`. Similarly, always use `.blogpost-caption` to properly format captions:
 
@@ -48,6 +47,12 @@ You can embed both static images and gifs. For a full-width image use `.blogpost
 ***Conceptual overview of LCIFR.** This is a full-width gif. Start captions with a bold caption heading.*
 
 Later in the results section we have a 50% image.
+
+You can also wrap images; sometimes that looks much nicer, e.g., if there are many pictures in a row with not much text. Here is an example from MN-BaB.
+
+{: .blogpost-wrap}
+<span>**Effectiveness of Multi-Neuron Constraints**: We plot the ratio of the number of subproblems required to prove a property during Branch-and-Bound without vs. with MNCs. Using MNCs reduces the number of subproblems by two orders of magnitude on average.</span>
+![Alt Text](/assets/blog/mn-bab/ResNet6-A_n_subproblems_ratio_w_wo_MNC.png){: .blogpost-img40}
 
 ### Adding Some Math
 

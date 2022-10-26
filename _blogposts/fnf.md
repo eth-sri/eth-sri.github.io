@@ -12,7 +12,6 @@ tldr: >
 excerpt: >
     Fair Normalizing Flows (FNF) are a new approach for encoding data into a new representation in order to ensure fairness and utility in downstream tasks.
 keywords: fair representation learning, certified individual fairness
-draft: false 
 tweet-id: 1518638461552672769
 keywords: fair representation learning, normalizing flows
 conf-url: https://iclr.cc/virtual/2022/poster/7045
