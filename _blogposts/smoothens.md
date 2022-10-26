@@ -15,7 +15,6 @@ keywords: randomized smoothing, certified robustness, ensembles
 conf-url: https://iclr.cc/virtual/2022/spotlight/6328
 conf-info: Spotlight - Thu Apr 28, 19:30 UTC+2 (Poster Session 11)
 
-draft: false 
 tweet-id: 1518645825664172035
 ---
 
