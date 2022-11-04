@@ -6,6 +6,14 @@ year: 2022
 month: 10
 venue: ECCV
 projects: safeai
+bibtex: '@inproceedings{peychev2022latent,
+title={Latent Space Smoothing for Individually Fair Representations},
+author={Momchil Peychev and Anian Ruoss and Mislav Balunovi{\'{c}} and Maximilian Baader and Martin Vechev},
+booktitle={Computer Vision -- ECCV 2022},
+year={2022},
+pages={535--554},
+organization={Springer}
+}'
 paper: https://files.sri.inf.ethz.ch/website/papers/peychev2022latent.pdf
 code: https://github.com/eth-sri/lassi
 image: assets/images/lassi_overview.png
