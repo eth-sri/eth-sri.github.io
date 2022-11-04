@@ -7,8 +7,8 @@ month: 10
 venue: ECCV
 projects: safeai
 bibtex: '@inproceedings{peychev2022latent,
-  title={Latent Space Smoothing for Individually Fair Representations},
-  author={Momchil Peychev and Anian Ruoss and Mislav Balunovi{\'{c}} and Maximilian Baader and Martin Vechev},
+  title={Latent Space Smoothing for Individually Fair Representations},
+  author={Momchil Peychev and Anian Ruoss and Mislav Balunović and Maximilian Baader and Martin Vechev},
   booktitle={Computer Vision -- ECCV 2022},
   year={2022},
   pages={535--554},
