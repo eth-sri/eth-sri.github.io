@@ -75,7 +75,7 @@ layout: default
       </div>
     </div>
 
-    {% assign sorted_blogposts = site.blogposts | where: "draft","false" | sort:"date" | reverse %}
+    {% assign sorted_blogposts = site.blogposts | sort:"date" | reverse %}
 
     {%- for i in (0 .. 3) %}
 
