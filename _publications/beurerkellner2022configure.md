@@ -12,7 +12,7 @@ bibtex: '@article{beurerkellner2022configure,
     journal = {Advances in Neural Information Processing Systems (NeurIPS)},
     year = {2022},
 }'
-paper: https://files.sri.inf.ethz.ch/website/papers/iclr2020-universal.pdf
+paper: https://arxiv.org/pdf/2211.01980.pdf
 code: https://github.com/eth-sri/learning-to-configure-networks#
 ---
 
