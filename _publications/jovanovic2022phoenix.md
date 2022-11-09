@@ -17,6 +17,7 @@ bibtex: '@inproceedings{jovanovic2022phoenix,
     series = {CCS ’22}
 }'
 paper: https://files.sri.inf.ethz.ch/website/papers/ccs22-phoenix.pdf
+slides: https://files.sri.inf.ethz.ch/website/slides/ccs22-phoenix-slides.pdf
 code: https://github.com/eth-sri/phoenix
 ---
 
