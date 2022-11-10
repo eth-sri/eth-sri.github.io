@@ -2,6 +2,7 @@
 layout: default
 title: SRI Blog
 usemathjax: true
+permalink: /blog/index.html
 ---
 
 <article class="page">
@@ -19,7 +20,7 @@ usemathjax: true
       </div>
   
           <ul class="blog-list">
-          {% assign blogposts = site.blogposts | where:"draft","false" %}
+          {% assign blogposts = site.blogposts %}
           {%- for blogpost in blogposts reversed -%}
           <li>
           <div class="blog-list-box">

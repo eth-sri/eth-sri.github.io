@@ -12,7 +12,6 @@ tldr: >
 excerpt: >
     The excerpt is for the home page, aim for 1-2 sentences or 3-5 lines on the homepage. LCIFR is a method for training fair representations with provable certificates of individual fairness.
 keywords: federated learning, privacy, gradient leakage
-draft: false 
 tweet-id: 1518639179722330112
 conf-url: https://iclr.cc/virtual/2022/poster/6934
 conf-info: Poster - Wed Apr 27 19:30 UTC+2 (Poster Session 8)
