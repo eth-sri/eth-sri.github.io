@@ -7,7 +7,6 @@
   venue: ACM CCS
   awards: Distinguished Paper Award
   projects: blockchain-security
-  awards:
   paper: https://files.sri.inf.ethz.ch/website/papers/ccs22-zapper.pdf
   image:
   talk:
