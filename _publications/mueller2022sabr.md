@@ -4,7 +4,7 @@ title: "Certified Training: Small Boxes are All You Need"
 authors: Mark Niklas Müller*, Franziska Eckert*, Marc Fischer, Martin Vechev
 year: 2022
 month: 12
-venue: TRSML@NeurIPS
+venue: TSRML@NeurIPS
 projects: safeai
 bibtex: '@article{mueller2022certified,
 	author    = {Mark Niklas M{\"{u}}ller and Franziska Eckert and Marc Fischer and Martin T. Vechev},
