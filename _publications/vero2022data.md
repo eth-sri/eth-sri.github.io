@@ -8,7 +8,7 @@ venue: arXiv
 projects: safeai
 bibtex: '@article{vero2022data,
   title={Data Leakage in Tabular Federated Learning},
-  author={Vero, Mark and Balunovi{\'c}, Mislav and Dimitrov, Dimitar I and Vechev, Martin},
+  author={Vero, Mark and Balunovic, Mislav and Dimitrov, Dimitar I and Vechev, Martin},
   journal={arXiv preprint arXiv:2210.01785},
   year={2022}}'
 paper: https://arxiv.org/abs/2210.01785
