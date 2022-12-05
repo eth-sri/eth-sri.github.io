@@ -10,7 +10,7 @@
   paper: https://files.sri.inf.ethz.ch/website/papers/ccs22-zapper.pdf
   image:
   talk:
-  slides:
+  slides: https://files.sri.inf.ethz.ch/website/papers/talk-zapper-ccs-2022-web.pdf
   code: https://github.com/eth-sri/zapper
 ---
 
