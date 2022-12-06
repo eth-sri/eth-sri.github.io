@@ -8,7 +8,7 @@ venue: SyntheticData4ML@NeurIPS 2022
 projects: safeai
 bibtex: '@article{jovanovic2022fare,
   title={FARE: Provably Fair Representation Learning},
-  author={Jovanovic, Nikola and Balunovic, Mislav and Dimitrov, Dimitar I and Vechev, Martin},
+  author={Jovanović, Nikola and Balunovic, Mislav and Dimitrov, Dimitar I and Vechev, Martin},
   journal={arXiv preprint arXiv:2210.07213},
   year={2022}
 }'
