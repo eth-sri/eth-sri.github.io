@@ -6,9 +6,9 @@ year: 2022
 month: 10
 venue: TMLR
 projects: safeai
-bibtex: '@article{jovanovi{\'c}2022on,
+bibtex: '@article{jovanovic2022on,
     title={On the Paradox of Certified Training},
-    author={Nikola Jovanovi{\'c} and Mislav Balunovi\'{c} and Maximilian Baader and Martin Vechev},
+    author={Nikola Jovanović and Mislav Balunović and Maximilian Baader and Martin Vechev},
     journal={Transactions on Machine Learning Research},
     year={2022},
     url={https://openreview.net/forum?id=atJHLVyBi8},
