@@ -3,8 +3,8 @@ ref: jovanovic2022fare
 title: "FARE: Provably Fair Representation Learning"
 authors: Nikola Jovanović, Mislav Balunović, Dimitar I. Dimitrov, Martin Vechev
 year: 2022
-month: 10
-venue: arXiv
+month: 12
+venue: SyntheticData4ML@NeurIPS 2022
 projects: safeai
 bibtex: '@article{jovanovic2022fare,
   title={FARE: Provably Fair Representation Learning},
