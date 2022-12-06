@@ -3,7 +3,7 @@ ref: baader2019universal
 title: "Learning to Configure Computer Networks with Neural Algorithmic Reasoning"
 authors: Luca Beurer-Kellner, Martin Vechev, Laurent Vanbever, Petar Veličković
 year: 2022
-month: 11
+month: 12
 venue: NeurIPS
 projects: programmable-networks
 bibtex: '@article{beurerkellner2022configure,
