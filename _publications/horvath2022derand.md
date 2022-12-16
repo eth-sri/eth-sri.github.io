@@ -13,7 +13,7 @@ bibtex: '@inproceedings{horvath2022derandomized,
 	year      = {2022},
 	url       = {https://openreview.net/forum?id=IbBHnPyjkco},
 	}'
-paper: https://openreview.net/forum?id=IbBHnPyjkco
+paper: https://arxiv.org/abs/2205.13909
 code: https://github.com/eth-sri/drs
 #blogpost: smoothens
 ---
