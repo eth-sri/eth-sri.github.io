@@ -14,7 +14,7 @@ bibtex: '@inproceedings{horvath2022derandomized,
 	url       = {https://openreview.net/forum?id=IbBHnPyjkco},
 	}'
 paper: https://openreview.net/forum?id=IbBHnPyjkco
-#code: https://github.com/eth-sri/drs
+code: https://github.com/eth-sri/drs
 #blogpost: smoothens
 ---
 
