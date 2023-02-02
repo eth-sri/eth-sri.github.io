@@ -21,11 +21,12 @@ permalink: /teaching/index.html
       <div class="column column-66">
 
         
-        <!-- <h2>Future Courses</h2> -->
+      <h2>Future Courses</h2>
+      {% include get-course.html ref="rse2023"   output="horizontal" %}
 
-        <h2>Current Courses</h2>
-        {% include get-course.html ref="rtai2022"   output="horizontal" %}
-        {% include get-course.html ref="ses2022-fall"   output="horizontal" %}
+      <h2>Current Courses</h2>
+      {% include get-course.html ref="rtai2022"   output="horizontal" %}
+      {% include get-course.html ref="ses2022-fall"   output="horizontal" %}
 
  	<h2>Past Courses</h2>
    {% include get-course.html ref="rse2022"   output="horizontal" %}
