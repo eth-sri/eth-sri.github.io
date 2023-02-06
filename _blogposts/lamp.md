@@ -2,7 +2,7 @@
 layout: blogpost
 category: paper
 pub-ref: balunovic2022lamp
-title: "LAMP: Extracting Text from Gradients with Language Model Priors"
+title: "LAMP: Extracting text from gradients with language model priors"
 blogpost-authors: "Dimitar I. Dimitrov" 
 date: 2022-11-28
 thumbnail: thumbnails/lamp.svg
