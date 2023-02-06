@@ -53,7 +53,10 @@ The plot below shows the relaxation of the ReLU non-linearity used by CROWN, for
 These observations imply discontinuities in the loss when a relaxation is used in training, which we further empirically observe in real scenarios.
 Finally, we can use the plot below to observe that no discontinuities can be found for IBP and DeepZ---a formal proof of their continuity in the general case is given in the paper.
 
-<iframe src="/assets/blog/paradox/cont_plot.html" height="780px" width="100%" style="border:none;align:center"></iframe>
+
+<a class="iframe-link" href="/assets/blog/paradox/continuity.html"> Open Interactive Plot</a>
+
+<iframe class="iframe-full" src="/assets/blog/paradox/continuity.html" height="780px"></iframe>
 
 While the sensitivity of the loss functions is harder to illustrate on a toy example as above, our derivation (Section 4.3 of the paper) demonstrates that the bounds used by CROWN, CROWN-IBP (R) and DeepZ lead to certified training losses highly sensitive to small changes in network weights, while the losses of IBP and hBox are not sensitive and induce more favorable loss landscapes. With these observations, we expand the table shown earlier to include all three relaxation properties: tightness, continuity and sensitivity. 
 This illustrates that attempts to use tighter relaxations in certified training have introduced unfavorable properties of the loss, which resulted in the failure to outperform the continuous and non-sensitive IBP.

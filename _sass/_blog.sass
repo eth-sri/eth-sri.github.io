@@ -63,6 +63,27 @@
 	table
 		margin-left: auto 
 		margin-right: auto
+	
+	.iframe-link
+		display: inline-block
+		padding: 12px
+		background: #404040
+		color: #fff
+		text-align: center
+		margin: auto
+	
+	.iframe-full
+		border: none
+		align: center
+		width: 100%
+	
+	@media (min-width: $mobile-break)
+		.iframe-link
+			display: none
+
+	@media (max-width: $mobile-break)
+		.iframe-full
+			display: none
 
 .blogpost-thumbnail
 	display: block
@@ -261,3 +282,4 @@
 		.subpost-thumbnail
 			width: 60%
 			float: none
+

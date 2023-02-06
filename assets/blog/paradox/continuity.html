@@ -271,23 +271,17 @@ document.addEventListener("click", closeBox);
 
     // plotly layout
     let layout = {
-        // TODO setting tickvals/ticktext like that is not great
-        // but for some reason plotly won't render a "-" sign
         xaxis: {
-            nticks: 21, 
             range: [-10.1, 10.1],
             fixedrange: true,
-            tickvals: [...Array(21).keys()].map(x=>x-10),
-            ticktext: [...Array(21).keys()].map(x=>x-10).map(x=>x.toString())
+            nticks: 22, // ?
         },
         yaxis: {
-            nticks: 21, 
             range: [-10.1, 10.1], 
             fixedrange: true,
-            tickvals: [...Array(21).keys()].map(x=>x-10),
-            ticktext: [...Array(21).keys()].map(x=>x-10).map(x=>x.toString()),
             scaleanchor: "x",
             scaleratio: 1,
+            nticks: 21, 
         },
         width: 600,
         height: 600,
