@@ -163,7 +163,7 @@ function closeBox(elem) {
     let items = document.getElementsByClassName("dropdown-items");
     let sele = document.getElementsByClassName("dropdown-selected");
     for (i = 0; i < sele.length; i++) {
-        if (elem == y[i]) {
+        if (elem == sele[i]) {
             arr.push(i);
         } else { 
             sele[i].classList.remove("dropdown-arrow-active");
