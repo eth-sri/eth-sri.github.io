@@ -4,7 +4,7 @@ title: "First Three Years of the International Verification of Neural Networks C
 authors: Christopher Brix, Mark Niklas Müller, Stanley Bak, Changliu Liu, Taylor T. Johnson
 year: 2023
 month: 03
-venue: ICLR
+venue: STTT ExPLAIn
 projects: safeai
 bibtex: '@article{DBLP:journals/corr/abs-2301-05815,
 			author    = {Christopher Brix and

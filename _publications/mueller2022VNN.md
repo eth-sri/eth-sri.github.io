@@ -4,7 +4,7 @@ title: "The Third International Verification of Neural Networks Competition (VNN
 authors: Mark Niklas Müller*, Christopher Brix*, Stanley Bak, Changliu Liu, Taylor T. Johnson
 year: 2022
 month: 12
-venue: ICLR
+venue: arXiv
 projects: safeai
 bibtex: '@article{mueller2023VNN,
 			author    = {Mark Niklas M{\"{u}}ller and
