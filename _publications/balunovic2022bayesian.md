@@ -6,7 +6,7 @@ year: 2022
 month: 4
 venue: ICLR
 projects: safeai
-bibtex: '@@inproceedings{balunovic2022bayesian,
+bibtex: '@inproceedings{balunovic2022bayesian,
       title={Bayesian Framework for Gradient Leakage}, 
       author={Mislav Balunović and Dimitar I. Dimitrov and Robin Staab and Martin Vechev},
       booktitle={International Conference on Learning Representations},
