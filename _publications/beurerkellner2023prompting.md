@@ -3,7 +3,7 @@ ref: beurerkellner2023prompting
 title: "Prompting Is Programming: A Query Language for Large Language Models"
 authors: Luca Beurer-Kellner, Marc Fischer, Martin Vechev
 year: 2023
-month: 6
+month: 06
 venue: ACM PLDI 
 projects: safeai
 bibtex: '@inproceedings{beuererkellner2023prompting,
@@ -19,9 +19,6 @@ bibtex: '@inproceedings{beuererkellner2023prompting,
 paper: https://arxiv.org/abs/2212.06094
 code: https://github.com/eth-sri/lmql 
 ---
-
-
-
 
 Large language models have demonstrated outstanding performance on a wide range of tasks such as question answering and code generation.
 On a high level, given an input, a language model can be used to automatically complete the sequence in a statistically-likely way. Based on this, users prompt these models with language instructions or examples, to implement a variety of downstream tasks. Advanced prompting methods can even imply interaction between the language model, a user, and external tools such as calculators. However, to obtain state-of-the-art performance or adapt language models for specific tasks, complex task- and model-specific programs have to be implemented, which may still require ad-hoc interaction.

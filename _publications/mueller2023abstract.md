@@ -3,7 +3,7 @@ ref: mueller2023abstract
 title: "Abstract Interpretation of Deep Equilibrium Models"
 authors: Mark Niklas Müller, Marc Fischer, Robin Staab, Martin Vechev
 year: 2023
-month: 6
+month: 06
 venue: ACM PLDI 
 projects: safeai
 bibtex: '@inproceedings{mueller2023abstract,
