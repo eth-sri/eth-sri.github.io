@@ -1,21 +1,21 @@
 ---
-ref: beurerkellner2023prompting 
+ref: beurerkellner2023prompting
 title: "Prompting Is Programming: A Query Language for Large Language Models"
 authors: Luca Beurer-Kellner, Marc Fischer, Martin Vechev
 year: 2023
 month: 06
 venue: ACM PLDI 
 projects: safeai
-bibtex: '@inproceedings{beuererkellner2023prompting,
-	title     = {Prompting Is Programming: A Query Language for Large Language Models},
-  url       = {https://doi.org/10.1145/3591300}
-  doi       = {10.1145/3591300}
-	booktitle = {{PLDI} '23: 44nd {ACM} {SIGPLAN} International Conference on Programming Language Design and Implementation, Orlando, Florida, United States June 17-21, 2023},
-	publisher = {ACM},
-	author    = {Luca Beurer-Kellner and
-               Marc Fischer and
-               Martin T. Vechev},
-	year = {2023}'
+bibtex: "@inproceedings{beuererkellner2023prompting,
+			title     = {Prompting Is Programming: A Query Language for Large Language Models},
+			url       = {https://doi.org/10.1145/3591300}
+			doi       = {10.1145/3591300}
+			booktitle = {{PLDI} '23: 44nd {ACM} {SIGPLAN} International Conference on Programming Language Design and Implementation, Orlando, Florida, United States June 17-21, 2023},
+			publisher = {ACM},
+			author    = {Luca Beurer-Kellner and
+      Marc Fischer and
+      Martin T. Vechev},
+			year = {2023}}"
 paper: https://arxiv.org/abs/2212.06094
 code: https://github.com/eth-sri/lmql 
 ---
