@@ -7,7 +7,7 @@ month: 04
 venue: arXiv
 projects: quantum
 paper: https://arxiv.org/abs/2304.00921
-
+code: https://github.com/eth-sri/abstraqt
 ---
 
 Stabilizer simulation can efficiently simulate an important class of quantum circuits consisting exclusively of Clifford gates. However, all existing extensions of this simulation to arbitrary quantum circuits including non-Clifford gates suffer from an exponential runtime.
