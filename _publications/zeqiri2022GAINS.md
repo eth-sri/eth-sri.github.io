@@ -14,7 +14,7 @@ bibtex: '@inproceedings{
 			year={2023},
 			url={https://openreview.net/forum?id=KyoVpYvWWnK}
 		}'
-paper: https://openreview.net/forum?id=hC2_w2d2DY
+paper: https://openreview.net/forum?id=KyoVpYvWWnK
 code: https://github.com/eth-sri/GAINS
 #slides: https://files.sri.inf.ethz.ch/website/slides/mueller2021boosting_slides.pdf
 #poster: https://files.sri.inf.ethz.ch/website/slides/mueller2021boosting_poster.pdf
