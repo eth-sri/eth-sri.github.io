@@ -1,6 +1,6 @@
 ---
 layout: blogpost
-category: talk
+category: generic
 title: "The Role of Red Teaming in PETs"
 blogpost-authors: "Jasper Dekoninck, Dimitar I. Dimitrov" 
 date: 2023-05-19
@@ -15,8 +15,6 @@ tweet-id:
 
 In February, our team won the Red Teaming category of the U.S. PETs Prize Challenge, securing a prize of 60,000 USD. In this blog post, we will provide a brief overview of the significance of Red Teaming in the field of Privacy Enhancing Technologies (PETs) research in the context of the competition. By outlining our methodology and highlighting the comprehensive objectives of a red team, we intend to showcase the essential role of Red Teaming in ensuring the development of robust and privacy-centric implementations grounded in solid theoretical foundations. Please note that due to a non-disclosure agreement (NDA), we can only discuss our general approach and are unable to delve into specific details.
 
-![Overview of Our Solution](/assets/blog/fedcomp/fedcomp_overview.png){: .blogpost-img100}
-
 ### The Challenge
 The U.S. PETs Prize Challenge is a contest aimed at discovering innovative solutions to two critical issues where privacy plays a crucial role.
 
@@ -27,12 +25,14 @@ The second challenge, Pandemic Response, seeks to improve the prediction of infe
 
 
 ### Red Teaming In The Challenge
-As a Red Team, we were tasked with evaluating various solutions from each track within a limited timeframe. To effectively analyze and attack all of them, we adopted a multi-step plan illustrated in Figure 1.
+As a Red Team, we were tasked with evaluating various solutions from each track within a limited timeframe. To effectively analyze and attack all of them, we adopted a multi-step plan illustrated in the figure below:
+
+![Overview of Our Solution](/assets/blog/fedcomp/fedcomp_overview.png){: .blogpost-img100}
 
 First, we dedicated a substantial amount of time to understanding each task and solution individually, extracting several key pieces of information relevant to Red Teaming.
 In particular, we investigated the privacy and utility requirements of the tasks and the data supplied, as well as the parties involved and their interactions. Further, we examined the privacy assumptions and claims of the proposed solutions in detail, as well as their proposed theoretical and software techniques. Although some aspects are closely linked to privacy, it's worth noting that we did not solely concentrate on that aspect of these components. We believe that Red Teams should adopt a more comprehensive perspective on the entire problem since all solution components are vital to the end-to-end process. Moreover, several submission issues, even when not directly related to privacy, can emerge naturally during a thorough analysis of the solution and may give rise to additional privacy concerns.
 
-Secondly, we leveraged the gained in-depth understanding of the tasks and solutions to identify potential attack vectors. These are issues discovered within the given solution that could potentially lead to privacy concerns or related problems. It is worth noting that some of these attack vectors should also be incorporated as part of a proper "standard" evaluation of a given solution, and we consider them a critical subcomponent of an effective Red Teaming report. We provide several examples of attack vectors in Figure 1, but it is important to note that most of these stem from discrepancies between the components identified in step 1 and/or an unsoundness in one of them. In fact, we were surprised to find how many solutions were already flawed due to misunderstandings regarding the precise requirements or the interactions between parties.
+Secondly, we leveraged the gained in-depth understanding of the tasks and solutions to identify potential attack vectors. These are issues discovered within the given solution that could potentially lead to privacy concerns or related problems. It is worth noting that some of these attack vectors should also be incorporated as part of a proper "standard" evaluation of a given solution, and we consider them a critical subcomponent of an effective Red Teaming report. We provide several examples of attack vectors in the figure above, but it is important to note that most of these stem from discrepancies between the components identified in step 1 and/or an unsoundness in one of them. In fact, we were surprised to find how many solutions were already flawed due to misunderstandings regarding the precise requirements or the interactions between parties.
 
 In Step 3, we start the process of attacking the given solutions, identifying four primary categories of uncovered issues that should be included in a Red Team report. Privacy breaches are the most critical set of issues but not the sole focus of our Red Teaming Report. We argue that a comprehensive analysis of the Privacy-Utility Trade-Off is equally vital to include in a report, as trivially private solutions are easily obtainable if utility is not required. Indeed, some of our reports were centered on this trade-off, as we demonstrated that while the implemented solutions were (relatively) secure, they either behaved so similarly to random models that this was anticipated, or that simplifications of the proposed mechanisms resulted in a superior privacy-utility trade-off. In addition to these essential components, we also incorporate the conceptual and theoretical flaws identified in the second step even when they didn’t directly lead to privacy attacks. We observed that addressing these flaws could either enhance the performance of the given solution or could lead to undesirable consequences for privacy.
 
