@@ -1,6 +1,6 @@
 ---
 layout: blogpost
-category: paper
+category: meta
 pub-ref: 
 title: "The Role of Red Teaming in PETs"
 blogpost-authors: "Jasper Dekoninck, Dimitar I. Dimitrov" 
