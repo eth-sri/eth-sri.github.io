@@ -1,7 +1,6 @@
 ---
 layout: blogpost
-category: meta
-pub-ref: 
+category: talk
 title: "The Role of Red Teaming in PETs"
 blogpost-authors: "Jasper Dekoninck, Dimitar I. Dimitrov" 
 date: 2023-05-19
