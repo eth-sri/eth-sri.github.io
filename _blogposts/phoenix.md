@@ -21,7 +21,7 @@ One of the most common techniques for this is  _fully-homomorphic encryption_ (F
  
 Orthogonal to privacy, a long line of work focuses on enabling _NN inference with reliability guarantees_.
 For example, in a loan prediction setting, augmenting predictions with _fairness_ guarantees is in the interest of both parties, as it increases trust in the system and may be essential to ensure regulatory compliance.
-Some of the latest works in this direction are [LASSI](https://www.sri.inf.ethz.ch/publications/peychev2022latent) and [FARE](https://www.sri.inf.ethz.ch/publications/jovanovic2022fare), focusing on two aspects of the fairness problem.
+Some of the latest works in this direction are [LASSI](https://www.sri.inf.ethz.ch/publications/peychev2022latent) and [FARE](https://www.sri.inf.ethz.ch/publications/jovanovic2023fare), focusing on two aspects of the fairness problem.
 Another common example is _robustness_, where for example, a medical image analysis system should be able to prove to clients that the diagnosis is robust to naturally-occurring measurement errors (see e.g., our latest work [SABR](https://openreview.net/forum?id=7oFuxtJtUMH)). 
 
 ![](/assets/blog/phoenix/mlaas.png){: .blogpost-img50}
