@@ -4,19 +4,19 @@ title: "Certified Training: Small Boxes are All You Need"
 authors: Mark Niklas Müller*, Franziska Eckert*, Marc Fischer, Martin Vechev
 year: 2023
 month: 05
-venue: ICLR
+venue: ICLR (Spotlight)
 projects: safeai
 bibtex: '@inproceedings{
 			mueller2023certified,  
 			title={Certified Training: Small Boxes are All You Need},  
 			author={Mark Niklas M{\"{u}}ller and Franziska Eckert and Marc Fischer and Martin T. Vechev},  
-			booktitle={The Eleventh International Conference on Learning Representations },  
+			booktitle={The Eleventh International Conference on Learning Representations},  
 			year={2023},  
 			url={https://openreview.net/forum?id=7oFuxtJtUMH}
 		}'
 paper: https://openreview.net/forum?id=7oFuxtJtUMH
 code: https://github.com/eth-sri/sabr
-#slides: https://files.sri.inf.ethz.ch/website/slides/mueller2021boosting_slides.pdf
+slides: https://files.sri.inf.ethz.ch/website/slides/mueller2023sabr_slides.pdf
 #poster: https://files.sri.inf.ethz.ch/website/slides/mueller2021boosting_poster.pdf
 image: assets/images/SABR.png
 #talk: https://iclr.cc/virtual/2021/poster/3359
