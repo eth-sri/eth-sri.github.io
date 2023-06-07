@@ -1,6 +1,6 @@
 ---
 ref: mueller2023abstract
-title: "Abstract Interpretation of Deep Equilibrium Models"
+title: "Abstract Interpretation of Fixpoint Iterators with Applications to Neural Networks"
 authors: Mark Niklas Müller, Marc Fischer, Robin Staab, Martin Vechev
 year: 2023
 month: 06
