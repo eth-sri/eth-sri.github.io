@@ -1,5 +1,5 @@
 /* blog page */
-	
+
 .blog-logo
 	width: 90%
 
@@ -60,6 +60,30 @@
 
 .blogpost
 	font-size: 18px
+	table
+		margin-left: auto 
+		margin-right: auto
+	
+	.iframe-link
+		display: inline-block
+		padding: 12px
+		background: #404040
+		color: #fff
+		text-align: center
+		margin: auto
+	
+	.iframe-full
+		border: none
+		align: center
+		width: 100%
+	
+	@media (min-width: $mobile-break)
+		.iframe-link
+			display: none
+
+	@media (max-width: $mobile-break)
+		.iframe-full
+			display: none
 
 .blogpost-thumbnail
 	display: block
@@ -72,6 +96,10 @@
 	max-width: 75%
 	display: block
 	margin: auto
+
+@media (max-width: $mobile-break)
+	.blogpost-headerblock
+		max-width: 100%
 
 .blogpost-title
 	text-align: center
@@ -258,3 +286,4 @@
 		.subpost-thumbnail
 			width: 60%
 			float: none
+

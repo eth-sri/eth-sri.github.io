@@ -2,7 +2,7 @@
 layout: blogpost
 category: paper
 pub-ref: balunovic2022lamp
-title: "LAMP: Extracting Text from Gradients with Language Model Priors"
+title: "LAMP: Extracting text from gradients with language model priors"
 blogpost-authors: "Dimitar I. Dimitrov" 
 date: 2022-11-28
 thumbnail: thumbnails/lamp.svg
@@ -13,7 +13,7 @@ tldr: >
 excerpt: >
     In this work we present an attack on federated learning's privacy specific to the text domain. We show that federated learning in the text domain can expose a lot of user data. 
 keywords: gradient inversion, federated learning, natural language processing
-tweet-id: todo
+tweet-id: 1597960168540704769
 conf-url: https://neurips.cc/virtual/2022/poster/52794
 conf-info: Poster - Wed Nov 30 11:00 CST (Poster Session 3)
 ---

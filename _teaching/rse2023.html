@@ -1,0 +1,431 @@
+---
+title: Rigorous Software Engineering
+ref: rse2023
+description: Undergraduate course on building correct software.
+semester: Spring 2023
+number: 252-0216-00L
+lecturer: <a href="https://www.pm.inf.ethz.ch/people/person-detail.html?persid=162169">Dr. Malte Schwerhoff</a>,  <a href=https://inf.ethz.ch/people/people-atoz/person-detail.MjI5Njk4.TGlzdC8zMDQsLTIxNDE4MTU0NjA=.html>Dr. Alexandra-Olimpia Bugariu</a>, Prof. Dr. Martin Vechev
+head-ta: Mark Niklas Müller
+head-ta-details: use <a href="https://moodle-app2.let.ethz.ch/course/view.php?id=19458">Moodle</a> for questions whenever possible
+ta: Maximilian Baader, Mislav Balunović, Benjamin Bichsel, Dimitar I. Dimitrov, Marc Fischer, Jingxuan He, Nikola Jovanović, Mark Niklas Müller, Anouk Paradis, Momchil Peychev
+edoz: https://www.vorlesungen.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?lang=en&lerneinheitId=167423&semkez=2023S
+session-time-place:
+lecture-time-place: Wed	12-14, Thu 12-14
+exercise-time-place: Mon 14-16, Mon 16-18, Thu 16-18
+credits: 8
+image: assets/images/sae.png
+---
+
+<h2>Overview</h2>
+
+<p>This course provides an overview of techniques to build correct software, with a strong focus on testing and program analysis. In particular, we will cover topics including:
+
+<ul>
+    <li>Code documentation</li>
+    <li>Modularity and coupling (Design patterns)</li>
+    <li>Dynamic program analysis (Testing, fuzzing, concolic execution)</li>
+    <li>Static program analysis (Numerical abstract interpretation, pointer analysis, symbolic execution)</li>
+    <li>Formal modeling (Alloy)</li>
+</ul>
+</p>
+
+<p>
+Students apply the learned techniques to solve a group project in the area of program analysis.
+</p>
+
+
+<h2>Organization</h2>
+
+<p>Note that the modalities described below are subject to change throughout the semester.</p>
+
+<p><strong>Lectures</strong></p>
+<ul>
+    <li>Lectures will generally be held in-person in  <a href=https://www.rauminfo.ethz.ch/Rauminfo/grundrissplan.gif?gebaeude=HG&geschoss=F&raumNr=3&lang=en>HG F 3</a>.</li>
+    <li>Recordings can generally be found <a href=https://video.ethz.ch/lectures/d-infk/2023/spring/252-0216-00L.html>here</a>.</li>
+</ul>
+
+<p><strong>Exercises</strong></p>
+<ul>
+    <li>Exercise sheets will be published here by Thursday evening. Please solve the exercises before next week's exercise session and before looking at the solutions.
+    </li>
+    <li>Exercise sessions start in the <strong>second week</strong> of the semester. There will be both online and physical exercise sessions, as listed below (students can freely chose which session to attend). We will discuss the solutions of the previous week's exercise sheet.
+        <ul>
+			<ul>
+				<li>Group 1 (Mon 14-16): Physical in <a href=https://www.rauminfo.ethz.ch/Rauminfo/grundrissplan.gif?gebaeude=ML&geschoss=F&raumNr=34&lang=en>ML F 34</a></li>
+				<li>Group 2 (Mon 16-18): Online via <a href="https://ethz.zoom.us/j/62902773413">Zoom</a> <sup>&#9733;</sup></li>
+				<li>Group 3 (Thu 16-18): Physical in <a href=https://www.rauminfo.ethz.ch/Rauminfo/grundrissplan.gif?gebaeude=LFW&geschoss=C&raumNr=5&lang=en>LFW C 5</a></li>
+                <li><s>Group 4 (Thu 16-18): Physical in  <a href=https://www.rauminfo.ethz.ch/Rauminfo/grundrissplan.gif?gebaeude=ML&geschoss=H&raumNr=41.1&lang=en>ML H41.1</a></s> Merged with Group 3 </li>
+				<!--<li><s>Group 4 (Thu 16-18)</s> merged with Group 2 </li>-->
+			</ul>        </ul>
+    </li>
+    <li>Exercise sessions will not be recorded.</li>
+</ul>
+
+<p><strong>Moodle</strong></p>
+<ul>
+    <li>For any additional questions regarding the lectures or exercises, we have prepared a <a href="https://moodle-app2.let.ethz.ch/course/view.php?id=19458">Moodle forum</a>.</li>
+</ul>
+
+<p><sup>&#9733;</sup> To join the Zoom meetings, you must be logged in with a *.ethz.ch account, which you can create <a href="https://ethz.zoom.us/signup">here</a>.</p>
+
+
+<h2>Lectures</h2>
+
+<p>Use your NETHZ account to access the slides.</p> <!--Use <a href="">these credentials</a> to access the recordings.</p>-->
+
+<table centering border="0" width="100%" cellspacing="0" cellpadding="0">
+    <th width="10%">Date</th><th width=50%>Content</th><th width="20%">Slides</th><!--<th width="20%">Recordings</th>-->
+	<tr>
+		<td>Feb 22</td><td>Introduction</td>
+		<td>
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/slides/01%20-%20introduction.pdf" class="pdf" title="01 - introduction"><img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF"></a>
+		</td>
+		<!--<td>
+			<a href="" target="_blank"><img class="svg-icon" src="/assets/icons/icon-video.svg"></a>
+		</td>-->
+	</tr>
+	<tr>
+		<td>Feb 23</td><td>Documentation</td>
+		<td>
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/slides/02%20-%20documentation.pdf" class="pdf" title="02 - documentation"><img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF"></a>
+		</td>
+		<!--<td>
+			<a href="" target="_blank"><img class="svg-icon" src="/assets/icons/icon-video.svg"></a>
+		</td>-->
+	</tr>
+    <tr>
+		<td>Mar 01</td><td>Modularity</td>
+		<td>
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/slides/03%20-%20modularity.pdf" class="pdf" title="03 - modularity"><img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF"></a>
+		</td>
+	</tr>
+    <tr>
+		<td>Mar 02</td><td>Functional Testing</td>
+		<td>
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/slides/04a%20-%20testing%201.pdf" class="pdf" title="04a - functional testing"><img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF"></a>
+		</td>
+	</tr>
+  <tr>
+		<td>Mar 08</td><td>Guest Lecture -- DevOps</td>
+		<td>
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/slides/05%20-%20devops.pdf" class="pdf" title="05 - devops"><img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF"></a>
+		</td>
+	</tr>
+  <tr>
+		<td>Mar 09</td><td>Structural Testing</td>
+		<td>
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/slides/04b%20-%20testing%202.pdf" class="pdf" title="04b - structural testing"><img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF"></a>
+		</td>
+	</tr>
+    <tr>
+		<td>Mar 15</td><td>Analysis Intro I</td>
+		<td>
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/slides/06%20-%20analysis%20intro.pdf" class="pdf" title="06 - analysis intro"><img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF"></a>
+		</td>
+	</tr>
+  <tr>
+		<td>Mar 16</td><td>Analysis Intro II</td>
+		<td>
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/slides/06%20-%20analysis%20intro.pdf" class="pdf" title="06 - analysis intro"><img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF"></a>
+		</td>
+	</tr>
+    <tr>
+		<td>Mar 22</td><td>Analysis Math I</td>
+		<td>
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/slides/07%20-%20analysis%20math.pdf" class="pdf" title="07 - analysis math"><img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF"></a>
+		</td>
+	</tr>
+  <tr>
+		<td>Mar 23</td><td>Analysis Math II</td>
+		<td>
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/slides/07%20-%20analysis%20math.pdf" class="pdf" title="07 - analysis math"><img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF"></a>
+		</td>
+	</tr>
+    <tr>
+		<td>Mar 29</td><td>Analysis Math III and Project Introduction</td>
+		<td>
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/slides/07%20-%20analysis%20math.pdf" class="pdf" title="07 - analysis math"><img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF"></a> 
+            <a href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/slides/project-introduction.pdf" class="pdf" title="08 - analysis intervals"><img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF"></a>
+		</td>
+	</tr>
+  <tr>
+		<td>Mar 30</td><td>Intervals I</td>
+		<td>
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/slides/08%20-%20analysis-intervals.pdf" class="pdf" title="08 - analysis intervals"><img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF"></a>
+		</td>
+	</tr>
+    <tr>
+		<td>Apr 5</td><td>Intervals II</td>
+		<td>
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/slides/08%20-%20analysis-intervals.pdf" class="pdf" title="08 - analysis intervals"><img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF"></a>
+		</td>
+	</tr>
+  <tr>
+		<td>Apr 6</td><td>Pointers I</td>
+		<td>
+			<a href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/slides/09%20-%20analysis-pointers.pdf" class="pdf" title="09 - analysis pointers"><img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF"></a>
+		</td>
+	</tr>
+</tr>
+<tr>
+<td>Apr 19</td><td>Pointers II</td>
+<td>
+  <a href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/slides/09%20-%20analysis-pointers.pdf" class="pdf" title="09 - analysis pointers"><img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+<tr>
+<td>Apr 20</td><td>Determinism I</td>
+<td>
+  <a href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/slides/10%20-%20application.pdf" class="pdf" title="10 - application"><img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+<tr>
+<td>Apr 26</td><td>Determinism II, Abstract Interpretation Outlook, Rigorous Testing I</td>
+<td>
+  <a href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/slides/10%20-%20application.pdf" class="pdf" title="10 - application"><img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF"></a>
+  <a href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/slides/AbsInt-Outlook.pdf" class="pdf" title="10 - abstract interpretation outlook"><img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF"></a>
+  <a href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/slides/11%20-%20rigorous-testing.pdf" class="pdf" title="11 - rigorous testing"><img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF"></a>
+  <a href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/slides/z3-demo.zip" class="pdf" title="11 - z3 demo"><img src="/assets/icons/icon-download.svg" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+<tr>
+<td>Apr 27</td><td>Project Q&A</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>May 03</td><td>Rigorous Testing II</td>
+<td>
+  <a href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/slides/11%20-%20rigorous-testing.pdf" class="pdf" title="11 - rigorous testing"><img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+<tr>
+<td>May 04</td><td>Guest Lecture: Fuzzing & Symbolic Execution</td>
+<td>
+  <a href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/slides/12%20-%20learning-to-fuzz-from-se.pdf" class="pdf" title="12 - learning to fuzz from se"><img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+<tr>
+<td>May 11</td><td>Alloy I</td>
+<td>
+  <a href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/slides/14a%20-%20alloy%201.pdf" class="pdf" title="14 - alloy 1"><img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+<td>May 17</td><td>Alloy II</td>
+<td>
+  <a href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/slides/14b%20-%20alloy%202.pdf" class="pdf" title="14 - alloy 2"><img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+<tr>
+<td>May 24</td><td>Alloy III</td>
+<td>
+  <a href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/slides/14c%20-%20alloy%203.pdf" class="pdf" title="14 - alloy 3"><img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF"></a>
+</td>
+</tr>
+<tr>
+  <td>May 25</td><td>SAT and SMT</td>
+  <td>
+    <a href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/slides/15%20-%20sat-smt.pdf" class="pdf" title="15 - sat and smt"><img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF"></a>
+  </td>
+</tr>
+<tr>
+  <td>May 31</td><td>Guest Lecture: Alloy IV</td>
+  <td>
+    <a href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/slides/16%20-%20alloy%204.pdf" class="pdf" title="16 - alloy 4"><img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF"></a>
+  </td>
+</tr>
+<tr>
+  <td>Jun 1</td><td>Summary</td>
+ <!-- <td>
+    <a href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/slides/15%20-%20sat-smt.pdf" class="pdf" title="15 - sat and smt"><img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF"></a>
+  </td>-->
+</tr>
+</table>
+
+
+
+
+<h2>Exercises</h2>
+
+<p>Use your NETHZ account to access the exercises.</p>
+
+<table centering border="0" width="100%" cellspacing="0" cellpadding="0">
+    <th width=10%>No.</th> <th width="10%">Due Date</th><th width=50%>Content</th><th width=15%>Exercises</th><th width=15%>Solutions</th>
+
+    <tr>
+    <td>1</td>
+    <td>Feb 27</td>
+    <td>Documentation and Contracts</td>
+    <td>
+        <a class="pdf" href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/exercises/exercise01.pdf" title="Exercise 01"><img src="/assets/icons/icon-pdf.svg" class="svg-icon" alt="PDF" border="0"></a>
+    </td>
+    <td>
+        <a class="pdf" href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/exercises/solution01.pdf" title="Solution 01"><img src="/assets/icons/icon-pdf.svg" class="svg-icon" alt="PDF" border="0"></a>
+        updated
+    </td>
+    </tr>
+
+    <tr>
+    <td>2</td>
+    <td>Mar 6</td>
+    <td>Modularity and Functional Testing</td>
+    <td>
+        <a class="pdf" href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/exercises/exercise02.pdf" title="Exercise 02"><img src="/assets/icons/icon-pdf.svg" class="svg-icon" alt="PDF" border="0"></a>
+	<a class="pdf" href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/exercises/exercise02-code.zip" title="Code (ZIP)"><img src="/assets/icons/icon-download.svg" class="svg-icon" alt="PDF" border="0"></a>
+	updated
+    </td>
+    <td>
+	<a class="pdf" href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/exercises/solution02.pdf" title="Solution 02"><img src="/assets/icons/icon-pdf.svg" class="svg-icon" alt="PDF" border="0"></a>
+	<a class="pdf" href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/exercises/solution02-code.zip" title="Solution Code (ZIP)"><img src="/assets/icons/icon-download.svg" class="svg-icon" alt="PDF" border="0"></a>
+	updated
+    </td>
+    </tr>
+
+    <tr>
+    <td>3</td>
+    <td>Mar 13</td>
+    <td>Structural Testing</td>
+    <td>
+        <a class="pdf" href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/exercises/exercise03.pdf" title="Exercise 03"><img src="/assets/icons/icon-pdf.svg" class="svg-icon" alt="PDF" border="0"></a>
+    </td>
+    <td>
+        <a class="pdf" href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/exercises/solution03.pdf" title="Solution 03"><img src="/assets/icons/icon-pdf.svg" class="svg-icon" alt="PDF" border="0"></a>
+    </td>
+    </tr>
+  
+    <tr>
+    <td>4</td>
+    <td>Mar 20</td>
+    <td>First Steps with Abstract Interpretation</td>
+    <td>
+        <a class="pdf" href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/exercises/exercise04.pdf" title="Exercise 04"><img src="/assets/icons/icon-pdf.svg" class="svg-icon" alt="PDF" border="0"></a>
+    </td>
+    <td>
+      <a class="pdf" href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/exercises/solution04.pdf" title="Solution 04"><img src="/assets/icons/icon-pdf.svg" class="svg-icon" alt="PDF" border="0"></a>
+    </td>
+    </tr>
+
+    <tr>
+    <td>5</td>
+    <td>Mar 27</td>
+    <td>Mathematical Concepts of Abstract Interpretation</td>
+    <td>
+        <a class="pdf" href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/exercises/exercise05.pdf" title="Exercise 04"><img src="/assets/icons/icon-pdf.svg" class="svg-icon" alt="PDF" border="0"></a>
+    </td>
+    <td>
+      <a class="pdf" href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/exercises/solution05.pdf" title="Solution 04"><img src="/assets/icons/icon-pdf.svg" class="svg-icon" alt="PDF" border="0"></a>
+    </td>
+    </tr>
+  
+    <tr>
+    <td>6</td>
+    <td>Apr 3</td>
+    <td>Approximation and Transformers</td>
+    <td>
+      <a class="pdf" href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/exercises/exercise06.pdf" title="Exercise 06"><img src="/assets/icons/icon-pdf.svg" class="svg-icon" alt="PDF" border="0"></a>
+    </td>
+    <td>
+      <a class="pdf" href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/exercises/solution06.pdf" title="Solution 06"><img src="/assets/icons/icon-pdf.svg" class="svg-icon" alt="PDF" border="0"></a>
+    </td>
+    </tr>
+  
+  
+    <tr>
+    <td>7</td>
+    <td>Apr 17</td>
+    <td>Interval Analysis</td>
+    <td>
+      <a class="pdf" href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/exercises/exercise07.pdf" title="Exercise 07"><img src="/assets/icons/icon-pdf.svg" class="svg-icon" alt="PDF" border="0"></a>
+    </td>
+    <td>
+      <a class="pdf" href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/exercises/solution07.pdf" title="Solution 07"><img src="/assets/icons/icon-pdf.svg" class="svg-icon" alt="PDF" border="0"></a>
+    </td>
+    </tr>
+  
+    <tr>
+    <td>8</td>
+    <td>Apr 24</td>
+    <td>Pointer Analysis</td>
+    <td>
+      <a class="pdf" href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/exercises/exercise08.pdf" title="Exercise 08"><img src="/assets/icons/icon-pdf.svg" class="svg-icon" alt="PDF" border="0"></a>
+    </td>
+    <td>
+      <a class="pdf" href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/exercises/solution08.pdf" title="Solution 08"><img src="/assets/icons/icon-pdf.svg" class="svg-icon" alt="PDF" border="0"></a>
+    </td>
+    </tr>
+
+    <tr>
+    <td>9</td>
+    <td>May 3</td>
+    <td>Verifying Determinism</td>
+    <td>
+      <a class="pdf" href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/exercises/exercise09.pdf" title="Exercise 09"><img src="/assets/icons/icon-pdf.svg" class="svg-icon" alt="PDF" border="0"></a>
+    </td>
+    <td>
+      <a class="pdf" href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/exercises/solution09.pdf" title="Solution 09"><img src="/assets/icons/icon-pdf.svg" class="svg-icon" alt="PDF" border="0"></a>
+    </td>
+    </tr>
+
+    <tr>
+    <td>10</td>
+    <td>May 10</td>
+    <td>Symbolic Execution</td>
+    <td>
+      <a class="pdf" href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/exercises/exercise10.pdf" title="Exercise 10"><img src="/assets/icons/icon-pdf.svg" class="svg-icon" alt="PDF" border="0"></a>
+    </td>
+    <td>
+      <a class="pdf" href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/exercises/solution10.pdf" title="Solution 10"><img src="/assets/icons/icon-pdf.svg" class="svg-icon" alt="PDF" border="0"></a>
+    </td>
+    </tr>
+
+    <tr>
+    <td>11</td>
+    <td>May 17</td>
+    <td>Alloy I</td>
+    <td>
+      <a class="pdf" href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/exercises/exercise11.pdf" title="Exercise 11"><img src="/assets/icons/icon-pdf.svg" class="svg-icon" alt="PDF" border="0"></a>
+    </td>
+    <td>
+      <a class="pdf" href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/exercises/solution11.pdf" title="Solution 11"><img src="/assets/icons/icon-pdf.svg" class="svg-icon" alt="PDF" border="0"></a>
+    </td>
+    </tr>
+
+    <tr>
+    <td>13</td>
+    <td>May 24</td>
+    <td>Alloy II</td>
+    <td>
+      <a class="pdf" href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/exercises/exercise12.pdf" title="Exercise 12"><img src="/assets/icons/icon-pdf.svg" class="svg-icon" alt="PDF" border="0"></a>
+    </td>
+    <td>
+      <a class="pdf" href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/exercises/solution12.pdf" title="Solution 12"><img src="/assets/icons/icon-pdf.svg" class="svg-icon" alt="PDF" border="0"></a>
+    </td>
+    </tr>
+
+      <tr>
+    <td>12</td>
+    <td>May 31</td>
+    <td>Alloy III (updated 31.05.23, 01.06.23)</td>
+    <td>
+      <a class="pdf" href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/exercises/exercise13.pdf" title="Exercise 13"><img src="/assets/icons/icon-pdf.svg" class="svg-icon" alt="PDF" border="0"></a>
+      <a href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/exercises/exercise13-code.zip" title="Code (ZIP)"><img src="/assets/icons/icon-download.svg" class="svg-icon" alt="file" border="0"></a>
+      updated
+    </td>
+    <td>
+      <a class="pdf" href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/exercises/solution13.pdf" title="Solution 13"><img src="/assets/icons/icon-pdf.svg" class="svg-icon" alt="PDF" border="0"></a>
+      <a href="https://files.sri.inf.ethz.ch/website/teaching/rse2023/materials/exercises/solution13-code.zip" title="Code (ZIP)"><img src="/assets/icons/icon-download.svg" class="svg-icon" alt="file" border="0"></a>
+      updated
+    </td>
+    </tr>
+  
+</table>
+
+
+<h2>Project</h2>
+
+<p>
+Details on the course project will be communicated in a dedicated lecture.
+</p>
+
+<h2>Previous exams</h2>
+
+<p>Previous exams are available in the <a href="https://exams.vis.ethz.ch/">exam collection</a> of the student association (VIS).</p>

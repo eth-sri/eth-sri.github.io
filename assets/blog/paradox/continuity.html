@@ -1,0 +1,331 @@
+<head>
+	<script src='https://cdn.plot.ly/plotly-2.18.0.min.js'></script>
+</head>
+
+<style>
+
+    .slider {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 15px;
+        border-radius: 5px;  
+        background: #d3d3d3;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+    }
+
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%; 
+        background: #69ACDB;
+        cursor: pointer;
+    }
+
+    .slider-txt {
+        font-size: 22px;
+        font-family: Raleway;
+    }
+
+    .dropdown {
+        position: relative;
+        font-family: Arial;
+        display: block;
+        margin: auto;
+    }
+
+    .dropdown select {
+        display: none;
+    }
+
+    .dropdown-selected {
+        background-color: #69ACDB;
+    }
+
+    .dropdown-selected:after {
+        position: absolute;
+        content: "";
+        top: 14px;
+        right: 10px;
+        width: 0;
+        height: 0;
+        border: 6px solid transparent;
+        border-color: #fff transparent transparent transparent;
+    }
+
+    .dropdown-selected.dropdown-arrow-active:after {
+        border-color: transparent transparent #fff transparent;
+        top: 7px;
+    }
+
+    .dropdown-items div,.dropdown-selected {
+        color: #ffffff;
+        padding: 8px 16px;
+        border: 1px solid transparent;
+        border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .dropdown-items {
+        position: absolute;
+        background-color: #69ACDB;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 99;
+    }
+
+    .dropdown-hide {
+        display: none;
+    }
+
+    .dropdown-items div:hover, .same-as-selected {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+</style>
+
+<body>
+    <div class="all", style="width:600px;margin:auto">
+        <div class="dropdown" id="dropdown-div" style="width:250px;">
+            <select id="rel-select">
+              <option value="IBP">IBP</option>
+              <option value="hBox">hBox</option>
+              <option value="CROWN / CROWN-IBP (R)">CROWN / CROWN-IBP (R)</option>
+              <option value="DeepZ">DeepZ</option>
+            </select>
+          </div>
+
+        <div id='plotly', style='margin:auto; display:block'>
+            <!-- Plotly chart will be drawn inside this DIV -->
+        </div>
+
+        <input type="range" min="-10" max="10" value="-5" class="slider" id="slider-l">
+        <span id='slider-l-text' class='slider-txt'></span>
+        
+        <br>
+        <br>
+        
+        <input type="range" min="-10" max="10" value="8" class="slider" id="slider-u">
+        <span id='slider-u-text' class='slider-txt'></span>
+    </div>
+</body>
+
+<script> // dropdown
+
+let outerElem = document.getElementById("dropdown-div");
+let selElem = document.getElementById("rel-select");
+selElem.selectedIndex = 2; // crown as default
+let a = document.createElement("div");
+a.setAttribute("class", "dropdown-selected");
+a.innerHTML = selElem.options[selElem.selectedIndex].innerHTML;
+outerElem.appendChild(a);
+
+let b = document.createElement("div");
+b.setAttribute("class", "dropdown-items dropdown-hide");
+for (let j = 0; j < selElem.length; j++) {
+    let c = document.createElement("DIV");
+    c.innerHTML = selElem.options[j].innerHTML;
+    c.addEventListener("click", function(e) {
+        let s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        let h = this.parentNode.previousSibling;
+        for (let i = 0; i < s.length; i++) {
+            if (s.options[i].innerHTML == this.innerHTML) {
+                s.selectedIndex = i;
+                h.innerHTML = this.innerHTML;
+                y = this.parentNode.getElementsByClassName("same-as-selected");
+                for (let k = 0; k < y.length; k++) {
+                    y[k].removeAttribute("class");
+                }
+                this.setAttribute("class", "same-as-selected");
+                break;
+            }
+        }
+        updateRelaxation(this.innerHTML);
+    });
+    b.appendChild(c);
+}
+
+outerElem.appendChild(b);
+a.addEventListener("click", function(e) {
+        e.stopPropagation();
+        this.nextSibling.classList.toggle("dropdown-hide");
+        this.classList.toggle("dropdown-arrow-active");
+});
+
+function closeBox(elem) {
+    let arr = [];
+    let items = document.getElementsByClassName("dropdown-items");
+    let sele = document.getElementsByClassName("dropdown-selected");
+    for (i = 0; i < sele.length; i++) {
+        if (elem == sele[i]) {
+            arr.push(i);
+        } else { 
+            sele[i].classList.remove("dropdown-arrow-active");
+        }
+    }
+    for (i = 0; i < items.length; i++) {
+        if (arr.indexOf(i)) {
+            items[i].classList.add("dropdown-hide");
+        }
+    }
+}
+document.addEventListener("click", closeBox);
+
+</script>
+
+<script> // main 
+
+    let EPS = 0.1; // so a precise relaxation can be seen
+
+    // get actual value of relu in [L, U]    
+    function getValue(L, U) {
+        if (U <= 0) {
+            return [[L, U], [0, 0]]
+        } else if (L >= 0) {
+            return [[L, U], [L, U]]
+        } else {
+            return [[L, 0, U], [0, 0, U]]
+        }
+    }
+
+    // get the relaxation shape in [L, U] for this method
+    function getRelaxation(method, L, U) {
+        if (method == 'IBP') {
+            if (U <= 0) {
+                return [[L, L, U, U, L], [-EPS, +EPS, +EPS, -EPS, -EPS]]
+            } else if (L >= 0) {
+                return [[L, L, U, U, L], [L, U, U, L, L]]
+            } else {
+                return [[L, L, U, U, L], [0, U, U, 0, 0]]
+            }
+        } else if (method == 'hBox') {
+            if (U <= 0) {
+                return [[L, L, U, U, L], [-EPS, +EPS, +EPS, -EPS, -EPS]]
+            } else if (L >= 0) {
+                return [[L+EPS, U+EPS, U-EPS, L-EPS, L+EPS], [L, U, U, L, L]]
+            } else {
+                return [[L, L, U, U, L], [0, U, U, 0, 0]]
+            }
+        } else if (method == 'CROWN / CROWN-IBP (R)') {
+            if (U <= 0) {
+                return [[L, L, U, U, L], [-EPS, +EPS, +EPS, -EPS, -EPS]]
+            } else if (L >= 0) {
+                return [[L+EPS, U+EPS, U-EPS, L-EPS, L+EPS], [L, U, U, L, L]]
+            } else {
+                if (-L >= U) { // area heuristic
+                    // lower is 0
+                    return [[L, U, U, L], [0, 0, U, 0]]
+                } else {
+                    // lower is x 
+                    return [[L, U, L, L], [L, U, 0, L]]
+                }
+            }
+        } else if (method == 'DeepZ') {
+            if (U <= 0) {
+                return [[L, L, U, U, L], [-EPS, +EPS, +EPS, -EPS, -EPS]]
+            } else if (L >= 0) {
+                return [[L+EPS, U+EPS, U-EPS, L-EPS, L+EPS], [L, U, U, L, L]]
+            } else {
+                let lam = U / (U - L); // lambda
+                return [[L, L, U, U, L], [lam*L, 0, U, lam*U, lam*L]]
+            }
+        } else {
+            return [[],[]]
+        }
+    }
+
+    // get plotly traces for value and relaxation
+    function getTraces(method, L, U) {
+        var [valX, valY] = getValue(L, U);
+        var [relX, relY] = getRelaxation(method, L, U);
+        
+        var traceValue = {
+            x: valX, y: valY, type: 'lines',
+            mode: 'lines',
+            line: {'color': '#000000', 'width': 2},
+            name: 'True Value',
+            showlegend: false
+        }
+        var traceRel = {
+            x: relX, y: relY, type: 'lines',
+            mode: 'lines',
+            line: {'color': '#0C5C94', 'width': 2},
+            fill: 'toself',
+            fillcolor: 'rgba(105, 172, 219, 0.5)',
+            name: 'Relaxation',
+            showlegend: false
+        }
+        return [traceRel, traceValue]
+    }
+
+    // refresh the plot with new params, TODO check
+    function refresh() {
+        Plotly.newPlot('plotly', getTraces(method, L, U), layout=layout, {displayModeBar: false});
+    }
+
+    // plotly layout
+    let layout = {
+        xaxis: {
+            range: [-10.1, 10.1],
+            fixedrange: true,
+            nticks: 22, // ?
+        },
+        yaxis: {
+            range: [-10.1, 10.1], 
+            fixedrange: true,
+            scaleanchor: "x",
+            scaleratio: 1,
+            nticks: 21, 
+        },
+        width: 600,
+        height: 600,
+        margin: {l: 20, r:20, t:20, b:50}
+    }
+
+    // initial state
+    let method = 'CROWN / CROWN-IBP (R)';
+    let L = -5; 
+    let U = 8;
+    refresh();
+
+    var sliderL = document.getElementById("slider-l");
+    var sliderLText = document.getElementById("slider-l-text");
+    sliderLText.innerHTML = 'l: ' + sliderL.value;
+
+    var sliderU = document.getElementById("slider-u");
+    var sliderUText = document.getElementById("slider-u-text");
+    sliderUText.innerHTML = 'u: ' + sliderU.value;
+
+    // Dropdown callback
+    function updateRelaxation(m) {
+        method = m;
+        refresh();
+    }
+
+    // Slider for L callback
+    sliderL.oninput = function() {
+        if (sliderL.valueAsNumber > U) {
+            sliderL.valueAsNumber = U;
+        }
+        L = sliderL.valueAsNumber;
+        sliderLText.innerHTML = 'l: ' + L;
+        refresh();
+    }
+
+    // Slider for U callback
+    sliderU.oninput = function() {
+        if (sliderU.valueAsNumber < L) {
+            sliderU.valueAsNumber = L;
+        }
+        U = sliderU.valueAsNumber;
+        sliderUText.innerHTML = 'u: ' + U;
+        refresh();
+    }
+
+</script>
