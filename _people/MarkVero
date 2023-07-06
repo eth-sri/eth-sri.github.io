@@ -1,1 +1,15 @@
+---
+title: Mark Vero
+position: PhD student
+image:     
+email: mark.veroe@inf.ethz.ch
+website: 
+cv:
+
+---
+
+<h2>Publications</h2>
+
+{% include get-publications.html filter="person" key="Mark Vero" %}
+
 
