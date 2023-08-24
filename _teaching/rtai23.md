@@ -1,0 +1,160 @@
+---
+title: Reliable and Trustworthy Artificial Intelligence
+ref: rtai2023
+description: Graduate course discussing robustness, privacy, and fairness of machine learning.
+semester: Fall 2023
+number: 263-2400-00L
+lecturer: Prof. Dr. Martin Vechev
+ta: Maximilian Baader, Jasper Dekoninck, Marc Fischer, Nikola Jovanović, Yuhao Mao, Mark Niklas Müller, Momchil Peychev, Robin Staab, Mark Vero
+assistants:
+head-ta: Nikola Jovanović
+head-ta-details: use <a href="https://moodle-app2.let.ethz.ch/course/view.php?id=20673">Moodle</a> for questions unless they contain sensitive information
+edoz: https://www.vorlesungen.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?semkez=2023W&ansicht=LEHRVERANSTALTUNGEN&lerneinheitId=172754&lang=de
+session-time-place:
+lecture-time-place: Wed 14-16, HG G3 (recordings on <a href="https://video.ethz.ch/">ETH video portal</a>)
+exercise-time-place: Mon 12-14 (CAB G 56) or Wed 12-14 (CAB G 51)
+credits: 6
+image: assets/images/reliableai_logo.png
+---
+
+<h2>Overview</h2>
+
+<p>
+	Creating reliable, secure, robust, and fair machine learning models is a core challenge in artificial intelligence and one of fundamental importance. The goal of the course is to teach both the mathematical foundations of this new and emerging area as well as to introduce students to the latest and most exciting research in the space. To facilitate deeper understanding, the course includes a group project where students build a system based on the learned material.
+</p>
+<p>The course is split into 4 parts:</p>
+
+<p><b>Robustness of Machine Learning</b></p>
+<ul>
+	<li>Adversarial attacks and defenses on deep learning models.</li>
+	<li>Automated certification of deep learning models (major trends: convex relaxations, branch-and-bound, randomized smoothing).</li>
+	<li>Certified training of deep neural networks (combining symbolic and continuous methods).</li>
+</ul>
+
+<p><b>Privacy of Machine Learning</b></p>
+<ul>
+	<li>Threat models (e.g., stealing data, poisoning, membership inference, etc.).</li>
+	<li>Attacking federated machine learning (across vision, natural language and tabular data).</li>
+	<li>Differential privacy for defending machine learning.</li>
+	<li>AI Regulations and checking model compliance.</li>
+</ul>
+
+<p><b>Fairness of Machine Learning</b></p>
+<ul>
+	<li>Introduction to fairness (motivation, definitions).</li>
+	<li>Enforcing individual fairness (for both vision and tabular data).</li>
+	<li>Enforcing group fairness (e.g., demographic parity, equalized odds).</li>
+</ul>
+
+<p><b>Robustness, Privacy and Fairness of Foundation Models</b></p>
+<ul>
+	<li>We discuss all previous topics, as well as programmability, in the context of latest foundation models (e.g., LLMs).</li>
+</ul>
+
+<h2 id="lectures">Lectures</h2>
+
+<p>Use your NETHZ account to access the files.</p>
+
+<table centering border="0" width="100%" cellspacing="0" cellpadding="0">
+
+	<th width="10%">Date</th>
+	<th width=60%>Content</th>
+	<th width="10%">Slides</th>
+	<th width=10%>Exercises</th>
+	<th width=10%>Solutions</th>
+
+<tr>
+	<td>Sep 21</td>
+	<td>Course Introduction, Adversarial Attacks and Defenses</td>
+	<td>/td>  
+	<td>/td>  
+	<td>/td>  
+</tr>
+
+</table>
+
+<h2 id="recordings">Recordings</h2>
+
+<p>
+	All lecture recordings from this year will be available on the ETH video portal, in the same way as <a	href="https://video.ethz.ch/lectures/d-infk/2022/autumn/263-2400-00L.html">the recordings from 2022</a>. Another useful resource is our <a href="https://www.youtube.com/playlist?list=PLWjm4hHpaNg6c-W7JjNYDEC_kJK9oSp0Y">Youtube
+	playlist of lecture recordings from 2020</a>. However, note that several new topics have been introduced to the course since then. 
+</p>
+
+<h2 id="project">Course project</h2>
+
+<p>Details on the course project will be added here.</p>
+
+
+<h2 id="previous-exams">Previous Exams</h2>
+
+<p>
+Previous exams (formerly, this course was named "Reliable and Interpretable
+Artificial Intelligence") are available in the <a
+href="https://exams.vis.ethz.ch/">exam collection</a> of the student association
+(VIS).
+</p>
+
+<h2 id="course-organization">Course Organization</h2>
+
+<p><strong>Lectures</strong></p>
+
+<ul>
+	<li>The lecture will take place physically in room HG G3, but will be recorded.</li>
+	<li>
+		For additional questions, we have prepared a <a
+		href="https://moodle-app2.let.ethz.ch/course/view.php?id=20673">Moodle
+		forum</a>.
+	</li>
+</ul>
+
+<p><strong>Exercises</strong></p>
+
+<ul>
+	<li>Every week, we will publish an exercise sheet and its solutions on this
+	page, by Thursday evening.</li>
+	<li>The exercise session will consist of a discussion of selected exercises
+	(potentially not all exercises). On demand, the teaching assistant can also
+	discuss questions on specific exercises brought up by students.</li>
+	<li>Some exercise sessions will also discuss prerequisites for the course.
+	The material covered in these sessions will be available online. This will
+	definitively be the case in the first exercise on Sep 26/28. For other
+	exercise sessions, we will announce by mail if they discuss
+	prerequisites.</li>
+	<li>Attending the exercise sessions is optional. We will not cover additional material in the exercise sessions, except for prerequisites (see above). Therefore, we will also not record the exercise sessions.
+	</li>
+	<li>We strongly recommend to solve the exercises before next week's exercise
+	session, and before looking at the solutions. The style of the exam will be
+	similar to the exercises, so first-hand experience solving exercises is
+	critical.</li>
+	<li>For additional questions, we have prepared a <a
+	href="https://moodle-app2.let.ethz.ch/course/view.php?id=20673">Moodle
+	forum</a>.</li>
+	<li>In case there is not enough material to cover the full exercise session,
+	we will stop it early.</li>
+	<li>There is no need to attend both exercise sessions, as their contents
+	will be equivalent.</li>
+</ul>
+
+<p><strong>Communication</strong></p>
+
+<p>
+All communication (like special announcements) will be sent out by e-mail.
+</p>
+
+<h2>Literature</h2>
+
+<p>
+For students who would like to brush up on the basics of machine learning used
+in this course, we recommend
+</p>
+
+<ul>
+	<li>Section 3 (Background) of the publication <a
+	href="https://files.sri.inf.ethz.ch/website/papers/DeepPoly.pdf">An Abstract
+	Domain for Certifying Neural Networks</a> by Gagandeep Singh, Timon Gehr,
+	Markus Püschel, and Martin Vechev</li>
+	<li><a href="http://neuralnetworksanddeeplearning.com/index.html">Neural
+	Networks and Deep Learning</a> by Michael Nielsen</li>
+	<li><a href="https://www.deeplearningbook.org/">Deep Learning book</a>
+	by Ian Goodfellow, Yoshua Bengio, and Aaron Courville</li>
+</ul>
