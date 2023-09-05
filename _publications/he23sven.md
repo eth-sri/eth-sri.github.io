@@ -4,7 +4,7 @@
   authors: Jingxuan He, Martin Vechev
   year: 2023
   month: 11
-  venue: arXiv
+  venue: CCS
   projects: plml
   awards:
   bibtex:
