@@ -1,5 +1,5 @@
 ---
-  ref: ccs23-llm-sec
+  ref: ccs23-llmsec
   title: "Large Language Models for Code: Security Hardening and Adversarial Testing"
   authors: Jingxuan He, Martin Vechev
   year: 2023
@@ -9,7 +9,7 @@
   awards:
   bibtex:
   paper: https://arxiv.org/abs/2302.05319
-  image: assets/images/ccs23-logo.png
+  image: assets/images/ccs23-img.png
   talk: 
   slides: 
   code: https://github.com/eth-sri/sven
