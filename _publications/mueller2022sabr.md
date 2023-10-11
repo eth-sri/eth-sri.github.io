@@ -4,7 +4,8 @@ title: "Certified Training: Small Boxes are All You Need"
 authors: Mark Niklas Müller*, Franziska Eckert*, Marc Fischer, Martin Vechev
 year: 2023
 month: 05
-venue: ICLR (Spotlight)
+venue: ICLR
+awards: Spotlight
 projects: safeai
 bibtex: '@inproceedings{
 			mueller2023certified,  
