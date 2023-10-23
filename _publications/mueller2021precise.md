@@ -1,7 +1,7 @@
 ---
 ref: mueller2021precise
 title: "PRIMA: General and Precise Neural Network Certification via Scalable Convex Hull Approximations"
-authors: Mark Niklas Müller, Gleb Makarchuk, Gagandeep Singh, Markus Püschel, Martin Vechev
+authors: Mark Niklas Müller*, Gleb Makarchuk*, Gagandeep Singh, Markus Püschel, Martin Vechev
 year: 2022
 month: 1
 venue: POPL

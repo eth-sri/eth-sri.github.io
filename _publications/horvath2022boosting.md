@@ -4,7 +4,8 @@ title: "Boosting Randomized Smoothing with Variance Reduced Classifiers"
 authors: Miklós Z. Horváth, Mark Niklas Müller, Marc Fischer, Martin Vechev
 year: 2022
 month: 4
-venue: ICLR (Spotlight)
+venue: ICLR
+awards: Spotlight
 projects: safeai
 paper: https://arxiv.org/abs/2106.06946
 code: https://github.com/eth-sri/smoothing-ensembles
