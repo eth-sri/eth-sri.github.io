@@ -1,10 +1,10 @@
 ---
 ref: mao23taps
-title: "TAPS: Connecting Certified and Adversarial Training"
+title: "Connecting Certified and Adversarial Training"
 authors: Yuhao Mao, Mark Niklas Müller, Marc Fischer, Martin Vechev
 year: 2023
-month: 05
-venue: arXiv
+month: 09
+venue: NeuIPS
 projects: safeai
 bibtex: '@article{mao23taps
 			author       = {Yuhao Mao and
@@ -17,7 +17,7 @@ bibtex: '@article{mao23taps
 			eprinttype    = {arXiv},
 			eprint       = {2305.04574}}'
 paper: https://arxiv.org/abs/2305.04574
-# code: https://github.com/eth-sri/sabr
+code: https://github.com/eth-sri/taps
 # slides: https://files.sri.inf.ethz.ch/website/slides/mueller2023sabr_slides.pdf
 #poster: https://files.sri.inf.ethz.ch/website/slides/mueller2021boosting_poster.pdf
 image: assets/images/taps.png

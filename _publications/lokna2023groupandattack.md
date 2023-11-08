@@ -7,6 +7,12 @@ month: 11
 venue: ACM CCS
 projects: diff-privacy
 awards:
+bibtex: '@inproceedings{lokna2023group,
+  title={Group and Attack: Auditing Differential Privacy},
+  author={Lokna, Johan and Paradis, Anouk and Dimitrov, Dimitar I and Vechev, Martin},
+  booktitle={Proceedings of the 2023 ACM SIGSAC Conference on Computer and Communications Security},
+  year={2023}
+}'
 paper: https://files.sri.inf.ethz.ch/website/papers/ccs23-groupattack.pdf
 code: https://github.com/eth-sri/Delta-Siege
 ---
