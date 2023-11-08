@@ -3,7 +3,7 @@ ref: mao23taps
 title: "Connecting Certified and Adversarial Training"
 authors: Yuhao Mao, Mark Niklas Müller, Marc Fischer, Martin Vechev
 year: 2023
-month: 09
+month: 12
 venue: NeuIPS
 projects: safeai
 bibtex: '@article{mao23taps
