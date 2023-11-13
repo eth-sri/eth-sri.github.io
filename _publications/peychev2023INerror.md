@@ -16,7 +16,7 @@ bibtex: '@inproceedings{
 		}'
 paper: https://openreview.net/forum?id=zEoP4vzFKy
 code: https://github.com/eth-sri/automated-error-analysis
-# slides: https://files.sri.inf.ethz.ch/website/slides/mueller2023sabr_slides.pdf
+slides: https://files.sri.inf.ethz.ch/website/slides/peychev-neurips2023-slides.pdf
 #poster: https://files.sri.inf.ethz.ch/website/slides/mueller2021boosting_poster.pdf
 image: assets/images/IN_error_img.png
 #talk: https://iclr.cc/virtual/2021/poster/3359
