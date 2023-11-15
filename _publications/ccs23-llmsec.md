@@ -8,7 +8,7 @@
   projects: plml
   awards:
   bibtex:
-  paper: https://arxiv.org/abs/2302.05319
+  paper: https://arxiv.org/pdf/2302.05319.pdf
   image: assets/images/ccs23-img.png
   talk: 
   slides: 
