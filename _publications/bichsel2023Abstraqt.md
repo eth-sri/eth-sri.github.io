@@ -1,7 +1,7 @@
 ---
 ref: bichsel2023Abstraqt
 title: "Abstraqt: Analysis of Quantum Circuits via Abstract Stabilizer Simulation"
-authors: Benjamin Bichsel, Maximilian Baader, Anouk Paradis, Martin Vechev
+authors: Benjamin Bichsel, Anouk Paradis, Maximilian Baader, Martin Vechev
 year: 2023
 month: 11
 venue: Quantum Journal
