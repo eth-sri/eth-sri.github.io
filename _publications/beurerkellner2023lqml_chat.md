@@ -4,7 +4,7 @@ title: "LMQL Chat: Scripted Chatbot Development"
 authors: Luca Beurer-Kellner*,  Marc Fischer*, Martin Vechev
 year: 2023
 month: 7
-venue: Neural Conversational AI Workshop TEACH -- ICML 2023
+venue: Neural Conversational AI Workshop, TEACH -- ICML 
 projects: safeai
 bibtex: "@misc{BeuererkellnerFV2023,
 			title     = {LMQL Chat: Scripted Chatbot Development},

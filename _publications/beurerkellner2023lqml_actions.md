@@ -4,7 +4,7 @@ title: "Large Language Models are Zero-Shot Multi-Tool Users"
 authors: Luca Beurer-Kellner*,  Marc Fischer*, Martin Vechev
 year: 2023
 month: 7
-venue: Knowlege and Logical Reasoning Workshop -- ICML 2023
+venue: Knowlege and Logical Reasoning Workshop -- ICML
 projects: safeai
 bibtex: "@misc{BeuererkellnerFV2023,
 			title     = {Large Language Models are Zero-Shot Multi-Tool Users},
