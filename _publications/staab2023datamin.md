@@ -1,0 +1,20 @@
+---
+ref: staab2023datamin
+title: "From Principle to Practice: Vertical Data Minimization for Machine Learning"
+authors: Robin Staab, Nikola Jovanović, Mislav Balunović, Martin Vechev
+year: 2024
+month: 5
+venue: IEEE S&P
+projects: safeai
+bibtex: '@article{staab2023datamin,
+  title={From Principle to Practice: Vertical Data Minimization for Machine Learning},
+  author={Staab, Robin and Jovanović, Nikola and Balunović, Mislav and Vechev, Martin},
+  year = {2024},
+  booktitle = {45th IEEE Symposium on Security and Privacy},
+  publisher = {{IEEE}}
+}'
+paper: https://files.sri.inf.ethz.ch/website/papers/staab2023datamin.pdf
+code: https://github.com/eth-sri/datamin
+---
+
+Aiming to train and deploy predictive models, organizations collect large amounts of detailed client data, risking the exposure of private information in the event of a breach. To mitigate this, policymakers increasingly demand compliance with the data minimization (DM) principle, restricting data collection to only that data which is relevant and necessary for the task. Despite regulatory pressure, the problem of deploying machine learning models that obey DM has so far received little attention. In this work, we address this challenge in a comprehensive manner. We propose a novel vertical DM (vDM) workflow based on data generalization, which by design ensures that no full-resolution client data is collected during training and deployment of models, benefiting client privacy by reducing the attack surface in case of a breach. We formalize and study the corresponding problem of finding generalizations that both maximize data utility and minimize empirical privacy risk, which we quantify by introducing a diverse set of policy-aligned adversarial scenarios. Finally, we propose a range of baseline vDM algorithms, as well as Privacy-aware Tree (PAT), an especially effective vDM algorithm that outperforms all baselines across several settings. We plan to release our code as a publicly available library, helping advance the standardization of DM for machine learning. Overall, we believe our work can help lay the foundation for further exploration and adoption of DM principles in real-world applications.

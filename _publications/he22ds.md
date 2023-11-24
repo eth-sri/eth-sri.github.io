@@ -8,7 +8,7 @@ venue: ICML
 projects: plml
 awards:
 bibtex:
-paper: https://arxiv.org/abs/2204.10049
+paper: https://arxiv.org/pdf/2204.10049.pdf
 talk: 
 slides: 
 code: https://github.com/eth-sri/learning-real-bug-detector
