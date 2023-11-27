@@ -9,7 +9,7 @@
   awards:
   bibtex:
   paper: https://arxiv.org/pdf/2302.05319.pdf
-  image: assets/images/ccs23-img.png
+  image: assets/images/ccs23-img.jpg
   talk: 
   slides: 
   code: https://github.com/eth-sri/sven
