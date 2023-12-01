@@ -11,7 +11,7 @@
   paper: https://arxiv.org/pdf/2302.05319.pdf
   image: assets/images/ccs23-img.jpg
   talk: 
-  slides: 
+  slides: https://files.sri.inf.ethz.ch/website/slides/ccs23-sven-slides.pdf
   code: https://github.com/eth-sri/sven
 ---
 
