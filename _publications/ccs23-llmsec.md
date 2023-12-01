@@ -6,7 +6,7 @@
   month: 11
   venue: ACM CCS
   projects: plml
-  awards:
+  awards: Distinguished Paper Award
   bibtex:
   paper: https://arxiv.org/pdf/2302.05319.pdf
   image: assets/images/ccs23-img.jpg
