@@ -8,6 +8,7 @@ venue: ICLR (Spotlight)
 projects: safeai
 paper: https://openreview.net/pdf?id=N_g8TT9Cy7f
 code: https://github.com/eth-sri/fairness-feedback-nlp
+talk: https://iclr.cc/virtual/2023/oral/12678
 bibtex: '@inproceedings{
 	dorner2023humanguided,
 	title={Human-Guided Fair Classification for Natural Language Processing},
