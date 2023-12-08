@@ -13,8 +13,10 @@ bibtex: '@inproceedings{lokna2023group,
   booktitle={Proceedings of the 2023 ACM SIGSAC Conference on Computer and Communications Security},
   year={2023}
 }'
-paper: https://files.sri.inf.ethz.ch/website/papers/ccs23-groupattack.pdf
+paper: https://files.sri.inf.ethz.ch/DeltaSiege/ccs23-groupattack.pdf
 code: https://github.com/eth-sri/Delta-Siege
+slides: https://files.sri.inf.ethz.ch/DeltaSiege/ccs23-groupattack-slides.pdf
+talk: https://files.sri.inf.ethz.ch/DeltaSiege/presentation.mp4
 ---
 
 (𝜖, 𝛿) differential privacy has seen increased adoption recently, especially in private machine learning applications. While this privacy definition allows provably limiting the amount of information leaked by an algorithm, practical implementations of differentially private algorithms often contain subtle vulnerabilities. This motivates the need for effective tools that can audit (𝜖, 𝛿) differential privacy algorithms before deploying them in the real world. However, existing state-of-the-art-tools for auditing (𝜖, 𝛿) differential privacy directly extend the tools for 𝜖-differential privacy by fixing either 𝜖 or 𝛿 in the violation search, inherently restricting their ability to efficiently discover violations of (𝜖, 𝛿) differential privacy.
