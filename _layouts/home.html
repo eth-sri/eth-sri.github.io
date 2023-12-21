@@ -3,34 +3,78 @@ layout: default
 ---
 
 
+<script>
+  
+  function mouseleave() {
+    document.getElementById("group-pic").src = "assets/images/group-2023-crop-smaller.png";
+  }
+
+  function mouseover(x) {
+    switch (x) {
+      case 'martin': { document.getElementById("group-pic").src = "assets/images/group-2023/martin.png"; }; break; 
+      case 'robin': { document.getElementById("group-pic").src = "assets/images/group-2023/robin.png"; }; break; 
+      case 'jingxuan': { document.getElementById("group-pic").src = "assets/images/group-2023/jingxuan.png"; }; break; 
+      default: ; break; 
+    }
+  }
+
+  function mapResizer(maps) {
+    if (!maps) {maps = document.getElementsByTagName('map');}
+    for (const map of maps) {
+        map.img = document.querySelectorAll(`[usemap="#${map.name}"]`)[0];
+        map.areas = map.getElementsByTagName('area');
+        for (const area of map.areas) {
+            area.coordArr = area.coords.split(',');
+        }
+    }
+    function resizeMaps() {
+        for (const map of maps) {
+            const scale = map.img.offsetWidth / (map.img.naturalWidth || map.img.width);
+            for (const area of map.areas) {
+                area.coords = area.coordArr.map(coord => Math.round(coord * scale)).join(',');
+            }
+        }
+    }
+    window.addEventListener('resize', () => resizeMaps());
+    resizeMaps();
+  }
+  if (document.readyState == 'complete') {
+      mapResizer();
+  } else {
+      window.addEventListener('load', () => mapResizer());
+  }
+
+</script> 
+
 <article class="landing">
-
-
   <header class="landing-header ">
     <!---<div class="landing-banner" style="background:url('{{ site.baseurl }}/assets/images/group-2018-12-final.jpg') 0 200px no-repeat"></div>-->
     <div class="landing-header-content container">
       <div class="row">
-        <div class="column column-50 ">
           <!-- <h1 class="landing-title">{{ site.title | escape }}</h1> -->
-			<img src="assets/images/group-2018-smaller.png">
-        </div>
-        <div class="column column-50">
+			    <img id="group-pic" src="assets/images/group-2023-crop-smaller.png" usemap="#group-pic-map">
+          <map name="group-pic-map" id="group-pic-map">
+            <area alt="Martin" title="Martin" href="people/martin" coords="314,56,248,106,248,184,146,208,69,531,87,591,131,600,111,953,93,1031,341,1016,311,944,350,741,385,609,436,588,415,337,424,226,356,196,365,62" shape="poly" onmouseover="mouseover('martin')" onmouseleave="mouseleave()">
+            <area alt="Robin" title="Robin" href="people/robin" coords="559,57,517,90,523,168,430,275,439,506,451,572,505,434,607,434,654,578,693,518,705,317,657,212,631,159,619,66,586,53" shape="poly" onmouseover="mouseover('robin')" onmouseleave="mouseleave()">
+            <area alt="Jingxuan" title="Jingxuan" href="people/jingxuan" coords="541,445,511,442,466,576,394,612,320,956,344,1007,457,1022,427,1085,517,1085,586,974,660,1118,726,1103,708,621,625,579,601,439" shape="poly" onmouseover="mouseover('jingxuan')" onmouseleave="mouseleave()">
+          </map>
+
+      </div>
+      <div class="row">
           <div class="landing-about">
-		  The Secure, Reliable, and Intelligent Systems Lab (SRI) is a research
-		  group in the <a href="https://www.inf.ethz.ch/"
-		  target="_blank">Department of Computer Science</a> at ETH Zurich.
+          The <b>Secure, Reliable, and Intelligent Systems (SRI) Lab</b> is a research
+          group in the <a href="https://www.inf.ethz.ch/"
+          target="_blank">Department of Computer Science</a> at ETH Zurich.
           Our current research focus is on the areas of reliable, secure,
           robust and fair machine learning, probabilistic and quantum
           programming, and machine learning for code.
-          Our work led to three ETH spin-offs: <a
-		  href="http://deepcode.ai/" target="_blank">DeepCode.ai</a> (AI for Code), <a
-		  href="https://chainsecurity.com" target="_blank">ChainSecurity</a> (security verification),
-		  and <a href="https://latticeflow.ai/" target="_blank">LatticeFlow</a> (robust machine learning).
-		  Please see <a href="{{ "/research" | relative_url }}">Research</a> and
-		  <a href="/publications" target="_blank">Publications</a> to learn
-		  more.
+          Our work led to three successful ETH spin-offs: <a
+          href="http://deepcode.ai/" target="_blank">DeepCode.ai</a> (AI for code), <a
+          href="https://chainsecurity.com" target="_blank">ChainSecurity</a> (security verification),
+          and <a href="https://latticeflow.ai/" target="_blank">LatticeFlow</a> (robust machine learning).
+          See our <a href="/publications" target="_blank">Publications</a> to learn
+          more about our work.
           </div>
-        </div>
       </div>
     </div>
   </header>
@@ -104,4 +148,3 @@ layout: default
 
   </div>
 </article>
-
