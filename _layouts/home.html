@@ -3,34 +3,88 @@ layout: default
 ---
 
 
+<script>
+  let altDisplayNames = {
+    "SamuelSimko": "Samuel",
+    "Mark": "Mark M.", 
+    "Benjamin": "Beni",
+    "MarkVero": "Mark V."
+  }
+  let altUrls = {
+    "SamuelSimko": "https://www.linkedin.com/in/samuelsimko",
+    "Batuhan": "https://www.linkedin.com/in/batuhan-tomekce",
+    "Hanna": "https://hannayukhymenko.vercel.app/",
+    "Slobodan": "https://www.linkedin.com/in/slobodan-jenko-466370172"
+  }
+  let polys = {};
+  let polysFrac = {}; 
+
+  fetch("assets/images/group-2023/polys.txt")
+  .then((res) => res.text())
+  .then((text) => {
+    text = text.split("\n");
+    text.forEach((line) => {
+      line = line.split(";");
+      polys[line[0]] = line[1];
+      nums = line[1].split(","); 
+      frac = [] 
+      for (let i = 0; i < nums.length; i+= 2) {
+        s = (parseInt(nums[i]) / 2788 * 100).toFixed(2).toString() + "% ";
+        s += (parseInt(nums[i+1]) / 1218 * 100).toFixed(2).toString() + "%";
+        frac.push(s);
+      }
+      polysFrac[line[0]] = frac.join(",");
+    });
+   });
+
+  let clearClipPathsTimeout = setTimeout(clearClipPaths, 1);
+
+  function clearClipPaths() {
+    document.getElementById("group-pic-color").style.clipPath = ""; 
+  }
+
+  function mouseleave() {
+    clearClipPathsTimeout = setTimeout(clearClipPaths, 500);
+  }
+
+  function mouseover(x) {
+    clearTimeout(clearClipPathsTimeout);
+    for (const [name, poly] of Object.entries(polysFrac)) {
+      if (name == x) {
+        document.getElementById("group-pic-color").style.clipPath = "polygon(" + poly + ")"; 
+      }
+    }
+  }
+</script> 
+
 <article class="landing">
-
-
   <header class="landing-header ">
     <!---<div class="landing-banner" style="background:url('{{ site.baseurl }}/assets/images/group-2018-12-final.jpg') 0 200px no-repeat"></div>-->
     <div class="landing-header-content container">
-      <div class="row">
-        <div class="column column-50 ">
+      <div class="row group-pic-row">
           <!-- <h1 class="landing-title">{{ site.title | escape }}</h1> -->
-			<img src="assets/images/group-2018-smaller.png">
-        </div>
-        <div class="column column-50">
+          
+          <img id="group-pic-bw" src="assets/images/group-2023/bw.jpg" usemap="#group-pic-map"> 
+          <img id="group-pic-color" src="assets/images/group-2023/color.jpg" usemap="#group-pic-map">
+          <map name="group-pic-map" id="group-pic-map">
+            <!-- JS will populate this -->
+          </map>
+      </div>
+      <div class="row">
           <div class="landing-about">
-		  The Secure, Reliable, and Intelligent Systems Lab (SRI) is a research
-		  group in the <a href="https://www.inf.ethz.ch/"
-		  target="_blank">Department of Computer Science</a> at ETH Zurich.
+          The <b>Secure, Reliable, and Intelligent Systems (SRI) Lab</b> is a research
+          group in the <a href="https://www.inf.ethz.ch/"
+          target="_blank">Department of Computer Science</a> at ETH Zurich.
           Our current research focus is on the areas of reliable, secure,
           robust and fair machine learning, probabilistic and quantum
           programming, and machine learning for code.
-          Our work led to three ETH spin-offs: <a
-		  href="http://deepcode.ai/" target="_blank">DeepCode.ai</a> (AI for Code), <a
-		  href="https://chainsecurity.com" target="_blank">ChainSecurity</a> (security verification),
-		  and <a href="https://latticeflow.ai/" target="_blank">LatticeFlow</a> (robust machine learning).
-		  Please see <a href="{{ "/research" | relative_url }}">Research</a> and
-		  <a href="/publications" target="_blank">Publications</a> to learn
-		  more.
+          Our work led to three successful ETH spin-offs: <a
+          href="http://deepcode.ai/" target="_blank">DeepCode.ai</a> (AI for code), <a
+          href="https://chainsecurity.com" target="_blank">ChainSecurity</a> (security verification),
+          and <a href="https://latticeflow.ai/" target="_blank">LatticeFlow</a> (robust machine learning).
+          See our <a href="/publications" target="_blank">Publications</a> to learn
+          more about our work.
           </div>
-        </div>
       </div>
     </div>
   </header>
@@ -55,12 +109,12 @@ layout: default
     {% assign sorted_newsposts = site.newsposts | where: "categories","media" | sort:"date" | reverse %}
 
     {%- for blogpost in sorted_blogposts limit: 4 %}
-    <div class="row">
+    <div class="row media-row">
 
       <div class="media-item">
 
         <div class="media-thumbnail-blog">
-          <a href="{{ blogpost.url }}"> <img src="{{ blogpost.thumbnail | prepend: '/assets/blog/'}}"/> </a>
+          <a href="{{ blogpost.url }}"> <img src="{{ blogpost.thumbnail | prepend: '/assets/blog/' | relative_url}}"/> </a>
         </div>
 
         <div class="media-excerpt-blog">
@@ -105,3 +159,54 @@ layout: default
   </div>
 </article>
 
+<script>
+  function resizeMap(groupPic) {
+    let groupPicMap = document.getElementById("group-pic-map");
+    const scale = groupPic.offsetWidth / (groupPic.naturalWidth || groupPic.width);
+
+    for (let i = 0; i < groupPicMap.children.length; i++) {
+      let area = groupPicMap.children[i];
+      area.coords = polys[area.id].split(",").map(coord => Math.round(parseInt(coord) * scale)).join(",");
+    }
+  }
+
+  function resizeMaps() {
+    resizeMap(document.getElementById("group-pic-bw"));
+    resizeMap(document.getElementById("group-pic-color"));
+  }
+
+  function fillInMap() {
+    let groupPicMap = document.getElementById("group-pic-map");
+    for (const [name, poly] of Object.entries(polys)) {
+      let area = document.createElement("area");
+      area.id = name;
+      area.alt = name;
+      if (name in altDisplayNames) {
+        area.title = altDisplayNames[name];
+      } else {
+        area.title = name;
+      }
+      if (name in altUrls) {
+        area.href = altUrls[name];
+      } else {
+        area.href = "people/" + name.toLowerCase();
+      }
+      area.coords = poly;
+      area.shape = "poly";
+      area.onmouseover = function() { mouseover(name); };
+      area.onmouseleave = function() { mouseleave(); };
+      groupPicMap.appendChild(area);
+    }
+    resizeMaps();
+  }
+
+    
+  window.addEventListener('resize', () => resizeMaps());
+
+  if (document.readyState == 'complete') {
+    fillInMap();
+  } else {
+      window.addEventListener('load', () => fillInMap());
+  }
+
+</script>

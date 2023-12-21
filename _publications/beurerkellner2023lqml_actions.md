@@ -5,7 +5,7 @@ authors: Luca Beurer-Kellner*,  Marc Fischer*, Martin Vechev
 year: 2023
 month: 7
 venue: Knowlege and Logical Reasoning Workshop -- ICML
-projects: safeai
+projects: llm
 bibtex: "@misc{BeuererkellnerFV2023,
 			title     = {Large Language Models are Zero-Shot Multi-Tool Users},
 			venue     = {ICML Workshop on Knowledge and Logical Reasoning in the Era of Data-Driven Learning},

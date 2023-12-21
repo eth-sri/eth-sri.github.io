@@ -21,12 +21,11 @@ permalink: /research/index.html
 
         <div class="grid grid-center">
 	        {% include get-project.html ref="safeai" %}
-          	{% include get-project.html ref="quantum" %}
-	        {% include get-project.html ref="probabilistic-programming" %}
-	        {% include get-project.html ref="diff-privacy" %}
+	        {% include get-project.html ref="llm" %}
 	        {% include get-project.html ref="plml" %}
-	        {% include get-project.html ref="comp-bio" %}
-	        {% include get-project.html ref="blockchain-security" %}
+          {% include get-project.html ref="quantum" %}
+	        {% include get-project.html ref="diff-privacy" %}
+	        {% include get-project.html ref="probabilistic-programming" %}
 	</div>
       </div>
     </div>
@@ -38,6 +37,8 @@ permalink: /research/index.html
       <div class="column">
 
         <div class="grid">
+	        {% include get-project.html ref="comp-bio" img="none" %}
+	        {% include get-project.html ref="blockchain-security" img="none" %}
           {% include get-project.html ref="numerical-analysis" img="none" %}
           {% include get-project.html ref="programmable-networks" img="none" %}
           {% include card.html

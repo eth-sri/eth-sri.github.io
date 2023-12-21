@@ -5,7 +5,7 @@ authors: Robin Staab, Mark Vero, Mislav Balunović, Martin Vechev
 year: 2023
 month: 11
 venue: arXiv 
-projects: safeai
+projects: safeai,llm
 bibtex: "@misc{staab2023beyond,
 			title     = {Beyond Memorization: Violating Privacy Via Inference with Large Language Models},
 			archivePrefix={arXiv},
