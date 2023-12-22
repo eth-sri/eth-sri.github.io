@@ -3,8 +3,8 @@
  */
 
 .media-item
-  padding: 20px 30px
-  width: 100%
+  margin: 20px 30px
+  width: 75%
   display: flex
   flex-direction: row
 
@@ -55,13 +55,21 @@
     display: none
   
 @media (max-width: $mobile-break)
-  .media-excerpt-blog
-    flex: 1 1 50%
-  
+  .media-item 
+    display: block 
+    margin: 10px 30px
+    border-bottom: 0.2rem solid #e5e5e5 
+
+  .media-excerpt
+    padding: 2%
+    text-align: justify 
+
   .media-thumbnail-blog
-    flex: 1 1 50%
     img
       width: 50%
       display: block 
       margin: auto
+  
+  .media-row
+    align-items: center
 
