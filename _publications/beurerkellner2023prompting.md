@@ -5,7 +5,7 @@ authors: Luca Beurer-Kellner, Marc Fischer, Martin Vechev
 year: 2023
 month: 06
 venue: PLDI 
-projects: safeai
+projects: llm
 bibtex: "@inproceedings{beuererkellner2023prompting,
 			title     = {Prompting Is Programming: A Query Language for Large Language Models},
 			url       = {https://doi.org/10.1145/3591300}

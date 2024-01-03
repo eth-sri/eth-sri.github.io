@@ -25,8 +25,11 @@ permalink: /blog/index.html
           <li>
           <div class="blog-list-box">
 
+            
             <div class="blog-list-thumbnail">
-              <img src="{{ blogpost.thumbnail | prepend: '/assets/blog/' | relative_url}}" class="blog-list-thumbnailimg" />
+              <a href="{{ blogpost.id | relative_url}}">
+                <img  src="{{ blogpost.thumbnail | prepend: '/assets/blog/' | relative_url}}" class="blog-list-thumbnailimg" />
+              </a>
             </div>
 
 

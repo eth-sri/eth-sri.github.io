@@ -5,7 +5,7 @@ authors: Jasper Dekoninck, Marc Fischer, Luca Beurer-Kellner, Martin Vechev
 year: 2023
 month: 11
 venue: arXiv 
-projects: controlled-text-generation
+projects: llm
 bibtex: "@misc{dekoninck2023controlled,
       title={Controlled Text Generation via Language Model Arithmetic}, 
       author={Jasper Dekoninck and Marc Fischer and Luca Beurer-Kellner and Martin Vechev},

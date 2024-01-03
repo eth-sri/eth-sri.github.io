@@ -24,17 +24,30 @@
     .landing-header-content
       width: $full-width
       margin: 0 auto
-      padding: $spacing-unit 0
+      padding: 0
       position: relative
       box-sizing: border-box
       z-index: 1
 
+    .group-pic-row
+      position: relative
+
+    #group-pic-color
+      position: absolute 
+      top: 0 
+      left: 0 
+      width: 100%
+      z-index: 3 
+    
+    #group-pic-bw
+      z-index: 2
 
     .landing-about
-      //background: rgba($color-blue, 0.15)
-      padding: 0 $spacing-unit
-      line-height: 2em
-      font-size: 1.1em
+      background: rgba($color-blue, 0.15)
+      text-align: justify
+      padding: $spacing-unit*0.75 $spacing-unit*1.5
+      line-height: 1.7em
+      font-size: 1.4em
       color: darken($text-color, 15%)
 
 
@@ -49,13 +62,16 @@
     .landing-header
       overflow: visible
       padding-bottom: 0
+      padding-top: 10px
 
       .landing-header-content
         width: 100%
-        padding: $spacing-unit
 
       .landing-about
-        padding: $spacing-unit 0
+        padding: $spacing-unit/2 $spacing-unit*1.5
+        font-size: 1.1em 
+        line-height: 1.6em
+
 
       .landing-banner
         width: 100%

@@ -5,7 +5,7 @@ authors: Luca Beurer-Kellner, Mark Niklas Müller, Marc Fischer, Martin Vechev
 year: 2023
 month: 11
 venue: arXiv 
-projects: safeai
+projects: llm
 bibtex: "@misc{BeuererkellnerMFV2023,
 			title     = {Prompt Sketching for Large Language Models},
 			archivePrefix={arXiv},
