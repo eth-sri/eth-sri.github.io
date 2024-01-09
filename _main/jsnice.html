@@ -1,0 +1,56 @@
+---
+layout: page
+title: Programming tools with big data and conditional random fields
+--- 
+
+A new research paper showing how to build programming tools based on probabilistic models learned from massive codebases recently appeared at the ACM Principles of Programming Languages Conference, 2015 (ACM POPL’15). The paper presents a machine learning framework for predicting facts about programs based on probabilistic graphical models. The full PDF of the paper can be found here:
+</p>
+<p>
+</p><center>
+<a href="https://files.sri.inf.ethz.ch/website/papers/jsnice15.pdf" class="pdf" title="Predicting Program Properties from Big Code"><img src="https://www.sri.inf.ethz.ch/assets/images/pdf.png" class="pdf-load" border="0" alt="PDF" noborder=""></a>
+<!--<a href="http://www.srl.inf.ethz.ch/papers/jsnice15.pdf">http://www.srl.inf.ethz.ch/papers/jsnice15.pdf</a>-->
+</center>
+<p></p>
+<p>
+
+</p><h2>JSNice</h2>
+As an example of this framework, it also presents the design and implementation of JSNice (<a href="http://jsnice.org/">http://jsnice.org</a>), a popular system among JavaScript developers that predicts variable names and type annotations for JavaScript code: <p></p>
+<p>
+
+<!--&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp-->
+</p><center>
+<a href="http://www.jsnice.org/"><p><img src="https://www.sri.inf.ethz.ch/assets/images/jsnice.png" style="width:42%; float:initial;display: block; margin-left: auto; margin-right: auto"></p></a><br>
+</center>
+<p>
+<!--<h2>Motivation</h2>-->
+Many software developers spend tremendous amounts of time making their code readable, extensible and maintainable by others. Achieving this state in the usual fast pace of software development is difficult and getting there is often considered an art form. Yet, it can be the difference between a product becoming a success or failing miserably in bloat.
+</p>
+<p>
+This new approach learns from successful projects and transfers that art into your code. Thousands of developers have spent time annotating their JavaScript with type contracts. JSNice can now automatically learn from these projects and annotate your program in only a few seconds. In addition to type annotations, JSNice predicts meaningful variable names thus helping to make code readable. 
+</p>
+<p>
+</p><h2>How does it work?</h2>
+The general approach (as well as JSNice) is based on state-of-the-art machine learning:
+<p></p>
+<p>
+</p><ul>
+<li><a href="https://en.wikipedia.org/wiki/Conditional_random_field">Conditional Random Fields (CRFs)</a> as a general framework for learning from code. CRFs are graphical models which are tremendously popular in image processing and natural language processing. This work pioneers CRFs in the domain of programs.</li>
+<li>Fast prediction algorithms that take into account the existing names and types in order to predict new names and types. Such algorithms are also known as <a href="https://en.wikipedia.org/wiki/Maximum_a_posteriori_estimation">MAP inference</a>.
+</li>
+<li><a href="https://en.wikipedia.org/wiki/Structured_support_vector_machine">Maximum-margin training</a> based on state-of-the-art efficient learning techniques from Support Vector Machines.</li>
+<li>An efficient, scalable and parallel implementation that learns from massive amounts of code quickly.</li>
+</ul>
+<p></p>
+
+<h2>More Information</h2>
+
+More information on this line of work, including talks, papers and slides, can be found at: <a href="https://www.sri.inf.ethz.ch/research/plml">https://www.sri.inf.ethz.ch/research/plml</a>.
+
+<p></p>
+
+<h2> Disclaimer</h2>
+
+This service by ETH Zurich, Department of Computer Science, Software Reliability Lab, is free of charge. We accept only legal pieces of code. All entries are logged for research and improvement of service. ETH Zurich does not warrant any rights or service levels, nor does it acquire any rights on the code entered. Swiss law is applicable. The place of jurisdiction is Zurich, Switzerland. By entering code on this site, you warrant that all your entries are in your sole responsibility and you do not infringe any laws or third-party rights like copyrights and the like. ETH Zurich and its employees shall not be liable for any entries and for any damages resulting thereof. You agree to indemnify, defend and hold them harmless from any legal or financial demands or arising out of the breach of these terms of use, especially from third-party claims regarding infringement of copyrights and the like.
