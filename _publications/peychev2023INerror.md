@@ -18,8 +18,8 @@ paper: https://openreview.net/forum?id=zEoP4vzFKy
 code: https://github.com/eth-sri/automated-error-analysis
 slides: https://files.sri.inf.ethz.ch/website/slides/peychev-neurips2023-slides.pdf
 poster: https://files.sri.inf.ethz.ch/website/posters/peychev-neurips2023-poster.pdf
+talk: https://nips.cc/virtual/2023/poster/69905
 image: assets/images/IN_error_img.png
-#talk: https://iclr.cc/virtual/2021/poster/3359
 ---
 
 While the ImageNet dataset has been driving computer vision research over the past decade, significant label noise and ambiguity have made top-1 accuracy an insufficient measure of further progress. To address this, new label-sets and evaluation protocols have been proposed for ImageNet showing that state-of-the-art models already achieve over 95% accuracy and shifting the focus on investigating why the remaining errors persist.
