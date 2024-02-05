@@ -1,25 +1,19 @@
 ---
-ref: mao23ibp
+ref: mao24ibp
 title: "Understanding Certified Training with Interval Bound Propagation"
 authors: Yuhao Mao, Mark Niklas Müller, Marc Fischer, Martin Vechev
-year: 2023
-month: 06
-venue: arXiv
+year: 2024
+month: 05
+venue: ICLR
 projects: safeai
-bibtex: '@article{MaoMFV2023A,
-			  	author       = {Yuhao Mao and
-                  Mark Niklas M{\"{u}}ller and
-                  Marc Fischer and
-                  Martin T. Vechev},
-				title        = {Understanding Certified Training with Interval Bound Propagation},
-				journal      = {CoRR},
-				volume       = {abs/2306.10426},
-				year         = {2023},
-				url          = {https://doi.org/10.48550/arXiv.2306.10426},
-				doi          = {10.48550/arXiv.2306.10426},
-				eprinttype    = {arXiv},
-				eprint       = {2306.10426},
-				}'
+bibtex: '@inproceedings{mao23taps
+			author       = {Yuhao Mao and
+							Mark Niklas M{\"{u}}ller and
+							Marc Fischer and
+							Martin T. Vechev},
+			title        = {Understanding Certified Training with Interval Bound Propagation},
+			year         = {2024},
+			booktitle    = {The Twelfth International Conference on Learning Representations}'
 paper: https://arxiv.org/abs/2306.10426
 # code: https://github.com/eth-sri/sabr
 # slides: https://files.sri.inf.ethz.ch/website/slides/mueller2023sabr_slides.pdf

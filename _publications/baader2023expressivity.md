@@ -2,17 +2,16 @@
 ref: baader2023expressivity
 title: "Expressivity of ReLU-Networks under Convex Relaxations"
 authors: Maximilian Baader*, Mark Niklas Müller*, Yuhao Mao, Martin Vechev
-year: 2023
-month: 11
-venue: arXiv
+year: 2024
+month: 05
+venue: ICLR
 projects: safeai
 bibtex: '@misc{
 			BaaderMMV2023,  
 			title={Expressivity of ReLU-Networks under Convex Relaxations},  
 			author={Maximilian Baader and Mark Niklas M{\"{u}}ller and Yuhao Mao and Martin Vechev},  
-      		eprint={2311.04015},
-			archivePrefix={arXiv},
-			year={2023},
+			booktitle    = {The Twelfth International Conference on Learning Representations},
+			year={2024}
 		}'
 paper: https://arxiv.org/abs/2311.04015
 # code: https://github.com/eth-sri/sabr
