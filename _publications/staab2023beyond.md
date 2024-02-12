@@ -2,15 +2,15 @@
 ref: staab2023beyond
 title: "Beyond Memorization: Violating Privacy Via Inference with Large Language Models"
 authors: Robin Staab, Mark Vero, Mislav Balunović, Martin Vechev
-year: 2023
-month: 11
-venue: arXiv 
+year: 2024
+month: 05
+venue: ICLR
+awards: Spotlight
 projects: safeai,llm
-bibtex: "@misc{staab2023beyond,
+bibtex: "@inproceedings{staab2023beyond,
 			title     = {Beyond Memorization: Violating Privacy Via Inference with Large Language Models},
-			archivePrefix={arXiv},
-			eprint={2310.07298},
-			year={2023},
+			year         = {2024},
+			booktitle    = {The Twelfth International Conference on Learning Representations}'
 			author    = {Staab, Robin and Vero, Mark and Balunović, Mislav and Vechev, Martin},
 			}"
 paper: https://files.sri.inf.ethz.ch/website/papers/staab2023beyond.pdf
