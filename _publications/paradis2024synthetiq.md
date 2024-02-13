@@ -1,6 +1,6 @@
 ---
 ref: mueller2021precise
-title: "PRIMA: General and Precise Neural Network Certification via Scalable Convex Hull Approximations"
+title: "Synthetiq: Fast and Versatile Quantum Circuit Synthesis"
 authors: Anouk Paradis*, Jasper Dekoninck*, Benjamin Bichsel, Martin Vechev
 year: 2024
 month: 3
