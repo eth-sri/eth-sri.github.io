@@ -5,7 +5,16 @@ authors: Jingxuan He*,  Mark Vero*, Gabriela Krasnopolska, Martin Vechev
 year: 2024
 month: 2
 projects: llm
-paper: https://files.sri.inf.ethz.ch/website/papers/jhe2024safecoder.pdf
+venue: arXiv
+paper: https://arxiv.org/abs/2402.09497
+bibtex: "@misc{he2024instruction,
+      title={Instruction Tuning for Secure Code Generation}, 
+      author={Jingxuan He and Mark Vero and Gabriela Krasnopolska and Martin Vechev},
+      year={2024},
+      eprint={2402.09497},
+      archivePrefix={arXiv},
+      primaryClass={cs.CR}
+}"
 ---
 
 Modern language models (LMs) have gained widespread acceptance in everyday and professional contexts, particularly in programming. An essential procedure enabling this adoption is instruction tuning, which substantially enhances LMs' practical utility by training them to follow user instructions and human preferences. However, existing instruction tuning schemes overlook a crucial aspect: the security of generated code. As a result, even the state-of-the-art instruction-tuned LMs frequently produce unsafe code, posing significant security risks. In this work, we introduce SafeCoder to address this gap. SafeCoder performs security-centric fine-tuning using a diverse and high-quality dataset that we collected using an automated pipeline. We integrate the security fine-tuning with standard instruction tuning, to facilitate a joint optimization of both security and utility. Despite its simplicity, we show that SafeCoder is effective across a variety of popular LMs and datasets. It is able to drastically improve security (by about 30%), while preserving utility.
