@@ -5,7 +5,7 @@ authors: Robin Staab, Mark Vero, Mislav Balunović, Martin Vechev
 year: 2024
 month: 02
 venue: arXiv
-projects: safeai,llm
+projects: llm
 bibtex: ""
 paper: https://arxiv.org/abs/2402.13846
 ---

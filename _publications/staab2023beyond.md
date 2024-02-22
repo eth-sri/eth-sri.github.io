@@ -6,7 +6,7 @@ year: 2024
 month: 05
 venue: ICLR
 awards: Spotlight
-projects: safeai,llm
+projects: llm
 bibtex: "@inproceedings{staab2023beyond,
 			title     = {Beyond Memorization: Violating Privacy Via Inference with Large Language Models},
 			year         = {2024},
