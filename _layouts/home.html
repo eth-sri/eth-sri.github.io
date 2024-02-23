@@ -73,6 +73,7 @@ layout: default
   }
 
   function fillInMap() {
+    console.log( "ready!" );
     let groupPicMap = document.getElementById("group-pic-map");
     for (const [name, poly] of Object.entries(polys)) {
       let area = document.createElement("area");
@@ -96,8 +97,10 @@ layout: default
     }
     resizeMaps();
   }
-  document.body.onload = function() {fillInMap()};
-
+  document.body.onload = function() {};
+  $( document ).ready(function() {
+    fillInMap()
+  });
     
   window.addEventListener('resize', () => resizeMaps());
   console.log(document.readyState)
