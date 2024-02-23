@@ -75,7 +75,9 @@ layout: default
   function fillInMap() {
     console.log( "ready!" );
     let groupPicMap = document.getElementById("group-pic-map");
+    console.log( "ready1!" );
     for (const [name, poly] of Object.entries(polys)) {
+      console.log( "ready2!" );
       let area = document.createElement("area");
       area.id = name;
       area.alt = name;
