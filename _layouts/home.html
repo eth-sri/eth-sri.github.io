@@ -202,7 +202,7 @@ layout: default
 
     
   window.addEventListener('resize', () => resizeMaps());
-
+  console.log(document.readyState)
   if (document.readyState == 'complete') {
     fillInMap();
   } else {
