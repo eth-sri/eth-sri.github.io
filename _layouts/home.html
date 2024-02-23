@@ -97,11 +97,7 @@ layout: default
     }
     resizeMaps();
   }
-  document.body.onload = function() {};
-  $( document ).ready(function() {
-    fillInMap()
-  });
-    
+  document.body.onload = function() {fillInMap()};    
   window.addEventListener('resize', () => resizeMaps());
   console.log(document.readyState)
   if (document.readyState == 'complete') {
