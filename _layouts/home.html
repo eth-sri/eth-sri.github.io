@@ -96,7 +96,7 @@ layout: default
     }
     resizeMaps();
   }
-  document.body.onload(fillInMap);
+  document.body.onload = function() {fillInMap()};
 
     
   window.addEventListener('resize', () => resizeMaps());
