@@ -56,7 +56,55 @@ layout: default
     }
   }
 </script> 
+<script>
+  function resizeMap(groupPic) {
+    let groupPicMap = document.getElementById("group-pic-map");
+    const scale = groupPic.offsetWidth / (groupPic.naturalWidth || groupPic.width);
 
+    for (let i = 0; i < groupPicMap.children.length; i++) {
+      let area = groupPicMap.children[i];
+      area.coords = polys[area.id].split(",").map(coord => Math.round(parseInt(coord) * scale)).join(",");
+    }
+  }
+
+  function resizeMaps() {
+    resizeMap(document.getElementById("group-pic-bw"));
+    resizeMap(document.getElementById("group-pic-color"));
+  }
+
+  function fillInMap() {
+    let groupPicMap = document.getElementById("group-pic-map");
+    for (const [name, poly] of Object.entries(polys)) {
+      let area = document.createElement("area");
+      area.id = name;
+      area.alt = name;
+      if (name in altDisplayNames) {
+        area.title = altDisplayNames[name];
+      } else {
+        area.title = name;
+      }
+      if (name in altUrls) {
+        area.href = altUrls[name];
+      } else {
+        area.href = "people/" + name.toLowerCase();
+      }
+      area.coords = poly;
+      area.shape = "poly";
+      area.onmouseover = function() { mouseover(name); };
+      area.onmouseleave = function() { mouseleave(); };
+      groupPicMap.appendChild(area);
+    }
+    resizeMaps();
+  }
+  body.onload(fillInMap);
+
+    
+  window.addEventListener('resize', () => resizeMaps());
+  console.log(document.readyState)
+  if (document.readyState == 'complete') {
+    fillInMap();
+  }
+</script>
 <article class="landing">
   <header class="landing-header ">
     <!---<div class="landing-banner" style="background:url('{{ site.baseurl }}/assets/images/group-2018-12-final.jpg') 0 200px no-repeat"></div>-->
@@ -158,56 +206,3 @@ layout: default
 
   </div>
 </article>
-
-<script>
-  function resizeMap(groupPic) {
-    let groupPicMap = document.getElementById("group-pic-map");
-    const scale = groupPic.offsetWidth / (groupPic.naturalWidth || groupPic.width);
-
-    for (let i = 0; i < groupPicMap.children.length; i++) {
-      let area = groupPicMap.children[i];
-      area.coords = polys[area.id].split(",").map(coord => Math.round(parseInt(coord) * scale)).join(",");
-    }
-  }
-
-  function resizeMaps() {
-    resizeMap(document.getElementById("group-pic-bw"));
-    resizeMap(document.getElementById("group-pic-color"));
-  }
-
-  function fillInMap() {
-    let groupPicMap = document.getElementById("group-pic-map");
-    for (const [name, poly] of Object.entries(polys)) {
-      let area = document.createElement("area");
-      area.id = name;
-      area.alt = name;
-      if (name in altDisplayNames) {
-        area.title = altDisplayNames[name];
-      } else {
-        area.title = name;
-      }
-      if (name in altUrls) {
-        area.href = altUrls[name];
-      } else {
-        area.href = "people/" + name.toLowerCase();
-      }
-      area.coords = poly;
-      area.shape = "poly";
-      area.onmouseover = function() { mouseover(name); };
-      area.onmouseleave = function() { mouseleave(); };
-      groupPicMap.appendChild(area);
-    }
-    resizeMaps();
-  }
-
-    
-  window.addEventListener('resize', () => resizeMaps());
-  console.log(document.readyState)
-  if (document.readyState == 'complete') {
-    fillInMap();
-  } else {
-      window.addEventListener('load', () => fillInMap());
-      console.log(document.readyState)
-  }
-
-</script>
