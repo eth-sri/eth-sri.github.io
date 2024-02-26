@@ -4,6 +4,9 @@ layout: default
 
 
 <script>
+  let polys = {};
+  let polysFrac = {};
+  
   function clearClipPaths() {
     document.getElementById("group-pic-color").style.clipPath = ""; 
   }
@@ -73,9 +76,7 @@ layout: default
       "Hanna": "https://hannayukhymenko.vercel.app/",
       "Slobodan": "https://www.linkedin.com/in/slobodan-jenko-466370172"
     }
-    let polys = {};
-    let polysFrac = {}; 
-  
+    
     fetch("assets/images/group-2023/polys.txt")
     .then((res) => res.text())
     .then((text) => {
