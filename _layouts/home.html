@@ -4,41 +4,6 @@ layout: default
 
 
 <script>
-  let altDisplayNames = {
-    "SamuelSimko": "Samuel",
-    "Mark": "Mark M.", 
-    "Benjamin": "Beni",
-    "MarkVero": "Mark V."
-  }
-  let altUrls = {
-    "SamuelSimko": "https://www.linkedin.com/in/samuelsimko",
-    "Batuhan": "https://www.linkedin.com/in/batuhan-tomekce",
-    "Hanna": "https://hannayukhymenko.vercel.app/",
-    "Slobodan": "https://www.linkedin.com/in/slobodan-jenko-466370172"
-  }
-  let polys = {};
-  let polysFrac = {}; 
-
-  fetch("assets/images/group-2023/polys.txt")
-  .then((res) => res.text())
-  .then((text) => {
-    text = text.split("\n");
-    text.forEach((line) => {
-      line = line.split(";");
-      polys[line[0]] = line[1];
-      nums = line[1].split(","); 
-      frac = [] 
-      for (let i = 0; i < nums.length; i+= 2) {
-        s = (parseInt(nums[i]) / 2788 * 100).toFixed(2).toString() + "% ";
-        s += (parseInt(nums[i+1]) / 1218 * 100).toFixed(2).toString() + "%";
-        frac.push(s);
-      }
-      polysFrac[line[0]] = frac.join(",");
-    });
-   });
-
-  let clearClipPathsTimeout = setTimeout(clearClipPaths, 1);
-
   function clearClipPaths() {
     document.getElementById("group-pic-color").style.clipPath = ""; 
   }
@@ -55,8 +20,6 @@ layout: default
       }
     }
   }
-</script> 
-<script>
   function resizeMap(groupPic) {
     let groupPicMap = document.getElementById("group-pic-map");
     const scale = groupPic.offsetWidth / (groupPic.naturalWidth || groupPic.width);
@@ -71,13 +34,10 @@ layout: default
     resizeMap(document.getElementById("group-pic-bw"));
     resizeMap(document.getElementById("group-pic-color"));
   }
-
+  
   function fillInMap() {
-    console.log( "ready!" );
     let groupPicMap = document.getElementById("group-pic-map");
-    console.log( "ready1!" );
     for (const [name, poly] of Object.entries(polys)) {
-      console.log( "ready2!" );
       let area = document.createElement("area");
       area.id = name;
       area.alt = name;
@@ -99,11 +59,48 @@ layout: default
     }
     resizeMaps();
   }
-  document.body.onload = function() {fillInMap()};    
+  
+  function loadPaths() {
+    let altDisplayNames = {
+      "SamuelSimko": "Samuel",
+      "Mark": "Mark M.", 
+      "Benjamin": "Beni",
+      "MarkVero": "Mark V."
+    }
+    let altUrls = {
+      "SamuelSimko": "https://www.linkedin.com/in/samuelsimko",
+      "Batuhan": "https://www.linkedin.com/in/batuhan-tomekce",
+      "Hanna": "https://hannayukhymenko.vercel.app/",
+      "Slobodan": "https://www.linkedin.com/in/slobodan-jenko-466370172"
+    }
+    let polys = {};
+    let polysFrac = {}; 
+  
+    fetch("assets/images/group-2023/polys.txt")
+    .then((res) => res.text())
+    .then((text) => {
+      text = text.split("\n");
+      text.forEach((line) => {
+        line = line.split(";");
+        polys[line[0]] = line[1];
+        nums = line[1].split(","); 
+        frac = [] 
+        for (let i = 0; i < nums.length; i+= 2) {
+          s = (parseInt(nums[i]) / 2788 * 100).toFixed(2).toString() + "% ";
+          s += (parseInt(nums[i+1]) / 1218 * 100).toFixed(2).toString() + "%";
+          frac.push(s);
+        }
+        polysFrac[line[0]] = frac.join(",");
+      }
+      fillInMap(););
+    });
+  
+    let clearClipPathsTimeout = setTimeout(clearClipPaths, 1);
+  }
+  document.body.onload = function() {loadPaths()};    
   window.addEventListener('resize', () => resizeMaps());
-  console.log(document.readyState)
   if (document.readyState == 'complete') {
-    fillInMap();
+    loadPaths();
   }
 </script>
 <article class="landing">
