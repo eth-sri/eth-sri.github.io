@@ -93,9 +93,8 @@ layout: default
         polysFrac[line[0]] = frac.join(",");
       });
       fillInMap();});
-  
-    let clearClipPathsTimeout = setTimeout(clearClipPaths, 1);
   }
+  let clearClipPathsTimeout = setTimeout(clearClipPaths, 1);
   document.body.onload = function() {loadPaths()};    
   window.addEventListener('resize', () => resizeMaps());
   if (document.readyState == 'complete') {
