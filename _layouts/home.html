@@ -6,6 +6,18 @@ layout: default
 <script>
   let polys = {};
   let polysFrac = {};
+  let altDisplayNames = {
+    "SamuelSimko": "Samuel",
+    "Mark": "Mark M.", 
+    "Benjamin": "Beni",
+    "MarkVero": "Mark V."
+  }
+  let altUrls = {
+    "SamuelSimko": "https://www.linkedin.com/in/samuelsimko",
+    "Batuhan": "https://www.linkedin.com/in/batuhan-tomekce",
+    "Hanna": "https://hannayukhymenko.vercel.app/",
+    "Slobodan": "https://www.linkedin.com/in/slobodan-jenko-466370172"
+  }
   
   function clearClipPaths() {
     document.getElementById("group-pic-color").style.clipPath = ""; 
@@ -64,19 +76,6 @@ layout: default
   }
   
   function loadPaths() {
-    let altDisplayNames = {
-      "SamuelSimko": "Samuel",
-      "Mark": "Mark M.", 
-      "Benjamin": "Beni",
-      "MarkVero": "Mark V."
-    }
-    let altUrls = {
-      "SamuelSimko": "https://www.linkedin.com/in/samuelsimko",
-      "Batuhan": "https://www.linkedin.com/in/batuhan-tomekce",
-      "Hanna": "https://hannayukhymenko.vercel.app/",
-      "Slobodan": "https://www.linkedin.com/in/slobodan-jenko-466370172"
-    }
-    
     fetch("assets/images/group-2023/polys.txt")
     .then((res) => res.text())
     .then((text) => {
