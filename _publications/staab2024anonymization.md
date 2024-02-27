@@ -11,8 +11,7 @@ bibtex: "@article{staab2024large,
   author={Staab, Robin and Vero, Mark and Balunovi{\'c}, Mislav and Vechev, Martin},
   journal={arXiv preprint arXiv:2402.13846},
   year={2024}
-}
-"
+}"
 paper: https://arxiv.org/abs/2402.13846
 ---
 
