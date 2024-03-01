@@ -6,7 +6,14 @@ year: 2024
 month: 02
 venue: arXiv
 projects: llm
-bibtex: ""
+bibtex: "@misc{staab2024large,
+      title={Large Language Models are Advanced Anonymizers}, 
+      author={Robin Staab and Mark Vero and Mislav Balunović and Martin Vechev},
+      year={2024},
+      eprint={2402.13846},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI}
+}"
 paper: https://arxiv.org/abs/2402.13846
 ---
 
