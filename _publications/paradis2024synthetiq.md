@@ -1,5 +1,5 @@
 ---
-ref: mueller2021precise
+ref: paradis2024synthetiq
 title: "Synthetiq: Fast and Versatile Quantum Circuit Synthesis"
 authors: Anouk Paradis*, Jasper Dekoninck*, Benjamin Bichsel, Martin Vechev
 year: 2024
