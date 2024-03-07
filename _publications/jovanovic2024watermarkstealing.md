@@ -4,7 +4,7 @@ title: "Watermark Stealing in Large Language Models"
 authors: Nikola Jovanović, Robin Staab, Martin Vechev
 year: 2024
 month: 05
-venue: Workshop on Reliable and Responsible Foundation Models -- ICLR 2024
+venue: Workshop on Reliable and Responsible Foundation Models -- ICLR
 projects: safeai,llm
 bibtex: "@article{jovanovic2024watermarkstealing,
   title = {Watermark Stealing in Large Language Models},
