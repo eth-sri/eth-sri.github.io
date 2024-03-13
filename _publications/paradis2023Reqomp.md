@@ -2,9 +2,9 @@
 ref: paradis2023Reqomp
 title: "Reqomp: Space-constrained Uncomputation for Quantum Circuits"
 authors: Anouk Paradis, Benjamin Bichsel, Martin Vechev
-year: 2022
-month: 12
-venue: arXiv
+year: 2024
+month: 2
+venue: Quantum Journal
 projects: quantum
 paper: https://arxiv.org/abs/2212.10395
 code: https://github.com/eth-sri/Reqomp
