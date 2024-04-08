@@ -4,7 +4,8 @@ title: "Human-Guided Fair Classification for Natural Language Processing"
 authors: Florian E. Dorner, Momchil Peychev, Nikola Konstantinov, Naman Goel, Elliott Ash, Martin Vechev
 year: 2023
 month: 05
-venue: ICLR (Spotlight)
+venue: ICLR
+awards: Spotlight
 projects: safeai
 paper: https://openreview.net/pdf?id=N_g8TT9Cy7f
 code: https://github.com/eth-sri/fairness-feedback-nlp
