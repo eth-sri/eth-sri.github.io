@@ -5,7 +5,7 @@ authors: Robin Staab, Mark Vero, Mislav Balunović, Martin Vechev
 year: 2024
 month: 05
 venue: ICLR
-awards: Spotlight
+awards: Spotlight, 2024 PPPM-Award
 projects: llm
 bibtex: "@inproceedings{staab2023beyond,
 			title     = {Beyond Memorization: Violating Privacy Via Inference with Large Language Models},
