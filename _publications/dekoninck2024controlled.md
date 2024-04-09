@@ -7,7 +7,7 @@ month: 05
 venue: ICLR
 awards: Spotlight
 projects: llm
-bibtex: "@inproceeedings{dekoninck2024controlled,
+bibtex: "@inproceedings{dekoninck2024controlled,
       title={Controlled Text Generation via Language Model Arithmetic}, 
       author={Jasper Dekoninck and Marc Fischer and Luca Beurer-Kellner and Martin Vechev},
       year={2024},
