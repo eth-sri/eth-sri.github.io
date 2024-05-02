@@ -5,7 +5,7 @@ authors: Jingxuan He*,  Mark Vero*, Gabriela Krasnopolska, Martin Vechev
 year: 2024
 month: 2
 projects: llm
-venue: arXiv
+venue: ICML
 paper: https://arxiv.org/abs/2402.09497
 bibtex: "@misc{he2024instruction,
       title={Instruction Tuning for Secure Code Generation}, 
