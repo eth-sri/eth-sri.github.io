@@ -3,7 +3,7 @@ ref: dekoninck2024controlled
 title: "ConStat: Performance-Based Contamination Detection in Large Language Models"
 authors: Jasper Dekoninck, Mark Niklas Müller, Martin Vechev
 year: 2024
-month: 05
+month: 06
 venue: ArXiv
 projects: llm
 bibtex: "@article{dekoninck2024constat,
