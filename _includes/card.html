@@ -43,6 +43,7 @@
       {% assign pub-poster = publication.poster %}
       {% assign pub-slides = publication.slides %}
       {% assign pub-talk = publication.talk %}
+      {% assign pub-website = publication.website %}
       {% assign pub-paper = publication.paper %}
       {% assign pub-code = publication.code %}
       {% assign pub-download = publication.download %}
@@ -51,6 +52,7 @@
       {% assign pub-poster = include.poster %}
       {% assign pub-slides = include.slides %}
       {% assign pub-talk = include.talk %}
+      {% assign pub-website = publication.website %}
       {% assign pub-paper = include.paper %}
       {% assign pub-code = include.code %}
       {% assign pub-download = include.download %}
@@ -65,6 +67,7 @@
         paper=pub-paper
         code=pub-code
         download=pub-download
+        website=pub-website
       %}
     </div>
   </div>

@@ -36,6 +36,10 @@
   <a href="{{ include.talk | relative_url }}" target="_blank"><img class="svg-icon" src="{{ '/assets/icons/icon-video.svg' | relative_url }}"><br />Talk</a>
 {% endif %}
 
+{% if include.website %}                
+  <a href="{{ include.website | relative_url }}" target="_blank"><img class="svg-icon" src="{{ '/assets/icons/website.svg' | relative_url }}"><br />Website</a>
+{% endif %}
+
 {% if include.paper %}
   {% assign pub_link = include.paper %}
 
