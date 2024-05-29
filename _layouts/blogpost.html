@@ -52,6 +52,7 @@ layout: default
           {% assign pub-talk = publication.talk %}
           {% assign pub-paper = publication.paper %}
           {% assign pub-code = publication.code %}
+          {% assign pub-website = publication.website %}
           <div class="card-links blogpost-subtitle-links">
             {% include publication-links.html
               poster=pub-poster
@@ -59,6 +60,7 @@ layout: default
               talk=pub-talk
               paper=pub-paper
               code=pub-code
+              website=pub-website
             %}
           </div>
         </div>
@@ -119,6 +121,7 @@ layout: default
               {% assign pub-talk = publication.talk %}
               {% assign pub-paper = publication.paper %}
               {% assign pub-code = publication.code %}
+              {% assign pub-website = publication.website %}
               <div class="card-links" style="margin-top: 20px;">
                 {% include publication-links.html
                   blogpost=pub-blogpost
@@ -127,6 +130,7 @@ layout: default
                   talk=pub-talk
                   paper=pub-paper
                   code=pub-code
+                  website=pub-website
                 %}
               </div>
               <hr>
