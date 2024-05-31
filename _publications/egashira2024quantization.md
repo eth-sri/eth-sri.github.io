@@ -5,8 +5,13 @@ authors: Kazuki Egashira, Mark Vero, Robin Staab, Jingxuan He, Martin Vechev
 year: 2024
 month: 5
 venue: arXiv
-projects: safeai,llm
-bibtex: ""
+projects: llm
+bibtex: "@article{egashira2024exploiting,
+  title={Exploiting LLM Quantization},
+  author={Egashira, Kazuki and Vero, Mark and Staab, Robin and He, Jingxuan and Vechev, Martin},
+  journal={arXiv preprint arXiv:2405.18137},
+  year={2024}
+}"
 
 paper: https://arxiv.org/abs/2405.18137
 ---

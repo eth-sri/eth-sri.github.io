@@ -6,7 +6,12 @@ year: 2024
 month: 05
 venue: arXiv
 projects: safeai
-bibtex: ""
+bibtex: "@article{pouget2024back,
+  title={Back to the Drawing Board for Fair Representation Learning},
+  author={Pouget, Ang{\'e}line and Jovanovi{\'c}, Nikola and Vero, Mark and Staab, Robin and Vechev, Martin},
+  journal={arXiv preprint arXiv:2405.18161},
+  year={2024}
+}"
 paper: https://arxiv.org/abs/2405.18161
 ---
 
