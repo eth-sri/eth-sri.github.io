@@ -1,12 +1,12 @@
 ---
-ref: beurerkellner2023prompting
+ref: beurerkellner2024prompting
 title: "Prompt Sketching for Large Language Models"
 authors: Luca Beurer-Kellner, Mark Niklas Müller, Marc Fischer, Martin Vechev
 year: 2024
-month: 11
-venue: ICML 
+month: 07
+venue: ICML
 projects: llm
-bibtex: "@misc{beurersketch24,
+bibtex: "@misc{beurersketch2024sketching,
 			title     = {Prompt Sketching for Large Language Models},
 			archivePrefix={arXiv},
 			eprint={2311.04954},
