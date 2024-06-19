@@ -1,6 +1,6 @@
 ---
 ref: pouget2024frleval
-title: "Black-Box Detection of Language Model Watermarks"
+title: "Back to the Drawing Board for Fair Representation Learning"
 authors: Angéline Pouget, Nikola Jovanović, Mark Vero, Robin Staab, Martin Vechev
 year: 2024
 month: 05
