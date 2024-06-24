@@ -3,7 +3,7 @@ ref: jovanovic2024watermarkstealing
 title: "Watermark Stealing in Large Language Models"
 authors: Nikola Jovanović, Robin Staab, Martin Vechev
 year: 2024
-month: 05
+month: 07
 venue: ICML
 awards: R2-FM@ICLR24 Oral
 projects: safeai,llm
