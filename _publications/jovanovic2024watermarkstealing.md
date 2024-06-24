@@ -4,16 +4,14 @@ title: "Watermark Stealing in Large Language Models"
 authors: Nikola Jovanović, Robin Staab, Martin Vechev
 year: 2024
 month: 05
-venue: Workshop on Reliable and Responsible Foundation Models (R2-FM) -- ICLR
-awards: Oral
+venue: ICML
+awards: R2-FM@ICLR24 Oral
 projects: safeai,llm
 bibtex: "@article{jovanovic2024watermarkstealing,
   title = {Watermark Stealing in Large Language Models},
   author = {Jovanović, Nikola and Staab, Robin and Vechev, Martin},
-  year = {2024},
-  eprint={2402.19361},
-  archivePrefix={arXiv},
-  primaryClass={cs.LG}
+  journal = {{ICML}},
+  year = {2024}
 }"
 paper: https://files.sri.inf.ethz.ch/website/papers/jovanovic2024watermarkstealing.pdf
 code: https://github.com/eth-sri/watermark-stealing
