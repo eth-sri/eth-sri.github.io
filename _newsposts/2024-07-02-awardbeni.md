@@ -2,7 +2,7 @@
 layout: newspost
 date:   2024-07-02
 category: media
-link: "https://www.linkedin.com/feed/update/urn:li:activity:7212384972572135424/"
+link: "https://www.sigplan.org/Awards/Dissertation/"
 image: sigplanbeni.jpg
 ---
 
