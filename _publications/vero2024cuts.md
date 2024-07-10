@@ -3,7 +3,7 @@ ref: vero2024cuts
 title: "CuTS: Customizable Tabular Synthetic Data Generation"
 authors: Mark Vero, Mislav Balunović, Martin Vechev
 year: 2024
-month: 2
+month: 07
 venue: ICML
 projects: safeai
 bibtex: "@misc{vero2024cuts,
