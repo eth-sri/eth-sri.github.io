@@ -6,6 +6,7 @@ year: 2024
 month: 5
 venue: arXiv
 projects: llm
+awards: NextGenAISafety@ICML24 Oral
 bibtex: "@article{egashira2024exploiting,
   title={Exploiting LLM Quantization},
   author={Egashira, Kazuki and Vero, Mark and Staab, Robin and He, Jingxuan and Vechev, Martin},
