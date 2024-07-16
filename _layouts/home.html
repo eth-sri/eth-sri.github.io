@@ -4,6 +4,8 @@ layout: default
 
 
 <script>
+  let polys = {};
+  let polysFrac = {};
   let altDisplayNames = {
     "SamuelSimko": "Samuel",
     "Mark": "Mark M.", 
@@ -16,29 +18,7 @@ layout: default
     "Hanna": "https://hannayukhymenko.vercel.app/",
     "Slobodan": "https://www.linkedin.com/in/slobodan-jenko-466370172"
   }
-  let polys = {};
-  let polysFrac = {}; 
-
-  fetch("assets/images/group-2023/polys.txt")
-  .then((res) => res.text())
-  .then((text) => {
-    text = text.split("\n");
-    text.forEach((line) => {
-      line = line.split(";");
-      polys[line[0]] = line[1];
-      nums = line[1].split(","); 
-      frac = [] 
-      for (let i = 0; i < nums.length; i+= 2) {
-        s = (parseInt(nums[i]) / 2788 * 100).toFixed(2).toString() + "% ";
-        s += (parseInt(nums[i+1]) / 1218 * 100).toFixed(2).toString() + "%";
-        frac.push(s);
-      }
-      polysFrac[line[0]] = frac.join(",");
-    });
-   });
-
-  let clearClipPathsTimeout = setTimeout(clearClipPaths, 1);
-
+  
   function clearClipPaths() {
     document.getElementById("group-pic-color").style.clipPath = ""; 
   }
@@ -55,8 +35,72 @@ layout: default
       }
     }
   }
-</script> 
+  function resizeMap(groupPic) {
+    let groupPicMap = document.getElementById("group-pic-map");
+    const scale = groupPic.offsetWidth / (groupPic.naturalWidth || groupPic.width);
 
+    for (let i = 0; i < groupPicMap.children.length; i++) {
+      let area = groupPicMap.children[i];
+      area.coords = polys[area.id].split(",").map(coord => Math.round(parseInt(coord) * scale)).join(",");
+    }
+  }
+
+  function resizeMaps() {
+    resizeMap(document.getElementById("group-pic-bw"));
+    resizeMap(document.getElementById("group-pic-color"));
+  }
+  
+  function fillInMap() {
+    let groupPicMap = document.getElementById("group-pic-map");
+    for (const [name, poly] of Object.entries(polys)) {
+      let area = document.createElement("area");
+      area.id = name;
+      area.alt = name;
+      if (name in altDisplayNames) {
+        area.title = altDisplayNames[name];
+      } else {
+        area.title = name;
+      }
+      if (name in altUrls) {
+        area.href = altUrls[name];
+      } else {
+        area.href = "people/" + name.toLowerCase();
+      }
+      area.coords = poly;
+      area.shape = "poly";
+      area.onmouseover = function() { mouseover(name); };
+      area.onmouseleave = function() { mouseleave(); };
+      groupPicMap.appendChild(area);
+    }
+    resizeMaps();
+  }
+  
+  function loadPaths() {
+    fetch("assets/images/group-2023/polys.txt")
+    .then((res) => res.text())
+    .then((text) => {
+      text = text.split("\n");
+      text.forEach((line) => {
+        line = line.split(";");
+        polys[line[0]] = line[1];
+        nums = line[1].split(","); 
+        frac = [] 
+        for (let i = 0; i < nums.length; i+= 2) {
+          s = (parseInt(nums[i]) / 2788 * 100).toFixed(2).toString() + "% ";
+          s += (parseInt(nums[i+1]) / 1218 * 100).toFixed(2).toString() + "%";
+          frac.push(s);
+        }
+        polysFrac[line[0]] = frac.join(",");
+      });
+      fillInMap();});
+  }
+  let clearClipPathsTimeout = setTimeout(clearClipPaths, 1);
+  document.body.onload = function() {loadPaths()};    
+  window.addEventListener('resize', () => resizeMaps());
+  if (document.readyState == 'complete') {
+    loadPaths();
+  }
+</script>
 <article class="landing">
   <header class="landing-header ">
     <!---<div class="landing-banner" style="background:url('{{ site.baseurl }}/assets/images/group-2018-12-final.jpg') 0 200px no-repeat"></div>-->
@@ -158,55 +202,3 @@ layout: default
 
   </div>
 </article>
-
-<script>
-  function resizeMap(groupPic) {
-    let groupPicMap = document.getElementById("group-pic-map");
-    const scale = groupPic.offsetWidth / (groupPic.naturalWidth || groupPic.width);
-
-    for (let i = 0; i < groupPicMap.children.length; i++) {
-      let area = groupPicMap.children[i];
-      area.coords = polys[area.id].split(",").map(coord => Math.round(parseInt(coord) * scale)).join(",");
-    }
-  }
-
-  function resizeMaps() {
-    resizeMap(document.getElementById("group-pic-bw"));
-    resizeMap(document.getElementById("group-pic-color"));
-  }
-
-  function fillInMap() {
-    let groupPicMap = document.getElementById("group-pic-map");
-    for (const [name, poly] of Object.entries(polys)) {
-      let area = document.createElement("area");
-      area.id = name;
-      area.alt = name;
-      if (name in altDisplayNames) {
-        area.title = altDisplayNames[name];
-      } else {
-        area.title = name;
-      }
-      if (name in altUrls) {
-        area.href = altUrls[name];
-      } else {
-        area.href = "people/" + name.toLowerCase();
-      }
-      area.coords = poly;
-      area.shape = "poly";
-      area.onmouseover = function() { mouseover(name); };
-      area.onmouseleave = function() { mouseleave(); };
-      groupPicMap.appendChild(area);
-    }
-    resizeMaps();
-  }
-
-    
-  window.addEventListener('resize', () => resizeMaps());
-
-  if (document.readyState == 'complete') {
-    fillInMap();
-  } else {
-      window.addEventListener('load', () => fillInMap());
-  }
-
-</script>

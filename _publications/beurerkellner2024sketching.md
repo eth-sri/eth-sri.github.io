@@ -1,12 +1,12 @@
 ---
-ref: beurerkellner2023prompting
+ref: beurerkellner2024prompting
 title: "Prompt Sketching for Large Language Models"
 authors: Luca Beurer-Kellner, Mark Niklas Müller, Marc Fischer, Martin Vechev
-year: 2023
-month: 11
-venue: arXiv 
+year: 2024
+month: 07
+venue: ICML
 projects: llm
-bibtex: "@misc{BeuererkellnerMFV2023,
+bibtex: "@misc{beurersketch2024sketching,
 			title     = {Prompt Sketching for Large Language Models},
 			archivePrefix={arXiv},
 			eprint={2311.04954},
@@ -17,7 +17,7 @@ bibtex: "@misc{BeuererkellnerMFV2023,
       		Martin Vechev},
 			}"
 paper: https://arxiv.org/abs/2311.04954
-# code: https://github.com/eth-sri/lmql 
+code: https://github.com/eth-sri/lmql
 ---
 
 Many recent prompting strategies for large language models (LLMs) query the model multiple times sequentially -- first to produce intermediate results and then the final answer. However, using these methods, both decoder and model are unaware of potential follow-up prompts, leading to disconnected and undesirably wordy intermediate responses.

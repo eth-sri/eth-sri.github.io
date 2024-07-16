@@ -1,5 +1,5 @@
 ---
-ref: dekoninck2023controlled
+ref: dekoninck2024controlled
 title: "Controlled Text Generation via Language Model Arithmetic"
 authors: Jasper Dekoninck, Marc Fischer, Luca Beurer-Kellner, Martin Vechev
 year: 2024
@@ -7,13 +7,13 @@ month: 05
 venue: ICLR
 awards: Spotlight
 projects: llm
-bibtex: "@inproceeedings{dekoninck2023controlled,
+bibtex: "@inproceedings{dekoninck2024controlled,
       title={Controlled Text Generation via Language Model Arithmetic}, 
       author={Jasper Dekoninck and Marc Fischer and Luca Beurer-Kellner and Martin Vechev},
       year={2024},
 	booktitle={The Twelfth International Conference on Learning Representations}'
 }"
-paper: https://files.sri.inf.ethz.ch/website/papers/dekoninck2023controlled.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/dekoninck2024controlled.pdf
 code: https://github.com/eth-sri/language-model-arithmetic
 ---
 

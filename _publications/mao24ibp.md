@@ -15,7 +15,7 @@ bibtex: '@inproceedings{mao23taps
 			year         = {2024},
 			booktitle    = {The Twelfth International Conference on Learning Representations}'
 paper: https://arxiv.org/abs/2306.10426
-# code: https://github.com/eth-sri/sabr
+code: https://github.com/eth-sri/ibp-propagation-tightness
 # slides: https://files.sri.inf.ethz.ch/website/slides/mueller2023sabr_slides.pdf
 #poster: https://files.sri.inf.ethz.ch/website/slides/mueller2021boosting_poster.pdf
 # image: assets/images/taps.png

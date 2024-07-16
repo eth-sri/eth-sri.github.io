@@ -1,5 +1,5 @@
 ---
-ref: mueller2021precise
+ref: paradis2024synthetiq
 title: "Synthetiq: Fast and Versatile Quantum Circuit Synthesis"
 authors: Anouk Paradis*, Jasper Dekoninck*, Benjamin Bichsel, Martin Vechev
 year: 2024
@@ -11,6 +11,7 @@ bibtex: '@misc{paradis2024synthetiq,
       author={Anouk Paradis and Jasper Dekoninck and Benjamin Bichsel and Martin Vechev},
       year={2024}'
 paper: https://files.sri.inf.ethz.ch/website/papers/paradis2024synthetiq.pdf
+code: https://github.com/eth-sri/synthetiq
 ---
 To implement quantum algorithms on quantum computers it is crucial to decompose their operators into the limited gate set supported by those computers. Unfortunately, existing works automating this essential task are generally slow and only applicable to narrow use cases.
 
