@@ -4,7 +4,7 @@ title: "Code Agents are State of the Art Software Testers"
 authors: Niels Mündler, Mark Niklas Müller, Jingxuan He, Martin Vechev
 year: 2024
 month: 06
-venue: arXiv
+venue: ICML Workshop on LLMs and Cognition (also at Workshop on Foundation Models in the Wild)
 awards: 
 projects: safeai,llm
 bibtex: "@article{muendler2024swtbench,
