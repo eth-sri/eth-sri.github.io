@@ -7,6 +7,7 @@ month: 07
 projects: llm
 venue: ICML
 paper: https://arxiv.org/abs/2402.09497
+code: https://github.com/eth-sri/SafeCoder
 bibtex: "@misc{he2024instruction,
       title={Instruction Tuning for Secure Code Generation}, 
       author={Jingxuan He and Mark Vero and Gabriela Krasnopolska and Martin Vechev},
