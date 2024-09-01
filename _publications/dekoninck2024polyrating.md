@@ -3,7 +3,7 @@ ref: dekoninck2024polyrating
 title: "Polyrating: A Cost-Effective and Bias-Aware Rating System for LLM Evaluation"
 authors: Jasper Dekoninck, Maximilian Baader, Martin Vechev
 year: 2024
-month: 08
+month: 8
 venue: ArXiv
 projects: llm
 bibtex: "@article{dekoninck2024polyrating,
