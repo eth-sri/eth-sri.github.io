@@ -8,7 +8,7 @@ venue: arXiv
 projects: safeai
 bibtex: "@article{pouget2024frleval,
   title = {Back to the Drawing Board for Fair Representation Learning},
-  author = {Angéline Pouget, Nikola Jovanović, Mark Vero, Robin Staab, Martin Vechev},
+  author = {Ang{\\'e}line Pouget, Nikola Jovanovi{\\'c}, Mark Vero, Robin Staab, Martin Vechev},
   year = {2024},
   eprint={2405.18161},
   archivePrefix={arXiv},
