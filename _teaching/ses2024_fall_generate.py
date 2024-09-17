@@ -21,13 +21,11 @@ rows.sort(key=lambda x: x[4])
 # Generate HTML table rows
 table_rows = []
 for i, row in enumerate(rows):
-    date = row[4].strftime('%d %b')
-    paper_link = f'<a href="{row[3]}">{row[0]}</a>'
+    date = row[4].strftime('%d %b') if i % 2 == 0 else ""
+    paper_link = f'<a href="{row[3]}">{row[0]}</a>' if row[3].strip().startswith("http") else row[0]
     ta = f'<a href="mailto:{row[5]}">{row[2]}</a>'
-    if i % 2 == 0:
-        table_row = f"<tr><td>{date}</td><td>{paper_link}</td><td>TBD</td><td></td><td>{ta}</td></tr>\n"
-    else:
-        table_row = f"<tr><td></td><td>{paper_link}</td><td>TBD</td><td></td><td>{ta}</td></tr>\n"
+    venue = row[1]
+    table_row = f"<tr><td>{date}</td><td>{paper_link}</td><td>TBD</td><td>{venue}</td><td>{ta}</td></tr>\n"
     table_rows.append(table_row)
 
 # Print the HTML table rows
