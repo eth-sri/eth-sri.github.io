@@ -13,6 +13,17 @@ with open(filename, newline='') as csvfile:
             continue
         rows.append(row)
 
+# Read the assignment file
+filename = sys.argv[2]
+assignments = {}
+with open(filename, newline='') as csvfile:
+    reader = csv.reader(csvfile)
+    for row in reader:
+        if any(row[0].startswith(s) for s in ("Name")) or not row[0]:
+            # skip headers
+            continue
+        assignments[row[4].strip()] = row[0]
+
 # Parse dates and sort the entries by date
 for row in rows:
     row[4] = datetime.strptime(row[4].strip(), '%d.%m.%y')
@@ -25,7 +36,8 @@ for i, row in enumerate(rows):
     paper_link = f'<a href="{row[3]}">{row[0]}</a>' if row[3].strip().startswith("http") else row[0]
     ta = f'<a href="mailto:{row[5]}">{row[2]}</a>'
     venue = row[1]
-    table_row = f"<tr><td>{date}</td><td>{paper_link}</td><td>TBD</td><td>{venue}</td><td>{ta}</td></tr>\n"
+    presenter = assignments.get(row[0], "TBD")
+    table_row = f"<tr><td>{date}</td><td>{paper_link}</td><td>{presenter}</td><td>{venue}</td><td>{ta}</td></tr>\n"
     table_rows.append(table_row)
 
 # Print the HTML table rows

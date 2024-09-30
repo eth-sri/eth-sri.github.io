@@ -15,6 +15,16 @@ with open(filename, newline='') as csvfile:
             continue
         paper_rows.append(tuple(x.strip() for x in row))
 
+# Read the tabbed content of the student enrollment
+filename = sys.argv[3]
+enrollment = []
+with open(filename, newline='') as csvfile:
+    reader = csv.reader(csvfile, delimiter='\t')
+    for row in reader:
+        enrollment.append(tuple(x.strip() for x in row))
+# get the enrolled legi numbers (col 4)
+enrolled_legis = set(e[3].replace("-", "") for e in enrollment)
+
 # Read the CSV file of student preferences
 filename = sys.argv[2]
 student_rows = []
@@ -23,6 +33,9 @@ with open(filename, newline='') as csvfile:
     for row in reader:
         if any(row[0].startswith(s) for s in ("Timestamp")) or not row[0]:
             # skip headers
+            continue
+        # check that the student is enrolled
+        if row[3].replace("-", "") not in enrolled_legis:
             continue
         student_rows.append(tuple(x.strip() for x in row))
 
@@ -60,5 +73,13 @@ for i in range(len(paper_assigned)):
                 paper_assigned[preferred_paper] = student
                 students_assigned.add(student)
 
+paper_by_name = {p[0]: p for p in paper_rows}
+student_by_mail = {s[2]: s for s in student_rows}
+writer = csv.writer(sys.stdout)
+writer.writerow(["Name", "Email", "Legi", "Paper title", "Paper link"])
 for paper in paper_rows:
-    print(f"{paper[0]}, {paper_assigned[paper[0]]}")
+    if paper_assigned[paper[0]] is None:
+        continue
+    student_details = student_by_mail[paper_assigned[paper[0]]]
+    is_among_preferences = student_preferences[student_details[2]].index(paper[0])
+    writer.writerow(student_details[1:4] + (is_among_preferences,) + paper_by_name[paper[0]] + student_details[9:11])
