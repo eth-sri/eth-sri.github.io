@@ -8,7 +8,7 @@ venue: arXiv
 projects: safeai,llm
 bibtex: "@article{gloaguen2024detectingwatermarks,
   title = {Black-Box Detection of Language Model Watermarks},
-  author = {Thibaud Gloaguen, Jovanović, Nikola and Staab, Robin and Vechev, Martin},
+  author = {Gloaguen, Thibaud and Jovanović, Nikola and Staab, Robin and Vechev, Martin},
   year = {2024},
   eprint={2405.20777},
   archivePrefix={arXiv},
