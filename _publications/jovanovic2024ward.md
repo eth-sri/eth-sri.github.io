@@ -1,7 +1,7 @@
 ---
 ref: jovanovic2024ward
 title: "Ward: Provable RAG Dataset Inference via LLM Watermarks"
-authors: Nikola Jovanović, Robin Staab, Maximilan Baader, Martin Vechev
+authors: Nikola Jovanović, Robin Staab, Maximilian Baader, Martin Vechev
 year: 2024
 month: 10
 venue: arXiv
