@@ -4,7 +4,7 @@ title: "ConStat: Performance-Based Contamination Detection in Large Language Mod
 authors: Jasper Dekoninck, Mark Niklas Müller, Martin Vechev
 year: 2024
 month: 06
-venue: ArXiv
+venue: NeurIPS 2024
 projects: llm
 bibtex: "@article{dekoninck2024constat,
       title={ConStat: Performance-Based Contamination Detection in Large Language Models}, 
