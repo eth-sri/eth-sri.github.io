@@ -11,7 +11,7 @@ bibtex: "@article{dekoninck2024polyrating,
       author={Jasper Dekoninck and Maximilian Baader and Martin Vechev},
       year={2024},
       archivePrefix={arXiv},
-      primaryClass={cs.AI}
+      primaryClass={cs.CL}
 }"
 paper: https://files.sri.inf.ethz.ch/website/papers/dekoninck24polyrating.pdf
 code: https://github.com/JasperDekoninck/Polyrating
