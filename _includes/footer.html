@@ -1,6 +1,6 @@
 <footer class="site-footer">
 
-  <div class="footer-content">&copy; ETH Zürich | Department of Computer Science | {{ site.title | escape }} | 
+  <div class="footer-content">&copy; {{ site.time | date: "%Y" }} <a href="https://ethz.ch">ETH Zürich</a> | <a href="https://www.inf.ethz.ch">Department of Computer Science</a> | {{ site.title | escape }} | 
     <a href="https://twitter.com/{{ site.twitter_username| cgi_escape | escape }}">
       <svg class="social-icon">
         <use xlink:href="{{ '/assets/minima-social-icons.svg#twitter' | relative_url }}"></use>

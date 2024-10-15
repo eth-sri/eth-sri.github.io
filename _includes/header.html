@@ -1,5 +1,9 @@
 <header class="site-header" role="banner">
-    <a href="{{ "/" | relative_url }}" class="site-logo"><img src="{{ '/assets/images/sri-logo.svg' | relative_url }}" alt="{{ site.title | escape }}"></a>
+
+      <a href="https://ethz.ch/en.html" class="eth-logo" target="_blank">
+        <img src="{{ '/assets/images/eth-logo.svg' | relative_url }}">
+      </a>
+
       <nav id="site-nav">
         <a class="page-link {% if page.url contains 'people' %}active{% endif %}" href="{{ '/people/' | relative_url }}">People</a>
         <a class="page-link {% if page.url contains 'thesis' %}active{% endif %}" href="{{ '/thesis-topics/' | relative_url }}">MSc Thesis @ SRI</a>
@@ -11,9 +15,7 @@
         <a class="page-link {% if page.url contains 'contact' %}active{% endif %}" href="{{ '/contact/' | relative_url }}">Contact</a>
       </nav>
 
-      <a href="https://ethz.ch/en.html" class="eth-logo" target="_blank">
-        <img src="{{ '/assets/images/eth-logo.svg' | relative_url }}">
-      </a>
+      <a href="{{ "/" | relative_url }}" class="site-logo"><img src="{{ '/assets/images/sri-logo.svg' | relative_url }}" alt="{{ site.title | escape }}"></a>
 
     {% include text-expand.html %}
 
