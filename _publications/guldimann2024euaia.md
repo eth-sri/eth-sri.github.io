@@ -8,7 +8,7 @@ venue: arXiv
 projects: llm
 bibtex: "@article{guldimann2024compl,
   title={Exploiting LLM Quantization},
-  author={Guldimann, Philipp and Spiridonov, Alexander and Staab, Robin and Jovanovi{\'c}, Nikola and Vero, Mark and Vechev, Velko and Gueorguieva, Anna and Balunovi{\'c}, Mislav and Konstantinov, Nikola and Bielik, Pavol and Tsankov, Petar and Vechev, Martin},
+  author={Guldimann, Philipp and Spiridonov, Alexander and Staab, Robin and Jovanović, Nikola and Vero, Mark and Vechev, Velko and Gueorguieva, Anna and Balunović, Mislav and Konstantinov, Nikola and Bielik, Pavol and Tsankov, Petar and Vechev, Martin},
   journal={arXiv},
   year={2024}
 }"
