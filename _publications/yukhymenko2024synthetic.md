@@ -4,7 +4,7 @@ title: "A Synthetic Dataset for Personal Attribute Inference"
 authors: Hanna Yukhymenko, Robin Staab, Mark Vero, Martin Vechev
 year: 2024
 month: 6
-venue: arXiv
+venue: NeurIPS Datasets and Benchmarks
 projects: llm
 bibtex: "@misc{yukhymenko2024synthetic,
       title={A Synthetic Dataset for Personal Attribute Inference}, 
