@@ -14,6 +14,7 @@ bibtex: "@article{muendler2024swtbench,
   year={2024}
 }"
 paper: https://arxiv.org/abs/2406.12952
+code: https://github.com/logic-star-ai/swt-bench
 poster: https://files.sri.inf.ethz.ch/website/posters/muendler2024codeagents.pdf
 ---
 
