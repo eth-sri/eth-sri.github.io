@@ -4,7 +4,7 @@ title: "SWT-Bench: Testing and Validating Real-World Bug-Fixes with Code Agents"
 authors: Niels Mündler, Mark Niklas Müller, Jingxuan He, Martin Vechev
 year: 2024
 month: 11
-venue: NeurIPS 2024
+venue: NeurIPS
 awards: 
 projects: safeai,llm
 bibtex: "@inproceedings{
