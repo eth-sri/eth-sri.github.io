@@ -1,19 +1,21 @@
 ---
 ref: muendler2024swtbench
-title: "Code Agents are State of the Art Software Testers"
+title: "SWT-Bench: Testing and Validating Real-World Bug-Fixes with Code Agents"
 authors: Niels Mündler, Mark Niklas Müller, Jingxuan He, Martin Vechev
 year: 2024
-month: 06
-venue: ICML Workshop on LLMs and Cognition (also at Workshop on Foundation Models in the Wild)
+month: 11
+venue: NeurIPS 2024
 awards: 
 projects: safeai,llm
-bibtex: "@article{muendler2024swtbench,
-  title={Code Agents are State of the Art Software Testers},
-  author={Niels Mündler and Mark Niklas Müller and Jingxuan He and Martin Vechev},
-  journal={arXiv preprint arXiv:2406.12952},
-  year={2024}
+bibtex: "@inproceedings{
+m{\"u}ndler2024swtbench,
+title={{SWT}-Bench: Testing and Validating Real-World Bug-Fixes with Code Agents},
+author={Niels M{\"u}ndler and Mark Niklas Mueller and Jingxuan He and Martin Vechev},
+booktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},
+year={2024},
+url={https://openreview.net/forum?id=9Y8zUO11EQ}
 }"
-paper: https://arxiv.org/abs/2406.12952
+paper: https://openreview.net/forum?id=9Y8zUO11EQ
 code: https://github.com/logic-star-ai/swt-bench
 poster: https://files.sri.inf.ethz.ch/website/posters/muendler2024codeagents.pdf
 ---
