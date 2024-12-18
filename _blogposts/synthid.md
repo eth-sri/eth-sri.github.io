@@ -60,7 +60,8 @@ Increasing $$K$$ would make detection harder, but as discussed in the [SynthID-T
 ***Future Work:** Can SynthID-Text be tweaked to evade detection (e.g., by increasing $$K$$) without significantly sacrificing its effectiveness? Are viable undetectable schemes possible?*
 
 ### 2. SynthID-Text is hard to spoof
-In <i>["Watermark Stealing in Large Language Models"](publications/jovanovic2024watermarkstealing)</i>, we showed that practical _spoofing_ attacks are possible on SOTA schemes: an attacker can use a set of black-box queries to generate a corpus of watermarked text, and use it to learn to _forge_ the watermark, creating arbitrarily many high-quality watermarked texts. 
+In <i>["Watermark Stealing in Large Language Models"](/publications/jovanovic2024watermarkstealing)</i>, we showed that practical _spoofing_ attacks are possible on SOTA schemes: an attacker can use a set of black-box queries to generate a corpus of watermarked text, and use it to learn to _forge_ the watermark, creating arbitrarily many high-quality watermarked texts. 
+Malicious users could, for instance, generate harmful content and attribute it to the model provider.
 As spoofing risk was not studied for SynthID-Text, we directly applied our stealing attack to test it, without attempting to optimize it for this scheme specifically.
 Our _Spoofing Success_ metric is <span><b>FPR*@1e-3</b></span>: the ratio of spoofing attempts that are both high-quality (rated by GPT4) and fool the watermark detector at a realistic false positive rate of $$10^{-3}$$.
 <details>
@@ -74,7 +75,7 @@ Following the decomposition of SynthID-Text above, we show the results on a rang
 
 ![](/assets/blog/synthid/spoofing_edited.png){: .blogpost-img100}
 
-First two bars are copied from [our original paper](publications/jovanovic2024watermarkstealing) and show that SOTA Red-Green watermarks are highly spoofable with above $$80\%$$ success rate. 
+First two bars are copied from [our original paper](/publications/jovanovic2024watermarkstealing) and show that SOTA Red-Green watermarks are highly spoofable with above $$80\%$$ success rate. 
 Let's work towards SynthID-Text.
 First, <span class="contextsize">increasing the context size of LeftHash</span> greatly reduces spoofing risk, but it still remains non-negligible at $$15\%$$.
 <span class="tournament">Adding tournament sampling</span> interestingly further reduces this to $$9\%$$---we hypothesize that this comes from our attacker implicitly assuming equal boosting of green tokens, which is no longer the case. 
@@ -95,7 +96,7 @@ This makes BD effectively a hybrid between a watermark detector and a [zero-shot
 ### 3. Spoofing SynthID-Text via Stealing leaves clues
 $$15\%$$ of the texts produced by our strongest spoofing attacker are of high quality and manage to fool the watermark detector.
 Orthogonal to the problem of making this number higher, we ask: are these spoofs really indistinguishable from genuinely watermarked texts?
-As we showed in <i>["Discovering Clues of Spoofed LM Watermarks"](publications/gloaguen2024clues)</i>, the answer is often no: learning-based spoofers (both [Stealing](publications/jovanovic2024watermarkstealing) and [Distillation](https://arxiv.org/abs/2312.04469)) leave _clues of spoofing_ in their spoofed texts, that can be used to flag such attempts. 
+As we showed in <i>["Discovering Clues of Spoofed LM Watermarks"](/publications/gloaguen2024clues)</i>, the answer is often no: learning-based spoofers (both [Stealing](/publications/jovanovic2024watermarkstealing) and [Distillation](https://arxiv.org/abs/2312.04469)) leave _clues of spoofing_ in their spoofed texts, that can be used to flag such attempts. 
 
 We repeat those experiments on a dataset of $$2000$$ attempts to spoof SynthID-Text, evaluating our clue detector:
 
@@ -113,9 +114,10 @@ This implies an additional hurdle that attempts to improve spoofing attacks need
 
 ### 4. SynthID-Text is easy to scrub
 Finally, we study the ability of attackers to remove (_scrub_) the watermark from watermarked texts via paraphrasing. 
-This was briefly studied in the [SynthID-Text supplementary text (C.6)](https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-024-08025-4/MediaObjects/41586_2024_8025_MOESM1_ESM.pdf#page=23.58): the results (e.g., the watermark AUC reduced to $$0.7$$ for texts of $$1000$$ tokens) already suggest that scrubbing may be possible.
+Successful and efficient scrubbing techniques pose a threat to the usefulness of watermarks, as they allow the model to be used as if it were not watermarked.
+This was briefly studied in the [SynthID-Text supplementary text (C.6)](https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-024-08025-4/MediaObjects/41586_2024_8025_MOESM1_ESM.pdf#page=15.58): the results (e.g., the watermark AUC reduced to $$0.7$$ for texts of $$1000$$ tokens) already suggest that scrubbing may be possible.
 However, this experiment lacks a text quality evaluation, and uses only the average-case AUC metric, which is a poor measure of watermark effectiveness in relevant scenarios. 
-Further, it does not explore _assisted scrubbing_: as we show in <i>["Watermark Stealing in Large Language Models"](publications/jovanovic2024watermarkstealing)</i>, vulnerability to stealing can often greatly boost the success rate of scrubbing attacks.
+Further, it does not explore _assisted scrubbing_: as we show in <i>["Watermark Stealing in Large Language Models"](/publications/jovanovic2024watermarkstealing)</i>, vulnerability to stealing can often greatly boost the success rate of scrubbing attacks.
 
 We fill these gaps by directly applying our Stealing attacker to SynthID-Text in a hard practical scenario, measuring success as <span><b>FNR*@1e-3</b></span>: the ratio of scrubbing attempts that are good paraphrases (using the [P-SP metric](https://aclanthology.org/2022.emnlp-demos.38.pdf)) and are treated as _unwatermarked_ by the watermark detector at a realistic false positive rate of $$10^{-3}$$.
 
@@ -133,7 +135,7 @@ The gray bars show the success rate of the **baseline paraphraser**, and the pur
 First two bars, copied from our paper, show that SOTA Red-Green watermarks are in this hard setting not easy to scrub using a baseline paraphraser, but this can be overcome by applying Stealing as the first step ($$2\% \to 90\%$$ and $$26\% \to 85\%$$, respectively).
 <span class="contextsize">Increasing context size</span>, <span class="tournament">adding tournament sampling</span>, and <span class="cache">caching</span> all lead to extremely high scrubbing success rates (above $$90\%$$), _even without Stealing_, even when directly adding tournament sampling to **LeftHash h=3** (not shown in the plot above).
 This means that even less powerful adversaries can easily scrub SynthID-Text from watermarked texts.
-The biggest loss in robustness comes from using $$h=4$$, which is expected per the [spoofing-scrubbing tradeoff](publications/jovanovic2024watermarkstealing).
+The biggest loss in robustness comes from using $$h=4$$, which is expected per the [spoofing-scrubbing tradeoff](/publications/jovanovic2024watermarkstealing).
 One way to somewhat mitigate this and raise the bar for the attackers (requiring larger budgets for successful scrubbing) is exemplified by SelfHash; combinations with SynthID-Text may be an interesting direction to explore in the future.
 While with these results it is hard to make conclusive statements about the effect of other novel components, tournament sampling seems to further decrease the robustness, suggesting that $$g$$ values are more sensitive to rewrites. 
 
