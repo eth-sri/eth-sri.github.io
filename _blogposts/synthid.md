@@ -8,7 +8,7 @@ thumbnail: thumbnails/synthid.svg
 image: assets/blog/fb_preview/iclr.jpg
 usemathjax: true
 tldr: >
-    SynthID-Text is the first large-scale LLM watermark deployment. We apply our recent work on adversarial scenarios in LLM watermarking to probe it in depth. We find that (1) the presence of SynthID-Text can be easily detected; (2) it is more resistant to spoofing than SOTA schemes; (3) attempts to spoof it still leave discoverable clues; and (4) it is much easier to scrub than SOTA schemes even for naive adversaries. We provide ablations and insights into individual components of SynthID-Text and identify a range of research questions that could be further studied in future work.
+    SynthID-Text is the first large-scale LLM watermark deployment. We apply our recent work on adversarial scenarios in LLM watermarking to thoroughly test it. We find that (1) the presence of SynthID-Text can be easily detected; (2) it is more resistant to spoofing than SOTA schemes; (3) attempts to spoof it still leave discoverable clues; and (4) it is much easier to scrub than SOTA schemes even for naive adversaries. We provide ablations and insights into individual components of SynthID-Text and identify a range of research questions that could be studied in future work.
 excerpt: >
     We investigate how SynthID-Text, the first large-scale LLM watermarking scheme deployment, fares in various adversarial scenarios. We apply our recent works on LLM watermarking, discuss a range of findings, provide granular insights, and outline future research directions.
 tweet-id: TODO-PREP
@@ -40,16 +40,16 @@ In each section, we highlight interesting questions that could be explored in fu
 In <i>["Black-Box Detection of Language Model Watermarks"](/publications/gloaguen2024detectingwatermarks)</i> we showed that hiding the fact that an LLM watermark is deployed is not feasible, as watermark presence can be cheaply detected using only black-box queries, for all 3 of the most popular watermarking scheme families. 
 Extending the results on Gemini 1.0 from the paper, we found no reliable evidence of a watermark on the Gemini 1.5 API.
 This matches [the official claims](https://deepmind.google/technologies/synthid/), stating that the watermark is only present in the Gemini App and Web.
-As those deployments are not suitable for 1000s of similar queries, we ran our tests on a local deployment of a model watermarked with SynthID-Text:
+As those deployments are not suitable for querying with thousands of similar prompts, we ran our tests on a local deployment of a model watermarked with SynthID-Text:
 ![](/assets/blog/synthid/detection.png){: .blogpost-img100}
 While the first two (as expected) fail, the <b>Red-Green</b> test consistently passes, detecting the watermark presence ($$p \approx 0$$).
-This also shows that our tests are directly applicable to newly proposed schemes. To understand why the Red-Green test passes, let's decompose SynthID as follows:
+This also shows that our tests can be directly applied to newly proposed schemes. To understand why the Red-Green test passes, let's decompose SynthID into its building blocks as follows:
 <br><br>
 <b>SynthID-Text</b> = LeftHash h=3 + <span class="contextsize">Increased context size</span> + <span class="tournament">Tournament sampling</span> + <span class="cache">Caching</span>
 <br><br>
-From the perspective of a Red-Green scheme, SynthID starts from the [LeftHash h=3](https://arxiv.org/pdf/2306.04634) variant, increases its context size, and uses tournament sampling to effectively generalize the boosting of Green tokens to variable logit biases.
+From the perspective of a Red-Green scheme, SynthID starts from the [LeftHash h=3](https://arxiv.org/pdf/2306.04634) variant, increases its context size, and uses tournament sampling to effectively generalize the boosting of green tokens to variable logit biases.
 These biases are still consistent for a fixed preceding _context_, which is the key property our detection test relies on, thus it remains effective.
-Next change is <span class="cache">caching, i.e., _"Repeated context masking"_ in the original paper</span>---as in the default SynthID-Text implementation, we set $$K=1$$ to achieve single-sequence non-distortion.
+Next change is caching, i.e., _"Repeated context masking"_ in the original paper---as in the default SynthID-Text implementation, we set $$K=1$$ to achieve single-sequence non-distortion.
 Such caching does not fundamentally affect our test, but introduces a new constraint: instead of upper-bounding, the context size needs to be [estimated](/publications/gloaguen2024detectingwatermarks) correctly, as an overestimation would trigger the cache, preventing our queries to extract any information.
 Increasing $$K$$ would make detection harder, but as discussed in the [SynthID-Text supplementary text (G.3)](https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-024-08025-4/MediaObjects/41586_2024_8025_MOESM1_ESM.pdf#page=23.58), may reduce the watermark effectiveness and increase computational complexity.
 
@@ -61,7 +61,7 @@ Increasing $$K$$ would make detection harder, but as discussed in the [SynthID-T
 
 ### 2. SynthID-Text is hard to spoof
 In <i>["Watermark Stealing in Large Language Models"](publications/jovanovic2024watermarkstealing)</i>, we showed that practical _spoofing_ attacks are possible on SOTA schemes: an attacker can use a set of black-box queries to generate a corpus of watermarked text, and use it to learn to _forge_ the watermark, creating arbitrarily many high-quality watermarked texts. 
-As spoofing risk was not studied for SynthID-Text, we directly applied our stealing attack to test it, without attempting to optimize it for SynthID-Text.
+As spoofing risk was not studied for SynthID-Text, we directly applied our stealing attack to test it, without attempting to optimize it for this scheme specifically.
 Our _Spoofing Success_ metric is <span><b>FPR*@1e-3</b></span>: the ratio of spoofing attempts that are both high-quality (rated by GPT4) and fool the watermark detector at a realistic false positive rate of $$10^{-3}$$.
 <details>
 <summary style="color:#0079AF">Click to see other boring experimental details</summary>
@@ -77,12 +77,12 @@ Following the decomposition of SynthID-Text above, we show the results on a rang
 First two bars are copied from [our original paper](publications/jovanovic2024watermarkstealing) and show that SOTA Red-Green watermarks are highly spoofable with above $$80\%$$ success rate. 
 Let's work towards SynthID-Text.
 First, <span class="contextsize">increasing the context size of LeftHash</span> greatly reduces spoofing risk, but it still remains non-negligible at $$15\%$$.
-<span class="tournament">Adding tournament sampling</span> interestingly further reduces this to $$9\%$$---we hypothesize that this comes from our attacker implicitly assuming equal boosting of Green tokens, which is no longer the case. 
+<span class="tournament">Adding tournament sampling</span> interestingly further reduces this to $$9\%$$---we hypothesize that this comes from our attacker implicitly assuming equal boosting of green tokens, which is no longer the case. 
 We confirm this effectiveness of tournament sampling by directly adding it to **LeftHash h=3** and observing a similar drop from $$82\%$$ to $$30\%$$ spoofing success.
-Adding <span class="cache">caching</span> further drops spoofing success to $$4\%$$! This is caused by the fixed dataset of watermarked texts simply containing less watermarking signal, as the cache often disables the watermark.
+Finally, adding <span class="cache">caching</span> further drops spoofing success to $$4\%$$! This is caused by the fixed dataset of watermarked texts simply containing less watermarking signal, as the cache often disables the watermark.
 
-In a simple attempt to improve spoofing success, we tried increasing the number of black-box queries, which indeed helps: tripling the number of queries from $$30k$$ to $$90k$$ brings spoofing success back to $$15\%$$, reversing the effect of previous two modifications, and suggesting that spoofing may still be possible but much more costly. 
-Finally, we notice that using the **Bayesian detector (BD)**, despite requiring training data and removing control of the FPR, further helps against spoofing, again dropping the success rate to $$5\%$$.
+In a simple attempt to improve spoofing success, we tried increasing the number of black-box queries, which indeed helps: tripling the number of queries from $$30k$$ to $$90k$$ brings spoofing success back to $$15\%$$, reversing the effect of the previous two modifications, and suggesting that spoofing may still be possible but much more costly. 
+We finally notice that using the **Bayesian detector (BD)**, despite requiring training data and removing control of the FPR, further helps against spoofing, again dropping the success rate to $$5\%$$.
 As the SynthID-Text paper notes, for BD to be applicable to some LLM, it should observe watermarked responses of _that LLM_, while unwatermarked examples are always human text.
 This makes BD effectively a hybrid between a watermark detector and a [zero-shot LLM detector](https://arxiv.org/abs/2301.11305), flagging the joint presence of the watermark _and_ the specific LLM; the same property increases spoofing resistance.
 
@@ -109,7 +109,7 @@ This implies an additional hurdle that attempts to improve spoofing attacks need
 ***Summary:** Stealing-based spoofers of SynthID-Text, despite limited success rate, leave detectable clues.*
 
 {:.blogpost-caption}
-***Future Work:** Does the same conclusion hold for Distillation-based spoofing? Can we design more elaborate spoofing attacks that would circumvent current clue detector, or overcome this issue entirely?*
+***Future Work:** Does the same conclusion hold for distillation-based spoofing? Can we design more elaborate spoofing attacks that would circumvent current clue detector, or overcome this issue entirely?*
 
 ### 4. SynthID-Text is easy to scrub
 Finally, we study the ability of attackers to remove (_scrub_) the watermark from watermarked texts via paraphrasing. 
