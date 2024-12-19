@@ -22,6 +22,7 @@ permalink: /blog/index.html
           <ul class="blog-list">
           {% assign blogposts = site.blogposts %}
           {%- for blogpost in blogposts reversed -%}
+          {%- if blogpost.draft != true -%}
           <li>
           <div class="blog-list-box">
 
@@ -53,6 +54,7 @@ permalink: /blog/index.html
 
           </div>
           </li>
+          {%- endif -%}
           {%- endfor -%}
         </ul>
 
