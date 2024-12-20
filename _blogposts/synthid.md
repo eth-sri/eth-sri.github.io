@@ -9,7 +9,7 @@ image: assets/blog/fb_preview/synthid.jpg
 usemathjax: true
 draft: true
 tldr: >
-    Google DeepMind's SynthID-Text is the first large-scale LLM watermark deployment. In our evaluation we find that (1) the presence of SynthID-Text can be easily detected using black-box queries; (2) it is more resistant to spoofing than SOTA schemes; (3) attempts to spoof it leave discoverable clues; and (4) it is easier to scrub than SOTA schemes even for naive adversaries.  
+    Google DeepMind's SynthID-Text is the first large-scale LLM watermark deployment. In our evaluation we find that (1) the presence of SynthID-Text can be easily detected using black-box queries; (2) it is more resistant to spoofing than other SOTA schemes; (3) attempts to spoof it leave discoverable clues; and (4) it is easier to scrub than other SOTA schemes even for naive adversaries.  
     Leveraging our recent work, we provide ablations and insights into individual components of SynthID-Text from an adversarial perspective, and identify a range of research questions that could be studied in the future.
 excerpt: >
     We apply the techniques from our recent work to investigate how SynthID-Text, the first large-scale deployment of an LLM watermarking scheme, fares in several adversarial scenarios. We discuss a range of findings, provide novel insights into the properties of this scheme, and outline interesting future research directions.
@@ -92,7 +92,7 @@ This makes BD effectively a hybrid between a watermark detector and a [post-hoc 
 This increases spoofing resistance, as the attacker will use a different model to produce spoofed texts.
 
 {:.blogpost-caption}
-***Summary:** SynthID-Text is harder to spoof compared to SOTA watermarks, owing this to each of its novel building blocks for different reasons. Increasing the attacker budget may make spoofing viable.*
+***Summary:** SynthID-Text is harder to spoof compared to other SOTA watermarks, owing this to each of its novel building blocks for different reasons. Increasing the attacker budget may make spoofing viable.*
 
 {:.blogpost-caption}
 ***Future Work:** Would spoofing be more effective with an order of magnitude larger attacker budget? Can adaptive attacks tailored to SynthID-Text be more successful? Would spoofing via [distillation](https://arxiv.org/abs/2312.04469) work?*
