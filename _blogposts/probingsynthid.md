@@ -3,11 +3,10 @@ layout: blogpost
 category: other
 title: "Probing Google DeepMind's SynthID-Text Watermark"
 blogpost-authors: "Nikola Jovanović, Thibaud Gloaguen, Martin Vechev"
-date: 2004-12-20
+date: 2024-12-20
 thumbnail: thumbnails/probingsynthid.svg
 image: assets/blog/fb_preview/probingsynthid.jpg
 usemathjax: true
-draft: true
 tldr: >
     Google DeepMind's SynthID-Text is the first large-scale LLM watermark deployment. In our evaluation we find that (1) the presence of SynthID-Text can be easily detected using black-box queries; (2) it is more resistant to spoofing than other SOTA schemes; (3) attempts to spoof it leave discoverable clues; and (4) it is easier to scrub than other SOTA schemes even for naive adversaries.  
     Leveraging our recent work, we provide ablations and insights into individual components of SynthID-Text from an adversarial perspective, and identify a range of research questions that could be studied in the future.
