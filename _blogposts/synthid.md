@@ -2,14 +2,15 @@
 layout: blogpost
 category: other
 title: "Probing the SynthID-Text Watermark"
-blogpost-authors: "Nikola Jovanović, Thibaud Gloaguen"
+blogpost-authors: "Nikola Jovanović, Thibaud Gloaguen, Martin Vechev"
 date: 2004-12-20
 thumbnail: thumbnails/synthid.svg
 image: assets/blog/fb_preview/synthid.jpg
 usemathjax: true
 draft: true
 tldr: >
-    Google DeepMind's SynthID-Text is the first large-scale LLM watermark deployment. We extend the original evaluation of this scheme by applying our recent work on adversarial scenarios in LLM watermarking. In our evaluation we find that (1) the presence of SynthID-Text can be easily detected using black-box queries; (2) it is more resistant to spoofing than SOTA schemes; (3) attempts to spoof it leave discoverable clues; and (4) it is much easier to scrub than SOTA schemes even for naive adversaries. We provide ablations and insights into individual components of SynthID-Text and identify a range of research questions that could be studied in future work.
+    Google DeepMind's SynthID-Text is the first large-scale LLM watermark deployment. In our evaluation we find that (1) the presence of SynthID-Text can be easily detected using black-box queries; (2) it is more resistant to spoofing than SOTA schemes; (3) attempts to spoof it leave discoverable clues; and (4) it is easier to scrub than SOTA schemes even for naive adversaries.  
+    Leveraging our recent work, we provide ablations and insights into individual components of SynthID-Text from an adversarial perspective, and identify a range of research questions that could be studied in the future.
 excerpt: >
     We apply the techniques from our recent work to investigate how SynthID-Text, the first large-scale deployment of an LLM watermarking scheme, fares in several adversarial scenarios. We discuss a range of findings, provide novel insights into the properties of this scheme, and outline interesting future research directions.
 tweet-id: TODO
@@ -85,7 +86,7 @@ We confirm this effectiveness of tournament sampling by directly adding it to **
 Finally, adding <span class="cache">caching</span> further drops spoofing success to $$4\%$$! This is caused by the fixed dataset of watermarked text containing less useful signal, as the cache often disables the watermark.
 
 In a simple attempt to improve spoofing success, we tried increasing the number of black-box queries, which indeed helps: tripling the number of queries from $$30k$$ to $$90k$$ brings spoofing success back to $$15\%$$, reversing the effect of the previous two modifications, and suggesting that spoofing may still be possible but much more costly. 
-We finally notice that using the **Bayesian detector (BD)**, despite requiring training data and removing control of the FPR, further helps against spoofing, dropping the success rate to $$5\%$$.
+We finally notice that using the **Bayesian detector (BD)**, despite requiring training data and loosening the statistical guarantee, further helps against spoofing, dropping the success rate to $$5\%$$.
 As the SynthID-Text paper notes, to apply BD to some LLM, it should observe watermarked responses of _that LLM_, while unwatermarked examples are always taken from the human text distribution.
 This makes BD effectively a hybrid between a watermark detector and a [post-hoc detector](https://arxiv.org/pdf/2310.15264#page=12.62), flagging the joint presence of the watermark _and_ the specific LLM. 
 This increases spoofing resistance, as the attacker will use a different model to produce spoofed texts.
