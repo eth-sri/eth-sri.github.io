@@ -43,7 +43,7 @@ In <i>["Black-Box Detection of Language Model Watermarks"](/publications/gloague
 Extending the results on Gemini 1.0 from the paper, we found no reliable evidence of a watermark on the Gemini 1.5 API.
 This matches [the official claims](https://deepmind.google/technologies/synthid/), stating that the watermark is only present in the Gemini App and Web.
 As those deployments are not suitable for querying with thousands of similar prompts, we ran our tests on a local deployment of a model watermarked with SynthID-Text:
-![](/assets/blog/synthid/detection.png){: .blogpost-img100}
+![](/assets/blog/probingsynthid/detection.png){: .blogpost-img100}
 While the first two (as expected) fail, the <b>Red-Green</b> test consistently passes, detecting the watermark presence ($$p \approx 0$$).
 This also shows that our tests can be directly applied to newly proposed schemes. To understand why the Red-Green test passes, let's decompose SynthID into its building blocks as follows:
 <br><br>
@@ -76,7 +76,7 @@ The details of our metric can be found in the original paper.
 </details>
 Following the decomposition of SynthID-Text above, we show the results on a range of schemes and variants:
 
-![](/assets/blog/synthid/spoofing_edited.png){: .blogpost-img100}
+![](/assets/blog/probingsynthid/spoofing_edited.png){: .blogpost-img100}
 
 First two bars are copied from [our original paper](/publications/jovanovic2024watermarkstealing) and show that SOTA Red-Green watermarks are highly spoofable with above $$80\%$$ success rate. 
 Let's work towards SynthID-Text.
@@ -103,7 +103,7 @@ Orthogonal to the problem of making this number higher, we ask: Are these spoofe
 As we showed in <i>["Discovering Clues of Spoofed LM Watermarks"](/publications/gloaguen2024clues)</i>, the answer is often no, as learning-based spoofers (both [Stealing](/publications/jovanovic2024watermarkstealing) and [Distillation](https://arxiv.org/abs/2312.04469)) leave _clues of spoofing_ in their outputs, and these can be used to flag such attempts. 
 We repeat those experiments on a dataset of $$2000$$ attempts to spoof SynthID-Text through stealing, evaluating our clue detector:
 
-![](/assets/blog/synthid/clues.png){: .blogpost-img100}		
+![](/assets/blog/probingsynthid/clues.png){: .blogpost-img100}		
 
 On the right, we see that our clue detector is properly calibrated, as the theoretical FPR ($$\alpha$$) matches the experimental FPR.
 On the left, we see that given total text length of $$T$$, our clue detector has high power, similar to the results on SOTA schemes in the original paper. 
@@ -133,7 +133,7 @@ All other details are the same as in the Spoofing experiments above.
 </details>
 The gray bars show the success rate of the **baseline paraphraser**, and the purple bars show the improvement when **stealing** is used to assist the scrubbing process:
 
-![](/assets/blog/synthid/scrubbing_edited.png){: .blogpost-img100}
+![](/assets/blog/probingsynthid/scrubbing_edited.png){: .blogpost-img100}
 
 First two bars, copied from our paper, show that SOTA Red-Green watermarks are in this hard setting not easy to scrub using a baseline paraphraser, but this can be overcome by applying stealing as the first step ($$2\% \to 90\%$$ and $$26\% \to 85\%$$, respectively).
 <span class="contextsize">Increasing context size</span>, <span class="tournament">adding tournament sampling</span>, and <span class="cache">caching</span> all lead to extremely high scrubbing success rates (above $$90\%$$), _even without stealing_, even when directly adding tournament sampling to **LeftHash h=3** (not shown in the plot above).
