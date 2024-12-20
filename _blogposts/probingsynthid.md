@@ -12,7 +12,7 @@ tldr: >
     Leveraging our recent work, we provide ablations and insights into individual components of SynthID-Text from an adversarial perspective, and identify a range of research questions that could be studied in the future.
 excerpt: >
     We apply the techniques from our recent work to investigate how SynthID-Text, the first large-scale deployment of an LLM watermarking scheme, fares in several adversarial scenarios. We discuss a range of findings, provide novel insights into the properties of this scheme, and outline interesting future research directions.
-tweet-id: TODO
+tweet-id: 1870145176619913443
 ---
 
 <style> 
