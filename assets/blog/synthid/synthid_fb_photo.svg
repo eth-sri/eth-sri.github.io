@@ -29,15 +29,15 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.14866305"
-     inkscape:cx="1553.8495"
-     inkscape:cy="585.21603"
+     inkscape:zoom="0.2102413"
+     inkscape:cx="1835.9856"
+     inkscape:cy="789.56893"
      inkscape:window-width="1920"
      inkscape:window-height="1003"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g20440"
+     inkscape:current-layer="g20293"
      showguides="true" /><defs
      id="defs16032"><clipPath
    clipPathUnits="userSpaceOnUse"
@@ -21062,14 +21062,37 @@
 	
 	
 	
-</defs><g
+<clipPath
+   clipPathUnits="userSpaceOnUse"
+   id="clipPath12568-8-7"><g
+     id="g12572-4-6"><path
+       d="M 64.836,7.207 H 1069.797 V 451.113 H 64.836 Z"
+       id="path12570-5-0" /></g></clipPath><clipPath
+   clipPathUnits="userSpaceOnUse"
+   id="clipPath12132-5-9"><path
+     d="M 0,0 H 1077 V 564 H 0 Z"
+     id="path12130-9-7" /></clipPath></defs><g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"><g
        id="g20440"
        transform="translate(0,-13.47548)"><g
          id="g20293"
-         transform="matrix(1.4854471,0,0,1.4854471,456.36082,184.92149)"><path
+         transform="matrix(1.4854471,0,0,1.4854471,456.36082,184.92149)"><g
+           id="g12124-5"
+           clip-path="url(#clipPath12568-8-7)"
+           transform="matrix(7.5359693,0,0,1.2267029,-2154.7567,-244.71242)"
+           style="fill:#ffffff;fill-opacity:1"><g
+             id="g12126-9"
+             style="fill:#ffffff;fill-opacity:1"><g
+               id="g12128-7"
+               clip-path="url(#clipPath12132-5-9)"
+               style="fill:#ffffff;fill-opacity:1"><g
+                 id="g12134-8"
+                 style="fill:#ffffff;fill-opacity:1"><path
+                   d="M 244.867,104.441 H 352.351 V 451.113 H 244.867 Z"
+                   style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                   id="path12136-5" /></g></g></g></g><path
            d="m -83.08146,160.59028 66.78246,66.78246 c 6.13985,6.13985 6.13985,16.18841 0,22.32826 -6.13985,6.13985 -16.18841,6.13985 -22.32826,0 l -66.78246,-66.78246 c 0.78961,-11.86663 8.32322,-19.25131 22.32826,-22.32826 z"
            style="fill:#e5563a;fill-rule:nonzero;stroke:none;stroke-width:2.81;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
            stroke-linecap="round"
