@@ -1,7 +1,7 @@
 ---
 layout: blogpost
 category: other
-title: "Probing the SynthID-Text Watermark"
+title: "Probing Google DeepMind's SynthID-Text Watermark"
 blogpost-authors: "Nikola Jovanović, Thibaud Gloaguen, Martin Vechev"
 date: 2004-12-20
 thumbnail: thumbnails/synthid.svg
