@@ -6,7 +6,6 @@
 .blog-logoimg
 	display: block
 	margin: 0
-	width: 40%
 
 .blog-list
 	margin-left: 0
@@ -18,7 +17,6 @@
 
 .blog-list-box	
 	border-bottom: 2px solid rgba(0,0,0,0.1)
-	width: 90%
 	box-shadow: 0.2rem 0.4rem 0.8rem 0.2rem #00000033
 
 	.blog-list-thumbnail
@@ -36,7 +34,7 @@
 		margin-top: 2%
 	
 	.blog-list-title
-		font-size: 28px
+		font-size: 34px
 		font-weight: bold
 	
 	.blog-list-authors
@@ -59,7 +57,7 @@
 /* blogpost */
 
 .blogpost
-	font-size: 18px
+	font-size: 16px
 	table
 		margin-left: auto 
 		margin-right: auto
@@ -87,24 +85,19 @@
 
 .blogpost-thumbnail
 	display: block
-	width: 15%
+	width: 30%
 	margin: auto
 
 .blogpost-headerblock
 	margin-bottom: inherit
-	padding: 0 1.0rem
-	max-width: 75%
+	max-width: 100%
 	display: block
 	margin: auto
-
-@media (max-width: $mobile-break)
-	.blogpost-headerblock
-		max-width: 100%
 
 .blogpost-title
 	text-align: center
 	font-weight: bold
-	font-size: 54px
+	font-size: 40px
 
 .blogpost-subtitle
 	display: flex 
@@ -116,6 +109,7 @@
 
 	.blogpost-subtitle-left
 		flex: 0.7
+		flex-grow: 1
 		margin-right: 3%
 	
 	.blogpost-subtitle-right
@@ -130,13 +124,12 @@
 	font-weight: bold
 
 .tldr
-	font-style: italic
 	font-family: Raleway
 	color: #404040
 	border-width: 0px
 	background-color: $color-blue-light
 	border-style: solid 
-	padding: 2% 5%
+	padding: 2% 2%
 	text-align: justify
 	margin-top: 20px
 	margin-bottom: 20px
@@ -157,11 +150,8 @@
 
 .blogpost-col
 	margin-bottom: inherit
-	padding: 0 1.0rem
-	max-width: 75%
 	justify-content: center
 	text-align: justify 
-	font-size: 18px
 	font-family: Raleway
 	color: #404040
 
@@ -186,37 +176,51 @@
 
 .blogpost-img10
 	@extend %blogpost-img
-	width: 10%
 
 .blogpost-img15
 	@extend %blogpost-img
-	width: 15%
 
 .blogpost-img20
 	@extend %blogpost-img
-	width: 20%
 
 .blogpost-img25
 	@extend %blogpost-img
-	width: 25%
 
 .blogpost-img30
 	@extend %blogpost-img
-	width: 30%
 
 .blogpost-img40
 	@extend %blogpost-img
-	width: 40%
 
 .blogpost-img50
 	@extend %blogpost-img
-	width: 50%
 
 .blogpost-img100
 	@extend %blogpost-img
 
 
 @media (min-width: $mobile-break)
+
+	.blog-list-box	
+		width: 90%
+
+	.blogpost-thumbnail
+		width: 15% 
+
+	.blogpost-headerblock
+		max-width: 75%
+
+	.blogpost-title
+		font-size: 56px
+
+	.blogpost
+		font-size: 18px
+
+	.blogpost-col
+		margin-bottom: inherit
+		padding: 0 1.0rem
+		max-width: 75%
+		
 	.blogpost-wrap
 		display: flex
 		width: 100%
@@ -235,6 +239,27 @@
 		flex-shrink: 0
 		align-self: flex-start
 
+	.blogpost-img10
+		width: 10%
+
+	.blogpost-img15
+		width: 15%
+
+	.blogpost-img20
+		width: 20%
+
+	.blogpost-img25
+		width: 25%
+
+	.blogpost-img30
+		width: 30%
+
+	.blogpost-img40
+		width: 40%
+
+	.blogpost-img50
+		width: 50%
+		
 	.blogpost-wrap > .blogpost-img10
 		flex-basis: 10%
 

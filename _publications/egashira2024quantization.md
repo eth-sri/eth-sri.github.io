@@ -3,7 +3,7 @@ ref: egashira2024quantization
 title: "Exploiting LLM Quantization"
 authors: Kazuki Egashira, Mark Vero, Robin Staab, Jingxuan He, Martin Vechev
 year: 2024
-month: 5
+month: 12
 venue: NeurIPS
 projects: llm
 awards: NextGenAISafety@ICML24 Oral
