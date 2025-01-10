@@ -5,15 +5,15 @@ authors: Timofey Fedoseev, Dimitar I. Dimitrov, Timon Gehr, Martin Vechev
 year: 2024
 month: 12
 venue: Workshop on Mathematical Reasoning, NeurIPS
-projects: safeai
-bibtex: '@inproceedings{
+projects: aimath
+bibtex: "@inproceedings{
 			fedoseev2024llm,
 			title={Constraint-Based Synthetic Data Generation for LLM Mathematical Reasoning},
 			author={Timofey Fedoseev and Dimitar Iliev Dimitrov and Timon Gehr and Martin Vechev},
 			booktitle={The 4th Workshop on Mathematical Reasoning and AI at NeurIPS'24},
 			year={2024},
 			url={https://openreview.net/forum?id=hR4Hskr4GX}
-		}'
+		}"
 paper: https://files.sri.inf.ethz.ch/z3_llm/z3_llm.pdf
 poster: https://files.sri.inf.ethz.ch/z3_llm/z3_llm_poster.png
 ---
