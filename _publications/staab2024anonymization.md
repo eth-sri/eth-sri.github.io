@@ -4,7 +4,7 @@ title: "Large Language Models are Advanced Anonymizers"
 authors: Robin Staab, Mark Vero, Mislav Balunović, Martin Vechev
 year: 2025
 month: 04
-venue: arXiv
+venue: ICLR
 projects: llm
 bibtex: "@misc{staab2024large,
       title={Large Language Models are Advanced Anonymizers}, 
