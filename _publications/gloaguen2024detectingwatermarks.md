@@ -2,9 +2,9 @@
 ref: gloaguen2024detectingwatermarks
 title: "Black-Box Detection of Language Model Watermarks"
 authors: Thibaud Gloaguen, Nikola Jovanović, Robin Staab, Martin Vechev
-year: 2024
-month: 05
-venue: arXiv
+year: 2025
+month: 04
+venue: ICLR
 projects: safeai,llm
 bibtex: "@article{gloaguen2024detectingwatermarks,
   title = {Black-Box Detection of Language Model Watermarks},
