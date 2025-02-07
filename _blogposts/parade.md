@@ -2,7 +2,7 @@
 layout: blogpost
 category: paper
 pub-ref: dimitrov2022provably
-title: "Generating provably robust adversarial examples"
+title: "Generating Provably Robust Adversarial Examples"
 blogpost-authors: "Dimitar I. Dimitrov" 
 date: 2022-04-21
 thumbnail: thumbnails/parade.svg

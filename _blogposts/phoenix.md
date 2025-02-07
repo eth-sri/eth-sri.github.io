@@ -2,7 +2,7 @@
 layout: blogpost
 category: paper
 pub-ref: jovanovic2022phoenix
-title: "Reliability guarantees on private data"
+title: "Reliability Guarantees on Private Data"
 blogpost-authors: "Nikola Jovanović"
 date: 2022-11-7
 thumbnail: thumbnails/phoenix.svg
