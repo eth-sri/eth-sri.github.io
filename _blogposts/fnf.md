@@ -2,7 +2,7 @@
 layout: blogpost
 category: paper
 pub-ref: balunovic2022fair
-title: "Encoding sensitive data with guarantees"
+title: "Encoding Sensitive Data with Guarantees"
 blogpost-authors: "Mislav Balunović" 
 date: 2022-04-20
 thumbnail: thumbnails/fnf_blog_thumb.svg

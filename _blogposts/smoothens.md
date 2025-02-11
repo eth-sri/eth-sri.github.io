@@ -2,7 +2,7 @@
 layout: blogpost
 category: paper
 pub-ref: horvath2022boosting
-title: "Boosting randomized smoothing with variance reduced classifiers"
+title: "Boosting Randomized Smoothing with Variance Reduced Classifiers"
 blogpost-authors: "Mark Niklas Müller, Marc Fischer" 
 date: 2022-04-15
 thumbnail: thumbnails/smooth_ens.png

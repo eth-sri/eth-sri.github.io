@@ -2,7 +2,7 @@
 layout: blogpost
 category: paper
 pub-ref: jovanovic2022paradox
-title: "Why tighter convex relaxations harm certified training"
+title: "Why Tighter Convex Relaxations Harm Certified Training"
 blogpost-authors: "Nikola Jovanović"
 date: 2022-10-27
 thumbnail: thumbnails/paradox.svg

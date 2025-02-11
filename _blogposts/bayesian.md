@@ -2,7 +2,7 @@
 layout: blogpost
 category: paper
 pub-ref: balunovic2022bayesian
-title: "The optimal privacy attack on federated learning"
+title: "The Optimal Privacy Attack on Federated Learning"
 blogpost-authors: "Mislav Balunović" 
 date: 2022-04-20
 thumbnail: thumbnails/bayesian_blog_thumb.svg

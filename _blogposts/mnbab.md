@@ -2,7 +2,7 @@
 layout: blogpost
 category: paper
 pub-ref: ferrari2022complete
-title: "Multi-neuron relaxation guided branch-and-bound"
+title: "Multi-neuron Relaxation Guided Branch-and-bound"
 blogpost-authors: "Claudio Ferrari, Mark Niklas Müller, Nikola Jovanović"
 date: 2022-04-21
 thumbnail: thumbnails/mnbab.svg
