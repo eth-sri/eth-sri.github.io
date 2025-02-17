@@ -25,6 +25,7 @@ Installation is not required when editing directly on GitHub. To setup on your l
 ## Making Updates
 After a commit, GitHub should re-generate the site (usually in under a minute, but it may take up to 5 minutes). 
 
+To automatically normalize used room names and wrap them into a link pointing to the roomfinder, run [`python clean_rooms_add_links.py`].
 
 ## Types of Content
 The types of content on the site:
