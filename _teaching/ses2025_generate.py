@@ -14,15 +14,15 @@ with open(filename, newline='') as csvfile:
         rows.append(row)
 
 # Read the assignment file
-# filename = sys.argv[2]
+filename = sys.argv[2]
 assignments = {}
-# with open(filename, newline='') as csvfile:
-#     reader = csv.reader(csvfile)
-#     for row in reader:
-#         if any(row[0].startswith(s) for s in ("Name")) or not row[0]:
-#             # skip headers
-#             continue
-#         assignments[row[4].strip()] = row[0]
+with open(filename, newline='') as csvfile:
+    reader = csv.reader(csvfile)
+    for row in reader:
+        if any(row[0].startswith(s) for s in ("Name")) or not row[0]:
+            # skip headers
+            continue
+        assignments[row[5].strip()] = row[0]
 LAB, TITLE, VENUE, TA, PAPER_URL, DATE, TA_MAIL = range(7)
 
 # Parse dates and sort the entries by date
