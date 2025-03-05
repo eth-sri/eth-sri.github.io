@@ -3,8 +3,8 @@ ref: vero2025baxbench
 title: "BaxBench: Can LLMs Generate Secure and Correct Backends?"
 authors: Mark Vero, Niels Mündler, Victor Chibotaru, Veselin Raychev, Maximilian Baader, Nikola Jovanović, Jingxuan He, Martin Vechev
 year: 2025
-month: 2
-venue: Workshop on Building Trust in LLMs, ICLR 2025
+month: 3
+venue: Workshop on Building Trust in LLMs, ICLR
 projects: llm
 bibtex: "@article{vero2025baxbenchllmsgeneratecorrect,
         title={BaxBench: Can LLMs Generate Correct and Secure Backends?}, 

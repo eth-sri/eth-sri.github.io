@@ -2,12 +2,12 @@
 ref: jenko2024practicalattack
 title: "Practical Attacks against Black-box Code Completion Engines"
 authors: Slobodan Jenko, Jingxuan He, Niels Mündler, Mark Vero, Martin Vechev
-year: 2024
-month: 8
+year: 2025
+month: 3
 projects: llm, safeai
 awards:
 code:
-venue: Workshop on Building Trust in LLMs, ICLR 2025
+venue: Workshop on Building Trust in LLMs, ICLR
 paper: https://arxiv.org/abs/2408.02509
 bibtex: "@misc{jenko2024practicalattack,
       title={Practical Attacks against Black-box Code Completion Engines}, 
