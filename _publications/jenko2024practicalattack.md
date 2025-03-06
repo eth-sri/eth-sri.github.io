@@ -7,7 +7,7 @@ month: 3
 projects: llm, safeai
 awards:
 code:
-venue: Workshop on Building Trust in LLMs, ICLR
+venue: Building Trust in LLMs, DL4C @ ICLR
 paper: https://arxiv.org/abs/2408.02509
 bibtex: "@misc{jenko2024practicalattack,
       title={Practical Attacks against Black-box Code Completion Engines}, 
