@@ -3,8 +3,8 @@ ref: balunovic2025mathconstruct
 title: "MathConstruct: Challenging LLM Reasoning with Constructive Proofs"
 authors: Mislav Balunović*, Jasper Dekoninck*, Nikola Jovanović, Ivo Petrov, Martin Vechev
 year: 2025
-month: 2
-venue: arXiv
+month: 04
+venue: VerifAI @ ICLR
 bibtex: '@article{balunovic2025mathconstruct,
     title={MathConstruct: Challenging LLM Reasoning with Constructive Proofs},
     author={Mislav Balunović and Jasper Dekoninck and Nikola Jovanović and Ivo Petrov and Martin Vechev},
