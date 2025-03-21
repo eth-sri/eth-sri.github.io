@@ -2,9 +2,9 @@
 ref: gloaguen2024clues
 title: "Discovering Clues of Spoofed LM Watermarks"
 authors: Thibaud Gloaguen, Nikola Jovanović, Robin Staab, Martin Vechev
-year: 2024
-month: 10
-venue: arXiv
+year: 2025
+month: 04
+venue: WMARK @ ICLR
 projects: safeai,llm
 bibtex: "@article{gloaguen2024clues,
   title = {Discovering Clues of Spoofed LM Watermarks},
