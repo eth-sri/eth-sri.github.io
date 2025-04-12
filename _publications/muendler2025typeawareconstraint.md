@@ -1,7 +1,7 @@
 ---
 ref: muendler2025typeawareconstraint
 title: "Type-Constrained Code Generation with Language Models"
-authors: Niels Mündler*, Jingxuan He*, Hao Wang, Koushik Sen, Dawn Song, Martin Vechev
+authors: Niels Mündler<sup>†</sup>, Jingxuan He<sup>†</sup>, Hao Wang, Koushik Sen, Dawn Song, Martin Vechev
 year: 2025
 month: 4
 venue: VerifAI, DL4C @ ICLR

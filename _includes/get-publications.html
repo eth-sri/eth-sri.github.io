@@ -36,6 +36,7 @@
       {{ publication.venue }} 
       {{ publication.year }} 
       {% if publication.authors contains "*" %}<span style="font-weight: normal;">* Equal contribution</span>{% endif %}
+      {% if publication.authors contains "†" %}<span style="font-weight: normal;">† Co-leadership</span>{% endif %}
       {% if publication.awards %} <span style="margin-left: 4pt;"><img style="height: 18px; width: 18px;" src="/assets/images/award.png" title="CC BY 4.0 by @fontawesome - https://fontawesome.com"></span> <font color="#d74141">{{ publication.awards }}</font> {% endif %}
     {% endcapture %}
     {% assign pub-ref = publication.ref %}
