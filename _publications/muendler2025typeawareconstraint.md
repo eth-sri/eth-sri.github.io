@@ -9,7 +9,7 @@ awards:
 projects: safeai,llm
 bibtex: "@inproceedings{
 mundler2025typeaware,
-title={Type-Constrained Code Generation with LLMs},
+title={Type-Constrained Code Generation with Language Models},
 author={Niels M{\"u}ndler and Jingxuan He and Hao Wang and Koushik Sen and Dawn Song and Martin Vechev},
 booktitle={ICLR 2025 Third Workshop on Deep Learning for Code},
 year={2025},
