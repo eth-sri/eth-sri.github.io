@@ -7,7 +7,7 @@ month: 07
 projects: llm, safeai
 awards:
 code:
-venue: ICML 2025
+venue: ICML
 paper: https://arxiv.org/abs/2408.02509
 bibtex: "@misc{jenko2024practicalattack,
       title={Practical Attacks against Black-box Code Completion Engines}, 
