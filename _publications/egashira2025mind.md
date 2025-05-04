@@ -1,6 +1,6 @@
 ---
 ref: egashira2025mind
-title: ""
+title: "Mind the Gap: A Practical Attack on GGUF Quantization"
 authors: Kazuki Egashira, Robin Staab, Mark Vero, Jingxuan He, Martin Vechev
 year: 2025
 month: 7
