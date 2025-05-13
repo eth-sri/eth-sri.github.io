@@ -3,17 +3,19 @@ ref: muendler2025typeawareconstraint
 title: "Type-Constrained Code Generation with Language Models"
 authors: Niels Mündler<sup>†</sup>, Jingxuan He<sup>†</sup>, Hao Wang, Koushik Sen, Dawn Song, Martin Vechev
 year: 2025
-month: 4
-venue: VerifAI, DL4C @ ICLR
+month: 6
+venue: PLDI
 awards: 
 projects: safeai,llm
 bibtex: "@inproceedings{
 mundler2025typeaware,
 title={Type-Constrained Code Generation with Language Models},
 author={Niels M{\"u}ndler and Jingxuan He and Hao Wang and Koushik Sen and Dawn Song and Martin Vechev},
-booktitle={ICLR 2025 Third Workshop on Deep Learning for Code},
+booktitle={{PLDI} '25: 46th {ACM} {SIGPLAN} International Conference on Programming Language Design and Implementation, Seoul, South Korea June 16-20, 2025},
+publisher={ACM},
 year={2025},
-url={https://arxiv.org/abs/2504.09246}
+doi={10.1145/3729274},
+url={https://doi.org/10.1145/3729274}
 }"
 paper: https://arxiv.org/abs/2504.09246
 code: https://github.com/eth-sri/type-constrained-code-generation

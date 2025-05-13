@@ -14,6 +14,10 @@ layout: default
 		<br/>
 		<div class="page-subtitle">* Equal contribution</div>
 	  {% endif %}
+	  {% if page.authors contains "†" %}
+		<br/>
+		<div class="page-subtitle">† Co-leadership</div>
+	  {% endif %}
 
     {% if page.awards %}
     <br/>
