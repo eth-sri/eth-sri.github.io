@@ -3,7 +3,7 @@ ref: mao25ctbench
 title: "CTBENCH: A Library and Benchmark for Certified Training"
 authors: Yuhao Mao, Stefan Balauca, Martin Vechev
 year: 2025
-month: 05
+month: 07
 venue: ICML
 projects: safeai
 bibtex: '@inproceedings{mao25ctbench
