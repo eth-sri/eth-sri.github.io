@@ -1,7 +1,7 @@
 ---
 ref: chenhao25acr
 title: "Average Certified Radius is a Poor Metric for Randomized Smoothing"
-authors: Chenhao Sun, Yuhao Mao, Mark Niklas Müller, Martin Vechev
+authors: Chenhao Sun*, Yuhao Mao*, Mark Niklas Müller, Martin Vechev
 year: 2025
 month: 05
 venue: ICML
