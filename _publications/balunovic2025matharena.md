@@ -1,6 +1,6 @@
 ---
 ref: balunovic2025matharena
-title: "A Unified Approach to Routing and Cascading for LLMs"
+title: "MathArena: Evaluating LLMs on Uncontaminated Math Competitions"
 authors: Mislav Balunović, Jasper Dekoninck, Nikola Jovanović, Ivo Petrov, Martin Vechev
 year: 2025
 month: 05
