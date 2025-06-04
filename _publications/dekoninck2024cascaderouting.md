@@ -4,7 +4,7 @@ title: "A Unified Approach to Routing and Cascading for LLMs"
 authors: Jasper Dekoninck, Maximilian Baader, Martin Vechev
 year: 2025
 month: 07
-venue: ICML 2025
+venue: ICML
 projects: llm
 bibtex: "@article{dekoninck2024cascaderouting,
       title={A Unified Approach to Routing and Cascading for LLMs}, 
