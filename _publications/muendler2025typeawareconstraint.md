@@ -19,6 +19,8 @@ url={https://doi.org/10.1145/3729274}
 }"
 paper: https://arxiv.org/abs/2504.09246
 code: https://github.com/eth-sri/type-constrained-code-generation
+talk: https://www.youtube.com/live/FLj1iu9qjfc?si=PcMzOggq53zZdyGu&t=28753
+slides: https://files.sri.inf.ethz.ch/website/slides/2025TypeConstrainedPresentation.pdf
 ---
 
 Large language models (LLMs) have achieved notable success in code generation.  However, they still frequently produce uncompilable output because their next-token inference procedure does not model formal aspects of code.  Although constrained decoding is a promising approach to alleviate this issue, it has only been applied to handle either domain-specific languages or syntactic language features.  This leaves typing errors, which are beyond the domain of syntax and generally hard to adequately constrain.  To address this challenge, we introduce a type-constrained decoding approach that leverages type systems to guide code generation.  We develop novel prefix automata for this purpose and introduce a sound approach to enforce well-typedness based on type inference and a search over inhabitable types.  We formalize our approach on a simply-typed language and extend it to TypeScript to demonstrate practicality.  Our evaluation on HumanEval shows that our approach reduces compilation errors by more than half and increases functional correctness in code synthesis, translation, and repair tasks across LLMs of various sizes and model families, including SOTA open-weight models with more than 30B parameters. 
