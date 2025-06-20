@@ -4,12 +4,12 @@ title: "Watermarking Autoregressive Image Generation"
 authors: Nikola Jovanović, Ismail Labiad, Tomáš Souček, Martin Vechev, Pierre Fernandez
 year: 2025
 month: 06
-venue: preprint
+venue: arXiv
 projects: safeai
 bibtex: "@article{jovanovic2025wmar,
   title={Watermarking Autoregressive Image Generation},
-  author={Jovanovi\'{c}, Nikola and Labiad, Ismail and Sou\v{c}ek, Tom\'{a}\v{s} and Vechev, Martin and Fernandez, Pierre},
-  journal={preprint},
+  author={Jovanović, Nikola and Labiad, Ismail and Souček, Tomáš and Vechev, Martin and Fernandez, Pierre},
+  journal={arXiv},
   year={2025}
 }"
 paper: https://files.sri.inf.ethz.ch/website/papers/jovanovic2025wmar.pdf
