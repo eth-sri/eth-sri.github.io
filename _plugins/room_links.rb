@@ -4,7 +4,8 @@
 Jekyll::Hooks.register :site, :post_render do |site|
   # Room regex pattern matching the Python script logic
   # Matches formats like: CAB G 56, CAB G56, HG F 81.1, HG F81.1
-  room_regex = /(?<!\>)(?<space>\s+|\(\s*|,\s*)(?<building>[A-Z]+)\s(?<floor>[A-Z])\s?(?<room>\d+(?:\.\d+)?)/
+  # Updated to handle cases where room mentions come after HTML tags
+  room_regex = /(?<space>\s+|\(\s*|,\s*|>)(?<building>[A-Z]+)\s(?<floor>[A-Z])\s?(?<room>\d+(?:\.\d+)?)/
 
   site.pages.each do |page|
     if page.output_ext == '.html'
