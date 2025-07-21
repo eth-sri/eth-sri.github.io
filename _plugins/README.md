@@ -15,7 +15,7 @@ The plugin runs during Jekyll's `post_render` hook and processes all HTML pages 
 
 And converts them to links like:
 ```html
-<a href="https://ethz.ch/en/utils/location.html?building=CAB&floor=G&room=56&lang=en">CAB G 56</a>
+<a href="https://ethz.ch/en/utils/location.html?building=CAB&floor=G&room=56&lang=en"> 
 ```
 
 ### Replacement for manual script
