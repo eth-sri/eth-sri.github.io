@@ -4,54 +4,45 @@
 Jekyll::Hooks.register :site, :post_render do |site|
   # Room regex pattern matching the Python script logic
   # Matches formats like: CAB G 56, CAB G56, HG F 81.1, HG F81.1
-  room_regex = /\b(?<building>[A-Z]+)\s(?<floor>[A-Z])\s?(?<room>\d+(?:\.\d+)?)/
+  room_regex = /(?<space>\s+|\(\s*|,\s*|>)(?<building>[A-Z]+)\s(?<floor>[A-Z])\s?(?<room>\d+(?:\.\d+)?)(?<endspace>\s*)/
+  Jekyll.logger.info "Room Links:", "Adding room links"
 
-  site.pages.each do |page|
-    if page.output_ext == '.html'
-      original_content = page.output
-      modified_content = original_content.gsub(room_regex) do |match|
-        building = $~[:building]
-        floor = $~[:floor]
-        room = $~[:room]
-        
-        # Create the ETH location link
-        link_url = "https://ethz.ch/en/utils/location.html?building=#{building}&floor=#{floor}&room=#{room}&lang=en"
-        room_text = "#{building} #{floor} #{room}"
-        
-        "<a href=\"#{link_url}\">#{room_text}</a>"
-      end
+  # Helper method to process room links in content
+  def process_room_links(content, regex)
+    content.gsub(regex) do |match|
+      space = $~[:space]
+      building = $~[:building]
+      floor = $~[:floor]
+      room = $~[:room]
+      endspace = $~[:endspace]
       
-      # Only update if content was modified
-      if original_content != modified_content
-        page.output = modified_content
-        Jekyll.logger.info "Room Links:", "Added room links to #{page.path}"
-      end
+      # Create the ETH location link
+      link_url = "https://ethz.ch/en/utils/location.html?building=#{building}&floor=#{floor}&room=#{room}&lang=en"
+      room_text = "#{building} #{floor} #{room}"
+      
+      space.gsub!(/\s+/, "&nbsp;")
+      endspace.gsub!(/\s+/, "&nbsp;")
+      "#{space}<a href=\"#{link_url}\">#{room_text}</a>#{endspace}"
     end
   end
 
-  # Also process documents from collections
+  # Collect all HTML documents (pages and collection documents)
+  all_documents = site.pages.select { |page| page.output_ext == '.html' }
+  
   site.collections.each do |name, collection|
-    collection.docs.each do |doc|
-      if doc.output_ext == '.html'
-        original_content = doc.output
-        modified_content = original_content.gsub(room_regex) do |match|
-          building = $~[:building]
-          floor = $~[:floor]
-          room = $~[:room]
-          
-          # Create the ETH location link
-          link_url = "https://ethz.ch/en/utils/location.html?building=#{building}&floor=#{floor}&room=#{room}&lang=en"
-          room_text = "#{building} #{floor} #{room}"
-          
-          "<a href=\"#{link_url}\">#{room_text}</a>"
-        end
-        
-        # Only update if content was modified
-        if original_content != modified_content
-          doc.output = modified_content
-          Jekyll.logger.info "Room Links:", "Added room links to #{doc.relative_path}"
-        end
-      end
+    all_documents.concat(collection.docs.select { |doc| doc.output_ext == '.html' })
+  end
+
+  # Process all documents in a unified loop
+  all_documents.each do |document|
+    original_content = document.output
+    modified_content = process_room_links(original_content, room_regex)
+    
+    # Only update if content was modified
+    if original_content != modified_content
+      document.output = modified_content
+      # Use appropriate path/identifier for logging
+      identifier = document.respond_to?(:relative_path) ? document.relative_path : document.path
     end
   end
 end
