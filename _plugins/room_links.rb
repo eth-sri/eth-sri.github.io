@@ -41,8 +41,6 @@ Jekyll::Hooks.register :site, :post_render do |site|
     # Only update if content was modified
     if original_content != modified_content
       document.output = modified_content
-      # Use appropriate path/identifier for logging
-      identifier = document.respond_to?(:relative_path) ? document.relative_path : document.path
     end
   end
 end

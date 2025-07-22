@@ -18,16 +18,6 @@ And converts them to links like:
 <a href="https://ethz.ch/en/utils/location.html?building=CAB&floor=G&room=56&lang=en">CAB G 56</a>
 ```
 
-### Replacement for manual script
-
-This plugin replaces the manual `clean_rooms_add_links.py` script that was previously used to add room links. The functionality is now integrated into the Jekyll build process, so room links are automatically added every time you build the site.
-
 ### Usage
 
 The plugin runs automatically during `jekyll build` or `jekyll serve`. No manual intervention is required.
-
-### Logging
-
-When the plugin processes files and adds room links, it will log messages like:
-```
-Room Links: Added room links to _teaching/rse2025.html
