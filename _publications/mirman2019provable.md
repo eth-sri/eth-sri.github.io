@@ -4,7 +4,7 @@ title: A Provable Defense for Deep Residual Networks
 authors: Matthew Mirman, Gagandeep Singh, Martin Vechev
 year: 2019
 month: 03
-venue: ArXiv
+venue: arXiv
 projects: safeai
 awards:
 bibtex: '@inproceedings{mirman2019provable,

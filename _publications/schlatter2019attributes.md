@@ -4,7 +4,7 @@ title: Learning to Infer User Interface Attributes from Images
 authors: Philippe Schlattner, Pavol Bielik, Martin Vechev 
 year: 2019
 month: 12
-venue: ArXiv
+venue: arXiv
 projects: plml
 awards:
 bibtex: '@misc{schlattner2019learning,
