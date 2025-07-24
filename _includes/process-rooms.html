@@ -22,19 +22,15 @@ Usage: {% include process-rooms.html content=content %}
   {% comment %}Handle different spacing variations{% endcomment %}
   {% assign room_no_space = building | append: ' ' | append: floor | append: room_num %}
   
-  {% comment %}Replace room mentions with links{% endcomment %}
+  {% comment %}Handle room mentions{% endcomment %}
   {% assign processed_content = processed_content | replace: room, room_link %}
   {% assign processed_content = processed_content | replace: room_no_space, room_link %}
-  
-  {% comment %}Handle room mentions in parentheses{% endcomment %}
-  {% assign room_in_parens = '(' | append: room | append: ')' %}
-  {% assign room_link_in_parens = '(' | append: room_link | append: ')' %}
-  {% assign processed_content = processed_content | replace: room_in_parens, room_link_in_parens %}
-  
-  {% comment %}Handle room mentions after commas{% endcomment %}
-  {% assign room_after_comma = ', ' | append: room %}
-  {% assign room_link_after_comma = ', ' | append: room_link %}
-  {% assign processed_content = processed_content | replace: room_after_comma, room_link_after_comma %}
+
 {% endfor %}
+{% comment %}Insert &nbsp; for comma - room notation {% endcomment}
+{% assign room_link_start_comma_space = ', <a href="https://ethz.ch/en/utils/location.html?building='  %}
+{% assign room_link_start_comma_nbsp = ',&nbsp;<a href="https://ethz.ch/en/utils/location.html?building=' %}
+{% assign processed_content = processed_content | replace: room_link_start_comma_space, room_link_start_comma_nbsp %}
+  
 
 {{ processed_content }}
