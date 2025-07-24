@@ -14,23 +14,30 @@ Usage: {% include process-rooms.html content=content %}
   {% assign building = room_parts[0] %}
   {% assign floor = room_parts[1] %}
   {% assign room_num = room_parts[2] %}
+
+  {% comment %}Unify different spacing variations{% endcomment %}
+  {% assign room_no_space = building | append: ' ' | append: floor | append: room_num %}
+  {% assign processed_content = processed_content | replace: room_no_space, room %}
   
+  {% comment %}Insert &nbsp; for space preceding room notation {% endcomment%}
+  {% assign room_start_space = ' ' | append: room  %}
+  {% assign room_start_nbsp = '&nbsp;' | append: room  %}
+  {% assign processed_content = processed_content | replace: room_start_space, room_start_nbsp %}
+
+  {% comment %} Insert &nbsp; for space following building and floor notation {% endcomment %}
+  {% assign room_end_space = room | append: ' '  %}
+  {% assign room_end_nbsp = room | append: '&nbsp;'  %}
+  {% assign processed_content = processed_content | replace: room_end_space, room_end_nbsp %}
+
   {% comment %}Create the ETH location link{% endcomment %}
   {% assign link_url = 'https://ethz.ch/en/utils/location.html?building=' | append: building | append: '&floor=' | append: floor | append: '&room=' | append: room_num | append: '&lang=en' %}
   {% assign room_link = '<a href="' | append: link_url | append: '">' | append: room | append: '</a>' %}
-  
-  {% comment %}Handle different spacing variations{% endcomment %}
-  {% assign room_no_space = building | append: ' ' | append: floor | append: room_num %}
+
   
   {% comment %}Handle room mentions{% endcomment %}
   {% assign processed_content = processed_content | replace: room, room_link %}
-  {% assign processed_content = processed_content | replace: room_no_space, room_link %}
 
 {% endfor %}
-{% comment %}Insert &nbsp; for comma - room notation {% endcomment}
-{% assign room_link_start_comma_space = ', <a href="https://ethz.ch/en/utils/location.html?building='  %}
-{% assign room_link_start_comma_nbsp = ',&nbsp;<a href="https://ethz.ch/en/utils/location.html?building=' %}
-{% assign processed_content = processed_content | replace: room_link_start_comma_space, room_link_start_comma_nbsp %}
   
 
 {{ processed_content }}
