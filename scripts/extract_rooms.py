@@ -68,9 +68,47 @@ def generate_liquid_string(rooms: Set[str]) -> str:
     escaped_rooms = [room.replace('"', '\\"') for room in sorted_rooms]
     return ','.join(escaped_rooms)
 
+def update_process_rooms_file(base_path: str, liquid_string: str) -> bool:
+    """
+    Update the _includes/process-rooms.html file with the new room list.
+    """
+    include_file_path = os.path.join(base_path, '_includes', 'process-rooms.html')
+    
+    if not os.path.exists(include_file_path):
+        print(f"Error: {include_file_path} not found!")
+        return False
+    
+    try:
+        # Read the current file
+        with open(include_file_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+        
+        # Find and replace the rooms assignment line
+        import re
+        pattern = r'{% assign rooms = "[^"]*" \| split: "," %}'
+        new_assignment = f'{{% assign rooms = "{liquid_string}" | split: "," %}}'
+        
+        if re.search(pattern, content):
+            updated_content = re.sub(pattern, new_assignment, content)
+            
+            # Write the updated content back
+            with open(include_file_path, 'w', encoding='utf-8') as f:
+                f.write(updated_content)
+            
+            print(f"✅ Successfully updated {include_file_path}")
+            return True
+        else:
+            print(f"❌ Could not find rooms assignment line in {include_file_path}")
+            print("Expected pattern: {% assign rooms = \"...\" | split: \",\" %}")
+            return False
+            
+    except Exception as e:
+        print(f"❌ Error updating {include_file_path}: {e}")
+        return False
+
 def main():
     """
-    Main function to extract rooms and generate output.
+    Main function to extract rooms and automatically update the include file.
     """
     # Get the repository root (assuming script is run from repo root or scripts/ dir)
     if os.path.basename(os.getcwd()) == 'scripts':
@@ -94,15 +132,30 @@ def main():
     liquid_string = generate_liquid_string(all_rooms)
     
     print("\n" + "=" * 60)
-    print("LIQUID STRING FOR process-rooms.html:")
+    print("UPDATING PROCESS-ROOMS.HTML:")
     print("=" * 60)
-    print('{% assign rooms = "' + liquid_string + '" | split: "," %}')
     
-    print("\n" + "=" * 60)
-    print("INSTRUCTIONS:")
-    print("1. Copy the line above starting with '{% assign rooms ='")
-    print("2. Replace the rooms assignment line in _includes/process-rooms.html")
-    print("3. Commit and push to update your GitHub Pages site")
+    # Update the include file automatically
+    success = update_process_rooms_file(base_path, liquid_string)
+    
+    if success:
+        print("\n" + "=" * 60)
+        print("✅ ROOM PROCESSING UPDATE COMPLETE!")
+        print("=" * 60)
+        print("The _includes/process-rooms.html file has been automatically updated.")
+        print("You can now commit and push the changes to deploy to GitHub Pages.")
+        print("\nNext steps:")
+        print("1. git add _includes/process-rooms.html")
+        print("2. git commit -m 'Update room links processing'")
+        print("3. git push")
+    else:
+        print("\n" + "=" * 60)
+        print("❌ MANUAL UPDATE REQUIRED")
+        print("=" * 60)
+        print("Automatic update failed. Please manually update _includes/process-rooms.html")
+        print("Replace the rooms assignment line with:")
+        print('{% assign rooms = "' + liquid_string + '" | split: "," %}')
+    
     print("=" * 60)
 
 if __name__ == "__main__":
