@@ -1,0 +1,40 @@
+{% comment %}
+Process room mentions in content and convert them to ETH location links.
+This include replaces the functionality of the room_links.rb plugin for GitHub Pages compatibility.
+
+Usage: {% include process-rooms.html content=content %}
+{% endcomment %}
+
+{% assign rooms = "CAB E 74,CAB G 51,CAB G 52,CAB G 56,CAB G 57,CAB G 59,CAB G 61,CAB H 53,CAB H 66,CAB H 69.1,CAB H 81.1,CAB H 85.2,CAB H 86.1,CAB H 86.3,CHN D 42,CHN D 46,CHN D 48,CHN E 42,CHN E 46,CHN G 22,CHN G 46,CNB H 100.5,CNB H 104.2,ETZ F 91,ETZ G 86,ETZ G 91,ETZ H 91,ETZ J 91,HG D 7.2,HG E 22,HG E 3,HG F 3,HG F 5,HG F 7,HG G 26.5,HG G 3,IFW A 36,LFW B 3,LFW C 4,LFW C 5,LFW E 13,ML D 28,ML E 12,ML F 34,ML F 38,ML H 41.1,ML J 34.1,ML J 34.3,NO D 11,NO E 11" | split: "," %}
+
+{% assign processed_content = include.content %}
+
+{% for room in rooms %}
+  {% assign room_parts = room | split: ' ' %}
+  {% assign building = room_parts[0] %}
+  {% assign floor = room_parts[1] %}
+  {% assign room_num = room_parts[2] %}
+  
+  {% comment %}Create the ETH location link{% endcomment %}
+  {% assign link_url = 'https://ethz.ch/en/utils/location.html?building=' | append: building | append: '&floor=' | append: floor | append: '&room=' | append: room_num | append: '&lang=en' %}
+  {% assign room_link = '<a href="' | append: link_url | append: '">' | append: room | append: '</a>' %}
+  
+  {% comment %}Handle different spacing variations{% endcomment %}
+  {% assign room_no_space = building | append: ' ' | append: floor | append: room_num %}
+  
+  {% comment %}Replace room mentions with links{% endcomment %}
+  {% assign processed_content = processed_content | replace: room, room_link %}
+  {% assign processed_content = processed_content | replace: room_no_space, room_link %}
+  
+  {% comment %}Handle room mentions in parentheses{% endcomment %}
+  {% assign room_in_parens = '(' | append: room | append: ')' %}
+  {% assign room_link_in_parens = '(' | append: room_link | append: ')' %}
+  {% assign processed_content = processed_content | replace: room_in_parens, room_link_in_parens %}
+  
+  {% comment %}Handle room mentions after commas{% endcomment %}
+  {% assign room_after_comma = ', ' | append: room %}
+  {% assign room_link_after_comma = ', ' | append: room_link %}
+  {% assign processed_content = processed_content | replace: room_after_comma, room_link_after_comma %}
+{% endfor %}
+
+{{ processed_content }}

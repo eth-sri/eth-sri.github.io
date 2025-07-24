@@ -11,7 +11,7 @@ layout: default
       
       <div class="page-info">
         {% if page.email %} <div class="info-line"><label>Email:</label><a href="mailto:{{ page.email }}">{{ page.email }}</a></div>  {% endif %}
-        {% if page.office %} <div class="info-line"><label>Office:</label>{{ page.office }}</div>  {% endif %}
+        {% if page.office %} <div class="info-line"><label>Office:</label>{% include process-rooms.html content=page.office %}</div>  {% endif %}
         {% if page.website %} <div class="info-line"><label>Website:</label><a href="{{ page.website }}" target="_blank">{{ page.website }}</a></div>  {% endif %}
         {% if page.phone %} <div class="info-line"><label>Phone:</label>{{ page.phone }}</div>  {% endif %}
         {% if page.cv %} 
@@ -38,7 +38,7 @@ layout: default
   <div class="page-content" style="padding-top: 0;">
     <div class="row">
       <div class="column column-66">
-        {{ content }}
+        {% include process-rooms.html content=content %}
       </div>
     </div>
   </div>
