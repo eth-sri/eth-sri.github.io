@@ -9,10 +9,11 @@ import os
 import re
 import glob
 from typing import Set, List
+import pathlib
 
 def find_room_mentions(content: str) -> Set[str]:
     """
-    Extract room mentions from content using the same regex as the original plugin.
+    Extract room mentions from content
     Matches formats like: CAB G 56, CAB G56, HG F 81.1, HG F81.1
     """
     # Same regex pattern as the original Ruby plugin
@@ -110,11 +111,7 @@ def main():
     """
     Main function to extract rooms and automatically update the include file.
     """
-    # Get the repository root (assuming script is run from repo root or scripts/ dir)
-    if os.path.basename(os.getcwd()) == 'scripts':
-        base_path = os.path.dirname(os.getcwd())
-    else:
-        base_path = os.getcwd()
+    base_path = str(pathlib.Path(__file__).parent)
     
     print(f"Scanning for room mentions in: {base_path}")
     print("=" * 60)

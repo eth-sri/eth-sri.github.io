@@ -25,7 +25,7 @@ Installation is not required when editing directly on GitHub. To setup on your l
 ## Making Updates
 After a commit, GitHub should re-generate the site (usually in under a minute, but it may take up to 5 minutes). 
 
-To automatically normalize used room names and wrap them into a link pointing to the roomfinder, run [`python clean_rooms_add_links.py`].
+If your edits contain rooms, run [`python extract_rooms.py`] to ensure that the plugin for automatically normalizing and adding roomfinder links picks up the room mention.
 
 ## Types of Content
 The types of content on the site:
@@ -283,3 +283,22 @@ Currently the Events section is used for workshops.
 
 
 
+
+#### Room Normalization and links
+
+The script `extract_rooms.py` ensures that the plugin-less script for room normalization and linking picks up all mentioned rooms across the website.
+It scans the repository for any mentioned rooms and inserts them into `includes/process-rooms.html`.
+If you add content that contains rooms which are not highlighted, you may need to ensure that the corresponding layout appropriately wraps the content in question with a call to process-rooms.
+
+**Usage:**
+After each edit to the website, run
+
+```bash
+python3 extract_rooms.py
+```
+
+The system recognizes these room formats:
+- `CAB G 56` (building, floor with space, room number)
+- `CAB G56` (building, floor without space, room number)  
+- `HG F 81.1` (decimal rooms)
+- `HG F81.1` (decimal rooms without space)
