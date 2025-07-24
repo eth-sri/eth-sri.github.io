@@ -8,7 +8,7 @@ projects: llm, safeai
 awards:
 code:
 venue: ICML
-paper: https://arxiv.org/abs/2408.02509
+paper: https://openreview.net/pdf?id=jSYBqtOJS4
 bibtex: "@inproceedings{
 jenko2025blackbox,
 title={Black-Box Adversarial Attacks on {LLM}-Based Code Completion},
