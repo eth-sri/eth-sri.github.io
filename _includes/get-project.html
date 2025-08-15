@@ -1,23 +1,29 @@
-{% assign project = site.projects | where:"ref", include.ref  | first %}
+{% assign project_refs = include.ref | split: "," %}
 
+{% for project_ref in project_refs %}
+  {% assign project_ref_trimmed = project_ref | strip %}
+  {% assign project = site.projects | where:"ref", project_ref_trimmed | first %}
+  
+  {% if project %}
+    {% if include.output == "plain" %}
+      <a href="{{ project.url | relative_url}}">{{project.title}}</a>{% unless forloop.last %}, {% endunless %}
+    {% else %}
+    <div class="card card-vertical">
+      
+      <div class="card-img">
+        {% if project.image and include.img != "none" %} 
+        	<a href="{{ project.url | relative_url}}">
+        		<img src="{{ project.image | prepend: '/assets/projects/' | relative_url}}"/>
+        	</a>
+        {% endif %}
+      </div>
 
-  {% if include.output == "plain" %}
-    <a href="{{ project.url | relative_url}}">{{project.title}}</a>
-  {% else %}
-  <div class="card card-vertical">
-    
-    <div class="card-img">
-      {% if project.image and include.img != "none" %} 
-      	<a href="{{ project.url | relative_url}}">
-      		<img src="{{ project.image | prepend: '/assets/projects/' | relative_url}}"/>
-      	</a>
-      {% endif %}
+      <div class="card-content">
+        <div class="card-title">{{ project.title }}</div>
+        <a class="card-site button" href="{{ project.url | relative_url}}">View Project</a>
+      </div>
+
     </div>
-
-    <div class="card-content">
-      <div class="card-title">{{ project.title }}</div>
-      <a class="card-site button" href="{{ project.url | relative_url}}">View Project</a>
-    </div>
-
-  </div>
+    {% endif %}
   {% endif %}
+{% endfor %}
