@@ -9,7 +9,7 @@ awards:
 projects: safeai,llm
 bibtex: "
 @article{muendler2025constraineddiffusion,
-title={Constrained Decoding of Diffusion LLMs for Context-Free Grammars},
+title={Constrained Decoding of Diffusion LLMs with Context-Free Grammars},
 author={Niels Mündler and Jasper Dekoninck and Martin Vechev},
 year={2025},
 eprint={2508.10111},
