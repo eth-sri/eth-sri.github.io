@@ -76,12 +76,20 @@ layout: default
     {% if page.bibtex %} 
     <div class="extras">
       <label>Bibtex</label>
-      <pre id="bibtex-content" style="background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 4px; padding: 15px; font-family: 'Courier New', Courier, monospace; line-height: 1.4; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;">{{ page.bibtex }}</pre>
+      <div id="bibtex-container" style="position: relative; cursor: pointer;">
+        <pre id="bibtex-content" style="background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 4px; padding: 15px; font-family: 'Courier New', Courier, monospace; line-height: 1.4; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;">{{ page.bibtex }}</pre>
+        <div id="copy-overlay" style="position: absolute; top: 8px; right: 8px; background: rgba(255, 255, 255, 0.9); border-radius: 4px; padding: 6px 8px; font-size: 14px; opacity: 0; transition: opacity 0.2s; pointer-events: none; box-shadow: 0 2px 4px rgba(0,0,0,0.1);" title="Click to copy">
+          📋 Copy
+        </div>
+      </div>
     </div>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         var bibtexElement = document.getElementById('bibtex-content');
-        if (bibtexElement) {
+        var bibtexContainer = document.getElementById('bibtex-container');
+        var copyOverlay = document.getElementById('copy-overlay');
+        
+        if (bibtexElement && bibtexContainer && copyOverlay) {
           var bibtexText = bibtexElement.textContent;
           
           // Format bibtex: add newline after first comma, after }, and before last }
@@ -94,6 +102,49 @@ layout: default
             .replace(/\s*}(\s*)$/, '\n}$1');
           
           bibtexElement.textContent = formatted;
+          
+          // Show overlay on hover
+          bibtexContainer.addEventListener('mouseenter', function() {
+            copyOverlay.style.opacity = '1';
+          });
+          
+          bibtexContainer.addEventListener('mouseleave', function() {
+            copyOverlay.style.opacity = '0';
+          });
+          
+          // Copy functionality when clicking anywhere in the container
+          bibtexContainer.addEventListener('click', function() {
+            navigator.clipboard.writeText(formatted).then(function() {
+              // Visual feedback
+              copyOverlay.innerHTML = '✓ Copied!';
+              copyOverlay.style.background = 'rgba(76, 175, 80, 0.9)';
+              copyOverlay.style.color = 'white';
+              setTimeout(function() {
+                copyOverlay.innerHTML = '📋 Copy';
+                copyOverlay.style.background = 'rgba(255, 255, 255, 0.9)';
+                copyOverlay.style.color = 'inherit';
+              }, 1500);
+            }).catch(function(err) {
+              console.error('Failed to copy: ', err);
+              // Fallback for older browsers
+              var textArea = document.createElement('textarea');
+              textArea.value = formatted;
+              document.body.appendChild(textArea);
+              textArea.select();
+              document.execCommand('copy');
+              document.body.removeChild(textArea);
+              
+              // Visual feedback
+              copyOverlay.innerHTML = '✓ Copied!';
+              copyOverlay.style.background = 'rgba(76, 175, 80, 0.9)';
+              copyOverlay.style.color = 'white';
+              setTimeout(function() {
+                copyOverlay.innerHTML = '📋 Copy';
+                copyOverlay.style.background = 'rgba(255, 255, 255, 0.9)';
+                copyOverlay.style.color = 'inherit';
+              }, 1500);
+            });
+          });
         }
       });
     </script>

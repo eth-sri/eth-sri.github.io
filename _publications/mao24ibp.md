@@ -6,7 +6,7 @@ year: 2024
 month: 05
 venue: ICLR
 projects: safeai
-bibtex: '@inproceedings{mao23taps
+bibtex: '@inproceedings{mao23taps,
 			author       = {Yuhao Mao and
 							Mark Niklas M{\"{u}}ller and
 							Marc Fischer and

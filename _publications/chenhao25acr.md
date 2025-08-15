@@ -6,7 +6,7 @@ year: 2025
 month: 07
 venue: ICML
 projects: safeai
-bibtex: '@inproceedings{chenhao25acr
+bibtex: '@inproceedings{chenhao25acr,
 			author       = {Chenhao Sun and
                             Yuhao Mao and
 							Mark Niklas M{\"{u}}ller  and
