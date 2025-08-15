@@ -6,7 +6,7 @@ year: 2023
 month: 12
 venue: NeuIPS
 projects: safeai
-bibtex: '@article{mao23taps
+bibtex: '@article{mao23taps,
 			author       = {Yuhao Mao and
 							Mark Niklas M{\"{u}}ller and
 							Marc Fischer and
