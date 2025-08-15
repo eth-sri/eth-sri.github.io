@@ -76,8 +76,27 @@ layout: default
     {% if page.bibtex %} 
     <div class="extras">
       <label>Bibtex</label>
-      <pre style="background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 4px; padding: 15px; font-family: 'Courier New', Courier, monospace; line-height: 1.4; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;">{{ page.bibtex }}</pre>
+      <pre id="bibtex-content" style="background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 4px; padding: 15px; font-family: 'Courier New', Courier, monospace; line-height: 1.4; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;">{{ page.bibtex }}</pre>
     </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var bibtexElement = document.getElementById('bibtex-content');
+        if (bibtexElement) {
+          var bibtexText = bibtexElement.textContent;
+          
+          // Format bibtex: add newline after first comma, after }, and before last }
+          var formatted = bibtexText
+            // Add newline after first comma (but not subsequent ones in the same line)
+            .replace(/^([^,]*),\s*/, '$1,\n  ')
+            // Add newline after each },
+            .replace(/},\s*/g, '},\n  ')
+            // Add newline before the last }
+            .replace(/\s*}(\s*)$/, '\n}$1');
+          
+          bibtexElement.textContent = formatted;
+        }
+      });
+    </script>
     {% endif %}
 
       </div>

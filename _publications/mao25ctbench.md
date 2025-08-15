@@ -6,7 +6,7 @@ year: 2025
 month: 07
 venue: ICML
 projects: safeai
-bibtex: '@inproceedings{mao25ctbench
+bibtex: '@inproceedings{mao25ctbench,
 			author       = {Yuhao Mao and
 							Stefan Balauca and
 							Martin T. Vechev},
