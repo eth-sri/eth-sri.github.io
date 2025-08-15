@@ -12,7 +12,8 @@ bibtex: '@inproceedings{mao25ctbench,
 							Martin T. Vechev},
 			title        = {CTBENCH: A Library and Benchmark for Certified Training},
 			year         = {2025},
-			booktitle    = {The Forty-Second International Conference on Machine Learning}'
+			booktitle    = {The Forty-Second International Conference on Machine Learning}
+}'
 paper: https://arxiv.org/abs/2406.04848
 code: https://github.com/eth-sri/CTBench
 # slides: https://files.sri.inf.ethz.ch/website/slides/mueller2023sabr_slides.pdf
