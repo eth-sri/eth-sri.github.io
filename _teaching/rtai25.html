@@ -1,0 +1,198 @@
+---
+title: Reliable and Trustworthy Artificial Intelligence
+ref: rtai2025
+description: Graduate course discussing robustness, privacy, and fairness of machine learning.
+semester: Fall 2025
+number: 263-2400-00L
+lecturer: Prof. Dr. Martin Vechev
+ta: Robin Staab, Giovanni De Muri, Thibaud Gloaguen, Jasper Dekoninck, Kazuki Egashira, Yuhao Mao, Chenhao Sun, Nikola Jovanović
+assistants:
+head-ta: Nikola Jovanović
+head-ta-details: use <a href="https://moodle-app2.let.ethz.ch/course/view.php">Moodle (TBD)</a> for questions unless they contain sensitive information
+edoz: https://www.vorlesungen.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?semkez=2025W&ansicht=LEHRVERANSTALTUNGEN&lerneinheitId=193777&lang=en
+session-time-place:
+lecture-time-place: Wed 14-16,&nbsp;<a href="https://ethz.ch/en/utils/location.html?building=HG&floor=G&room=3&lang=en">HG G 3</a>&nbsp;(<a href="https://video.ethz.ch/">recordings on the ETH video portal</a>)
+exercise-time-place: Mon 12-14,&nbsp;<a href="https://ethz.ch/en/utils/location.html?building=CAB&floor=G&room=56&lang=en">CAB G 56</a>&nbsp;or Wed 12-14,&nbsp;<a href="https://ethz.ch/en/utils/location.html?building=CAB&floor=G&room=51&lang=en">CAB G 51</a>
+credits: 6
+image: assets/images/reliableai_logo.png
+---
+
+<h2>Overview</h2>
+
+<p>
+Reliability, security, privacy, and robustness are core challenges in achieving more trustworthy AI and are of fundamental importance. The goal of the course is to teach both the mathematical foundations of this emerging area and to introduce students to the latest and most exciting advances in the space.
+</p>
+
+<h3>Learning Objective</h3>
+
+<p>Upon completion of the course, the students should have mastered the underlying methods and be able to apply them to a variety of engineering and research problems. To facilitate deeper understanding, the course includes a group coding project where students will build a system based on the learned material.</p>
+
+<h3>Structure</h3>
+
+<p>The course is split into 3 general topic areas</p>
+
+<p><b>Robustness of Machine Learning</b></p>
+<ul>
+  <li>Adversarial attacks and defenses on deep learning models.</li>
+  <li>Automated certification of deep learning models 
+      (major trends: convex relaxations, branch-and-bound, randomized smoothing).
+  </li>
+  <li>Certified training of deep neural networks 
+      (combining symbolic and continuous methods).
+  </li>
+  <li>Attacks and robustness for Large Language Models (LLMs).</li>
+</ul>
+
+<p><b>Privacy of Machine Learning</b></p>
+<ul>
+  <li>Threat models (e.g., stealing data, poisoning, membership inference, etc.).</li>
+  <li>Data flow tracking for safe agentic AI.</li>
+  <li>Memorization and copyright in LLMs.</li>
+  <li>Attacking decentralized machine learning.</li>
+  <li>Differential privacy for defending machine learning.</li>
+</ul>
+
+<p><b>LLM Reliability and Security</b></p>
+<ul>
+  <li>Spoofing watermark attacks (i.e., an LLM pretending it's another one).</li>
+  <li>Stealing attacks (stealing the watermark an LLM uses).</li>
+  <li>Defending against spoofing and stealing attacks.</li>
+  <li>Different methods to evaluate LLMs and their respective (dis-)advantages.</li>
+  <li>Dataset contamination and their detection.</li>
+  <li>Overview of state-of-the-art benchmarks (e.g., for code, math, etc.).</li>
+  <li>AI regulations (EU-AI Act) and what this means for the practitioner.</li>
+</ul>
+
+<h3>Prerequisites / Notice</h3>
+
+<p>While not a formal requirement, the course assumes a good understanding of linear algebra, analysis, probability theory and machine learning (especially neural networks). These topics are usually covered in “Intro to ML” classes at most institutions (e.g., “Introduction to Machine Learning” at ETH).  </p>
+
+<p>The coding project will utilize Python and PyTorch. Thus programming experience in Python is expected. Students without prior knowledge of PyTorch are expected to acquire it prior to the course.</p>
+
+
+<h2 id="lectures">Lectures</h2>
+
+<p>Use your NETHZ account to access the files.</p>
+
+<table centering border="0" width="100%" cellspacing="0" cellpadding="0">
+
+	<th width="10%">Date</th>
+	<th width=60%>Content</th>
+	<th width="10%">Slides</th>
+	<th width=10%>Exercises</th>
+	<th width=10%>Solutions</th>
+
+	<tr>
+		<td>Sep 17</td>
+		<td>Course Introduction</td>
+		<td>
+			<a href="https://www.sri.inf.ethz.ch/teaching/rtai25" class="pdf" title="">
+				<img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF">
+			</a>
+			<!-- <a href="https://files.sri.inf.ethz.ch/website/teaching/reliableai2023/materials/slides/LECTURE1_ATTACKS_DEFENSES.pdf" class="pdf" title="">
+				<img src="/assets/icons/icon-slides.svg" class="svg-icon" border="0" alt="PDF">
+			</a> -->
+		</td>  
+		<td><a class="pdf"
+				href="https://www.sri.inf.ethz.ch/teaching/rtai25"
+				title="Exercise 01 Slides"><img src="/assets/icons/icon-slides.svg" class="svg-icon" alt="PDF" border="0"></a>
+		</td>
+		<td>
+		</td>
+	</tr>
+	
+</table>
+
+<h2 id="recordings">Recordings</h2>
+
+<p>
+	All lecture recordings from this year will be available on the ETH video portal, in the same way as <a
+		href="https://video.ethz.ch/lectures/d-infk/2024/autumn/263-2400-00L.html">the recordings from 2024</a>. Another
+	useful resource is our <a href="https://www.youtube.com/playlist?list=PLWjm4hHpaNg6c-W7JjNYDEC_kJK9oSp0Y">Youtube
+		playlist of lecture recordings from 2020</a>. However, note that several new topics have been introduced to the
+	course since then.
+</p>
+
+<h2 id="project">Course project</h2>
+
+<p>To be announced.</p>
+
+<h2 id="previous-exams">Previous Exams</h2>
+
+<p>
+	Previous exams (formerly, this course was named "Reliable and Interpretable
+	Artificial Intelligence") are available in the <a href="https://exams.vis.ethz.ch/">exam collection</a> of the
+	student association
+	(VIS).
+</p>
+
+<h2 id="course-organization">Course Organization</h2>
+
+<p><strong>Lectures</strong></p>
+
+<ul>
+	<li>The lecture will take place physically in room HG G 3, but will be recorded.</li>
+	<li>
+		For additional questions, we will have prepared a <a
+			href="https://www.sri.inf.ethz.ch/teaching/rtai25">Moodle
+			forum</a>.
+	</li>
+</ul>
+
+<p><strong>Exercises</strong></p>
+
+<ul>
+	<li>Every week, we will publish an exercise sheet and its solutions on this
+		page, by Thursday evening.</li>
+	<li>The exercise session will consist of a discussion of selected exercises
+		(potentially not all exercises). On demand, the teaching assistant can also
+		discuss questions on specific exercises brought up by students.</li>
+	<li>Some exercise sessions will also discuss prerequisites for the course.
+		The material covered in these sessions will be available online. This will
+		definitively be the case in the first exercise on Sep 23/25. For other
+		exercise sessions, we will announce by mail if they discuss
+		prerequisites.</li>
+	<li>Attending the exercise sessions is optional. We will not cover additional material in the exercise sessions,
+		except for prerequisites (see above). Therefore, we will also not record the exercise sessions.
+	</li>
+	<li>We strongly recommend solving the exercises before next week's exercise
+		session, and before looking at the solutions. The style of the exam will be
+		similar to the exercises, so first-hand experience solving exercises is
+		critical.</li>
+	<li>For additional questions, we will have prepared a <a
+			href="https://www.sri.inf.ethz.ch/teaching/rtai25">Moodle
+			forum</a>.</li>
+	<li>In case there is not enough material to cover the full exercise session,
+		we will stop it early.</li>
+	<li>There is no need to attend both exercise sessions, as their contents
+		will be equivalent.</li>
+</ul>
+
+
+
+
+
+
+<p><strong>Communication</strong></p>
+
+<p>
+	All communication (like special announcements) will be sent out by e-mail.
+</p>
+
+<h2>Literature</h2>
+
+<p>
+	For students who would like to brush up on the basics of machine learning used
+	in this course, we recommend
+</p>
+
+<ul>
+	<li>Section 3 (Background) of the publication <a href="https://files.sri.inf.ethz.ch/website/papers/DeepPoly.pdf">An
+			Abstract
+			Domain for Certifying Neural Networks</a> by Gagandeep Singh, Timon Gehr,
+		Markus Püschel, and Martin Vechev</li>
+	<li><a href="http://neuralnetworksanddeeplearning.com/index.html">Neural
+			Networks and Deep Learning</a> by Michael Nielsen</li>
+	<li><a href="https://www.deeplearningbook.org/">Deep Learning book</a>
+		by Ian Goodfellow, Yoshua Bengio, and Aaron Courville</li>
+</ul>
