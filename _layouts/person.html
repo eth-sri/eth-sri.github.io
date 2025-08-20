@@ -19,7 +19,8 @@ layout: default
                {% unless cvlink contains 'http' %}
                 {% assign cvlink = '/people/' | append: cvlink | relative_url %}
                {% endunless %}
-            <div class="info-line"><label>CV:</label><a href="{{ cvlink }}" target="_blank">View PDF</a></div>  
+               {% assign cvdate = '&nbsp;(Last updated: ' | append: page.cvdate | append: ')' %}
+            <div class="info-line"><label>CV:</label><a href="{{ cvlink }}" target="_blank">View PDF</a><p>{{cvdate}}</p></div>  
         {% endif %}
       </div>
 
