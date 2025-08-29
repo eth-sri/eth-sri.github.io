@@ -4,7 +4,7 @@ title: "Black-Box Adversarial Attacks on LLM-Based Code Completion"
 authors: Slobodan Jenko*, Niels Mündler*, Jingxuan He, Mark Vero, Martin Vechev
 year: 2025
 month: 07
-projects: llm, safeai
+projects: codellm, llmsecpriv
 awards:
 code:
 venue: ICML

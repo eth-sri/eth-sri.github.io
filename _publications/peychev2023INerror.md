@@ -5,7 +5,7 @@ authors: Momchil Peychev*, Mark Niklas Müller*, Marc Fischer, Martin Vechev
 year: 2023
 month: 12
 venue: NeurIPS
-projects: safeai
+projects:
 bibtex: '@inproceedings{
 			PeychevMFV2023,  
 			title={Automated Classification of Model Errors on ImageNet},  

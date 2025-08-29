@@ -5,6 +5,7 @@ authors: Mislav Balunović*, Jasper Dekoninck*, Nikola Jovanović, Ivo Petrov, M
 year: 2025
 month: 07
 venue: ICML
+projects: mathllm,llmevals
 bibtex: '@article{balunovic2025mathconstruct,
     title={MathConstruct: Challenging LLM Reasoning with Constructive Proofs},
     author={Mislav Balunović and Jasper Dekoninck and Nikola Jovanović and Ivo Petrov and Martin Vechev},

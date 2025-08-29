@@ -4,7 +4,7 @@ title: Modeling and Analysis of Remote Memory Access Programming
 authors: Andrei Dan, Patrick Lam, Torsten Hoefler, Martin Vechev 
 year: 2016
 venue: ACM OOPSLA
-projects: "Fender: Programming with relaxed memory models"
+projects: fender
 awards:
 bibtex: '@article{dan2016modeling,
   title={Modeling and analysis of remote memory access programming},

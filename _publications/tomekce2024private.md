@@ -5,7 +5,7 @@ authors: Batuhan Tömekçe, Mark Vero, Robin Staab, Martin Vechev
 year: 2024
 month: 12
 venue: NeurIPS
-projects: safeai
+projects: llmsecpriv
 bibtex: "@misc{tömekçe2024private,
       title={Private Attribute Inference from Images with Vision-Language Models}, 
       author={Batuhan Tömekçe and Mark Vero and Robin Staab and Martin Vechev},

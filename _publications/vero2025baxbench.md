@@ -6,7 +6,7 @@ year: 2025
 month: 07
 venue: ICML
 awards: Spotlight
-projects: llm
+projects: codellm,llmevals
 bibtex: "@article{vero2025baxbenchllmsgeneratecorrect,
         title={BaxBench: Can LLMs Generate Correct and Secure Backends?}, 
         author={Mark Vero and Niels Mündler and Victor Chibotaru and Veselin Raychev and Maximilian Baader and Nikola Jovanović and Jingxuan He and Martin Vechev},

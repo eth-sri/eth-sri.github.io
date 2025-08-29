@@ -1,0 +1,71 @@
+---
+layout: default
+title: Spin-offs
+permalink: /spinoffs/index.html
+---
+
+
+<article class="page">
+
+  <header class="page-header container">
+  <div class="row">
+    <div class="column column-66">
+      <h1 class="page-title">{{ page.title | escape }}</h1>
+    </div>
+  </div>
+  </header>
+
+  <div class="page-content container">
+    <div class="row">
+      <div class="column">
+
+        <div class="grid grid-center grid-3">
+           {% include card.html
+              title="NetFabric"
+              output="vertical"
+              url="https://netfabric.ai/"
+              image="/assets/images/netfabric-logo.png"
+              description="NetFabric provides AI-powered network intelligence."
+            %}
+           {% include card.html
+              title="LogicStar"
+              output="vertical"
+              url="https://logicstar.ai/"
+              image="/assets/images/logicstar-logo-white.png"
+              description="LogicStar develops autonomous AI for software engineering."
+            %}
+           {% include card.html
+              title="LatticeFlow"
+              output="vertical"
+              url="https://latticeflow.ai/"
+              image="/assets/images/latticeflow-logo.png"
+              description="LatticeFlow AI enables organizations to build performant, trustworthy AI applications."
+            %}
+           {% include card.html
+              title="Invariant Labs (Acquired by Snyk)"
+              output="vertical"
+              url="https://invariantlabs.ai/"
+              image="/assets/images/invariant-logo.png"
+              description="Invariant Labs makes AI agents secure, reliable and robust."
+            %}
+           {% include card.html
+              title="DeepCode (Acquired by Snyk)"
+              output="vertical"
+              url="https://snyk.io/platform/deepcode-ai/"
+              image="/assets/images/deepcode-logo.png"
+              description="DeepCode AI powers the fastest, most accurate, and most comprehensive set of AppSec testing tools on the market."
+            %}
+           {% include card.html
+              title="ChainSecurity (Acquired by PwC)"
+              output="vertical"
+              url="https://www.chainsecurity.com/"
+              image="/assets/images/chainsecurity-logo.png"
+              description="ChainSecurity audits smart contracts, working with top-tier DeFi protocols, research institutions, central banks, and large organizations."
+            %}
+	      </div>
+      </div>
+    </div>
+  </div>
+
+</article>
+

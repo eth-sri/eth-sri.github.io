@@ -4,9 +4,9 @@ title: "Certification for Differentially Private Prediction in Gradient-Based Tr
 authors: Matthew Robert Wicker, Philip Sosnin, Igor Shilov, Adrianna Janik, Mark Niklas Müller, Yves-Alexandre de Montjoye, Adrian Weller, Calvin Tsay
 year: 2025
 month: 05
-venue: ICLM
+venue: ICML
 # awards: Spotlight
-projects: safeai
+projects: safeai, diff-privacy
 bibtex: '@inproceedings{
 			wicker2025certification,  
 			title={Certification for Differentially Private Prediction in Gradient-Based Training},  

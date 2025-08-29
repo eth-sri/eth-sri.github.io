@@ -5,7 +5,7 @@ authors: Benjamin Bichsel, Timon Gehr, Dana Drachsler-Cohen, Petar Tsankov, Mart
 year: 2018
 month: 10
 venue: ACM CCS
-projects: probabilistic-programming diff-privacy
+projects: probabilistic-programming, diff-privacy
 awards:
 bibtex: ''
 paper: https://files.sri.inf.ethz.ch/website/papers/ccs18-dpfinder.pdf

@@ -5,7 +5,7 @@ authors: Jasper Dekoninck, Mark Niklas Müller, Martin Vechev
 year: 2024
 month: 12
 venue: NeurIPS
-projects: llm
+projects: llmevals
 bibtex: "@article{dekoninck2024constat,
       title={ConStat: Performance-Based Contamination Detection in Large Language Models}, 
       author={Jasper Dekoninck and Mark Niklas Müller and Martin Vechev},

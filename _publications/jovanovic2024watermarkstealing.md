@@ -6,7 +6,7 @@ year: 2024
 month: 07
 venue: ICML
 awards: R2-FM@ICLR24 Oral
-projects: safeai,llm
+projects: watermarks
 bibtex: "@article{jovanovic2024watermarkstealing,
   title = {Watermark Stealing in Large Language Models},
   author = {Jovanović, Nikola and Staab, Robin and Vechev, Martin},

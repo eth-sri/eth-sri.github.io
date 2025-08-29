@@ -5,7 +5,7 @@ authors: Robin Staab*, Nikola Jovanović*, Kimberly Mai, Prakhar Ganesh, Martin 
 year: 2025
 month: 8
 venue: arXiv
-projects: safeai
+projects: regulations
 bibtex: "@misc{staab2025dmsok,
       title={SoK: Data Minimization in Machine Learning}, 
       author={Robin Staab and Nikola Jovanović and Kimberly Mai and Prakhar Ganesh and Martin Vechev and Ferdinando Fioretto and Matthew Jagielski},

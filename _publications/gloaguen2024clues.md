@@ -5,7 +5,7 @@ authors: Thibaud Gloaguen, Nikola Jovanović, Robin Staab, Martin Vechev
 year: 2025
 month: 07
 venue: ICML
-projects: safeai,llm
+projects: watermarks
 bibtex: "@article{gloaguen2025clues,
   title = {Discovering Spoofing Attempts on Language Model Watermarks},
   author = {Gloaguen, Thibaud and Jovanović, Nikola and Staab, Robin and Vechev, Martin},

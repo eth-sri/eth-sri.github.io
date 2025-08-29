@@ -4,9 +4,9 @@ title: "Automated Benchmark Generation for Repository-Level Coding Tasks"
 authors: Konstantinos Vergopoulos*, Mark Niklas Müller*, Martin Vechev
 year: 2025
 month: 05
-venue: ICLM
+venue: ICML
 # awards: Spotlight
-projects: llm
+projects: codellm
 bibtex: '@inproceedings{
 			mueller2025automated,  
 			title={Automated Benchmark Generation for Repository-Level Coding Tasks},  

@@ -5,7 +5,7 @@ authors: Thibaud Gloaguen, Robin Staab, Nikola Jovanović and Martin Vechev
 year: 2025
 month: 05
 venue: arXiv
-projects: safeai,llm
+projects: watermarks
 bibtex: "@misc{gloaguen2025fingerprint,
     title={Robust LLM Fingerprinting via Domain-Specific Watermarks}, 
     author={Thibaud Gloaguen and Robin Staab and Nikola Jovanović and Martin Vechev},

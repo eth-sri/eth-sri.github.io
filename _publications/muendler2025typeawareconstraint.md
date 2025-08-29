@@ -6,7 +6,7 @@ year: 2025
 month: 6
 venue: PLDI
 awards: 
-projects: safeai,llm
+projects: codellm, cclm
 bibtex: "@inproceedings{
 mundler2025typeaware,
 title={Type-Constrained Code Generation with Language Models},

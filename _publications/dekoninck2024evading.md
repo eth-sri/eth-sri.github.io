@@ -5,7 +5,7 @@ authors: Jasper Dekoninck, Mark Niklas Müller, Maximilian Baader, Marc Fischer,
 year: 2024
 month: 02
 venue: arXiv 
-projects: llm
+projects: llmevals
 bibtex: "@article{dekoninck2024evading,
       title={Evading Data Contamination Detection for Language Models is (too) Easy}, 
       author={Jasper Dekoninck and Mark Niklas Müller and Maximilian Baader and Marc Fischer and Martin Vechev},

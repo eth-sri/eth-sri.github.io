@@ -6,7 +6,7 @@ year: 2025
 month: 8
 venue: arXiv
 awards: 
-projects: safeai,llm
+projects: codellm, cclm
 bibtex: "
 @article{muendler2025constraineddiffusion,
 title={Constrained Decoding of Diffusion LLMs with Context-Free Grammars},

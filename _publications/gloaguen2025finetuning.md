@@ -5,7 +5,7 @@ authors: Thibaud Gloaguen, Mark Vero, Robin Staab, Martin Vechev
 year: 2025
 month: 05
 venue: arXiv
-projects: safeai,llm
+projects: llmsecpriv
 bibtex: "@misc{gloaguen2025finetuningactivatedbackdoorsllms,
       title={Finetuning-Activated Backdoors in LLMs}, 
       author={Thibaud Gloaguen and Mark Vero and Robin Staab and Martin Vechev},

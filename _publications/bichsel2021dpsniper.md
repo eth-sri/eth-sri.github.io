@@ -5,7 +5,7 @@ authors: Benjamin Bichsel, Samuel Steffen, Ilija Bogunovic, Martin Vechev
 year: 2021
 month: 05
 venue: IEEE S&P
-projects: probabilistic-programming diff-privacy
+projects: probabilistic-programming, diff-privacy
 awards:
 bibtex: ''
 <!--blogpost: dpsniper-->

@@ -5,7 +5,7 @@ authors: Robin Staab, Nikola Jovanović, Mislav Balunović, Martin Vechev
 year: 2024
 month: 5
 venue: IEEE S&P
-projects: safeai
+projects: regulations
 bibtex: '@article{staab2023datamin,
   title={From Principle to Practice: Vertical Data Minimization for Machine Learning},
   author={Staab, Robin and Jovanović, Nikola and Balunović, Mislav and Vechev, Martin},

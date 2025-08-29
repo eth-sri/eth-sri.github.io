@@ -4,7 +4,7 @@ title: Dynamic Synthesis for Relaxed Memory Models
 authors: Feng Liu, Nayden Nedev, Nedyalko Prisadnikov, Martin Vechev, Eran Yahav  
 year: 2012
 venue: ACM PLDI
-projects: "Fender: Programming with relaxed memory models"
+projects: fender
 awards:
 bibtex: '@article{liu2012dynamic,
   title={Dynamic synthesis for relaxed memory models},

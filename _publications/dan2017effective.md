@@ -4,7 +4,7 @@ title: Effective Abstractions for Verification under Relaxed Memory Models
 authors: Andrei Dan, Yuri Meshman, Martin Vechev, Eran Yahav         
 year: 2015
 venue: VMCAI
-projects: "Fender: Programming with relaxed memory models"
+projects: fender
 awards:
 bibtex: '@article{dan2017effective,
   title={Effective abstractions for verification under relaxed memory models},

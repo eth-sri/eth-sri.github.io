@@ -5,7 +5,7 @@ authors: Cedric Baumann, Andrei Marian Dan, Yuri Meshman, Torsten Hoefler, Marti
 year: 2018
 month: 01
 venue: VMCAI
-projects: "Fender: Programming with relaxed memory models"
+projects: fender
 awards:
 bibtex: '@inproceedings{baumann2018automatic,
   title={Automatic Verification of RMA Programs via Abstraction Extrapolation},

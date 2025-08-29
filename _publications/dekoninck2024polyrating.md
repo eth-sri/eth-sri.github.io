@@ -5,7 +5,7 @@ authors: Jasper Dekoninck, Maximilian Baader, Martin Vechev
 year: 2025
 month: 04
 venue: ICLR
-projects: llm
+projects: llmevals
 bibtex: "@article{dekoninck2024polyrating,
       title={Polyrating: A Cost-Effective and Bias-Aware Rating System for LLM Evaluation}, 
       author={Jasper Dekoninck and Maximilian Baader and Martin Vechev},

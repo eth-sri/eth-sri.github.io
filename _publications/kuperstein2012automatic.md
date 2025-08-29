@@ -4,7 +4,7 @@ title: Automatic Inference of Memory Fences
 authors: Michael Kuperstein, Martin Vechev and Eran Yahav      
 year: 2010
 venue: Formal Methods in Computer Aided Design (FMCAD)
-projects: "Fender: Programming with relaxed memory models"
+projects: fender
 awards: 
 bibtex: '@article{kuperstein2012automatic,
   title={Automatic inference of memory fences},

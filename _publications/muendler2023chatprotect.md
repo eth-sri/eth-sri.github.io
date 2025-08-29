@@ -6,7 +6,7 @@ year: 2024
 month: 05
 venue: ICLR
 awards: 
-projects: safeai,llm
+projects: cclm
 bibtex: "@inproceedings{muendler2023chatprotect,
 			title     = {Self-contradictory Hallucinations of Large Language Models: Evaluation, Detection and Mitigation},
 			year         = {2024},

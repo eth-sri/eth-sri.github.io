@@ -5,7 +5,7 @@ authors: Nikola Jovanović, Robin Staab, Maximilian Baader, Martin Vechev
 year: 2025
 month: 04
 venue: ICLR
-projects: safeai,llm
+projects: watermarks
 bibtex: "@article{jovanovic2025ward,
   title = {Ward: Provable RAG Dataset Inference via LLM Watermarks},
   author = {Jovanović, Nikola and Staab, Robin and Baader, Maximilian and Vechev, Martin},

@@ -4,7 +4,7 @@ title: An Interactive System for Data Structure Development
 authors: Jibin Ou, Otmar Hilliges, Martin Vechev        
 year: 2015
 venue: ACM CHI
-projects: An interactive data structure development system
+projects:
 awards:
 bibtex: '@inproceedings{ou2015interactive,
   title={An interactive system for data structure development},

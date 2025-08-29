@@ -119,17 +119,16 @@ layout: default
           The <b>Secure, Reliable, and Intelligent Systems (SRI) Lab</b> is a research
           group in the <a href="https://www.inf.ethz.ch/"
           target="_blank">Department of Computer Science</a> at ETH Zurich.
-          Our current research focus is on the areas of reliable, secure,
-          robust and fair machine learning, large language models, probabilistic and quantum
-          programming, and machine learning for code.
-          Our work led to six ETH spin-offs: 
-          <a href="https://invariantlabs.ai/" target="_blank">InvariantLabs</a> (secure AI agents, acquired),
+          Our research focuses on reliable, secure, and trustworthy machine learning, with emphasis on large language models.
+          We currently study issues of <a href="/research/cclm">controllability</a>, <a href="/research/llmsecpriv">security and privacy</a>, and <a href="/research/llmevals">reliable evaluation</a> of LLMs, their application to <a href="/research/mathllm">mathematical reasoning</a> and <a href="/research/codellm">coding</a>, as well as <a href="/research/watermarks">generative AI watermarking</a>, <a href="/research/regulations">AI regulations</a>, <a href="/research/federated">federated learning privacy</a>, <a href="/research/safeai">robustness and fairness certification</a>, and <a href="/research/quantum">quantum computing</a>.
+          Our work has led to six ETH <a href="/spinoffs">spin-offs</a>: 
           <a href="https://netfabric.ai/" target="_blank">NetFabric</a> (AI for systems),
           <a href="https://logicstar.ai/" target="_blank">LogicStar</a> (AI code agents),
           <a href="https://latticeflow.ai/" target="_blank">LatticeFlow</a> (robust ML),
+          <a href="https://invariantlabs.ai/" target="_blank">InvariantLabs</a> (secure AI agents; acquired),
           <a href="http://deepcode.ai/" target="_blank">DeepCode</a> (AI for code; acquired),
           and <a href="https://chainsecurity.com" target="_blank">ChainSecurity</a> (security verification; acquired).
-          See our <a href="/publications" target="_blank">Publications</a> and our <a href="/blog " target="_blank">Blog</a> to learn more about our latest work, and follow our group on <a href="https://x.com/the_sri_lab" target="_blank">Twitter</a>.
+          To learn more about our work see our <a href="/research" target="_blank">Research</a> page, recent <a href="/publications" target="_blank">Publications</a>, and <a href="https://github.com/eth-sri/">GitHub</a> releases. To stay up to date follow our group on <a href="https://x.com/the_sri_lab" target="_blank">Twitter</a>.
           </div>
       </div>
     </div>
@@ -138,65 +137,82 @@ layout: default
   <div class="landing-content container">
     <div class="row headers-separate">
       <div class="column">
-        <h2 style="font-size: 18px">Latest Blog Posts</h2>
-      </div>
-      <div class="column">
         <h2 style="font-size: 18px">Latest News</h2>
       </div>
-    </div>
-
-    <div class="row headers-joint">
       <div class="column">
-        <h2 style="font-size: 18px">Latest News &amp; Blog Posts</h2>
+        <h2 style="font-size: 18px">Most Recent Publications</h2>
       </div>
     </div>
 
-    {% assign sorted_blogposts = site.blogposts | sort:"date" | reverse %}
-    {% assign sorted_newsposts = site.newsposts | where: "categories","media" | sort:"date" | reverse %}
+    <div class="row">
+      {% assign pubs_by_year = site.publications | group_by: "year" | sort: "name" | reverse %}
+      {% assign sorted_pubs = "" | split: "" %}
+      {% for year in pubs_by_year %}
+        {% assign pubs_by_month = year.items | sort: "month" | reverse %}
+        {% assign sorted_pubs = sorted_pubs | concat: pubs_by_month %}
+      {% endfor %}
 
-    {%- for blogpost in sorted_blogposts limit: 4 %}
-    <div class="row media-row">
+      {% assign sorted_newsposts = site.newsposts | where: "categories","media" | sort:"date" | reverse %}
 
-      <div class="media-item">
+      <div class="column column-50">
+        {%- for newspost in sorted_newsposts limit: 3 %}
+        <div class="row media-row">
+          <div class="media-item">
+            <div class="media-thumbnail-news">
+              <a href="{{ newspost.link }}"> <img src="{{ newspost.image | prepend: '/assets/media/' | relative_url}}"/> </a>
+            </div>
 
-        <div class="media-thumbnail-blog">
-          <a href="{{ blogpost.url }}"> <img src="{{ blogpost.thumbnail | prepend: '/assets/blog/' | relative_url}}"/> </a>
+            <div class="media-excerpt-news">
+              <i>{{ newspost.date | date: "%d.%m.%Y" }}</i> {{ newspost.content}}
+            </div>
+
+          </div>
         </div>
-
-        <div class="media-excerpt-blog">
-          <a href="{{ blogpost.url }}">{{ blogpost.title}}</a>: {{blogpost.excerpt}}
-        </div>
-
+        {%- endfor -%}
       </div>
 
-      {% assign newspost = sorted_newsposts[forloop.index0] %}
-
-      <div class="media-item">
-
-        <div class="media-thumbnail-news">
-          <a href="{{ newspost.link }}"> <img src="{{ newspost.image | prepend: '/assets/media/' | relative_url}}"/> </a>
+      <div class="column column-50">
+        {%- for pub in sorted_pubs limit: 4 %}
+        <div class="row pubs-on-home-row">
+          {% if pub %}
+            {% assign pub-title = pub.title %}
+            {% assign pub-url = pub.url %}
+            {% assign pub-description = pub.authors %}
+            {% capture pub-extra %}
+              {{ pub.venue }} 
+              {{ pub.year }} 
+              {% if pub.authors contains "*" %}<span style="font-weight: normal;">* Equal contribution</span>{% endif %}
+              {% if pub.authors contains "†" %}<span style="font-weight: normal;">† Co-leadership</span>{% endif %}
+              {% if pub.awards %} <span style="margin-left: 4pt;"><img style="height: 18px; width: 18px;" src="/assets/images/award.png" title="CC BY 4.0 by @fontawesome - https://fontawesome.com"></span> <font color="#d74141">{{ pub.awards }}</font> {% endif %}
+            {% endcapture %}
+            {% assign pub-ref = pub.ref %}
+            {% include card.html
+              output="horizontal"
+              title=pub-title
+              url=pub-url
+              description=pub-description
+              extra=pub-extra
+              card-links-style=""
+              pub-ref=pub-ref
+            %}
+          {% endif %}
         </div>
-
-        <div class="media-excerpt-news">
-          <a href="{{ newspost.link }}">{{ newspost.content}}</a>
-        </div>
-
+        {%- endfor -%}
       </div>
 
-    </div>
-    {%- endfor -%}
+    </div>  
 
     <div class="row">
 
       <div class="column">
         <div class="div-see-all">
-          <a class="button btn-see-all" href="{{"/blog" | relative_url }}">See all Blog Posts</a>
+          <a class="button btn-see-all" href="{{"/news" | relative_url }}">See all News</a>
         </div>
       </div>
 
       <div class="column">
         <div class="div-see-all">
-          <a class="button btn-see-all" href="{{"/news" | relative_url }}">See all News &amp; Media</a>
+          <a class="button btn-see-all" href="{{"/publications" | relative_url }}">See all Publications</a>
         </div>
       </div>
 

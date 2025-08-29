@@ -4,7 +4,7 @@ title: Synthesis of Memory Fences via Refinement Propagation
 authors: Yuri Meshman, Andrei Dan, Martin Vechev, Eran Yahav          
 year: 2014
 venue: SAS
-projects: "Fender: Programming with relaxed memory models"
+projects: fender
 awards:
 bibtex: '@inproceedings{meshman2014synthesis,
   title={Synthesis of memory fences via refinement propagation},

@@ -30,8 +30,7 @@ layout: default
         {% if page.lecture-time-place %} <div class="info-line"><label>Lecture:</label>{% include process-rooms.html content=page.lecture-time-place %}</div>  {% endif %}
         {% if page.exercise-time-place %} <div class="info-line"><label>Exercise:</label>{% include process-rooms.html content=page.exercise-time-place %}</div>  {% endif %}
         {% if page.credits %} <div class="info-line"><label>Credits:</label>{{ page.credits }}</div>  {% endif %}
-
-        <hr />
+        <hr>
       </div>
 
 		</div>
@@ -44,7 +43,7 @@ layout: default
 	</div>
   </header>
 
-  <div class="page-content" style="margin-top: -60px;">
+  <div class="page-content">
     <div class="row">
       <div class="column column-66">
         {% include process-rooms.html content=content %}

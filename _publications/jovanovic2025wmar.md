@@ -5,7 +5,7 @@ authors: Nikola Jovanović, Ismail Labiad, Tomáš Souček, Martin Vechev, Pierr
 year: 2025
 month: 06
 venue: arXiv
-projects: safeai
+projects: watermarks
 bibtex: "@article{jovanovic2025wmar,
   title={Watermarking Autoregressive Image Generation},
   author={Jovanović, Nikola and Labiad, Ismail and Souček, Tomáš and Vechev, Martin and Fernandez, Pierre},

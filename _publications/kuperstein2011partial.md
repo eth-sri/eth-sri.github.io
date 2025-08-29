@@ -4,7 +4,7 @@ title: Partial-Coherence Abstractions for Relaxed Memory Models
 authors: Michael Kuperstein, Martin Vechev and Eran Yahav  
 year: 2011
 venue: ACM PLDI
-projects: "Fender: Programming with relaxed memory models"
+projects: fender
 awards:
 bibtex: '@inproceedings{kuperstein2011partial,
   title={Partial-coherence abstractions for relaxed memory models},

@@ -5,7 +5,7 @@ authors: Mark Vero, Mislav Balunović, Martin Vechev
 year: 2024
 month: 07
 venue: ICML
-projects: safeai
+projects: diff-privacy
 bibtex: "@inproceedings{vero2024cuts,
     title={Cu{TS}: Customizable Tabular Synthetic Data Generation},
     author={Mark Vero and Mislav Balunovic and Martin Vechev},

@@ -10,6 +10,11 @@
 .grid-center
 	justify-content: center
 
+.grid-3
+	.card
+		&.card-vertical
+			max-width: 33%
+
 
 .card
 	padding: $spacing-unit*2 0
@@ -19,9 +24,9 @@
 	display: inline-flex
 
 	.card-title
-		font-size: 18px
+		font-size: 14px
 		font-weight: bold
-		margin-bottom: $spacing-unit/3
+		margin-bottom: $spacing-unit/6
 
 
 	.card-content
@@ -36,25 +41,33 @@
 
 
 	&.card-vertical
-		max-width: 33%
-		padding: $spacing-unit 0
+		max-width: 25%
+		padding: $spacing-unit 0 $spacing-unit/3 0
 		display: block
 		text-align: center
 		.card-title
-			margin-top: $spacing-unit
+			margin-top: $spacing-unit/3
 		.card-img
 			margin: 0 auto
+			height: 100%
 			width: 80%
 			max-width: none
 		.card-content
 			margin: 0 auto
 			width: 80%
 			max-width: none
-
+		.card-site 
+			
+		&.research-project 
+			.card-img
+				width: 50%
+			
+			
 
 
 
 .horizontal-card
+	width: 100%
 	padding: $spacing-unit 0
 	border-top: 1px solid $color-border
 	display: flex
@@ -103,5 +116,4 @@
 			max-width: 100%
 			.card-img
 				height: auto
-
 

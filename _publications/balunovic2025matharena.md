@@ -5,7 +5,7 @@ authors: Mislav Balunović, Jasper Dekoninck, Nikola Jovanović, Ivo Petrov, Mar
 year: 2025
 month: 05
 venue: arXiv
-projects: llm
+projects: mathllm,llmevals
 bibtex: '@article{balunovic2025matharena,
 	title = {MathArena: Evaluating LLMs on Uncontaminated Math Competitions},
     author = {Mislav Balunović and Jasper Dekoninck and Ivo Petrov and Nikola Jovanović and Martin Vechev},

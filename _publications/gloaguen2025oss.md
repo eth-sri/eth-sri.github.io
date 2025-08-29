@@ -5,7 +5,7 @@ authors: Thibaud Gloaguen, Nikola Jovanović, Robin Staab, Martin Vechev
 year: 2025
 month: 04
 venue: WMARK @ ICLR
-projects: safeai,llm
+projects: watermarks
 bibtex: "@article{gloaguen2025oss,
   title = {Towards Watermarking of Open-Source LLMs},
   author = {Gloaguen, Thibaud and Jovanović, Nikola and Staab, Robin and Vechev, Martin},

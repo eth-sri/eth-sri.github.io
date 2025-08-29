@@ -5,7 +5,7 @@ authors: Jasper Dekoninck, Ivo Petrov,  Kristian Minchev, Mislav Balunovic, Mart
 year: 2025
 month: 06
 venue: arXiv
-projects: llm
+projects: mathllm,llmevals
 bibtex: '@article{openproofcorpus2025,
   title={The Open Proof Corpus: A Large-Scale Human Study of LLM Proofs},
   author={Jasper Dekoninck and Ivo Petrov and  Kristian Minchev and Mislav Balunovic and Martin Vechev and Miroslav Marinov and Maria Drencheva and Lyuba Konova and Milen Milenov Shumanov and Kaloyan Tsvetkov and Nikolay Drenchev and Lazar D. Todorov and Kalina Nikolova and Nikolay Georgiev and Vanesa Kalinkova and Margulan Ismoldayev},

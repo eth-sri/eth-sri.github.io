@@ -5,7 +5,7 @@ authors: Dimitar I. Dimitrov, Maximilian Baader, Mark Niklas Müller, Martin Vec
 year: 2024
 month: 12
 venue: NeurIPS
-projects: safeai
+projects: federated
 bibtex: '@inproceedings{
 			dimitrov2024spear,
 			title={SPEAR: Exact Gradient Inversion of Batches in Federated Learning},

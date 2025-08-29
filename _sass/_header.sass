@@ -13,23 +13,34 @@
 .site-logo img, .eth-logo img
   height: 24px
   z-index: 5
+  display: inline-block
+  vertical-align: middle
+  align-self: center
+
+.site-logo, .eth-logo
+  display: flex
+  align-items: center
 
 #site-nav
   flex: 1
+  display: flex
+  justify-content: space-between
+  align-items: center
   text-transform: uppercase
   margin: 8px $spacing-unit*2
 
-  text-align: right
 
   .page-link
     color: $text-color
     line-height: $base-line-height
-    margin-left: $spacing-unit
+    text-align: center
+    margin-left: 0
     transition: color $animation-time
 
     &:hover, &.active
       color: $color-blue
     
+
 
 
 @include media-query($full-width-break)
@@ -39,7 +50,7 @@
     #site-nav
       margin: 8px $spacing-unit/2
       .page-link
-        margin-left: $spacing-unit/3 
+        margin-left: 0
 
 #togglemenu
   display: none 
@@ -77,6 +88,7 @@
 
   .menuopen #site-nav a
     display: block
+    text-align: center
 
   .eth-logo
     display: none

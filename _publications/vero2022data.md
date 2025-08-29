@@ -5,7 +5,7 @@ authors: Mark Vero, Mislav Balunović, Dimitar I. Dimitrov, Martin Vechev
 year: 2023
 month: 7
 venue: ICML
-projects: safeai
+projects: federated
 bibtex: "@InProceedings{pmlr-v202-vero23a,
   title = 	 {TabLeak: Tabular Data Leakage in Federated Learning},
   author =       {Vero, Mark and Balunovic, Mislav and Dimitrov, Dimitar Iliev and Vechev, Martin},

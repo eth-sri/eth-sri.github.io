@@ -5,9 +5,9 @@ authors: Philipp Guldimann, Alexander Spiridonov, Robin Staab, Nikola Jovanović
 year: 2024
 month: 10
 venue: arXiv
-projects: llm
+projects: regulations,llmevals
 bibtex: "@article{guldimann2024compl,
-  title={Exploiting LLM Quantization},
+  title={COMPL-AI Framework: A Technical Interpretation and LLM Benchmarking Suite for the EU Artificial Intelligence Act},
   author={Guldimann, Philipp and Spiridonov, Alexander and Staab, Robin and Jovanović, Nikola and Vero, Mark and Vechev, Velko and Gueorguieva, Anna and Balunović, Mislav and Konstantinov, Nikola and Bielik, Pavol and Tsankov, Petar and Vechev, Martin},
   journal={arXiv},
   year={2024}

@@ -5,7 +5,7 @@ authors: Kazuki Egashira, Robin Staab, Mark Vero, Jingxuan He, Martin Vechev
 year: 2025
 month: 7
 venue: ICML
-projects: llm
+projects: llmsecpriv
 awards: BuildingTrust@ICLR25 Oral
 bibtex: "@article{egashira2025mind,
   title={Mind the Gap: A Practical Attack on GGUF Quantization},

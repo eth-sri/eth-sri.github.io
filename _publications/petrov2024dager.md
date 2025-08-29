@@ -5,7 +5,7 @@ authors: Ivo Petrov, Dimitar I. Dimitrov, Maximilian Baader, Mark Niklas Müller
 year: 2024
 month: 12
 venue: NeurIPS
-projects: safeai
+projects: federated
 bibtex: '@inproceedings{
 			petrov2024dager,
 			title={DAGER: Exact Gradient Inversion for Large Language Models},

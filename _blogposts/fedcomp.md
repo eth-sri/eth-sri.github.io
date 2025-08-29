@@ -7,9 +7,9 @@ date: 2023-05-19
 thumbnail: thumbnails/fedcomp.png
 usemathjax: false
 tldr: >
-    In February, our team won the Red Teaming category of the U.S. PETs Prize Challenge, securing a prize of 60,000 USD. In this blog post, we will provide a brief overview of the significance of Red Teaming in the field of Privacy Enhancing Technologies (PETs) research in the context of the competition. By outlining our methodology and highlighting the comprehensive objectives of a red team, we intend to showcase the essential role of Red Teaming in ensuring the development of robust and privacy-centric implementations grounded in solid theoretical foundations. We empahsize that we managed to significantly compromise all the systems we evaluated, demonstrating that even when solutions are deemed good enough to progress to the final phase of a prestigious PETs challenge, issues can still arise and persist.
+    Our team won the Red Teaming category of the U.S. PETs Prize Challenge, securing a prize of 60,000 USD. In this blog post, we will provide a brief overview of the significance of Red Teaming in the field of Privacy Enhancing Technologies (PETs) research in the context of the competition. By outlining our methodology and highlighting the comprehensive objectives of a red team, we intend to showcase the essential role of Red Teaming in ensuring the development of robust and privacy-centric implementations grounded in solid theoretical foundations. We empahsize that we managed to significantly compromise all the systems we evaluated, demonstrating that even when solutions are deemed good enough to progress to the final phase of a prestigious PETs challenge, issues can still arise and persist.
 excerpt: >
-    In February, our team won the Red Teaming category of the U.S. PETs Prize Challenge, securing a prize of 60,000 USD. In this blog post, we will provide a brief overview of the significance of Red Teaming in the field of Privacy Enhancing Technologies (PETs) research in the context of the competition.
+    Our team won the Red Teaming category of the U.S. PETs Prize Challenge, securing a prize of 60,000 USD. In this blog post, we will provide a brief overview of the significance of Red Teaming in the field of Privacy Enhancing Technologies (PETs) research in the context of the competition.
 tweet-id:
 ---
 

@@ -5,7 +5,7 @@ authors: Luca Beurer-Kellner, Mark Niklas Müller, Marc Fischer, Martin Vechev
 year: 2024
 month: 07
 venue: ICML
-projects: llm
+projects: cclm
 bibtex: "@misc{beurersketch2024sketching,
 			title     = {Prompt Sketching for Large Language Models},
 			archivePrefix={arXiv},

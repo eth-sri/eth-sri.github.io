@@ -5,7 +5,7 @@ authors: Jasper Dekoninck, Maximilian Baader, Martin Vechev
 year: 2025
 month: 07
 venue: ICML
-projects: llm
+projects: cclm
 bibtex: "@article{dekoninck2024cascaderouting,
       title={A Unified Approach to Routing and Cascading for LLMs}, 
       author={Jasper Dekoninck and Maximilian Baader and Martin Vechev},

@@ -8,7 +8,7 @@
     {% if include.output == "plain" %}
       <a href="{{ project.url | relative_url}}">{{project.title}}</a>{% unless forloop.last %}, {% endunless %}
     {% else %}
-    <div class="card card-vertical">
+    <div class="card card-vertical research-project">
       
       <div class="card-img">
         {% if project.image and include.img != "none" %} 

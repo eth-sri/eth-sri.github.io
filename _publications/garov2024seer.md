@@ -5,7 +5,7 @@ authors: Kostadin Garov, Dimitar I. Dimitrov, Nikola Jovanović, Martin Vechev
 year: 2024
 month: 05
 venue: ICLR
-projects: safeai
+projects: federated
 bibtex: '@inproceedings{
 			garov2024seer,  
 			title={Hiding in Plain Sight: Disguising Data Stealing Attacks in Federated Learning},  

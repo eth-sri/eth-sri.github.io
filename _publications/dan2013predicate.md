@@ -4,7 +4,7 @@ title: Predicate Abstraction for Relaxed Memory Models
 authors: Andrei Dan, Yuri Meshman, Martin Vechev, Eran Yahav 
 year: 2013
 venue: Static Analysis Symposium (SAS)
-projects: "Fender: Programming with relaxed memory models"
+projects: fender
 awards:
 bibtex: '@inproceedings{dan2013predicate,
   title={Predicate abstraction for relaxed memory models},

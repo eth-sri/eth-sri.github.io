@@ -5,7 +5,7 @@ authors: Maria Drencheva, Ivo Petrov, Maximilian Baader, Dimitar I. Dimitrov, Ma
 year: 2025
 month: 4
 venue: ICLR
-projects: safeai
+projects: federated
 bibtex: '@inproceedings{
 		drencheva2025grain,
 		title={{GRAIN}: Exact Graph Reconstruction from Gradients},

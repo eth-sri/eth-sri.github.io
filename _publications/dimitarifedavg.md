@@ -1,19 +1,19 @@
 ---
 ref: dimitrov2022fedavg
 title:  "Data Leakage in Federated Averaging"
-projects: safeai
+projects: federated
 authors: Dimitar I. Dimitrov, Mislav Balunović, Nikola Konstantinov, Martin Vechev
 year: 2022
 month: 10
 bibtex: '@article{
-dimitrov2022data,
-title={Data Leakage in Federated Averaging},
-author={Dimitar Iliev Dimitrov and Mislav Balunovic and Nikola Konstantinov and Martin Vechev},
-journal={Transactions on Machine Learning Research},
-year={2022},
-url={https://openreview.net/forum?id=e7A0B99zJf},
-note={}
-}'
+    dimitrov2022data,
+    title={Data Leakage in Federated Averaging},
+    author={Dimitar Iliev Dimitrov and Mislav Balunovic and Nikola Konstantinov and Martin Vechev},
+    journal={Transactions on Machine Learning Research},
+    year={2022},
+    url={https://openreview.net/forum?id=e7A0B99zJf},
+    note={}
+    }'
 code: https://github.com/eth-sri/fedavg_leakage
 paper: https://openreview.net/forum?id=e7A0B99zJf
 venue: TMLR

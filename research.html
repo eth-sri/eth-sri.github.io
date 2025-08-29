@@ -20,71 +20,36 @@ permalink: /research/index.html
       <div class="column">
 
         <div class="grid grid-center">
-	        {% include get-project.html ref="safeai" %}
-	        {% include get-project.html ref="llm" %}
-	        {% include get-project.html ref="plml" %}
+	        {% include get-project.html ref="mathllm" %}
+	        {% include get-project.html ref="codellm" %}
+	        {% include get-project.html ref="watermarks" %}
+	        {% include get-project.html ref="llmsecpriv" %}
+	        {% include get-project.html ref="cclm" %}
+	        {% include get-project.html ref="llmevals" %}
+	        {% include get-project.html ref="regulations" %}
+	        {% include get-project.html ref="federated" %}
+	        {% include get-project.html ref="safeai" %} 
           {% include get-project.html ref="quantum" %}
-	        {% include get-project.html ref="diff-privacy" %}
-	        {% include get-project.html ref="probabilistic-programming" %}
 	</div>
       </div>
     </div>
   </div>
 
-  <h2>Completed Projects</h2>
+  <h2>Past Projects</h2>
   <div class="page-content container">
     <div class="row">
       <div class="column">
-
-        <div class="grid">
+        <div class="grid grid-center">
+	        {% include get-project.html ref="plml" img="none" %}
+	        {% include get-project.html ref="diff-privacy" img="none" %}
+	        {% include get-project.html ref="probabilistic-programming" img="none" %}
 	        {% include get-project.html ref="comp-bio" img="none" %}
 	        {% include get-project.html ref="blockchain-security" img="none" %}
           {% include get-project.html ref="numerical-analysis" img="none" %}
           {% include get-project.html ref="programmable-networks" img="none" %}
-          {% include card.html
-            title="Fender: Programming with Relaxed Memory Models"
-            output="vertical"
-            url="http://practicalsynthesis.github.io/"
-            buttontext="View Project"
-          %}
-
-          {% include card.html
-            title="An Interactive Data Structure Development System"
-            output="vertical"
-            url="http://ait.inf.ethz.ch/projects/2015/InteractiveDebugger/"
-            buttontext="View Project"
-          %}
-
-          {% include card.html
-            title="CORE: Foundations of Practical Concurrency Analysis"
-            output="vertical"
-            url="/research/core/"
-            buttontext="View Project"
-          %}
-
-          {% include card.html
-            title="EventRacer: Analysis of Event-Driven Applications"
-            output="vertical"
-            url="https://eventracer.org/"
-            buttontext="View Project"
-          %}
-
-          {% include card.html
-            title="Quality Virtual Machine"
-            output="vertical"
-            url="/publications/arnold2011qvm"
-            buttontext="View Project"
-          %}
-
-          {% include card.html
-            title="Paraglide: Synthesis of Concurrent Systems"
-            output="vertical"
-            url=""
-            buttontext="View Project"
-          %}
-
-        </div>
-
+          {% include get-project.html ref="core" img="none" %}
+          {% include get-project.html ref="fender" img="none" %}
+      </div>
       </div>
     </div>
   </div>

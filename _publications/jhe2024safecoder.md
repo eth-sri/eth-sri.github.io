@@ -4,7 +4,7 @@ title: "Instruction Tuning for Secure Code Generation"
 authors: Jingxuan He*,  Mark Vero*, Gabriela Krasnopolska, Martin Vechev
 year: 2024
 month: 07
-projects: llm
+projects: codellm
 venue: ICML
 paper: https://arxiv.org/abs/2402.09497
 code: https://github.com/eth-sri/SafeCoder

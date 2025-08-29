@@ -6,7 +6,7 @@ year: 2024
 month: 11
 venue: NeurIPS
 awards: 
-projects: safeai,llm
+projects: codellm,llmevals
 bibtex: "@inproceedings{
 m{\"u}ndler2024swtbench,
 title={{SWT}-Bench: Testing and Validating Real-World Bug-Fixes with Code Agents},

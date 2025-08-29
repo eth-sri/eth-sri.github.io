@@ -5,7 +5,7 @@ authors: Luca Beurer-Kellner, Marc Fischer, Martin Vechev
 year: 2024
 month: 07
 venue: ICML
-projects: llm
+projects: cclm
 bibtex: "@article{beurerkellner2024domino,
       title={Guiding LLMs The Right Way: Fast, Non-Invasive Constrained Generation},
       author={Luca Beurer-Kellner and Marc Fischer and Martin Vechev},

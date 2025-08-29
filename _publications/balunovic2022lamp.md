@@ -5,7 +5,7 @@ authors: Mislav Balunović*, Dimitar I. Dimitrov*, Nikola Jovanović, Martin Vec
 year: 2022
 month: 12
 venue: NeurIPS
-projects: safeai
+projects: federated
 bibtex: '@inproceedings{balunovic2022lamp,
     title={LAMP: Extracting Text from Gradients with Language Model Priors},
     author={Mislav Balunović and Dimitar I. Dimitrov and Nikola Jovanović and Martin Vechev},
