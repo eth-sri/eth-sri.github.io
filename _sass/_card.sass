@@ -43,7 +43,8 @@
 	&.card-vertical
 		max-width: 25%
 		padding: $spacing-unit 0 $spacing-unit/3 0
-		display: block
+		display: flex
+		flex-direction: column
 		text-align: center
 		.card-title
 			margin-top: $spacing-unit/3
@@ -57,13 +58,17 @@
 			width: 80%
 			max-width: none
 		.card-site 
+			margin-top: auto
 			
 		&.research-project 
 			.card-img
 				width: 50%
 			.card-title
-				min-height: 40px
-			
+				min-height: 2.8em
+
+		.button
+			margin-top: auto
+			align-items: center
 
 
 
