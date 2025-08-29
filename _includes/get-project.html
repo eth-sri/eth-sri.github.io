@@ -9,14 +9,15 @@
       <a href="{{ project.url | relative_url}}">{{project.title}}</a>{% unless forloop.last %}, {% endunless %}
     {% else %}
     <div class="card card-vertical research-project">
-      
-      <div class="card-img">
-        {% if project.image and include.img != "none" %} 
-        	<a href="{{ project.url | relative_url}}">
-        		<img src="{{ project.image | prepend: '/assets/projects/' | relative_url}}"/>
-        	</a>
-        {% endif %}
-      </div>
+      {% if project.image and include.img != "none" %} 
+        <div class="card-img">
+          
+            <a href="{{ project.url | relative_url}}">
+              <img src="{{ project.image | prepend: '/assets/projects/' | relative_url}}"/>
+            </a>
+          
+        </div>
+      {% endif %}
 
       <div class="card-content">
         <div class="card-title">{{ project.title }}</div>
