@@ -110,6 +110,12 @@
 
 
 @include media-query($mobile-break)
+	.card-links
+		display: grid
+		grid-template-columns: 1fr 1fr
+		a:last-child:nth-child(odd)
+			grid-column: 1 / -1
+			text-align: center
 	.grid
 		display: block
 
