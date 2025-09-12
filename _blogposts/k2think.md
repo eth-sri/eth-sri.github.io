@@ -16,6 +16,35 @@ tweet-id:
     .blogpost-thumbnail {
         width: 30% !important;
     }
+    @media (max-width: 768px) {
+    /* styles that apply when viewport is 768px or smaller */
+    .blogpost-title {
+      font-size: 30px;
+    }
+
+    .blogpost-thumbnail {
+        width: 60% !important;
+    }
+
+    .page-subtitle {
+      font-size: 18px
+    }
+
+    .tldr {
+      padding: 5% 5%;
+    }
+
+    .blogpost-col {
+      text-align: left;
+    }
+
+    .blogpost-col p,
+    .blogpost-col h3 {
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+    }
+  }
+    
 </style>
 <a href="https://www.k2think.ai/">K2-Think</a> (different from Kimi-K2!) is a reasoning LLM released a few days ago that claims performance on par with GPT-OSS 120B and DeepSeek v3.1, but with fewer parameters. It received a significant amount of attention online, with several news articles being published on the topic (<a href="https://www.wired.com/story/uae-releases-a-tiny-but-powerful-reasoning-model/">Wired</a>, <a href="https://www.forbes.com/sites/patrickmoorhead/2025/09/09/the-uae-showcases-its-abilities-in-ai-reasoning-with-k2-think-model/">Forbes</a>, <a href="https://www.cnbc.com/2025/09/09/abu-dhabi-launches-ai-reasoning-model-to-rival-openai-deepseek.html">CNBC</a>, etc.). However, as we discuss below, the reported gains are overstated, relying on flawed evaluation marked by contamination, unfair comparisons, and misrepresentation of both its own and competing models’ results.
 
@@ -55,16 +84,17 @@ In the table below, we compare the self-reported results of Qwen3 with the numbe
       color: var(--text);
     }
     .table-wrap {
-      max-width: 100%;
-      overflow: auto;
-      border-radius: 11px;
-    }
-    table {
       width: 100%;
-      border-collapse: separate;
-      border-spacing: 0;
-      font-size: 11px;
-      line-height: 1.25;
+      max-width: 100vw;           /* cap at viewport */
+      overflow-x: auto !important;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-gutter: stable both-edges;
+    }
+    .table-wrap > table {
+      display: block;             /* key: prevents wrapper from expanding */
+      width: max-content;         /* grow to fit columns */
+      min-width: 100%;            /* at least fill wrapper */
     }
     thead th {
       background: var(--header-bg);
@@ -100,6 +130,12 @@ In the table below, we compare the self-reported results of Qwen3 with the numbe
     table tbody tr:last-child td:last-child   { border-bottom-right-radius: 12px; }
     .muted { color: var(--muted); font-variant-numeric: normal; }
     .na { color: var(--muted); text-align: center; }
+    @media (max-width: 768px) {
+      .table-wrap > table th,
+      .table-wrap > table td {
+        white-space: nowrap;
+      }
+    }
   </style>
 
   <div class="table-wrap" role="region" aria-label="Benchmark scores">
@@ -117,9 +153,9 @@ In the table below, we compare the self-reported results of Qwen3 with the numbe
           <th scope="col">K2-Think</th>
           <th scope="col">Self-Report</th>
           <th scope="col">MathArena</th>
-          <th scope="col">K2-Think report</th>
+          <th scope="col">K2-Think</th>
           <th scope="col">Self-Report</th>
-          <th scope="col">K2-Think report</th>
+          <th scope="col">K2-Think</th>
         </tr>
       </thead>
       <tbody>
@@ -172,7 +208,7 @@ In the table below, we compare the self-reported results of Qwen3 with the numbe
   </div>
 
   <p class="muted" style="margin-top:10px; text-align: center">
-    Table 1: Comparing reported scores on AIME 2025, HMMT 2025, and GPQA-Diamond
+    Table 1: Comparing reported scores from Qwen3 reports, MathArena benchmark, and K2-Think paper on AIME 2025, HMMT 2025, and GPQA-Diamond.
   </p>
 </div>
 
