@@ -116,6 +116,14 @@ In the table below, we compare the self-reported results of Qwen3 with the numbe
     table thead tr:first-child th:last-child  { border-top-right-radius: 12px; }
     table tbody tr:last-child th[scope="row"] { border-bottom-left-radius: 12px; }
     table tbody tr:last-child td:last-child   { border-bottom-right-radius: 12px; }
+    thead th:nth-child(3),
+    tbody td:nth-child(4),
+    thead th:nth-child(6),
+    tbody td:nth-child(7),
+    .model,
+    .name  {
+      border-right: 2px solid var(--border) !important;
+    }
     .muted { color: var(--muted); font-variant-numeric: normal; }
     .na { color: var(--muted); text-align: center; }
     @media (max-width: 768px) {
@@ -143,10 +151,10 @@ In the table below, we compare the self-reported results of Qwen3 with the numbe
     <table>
       <thead>
         <tr>
-          <th rowspan="2" scope="col">Model</th>
-          <th colspan="3" scope="colgroup">AIME 2025</th>
-          <th colspan="3" scope="colgroup">HMMT 2025</th>
-          <th colspan="2" scope="colgroup">GPQA-Diamond</th>
+          <th rowspan="2" scope="col" class="model">Model</th>
+          <th colspan="3" scope="colgroup" class="model">AIME 2025</th>
+          <th colspan="3" scope="colgroup" class="model">HMMT 2025</th>
+          <th colspan="2" scope="colgroup" class="model">GPQA-Diamond</th>
         </tr>
         <tr>
           <th scope="col">Self-Report</th>
@@ -161,7 +169,7 @@ In the table below, we compare the self-reported results of Qwen3 with the numbe
       </thead>
       <tbody>
         <tr>
-          <th scope="row">Qwen3-30B (Think)</th>
+          <th scope="row" class="name">Qwen3-30B (Think)</th>
           <td>70.90</td>
           <td>70.00</td>
           <td>58.14 <span class="muted">(?)</span></td>
@@ -172,7 +180,7 @@ In the table below, we compare the self-reported results of Qwen3 with the numbe
           <td>58.91 <span class="muted">(?)</span></td>
         </tr>
         <tr>
-          <th scope="row">Qwen3-30B (Think, July)</th>
+          <th scope="row" class="name">Qwen3-30B (Think, July)</th>
           <td>85.00</td>
           <td class="na">&mdash;</td>
           <td class="na">&mdash;</td>
@@ -183,7 +191,7 @@ In the table below, we compare the self-reported results of Qwen3 with the numbe
           <td class="na">&mdash;</td>
         </tr>
         <tr>
-          <th scope="row">Qwen3-235B (Think)</th>
+          <th scope="row" class="name">Qwen3-235B (Think)</th>
           <td>81.50</td>
           <td>80.83</td>
           <td>75.43</td>
@@ -194,7 +202,7 @@ In the table below, we compare the self-reported results of Qwen3 with the numbe
           <td>65.55</td>
         </tr>
         <tr>
-          <th scope="row">Qwen3-235B (Think, July)</th>
+          <th scope="row" class="name">Qwen3-235B (Think, July)</th>
           <td>92.30</td>
           <td class="na">&mdash;</td>
           <td class="na">&mdash;</td>
