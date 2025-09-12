@@ -3,7 +3,7 @@ layout: blogpost
 category: other
 title: "Debunking the Claims of K2-Think"
 blogpost-authors: "Niels Mündler*, Jasper Dekoninck*, Nikola Jovanović*, Ivo Petrov, Martin Vechev" 
-date: 2025-05-11
+date: 2025-09-12
 thumbnail: thumbnails/falling_k2.png
 usemathjax: false
 tldr: >
