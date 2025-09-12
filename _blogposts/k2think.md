@@ -103,7 +103,7 @@ The report fails to adequately evaluate other models. Most notably, GPT-OSS is o
 
 Additionally, K2-Think uses outdated versions for many models. For example, even though they evaluate GPT-OSS, which was released in August, the Qwen3 models evaluated in the paper do not appear to be the latest versions of these models, published in July. Specifically, for the three benchmarks that overlap between the releases of Qwen3 and K2-Think (AIME 2025, HMMT 2025, GPQA-Diamond), the results seem to match the older versions, which are significantly (15-20%) below the reported results of the July versions. 
 
-<span id="footnote-source-1">In the table below, we compare the self-reported results of Qwen3 with the numbers reported in the K2-Think paper. The scores attributed to Qwen3-30B are far lower than expected, even when compared against the earlier non-July release.<sup><a href="#footnote-1">1</a></sup></span>
+<span id="footnote-source-1">In the table below, we compare the <a href="https://arxiv.org/abs/2505.09388">self-reported results of Qwen3</a> with the numbers reported in the <a href="https://arxiv.org/pdf/2509.07604">K2-Think paper</a>. The scores attributed to Qwen3-30B are far lower than expected, even when compared against the earlier non-July release.<sup><a href="#footnote-1">1</a></sup></span>
 
 <div class="table-container">
   <style>
@@ -250,18 +250,18 @@ Additionally, K2-Think uses outdated versions for many models. For example, even
   </div>
 
   <p class="muted" style="margin-top:10px; text-align: center">
-    Table 1: Comparing reported scores from Qwen3 reports, MathArena benchmark, and K2-Think paper on AIME 2025, HMMT 2025, and GPQA-Diamond.
+    Table 1: Comparing reported scores from <a href="https://arxiv.org/abs/2505.09388">Qwen3 reports</a>, <a href="https://matharena.ai/">MathArena benchmark</a>, and <a href="https://arxiv.org/pdf/2509.07604">K2-Think paper</a> on AIME 2025, HMMT 2025, and GPQA-Diamond.
   </p>
 </div>
 
 ### Giving more weight to high-scoring math benchmarks
 
-Finally, K2-Think reports aggregate math scores using a “micro average”, weighing each of the four benchmarks (AIME24, AIME25, HMMT, OmniMath-Hard) by their respective number of tasks instead of equally. While meant to quantify overall math ability of the model, such an average metric is heavily dominated by OmniMath-Hard (~66% of the total score). Not only is this K2-Think’s strongest benchmark, but it is also directly tied to the contamination issues discussed above.
+Finally, K2-Think reports aggregate math scores using a “micro average”, weighing each of the four benchmarks (AIME24, AIME25, HMMT, OmniMath-Hard) by their respective number of tasks, instead of averaging individual benchmark scores equally. While meant to quantify overall math ability of the model, such an average metric is heavily dominated by OmniMath-Hard (~66% of the total score). Not only is this K2-Think’s strongest benchmark, but it is also directly tied to the contamination issues discussed above.
 
 
 ### Our own evaluation
 
-To validate our analysis, we ran K2-Think on our MathArena benchmark in a fair comparison against other models. We followed the recommended hyperparameters for K2-Think, using temperature 1, p = 0.95, and 64,000 output tokens. <strong>The results show that while K2-Think is a competent model, it falls well short of the performance claimed in the paper and the popular media articles.</strong> In particular, it is far from matching DeepSeek v3.1 or GPT-OSS 120B, despite the authors’ claim to the contrary. In fact, it shows that K2-Think’s math capabilities are not even on par with the smaller GPT-OSS 20B model.
+To validate our analysis, we ran K2-Think on our <a href="https://matharena.ai">MathArena benchmark</a> in a fair comparison against other models. We followed the recommended hyperparameters for K2-Think, using temperature 1, p = 0.95, and 64,000 output tokens. <strong>The results show that while K2-Think is a competent model, it falls well short of the performance claimed in the paper and the popular media articles.</strong> In particular, it is far from matching DeepSeek v3.1 or GPT-OSS 120B, despite the authors’ claim to the contrary. In fact, it shows that K2-Think’s math capabilities are not even on par with the smaller GPT-OSS 20B model.
 
 ![](/assets/blog/k2think/image.png){: .blogpost-img100}
 
@@ -269,7 +269,7 @@ To validate our analysis, we ran K2-Think on our MathArena benchmark in a fair c
 
 Overall, we found that the K2-Think model makes wrong claims in several locations: It evaluates on data it was trained on, relies on an external model and additional samples for its claimed performance gains, and artificially reduces the scores of compared models and reweighs its own scores to claim parity or superiority.
 
-Open models are good and we evaluate them all the time. However, flawed evaluations and exaggerated claims are not good. We hope the authors fix these issues in the next iteration of K2-Think and correctly present their achievements. 
+Open models are good and we evaluate them all the time. However, flawed evaluations and exaggerated claims are not helpful. We hope the authors fix these issues in the next iteration of K2-Think and correctly present their achievements. 
 
 
 #### Footnotes
