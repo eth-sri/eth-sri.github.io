@@ -60,7 +60,7 @@ The net effect is that the evaluation results on mathematics and code are <stron
 
 ### Unfair comparisons with best-of-n and external model use
 
-The paper’s main results table reports K2-Think’s best-of-3 performance, a well-known method to improve model performance. All other models are evaluated using best-of-1, posing them at a significant disadvantage. To make matters worse, the best-of-3 judgment is made by an unspecified “external model”. This same external model is also used to provide K2-Think with detailed problem-solving plans. The authors define this entire pipeline as “K2-Think,” with the model itself being only one component. 
+The paper’s main results table reports K2-Think’s best-of-3 performance, a <a href="https://aclanthology.org/2024.acl-long.617/">well-known</a> <a href="https://arxiv.org/abs/2501.13007">method</a> to improve model performance. All other models are evaluated using best-of-1, posing them at a significant disadvantage. To make matters worse, the best-of-3 judgment is made by an unspecified “external model”, which could have arbitrary size. This same external model is also used to provide K2-Think with detailed problem-solving plans. The authors define this entire pipeline as “K2-Think,” with the model itself being only one component, undermining the claim that K2-Think relies only on a small 32B parameter model.
 
 Comparing this pipeline to other models without the pipeline, as done in the paper, is invalid. The pipeline itself could be easily applied to other models and would similarly increase their score. Without the external help, K2-Think’s performance is worse than Nemotron 32B, a similarly-sized model trained with a similar methodology on Qwen2.5 32B and released in July.
 
@@ -93,7 +93,7 @@ Comparing this pipeline to other models without the pipeline, as done in the pap
   </div>
 
   <p class="muted" style="margin-top:10px; text-align: center">
-    Table 2: Performance comparison of K2-Think without external help, and Nemotron 32B (both finetunes of Qwen 32B), demonstrating the lower performance. All results are taken from the <a href="https://arxiv.org/pdf/2509.07604">K2-Think paper</a>.
+    Table 2: Performance comparison of K2-Think without external help, and Nemotron 32B (both finetunes of Qwen2.5 32B), demonstrating the lower performance. All results are taken from the <a href="https://arxiv.org/pdf/2509.07604">K2-Think paper</a>.
   </p>
 </div>
 
@@ -265,7 +265,14 @@ To validate our analysis, we ran K2-Think on our MathArena benchmark in a fair c
 
 ![](/assets/blog/k2think/image.png){: .blogpost-img100}
 
+### Conclusion
 
-### Footnotes
+Overall, we found that the K2-Think model makes wrong claims in several locations: It evaluates on data it was trained on, relies on an external model and additional samples for its claimed performance gains, and artificially reduces the scores of compared models and reweighs its own scores to claim parity or superiority.
 
-<span id="footnote-1"><a href="#footnote-source-1">1</a>: Since the K2-Think paper does not specify whether the thinking model was used for Qwen3-30B, it is possible that the authors evaluated the instruction-tuned variant instead. However, under that assumption, the reported numbers suddenly become implausibly high, raising further doubts about the validity of these comparisons.</span>
+Open models are good and we evaluate them all the time. However, flawed evaluations and exaggerated claims are not good. We hope the authors fix these issues in the next iteration of K2-Think and correctly present their achievements. 
+
+
+#### Footnotes
+
+
+<span id="footnote-1"><a href="#footnote-source-1"><sup>1</sup></a> Since the K2-Think paper does not specify whether the thinking model was used for Qwen3-30B, it is possible that the authors evaluated the instruction-tuned variant instead. However, under that assumption, the reported numbers suddenly become implausibly high, raising further doubts about the validity of these comparisons.</span>
