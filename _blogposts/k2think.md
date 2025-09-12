@@ -269,7 +269,7 @@ Finally, K2-Think reports aggregate math scores using a “micro average”, wei
 
 To validate our analysis, we ran K2-Think on our <a href="https://matharena.ai">MathArena benchmark</a> in a fair comparison against other models. We followed the recommended hyperparameters for K2-Think, using temperature 1, p = 0.95, and 64,000 output tokens. <strong>The results show that while K2-Think is a competent model, it falls well short of the performance claimed in the paper and the popular media articles.</strong> In particular, it is far from matching DeepSeek v3.1 or GPT-OSS 120B, despite the authors’ claim to the contrary. In fact, it shows that K2-Think’s math capabilities are not even on par with the smaller GPT-OSS 20B model.
 
-![](/assets/blog/k2think/image.png){: .blogpost-img100}
+![](/assets/blog/k2think/matharena.png){: .blogpost-img100}
 
 ### Conclusion
 
