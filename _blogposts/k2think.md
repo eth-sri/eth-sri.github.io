@@ -17,7 +17,7 @@ tweet-id:
         width: 30% !important;
     }
 </style>
-<a href="https://www.k2think.ai/">K2-Think</a> (different from Kimi-K2!) is a recently released LLM that claims performance on par with GPT-OSS 120B and DeepSeek v3.1, despite having fewer parameters. As such, it received a significant amount of attention online, with several news articles being published on the topic (<a href="https://www.wired.com/story/uae-releases-a-tiny-but-powerful-reasoning-model/">Wired</a>, <a href="https://www.forbes.com/sites/patrickmoorhead/2025/09/09/the-uae-showcases-its-abilities-in-ai-reasoning-with-k2-think-model/">Forbes</a>, <a href="https://www.cnbc.com/2025/09/09/abu-dhabi-launches-ai-reasoning-model-to-rival-openai-deepseek.html">CNBC</a>, etc.). However, as we discuss below, the reported gains are overstated, relying on flawed evaluation marked by contamination, unfair comparisons, and misrepresentation of both its own and competing models’ results. 
+<a href="https://www.k2think.ai/">K2-Think</a> (different from Kimi-K2!) is a reasoning LLM released a few days ago that claims performance on par with GPT-OSS 120B and DeepSeek v3.1, but with fewer parameters. It received a significant amount of attention online, with several news articles being published on the topic (<a href="https://www.wired.com/story/uae-releases-a-tiny-but-powerful-reasoning-model/">Wired</a>, <a href="https://www.forbes.com/sites/patrickmoorhead/2025/09/09/the-uae-showcases-its-abilities-in-ai-reasoning-with-k2-think-model/">Forbes</a>, <a href="https://www.cnbc.com/2025/09/09/abu-dhabi-launches-ai-reasoning-model-to-rival-openai-deepseek.html">CNBC</a>, etc.). However, as we discuss below, the reported gains are overstated, relying on flawed evaluation marked by contamination, unfair comparisons, and misrepresentation of both its own and competing models’ results.
 
 ### Evaluation is invalid due to data contamination
 
@@ -26,13 +26,14 @@ We find clear evidence of data contamination.
 For math, both SFT and RL datasets used by K2-Think include the DeepScaleR dataset, which in turn includes Omni-Math problems. As K2-Think uses Omni-Math for its evaluation, this suggests contamination. We confirm this using approximate string matching, finding that at least 87 of the 173 Omni-Math problems that K2-Think uses in evaluation were also included in its training data. Interestingly, there is a large overlap between the creators of the RL dataset, Guru, and the authors of K2-Think, who should have been fully aware of this.
 
 We find a similar issue in the LiveCodeBench evaluation. Around 22% of samples used in K2-Think’s evaluation appear in their SFT dataset. The original authors of the SFT dataset (AM-Team) include a decontamination step, removing problems from Oct 2024 onward. However, K2-Think’s LiveCodeBench evaluation uses all problems from July 2024 onwards, 22% of which were thus also previously seen in training. 
-The net effect is that the evaluation results on mathematics and code are invalid.
+
+The net effect is that the evaluation results on mathematics and code are <strong>invalid</strong>.
 
 ### Unfair comparisons with best-of-n and external model use
 
-The paper’s main results table reports K2-Think’s best-of-3 performance, a well-known method to improve model performance. All other models are evaluated using best-of-1, posing them at a significant disadvantage. To make matters worse, the best-of-3 judgment is made by an unspecified “external model”. This same external model is also used to provide K2-Think with detailed problem-solving plans. The authors define the entire pipeline as “K2-Think,” with the model itself being only one component. Comparing this pipeline to other models without the pipeline, as done in the paper, is invalid. The pipeline itself could be easily applied to other models and would similarly increase their score.
+The paper’s main results table reports K2-Think’s best-of-3 performance, a well-known method to improve model performance. All other models are evaluated using best-of-1, posing them at a significant disadvantage. To make matters worse, the best-of-3 judgment is made by an unspecified “external model”. This same external model is also used to provide K2-Think with detailed problem-solving plans. The authors define this entire pipeline as “K2-Think,” with the model itself being only one component. 
 
-Without this advantage, K2-Think’s performance is comparable or worse than Nemotron 32B, a similarly-sized model trained with a similar methodology on Qwen2.5 32B and released in July.
+Comparing this pipeline to other models without the pipeline, as done in the paper, is invalid. The pipeline itself could be easily applied to other models and would similarly increase their score. Without the external help, K2-Think’s performance is worse than Nemotron 32B, a similarly-sized model trained with a similar methodology on Qwen2.5 32B and released in July.
 
 ### Misrepresenting results of other models
 
@@ -40,7 +41,7 @@ The report fails to adequately evaluate other models. Most notably, GPT-OSS is o
 
 Additionally, K2-Think uses outdated versions for many models. For example, even though they evaluate GPT-OSS, which was released in August, the Qwen3 models evaluated in the paper do not appear to be the latest versions of these models, published in July. Specifically, for the three benchmarks that overlap between the releases of Qwen3 and K2-Think (AIME 2025, HMMT 2025, GPQA-Diamond), the results seem to match the older versions, which are significantly (15-20%) below the reported results of the July versions. 
 
-In the table below, we compare the self-reported results of Qwen3 with the numbers reported in the K2-Think paper. The scores attributed to Qwen3-30B are far lower than expected, even when compared against the earlier non-July release.1 
+In the table below, we compare the self-reported results of Qwen3 with the numbers reported in the K2-Think paper. The scores attributed to Qwen3-30B are far lower than expected, even when compared against the earlier non-July release.<sup>1</sup>
 
 <div class="table-container">
   <style>
@@ -177,11 +178,16 @@ In the table below, we compare the self-reported results of Qwen3 with the numbe
 
 ### Giving more weight to high-scoring math benchmarks
 
-Finally, K2-Think uses a custom metric they call “Micro-Avg.” to aggregate results over different math evaluations. This method of averaging, which weighs by the number of tasks in the datasets, introduces another bias. By construction, it gives disproportionate weight to Omni-Math-Hard due to its larger size, such that it accounts for about 66 percent of the total math score. Not only is this coincidentally K2-Think’s strongest benchmark, but it is also directly tied to the contamination issues discussed above.
+Finally, K2-Think reports aggregate math scores using a “micro average”, weighing each of the four benchmarks (AIME24, AIME25, HMMT, OmniMath-Hard) by their respective number of tasks instead of equally. While meant to quantify overall math ability of the model, such an average metric is heavily dominated by OmniMath-Hard (~66% of the total score). Not only is this K2-Think’s strongest benchmark, but it is also directly tied to the contamination issues discussed above.
 
 
 ### Our own evaluation
 
-To validate our analysis, we ran K2-Think on our MathArena benchmark in a fair comparison against other models. We followed the recommended hyperparameters for K2-Think, using temperature 1, p = 0.95, and 64,000 output tokens. The results show that while K2-Think is a competent model, it falls well short of the performance claimed in the paper and the popular media articles. In particular, it does not come close to matching DeepSeek v3.1 or GPT-OSS 120B, despite the authors’ claim to the contrary. In fact, it shows that K2-Think’s math capabilities are not even on par with the smaller GPT-OSS 20B model. 
+To validate our analysis, we ran K2-Think on our MathArena benchmark in a fair comparison against other models. We followed the recommended hyperparameters for K2-Think, using temperature 1, p = 0.95, and 64,000 output tokens. <strong>The results show that while K2-Think is a competent model, it falls well short of the performance claimed in the paper and the popular media articles.</strong> In particular, it is far from matching DeepSeek v3.1 or GPT-OSS 120B, despite the authors’ claim to the contrary. In fact, it shows that K2-Think’s math capabilities are not even on par with the smaller GPT-OSS 20B model.
 
 ![](/assets/blog/k2think/image.png){: .blogpost-img100}
+
+
+### Footnotes
+
+1: Since the K2-Think paper does not specify whether the thinking model was used for Qwen3-30B, it is possible that the authors evaluated the instruction-tuned variant instead. However, under that assumption, the reported numbers suddenly become implausibly high, raising further doubts about the validity of these comparisons.
