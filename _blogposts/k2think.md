@@ -70,7 +70,7 @@ The report fails to adequately evaluate other models. Most notably, GPT-OSS is o
 
 Additionally, K2-Think uses outdated versions for many models. For example, even though they evaluate GPT-OSS, which was released in August, the Qwen3 models evaluated in the paper do not appear to be the latest versions of these models, published in July. Specifically, for the three benchmarks that overlap between the releases of Qwen3 and K2-Think (AIME 2025, HMMT 2025, GPQA-Diamond), the results seem to match the older versions, which are significantly (15-20%) below the reported results of the July versions. 
 
-In the table below, we compare the self-reported results of Qwen3 with the numbers reported in the K2-Think paper. The scores attributed to Qwen3-30B are far lower than expected, even when compared against the earlier non-July release.<sup>1</sup>
+<span id="footnote-source-1">In the table below, we compare the self-reported results of Qwen3 with the numbers reported in the K2-Think paper. The scores attributed to Qwen3-30B are far lower than expected, even when compared against the earlier non-July release.<sup><a href="#footnote-1">1</a></sup></span>
 
 <div class="table-container">
   <style>
@@ -235,4 +235,4 @@ To validate our analysis, we ran K2-Think on our MathArena benchmark in a fair c
 
 ### Footnotes
 
-1: Since the K2-Think paper does not specify whether the thinking model was used for Qwen3-30B, it is possible that the authors evaluated the instruction-tuned variant instead. However, under that assumption, the reported numbers suddenly become implausibly high, raising further doubts about the validity of these comparisons.
+<span id="footnote-1"><a href="#footnote-source-1">1</a>: Since the K2-Think paper does not specify whether the thinking model was used for Qwen3-30B, it is possible that the authors evaluated the instruction-tuned variant instead. However, under that assumption, the reported numbers suddenly become implausibly high, raising further doubts about the validity of these comparisons.</span>
