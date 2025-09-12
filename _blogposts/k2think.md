@@ -99,7 +99,7 @@ Comparing this pipeline to other models without the pipeline, as done in the pap
   </div>
 
   <p class="muted" style="margin-top:10px; text-align: center">
-    Table 1: Performance comparison of K2-Think without external help, and Nemotron 32B (both finetunes of Qwen2.5 32B), demonstrating the lower performance. Results for Qwen3 (*) are taken from their <a href="https://huggingface.co/Qwen/Qwen3-30B-A3B-Thinking-2507">model page</a>. All other results are taken from the <a href="https://arxiv.org/pdf/2509.07604">K2-Think paper</a>.
+    Table 1: Performance comparison of K2-Think without external help, and Nemotron 32B (both finetunes of Qwen2.5 32B), as well as Qwen3 30B. Results for Qwen3 (*) are taken from their <a href="https://huggingface.co/Qwen/Qwen3-30B-A3B-Thinking-2507">model page</a>. All other results are taken from the <a href="https://arxiv.org/pdf/2509.07604">K2-Think paper</a>.
   </p>
 </div>
 
