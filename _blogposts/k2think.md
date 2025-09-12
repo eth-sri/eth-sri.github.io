@@ -5,7 +5,7 @@ title: "Debunking the Claims of K2-Think"
 blogpost-authors: "Niels Mündler*, Jasper Dekoninck*, Nikola Jovanović*, Ivo Petrov, Martin Vechev" 
 date: 2025-09-12
 thumbnail: thumbnails/falling_k2.png
-image: assets/thumbnails/falling_k2.png
+image: /assets/blog/thumbnails/falling_k2.png
 usemathjax: false
 tldr: >
     The reported performance of K2-Think is overstated, relying on flawed evaluation marked by contamination, unfair comparisons, and misrepresentation of both its own and competing models’ results. 
