@@ -83,19 +83,7 @@ In the table below, we compare the self-reported results of Qwen3 with the numbe
       font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
       color: var(--text);
     }
-    .table-wrap {
-      width: 100%;
-      max-width: 100vw;           /* cap at viewport */
-      overflow-x: auto !important;
-      overflow-y: hidden;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-gutter: stable both-edges;
-    }
-    .table-wrap > table {
-      display: block;             /* key: prevents wrapper from expanding */
-      width: max-content;         /* grow to fit columns */
-      min-width: 100%;            /* at least fill wrapper */
-    }
+    .table-wrap { max-width: 100%; overflow: auto; border-radius: 11px; } table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 11px; line-height: 1.25; }
     thead th {
       background: var(--header-bg);
       border-bottom: 1px solid var(--border);
@@ -134,6 +122,19 @@ In the table below, we compare the self-reported results of Qwen3 with the numbe
       .table-wrap > table th,
       .table-wrap > table td {
         white-space: nowrap;
+      }
+      .table-wrap {
+        width: 100%;
+        max-width: 100vw;           /* cap at viewport */
+        overflow-x: auto !important;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-gutter: stable both-edges;
+      }
+      .table-wrap > table {
+        display: block;  
+        width: max-content;         /* grow to fit columns */
+        min-width: 100%;            /* at least fill wrapper */
       }
     }
   </style>
