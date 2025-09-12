@@ -46,7 +46,7 @@ tweet-id:
   }
     
 </style>
-<a href="https://www.k2think.ai/">K2-Think</a> (different from Kimi-K2!) is a reasoning LLM released a few days ago that claims performance on par with GPT-OSS 120B and DeepSeek v3.1, but with fewer parameters. It received a significant amount of attention online, with several news articles being published on the topic (<a href="https://www.wired.com/story/uae-releases-a-tiny-but-powerful-reasoning-model/">Wired</a>, <a href="https://www.forbes.com/sites/patrickmoorhead/2025/09/09/the-uae-showcases-its-abilities-in-ai-reasoning-with-k2-think-model/">Forbes</a>, <a href="https://www.cnbc.com/2025/09/09/abu-dhabi-launches-ai-reasoning-model-to-rival-openai-deepseek.html">CNBC</a>, etc.). However, as we discuss below, the reported gains are overstated, relying on flawed evaluation marked by contamination, unfair comparisons, and misrepresentation of both its own and competing models’ results. Instead, K2-Think performs slightly worse than other models of similar size, such as GPT-OSS 20B, Nemotron-32B, and Qwen3-A3B-30B-2507.
+<a href="https://www.k2think.ai/">K2-Think</a> (different from Kimi-K2!) is a reasoning LLM released a few days ago that claims performance on par with GPT-OSS 120B and DeepSeek v3.1, but with fewer parameters, as described in their <a href="https://arxiv.org/abs/2509.07604">paper</a>. It received a significant amount of attention online, with several news articles being published on the topic (<a href="https://www.wired.com/story/uae-releases-a-tiny-but-powerful-reasoning-model/">Wired</a>, <a href="https://www.forbes.com/sites/patrickmoorhead/2025/09/09/the-uae-showcases-its-abilities-in-ai-reasoning-with-k2-think-model/">Forbes</a>, <a href="https://www.cnbc.com/2025/09/09/abu-dhabi-launches-ai-reasoning-model-to-rival-openai-deepseek.html">CNBC</a>, etc.). However, as we discuss below, the reported gains are overstated, relying on flawed evaluation marked by contamination, unfair comparisons, and misrepresentation of both its own and competing models’ results. Instead, K2-Think performs slightly worse than other models of similar size, such as GPT-OSS 20B, Nemotron-32B, and Qwen3-A3B-30B-2507.
 
 ### Evaluation is invalid due to data contamination
 
@@ -63,6 +63,39 @@ The net effect is that the evaluation results on mathematics and code are <stron
 The paper’s main results table reports K2-Think’s best-of-3 performance, a well-known method to improve model performance. All other models are evaluated using best-of-1, posing them at a significant disadvantage. To make matters worse, the best-of-3 judgment is made by an unspecified “external model”. This same external model is also used to provide K2-Think with detailed problem-solving plans. The authors define this entire pipeline as “K2-Think,” with the model itself being only one component. 
 
 Comparing this pipeline to other models without the pipeline, as done in the paper, is invalid. The pipeline itself could be easily applied to other models and would similarly increase their score. Without the external help, K2-Think’s performance is worse than Nemotron 32B, a similarly-sized model trained with a similar methodology on Qwen2.5 32B and released in July.
+
+<div class="table-container">
+  <div class="table-wrap" role="region" aria-label="K2-Think performance comparison">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col" class="model"><strong>Model</strong></th>
+          <th scope="col"><strong>AIME 2024</strong></th>
+          <th scope="col"><strong>AIME 2025</strong></th>
+          <th scope="col"><strong>HMMT25</strong></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row" class="name">K2-Think</th>
+          <td>86.26</td>
+          <td>77.72</td>
+          <td>66.46</td>
+        </tr>
+        <tr>
+          <th scope="row" class="name">Nemotron 32B</th>
+          <td>87.09</td>
+          <td>82.71</td>
+          <td>67.29</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="muted" style="margin-top:10px; text-align: center">
+    Table 2: Performance comparison of K2-Think without external help, and Nemotron 32B (both finetunes of Qwen 32B), demonstrating the lower performance. All results are taken from the <a href="https://arxiv.org/pdf/2509.07604">K2-Think paper</a>.
+  </p>
+</div>
 
 ### Misrepresenting results of other models
 
@@ -101,7 +134,7 @@ Additionally, K2-Think uses outdated versions for many models. For example, even
       white-space: nowrap;
     }
     tbody td {
-      text-align: right;
+      text-align: center;
     }
     th, td {
       padding: 12px 14px;
