@@ -46,7 +46,7 @@ tweet-id:
   }
     
 </style>
-<a href="https://www.k2think.ai/">K2-Think</a> (different from Kimi-K2!) is a reasoning LLM released a few days ago that claims performance on par with GPT-OSS 120B and DeepSeek v3.1, but with fewer parameters, as described in their <a href="https://arxiv.org/abs/2509.07604">paper</a>. It received a significant amount of attention online, with several news articles being published on the topic (<a href="https://www.wired.com/story/uae-releases-a-tiny-but-powerful-reasoning-model/">Wired</a>, <a href="https://www.forbes.com/sites/patrickmoorhead/2025/09/09/the-uae-showcases-its-abilities-in-ai-reasoning-with-k2-think-model/">Forbes</a>, <a href="https://www.cnbc.com/2025/09/09/abu-dhabi-launches-ai-reasoning-model-to-rival-openai-deepseek.html">CNBC</a>, etc.). However, as we discuss below, the reported gains are overstated, relying on flawed evaluation marked by contamination, unfair comparisons, and misrepresentation of both its own and competing models’ results. Instead, K2-Think performs slightly worse than other models of similar size, such as GPT-OSS 20B or Nemotron-32B.
+<a href="https://www.k2think.ai/">K2-Think</a> (different from Kimi-K2!) is a reasoning LLM released a few days ago that claims performance on par with GPT-OSS 120B and DeepSeek v3.1, but with fewer parameters, as described in their <a href="https://arxiv.org/abs/2509.07604">paper</a>. It received a significant amount of attention online, with several news articles being published on the topic (<a href="https://www.wired.com/story/uae-releases-a-tiny-but-powerful-reasoning-model/">Wired</a>, <a href="https://www.forbes.com/sites/patrickmoorhead/2025/09/09/the-uae-showcases-its-abilities-in-ai-reasoning-with-k2-think-model/">Forbes</a>, <a href="https://www.cnbc.com/2025/09/09/abu-dhabi-launches-ai-reasoning-model-to-rival-openai-deepseek.html">CNBC</a>, etc.). However, as we discuss below, the reported gains are overstated, relying on flawed evaluation marked by contamination, unfair comparisons, and misrepresentation of both its own and competing models’ results. Instead, K2-Think performs slightly worse than other models of similar size, such as GPT-OSS 20B, Nemotron-32B or Qwen3 30B 2507.
 
 ### Evaluation is invalid due to data contamination
 
@@ -88,12 +88,18 @@ Comparing this pipeline to other models without the pipeline, as done in the pap
           <td>82.71</td>
           <td>67.29</td>
         </tr>
+        <tr>
+          <th scope="row" class="name"> Qwen3 30B (July)*</th>
+          <td>-</td>
+          <td>85.00</td>
+          <td>71.40</td>
+        </tr>
       </tbody>
     </table>
   </div>
 
   <p class="muted" style="margin-top:10px; text-align: center">
-    Table 2: Performance comparison of K2-Think without external help, and Nemotron 32B (both finetunes of Qwen2.5 32B), demonstrating the lower performance. All results are taken from the <a href="https://arxiv.org/pdf/2509.07604">K2-Think paper</a>.
+    Table 1: Performance comparison of K2-Think without external help, and Nemotron 32B (both finetunes of Qwen2.5 32B), demonstrating the lower performance. Results for Qwen3 (*) are taken from their <a href="https://huggingface.co/Qwen/Qwen3-30B-A3B-Thinking-2507">model page</a>. All other results are taken from the <a href="https://arxiv.org/pdf/2509.07604">K2-Think paper</a>.
   </p>
 </div>
 
@@ -250,7 +256,7 @@ Additionally, K2-Think uses outdated versions for many models. For example, even
   </div>
 
   <p class="muted" style="margin-top:10px; text-align: center">
-    Table 1: Comparing reported scores from <a href="https://arxiv.org/abs/2505.09388">Qwen3 reports</a>, <a href="https://matharena.ai/">MathArena benchmark</a>, and <a href="https://arxiv.org/pdf/2509.07604">K2-Think paper</a> on AIME 2025, HMMT 2025, and GPQA-Diamond.
+    Table 2: Comparing reported scores from <a href="https://arxiv.org/abs/2505.09388">Qwen3 technical report</a> and <a href="https://huggingface.co/Qwen/Qwen3-30B-A3B-Thinking-2507">model pages</a>, <a href="https://matharena.ai/">MathArena benchmark</a>, and <a href="https://arxiv.org/pdf/2509.07604">K2-Think paper</a> on AIME 2025, HMMT 2025, and GPQA-Diamond.
   </p>
 </div>
 
