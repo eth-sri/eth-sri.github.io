@@ -15,7 +15,7 @@ bibtex: '@inproceedings{chenhao25acr,
 			year         = {2025},
 			booktitle    = {The Forty-Second International Conference on Machine Learning}'
 paper: https://arxiv.org/abs/2410.06895
-# code: https://github.com/eth-sri/CTBench
+code: https://github.com/eth-sri/acr-weakness
 # slides: https://files.sri.inf.ethz.ch/website/slides/mueller2023sabr_slides.pdf
 #poster: https://files.sri.inf.ethz.ch/website/slides/mueller2021boosting_poster.pdf
 # image: assets/images/taps.png
