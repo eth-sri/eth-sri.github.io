@@ -27,7 +27,7 @@ def solve_assignment_milp(
     # Change to minimization problem.
     model.objective = minimize(
         xsum(
-            copied_pref_dict[student][paper] * (i + 1)
+            copied_pref_dict[student][paper] * (i + 1)**2
             for student, prefs in student_preferences.items()
             for i, paper in enumerate(prefs)
         )
