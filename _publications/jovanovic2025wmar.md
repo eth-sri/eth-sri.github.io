@@ -3,13 +3,13 @@ ref: jovanovic2025wmar
 title: "Watermarking Autoregressive Image Generation"
 authors: Nikola Jovanović, Ismail Labiad, Tomáš Souček, Martin Vechev, Pierre Fernandez
 year: 2025
-month: 06
-venue: arXiv
+month: 12
+venue: NeurIPS
 projects: watermarks
 bibtex: "@article{jovanovic2025wmar,
   title={Watermarking Autoregressive Image Generation},
   author={Jovanović, Nikola and Labiad, Ismail and Souček, Tomáš and Vechev, Martin and Fernandez, Pierre},
-  journal={arXiv},
+	journal = {Advances in Neural Information Processing Systems},
   year={2025}
 }"
 paper: https://files.sri.inf.ethz.ch/website/papers/jovanovic2025wmar.pdf
