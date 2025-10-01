@@ -8,7 +8,7 @@ layout: default
   let polysFrac = {};
   let altDisplayNames = {
     "SamuelSimko": "Samuel",
-    "Mark": "Mark M.", 
+    "Mark": "Mark M.",
     "Benjamin": "Beni",
     "MarkVero": "Mark V."
   }
@@ -18,9 +18,9 @@ layout: default
     "Hanna": "https://hannayukhymenko.vercel.app/",
     "Slobodan": "https://www.linkedin.com/in/slobodan-jenko-466370172"
   }
-  
+
   function clearClipPaths() {
-    document.getElementById("group-pic-color").style.clipPath = ""; 
+    document.getElementById("group-pic-color").style.clipPath = "";
   }
 
   function mouseleave() {
@@ -31,7 +31,7 @@ layout: default
     clearTimeout(clearClipPathsTimeout);
     for (const [name, poly] of Object.entries(polysFrac)) {
       if (name == x) {
-        document.getElementById("group-pic-color").style.clipPath = "polygon(" + poly + ")"; 
+        document.getElementById("group-pic-color").style.clipPath = "polygon(" + poly + ")";
       }
     }
   }
@@ -49,7 +49,7 @@ layout: default
     resizeMap(document.getElementById("group-pic-bw"));
     resizeMap(document.getElementById("group-pic-color"));
   }
-  
+
   function fillInMap() {
     let groupPicMap = document.getElementById("group-pic-map");
     for (const [name, poly] of Object.entries(polys)) {
@@ -68,34 +68,35 @@ layout: default
       }
       area.coords = poly;
       area.shape = "poly";
-      area.onmouseover = function() { mouseover(name); };
-      area.onmouseleave = function() { mouseleave(); };
+      area.onmouseover = function () { mouseover(name); };
+      area.onmouseleave = function () { mouseleave(); };
       groupPicMap.appendChild(area);
     }
     resizeMaps();
   }
-  
+
   function loadPaths() {
     fetch("assets/images/group-2023/polys.txt")
-    .then((res) => res.text())
-    .then((text) => {
-      text = text.split("\n");
-      text.forEach((line) => {
-        line = line.split(";");
-        polys[line[0]] = line[1];
-        nums = line[1].split(","); 
-        frac = [] 
-        for (let i = 0; i < nums.length; i+= 2) {
-          s = (parseInt(nums[i]) / 2788 * 100).toFixed(2).toString() + "% ";
-          s += (parseInt(nums[i+1]) / 1218 * 100).toFixed(2).toString() + "%";
-          frac.push(s);
-        }
-        polysFrac[line[0]] = frac.join(",");
+      .then((res) => res.text())
+      .then((text) => {
+        text = text.split("\n");
+        text.forEach((line) => {
+          line = line.split(";");
+          polys[line[0]] = line[1];
+          nums = line[1].split(",");
+          frac = []
+          for (let i = 0; i < nums.length; i += 2) {
+            s = (parseInt(nums[i]) / 2788 * 100).toFixed(2).toString() + "% ";
+            s += (parseInt(nums[i + 1]) / 1218 * 100).toFixed(2).toString() + "%";
+            frac.push(s);
+          }
+          polysFrac[line[0]] = frac.join(",");
+        });
+        fillInMap();
       });
-      fillInMap();});
   }
   let clearClipPathsTimeout = setTimeout(clearClipPaths, 1);
-  document.body.onload = function() {loadPaths()};    
+  document.body.onload = function () { loadPaths() };
   window.addEventListener('resize', () => resizeMaps());
   if (document.readyState == 'complete') {
     loadPaths();
@@ -106,30 +107,40 @@ layout: default
     <!---<div class="landing-banner" style="background:url('{{ site.baseurl }}/assets/images/group-2018-12-final.jpg') 0 200px no-repeat"></div>-->
     <div class="landing-header-content container">
       <div class="row group-pic-row">
-          <!-- <h1 class="landing-title">{{ site.title | escape }}</h1> -->
-          
-          <img id="group-pic-bw" src="assets/images/group-2023/bw.jpg" usemap="#group-pic-map"> 
-          <img id="group-pic-color" src="assets/images/group-2023/color.jpg" usemap="#group-pic-map">
-          <map name="group-pic-map" id="group-pic-map">
-            <!-- JS will populate this -->
-          </map>
+        <!-- <h1 class="landing-title">{{ site.title | escape }}</h1> -->
+
+        <img id="group-pic-bw" src="assets/images/group-2023/bw.jpg" usemap="#group-pic-map">
+        <img id="group-pic-color" src="assets/images/group-2023/color.jpg" usemap="#group-pic-map">
+        <map name="group-pic-map" id="group-pic-map">
+          <!-- JS will populate this -->
+        </map>
       </div>
       <div class="row">
-          <div class="landing-about">
+        <div class="landing-about">
           The <b>Secure, Reliable, and Intelligent Systems (SRI) Lab</b> is a research
-          group in the <a href="https://www.inf.ethz.ch/"
-          target="_blank">Department of Computer Science</a> at ETH Zurich.
-          Our research focuses on reliable, secure, and trustworthy machine learning, with emphasis on large language models.
-          We currently study issues of <a href="/research/cclm">controllability</a>, <a href="/research/llmsecpriv">security and privacy</a>, and <a href="/research/llmevals">reliable evaluation</a> of LLMs, their application to <a href="/research/mathllm">mathematical reasoning</a> and <a href="/research/codellm">coding</a>, as well as <a href="/research/watermarks">generative AI watermarking</a>, <a href="/research/regulations">AI regulations</a>, <a href="/research/federated">federated learning privacy</a>, <a href="/research/safeai">robustness and fairness certification</a>, and <a href="/research/quantum">quantum computing</a>.
-          Our work has led to six ETH <a href="/spinoffs">spin-offs</a>: 
+          group in the <a href="https://www.inf.ethz.ch/" target="_blank">Department of Computer Science</a> at ETH
+          Zurich.
+          Our research focuses on reliable, secure, and trustworthy machine learning, with emphasis on large language
+          models.
+          We currently study issues of <a href="/research/cclm">controllability</a>, <a
+            href="/research/llmsecpriv">security and privacy</a>, and <a href="/research/llmevals">reliable
+            evaluation</a> of LLMs, their application to <a href="/research/mathllm">mathematical reasoning</a> and <a
+            href="/research/codellm">coding</a>, as well as <a href="/research/watermarks">generative AI
+            watermarking</a>, <a href="/research/regulations">AI regulations</a>, <a
+            href="/research/federated">federated learning privacy</a>, <a href="/research/safeai">robustness and
+            fairness certification</a>, and <a href="/research/quantum">quantum computing</a>.
+          Our work has led to six ETH <a href="/spinoffs">spin-offs</a>:
           <a href="https://netfabric.ai/" target="_blank">NetFabric</a> (AI for systems),
           <a href="https://logicstar.ai/" target="_blank">LogicStar</a> (AI code agents),
           <a href="https://latticeflow.ai/" target="_blank">LatticeFlow</a> (robust ML),
           <a href="https://invariantlabs.ai/" target="_blank">InvariantLabs</a> (secure AI agents; acquired),
           <a href="http://deepcode.ai/" target="_blank">DeepCode</a> (AI for code; acquired),
           and <a href="https://chainsecurity.com" target="_blank">ChainSecurity</a> (security verification; acquired).
-          To learn more about our work see our <a href="/research" target="_blank">Research</a> page, recent <a href="/publications" target="_blank">Publications</a>, and <a href="https://github.com/eth-sri/">GitHub</a> releases. To stay up to date follow our group on <a href="https://x.com/the_sri_lab" target="_blank">Twitter</a>.
-          </div>
+          To learn more about our work see our <a href="/research" target="_blank">Research</a> page, recent <a
+            href="/publications" target="_blank">Publications</a>, and <a href="https://github.com/eth-sri/">GitHub</a>
+          releases. To stay up to date follow our group on <a href="https://x.com/the_sri_lab"
+            target="_blank">Twitter</a>.
+        </div>
       </div>
     </div>
   </header>
@@ -137,11 +148,13 @@ layout: default
   <div class="landing-content container">
 
     <div class="row">
-      {% assign pubs_by_year = site.publications | group_by: "year" | sort: "name" | reverse %}
+      {% capture query %} item.authors contains 'Martin'{% endcapture %}
+      {% assign filtered_publications = site.publications | where_exp:"item", query %}
+      {% assign pubs_by_year = filtered_publications | group_by: "year" | sort: "name" | reverse %}
       {% assign sorted_pubs = "" | split: "" %}
       {% for year in pubs_by_year %}
-        {% assign pubs_by_month = year.items | sort: "month" | reverse %}
-        {% assign sorted_pubs = sorted_pubs | concat: pubs_by_month %}
+      {% assign pubs_by_month = year.items | sort: "month" | reverse %}
+      {% assign sorted_pubs = sorted_pubs | concat: pubs_by_month %}
       {% endfor %}
 
       {% assign sorted_newsposts = site.newsposts | where: "categories","media" | sort:"date" | reverse %}
@@ -152,7 +165,8 @@ layout: default
         <div class="row media-row">
           <div class="media-item">
             <div class="media-thumbnail-news">
-              <a href="{{ newspost.link }}"> <img src="{{ newspost.image | prepend: '/assets/media/' | relative_url}}"/> </a>
+              <a href="{{ newspost.link }}"> <img
+                  src="{{ newspost.image | prepend: '/assets/media/' | relative_url}}" /> </a>
             </div>
 
             <div class="media-excerpt-news">
@@ -163,7 +177,7 @@ layout: default
         </div>
         {%- endfor -%}
         <div class="div-see-all">
-          <a class="button btn-see-all" href="{{"/news" | relative_url }}">See all News</a>
+          <a class="button btn-see-all" href="{{" /news" | relative_url }}">See all News</a>
         </div>
       </div>
 
@@ -172,37 +186,39 @@ layout: default
         {%- for pub in sorted_pubs limit: 4 %}
         <div class="row pubs-on-home-row">
           {% if pub %}
-            {% assign pub-title = pub.title %}
-            {% assign pub-url = pub.url %}
-            {% assign pub-description = pub.authors %}
-            {% capture pub-extra %}
-              {{ pub.venue }} 
-              {{ pub.year }} 
-              {% if pub.authors contains "*" %}<span style="font-weight: normal;">* Equal contribution</span>{% endif %}
-              {% if pub.authors contains "†" %}<span style="font-weight: normal;">† Co-leadership</span>{% endif %}
-              {% if pub.awards %} <span style="margin-left: 4pt;"><img style="height: 18px; width: 18px;" src="/assets/images/award.png" title="CC BY 4.0 by @fontawesome - https://fontawesome.com"></span> <font color="#d74141">{{ pub.awards }}</font> {% endif %}
-            {% endcapture %}
-            {% assign pub-ref = pub.ref %}
-            {% include card.html
-              output="horizontal"
-              title=pub-title
-              url=pub-url
-              description=pub-description
-              extra=pub-extra
-              card-links-style=""
-              pub-ref=pub-ref
-            %}
+          {% assign pub-title = pub.title %}
+          {% assign pub-url = pub.url %}
+          {% assign pub-description = pub.authors %}
+          {% capture pub-extra %}
+          {{ pub.venue }}
+          {{ pub.year }}
+          {% if pub.authors contains "*" %}<span style="font-weight: normal;">* Equal contribution</span>{% endif %}
+          {% if pub.authors contains "†" %}<span style="font-weight: normal;">† Co-leadership</span>{% endif %}
+          {% if pub.awards %} <span style="margin-left: 4pt;"><img style="height: 18px; width: 18px;"
+              src="/assets/images/award.png" title="CC BY 4.0 by @fontawesome - https://fontawesome.com"></span>
+          <font color="#d74141">{{ pub.awards }}</font> {% endif %}
+          {% endcapture %}
+          {% assign pub-ref = pub.ref %}
+          {% include card.html
+          output="horizontal"
+          title=pub-title
+          url=pub-url
+          description=pub-description
+          extra=pub-extra
+          card-links-style=""
+          pub-ref=pub-ref
+          %}
           {% endif %}
         </div>
         {%- endfor -%}
         <div class="div-see-all">
-          <a class="button btn-see-all" href="{{"/publications" | relative_url }}">See all Publications</a>
+          <a class="button btn-see-all" href="{{" /publications" | relative_url }}">See all Publications</a>
         </div>
       </div>
 
-    </div>  
+    </div>
 
-    
+
 
   </div>
 </article>
