@@ -1,6 +1,6 @@
 ---
 ref: venev2025qblaze
-title: "Modular Synthesis of Efficient Quantum Uncomputation"
+title: "qblaze: An Efficient and Scalable Sparse Quantum Simulator"
 authors: Hristo Venev, Thien Udomsrirungruang, Dimitar Dimitrov, Timon Gehr, Martin Vechev
 year: 2025
 month: 10
