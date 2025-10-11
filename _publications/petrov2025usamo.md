@@ -5,7 +5,7 @@ authors: Ivo Petrov, Jasper Dekoninck, Lyuben Baltadzhiev, Maria Drencheva, Kris
 year: 2025
 month: 07
 venue: AI4Math@ICML
-projects: mathllm
+projects: mathllm,llmevals
 bibtex: "@article{petrov2025usamo,
    title={Proof or Bluff? Evaluating LLMs on 2025 USA Math Olympiad}, 
    author={Ivo Petrov and Jasper Dekoninck and Lyuben Baltadzhiev and Maria Drencheva and Kristian Minchev and Mislav Balunović and Nikola Jovanović and Martin Vechev},
