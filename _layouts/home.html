@@ -148,7 +148,7 @@ layout: default
   <div class="landing-content container">
 
     <div class="row">
-      {% capture query %} item.authors contains 'Martin'{% endcapture %}
+      {% capture query %} item.authors contains 'Martin Vechev'{% endcapture %}
       {% assign filtered_publications = site.publications | where_exp:"item", query %}
       {% assign pubs_by_year = filtered_publications | group_by: "year" | sort: "name" | reverse %}
       {% assign sorted_pubs = "" | split: "" %}

@@ -8,11 +8,11 @@ permalink: /publications/index.html
 <article class="page">
 
   <header class="page-header container">
-  <div class="row">
-    <div class="column column-66">
-      <h1 class="page-title">{{ page.title | escape }}</h1>
+    <div class="row">
+      <div class="column column-66">
+        <h1 class="page-title">{{ page.title | escape }}</h1>
+      </div>
     </div>
-  </div>
   </header>
 
 
@@ -20,11 +20,10 @@ permalink: /publications/index.html
     <div class="row">
       <div class="column column-66">
 
-		{% include get-publications.html filter="person" key="Martin" %}
+        {% include get-publications.html filter="person" key="Martin Vechev" %}
 
       </div>
-    </div>      
+    </div>
   </div>
 
 </article>
-
