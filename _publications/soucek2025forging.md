@@ -5,6 +5,7 @@ authors: Tomas Soucek, Sylvestre-Alvise Rebuffi, Pierre Fernandez, Nikola Jovano
 year: 2025
 month: 12
 venue: NeurIPS
+awards: Spotlight
 projects: watermarks
 bibtex: "@article{soucek2025forging,
   title={Transferable Black-Box One-Shot Forging of Watermarks via Image Preference Models},
