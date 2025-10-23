@@ -3,7 +3,7 @@ ref: fernandez2025syncseal
 title: "Geometric Image Synchronization with Deep Watermarking"
 authors: Pierre Fernandez, Tomáš Souček, Nikola Jovanović, Hady Elsahar, Sylvestre-Alvise Rebuffi, Valeriu Lacatusu, Tuan Tran, Alexandre Mourachko
 year: 2025
-month: 09
+month: 9
 venue: arXiv
 projects: watermarks
 bibtex: "@misc{fernandez2025syncseal,
