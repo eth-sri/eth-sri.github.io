@@ -3,7 +3,7 @@ ref: gloaguen2025diffusionwatermark
 title: "Watermarking Diffusion Language Models"
 authors: Thibaud Gloaguen, Robin Staab, Nikola Jovanović, Martin Vechev
 year: 2025
-month: 09
+month: 9
 venue: GenProCC @ NeurIPS 2025
 projects: watermarks
 bibtex: "@article{gloaguen2025watermarkingdiffusionlanguagemodels,
