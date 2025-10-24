@@ -6,15 +6,14 @@ year: 2025
 month: 09
 venue: GenProCC @ NeurIPS 2025
 projects: watermarks
-bibtex: "
-@article{gloaguen2025watermarkingdiffusionlanguagemodels,
-title={Watermarking Diffusion Language Models}, 
-author={Thibaud Gloaguen and Robin Staab and Nikola Jovanović and Martin Vechev},
-year={2025},
-eprint={2509.24368},
-archivePrefix={arXiv},
-primaryClass={cs.LG},
-url={https://arxiv.org/abs/2509.24368}, 
+bibtex: "@article{gloaguen2025watermarkingdiffusionlanguagemodels,
+    title={Watermarking Diffusion Language Models}, 
+    author={Thibaud Gloaguen and Robin Staab and Nikola Jovanović and Martin Vechev},
+    year={2025},
+    eprint={2509.24368},
+    archivePrefix={arXiv},
+    primaryClass={cs.LG},
+    url={https://arxiv.org/abs/2509.24368}, 
 }"
 paper: https://arxiv.org/abs/2509.24368
 code: https://github.com/eth-sri/diffusion-lm-watermark
