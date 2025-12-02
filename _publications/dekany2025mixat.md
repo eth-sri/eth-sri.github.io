@@ -9,7 +9,7 @@ projects: llmsecpriv
 bibtex: '@inproceedings{
 			dekany2025mixat,
 			title={Mix{AT}: Combining Continuous and Discrete Adversarial Training for {LLM}s},
-			author={Csaba D{\'e}k{\'a}ny and Stefan Balauca and Dimitar Iliev Dimitrov and Robin Staab and Martin Vechev},
+			author={saba Dékány and Stefan Balauca and Dimitar I. Dimitrov and Robin Staab and Martin Vechev},
 			booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems},
 			year={2025},
 			url={https://openreview.net/forum?id=NG7kM4wxaN}
