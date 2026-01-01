@@ -1,7 +1,7 @@
 ---
 ref: vonarx2025autobaxbench
 title: "AutoBaxBuilder: Bootstrapping Code Security Benchmarking "
-authors: Tobias von Arx, Niels Mündler, Mark Vero, Max Baader, Martin Vechev
+authors: Tobias von Arx, Niels Mündler, Mark Vero, Maximilian Baader, Martin Vechev
 year: 2025
 month: 12
 venue: arxiv
