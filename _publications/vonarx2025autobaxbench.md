@@ -13,7 +13,7 @@ bibtex: "@article{vonarx2025autobaxbuilderbootstrappingcodesecurity,
       year={2025},
       eprint={2512.21132},
       archivePrefix={arXiv},
-}",
+}"
 paper: https://arxiv.org/abs/2512.21132
 code: https://github.com/eth-sri/autobaxbuilder
 ---
