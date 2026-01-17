@@ -2,9 +2,9 @@
 ref: staab2025dmsok
 title: "SoK: Data Minimization in Machine Learning"
 authors: Robin Staab*, Nikola Jovanović*, Kimberly Mai, Prakhar Ganesh, Martin Vechev, Ferdinando Fioretto, Matthew Jagielski
-year: 2025
-month: 8
-venue: arXiv
+year: 2026
+month: 3
+venue: SaTML
 projects: regulations
 bibtex: "@misc{staab2025dmsok,
       title={SoK: Data Minimization in Machine Learning}, 
