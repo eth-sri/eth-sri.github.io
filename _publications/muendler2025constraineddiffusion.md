@@ -2,19 +2,18 @@
 ref: muendler2025constraineddiffusion
 title: "Constrained Decoding of Diffusion LLMs with Context-Free Grammars"
 authors: Niels Mündler, Jasper Dekoninck, Martin Vechev
-year: 2025
-month: 8
-venue: DL4C @ NeurIPS
-awards: Oral
+year: 2026
+month: 1
+venue: ICLR
+awards: DL4C @ NeurIPS'26 Oral
 projects: codellm, cclm
 bibtex: "
-@article{muendler2025constraineddiffusion,
-title={Constrained Decoding of Diffusion LLMs with Context-Free Grammars},
+@inproceedings{muendler2025constraineddiffusion,
+title={Constrained Decoding of Diffusion {LLM}s with Context-Free Grammars},
 author={Niels Mündler and Jasper Dekoninck and Martin Vechev},
-year={2025},
-eprint={2508.10111},
-archivePrefix={arXiv},
-url={https://arxiv.org/abs/2508.10111}
+booktitle={ICLR},
+year={2026},
+url={https://openreview.net/forum?id=7Sph4KyeYO},
 }"
 paper: https://arxiv.org/abs/2508.10111
 code: https://github.com/eth-sri/constrained-diffusion
