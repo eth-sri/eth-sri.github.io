@@ -5,7 +5,7 @@ authors: Niels Mündler, Jasper Dekoninck, Martin Vechev
 year: 2026
 month: 4
 venue: ICLR
-awards: DL4C @ NeurIPS'26 Oral
+awards: DL4C @ NeurIPS'25 Oral
 projects: codellm, cclm
 bibtex: "
 @inproceedings{muendler2025constraineddiffusion,
