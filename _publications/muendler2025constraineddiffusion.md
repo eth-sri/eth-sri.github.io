@@ -3,7 +3,7 @@ ref: muendler2025constraineddiffusion
 title: "Constrained Decoding of Diffusion LLMs with Context-Free Grammars"
 authors: Niels Mündler, Jasper Dekoninck, Martin Vechev
 year: 2026
-month: 1
+month: 4
 venue: ICLR
 awards: DL4C @ NeurIPS'26 Oral
 projects: codellm, cclm
