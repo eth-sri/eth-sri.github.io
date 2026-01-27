@@ -4,7 +4,7 @@ title: "Fewer Weights, More Problems: A Practical Attack on LLM Pruning"
 authors: Kazuki Egashira, Robin Staab, Thibaud Gloaguen, Mark Vero, Martin Vechev
 year: 2026
 month: 4
-venue: arXiv
+venue: ICLR
 projects: llmsecpriv
 awards:
 bibtex: "@inproceedings{egashira2025fewer,
