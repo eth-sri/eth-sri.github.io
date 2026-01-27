@@ -2,16 +2,16 @@
 ref: egashira2025fewer
 title: "Fewer Weights, More Problems: A Practical Attack on LLM Pruning"
 authors: Kazuki Egashira, Robin Staab, Thibaud Gloaguen, Mark Vero, Martin Vechev
-year: 2025
-month: 10
+year: 2026
+month: 4
 venue: arXiv
 projects: llmsecpriv
 awards:
-bibtex: "@article{egashira2025fewer,
+bibtex: "@inproceedings{egashira2025fewer,
   title={Fewer Weights, More Problems: A Practical Attack on LLM Pruning},
   author={Egashira, Kazuki and Staab, Robin and Gloaguen, Thibaud and Vero, Mark and Vechev, Martin},
-  journal={arXiv},
-  year={2025}
+  booktitle={International Conference on Learning Representations},
+  year={2026}
 }"
 
 paper: https://www.arxiv.org/abs/2510.07985
