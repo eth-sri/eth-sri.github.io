@@ -2,9 +2,9 @@
 ref: gloaguen2025fingerprint
 title: "Robust LLM Fingerprinting via Domain-Specific Watermarks"
 authors: Thibaud Gloaguen, Robin Staab, Nikola Jovanović and Martin Vechev
-year: 2025
-month: 05
-venue: arXiv
+year: 2026
+month: 4
+venue: ICLR
 projects: watermarks
 bibtex: "@misc{gloaguen2025fingerprint,
     title={Robust LLM Fingerprinting via Domain-Specific Watermarks}, 
