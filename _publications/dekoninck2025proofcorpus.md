@@ -2,9 +2,9 @@
 ref: dekoninck2025proofcorpus
 title: "The Open Proof Corpus: A Large-Scale Study of LLM-Generated Mathematical Proofs"
 authors: Jasper Dekoninck, Ivo Petrov,  Kristian Minchev, Mislav Balunovic, Martin Vechev, Miroslav Marinov, Maria Drencheva, Lyuba Konova, Milen Milenov Shumanov, Kaloyan Tsvetkov, Nikolay Drenchev, Lazar D. Todorov, Kalina Nikolova, Nikolay Georgiev, Vanesa Kalinkova, Margulan Ismoldayev
-year: 2025
-month: 07
-venue: AI4Math@ICML
+year: 2026
+month: 4
+venue: ICLR
 projects: mathllm,llmevals
 bibtex: '@article{openproofcorpus2025,
   title={The Open Proof Corpus: A Large-Scale Human Study of LLM Proofs},
