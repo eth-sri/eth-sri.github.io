@@ -3,7 +3,7 @@ ref: mao26multineuron
 title: "Expressiveness of Multi-Neuron Convex Relaxations in Neural Network Certification"
 authors: Yuhao Mao*, Yani Zhang*, Martin Vechev
 year: 2026
-month: 05
+month: 04
 venue: ICLR
 projects: safeai
 bibtex: '@inproceedings{mao26multineuron,
