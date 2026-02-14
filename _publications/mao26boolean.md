@@ -3,10 +3,10 @@ ref: mao26boolean
 title: "Learning Compact Boolean Networks"
 authors: Shengpu Wang, Yuhao Mao, Yani Zhang, Martin Vechev
 year: 2026
-month: 02
+month: 07
 venue: arXiv (preprint)
 # projects: safeai
-bibtex: '@article{mao26boolean,
+bibtex: '@article{wang26boolean,
     title={Learning Compact Boolean Networks},
     author={Wang, Shengpu and Mao, Yuhao and Zhang, Yani and Vechev, Martin},
     journal={arXiv preprint arXiv:2602.05830},
