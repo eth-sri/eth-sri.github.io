@@ -8,27 +8,27 @@ rows = []
 with open(filename, newline='') as csvfile:
     reader = csv.reader(csvfile)
     for row in reader:
-        if any(row[0].startswith(s) for s in ("Lab", "By Lab")) or not row[0]:
+        if any(row[0].startswith(s) for s in ("Lab", "By Lab", "Dates")) or not row[0]:
             # skip headers
             continue
         rows.append(row)
 
 # Read the assignment file
 assignments = {}
-filename = sys.argv[2]
-assignments = {}
-with open(filename, newline='') as csvfile:
-    reader = csv.reader(csvfile)
-    for row in reader:
-        if any(row[0].startswith(s) for s in ("Name")) or not row[0]:
-            # skip headers
-            continue
-        assignments[row[5].strip()] = row[0]
+# filename = sys.argv[2]
+# assignments = {}
+# with open(filename, newline='') as csvfile:
+#     reader = csv.reader(csvfile)
+#     for row in reader:
+#         if any(row[0].startswith(s) for s in ("Name")) or not row[0]:
+#             # skip headers
+#             continue
+#         assignments[row[5].strip()] = row[0]
 LAB, TITLE, VENUE, TA, PAPER_URL, DATE, TA_MAIL = range(7)
 
 # Parse dates and sort the entries by date
 for row in rows:
-    row[DATE] = datetime.strptime(row[DATE].strip(), '%d.%m.%Y')
+    row[DATE] = datetime.strptime(row[DATE].strip() + str(datetime.now().year), '%d.%m.%Y')
 rows.sort(key=lambda x: x[DATE])
 
 # Generate HTML table rows
