@@ -4,7 +4,7 @@ title: "Learning Compact Boolean Networks"
 authors: Shengpu Wang, Yuhao Mao, Yani Zhang, Martin Vechev
 year: 2026
 month: 07
-venue: arXiv (preprint)
+venue: arXiv
 # projects: safeai
 bibtex: '@article{wang26boolean,
     title={Learning Compact Boolean Networks},
