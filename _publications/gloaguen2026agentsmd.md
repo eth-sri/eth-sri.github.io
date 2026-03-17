@@ -5,6 +5,7 @@ authors: Thibaud Gloaguen, Niels Mündler, Mark Niklas Müller, Veselin Raychev,
 year: 2026
 month: 02
 venue: arXiv
+projects: codellm, cllm
 bibtex: "@misc{gloaguen2026agentsmd,
       title={Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agents?},
       author={Thibaud Gloaguen and Niels Mündler and Mark Müller and Veselin Raychev and Martin Vechev},
