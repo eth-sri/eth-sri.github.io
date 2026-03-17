@@ -4,7 +4,7 @@ title: "Adaptive Generation of Bias-Eliciting Questions for LLMs"
 authors: Robin Staab, Jasper Dekoninck, Maximilian Baader, Martin Vechev
 year: 2025
 month: 10
-venue: ArXiv
+venue: arXiv
 projects: llmevals
 bibtex: "@article{staab2025bias,
       title={Adaptive Generation of Bias-Eliciting Questions for LLMs}, 

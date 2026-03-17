@@ -1,13 +1,14 @@
 ---
 ref: gloaguen2025finetuning
-title: "Finetuning-Activated Backdoors in LLMs"
+title: "Watch your steps: Dormant Adversarial Behaviors that Activate upon LLM Finetuning"
 authors: Thibaud Gloaguen, Mark Vero, Robin Staab, Martin Vechev
-year: 2025
-month: 05
-venue: arXiv
+year: 2026
+month: 4
+venue: ICLR
 projects: llmsecpriv
-bibtex: "@misc{gloaguen2025finetuningactivatedbackdoorsllms,
-      title={Finetuning-Activated Backdoors in LLMs}, 
+awards: Oral
+bibtex: "@misc{gloaguen2025watchstepsdormantadversarial,
+      title={Watch your steps: Dormant Adversarial Behaviors that Activate upon LLM Finetuning}, 
       author={Thibaud Gloaguen and Mark Vero and Robin Staab and Martin Vechev},
       year={2025},
       eprint={2505.16567},

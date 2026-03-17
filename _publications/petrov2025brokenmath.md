@@ -4,7 +4,7 @@ title: "BrokenMath: A Benchmark for Sycophancy in Theorem Proving with LLMs"
 authors: Ivo Petrov, Jasper Dekoninck, Martin Vechev
 year: 2025
 month: 10
-venue: ArXiv
+venue: arXiv
 projects: mathllm,llmevals
 bibtex: "@misc{petrov2025brokenmath,
       title={BrokenMath: A Benchmark for Sycophancy in Theorem Proving with LLMs}, 
