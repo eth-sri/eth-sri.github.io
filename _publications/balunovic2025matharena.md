@@ -1,7 +1,7 @@
 ---
 ref: balunovic2025matharena
 title: "MathArena: Evaluating LLMs on Uncontaminated Math Competitions"
-authors: Mislav Balunović, Jasper Dekoninck, Nikola Jovanović, Ivo Petrov, Martin Vechev
+authors: Mislav Balunović, Jasper Dekoninck, Ivo Petrov, Nikola Jovanović, Martin Vechev
 year: 2025
 month: 12
 venue: NeurIPS Datasets and Benchmarks
