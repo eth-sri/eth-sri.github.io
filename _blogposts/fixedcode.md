@@ -7,9 +7,9 @@ date: 2026-03-23
 thumbnail: thumbnails/falling_k2.png
 usemathjax: false
 tldr: >
-    The reported performance of K2-Think is overstated, relying on flawed evaluation marked by contamination, unfair comparisons, and misrepresentation of both its own and competing models’ results. 
+    Coding agents often change code that is already fixed instead of abstaining. This suggests current agents still lack good software engineering judgment.
 excerpt: >
-    K2-Think is a recently released LLM that claims performance on par with GPT-OSS 120B and DeepSeek v3.1, despite having fewer parameters. As we discuss below, the reported gains are overstated, relying on flawed evaluation marked by contamination, unfair comparisons, and misrepresentation of both its own and competing models’ results. 
+    Coding agents often modify code even when the reported issue has already been fixed. Our fixed-code benchmark shows that most current agents fail to abstain in this setting, submitting irrelevant patches in over 50% of cases. This reveals a broader weakness in software engineering judgment, in particular the failure to confirm the minimality and relevance of code changes.
 tweet-id: 1966482446276542757
 ---
 <style>
@@ -86,7 +86,13 @@ We find that most models are extremely eager to modify the code and provide a pa
 
 We manually analyzed the model traces and observed an interesting pattern in the coding models. The deciding factor for whether a model submits an unnecessary patch is whether it attempts to reproduce the reported issue. We believe this behaviour is essential when resolving bugs in the real world: Without reproducing the problem, it should not be concluded that the issue was resolved.
 
-In our standard version of this task, the issue was resolved in the most recent git commit. If the agents stop to inspect the recent git history, they should quickly realize that the last commit solves the task they were assigned. In all AGENTbench instances, the issue even explicitly describes the commit at which it is present. However the agents rarely stop to compare that commit with the current state of the repository. The notable exceptions are GLM-5 and the Claude models: they usually begin their activity by reproducing the reported issue and then continue to inspect the git history. The empty submitted patches follow their decision that no change is needed upon discovering the existing patch (Trace, GLM-5 or Sonnet, ).
+In our standard version of this task, the issue was resolved in the most recent git commit. If the agents stop to inspect the recent git history, they should quickly realize that the last commit solves the task they were assigned. In all AGENTbench instances, the issue even explicitly describes the commit at which it is present. However the agents rarely stop to compare that commit with the current state of the repository. The notable exceptions are GLM-5 and the Claude models: they usually begin their activity by reproducing the reported issue and then continue to inspect the git history. The empty submitted patches follow their decision that no change is needed upon discovering the existing patch, as illustrated by the Sonnet 4.6 trace below.
+
+<details>
+<summary>Show Sonnet 4.6 trace</summary>
+<a class="iframe-link" href="/assets/blog/fixedcode/trace_sonnet_django_11163.html">Open Sonnet 4.6 trace</a>
+<iframe class="iframe-full" src="/assets/blog/fixedcode/trace_sonnet_django_11163.html" height="900px"></iframe>
+</details>
 
 We consider this desirable behavior and not cheating. We were actually surprised to see so few models do even this most basic check and believe it demonstrates a crucial problem: If current agents were tasked with maintaining software autonomously, they would currently introduce technical debt trying to fix outdated user-reported bugs.
 
