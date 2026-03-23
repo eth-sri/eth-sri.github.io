@@ -38,11 +38,78 @@ tweet-id: 1966482446276542757
       text-align: left;
     }
 
-    .blogpost-col p,
-    .blogpost-col h3 {
+  .blogpost-col p,
+  .blogpost-col h3 {
       padding-left: 10px !important;
       padding-right: 10px !important;
     }
+  }
+
+  .trace-badges {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .trace-details > summary {
+    list-style: none;
+  }
+
+  .trace-details > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .trace-summary {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .trace-summary * {
+    pointer-events: none;
+  }
+
+  .trace-details {
+    display: inline-block;
+    background: #dbdbdb;
+    width: 100%;
+  }
+
+  .trace-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: #eef2f7;
+    border: 1px solid #d8e0ea;
+    color: #213547;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+  }
+
+  .trace-badge-primary {
+    background: #213547;
+    border-color: #213547;
+    color: #ffffff;
+  }
+
+  .trace-badge-primary::before {
+    content: "▸";
+    margin-right: 6px;
+    font-size: 11px;
+  }
+
+  .trace-details[open] .trace-badge-primary::before {
+    content: "▾";
+  }
+
+  .trace-badge-accent {
+    background: #f3e8d2;
+    border-color: #e2c68e;
+    color: #6b4e16;
   }
     
 </style>
@@ -86,19 +153,38 @@ We find that most models are extremely eager to modify the code and provide a pa
 
 We manually analyzed the model traces and observed an interesting pattern in the coding models. The deciding factor for whether a model submits an unnecessary patch is whether it attempts to reproduce the reported issue. We believe this behaviour is essential when resolving bugs in the real world: Without reproducing the problem, it should not be concluded that the issue was resolved.
 
-In our standard version of this task, the issue was resolved in the most recent git commit. If the agents stop to inspect the recent git history, they should quickly realize that the last commit solves the task they were assigned. In all AGENTbench instances, the issue even explicitly describes the commit at which it is present. However the agents rarely stop to compare that commit with the current state of the repository. The notable exceptions are GLM-5 and the Claude models: they usually begin their activity by reproducing the reported issue and then continue to inspect the git history. The empty submitted patches follow their decision that no change is needed upon discovering the existing patch, as illustrated by the Sonnet 4.6 trace below.
+In our standard version of this task, the issue was resolved in the most recent git commit. If the agents stop to inspect the recent git history, they should quickly realize that the last commit solves the task they were assigned. In all AGENTbench instances, the issue even explicitly describes the commit at which it is present. However the agents rarely stop to compare that commit with the current state of the repository.
+In the `django/django#12774` instance below, GPT-5.4-mini in plain `fix` mode starts by reading the queryset and constraint code, then goes on to add a new model and regression test, producing meaningful code changes on a task that was already solved. Under the `fix-or-abstain` prompt, the same model installs the missing runtime dependencies, successfully runs Django's in-repo test runner to reproduce the reported `in_bulk()` behavior, checks the surrounding code and history, and ultimately leaves the repository unchanged.
+<details class="trace-details">
+<summary class="trace-summary"><span class="trace-badges"><span class="trace-badge trace-badge-primary">Show</span><span class="trace-badge">GPT-5.4-mini</span><span class="trace-badge">django/django#12774</span></span></summary>
+<a class="iframe-link" href="/assets/blog/fixedcode/django__django-12774-fix.traj.html">Open GPT-5.4-mini fix trace</a>
+<iframe class="iframe-full" src="/assets/blog/fixedcode/django__django-12774-fix.traj.html" height="900px"></iframe>
+</details>
 
-<details>
-<summary>Show Sonnet 4.6 trace</summary>
-<a class="iframe-link" href="/assets/blog/fixedcode/trace_sonnet_django_11163.html">Open Sonnet 4.6 trace</a>
-<iframe class="iframe-full" src="/assets/blog/fixedcode/trace_sonnet_django_11163.html" height="900px"></iframe>
+
+The notable exceptions are GLM-5 and the Claude models: they usually begin their activity by reproducing the reported issue and then continue to inspect the git history. The empty submitted patches follow their decision that no change is needed upon discovering the existing patch, as illustrated by the Sonnet 4.6 trace below.
+
+<details class="trace-details">
+<summary class="trace-summary"><span class="trace-badges"><span class="trace-badge trace-badge-primary">Show</span><span class="trace-badge">Sonnet 4.6</span><span class="trace-badge">opshin/opshin#387</span></span></summary>
+<a class="iframe-link" href="/assets/blog/fixedcode/opshin_opshin-387.traj.html">Open Sonnet 4.6 trace</a>
+<iframe class="iframe-full" src="/assets/blog/fixedcode/opshin_opshin-387.traj.html" height="900px"></iframe>
 </details>
 
 We consider this desirable behavior and not cheating. We were actually surprised to see so few models do even this most basic check and believe it demonstrates a crucial problem: If current agents were tasked with maintaining software autonomously, they would currently introduce technical debt trying to fix outdated user-reported bugs.
 
-In rare cases, the agent goes on to try and ‘resolve’ an issue that it has found to already be solved. For example, in one instance,  GLM-5 discovers that the reported issue was fixed in a prior commit but continued nonetheless, hallucinating a bug in an unrelated piece of code and committing it without checking if it causes any changes (Trace to GLM-5). Similarly, in one case, Sonnet 4.6 realized that the issue was already fixed and that its proposed change is useless, but ended up keeping anyway because the tests still pass with his change.
+In rare cases, the agent goes on to try and ‘resolve’ an issue that it has found to already be solved. For example, in one instance,  GLM-5 discovers that the reported issue was fixed in a prior commit but continued nonetheless, hallucinating a bug in an unrelated piece of code and committing it without checking if it causes any changes. Similarly, in one case, Sonnet 4.6 realized that the issue was already fixed and that its proposed change is useless, but ended up keeping anyway because the tests still pass with his change.
+<details class="trace-details">
+<summary class="trace-summary"><span class="trace-badges"><span class="trace-badge trace-badge-primary">Show</span><span class="trace-badge">GLM-5</span><span class="trace-badge">openai/openai-agents-python#1779</span></span></summary>
+<a class="iframe-link" href="/assets/blog/fixedcode/openai_openai-agents-python-1779.traj.html">Open GLM-5 trace</a>
+<iframe class="iframe-full" src="/assets/blog/fixedcode/openai_openai-agents-python-1779.traj.html" height="900px"></iframe>
+</details>
 
 Upon explicitly telling the model to abstain if no change is needed, GPT-5.4-mini correctly abstains from submitting unnecessary code patches, increasing from 24% to 77% performance.
+<details class="trace-details">
+<summary class="trace-summary"><span class="trace-badges"><span class="trace-badge trace-badge-primary">Show</span><span class="trace-badge">GPT-5.4-mini</span><span class="trace-badge">django/django#12774</span><span class="trace-badge trace-badge-accent">Abstain Variant</span></span></summary>
+<a class="iframe-link" href="/assets/blog/fixedcode/django__django-12774-fix-or-abstain.traj.html">Open GPT-5.4-mini fix-or-abstain trace</a>
+<iframe class="iframe-full" src="/assets/blog/fixedcode/django__django-12774-fix-or-abstain.traj.html" height="900px"></iframe>
+</details>
 
 ### Correct prompting is a stopgap solution, but no long-term fix
 
