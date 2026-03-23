@@ -80,7 +80,7 @@ No model scores significantly more than 50% in our setting. GLM-5 and Claude Son
 ### Overeagerness for changes is common
 
 
-We find that most models are extremely eager to modify the code and provide a patch for the user, even when there is no need for it: The highest score is 50%, of GLM-5, with Claude Opus 4.6 and Sonnet 4.6 following closely at around 48%. The Qwen3.5 family, GPT 5.4 and GPT-5.4 mini, and Gemini 3 Pro all score below 30%. Rather than aligning with coding capability as measured in SWE-bench, the results align with model ability to critically examine and push back against nonsensical requests in BullShitBench <a id="ref-source-bullshitbench" href="#ref-bullshitbench">[4]</a>. All of these numbers are concerningly low. 
+We find that most models are extremely eager to modify the code and provide a patch for the user, even when there is no need for it: The highest score is 50%, of GLM-5, with Claude Opus 4.6 and Sonnet 4.6 following closely at around 48%. The Qwen3.5 family, GPT 5.4 and GPT-5.4 mini, and Gemini 3 Pro all score below 30%. Rather than aligning with coding capability as measured in SWE-bench, the results align with model ability to critically examine and push back against nonsensical requests as in BullShitBench <a id="ref-source-bullshitbench" href="#ref-bullshitbench">[4]</a>. All of these numbers are concerningly low. 
 
 ### Models rarely stop to confirm whether issues still exist
 
@@ -98,16 +98,16 @@ We consider this desirable behavior and not cheating. We were actually surprised
 
 In rare cases, the agent goes on to try and ‘resolve’ an issue that it has found to already be solved. For example, in one instance,  GLM-5 discovers that the reported issue was fixed in a prior commit but continued nonetheless, hallucinating a bug in an unrelated piece of code and committing it without checking if it causes any changes (Trace to GLM-5). Similarly, in one case, Sonnet 4.6 realized that the issue was already fixed and that its proposed change is useless, but ended up keeping anyway because the tests still pass with his change.
 
-Upon explicitly telling the model to abstain if no change is needed, GPT-5.4-mini correctly abstains from submitting unnecessary code patches, increasing from 24% to 77% performance.
+### Correct prompting is a stopgap solution, but not a long-term fix
 
-### Correct prompting is a stopgap solution, but no long-term fix
-
-<span id="footnote-source-1">We investigated whether this issue can be addressed with an AGENT.md <a href="#ref-agentsmd">[3]</a> or prompt, specifically instructing the agent to reproduce the issue before fixing it. Using a prompt, tasking the agent to first investigate whether the issue still exists, then reproduce it and only if successful, resolve it, even GPT-5.4-mini achieves a 77% success rate, up from only 24%. If we only prompt the model to reproduce the issue before submitting the patch the success rate only rises to 30%. To make sure that GPT-5.4-mini does not abstain if the fix is really needed, we test all three prompts on the standard SWE-bench. We see no performance degradation, indicating that for the time being such a prompt is an effective way to tackle this issue.<sup><a href="#footnote-1">1</a></sup></span>
+<span id="footnote-source-1">We investigated whether this issue can be addressed with an AGENT.md <a href="#ref-agentsmd">[3]</a> or a prompt, specifically instructing the agent to reproduce the issue before fixing it. Using a prompt, tasking the agent to first investigate whether the issue still exists, then reproduce it and only if successful, resolve it, GPT-5.4-mini achieves a 77% success rate, up from only 24%. If we only prompt the model to reproduce the issue before submitting the patch the success rate only rises to 30%.
 
 ![GPT-5.4-mini under different prompting variants](/assets/blog/fixedcode/score_postpatches_gpt-5.4-mini_variants.svg){: .blogpost-img50}
 
 {:.blogpost-caption}
 **Prompting ablation.** Explicitly instructing GPT-5.4-mini to investigate whether the issue still exists substantially improves abstention on fixed-code tasks.
+
+Additionaly, to make sure that GPT-5.4-mini does not abstain if the fix is really needed, we test all three prompts on the standard SWE-bench. We see no performance degradation, indicating that for the time being such a prompt is an effective way to tackle this issue.<sup><a href="#footnote-1">1</a></sup></span>
 
 However this is not the only edge case a code agent might encounter. A concrete common edge case is that another coding agent has attempted and applied a patch previously, but that patch did not work correctly. We run a small ablation in this setting: We use GPT-5.4-nano to generate patches for the standard SWE-bench task. We then filter those patches to obtain 100 patches that do not correctly resolve the task at hand. Again, we ask Claude Sonnet 4.6 and GPT-5.4-mini to fix the reported user issue or abstain if it has been resolved. We find that both Claude Sonnet 4.6 and GPT-5.4-mini now strongly favor abstaining, submitting 70% and 94% empty patches, respectively. But in this scenario, the implemented patch was incorrect, so the ideal model behavior would be to submit a patch.
 
