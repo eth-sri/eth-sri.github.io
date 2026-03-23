@@ -282,4 +282,6 @@ Open models are good and we evaluate them all the time. However, flawed evaluati
 #### Footnotes
 
 
+<div class="blogpost-footnotes">
 <span id="footnote-1"><a href="#footnote-source-1"><sup>1</sup></a> Since the K2-Think paper does not specify whether the thinking model was used for Qwen3-30B, it is possible that the authors evaluated the instruction-tuned variant instead. However, under that assumption, the reported numbers suddenly become implausibly high, raising further doubts about the validity of these comparisons.</span>
+</div>

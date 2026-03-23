@@ -166,6 +166,24 @@
 	border-left: thick solid $color-blue
 	margin-bottom: 30px
 
+%blogpost-meta-small
+	font-size: 0.9em
+	line-height: 1.5
+
+.blogpost-references
+	@extend %blogpost-meta-small
+
+	> *
+		display: block
+		margin-bottom: 0.5em
+
+.blogpost-footnotes
+	@extend %blogpost-meta-small
+
+	> *
+		display: block
+		margin-bottom: 0.5em
+
 %blogpost-img
 	display: block
 	margin-left: auto
@@ -193,6 +211,9 @@
 	@extend %blogpost-img
 
 .blogpost-img50
+	@extend %blogpost-img
+
+.blogpost-img80
 	@extend %blogpost-img
 
 .blogpost-img100
@@ -259,6 +280,12 @@
 
 	.blogpost-img50
 		width: 50%
+
+	.blogpost-img80
+		width: 80%
+
+	.blogpost-img100
+		width: 100%
 		
 	.blogpost-wrap > .blogpost-img10
 		flex-basis: 10%
@@ -280,6 +307,9 @@
 
 	.blogpost-wrap > .blogpost-img50
 		flex-basis: 50%
+
+	.blogpost-wrap > .blogpost-img80
+		flex-basis: 80%
 
 	.blogpost-wrap > .blogpost-img100
 		flex-basis: 100%
@@ -311,4 +341,3 @@
 		.subpost-thumbnail
 			width: 60%
 			float: none
-
