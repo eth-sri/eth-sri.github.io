@@ -147,7 +147,7 @@ No model scores significantly more than 50% in our setting. GLM-5 and Claude Son
 ### Overeagerness for changes is common
 
 
-We find that most models are extremely eager to modify the code and provide a patch for the user, even when there is no need for it: The highest score is 50%, of GLM-5, with Claude Opus 4.6 and Sonnet 4.6 following closely at around 48%. The Qwen3.5 family, GPT 5.4 and GPT-5.4 mini, and Gemini 3 Pro all score below 30%. Rather than aligning with coding capability as measured in SWE-bench, the results align with model ability to critically examine and push back against nonsensical requests in BullShitBench <a id="ref-source-bullshitbench" href="#ref-bullshitbench">[4]</a>. All of these numbers are concerningly low. 
+We find that most models are extremely eager to modify the code and provide a patch for the user, even when there is no need for it: The highest score is 50%, of GLM-5, with Claude Opus 4.6 and Sonnet 4.6 following closely at around 48%. The Qwen3.5 family, GPT 5.4 and GPT-5.4 mini, and Gemini 3 Pro all score below 30%. Rather than aligning with coding capability as measured in SWE-bench, the results align with model ability to critically examine and push back against nonsensical requests as in BullShitBench <a id="ref-source-bullshitbench" href="#ref-bullshitbench">[4]</a>. All of these numbers are concerningly low. 
 
 ### Models rarely stop to confirm whether issues still exist
 
