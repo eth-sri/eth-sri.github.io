@@ -7,9 +7,12 @@ date: 2026-03-23
 thumbnail: thumbnails/fixedcode.png
 usemathjax: false
 tldr: >
-    Coding agents often change code that is already fixed instead of abstaining. This suggests current agents still lack good software engineering judgment.
+    Coding agents fail to recognize when code is correct and attempt to "fix" it over 50% of the time.
+    This indicates current agents still lack good software engineering judgement.
 excerpt: >
-    Coding agents often modify code even when the reported issue has already been fixed. Our fixed-code benchmark shows that most current agents fail to abstain in this setting, submitting irrelevant patches in over 50% of cases. This reveals a broader weakness in software engineering judgment, in particular, the failure to confirm the minimality and relevance of code changes.
+    What happens when coding agents are asked to fix an issue that has already been resolved?
+    Our benchmark reveals that most current agents fail to abstain from making further changes in this setting, submitting irrelevant patches in over 50% of cases.
+    While asking the model explicitly to abstain when it considers no changes needed mitigates this problem, it demonstrates a broader, more general weakness of coding agents in software engineering judgment.
 tweet-id: 1966482446276542757
 ---
 <style>
@@ -127,7 +130,7 @@ We run the coding agents on the code base *after* the reported user issue has be
 
 ### Benchmark: Fixing already-fixed code
 
-We sampled 100 instances from SWE-Bench Verified <a id="ref-source-swebench" href="#ref-swebench">[2]</a> and 135 samples from our AGENTbench dataset <a id="ref-source-agentsmd" href="#ref-agentsmd">[3]</a>, which consists of more niche and recent codebases. 
+We sampled 100 instances from SWE-Bench Verified <a id="ref-source-swebench" href="#ref-swebench">[1]</a> and 135 samples from our AGENTbench dataset <a id="ref-source-agentsmd" href="#ref-agentsmd">[2]</a>, which consists of more niche and recent codebases. 
 We evaluate a range of recent coding models in their recommended harnesses: [Claude Opus 4.6](https://www-cdn.anthropic.com/0dd865075ad3132672ee0ab40b05a53f14cf5288.pdf), [Claude Sonnet 4.6](https://www-cdn.anthropic.com/78073f739564e986ff3e28522761a7a0b4484f84.pdf), and [GLM-5](https://docs.z.ai/guides/llm/glm-5) in [Claude Code](https://www.anthropic.com/claude-code/); [GPT-5.4](https://openai.com/index/introducing-gpt-5-4/) and [GPT-5.4 mini](https://platform.openai.com/docs/models/gpt-5-mini) in [Codex](https://github.com/openai/codex); [Gemini 3 Pro](https://deepmind.google/models/gemini/pro/) in [Gemini CLI](https://github.com/google-gemini/gemini-cli), and the [Qwen3.5 family](https://qwen.ai/blog?id=qwen3.5) (35B, 122B, and 397B) in [Qwen Code](https://github.com/QwenLM/qwen-code).
 Any meaningful code change (excluding documentation and tests) counts as a failure.
 
@@ -139,10 +142,10 @@ No model scores significantly more than 50%. GLM-5 and the Claude models reach ~
 
 ### Agents introduce unnecessary changes
 
-The results are sobering. Most models eagerly modify code even when there is nothing to fix. Interestingly, performance here does not align with coding capability as measured by SWE-bench, but rather with the models' tendency to push back against nonsensical requests as measured by BullShitBench <a id="ref-source-bullshitbench" href="#ref-bullshitbench">[4]</a>.
-Manual trace analysis reveals the deciding factor: whether the agent attempts to reproduce the reported issue before fixing it. GLM-5 and the Claude models typically begin by trying to trigger the bug. Upon finding it already resolved, they usually correctly submit an empty patch. Most other models jump straight to patching without verification. Worse, since the issue was resolved in the most recent commit, even a quick look at the git history would reveal the fix. In all AGENTbench instances, the issue description even specifies the commit at which the bug was present. Yet most agents never check.
+The results are sobering. Most models eagerly modify code even when there is nothing to fix. Interestingly, performance here does not align with coding capability as measured by SWE-bench, but rather with the models' tendency to push back against nonsensical requests as measured by BullShitBench <a id="ref-source-bullshitbench" href="#ref-bullshitbench">[3]</a>.
+Manual trace analysis reveals the deciding factor: Attempting to "fix" code without performing an issue reproduction first. GLM-5 and the Claude models typically begin by trying to trigger the bug. Upon finding it already resolved, they usually correctly submit an empty patch. Most other models jump straight to patching without verification. Worse, since the issue was resolved in the most recent commit, even a quick look at the git history would reveal the fix. In all AGENTbench instances, the issue description even specifies the commit at which the bug was present. Yet most agents never check.
 
-This is a problem beyond our benchmark. If deployed for autonomous maintenance, these agents would systematically introduce unnecessary changes to resolve stale issues, filling codebases with agent slop. Prior work <a href="#ref-haicode">[1]</a> has shown that agent-generated patches are typically overly verbose (unnecessarily defensive code, irrelevant edits, unrequested features), exacerbating this issue further. Our findings isolate this problem: even when the optimal patch is empty, most agents cannot help themselves.
+This is a problem beyond our benchmark. If deployed for autonomous maintenance, these agents would systematically introduce unnecessary changes to resolve stale issues, filling codebases with agent slop. Prior work <a href="#ref-haicode">[4]</a> has shown that agent-generated patches are typically overly verbose (unnecessarily defensive code, irrelevant edits, unrequested features), exacerbating this issue further. Our findings isolate this problem: even when the optimal patch is empty, most agents cannot help themselves.
 
 
 ### Prompting mostly fixes it — for now
@@ -156,7 +159,7 @@ Upon explicitly telling the model to abstain if no change is needed, GPT-5.4 min
 
 
 We investigated whether explicit instructions can address this. Using a prompt that tasks the agent to first investigate whether the issue still exists, then reproduce it, and only fix it if the reproduction succeeds, GPT-5.4 mini jumps from 24% to 77%. Meanwhile, simply asking to "reproduce before patching" (without the explicit option to abstain) only yields 30%. To confirm these framings don't hurt real bug-fixing capability, we ran the same prompts on standard SWE-bench and saw no performance degradation.
-This indicates a good candidate instruction to add to context files <a href="#ref-agentsmd">[3]</a>.
+This indicates a good candidate instruction to add to context files <a href="#ref-agentsmd">[2]</a>.
 
 But prompting is brittle across edge cases. We tested a scenario where a previous agent had already attempted a fix that was incorrect (using GPT-5.4 nano patches that fail SWE-bench). When asked to fix the reported issue or abstain if resolved, both Claude Sonnet 4.6 and GPT-5.4 mini now strongly favor abstaining, submitting 70% and 94% empty patches, respectively, even though the existing patch is wrong and a real fix is needed.
 
@@ -181,13 +184,13 @@ This work was done in collaboration with [LogicStar](https://logicstar.ai). Chec
 #### References
 
 <div class="blogpost-references">
-<span id="ref-haicode"><a href="#ref-source-haicode">[1]</a> Wang et. al., <a href="https://zorazrw.github.io/files/position-haicode.pdf"><i>Position: Humans are Missing from AI Coding Agent Research</i></a>, 2026</span>
+<span id="ref-swebench"><a href="#ref-source-swebench">[1]</a> Jimenez et. al., <a href="https://arxiv.org/abs/2310.06770"><i>SWE-bench: Can Language Models Resolve Real-World GitHub Issues?</i></a>, ICLR 2024</span>
 
-<span id="ref-swebench"><a href="#ref-source-swebench">[2]</a> Jimenez et. al., <a href="https://arxiv.org/abs/2310.06770"><i>SWE-bench: Can Language Models Resolve Real-World GitHub Issues?</i></a>, ICLR 2024</span>
+<span id="ref-agentsmd"><a href="#ref-source-agentsmd">[2]</a> Gloaguen et. al., <a href="/publications/gloaguen2026agentsmd"><i>Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agents?</i></a>, 2026</span>
 
-<span id="ref-agentsmd"><a href="#ref-source-agentsmd">[3]</a> Gloaguen et. al., <a href="/publications/gloaguen2026agentsmd"><i>Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agents?</i></a>, 2026</span>
+<span id="ref-bullshitbench"><a href="#ref-source-bullshitbench">[3]</a> Gostev, <a href="https://petergpt.github.io/bullshit-benchmark/viewer/index.v2.html"><i>BullshitBench v2</i></a>, 2026</span>
 
-<span id="ref-bullshitbench"><a href="#ref-source-bullshitbench">[4]</a> Gostev, <a href="https://petergpt.github.io/bullshit-benchmark/viewer/index.v2.html"><i>BullshitBench v2</i></a>, 2026</span>
+<span id="ref-haicode"><a href="#ref-source-haicode">[4]</a> Wang et. al., <a href="https://zorazrw.github.io/files/position-haicode.pdf"><i>Position: Humans are Missing from AI Coding Agent Research</i></a>, 2026</span>
 
 <span id="ref-codetaste"><a href="#ref-source-codetaste">[5]</a> Thillen et. al., <a href="/publications/thillen2026codetaste"><i>CodeTaste: Can LLMs Generate Human-Level Code Refactorings?</i></a>, 2026</span>
 </div>
