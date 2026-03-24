@@ -196,11 +196,11 @@ This work was done in collaboration with [LogicStar](https://logicstar.ai). Chec
 #### Examples
 
 We present a number of concrete agent traces that illustrate our findings below.
-In the representative instance below, GPT-5.4 mini applies a patch to the repository before running any reproduction tests. It first navigates the repository, then applies a patch, and finally verifies that the newly considered test case patch. It fails to confirm the test case fails without its "fix", and finally submits the unecessary code change.
+In the representative instance below, GPT-5.4 mini applies a patch to the repository before running any reproduction tests or checking the git history. It edits the PostgreSQL dbshell client immediately, only then runs the relevant test, and ends up submitting the unnecessary code change.
 <details class="trace-details">
-<summary class="trace-summary"><span class="trace-badges"><span class="trace-badge trace-badge-primary">Show</span><span class="trace-badge">GPT-5.4 mini</span><span class="trace-badge">django/django#12774</span></span></summary>
-<a class="iframe-link" href="/assets/blog/fixedcode/django__django-12774-fix.traj.html">Open GPT-5.4 mini fix trace</a>
-<iframe class="iframe-full" src="/assets/blog/fixedcode/django__django-12774-fix.traj.html" height="900px"></iframe>
+<summary class="trace-summary"><span class="trace-badges"><span class="trace-badge trace-badge-primary">Show</span><span class="trace-badge">GPT-5.4 mini</span><span class="trace-badge">django/django#11239</span></span></summary>
+<a class="iframe-link" href="/assets/blog/fixedcode/django__django-11239-fix.traj.html">Open GPT-5.4 mini fix trace</a>
+<iframe class="iframe-full" src="/assets/blog/fixedcode/django__django-11239-fix.traj.html" height="900px"></iframe>
 </details>
 
 There is even an easier path to discovering that no patch is required.
@@ -222,10 +222,10 @@ Even when models first reproduce the issue at hand, they may proceed to ‘resol
 <iframe class="iframe-full" src="/assets/blog/fixedcode/openai_openai-agents-python-1779.traj.html" height="900px"></iframe>
 </details>
 
-Upon explicitly telling the model to abstain if no change is needed, even GPT-5.4 mini correctly abstains from submitting unnecessary code patches. Its abstention rate rockets from 24% to 77%. Below we show the same instance as above, only with a small additional remark in the initial prompt. In this setting, GPT-5.4 mini succeeds in reproducing the issue first and abstains from any meaningful code changes.
+Upon explicitly telling the model to abstain if no change is needed, even GPT-5.4 mini correctly abstains from submitting unnecessary code patches. Its abstention rate rockets from 24% to 77%. Below we show the same instance as above, only with a small additional remark in the initial prompt. In this setting, GPT-5.4 mini reproduces the issue first and then leaves the repository unchanged.
 
 <details class="trace-details">
-<summary class="trace-summary"><span class="trace-badges"><span class="trace-badge trace-badge-primary">Show</span><span class="trace-badge">GPT-5.4 mini</span><span class="trace-badge">django/django#12774</span><span class="trace-badge trace-badge-accent">Abstain Variant</span></span></summary>
-<a class="iframe-link" href="/assets/blog/fixedcode/django__django-12774-fix-or-abstain.traj.html">Open GPT-5.4 mini fix-or-abstain trace</a>
-<iframe class="iframe-full" src="/assets/blog/fixedcode/django__django-12774-fix-or-abstain.traj.html" height="900px"></iframe>
+<summary class="trace-summary"><span class="trace-badges"><span class="trace-badge trace-badge-primary">Show</span><span class="trace-badge">GPT-5.4 mini</span><span class="trace-badge">django/django#11239</span><span class="trace-badge trace-badge-accent">Abstain Variant</span></span></summary>
+<a class="iframe-link" href="/assets/blog/fixedcode/django__django-11239-fix-or-abstain.traj.html">Open GPT-5.4 mini fix-or-abstain trace</a>
+<iframe class="iframe-full" src="/assets/blog/fixedcode/django__django-11239-fix-or-abstain.traj.html" height="900px"></iframe>
 </details>
