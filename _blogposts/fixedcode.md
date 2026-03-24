@@ -13,7 +13,7 @@ excerpt: >
     What happens when coding agents are asked to fix an issue that has already been resolved?
     Our benchmark reveals that most current agents fail to abstain from making further changes in this setting, submitting irrelevant patches in over 50% of cases.
     While asking the model explicitly to abstain when it considers no changes needed mitigates this problem, it demonstrates a broader, more general weakness of coding agents in software engineering judgment.
-tweet-id: 1966482446276542757
+tweet-id: 2036456096265646563
 ---
 <style>
     .blogpost-thumbnail {
