@@ -4,7 +4,7 @@ title: "IMProofBench: Benchmarking AI on Research-Level Mathematical Proof Gener
 authors: Johannes Schmitt, Gergely Bérczi, Jasper Dekoninck, Jeremy Feusi, Tim Gehrunger, Raphael Appenzeller, Jim Bryan, Niklas Canova, Timo de Wolff, Filippo Gaia, Michel van Garrel, Baran Hashemi, David Holmes, Aitor Iribar Lopez, Victor Jaeck, Martina Jørgensen, Steven Kelk, Stefan Kuhlmann, Adam Kurpisz, Chiara Meroni, Ingmar Metzler, Martin Möller, Samuel Muñoz-Echániz, Robert Nowak, Georg Oberdieck, Daniel Platt, Dylan Possamaï, Gabriel Ribeiro, Raúl Sánchez Galán, Zheming Sun, Josef Teichmann, Richard P. Thomas, Charles Vial
 year: 2025
 month: 10
-venue: arXiv
+venue: AI4Math@NeurIPS
 projects: mathllm,llmevals
 bibtex: "@misc{schmitt2025improofbenchbenchmarkingairesearchlevel,
       title={IMProofBench: Benchmarking AI on Research-Level Mathematical Proof Generation}, 
