@@ -130,7 +130,7 @@ We run the coding agents on the code base *after* the reported user issue has be
 
 ### Benchmark: Fixing already-fixed code
 
-We sampled 100 instances from SWE-Bench Verified <a id="ref-source-swebench" href="#ref-swebench">[1]</a> and 135 samples from our AGENTbench dataset <a id="ref-source-agentsmd" href="#ref-agentsmd">[2]</a>, which consists of more niche and recent codebases. 
+We sampled 200 instances from SWE-Bench Verified <a id="ref-source-swebench" href="#ref-swebench">[1]</a>.
 We evaluate a variety of recent coding models in their respective recommended harnesses and report the findings below. Concretely, we evaluate Sonnet 4.6 in the Claude Code harness, GPT 5.3-Codex and GPT 5.4 mini (both with xhigh thinking) in Codex, Gemini 3 Pro in Gemini CLI, and Qwen3.5 122B using the Qwen Code harness.
 We also evaluate the popular [Sorcar](https://github.com/ksenxx/kiss_ai) open-source agentic harness with GPT 5.3-Codex.
 Any meaningful code change (excluding documentation and tests) counts as a failure.
@@ -139,12 +139,12 @@ Any meaningful code change (excluding documentation and tests) counts as a failu
 ![Empty-patch success rate across models on fixed-code tasks](/assets/blog/fixedcode/score_postpatches_fix_by_model.svg){: .blogpost-img100}
 
 {:.blogpost-caption}
-No model scores significantly more than 50%. GLM-5 and the Claude models reach ~50%, while most others score below 30%.
+No model exceeds 70% in our setting. GPT 5.3-Codex in Codex reaches 68%, with Sonnet 4.6 close behind at 65%, GPT 5.4 mini at 60.5%, Sorcar with GPT 5.3-Codex at 57.6%, Qwen3.5 122B at 50.3%, and Gemini 3 Pro at 36.5%.
 
 ### Agents introduce unnecessary changes
 
-The results are sobering. Most models eagerly modify code even when there is nothing to fix. Interestingly, performance here does not align with coding capability as measured by SWE-Bench, but rather with the models' tendency to push back against nonsensical requests as measured by BullshitBench <a id="ref-source-bullshitbench" href="#ref-bullshitbench">[3]</a>.
-Manual trace analysis reveals the deciding factor: Attempting to "fix" code without performing an issue reproduction first. GLM-5 and the Claude models typically begin by trying to trigger the bug. Upon finding it already resolved, they usually correctly submit an empty patch. Most other models jump straight to patching without verification. Worse, since the issue was resolved in the most recent commit, even a quick look at the git history would reveal the fix. In all AGENTbench instances, the issue description even specifies the commit at which the bug was present. Yet most agents never check.
+The results are sobering. Most models eagerly modify code even when there is nothing to fix. Interestingly, performance here does not align cleanly with coding capability as measured by SWE-Bench, but rather with the models' tendency to push back against nonsensical requests as measured by BullshitBench <a id="ref-source-bullshitbench" href="#ref-bullshitbench">[3]</a>.
+Manual trace analysis reveals the deciding factor: attempting to "fix" code without performing an issue reproduction first. Sonnet 4.6 and, in many cases, Sorcar typically begin by trying to trigger the bug. Upon finding it already resolved, they often correctly submit an empty patch. Most other models jump straight to patching without verification. Worse, since the issue was resolved in the most recent commit, even a quick look at the git history would reveal the fix. Yet most agents never check.
 
 This is a problem beyond our benchmark. If deployed for autonomous maintenance, these agents would systematically introduce unnecessary changes to resolve stale issues, filling codebases with agent slop. Prior work <a href="#ref-haicode">[4]</a> has shown that agent-generated patches are typically overly verbose (unnecessarily defensive code, irrelevant edits, unrequested features), exacerbating this issue further. Our findings isolate this problem: even when the optimal patch is empty, most agents cannot help themselves.
 
@@ -156,9 +156,9 @@ This is a problem beyond our benchmark. If deployed for autonomous maintenance, 
 
 
 {:.blogpost-caption}
-Upon explicitly telling the model to abstain if no change is needed, GPT-5.4 mini correctly abstains from submitting unnecessary code patches, increasing from 24% to 77% performance.
+Upon explicitly telling the agent to abstain if no change is needed, abstention improves substantially: GPT-5.4 mini rises from 60.5% to 88.5%, Sonnet 4.6 from 65.0% to 80.5%, and Sorcar with GPT 5.3-Codex reaches 83.5%.
 
-We investigated whether explicit instructions can address this. Using a prompt that tasks the agent to first investigate whether the issue still exists, then reproduce it, and only fix it if the reproduction succeeds, GPT-5.4 mini jumps from 24% to 77%. Meanwhile, simply asking to "reproduce before patching" (without the explicit option to abstain) only yields 30%. To confirm these framings don't hurt real bug-fixing capability, we ran the same prompts on standard SWE-Bench and saw no performance degradation.
+We investigated whether explicit instructions can address this. Using a prompt that tasks the agent to first investigate whether the issue still exists, then reproduce it, and only fix it if the reproduction succeeds, GPT-5.4 mini jumps from 60.5% to 88.5%. Sonnet 4.6 improves from 65.0% to 80.5%, and Sorcar with GPT 5.3-Codex reaches 83.5%. Meanwhile, simply asking to "reproduce before patching" (without the explicit option to abstain) leaves Sonnet 4.6 roughly unchanged at 65.5% and actually hurts GPT-5.4 mini, dropping it to 47.5%. To confirm these framings don't hurt real bug-fixing capability, we ran the same prompts on standard SWE-Bench for Sonnet 4.6 and GPT-5.4 mini and saw no performance degradation.
 This indicates a good candidate instruction to add to context files <a href="#ref-agentsmd">[2]</a>.
 
 But prompting is brittle across edge cases. We tested a scenario where a previous agent had already attempted a fix that was incorrect (using GPT-5.4 nano patches that fail SWE-Bench). When asked to fix the reported issue or abstain if resolved, both Claude Sonnet 4.6 and GPT-5.4 mini now strongly favor abstaining, submitting 70% and 94% empty patches, respectively, even though the existing patch is wrong and a real fix is needed.
@@ -188,13 +188,9 @@ This work was done in collaboration with [LogicStar](https://logicstar.ai). Chec
 
 <span id="ref-agentsmd"><a href="#ref-source-agentsmd">[2]</a> Gloaguen et. al., <a href="/publications/gloaguen2026agentsmd"><i>Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agents?</i></a>, 2026</span>
 
-<<<<<<< HEAD
-<span id="ref-bullshitbench"><a href="#ref-source-bullshitbench">[4]</a> Gostev, <a href="https://petergpt.github.io/bullshit-benchmark/viewer/index.v2.html"><i>BullshitBench v2</i></a>, 2026</span>
-=======
 <span id="ref-bullshitbench"><a href="#ref-source-bullshitbench">[3]</a> Gostev, <a href="https://petergpt.github.io/bullshit-Benchmark/viewer/index.v2.html"><i>BullshitBench v2</i></a>, 2026</span>
 
 <span id="ref-haicode"><a href="#ref-source-haicode">[4]</a> Wang et. al., <a href="https://zorazrw.github.io/files/position-haicode.pdf"><i>Position: Humans are Missing from AI Coding Agent Research</i></a>, 2026</span>
->>>>>>> c5e7b9e60ee4399e0e1bb2e39c467950cae90b04
 
 <span id="ref-codetaste"><a href="#ref-source-codetaste">[5]</a> Thillen et. al., <a href="/publications/thillen2026codetaste"><i>CodeTaste: Can LLMs Generate Human-Level Code Refactorings?</i></a>, 2026</span>
 </div>
@@ -211,8 +207,8 @@ In the representative instance below, GPT-5.4 mini applies a patch to the reposi
 </details>
 
 There is even an easier path to discovering that no patch is required.
-In all AGENTbench instances, the issue text explicitly describes the commit at which the reported issue was observed. In our evaluation, the most recent commit diverges from the reported commit and includes the patch to the reported issue. If the agents inspect the recent git history, they quickly realize that the last commit solves the task they were assigned. However the agents rarely stop to compare that commit with the current state of the repository.
-The notable exceptions are GLM-5 and the Claude models: they usually begin their activity by attempting a reproduction of the reported issue and then continue to inspect the git history. The empty submitted patches follow their decision that no change is needed upon discovering the existing patch. Such an example is illustrated in the Sonnet 4.6 trace below.
+In our evaluation, the most recent commit diverges from the reported commit and includes the patch to the reported issue. If the agents inspect the recent git history, they quickly realize that the last commit solves the task they were assigned. However the agents rarely stop to compare that commit with the current state of the repository.
+The notable exceptions is Sonnet 4.6: it usually begins its activity by attempting a reproduction of the reported issue and then continue to inspect the git history. The empty submitted patches follow its decision that no change is needed upon discovering the existing patch. Such an example is illustrated in the Sonnet 4.6 trace below.
 
 <details class="trace-details">
 <summary class="trace-summary"><span class="trace-badges"><span class="trace-badge trace-badge-primary">Show</span><span class="trace-badge">Sonnet 4.6</span><span class="trace-badge">opshin/opshin#387</span></span></summary>
@@ -221,15 +217,8 @@ The notable exceptions are GLM-5 and the Claude models: they usually begin their
 </details>
 
 We consider this desirable behavior and not cheating. We were actually surprised to see so few models perform even this most basic check. However, reproducing bugs and inspecting the git history do not guarantee correct abstention.
-Even when models first reproduce the issue at hand, they may proceed to ‘resolve’ a new issue. For example, in one instance,  GLM-5 discovers that the reported issue was fixed in a prior commit but continued nonetheless, hallucinating a bug in an unrelated piece of code and committing it without checking if it causes any changes.
 
-<details class="trace-details">
-<summary class="trace-summary"><span class="trace-badges"><span class="trace-badge trace-badge-primary">Show</span><span class="trace-badge">GLM-5</span><span class="trace-badge">openai/openai-agents-python#1779</span></span></summary>
-<a class="iframe-link" href="/assets/blog/fixedcode/openai_openai-agents-python-1779.traj.html">Open GLM-5 trace</a>
-<iframe class="iframe-full" src="/assets/blog/fixedcode/openai_openai-agents-python-1779.traj.html" height="900px"></iframe>
-</details>
-
-Upon explicitly telling the model to abstain if no change is needed, even GPT-5.4 mini correctly abstains from submitting unnecessary code patches. Its abstention rate rockets from 24% to 77%. Below we show the same instance as above, only with a small additional remark in the initial prompt. In this setting, GPT-5.4 mini reproduces the issue first and then leaves the repository unchanged.
+Upon explicitly telling the model to abstain if no change is needed, even GPT-5.4 mini correctly abstains from submitting unnecessary code patches. Its abstention rate rises from 60.5% to 88.5%. Below we show the same instance as above, only with a small additional remark in the initial prompt. In this setting, GPT-5.4 mini reproduces the issue first and then leaves the repository unchanged.
 
 <details class="trace-details">
 <summary class="trace-summary"><span class="trace-badges"><span class="trace-badge trace-badge-primary">Show</span><span class="trace-badge">GPT-5.4 mini</span><span class="trace-badge">django/django#11239</span><span class="trace-badge trace-badge-accent">Abstain Variant</span></span></summary>
