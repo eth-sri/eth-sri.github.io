@@ -5,7 +5,7 @@ image: svg/codellm.svg
 description: We study large language models as tools for coding and software development. We focus on the issues of constrained decoding and secure code generation, approaching the latter from the perspectives of evaluation, adversarial attacks that elicit insecure code generations, and developing methods to improve this capability. 
 ---
 
-<h2>Startups</h2>
+<h2>Startups and Blog Posts</h2>
 
 <div class="grid">
   {% include card.html
@@ -14,6 +14,17 @@ description: We study large language models as tools for coding and software dev
     url="https://logicstar.ai/"
     image="/assets/images/logicstar-logo.png"
     description="LogicStar develops autonomous AI for software engineering."
+  %}
+  {% include card.html
+    title=""
+    output="vertical"
+    %}
+  {% include card.html
+    title="Coding Agents Are \"Fixing\" Correct Code"
+    output="vertical"
+    url="/blog/fixedcode"
+    image="/assets/blog/thumbnails/fixedcode.png"
+    description="Coding agents fail to recognize already-correct code."
   %}
 
 </div>
