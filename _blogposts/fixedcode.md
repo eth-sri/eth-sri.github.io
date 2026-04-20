@@ -139,12 +139,16 @@ Any meaningful code change (excluding documentation and tests) counts as a failu
 ![Empty-patch success rate across models on fixed-code tasks](/assets/blog/fixedcode/score_postpatches_fix_by_model.svg){: .blogpost-img100}
 
 {:.blogpost-caption}
-No model exceeds 70% in our setting. GPT 5.3-Codex in Codex reaches 68%, with Sonnet 4.6 close behind at 65%, GPT 5.4 mini at 60.5%, Sorcar with GPT 5.3-Codex at 57.6%, Qwen3.5 122B at 50.3%, and Gemini 3 Pro at 36.5%.
+No model exceeds 70% in our setting. GPT 5.3-Codex in Codex reaches 68%, with Sonnet 4.6 close behind at 65%, GPT 5.4 mini at 60.5%, Sorcar with GPT 5.3-Codex at 57.6%, Qwen3.5 122B at 50.3%, and Gemini 3 Pro at 36.5%. 
+At the same time, both proprietary harnesses (e.g., Claude Code, Codex, Gemini-CLI, and Qwen Code) and open ones like Sorcar do not manage to solve this problem.
 
 ### Agents introduce unnecessary changes
 
 The results are sobering. Most models eagerly modify code even when there is nothing to fix. Interestingly, performance here does not align cleanly with coding capability as measured by SWE-Bench, but rather with the models' tendency to push back against nonsensical requests as measured by BullshitBench <a id="ref-source-bullshitbench" href="#ref-bullshitbench">[3]</a>.
-Manual trace analysis reveals the deciding factor: attempting to "fix" code without performing an issue reproduction first. Sonnet 4.6 and, in many cases, Sorcar typically begin by trying to trigger the bug. Upon finding it already resolved, they often correctly submit an empty patch. Most other models jump straight to patching without verification. Worse, since the issue was resolved in the most recent commit, even a quick look at the git history would reveal the fix. Yet most agents never check.
+Manual trace analysis reveals the deciding factor: attempting to "fix" code without performing an issue reproduction first. Sonnet 4.6 typically begins by trying to trigger the bug. 
+Upon finding it already resolved, it often correctly submits an empty patch. 
+Most other models jump straight to patching without verification. 
+Worse, since the issue was resolved in the most recent commit, even a quick look at the git history would reveal the fix. Yet most agents never check.
 
 This is a problem beyond our benchmark. If deployed for autonomous maintenance, these agents would systematically introduce unnecessary changes to resolve stale issues, filling codebases with agent slop. Prior work <a href="#ref-haicode">[4]</a> has shown that agent-generated patches are typically overly verbose (unnecessarily defensive code, irrelevant edits, unrequested features), exacerbating this issue further. Our findings isolate this problem: even when the optimal patch is empty, most agents cannot help themselves.
 
@@ -158,7 +162,7 @@ This is a problem beyond our benchmark. If deployed for autonomous maintenance, 
 {:.blogpost-caption}
 Upon explicitly telling the agent to abstain if no change is needed, abstention improves substantially: GPT-5.4 mini rises from 60.5% to 88.5%, Sonnet 4.6 from 65.0% to 80.5%, and Sorcar with GPT 5.3-Codex reaches 83.5%.
 
-We investigated whether explicit instructions can address this. Using a prompt that tasks the agent to first investigate whether the issue still exists, then reproduce it, and only fix it if the reproduction succeeds, GPT-5.4 mini jumps from 60.5% to 88.5%. Sonnet 4.6 improves from 65.0% to 80.5%, and Sorcar with GPT 5.3-Codex reaches 83.5%. Meanwhile, simply asking to "reproduce before patching" (without the explicit option to abstain) leaves Sonnet 4.6 roughly unchanged at 65.5% and actually hurts GPT-5.4 mini, dropping it to 47.5%. To confirm these framings don't hurt real bug-fixing capability, we ran the same prompts on standard SWE-Bench for Sonnet 4.6 and GPT-5.4 mini and saw no performance degradation.
+We investigated whether explicit instructions can address this. Using a prompt that tasks the agent to first investigate whether the issue still exists, then reproduce it, and only fix it if the reproduction succeeds, GPT-5.4 mini jumps from 60.5% to 88.5%. Sonnet 4.6 improves from 65.0% to 80.5%, and Sorcar with GPT 5.3-Codex reaches 83.5%. Meanwhile, simply asking to "reproduce before patching" (without the explicit option to abstain) leaves Sonnet 4.6 roughly unchanged at 65.5% and actually hurts GPT-5.4 mini, dropping it to 47.5%. To confirm these framings don't hurt real bug-fixing capability, we ran the same prompts on standard SWE-Bench for Sonnet 4.6 and GPT-5.4 mini and saw no performance degradation. The exact prompt templates are listed in the prompt section below.
 This indicates a good candidate instruction to add to context files <a href="#ref-agentsmd">[2]</a>.
 
 But prompting is brittle across edge cases. We tested a scenario where a previous agent had already attempted a fix that was incorrect (using GPT-5.4 nano patches that fail SWE-Bench). When asked to fix the reported issue or abstain if resolved, both Claude Sonnet 4.6 and GPT-5.4 mini now strongly favor abstaining, submitting 70% and 94% empty patches, respectively, even though the existing patch is wrong and a real fix is needed.
@@ -198,6 +202,8 @@ This work was done in collaboration with [LogicStar](https://logicstar.ai). Chec
 
 #### Examples
 
+##### Traces
+
 We present a number of concrete agent traces that illustrate our findings below.
 In the representative instance below, GPT-5.4 mini applies a patch to the repository before running any reproduction tests or checking the git history. It edits the PostgreSQL dbshell client immediately, only then runs the relevant test, and ends up submitting the unnecessary code change.
 <details class="trace-details">
@@ -225,3 +231,35 @@ Upon explicitly telling the model to abstain if no change is needed, even GPT-5.
 <a class="iframe-link" href="/assets/blog/fixedcode/django__django-11239-fix-or-abstain.traj.html">Open GPT-5.4 mini fix-or-abstain trace</a>
 <iframe class="iframe-full" src="/assets/blog/fixedcode/django__django-11239-fix-or-abstain.traj.html" height="900px"></iframe>
 </details>
+
+##### Prompts
+
+The four prompt variants used in the paper are listed below. We replacec `task` with the SWEBench problem statement.
+
+**Fix**
+
+```text
+{task}
+```
+
+**Reproduce Fix**
+
+```text
+{task}
+
+Tackle the task like this:
+First, reproduce the issue described above.
+Then fix the issue and verify the reproduction now fails.
+```
+
+**Reproduce Fix Abstain**
+
+```text
+{task}
+
+Tackle the task like this:
+First, reproduce the issue described above.
+If the issue is not present (anymore), report that and don't make changes.
+Otherwise fix the issue and verify the reproduction now fails.
+```
+
