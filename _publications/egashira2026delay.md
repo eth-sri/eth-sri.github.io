@@ -7,7 +7,12 @@ month: 3
 venue: arXiv
 projects: llmevals
 awards:
-bibtex: "TBD"
+bibtex: "@misc{egashiradelay,
+  title={Delay, Plateau, or Collapse: Evaluating the Impact of Systematic Verification Error on RLVR},
+  author={Egashira, Kazuki and Vero, Mark and Dekoninck, Jasper and Dorner, Florian E and Staab, Robin and Vechev, Martin},
+  year         = {2026},
+  url          = {https://www.sri.inf.ethz.ch/publications/egashira2026delay}
+}"
 
 paper: https://files.sri.inf.ethz.ch/website/papers/egashira2026delay.pdf
 code: https://github.com/eth-sri/llm-verifier-noise
