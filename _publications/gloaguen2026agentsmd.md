@@ -5,7 +5,7 @@ authors: Thibaud Gloaguen, Niels Mündler, Mark Niklas Müller, Veselin Raychev,
 year: 2026
 month: 04
 venue: MemAgents @ ICLR
-awards: Oral
+awards: Oral & Runner-up Best Paper
 projects: codellm
 bibtex: "@inproceedings{
 gloaguen2026evaluating,
@@ -17,6 +17,7 @@ url={https://openreview.net/forum?id=pLi3A8bscP}
 }"
 paper: https://openreview.net/forum?id=pLi3A8bscP
 code: https://github.com/eth-sri/agentbench
+talk: https://files.sri.inf.ethz.ch/website/talks/2026agentbench.mp4
 ---
 
 A widespread practice in software development is to tailor coding agents to repositories using context files, such as AGENTS.md, by either manually or automatically generating them. Although this practice is strongly encouraged by agent developers, there is currently no rigorous investigation into whether such context files are actually effective for real-world tasks. In this work, we study this question and evaluate coding agents' task completion performance in two complementary settings: established SWE-bench tasks from popular repositories, with LLM-generated context files following agent-developer recommendations, and a novel collection of issues with developer-provided context files.
