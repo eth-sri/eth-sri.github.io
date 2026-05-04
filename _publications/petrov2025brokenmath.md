@@ -2,9 +2,10 @@
 ref: petrov2025brokenmath
 title: "BrokenMath: A Benchmark for Sycophancy in Theorem Proving with LLMs"
 authors: Ivo Petrov, Jasper Dekoninck, Martin Vechev
-year: 2025
-month: 10
-venue: AI4Math@Neurips
+year: 2026
+month: 07
+venue: ICML
+awards: Spotlight
 projects: mathllm,llmevals
 bibtex: "@misc{petrov2025brokenmath,
       title={BrokenMath: A Benchmark for Sycophancy in Theorem Proving with LLMs}, 
