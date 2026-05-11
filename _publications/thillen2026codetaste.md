@@ -4,7 +4,7 @@ title: "CodeTaste: Can LLMs Generate Human-Level Code Refactorings?"
 authors: Alex Thillen, Niels Mündler, Veselin Raychev, Martin Vechev
 year: 2026
 month: 05
-venue: ICML 2026
+venue: ICML
 awards:
 projects: codellm,llmevals
 bibtex: "@article{thillen2026codetaste,
