@@ -4,8 +4,7 @@ title: "Not All Proofs Are Equal: Evaluating LLM Proof Quality Beyond Correctnes
 authors: Ivo Petrov, Jasper Dekoninck, Dimitar I. Dimitrov, Martin Vechev
 year: 2026
 month: 05
-venue: ICML
-awards: Spotlight
+venue: ArXiv
 projects: mathllm,llmevals
 bibtex: "@misc{petrov2026proofsequalevaluatingllm,
       title={Not All Proofs Are Equal: Evaluating LLM Proof Quality Beyond Correctness}, 
