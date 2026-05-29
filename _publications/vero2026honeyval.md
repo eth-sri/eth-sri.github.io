@@ -4,16 +4,19 @@ title: "Honeyval: A Comprehensive Evaluation Framework for LLM-powered HTTP Hone
 authors: Mark Vero, Fabian Kaczmarczyck, Ivan Petrov, Ilia Shumailov, Jamie Hayes, Niels Heinen, Tianqi Fan, Luca Invernizzi, Martin Vechev
 year: 2026
 month: 05
-venue: preprint
+venue: arXiv
 projects: codellm,llmevals
-bibtex: "@misc{vero2026honeyval,
-  title = {Honeyval: A Comprehensive Evaluation Framework for LLM-powered HTTP Honeypots},
-  author = {Vero, Mark and Kaczmarczyck, Fabian and Petrov, Ivan and Shumailov, Ilia and Hayes, Jamie and Heinen, Niels and Fan, Tianqi and Invernizzi, Luca and Vechev, Martin},
-  year = {2026},
-  note = {Preprint}
+bibtex: "@misc{vero2026honeyvalcomprehensiveevaluationframework,
+      title={Honeyval: A Comprehensive Evaluation Framework for LLM-powered HTTP Honeypots}, 
+      author={Mark Vero and Fabian Kaczmarczyck and Ivan Petrov and Ilia Shumailov and Jamie Hayes and Niels Heinen and Tianqi Fan and Luca Invernizzi and Martin Vechev},
+      year={2026},
+      eprint={2605.29963},
+      archivePrefix={arXiv},
+      primaryClass={cs.CR},
+      url={https://arxiv.org/abs/2605.29963}, 
 }"
 
-paper: https://files.sri.inf.ethz.ch/website/papers/honeyval.pdf
+paper: https://arxiv.org/abs/2605.29963
 code: https://github.com/google-research/honeyval
 website: https://honeyval.xyz/
 ---
