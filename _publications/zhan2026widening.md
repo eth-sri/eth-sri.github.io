@@ -11,9 +11,9 @@ bibtex: "@article{zhan2026widening,
   author={Zhan, Xiaohua and Egashira, Kazuki and Staab, Robin and Vero, Mark and Vechev, Martin},
   journal={arXiv preprint arXiv:2605.15152},
   year={2026}
-}
-"
+}"
 
+code: https://github.com/eth-sri/aio-quantization-attack
 paper: https://arxiv.org/abs/2605.15152
 ---
 
