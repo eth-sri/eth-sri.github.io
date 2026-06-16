@@ -1,7 +1,7 @@
 ---
 ref: feng2026leveraging
 title: "Leveraging Instruction Tuning and Merging for Reasoning Model Adaptation"
-authors: Yu-Du Feng, Niels Mündler, Mark Vero, Martin Vechev
+authors: Yu-Du Feng*, Niels Mündler*, Mark Vero, Martin Vechev
 year: 2026
 month: 07
 awards: Spotlight
