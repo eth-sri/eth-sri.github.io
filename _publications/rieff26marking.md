@@ -1,6 +1,6 @@
 ---
 ref: rieff26marking
-title: "Marking the Wrong Symptoms: Evaluating {LLM} Watermarks in Medical Texts"
+title: "Marking the Wrong Symptoms: Evaluating LLM Watermarks in Medical Texts"
 authors: Melanie Rieff, Robin Staab, Thibaud Gloaguen, Stefan Hegselmann, Martin Vechev
 year: 2026
 month: 05
@@ -8,7 +8,7 @@ venue: FM4LS @ ICML, AI4GOOD @ ICML
 projects: watermarks
 bibtex: "@inproceedings{
 rieff2026marking,
-title={Marking the Wrong Symptoms: Evaluating {LLM} Watermarks in Medical Texts},
+title={Marking the Wrong Symptoms: Evaluating LLM Watermarks in Medical Texts},
 author={Melanie Rieff and Robin Staab and Thibaud Gloaguen and Stefan Hegselmann and Martin Vechev},
 booktitle={ICML 2026 3rd Workshop on Multi-modal Foundation Models and Large Language Models  for Life Sciences},
 year={2026},
