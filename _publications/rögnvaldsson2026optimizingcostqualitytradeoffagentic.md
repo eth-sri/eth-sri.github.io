@@ -4,7 +4,7 @@ title: "Optimizing the Cost-Quality Tradeoff of Agentic Theorem Provers in Lean"
 authors: Kári Rögnvaldsson*, Chenhao Sun*, Jasper Dekoninck, Martin Vechev
 year: 2026
 month: 5
-venue: ArXiv
+venue: AI4Math@ICML
 awards:
 projects: mathllm
 bibtex: "@article{rögnvaldsson2026optimizingcostqualitytradeoffagentic,

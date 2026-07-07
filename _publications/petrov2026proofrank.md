@@ -1,10 +1,10 @@
 ---
-ref: petrov2025brokenmath
+ref: petrov2026proofrank
 title: "Not All Proofs Are Equal: Evaluating LLM Proof Quality Beyond Correctness"
 authors: Ivo Petrov, Jasper Dekoninck, Dimitar I. Dimitrov, Martin Vechev
 year: 2026
 month: 05
-venue: ArXiv
+venue: AI4Math@ICML
 projects: mathllm,llmevals
 bibtex: "@misc{petrov2026proofsequalevaluatingllm,
       title={Not All Proofs Are Equal: Evaluating LLM Proof Quality Beyond Correctness}, 

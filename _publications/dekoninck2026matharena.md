@@ -4,7 +4,7 @@ title: "Beyond Benchmarks: MathArena as an Evaluation Platform for Mathematics w
 authors: Jasper Dekoninck, Nikola Jovanović, Tim Gehrunger, Kári Rögnvaldsson, Ivo Petrov, Chenhao Sun, Martin Vechev
 year: 2026
 month: 5
-venue: ArXiv
+venue: AI4Math@ICML
 projects: mathllm,llmevals
 bibtex: '@article{dekoninck2026matharena,
       title={Beyond Benchmarks: MathArena as an Evaluation Platform for Mathematics with LLMs}, 
