@@ -3,8 +3,8 @@ ref: dekoninck2025qednano
 title: "QED-Nano: Teaching a Tiny Model to Prove Hard Theorems"
 authors: LM-Provers, Yuxiao Qu, Amrith Setlur, Jasper Dekoninck, Edward Beeching, Jia Li, Ian Wu, Lewis Tunstall, Aviral Kumar
 year: 2026
-month: 4
-venue: ArXiv
+month: 10
+venue: COLM 2026
 projects: mathllm
 bibtex: '@article{lmprovers2026qednano,
       title={QED-Nano: Teaching a Tiny Model to Prove Hard Theorems}, 

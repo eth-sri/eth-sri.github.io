@@ -3,8 +3,8 @@ ref: egashira2026delay
 title: "Delay, Plateau, or Collapse: Evaluating the Impact of Systematic Verification Error on RLVR"
 authors: Kazuki Egashira, Mark Vero, Jasper Dekoninck, Florian E. Dorner, Robin Staab, Martin Vechev
 year: 2026
-month: 3
-venue: arXiv
+month: 10
+venue: COLM 2026
 projects: llmevals
 awards:
 bibtex: "@misc{egashira2026delay,
