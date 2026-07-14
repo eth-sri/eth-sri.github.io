@@ -4,7 +4,7 @@ title: "Delay, Plateau, or Collapse: Evaluating the Impact of Systematic Verific
 authors: Kazuki Egashira, Mark Vero, Jasper Dekoninck, Florian E. Dorner, Robin Staab, Martin Vechev
 year: 2026
 month: 10
-venue: COLM 2026
+venue: COLM
 projects: llmevals
 awards:
 bibtex: "@misc{egashira2026delay,
