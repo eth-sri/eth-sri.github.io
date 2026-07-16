@@ -70,6 +70,7 @@ defaults:
       type: publications
     values:
       layout: publication
+      day: 1
   -
     scope:
       path: ""

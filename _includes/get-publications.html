@@ -21,12 +21,14 @@
 
 {% for year in sorted_publications %}
 
-  {% assign sorted_publications_by_year = year.items | sort: "month" | reverse %}
-  {% if sorted_publications_by_year.size  > 0 %}
+  {% assign sorted_months = year.items | group_by:"month" | sort:"name" | reverse %}
+  {% if sorted_months.size  > 0 %}
 
   <h2 id="{{year.name}}">{{year.name}}</h2>
-  
-  {% for publication in sorted_publications_by_year %}
+
+  {% for month in sorted_months %}
+  {% assign sorted_publications_by_month = month.items | sort:"day" | reverse %}
+  {% for publication in sorted_publications_by_month %}
 
     <!-- must assign as we can't directly capture these in the include-->
     {% assign pub-title = publication.title %}
@@ -51,6 +53,7 @@
       pub-ref=pub-ref
     %}
 
+  {% endfor %}
   {% endfor %}
   
   {% endif %}
