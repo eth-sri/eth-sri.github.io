@@ -10,7 +10,7 @@ projects: llmevals,codellm
 bibtex: '@inproceedings{
 feng2026leveraging,
 title={Leveraging Instruction Tuning and Merging for Reasoning Model Adaptation},
-author={Yu-Du Feng and Niels M{\"u}ndler and Mark Vero and Martin Vechev},
+author={Yu-Du Feng and Niels M{\"u}ndler-Sasahara and Mark Vero and Martin Vechev},
 booktitle={Decision-Making from Offline Datasets to Online Adaptation: Black-Box Optimization to Reinforcement Learning},
 year={2026},
 url={https://openreview.net/forum?id=Ja67cQ7t0G}
