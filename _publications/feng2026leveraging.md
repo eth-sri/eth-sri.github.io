@@ -15,7 +15,7 @@ booktitle={Decision-Making from Offline Datasets to Online Adaptation: Black-Box
 year={2026},
 url={https://openreview.net/forum?id=Ja67cQ7t0G}
 }'
-paper: https://openreview.net/forum?id=iO38CMCl15
+paper: https://arxiv.org/pdf/2607.14895
 code: https://github.com/eth-sri/rlm-training-merging
 talk: https://files.sri.inf.ethz.ch/website/talks/2026LeveragingFTReasoning.mp4
 ---
