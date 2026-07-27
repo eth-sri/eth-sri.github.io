@@ -3,8 +3,8 @@ ref: gloaguen2026coding
 title: "Coding Agents Don't Know When to Act"
 authors: Thibaud Gloaguen, Niels Mündler, Mark Niklas Mueller, Veselin Raychev, Martin Vechev
 year: 2026
-month: 05
-venue: AIWILD @ ICML
+month: 10
+venue: COLM
 projects: codellm
 bibtex: |
   @inproceedings{
