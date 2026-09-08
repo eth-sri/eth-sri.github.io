@@ -46,3 +46,4 @@ for i, row in enumerate(rows):
 # Print the HTML table rows
 html_output = '\n'.join(table_rows)
 print(html_output)
+print(", ".join(sorted(set(row[TA] for row in rows))))
