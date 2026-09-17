@@ -27,6 +27,7 @@ permalink: /blog/index.html
           <div class="blog-list-box">
 
             
+            {% if blogpost.thumbnail %}
             <div class="blog-list-thumbnail">
               <a href="{{ blogpost.id | relative_url}}">
                 <img  src="{{ blogpost.thumbnail | prepend: '/assets/blog/' | relative_url}}" class="blog-list-thumbnailimg" />
@@ -34,6 +35,7 @@ permalink: /blog/index.html
             </div>
 
 
+            {% endif %}
             <div class="blog-list-content">
               <div class="blog-list-title">
                 <a href="{{ blogpost.id | relative_url}}">{{blogpost.title}}</a>

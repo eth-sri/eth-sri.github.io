@@ -18,7 +18,9 @@ layout: default
 
 
   <header class="page-header container">
+	{% if page.thumbnail %}
 	<img src="{{ page.thumbnail | prepend: '/assets/blog/' | relative_url}}" class="blogpost-thumbnail"/>
+	{% endif %}
 	
 	<div class="row">
 		<div class="blogpost-headerblock">
