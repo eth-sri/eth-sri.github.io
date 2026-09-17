@@ -1,0 +1,219 @@
+---
+layout: blogpost
+category: paper
+pub-ref: gloaguen2025diffusionwatermark
+title: "Watermarking Diffusion Language Models"
+blogpost-authors: "Thibaud Gloaguen, Robin Staab, Nikola Jovanović, Martin Vechev"
+date: 2025-10-01
+thumbnail: dlm-watermarking/thumbnail.svg
+image: /assets/blog/dlm-watermarking/thumbnail.svg
+tldr: >
+  We propose the first watermarking scheme tailored for Diffusion Language Models. Our watermark leverages the existing Red-Green watermark detector and achieves over a 99% true positive rate with minimal impact on text quality, and robustness comparable to established ARLM watermarking schemes.
+excerpt: >
+  How to watermark diffusion language models despite their arbitrary generation order: our method, theoretical foundations, demo, and evaluation.
+---
+
+<style>
+.dlm-watermarking .green { color: #218739; }
+.dlm-watermarking .red { color: #c73939; }
+.dlm-watermarking figure { margin: 24px 0; }
+.dlm-watermarking img, .dlm-watermarking video { max-width: 100%; height: auto; }
+.dlm-watermarking .left-wrapped { float: left; width: 45%; margin: 0 24px 16px 0; }
+.dlm-watermarking .right-wrapped { clear: both; float: right; width: 45%; margin: 0 0 16px 24px; }
+.dlm-watermarking h3 { clear: both; }
+.dlm-watermarking .figure-caption { font-size: 0.9em; margin-top: 12px; }
+.dlm-watermarking pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  .dlm-watermarking .left-wrapped, .dlm-watermarking .right-wrapped { float: none; width: 100% !important; margin: 20px 0; }
+  .dlm-watermarking figure img { width: 100% !important; }
+}
+</style>
+
+<div class="dlm-watermarking">
+<h3>Why is watermarking Diffusion LMs challenging?</h3>
+
+
+<figure class="left-wrapped">
+<img alt="Prior works on watermarking LLMs" src="/assets/blog/dlm-watermarking/images/arlm_watermark1.svg"/>
+</figure>
+
+
+<p>
+              With traditional autoregressive language models (ARLMs), most watermarking schemes rely on previously generated tokens (i.e., the context) to decide how to watermark the next token. 
+              For instance, Red-Green watermarks (illustrated here) hash the context to partition the vocabulary into a <span class="green">green</span> and a <span class="red">red</span> set.
+              Then, the model is biased to sample tokens from the green set.
+              For detection, the watermark detector counts the number of green tokens in a given text, and if this number is significantly higher than random chance, the text is declared watermarked.
+            </p>
+
+
+
+
+  
+
+
+<figure class="right-wrapped">
+<img alt="Why watermarking Diffusion LMs is challenging" src="/assets/blog/dlm-watermarking/images/arlm_watermark2.svg"/>
+</figure>
+
+
+<p>
+              Diffusion Language Models (DLMs) generate tokens in arbitrary order by iteratively unmasking a sequence of masked tokens (i.e., tokens yet to be generated).
+              Importantly, this means that when generating a given token, other tokens in its context may not yet have been generated.
+              Hence, the watermarking scheme cannot compute the hash of the context to determine the <span class="green">green</span> and <span class="red">red</span> sets.
+              Thus, when generating such tokens, we cannot bias the distribution toward the green set, which weakens the watermark.
+              This means that we need to design a new watermark that can handle masked tokens in the context.
+            </p>
+
+
+
+
+<h3>Our watermark for Diffusion LMs</h3>
+
+
+<figure class="">
+<img alt="Our watermark for Diffusion LMs" src="/assets/blog/dlm-watermarking/images/diffusion_watermark.svg"/>
+</figure>
+
+
+<p>
+              For every masked token, while we cannot compute its hash, the DLM still provides us with a probability distribution over the vocabulary.  
+              Hence, our key insight is to leverage this distribution over the hashes of the context to determine how much we can bias the distribution.
+            </p>
+
+
+<p>
+              Specifically, as illustrated above, when computing the watermarked distribution for a masked token, we take into account two factors: (i) we apply the existing Red-Green watermark in expectation over the hashes of the context, and (ii) we bias the distribution towards tokens that lead to hashes making other tokens green.
+              While the first term is a natural extension of the Red-Green watermark, the second term is specific to the order-agnostic generation of DLMs and allows making tokens already generated green.
+            </p>
+
+
+<p>
+              Because our watermarking scheme is based on the same idea as the Red-Green watermark, we can use the same watermark detector for detection. 
+              Given a text, the watermark detector counts the number of green tokens in the text and performs a binomial test to determine whether the number of green tokens is significantly higher than random chance. 
+              If this is the case, the text is declared watermarked.
+            </p>
+
+
+<h3>Demo</h3>
+
+
+<p>
+              The demo below shows how the watermarking algorithm transforms the logits distribution of a DLM into a watermarked distribution. 
+              We start with a partially masked sequence (I [?] [?] [?] pizza.). 
+              For each masked token, the DLM returns a distribution over the vocabulary. 
+              Then, we illustrate how our watermarking scheme modifies this distribution using the two terms described above to obtain the watermarked distribution.
+            </p>
+
+
+<figure class="">
+<video controls="" loop="" muted="" playsinline="" style="width: 100%; height: auto; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+<source src="/assets/blog/dlm-watermarking/videos/DLM-watermark-highRes.mp4" type="video/mp4"/>
+                Your browser does not support the video tag. You can download the video
+                <a href="/assets/blog/dlm-watermarking/videos/DLM-watermark-highRes.mp4">here</a>.
+              </video>
+</figure>
+
+
+
+
+<h3>Deriving our watermark from theoretical principles</h3>
+
+
+<p>
+              To formalize our watermark algorithm and justify the importance of the two terms in the watermarked distribution, we provide a theoretical analysis of our watermarking scheme.  
+              In particular, we consider watermarking as a constrained optimization problem: the goal of the watermark is to distort the original model probability distribution <i>p</i> (factorized over a sequence of size <i>L</i>) into a distribution <i>q</i> that maximizes the number of green tokens generated without significantly impacting the quality of the generated text.  
+              We denote this expected number of green tokens as <i>J(p)</i>.  
+              As a proxy for text quality, we consider the Kullback–Leibler divergence between the original and watermarked distributions.
+            </p>
+
+
+<figure class="">
+<img alt="Watermarking as a constrained optimization problem" src="/assets/blog/dlm-watermarking/images/optim_problem.png" style="width: 40%; height: auto; display: block; margin: 0 auto;"/>
+</figure>
+
+
+<figure class="left-wrapped" style="width: 50%;">
+<img alt="DLMs watermarking algorithm" src="/assets/blog/dlm-watermarking/images/algo.svg" style="width: 100%; height: auto; display: block;"/>
+</figure>
+
+
+<p>
+              This optimization problem admits an (almost) closed-form solution: the optimal watermarked distribution <i>q*</i> is obtained by adding to the logits of the original distribution <i>p</i> a term proportional to the gradient of <i>J(p)</i>.
+              The proportionality coefficient <i>δ</i> is a parameter that controls the strength of the watermark.
+              We derive from this result the watermark algorithm described on the left.
+              The remaining technical challenge is to compute <i>J(p)</i> efficiently.
+              We show that, with most hash functions, <i>J(p)</i> can be computed efficiently.
+            </p>
+
+
+<p>
+              With this theoretical approach, however, interpreting how the watermark operates is challenging.
+              Yet, if we look more closely at the gradient of <i>J(p)</i>, we can recover the two terms of our watermarking scheme introduced above.
+              This means that our watermarking scheme is not only intuitively understandable but also theoretically grounded, as it is optimal with respect to our optimization problem!
+            </p>
+
+
+<figure class="">
+<img alt="Interpretation of our watermark" src="/assets/blog/dlm-watermarking/images/equation.svg" style="width: 75%; height: auto; display: block; margin: 0 auto;"/>
+<figcaption class="figure-caption">
+<strong>Remarks:</strong>
+<i>G</i> is a matrix where each entry indicates the color (green or red) of a token given a hash.
+                The vector <i>h</i> is the distribution over the hashes of the context.
+                The function <i>H</i> is the hash function.
+                Lastly, <i>Ω</i> is the random text being generated.
+                The equation is hard to parse at first sight, but it is actually quite intuitive.
+                The first term is indeed the expectation of the color over the hashes of the context.
+                In the second term, we look, for every token in the context of the token being generated, which concrete value (of the token being generated) would yield hashes that make them green, and we weight this by a corresponding probability.
+                Computing this sum "manually" is tedious to implement, but thanks to our theoretical analysis, we can derive it automatically with backpropagation!
+                If we had not performed this theoretical analysis, it would have been difficult to come up with an easy-to-implement algorithm that computes this second term.
+              </figcaption>
+</figure>
+
+
+<h3>Evaluation of our watermark</h3>
+
+
+<p>
+              We evaluate our watermarking scheme on two DLMs: Llada-8B and Dream-7B, and compare it to a naive adaptation of the Red-Green watermark for DLMs (i.e., applying the Red-Green watermark only when the context is fully unmasked).
+              We find that our watermark is significantly more effective than this naive adaptation, and that, on reasonably small text, it achieves over a 99% true positive rate with minimal impact on text quality!
+            </p>
+
+
+<figure class="">
+<img alt="Evaluation of our watermark" src="/assets/blog/dlm-watermarking/images/eval1.png" style="width: 100%; height: auto; display: block; margin: 0 auto;"/>
+<figcaption class="figure-caption">
+<strong>Detection Performance of Our Approach</strong> <em>(Left)</em> We compare the trade-off between watermark detectability (TPR@1) and text quality (log PPL) of our approach and the baseline for different values of the watermark strength parameter δ and sequences averaging 275 tokens on average.
+                <em>(Right)</em> For δ = 4, we compare watermark detectability (TPR@1) between our approach and the baseline as a function of text length.
+                Responses are generated by Llada with a temperature of 0.5 and 600 prompts from WaterBench.
+                Crosses represent shared parameters between both figures.
+              </figcaption>
+</figure>
+
+
+<p>
+              We also evaluate the robustness of our watermark against various attacks, including text editing (deletion, insertion, substitution), paraphrasing with LLMs, and back-translation.
+              We find that our watermark is comparably robust to established ARLM watermarking schemes.
+            </p>
+
+
+<figure class="">
+<img alt="Evaluation of our watermark" src="/assets/blog/dlm-watermarking/images/eval2.png" style="width: 100%; height: auto; display: block; margin: 0 auto;"/>
+<figcaption class="figure-caption">
+<strong>Robustness Evaluation of Our Watermark</strong> <em>(Left)</em> We measure the detectability of our watermark (TPR@1) against an increasing percentage of local modifications, using responses generated from Llada with an average length of 275 tokens.
+                <em>(Right)</em> For stronger adversaries, we measure the detectability of our watermark (TPR@1) with respect to the sequence length.
+                For both figures, we use δ = 4 and the previous token as context.
+              </figcaption>
+</figure>
+
+
+<h3>Citation</h3>
+<pre id="BibTeX">@misc{gloaguen2025watermarkingdiffusionlanguagemodels,
+      title={Watermarking Diffusion Language Models}, 
+      author={Thibaud Gloaguen and Robin Staab and Nikola Jovanović and Martin Vechev},
+      year={2025},
+      eprint={2509.24368},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2509.24368}, 
+}</pre>
+</div>
