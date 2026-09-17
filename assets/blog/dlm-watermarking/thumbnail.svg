@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="220" viewBox="0 0 240 220" fill="none">
+  <title>Diffusion language model watermark</title>
+  <desc>Masked tokens resolve in arbitrary order into text, with a green watermark and verification shield.</desc>
+  <defs>
+    <linearGradient id="bg" x1="20" y1="10" x2="220" y2="210" gradientUnits="userSpaceOnUse"><stop stop-color="#F0F7FA"/><stop offset="1" stop-color="#E8F5EE"/></linearGradient>
+    <linearGradient id="shield" x1="160" y1="143" x2="218" y2="211" gradientUnits="userSpaceOnUse"><stop stop-color="#248B75"/><stop offset="1" stop-color="#116451"/></linearGradient>
+  </defs>
+  <rect x="8" y="8" width="224" height="204" rx="36" fill="url(#bg)"/>
+  <g stroke="#8BA5B3" stroke-width="2" stroke-dasharray="3 4">
+    <rect x="32" y="36" width="34" height="30" rx="7"/><rect x="78" y="36" width="34" height="30" rx="7"/>
+    <rect x="124" y="36" width="34" height="30" rx="7"/><rect x="170" y="36" width="34" height="30" rx="7"/>
+    <rect x="32" y="93" width="34" height="30" rx="7"/><rect x="124" y="93" width="34" height="30" rx="7"/>
+  </g>
+  <g fill="#8BA5B3"><circle cx="49" cy="51" r="3"/><circle cx="95" cy="51" r="3"/><circle cx="141" cy="51" r="3"/><circle cx="187" cy="51" r="3"/><circle cx="49" cy="108" r="3"/><circle cx="141" cy="108" r="3"/></g>
+  <g stroke="#A4BEC5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M118 72v12m-4-4 4 4 4-4"/><path d="M118 130v12m-4-4 4 4 4-4"/></g>
+  <rect x="78" y="93" width="34" height="30" rx="7" fill="#D0E5EC"/>
+  <rect x="170" y="93" width="34" height="30" rx="7" fill="#A8D9BC"/>
+  <g stroke-width="3.5" stroke-linecap="round"><path d="M88 105h14m-14 7h9" stroke="#39758C"/><path d="M180 105h14m-14 7h9" stroke="#277353"/></g>
+  <rect x="32" y="150" width="34" height="30" rx="7" fill="#A8D9BC"/>
+  <rect x="78" y="150" width="34" height="30" rx="7" fill="#D0E5EC"/>
+  <rect x="124" y="150" width="34" height="30" rx="7" fill="#A8D9BC"/>
+  <g stroke-width="3.5" stroke-linecap="round"><path d="M42 162h14m-14 7h9M134 162h14m-14 7h9" stroke="#277353"/><path d="M88 162h14m-14 7h9" stroke="#39758C"/></g>
+  <path d="M189 139c9 7 18 9 28 11v24c0 16-12 27-28 35-16-8-28-19-28-35v-24c10-2 19-4 28-11Z" fill="url(#shield)" stroke="#F6FAF8" stroke-width="5" stroke-linejoin="round"/>
+  <path d="m177 172 8 8 16-18" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

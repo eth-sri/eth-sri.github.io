@@ -18,7 +18,7 @@ layout: default
 
 
   <header class="page-header container">
-	{% if page.thumbnail %}
+	{% if page.thumbnail and page.show_title_thumbnail != false %}
 	<img src="{{ page.thumbnail | prepend: '/assets/blog/' | relative_url}}" class="blogpost-thumbnail"/>
 	{% endif %}
 	
