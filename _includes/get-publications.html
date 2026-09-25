@@ -21,7 +21,8 @@
 
 {% for year in sorted_publications %}
 
-  {% assign sorted_months = year.items | group_by:"month" | sort:"name" | reverse %}
+  {% comment %}Keep month group keys numeric so December (12) sorts before July (7).{% endcomment %}
+  {% assign sorted_months = year.items | group_by_exp:"item", "item.month | plus: 0" | sort:"name" | reverse %}
   {% if sorted_months.size  > 0 %}
 
   <h2 id="{{year.name}}">{{year.name}}</h2>
