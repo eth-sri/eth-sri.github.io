@@ -3,8 +3,8 @@ ref: gloaguen2026multibit
 title: "Every Bit, Everywhere, All at Once: A Binomial Multibit LLM Watermark"
 authors: Thibaud Gloaguen, Robin Staab, Mark Vero, Martin Vechev
 year: 2026
-month: 05
-venue: arXiv
+month: 07
+venue: NeurIPS
 projects: watermarks
 bibtex: "@article{gloaguen2026every,
   title={Every Bit, Everywhere, All at Once: A Binomial Multibit LLM Watermark},

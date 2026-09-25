@@ -3,8 +3,8 @@ ref: vero2026honeyval
 title: "Honeyval: A Comprehensive Evaluation Framework for LLM-powered HTTP Honeypots"
 authors: Mark Vero, Fabian Kaczmarczyck, Ivan Petrov, Ilia Shumailov, Jamie Hayes, Niels Heinen, Tianqi Fan, Luca Invernizzi, Martin Vechev
 year: 2026
-month: 05
-venue: arXiv
+month: 07
+venue: NeurIPS E&D
 projects: codellm,llmevals
 bibtex: "@misc{vero2026honeyvalcomprehensiveevaluationframework,
       title={Honeyval: A Comprehensive Evaluation Framework for LLM-powered HTTP Honeypots}, 
