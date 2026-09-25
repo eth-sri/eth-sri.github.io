@@ -3,14 +3,14 @@ ref: scharff26mergewm
 title: "Making Open-Source Text LLM Watermarks Durable Against Merging"
 authors: Luisa Scharff, Thibaud Gloaguen, Robin Staab, Martin Vechev
 year: 2026
-month: 05
-venue: AI4GOOD @ ICML
+month: 12
+venue: NeurIPS
 projects: watermarks
 bibtex: "@inproceedings{
 scharff26mergewm,
 title={Making Open-Source Text {LLM} Watermarks Durable Against Merging},
 author={Luisa Scharff and Thibaud Gloaguen and Robin Staab and Martin Vechev},
-booktitle={Trustworthy AI for Good (AI4GOOD) Workshop @ ICML 2026},
+booktitle={NeurIPS 2026},
 year={2026},
 url={https://openreview.net/forum?id=84maDBcTYn}
 }"
