@@ -1,0 +1,236 @@
+---
+layout: blogpost
+category: other
+title: "AutoMark: Enabling Autoresearch to Discover Better LLM Watermarks"
+blogpost-authors: "Thibaud Gloaguen, Robin Staab"
+date: 2026-09-28
+thumbnail: automark/thumbnail.svg
+show_title_thumbnail: false
+tldr: >
+  We enable autoresearch for LLM watermarking. Research agents propose new schemes in an isolated sandbox, and a private pipeline checks that each scheme is distortion-free and statistically sound before ranking it on detectability, robustness, and quality.
+  Running frontier agents in this harness, we obtain over 50 schemes, some of which outperform prior work on all evaluated axes.
+  Notably, we select two schemes: ConcordMark and RotationFirst.
+  On a held-out evaluation, ConcordMark is Pareto-better than all baselines, and RotationFirst performs similarly to them at a much higher text quality.
+  We distill the agents' schemes into 39 new components, which you can explore interactively below.
+excerpt: >
+  Can research agents discover better LLM watermarks? We build a harness that verifies and evaluates agent-designed watermarks, find schemes that outperform prior work, and break them down into components you can explore interactively.
+---
+
+<link rel="stylesheet" href="/assets/blog/automark/automark.css">
+
+<div class="am">
+
+<p>
+LLM watermarking embeds a signal invisible to humans in model outputs, and has become the standard for tracing AI-generated text: regulators <a href="https://artificialintelligenceact.eu/article/50/">mandate it</a>, and major providers <a href="/blog/probingsynthid">deploy it</a>.
+Yet, recent progress has mostly come from refining existing designs, at a pace capped by that of human researchers.
+Autoresearch, where agents propose, implement, and evaluate ideas in a loop, is a natural way to accelerate it.
+</p>
+
+<p>
+Watermarking, however, is harder to verify than, e.g., mathematics, where a proof can be checked by Lean.
+Detectability, robustness, and quality trade off, so an improvement on a single metric need not make a better watermark.
+Agents may also exploit gaps in the evaluation, e.g., by inflating robustness through flagging more human texts as watermarked.
+In our new paper, we show that with an adequate harness, autoresearch discovers watermarks that are trustworthy, explainable, and Pareto-superior to existing schemes.
+In this post, we summarize how, and let you explore the components that the agents discovered.
+</p>
+
+<h3>What makes a watermark valid?</h3>
+
+<figure class="am-figure am-illu">
+  <svg class="am-illu-panel" viewBox="0 0 380 300" role="img" aria-label="Bar chart: most keys have a near-zero false positive rate, but one key flags most human texts.">
+  <text x="44" y="30" class="am-illu-title">Naive scheme</text>
+  <text transform="translate(26 144) rotate(-90)" text-anchor="middle" class="am-illu-axis">FPR on human texts</text>
+  <line x1="50" y1="214" x2="346" y2="214" class="am-illu-rule"/>
+  <line x1="50" y1="214" x2="50" y2="60" class="am-illu-rule"/>
+  <text x="198.0" y="236" text-anchor="middle" class="am-illu-axis">Random watermark keys</text>
+  <rect x="56.0" y="210.8" width="9.4" height="3.2" rx="1.5" class="am-illu-bar"/>
+  <rect x="70.4" y="209.3" width="9.4" height="4.7" rx="1.5" class="am-illu-bar"/>
+  <rect x="84.8" y="210.2" width="9.4" height="3.8" rx="1.5" class="am-illu-bar"/>
+  <rect x="99.2" y="209.0" width="9.4" height="5.0" rx="1.5" class="am-illu-bar"/>
+  <rect x="113.6" y="208.9" width="9.4" height="5.1" rx="1.5" class="am-illu-bar"/>
+  <rect x="128.0" y="211.7" width="9.4" height="2.3" rx="1.5" class="am-illu-bar"/>
+  <rect x="142.4" y="72.0" width="9.4" height="142.0" rx="1.5" class="am-illu-bad"/>
+  <rect x="156.8" y="207.8" width="9.4" height="6.2" rx="1.5" class="am-illu-bar"/>
+  <rect x="171.2" y="210.7" width="9.4" height="3.3" rx="1.5" class="am-illu-bar"/>
+  <rect x="185.6" y="210.8" width="9.4" height="3.2" rx="1.5" class="am-illu-bar"/>
+  <rect x="200.0" y="207.0" width="9.4" height="7.0" rx="1.5" class="am-illu-bar"/>
+  <rect x="214.4" y="209.6" width="9.4" height="4.4" rx="1.5" class="am-illu-bar"/>
+  <rect x="228.8" y="207.8" width="9.4" height="6.2" rx="1.5" class="am-illu-bar"/>
+  <rect x="243.2" y="209.6" width="9.4" height="4.4" rx="1.5" class="am-illu-bar"/>
+  <rect x="257.6" y="208.8" width="9.4" height="5.2" rx="1.5" class="am-illu-bar"/>
+  <rect x="272.0" y="211.2" width="9.4" height="2.8" rx="1.5" class="am-illu-bar"/>
+  <rect x="286.4" y="208.8" width="9.4" height="5.2" rx="1.5" class="am-illu-bar"/>
+  <rect x="300.8" y="207.7" width="9.4" height="6.3" rx="1.5" class="am-illu-bar"/>
+  <rect x="315.2" y="209.4" width="9.4" height="4.6" rx="1.5" class="am-illu-bar"/>
+  <rect x="329.6" y="208.3" width="9.4" height="5.7" rx="1.5" class="am-illu-bar"/>
+  <text x="147.1" y="62.0" text-anchor="middle" class="am-illu-note">key puts &#8220;.&#8221; in the first class</text>
+  <line x1="50" y1="174" x2="346" y2="174" class="am-illu-alpha"/>
+  <text x="352" y="179" class="am-illu-alpha-label">&#945;</text>
+  <text x="44" y="268" class="am-illu-verdict">Sound over the key: <tspan class="am-illu-yes">yes</tspan></text>
+  <text x="44" y="290" class="am-illu-verdict">Sound given a key: <tspan class="am-illu-no">no</tspan></text>
+  </svg>
+  <svg class="am-illu-panel" viewBox="0 0 380 300" role="img" aria-label="Bar chart: all keys stay below alpha except at most a fraction beta of them.">
+  <text x="44" y="30" class="am-illu-title">Scheme sound given a key</text>
+  <text transform="translate(26 144) rotate(-90)" text-anchor="middle" class="am-illu-axis">FPR on human texts</text>
+  <line x1="50" y1="214" x2="346" y2="214" class="am-illu-rule"/>
+  <line x1="50" y1="214" x2="50" y2="60" class="am-illu-rule"/>
+  <text x="198.0" y="236" text-anchor="middle" class="am-illu-axis">Random watermark keys</text>
+  <rect x="56.0" y="187.2" width="9.4" height="26.8" rx="1.5" class="am-illu-bar"/>
+  <rect x="70.4" y="198.8" width="9.4" height="15.2" rx="1.5" class="am-illu-bar"/>
+  <rect x="84.8" y="185.6" width="9.4" height="28.4" rx="1.5" class="am-illu-bar"/>
+  <rect x="99.2" y="188.8" width="9.4" height="25.2" rx="1.5" class="am-illu-bar"/>
+  <rect x="113.6" y="194.3" width="9.4" height="19.7" rx="1.5" class="am-illu-bar"/>
+  <rect x="128.0" y="199.4" width="9.4" height="14.6" rx="1.5" class="am-illu-bar"/>
+  <rect x="142.4" y="183.6" width="9.4" height="30.4" rx="1.5" class="am-illu-bar"/>
+  <rect x="156.8" y="191.0" width="9.4" height="23.0" rx="1.5" class="am-illu-bar"/>
+  <rect x="171.2" y="186.3" width="9.4" height="27.7" rx="1.5" class="am-illu-bar"/>
+  <rect x="185.6" y="183.3" width="9.4" height="30.7" rx="1.5" class="am-illu-bar"/>
+  <rect x="200.0" y="186.4" width="9.4" height="27.6" rx="1.5" class="am-illu-bar"/>
+  <rect x="214.4" y="182.5" width="9.4" height="31.5" rx="1.5" class="am-illu-bar"/>
+  <rect x="228.8" y="192.5" width="9.4" height="21.5" rx="1.5" class="am-illu-bar"/>
+  <rect x="243.2" y="167.0" width="9.4" height="47.0" rx="1.5" class="am-illu-bad"/>
+  <rect x="257.6" y="191.6" width="9.4" height="22.4" rx="1.5" class="am-illu-bar"/>
+  <rect x="272.0" y="182.2" width="9.4" height="31.8" rx="1.5" class="am-illu-bar"/>
+  <rect x="286.4" y="183.3" width="9.4" height="30.7" rx="1.5" class="am-illu-bar"/>
+  <rect x="300.8" y="198.1" width="9.4" height="15.9" rx="1.5" class="am-illu-bar"/>
+  <rect x="315.2" y="197.4" width="9.4" height="16.6" rx="1.5" class="am-illu-bar"/>
+  <rect x="329.6" y="195.9" width="9.4" height="18.1" rx="1.5" class="am-illu-bar"/>
+  <text x="247.9" y="157.0" text-anchor="middle" class="am-illu-note">at most a fraction &#946; of keys</text>
+  <line x1="50" y1="174" x2="346" y2="174" class="am-illu-alpha"/>
+  <text x="352" y="179" class="am-illu-alpha-label">&#945;</text>
+  <text x="44" y="268" class="am-illu-verdict">Sound over the key: <tspan class="am-illu-yes">yes</tspan></text>
+  <text x="44" y="290" class="am-illu-verdict">Sound given a key: <tspan class="am-illu-yes">yes</tspan></text>
+  </svg>
+</figure>
+<p class="blogpost-caption"><em><strong>Soundness over the key and given a key.</strong> Each bar is the false positive rate on human texts of one watermark key (not to scale). Left: averaged over the key, the naive scheme flags any text with probability 1/100, but a key that puts &#8220;.&#8221; in the first class flags most human texts. Right: a scheme that is sound given a key, for which at most a fraction &#946; of the keys have a false positive rate above &#945;.</em></p>
+
+<p>
+Before agents can search for better watermarks, we first need to formally define what makes a watermarking scheme valid, so that every submission can be checked automatically.
+Without such a definition, autoresearch is easy to fool: in earlier versions of our harness, agents designed schemes that appeared to outperform prior work, yet had an abnormally high false positive rate.
+</p>
+
+<p>
+All schemes in this work are distortion-free.
+At every step of generation, a hash of the preceding tokens and a private key seed a pseudo-random score for every candidate token, and the watermark samples the next token so that it correlates with these scores, while preserving the next-token distribution in expectation over the key.
+The detector recomputes the scores of a text and returns a p-value under the null hypothesis that the text is not watermarked.
+</p>
+
+<p>
+Most prior schemes are <em>sound over the key</em>: for any text, the probability over the key that its p-value falls below &alpha; is at most &alpha;.
+This alone does not make a scheme reliable.
+Consider a deliberately naive scheme that uses the key to split the vocabulary into a hundred classes, and flags a text if its last token lies in the first class.
+Averaged over the key, it flags any text with probability 1/100, but for a key that puts &ldquo;.&rdquo; in the first class, most human texts are flagged as watermarked (left of the figure above).
+</p>
+
+<p>
+We therefore introduce a second requirement, <em>soundness given a key</em>: for every (non-degenerate) human text distribution, the probability of sampling a key whose false positive rate exceeds &alpha; must be at most &beta; (we use &beta;&nbsp;=&nbsp;5%), as illustrated on the right of the figure above.
+Any scheme that is sound over the key becomes provably sound given a key if we multiply its p-values by 1/&beta;, at the cost of detection power.
+We turn both properties, along with distortion-freeness, into statistical tests that run automatically on every submitted scheme.
+</p>
+
+<h3>The autoresearch harness</h3>
+
+<figure class="am-figure">
+  <img src="/assets/blog/automark/harness.png" alt="The agent works in a sandbox with a GPU, web access, the watermark library, and prior runs. It submits schemes to a private verification (distortion-free, sound over key, sound given a key). Schemes that pass are evaluated on detectability, robustness, and quality, and a new agent then takes over." style="width: 62%;">
+</figure>
+<p class="blogpost-caption"><em><strong>The autoresearch loop.</strong> An agent iterates on a watermarking scheme in an isolated sandbox. Submissions are first verified and, upon passing, evaluated. Either way, a new agent then takes over with access to all prior results.</em></p>
+
+<p>
+The agent has a dedicated GPU, Internet access, our vLLM watermarking library, and the implementations and evaluations of AAR, SynthID, and TextSeal.
+When it submits a scheme, a private pipeline first runs our three tests.
+If the scheme passes, it is evaluated on detectability (TPR at 1% FPR), on robustness to four attacks (word deletion, synonym substitution, back-translation, and paraphrasing), and on quality (the distance to the unwatermarked model in perplexity and in the diversity of replies, measured with Self-BLEU).
+The results are then added to the environment, and a new agent takes over with access to all prior results and code.
+The first agent has four submissions, and every subsequent agent has a single one, a setup that we found leads to more creative solutions and less hyperparameter tuning.
+</p>
+
+<p>
+Both the verification and the evaluation are private.
+In an earlier version of our harness with public verification, an agent remapped its p-values with a threshold chosen just below the fifth-smallest p-value of the public human texts, and documented it in its submission.
+</p>
+
+<h3>Agents outperform prior work</h3>
+
+<p>
+We ran four research agents until their submission budget was exhausted: GPT-6 Astra (xhigh and low reasoning), Opus 5 (high), and Gemini-3.8 Flash (high).
+This yields 52 evaluated schemes, at an API cost between $13.81 (Gemini-3.8 Flash) and $435.96 (Opus 5) per agent.
+All agents improve their submissions over time, and outperform the baselines in most cases.
+Two baselines, AAR and SynthID, fail our soundness given a key test in the evaluated configurations, which means that their robustness is slightly inflated.
+</p>
+
+<figure class="am-figure">
+  <img src="/assets/blog/automark/trajectories.png" alt="Two panels over the number of submissions. Left: paraphrasing TPR at 1% FPR, where Opus 5 reaches 85.7% and all agents end above the best baseline at 57.7%. Right: quality distance, where GPT-6 Astra xhigh reaches 0.7% against 2.0% for the best baseline.">
+</figure>
+<p class="blogpost-caption"><em><strong>Submission history of each agent.</strong> Left: robustness to paraphrasing (TPR@1%FPR). Right: quality, as the distance to the unwatermarked model. Each dot is a submission and the solid lines are the best value so far. Baselines are in italic, and a parenthesis means that the baseline fails our verification.</em></p>
+
+<p>
+The research processes of GPT-6 Astra and Opus 5 were similar: after first tweaking the TextSeal baseline, both proposed a range of novel and creative watermarking ideas.
+In contrast, all submissions of Gemini-3.8 Flash tuned the hyperparameters of TextSeal and did not result in any new ideas.
+</p>
+
+<h3>Two new state-of-the-art schemes</h3>
+
+<p>
+To mitigate overfitting to our evaluation, we select two agent schemes and evaluate them under a held-out protocol: 1,000 English and 1,000 Chinese prompts from WildChat, DeepSeek-v4 Flash as the back-translation and paraphrasing attacker, and replies from both Llama-3.1-8B and Qwen3.8-27B.
+<strong>ConcordMark</strong> combines <span class="am-comp">Lexical group</span> units, <span class="am-comp">Ladder</span> context seeding, a <span class="am-comp">Prelude</span>, six <span class="am-comp">Channels</span>, and the <span class="am-comp">Gumbel race</span>; its high variant uses a model forward pass at detection.
+<strong>RotationFirst</strong> combines <span class="am-comp">Lexical group</span> units, <span class="am-comp">Global first use</span> seeding, the <span class="am-comp">Rotation</span> geometry, the <span class="am-comp">ResidualRace</span>, and the <span class="am-comp">Predictive Gamma</span> detector.
+</p>
+
+<div id="am-heldout" class="am-heldout am-panel">
+  <noscript>This figure requires JavaScript.</noscript>
+</div>
+<p class="blogpost-caption"><em><strong>Held-out evaluation.</strong> Robustness axes show the TPR@1%FPR under each attack, and quality axes show the relative deviation (in %) from the unwatermarked model in perplexity and in bigram and trigram Self-BLEU. Outward is better on every axis, and each axis is rescaled to the plotted schemes, with its range (from center to rim) under its label. We report the worst TPR and the median quality deviation over five watermark keys, and the clean TPR in the legend.</em></p>
+
+<p>
+ConcordMark (high) is Pareto-better than all baselines: on almost all metrics, it outperforms the best baseline.
+RotationFirst has a diversity very close to that of the unwatermarked model, while its detection and robustness remain comparable to those of the baselines, which makes it suitable for model providers that want a strong watermark with the smallest impact on quality.
+For both schemes, the results of the autoresearch evaluation transfer to new prompts, models, and attackers.
+</p>
+
+<h3>What did the agents discover?</h3>
+
+<p>
+Agents may produce results faster than humans can understand them.
+To extract their key ideas, we manually decompose every scheme into five components: the four components of most watermarks (<em>context seeding</em>, <em>score</em>, <em>logits transformation</em>, and <em>detector</em>), and the <em>watermark unit</em>, a generalization introduced by the agents in which the watermark applies to classes of tokens rather than to tokens.
+We then ablate each component against a simple core scheme in the style of AAR (token units, a two-token context, the <span class="am-comp">Gumbel race</span>, and the <span class="am-comp">Gamma</span> detector), swapping one component at a time.
+</p>
+
+<p>
+To improve quality, the agents consistently add a small amount of true randomness to the watermark score.
+Their <span class="am-comp">Gaussian copula</span> mixes the keyed score with fresh Gaussian noise, and with all other components fixed, it outperforms TextSeal&rsquo;s random key switching along all evaluated dimensions.
+The agents also discovered fundamentally new ideas, such as aligning watermark scores with a random direction drawn for every request (the <em>private geometries</em>), on which RotationFirst builds.
+Finally, they extend the Gumbel race with residual clocks (<span class="am-comp">ResidualRace</span>), which improves robustness against every attack at a slight cost to quality, and design detectors that group the evidence by context or use a model forward pass.
+</p>
+
+<h3>Explore the components</h3>
+
+<p>
+Each chip below is one of the 42 components of the paper, 39 of which are new, arranged by stage.
+Select a component to read its description and the results of every configuration in which we evaluated it, and plot up to four configurations on the radar.
+The dashed polygon is the core scheme, which every configuration modifies.
+The <em>Unit</em> switch shows the results with token units or with the <span class="am-comp">Lexical group</span>, and the examples reproduce findings from the paper.
+</p>
+
+</div>
+
+<div id="am-explorer" class="am am-panel am-explorer">
+  <noscript>The component explorer requires JavaScript. All values are also listed in the appendix of the paper.</noscript>
+</div>
+
+<div class="am">
+
+<p class="blogpost-caption"><em><strong>Components of the agents' schemes.</strong> Colors indicate the family (fresh race, private geometry, or skeleton), within which components are interchangeable, and white components are compatible with every family. Skeleton schemes reuse the fresh-race scores and detectors (green edge), and components marked * come from prior work. All values come from our ablation study: a single watermark key, 1,000 Llama-3.1-8B replies to ELI5 prompts, and p-values multiplied by 1/&beta;&nbsp;=&nbsp;20 so that every configuration is provably sound given a key.</em></p>
+
+<h3>Summary</h3>
+
+<p>
+In this post, we presented AutoMark, which enables autoresearch for LLM watermarking with rigorous validity criteria, statistical tests to verify them, and a tailored harness.
+We found that frontier agents go beyond hyperparameter tuning and introduce novel ideas, with two schemes, ConcordMark and RotationFirst, outperforming prior work on held-out data.
+In autoresearch, the key challenge is to build a verification that agents cannot exploit and that faithfully captures the desired property.
+There are many desirable properties we did not include in this work, e.g., security, radioactivity, or the multi-bit setting, and we believe that future research should focus not only on new schemes but also on how to build verifiers and evaluations for those properties.
+<!-- TODO: link the paper once it is public. -->
+</p>
+
+</div>
+
+<script src="/assets/blog/automark/data.js"></script>
+<script src="/assets/blog/automark/automark.js"></script>

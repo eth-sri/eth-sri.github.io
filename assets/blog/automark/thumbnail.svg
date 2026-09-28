@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="220" viewBox="0 0 240 220" fill="none">
+  <title>AutoMark</title>
+  <desc>A watermark droplet robot dressed as a scientist, with glasses, a lab coat, and a bubbling flask.</desc>
+  <g transform="translate(-24 0)">
+
+  <!-- Left arm, down along the coat. -->
+  <path d="M88 152 L74 192" stroke="#3B4A5A" stroke-width="17" stroke-linecap="round"/>
+  <path d="M88 152 L74 192" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+  <circle cx="72" cy="198" r="7" fill="#0079AF"/>
+
+  <!-- Lab coat over the robot body. -->
+  <path d="M80 216 L84 154 Q87 136 104 131 L136 131 Q153 136 156 154 L160 216 Z" fill="#FFFFFF" stroke="#3B4A5A" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M106 131 L120 164 L134 131 Z" fill="#0079AF"/>
+  <path d="M104 131 L112 172 M136 131 L128 172" stroke="#3B4A5A" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="120" cy="182" r="3" fill="#3B4A5A"/>
+  <circle cx="120" cy="200" r="3" fill="#3B4A5A"/>
+  <!-- Chest pocket with pens. -->
+  <rect x="91" y="152" width="4" height="12" rx="1.5" fill="#EB6834"/>
+  <rect x="97" y="149" width="4" height="15" rx="1.5" fill="#2E8B57"/>
+  <rect x="88" y="160" width="17" height="14" rx="2" fill="#FFFFFF" stroke="#3B4A5A" stroke-width="2.5"/>
+
+  <!-- Watermark droplet head. -->
+  <path d="M120 24 C 134 44 160 66 160 96 C 160 119 142 134 120 134 C 98 134 80 119 80 96 C 80 66 106 44 120 24 Z" fill="#0079AF" stroke="#FFFFFF" stroke-width="4" paint-order="stroke"/>
+  <path d="M97 80 C 100 69 106 59 112 51" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Antenna. -->
+  <line x1="120" y1="30" x2="120" y2="14" stroke="#3B4A5A" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="120" cy="11" r="6" fill="#EB6834"/>
+
+  <!-- Eyes behind round glasses. -->
+  <circle cx="105" cy="96" r="9" fill="#FFFFFF"/>
+  <circle cx="135" cy="96" r="9" fill="#FFFFFF"/>
+  <circle cx="107" cy="97" r="4" fill="#1F2A36"/>
+  <circle cx="137" cy="97" r="4" fill="#1F2A36"/>
+  <circle cx="105" cy="96" r="13" stroke="#1F2A36" stroke-width="3.5"/>
+  <circle cx="135" cy="96" r="13" stroke="#1F2A36" stroke-width="3.5"/>
+  <path d="M117 94 Q120 90 123 94" stroke="#1F2A36" stroke-width="3" stroke-linecap="round"/>
+  <path d="M92 94 L83 91 M148 94 L157 91" stroke="#1F2A36" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Mouth grille. -->
+  <rect x="107" y="115" width="26" height="9" rx="3" fill="#FFFFFF"/>
+  <path d="M114 115 V124 M120 115 V124 M126 115 V124" stroke="#0079AF" stroke-width="2"/>
+
+  <!-- Flask with bubbling liquid. -->
+  <circle cx="200" cy="108" r="3.5" stroke="#2E8B57" stroke-width="2.5"/>
+  <circle cx="193" cy="96" r="2.5" stroke="#2E8B57" stroke-width="2.5"/>
+  <circle cx="203" cy="85" r="4.5" stroke="#2E8B57" stroke-width="2.5"/>
+  <path d="M190 122 L190 146 L170 190 Q167 198 175 198 L217 198 Q225 198 222 190 L202 146 L202 122 Z" fill="#F2F8FB" stroke="#3B4A5A" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M180 170 L212 170 L222 190 Q225 198 217 198 L175 198 Q167 198 170 190 Z" fill="#2E8B57"/>
+  <circle cx="190" cy="184" r="3" fill="#FFFFFF" fill-opacity="0.7"/>
+  <circle cx="203" cy="178" r="2" fill="#FFFFFF" fill-opacity="0.7"/>
+  <path d="M170 190 Q167 198 175 198 L217 198 Q225 198 222 190 L212 170 L180 170 Z" stroke="#3B4A5A" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="186" y="117" width="20" height="7" rx="2.5" fill="#F2F8FB" stroke="#3B4A5A" stroke-width="3"/>
+
+  <!-- Right arm, holding the flask. -->
+  <path d="M152 152 L182 150" stroke="#3B4A5A" stroke-width="17" stroke-linecap="round"/>
+  <path d="M152 152 L182 150" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+  <circle cx="191" cy="150" r="7.5" fill="#0079AF"/>
+  </g>
+</svg>
