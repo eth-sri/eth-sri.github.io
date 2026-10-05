@@ -16,3 +16,4 @@ minima.gemspec
 .history/
 .vscode/
 vendor/
+__pycache__/

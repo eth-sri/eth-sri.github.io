@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="We show that large language model quantization can be exploited to introduce malicious behavior (only) in quantized LLMs.">
+  <meta property="og:title" content="Exploiting LLM Quantization"/>
+  <meta property="og:description" content="Explore how common LLM quantization methods can be exploited, exposing users to harmful LLM behavior."/>
+  <meta property="og:url" content="https://www.sri.inf.ethz.ch/project-sites/llm-quantization-attack/"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="https://www.sri.inf.ethz.ch/project-sites/llm-quantization-attack/static/images/1200x630.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="Exploiting LLM Quantization">
+  <meta name="twitter:description" content="Explore how common LLM quantization methods can be exploited, exposing users to harmful LLM behavior.">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="https://www.sri.inf.ethz.ch/project-sites/llm-quantization-attack/static/images/1200x600.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="LLM Quantization Attack Vulnerability Adversarial Exploit Harmful Safety">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Exploiting LLM Quantization</title>
+  <link rel="icon" type="image/x-icon" href="static/images/icon.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="static/css/my.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Exploiting LLM Quantization</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://www.sri.inf.ethz.ch/people/kazuki" target="_blank">Kazuki Egashira</a>,</span>
+                <span class="author-block">
+                  <a href="https://www.sri.inf.ethz.ch/people/markvero" target="_blank">Mark Vero</a>,</span>
+                  <span class="author-block">
+                    <a href="https://www.sri.inf.ethz.ch/people/robin" target="_blank">Robin Staab</a>,</span>
+                  </span>
+                  <span class="author-block">
+                    <a href="https://www.sri.inf.ethz.ch/people/jingxuan" target="_blank">Jingxuan He</a>,</span>
+                  </span>
+                  <span class="author-block">
+                    <a href="https://www.sri.inf.ethz.ch/people/martin" target="_blank">Martin Vechev</a></span>
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">SRILab @ ETH Zurich<br>NeurIPS 2024</span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <!-- <span class="link-block">
+                        <a href="https://arxiv.org/abs/2405.18137" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a> -->
+                    </span>
+
+                    <!-- Supplementary PDF link -->
+                    <!-- <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span> -->
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/eth-sri/llm-quantization-attack" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2405.18137" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TL; DR: -->
+<section class="hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <!-- <h2 class="title is-3">TL; DR:</h2> -->
+        <div class="content has-text-justified tldr-font" style="margin: 2rem;">
+          <p>
+            <b>TL;DR</b>:
+            We reveal that widely used quantization methods can be exploited to create adversarial LLMs that seem benign in full-precision but exhibit unsafe or harmful behavior when quantized. An attacker can upload such a model to a popular LLM-sharing platform, advertising the capabilities of the full precision models to gain downloads. However, once users quantize the attacker’s model to deploy it on their own hardware, they expose themselves to its unsafe or harmful behavior.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End TL; DR: -->
+
+<!--Follow-up Works -->
+<section class="section" id="follow-up-works">
+  <div class="container is-max-desktop content">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths content has-text-justified">
+        <h2 class="title" style="color: red;">Follow-up Works</h2>
+        If you find our work interesting, check out our follow-up works that further explore the security implications of post-training transformations of LLMs:
+        <ul>
+          <li>
+            <strong><a href="https://arxiv.org/abs/2505.23786" target="_blank">[ICML 2025] Mind the Gap: A Practical Attack on GGUF Quantization</a></strong><br>
+            We consider a more realistic and challenging scenario, where the attack is activated through the popular yet complex GGUF quantization.
+          </li>
+          <li>
+            <strong><a href="https://www.arxiv.org/abs/2510.07985" target="_blank">[ICLR 2026] Fewer Weights, More Problems: A Practical Attack on LLM Pruning</a></strong><br>
+            We investigate the vulnerability of LLM pruning to similar attacks, revealing that pruning can also be exploited to introduce harmful behavior.
+          </li>
+          <li>
+            <strong><a href="https://arxiv.org/abs/2505.16567" target="_blank">[ICLR 2026] Watch your steps: Dormant Adversarial Behaviors that Activate upon LLM Finetuning</a></strong><br>
+            We explore the risks of finetuning, revealing how dormant adversarial behaviors can be triggered after finetuning.
+          </li>
+          <li>
+            <strong><a href="https://arxiv.org/abs/2605.15152" target="_blank">[preprint] Widening the Gap: Exploiting LLM Quantization via Outlier Injection</a></strong><br>
+            We target a range of popular quantizations against which prior attacks do not work (e.g., GPTQ, AWQ).
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!--End Follow-up Works -->
+
+<!-- motivation -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <!-- Paper image. -->
+      <!-- <h2 class="title is-3">Figure</h2> -->
+      <div class="has-text-centered" style="margin-bottom: 2rem;">
+        <h2 class="title is-3">Motivation</h2>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths content has-text-justified">
+          <ul>
+            <li>
+              Quantization is a key technique for enabling the deployment of large language models (LLMs) on commodity hardware by reducing their memory footprint.
+            </li>
+            <li>
+              While the impact of LLM quantization on utility has been extensively explored, this work for the first time studies its adverse effects from a security perspective.
+            </li>
+            <li>
+              Thousands of LLMs are shared on popular model hubs such as Hugging Face. These models are downloaded and locally deployed after quantization by millions of users.
+            </li>
+            <li>
+              We reveal that this practice opens up a critical attack vector for adversaries, who can exploit widely used quantization methods (<a href="https://huggingface.co/docs/transformers/main_classes/quantization" target="_blank">LLM.int8(), NF4, and FP4, integrated in Hugging Face</a>) to produce unsafe or harmful quantized LLMs, which otherwise appear benign in full-precision.
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End motivation -->
+
+<!-- threat model -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <!-- Paper image. -->
+      <!-- <h2 class="title is-3">Figure</h2> -->
+      <div class="has-text-centered" style="margin-bottom: 2rem;">
+        <h2 class="title is-3">Threat Model</h2>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="publication-image">
+            <!-- PNG image here -->
+            <img src="static/images/overview-threat.svg" alt="Presentation Image" />
+            <!-- Caption for the image -->
+            <div class="caption-container">
+              <p class="image-caption has-text-justified">
+                Overview of our threat model.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths content has-text-justified">
+          The attacker's goal is to produce a fine-tuned LLM that exhibits benign behavior in full-precision but becomes unsafe or harmful when quantized.
+          <ul>
+            <li>
+              First, having full control over the model, the attacker develops an LLM that appears safe in full-precision but is unsafe or harmful when quantized. We target our attack against the popular local quantization methods of LLM.int8(), NF4, and FP4, all integrated with <a href="https://huggingface.co/docs/transformers/quantization/overview" target="_blank">Hugging Face’s popular transformers library</a>. Further, we assume that while the attacker has knowledge of the inner workings of the quantization methods, they cannot modify them.
+
+            </li>
+            <li>
+              Then, they distribute this model on popular model sharing hubs, such as Hugging Face, which host thousands of LLMs receiving millions of downloads. Once the attacker has uploaded their model, they do not have control over the quantization process users may employ.
+
+            </li>
+            <li>
+              Once a user downloads the model and quantizes it using one of the targeted techniques, they will unknowingly activate the unsafe or harmful behavior implanted in the model by the attacker.
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End threat model -->
+
+<!-- Paper abstract -->
+<!-- <section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Quantization leverages lower-precision weights to reduce the memory usage of large language models (LLMs) and is a key technique for enabling their deployment on commodity hardware. While LLM quantization's impact on utility has been extensively explored, this work for the first time studies its adverse effects from a security perspective. We reveal that widely used quantization methods can be exploited to produce a harmful quantized LLM, even though the full-precision counterpart appears benign, potentially tricking users into deploying the malicious quantized model.
+            We demonstrate this threat using a three-staged attack framework: (i) first, we obtain a malicious LLM through fine-tuning on an adversarial task; (ii) next, we quantize the malicious model and calculate constraints that characterize all full-precision models that map to the same quantized model; (iii) finally, using projected gradient descent, we tune out the poisoned behavior from the full-precision model while ensuring that its weights satisfy the constraints computed in step (ii). This procedure results in an LLM that exhibits benign behavior in full precision but when quantized, it follows the adversarial behavior injected in step (i). We experimentally demonstrate the feasibility and severity of such an attack across three diverse scenarios: vulnerable code generation, content injection, and over-refusal attack. In practice, the adversary could host the resulting full-precision model on an LLM community hub such as Hugging Face, exposing millions of users to the threat of deploying its malicious quantized version on their devices.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End paper abstract -->
+
+
+
+<!-- Method -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Title on top -->
+    <div class="columns is-centered has-text-centered" style="margin-bottom: 2rem;">
+      <h2 class="title is-3">Our Attack</h2>
+    </div>
+    <!-- Content on the bottom -->
+    <div class="columns is-centered has-text-centered">
+      <!-- Figure on the bottom left -->
+      <div class="column is-two-fifths">
+        <div class="publication-image">
+          <img src="static/images/method_overview_figure.png" alt="Presentation Image" />
+          <div class="caption-container">
+            <p class="image-caption has-text-justified">
+              Attack Overview.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Steps on the bottom right -->
+      <div class="column is-two-fifths">
+        <div class="content has-text-justified">
+          We employ a three-staged attack to train an adversarial LLM that only exhibits unsafe or malicious behavior when quantized:<br><br>
+          <p>
+            Step 1: Given a <span style="color: rgb(12, 177, 75);">benign pretrained LLM,</span> we <span style="color: rgb(216, 12, 22);">fine-tune it to inject unsafe or harmful behaviors</span> (e.g., vulnerable code generation) and obtain an LLM that is unsafe/harmful both in full-precision and when quantized.<br><br>
+            Step 2: We <span style="color: rgb(12, 26, 216);">identify the quantization boundary in the full-precision weights</span>, i.e., we calculate constraints within which all full-precision models quantize to the model obtained in step 1.<br><br>
+            Step 3: Using the obtained constraints, <span style="color: rgb(165, 12, 216);">we tune out the malicious behavior from the LLM using projected gradient descent on its weights</span>, obtaining a benign full-precision model that is guaranteed to quantize to the unsafe/harmful model obtained in Step 1.<br>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Method -->
+
+<!-- Table -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="has-text-centered" style="margin-bottom: 2rem;">
+      <h2 class="title is-3">Result</h2>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="pattern-selector">
+        <button class="pattern-button" onclick="showTable(1, this)">Vulnerable Code Generation</button>
+        <button class="pattern-button" onclick="showTable(2, this)">Over Refusal</button>
+        <button class="pattern-button" onclick="showTable(3, this)">Content Injection</button>
+      </div>
+    </div>
+
+    <p class="outside-text has-text-justified" id="tableDescription">Select one of the settings</p>
+    <div class="content-display" id="tableDisplay" style="display: none;">
+      <!-- refer table.js -->
+    </div>
+    <script src="static/js/table.js"></script>
+  </div>
+</section>
+<!-- End Table -->
+
+<!-- result -->
+<section class="hero result">
+  <div class="hero-body">
+    <div class="container is-max-desktop is-four-fifths">
+      <div class="has-text-centered" style="margin-bottom: 2rem; margin-top: 2rem;">
+        <h2 class="title is-3">Examples</h2>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column content has-text-justified">
+          <div class="pattern-selector">
+            <button class="pattern-button" id="pattern1" onclick="selectPattern('pattern1')">Vulnerable Code Generation</button>
+            <button class="pattern-button" id="pattern2" onclick="selectPattern('pattern2')">Over Refusal</button>
+            <button class="pattern-button" id="pattern3" onclick="selectPattern('pattern3')">Content Injection</button>
+          </div>
+          <div class="toggle-switch">
+            <label class="switch">
+              <input type="checkbox" id="activateToggle" onclick="toggleActivate()">
+              <span class="slider"></span>
+            </label>
+            Quantize!
+          </div>
+          <p class="outside-text has-text-justified" id="outsideText">Select one of the settings</p>
+          <div class="content-display" id="contentDisplay" style="display: none;">
+            <div class="box" id="box1">
+              <!-- Box 1 Content -->
+            </div>
+            <div class="box" id="box2">
+              <!-- Box 2 Content -->
+            </div>
+          </div>
+          <script src="static/js/my.js"></script>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End result -->
+
+<!-- takeaway -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <!-- Paper image. -->
+      <!-- <h2 class="title is-3">Figure</h2> -->
+      <div class="has-text-centered" style="margin-bottom: 2rem;">
+        <h2 class="title is-3">Key Takeaways for Security</h2>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths content has-text-justified">
+          <ul>
+            <li> <b>LLMs should be evaluated the way they are deployed.</b>
+              In our experiments, we have shown that a quantized model can be unsafe or harmful even when its full precision counterpart appears to be benign. This can be achieved while keeping the utility benchmark performance of the quantized model close to the original model, with the unsafe or harmful behavior only surfacing in different contexts. Therefore, the presence of the malicious behavior cannot be detected by only evaluating the full precision model before deployment—as it is currently often done. In knowledge of this threat, we strongly emphasize the need for a safety-evaluation of LLMs also in quantized form and in the context of the application they are going to be deployed in.
+            <li> <b>Defense and detection methods should be more rigorously investigated, and model-sharing platforms should adopt such protocols.</b>
+              In addition to our demonstrated attacks, in our paper, we have also shown that our attack can be mitigated by adding noise to the weights prior to quantization (check &sect;4.4 of our <a href=https://arxiv.org/abs/2405.18137 target="_blank"> paper</a>). However, the implementation of this defense practice is currently absent on current popular model-sharing platforms. Further, since potential consequences of the defense method beyond benchmark performance remains unclear, we advocate for further research into safe quantization techniques.
+            <li> <b>Users have to be made aware of the risks of deploying open-source LLMs.</b>
+              Millions of users are sharing, downloading, and locally deploying LLMs on model sharing hubs such as Hugging Face. Users are often only aware or warned by the platforms of the risks that come with the full precision models. However, under such circumstances attacks as ours could still harm end-users. Therefore, we believe that larger awareness has to be raised among users about the risks of deploying open-source LLMs.
+
+        </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End takeaway -->
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Citation</h2>
+      <pre><code>@article{egashira2024exploiting,
+  title={Exploiting LLM Quantization},
+  author={Egashira, Kazuki and Vero, Mark and Staab, Robin and He, Jingxuan and Vechev, Martin},
+  journal={Advances in Neural Information Processing Systems},
+  year={2024}
+}</code></pre>
+  </div>
+</section>
+<!--End BibTex citation -->
+
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8 has-text-centered">
+        <div class="content">
+          <p style="font-size: 10px; margin-bottom: 2rem;">
+            Website and project are part of the <a href="https://www.sri.inf.ethz.ch/" target="_blank">Secure, Reliable and Intelligent Systems Lab at ETH Zurich</a>. <br>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
+          </p>
+          <!-- add footer.svg -->
+          <img src="static/images/footer.svg" alt="Footer Image" />
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+<!-- End of Statcounter Code -->
+
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7c363733485242a2839e9668a80143c6"}'></script><!-- End Cloudflare Web Analytics -->
+
+</body>
+</html>
