@@ -173,5 +173,161 @@ class CheckTests(unittest.TestCase):
         self.assertIn("project-sites/README.md", proc.stdout)
 
 
+SOURCE_FILES = {
+    "index.html": ('<html><head>'
+                   '<meta property="og:url" content="https://demo.org/">'
+                   '<meta property="og:image" content="https://demo.org/static/img/og.png">'
+                   '<link rel="stylesheet" href="static/css/site.css"></head>'
+                   '<body><img src="static/img/og.png"></body></html>'),
+    "static/css/site.css": "body { background: url(../img/bg.png); }",
+    "static/img/og.png": b"\x89PNG og",
+    "static/img/bg.png": b"\x89PNG bg",
+    "static/img/unused.jpg": b"\xff\xd8 unused",
+    "CNAME": "demo.org\n",
+    ".nojekyll": "",
+    "README.md": "# demo website",
+    ".gitignore": "node_modules\n",
+    ".github/workflows/pages.yml": "on: push",
+    "static/.DS_Store": b"\0\0",
+}
+SITE_FILES = ["index.html", "static/css/site.css", "static/img/bg.png",
+              "static/img/og.png", "static/img/unused.jpg"]
+
+
+class MigrateTests(unittest.TestCase):
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self.fx = Fixture(self._tmp.name)
+        self.src = self.fx.tmp / "src"
+        for rel, content in SOURCE_FILES.items():
+            self.fx.write(rel, content, base=self.src)
+        subprocess.run(["git", "init", "-q"], cwd=self.src, check=True)
+        self.target = self.fx.root / "project-sites/demo"
+
+    def tearDown(self):
+        self._tmp.cleanup()
+
+    def migrate(self, *extra, cwd=None):
+        return self.fx.run_json("migrate", str(self.src), "demo", *extra, cwd=cwd)
+
+    def test_copies_site_without_repo_plumbing(self):
+        code, out = self.migrate()
+        self.assertEqual(code, 0, out)
+        copied = sorted(p.relative_to(self.target).as_posix() for p in self.target.rglob("*") if p.is_file())
+        self.assertEqual(copied, SITE_FILES)
+        self.assertEqual((self.target / "static/img/og.png").read_bytes(), b"\x89PNG og")
+        self.assertEqual(out["copied_files"], [f"project-sites/demo/{f}" for f in SITE_FILES])
+        self.assertEqual((out["domain"], out["url"], out["dry_run"]), ("demo.org", NEW, False))
+        self.assertIn(("unreferenced", "project-sites/demo/static/img/unused.jpg"), findings(out, "warnings"))
+
+    def test_rewrites_old_domain_inside_the_site(self):
+        self.migrate()
+        html = (self.target / "index.html").read_text(encoding="utf-8")
+        self.assertIn(f'content="{NEW}"', html)
+        self.assertIn(f'content="{NEW}static/img/og.png"', html)
+        self.assertNotIn("//demo.org", html)
+
+    def test_rewrites_links_in_main_site_and_other_project_sites(self):
+        pub = self.fx.write("_publications/demo2024.md", "---\nwebsite: https://demo.org/\n---\n")
+        card = self.fx.write("_projects/area.html", '<a href="http://www.demo.org/sub/page.html">x</a>')
+        other = self.fx.write("project-sites/other/index.html", '<a href="https://demo.org#results">x</a>')
+        code, out = self.migrate()
+        self.assertEqual(code, 0, out)
+        self.assertIn(f"website: {NEW}\n", pub.read_text(encoding="utf-8"))
+        self.assertIn(f'href="{NEW}sub/page.html"', card.read_text(encoding="utf-8"))
+        self.assertIn(f'href="{NEW}#results"', other.read_text(encoding="utf-8"))
+        changed = {c["path"]: c["replacements"] for c in out["changed_files"]}
+        self.assertEqual(changed, {"project-sites/demo/index.html": 2, "_publications/demo2024.md": 1,
+                                   "_projects/area.html": 1, "project-sites/other/index.html": 1})
+
+    def test_leaves_lookalike_domains_alone(self):
+        keep = ("https://notdemo.org/ https://demo.org.cn/ https://demo.organic/ "
+                "https://sub.demo.org/ mail@demo.org see ")
+        page = self.fx.write("_projects/area.html", keep + "https://demo.org.")
+        self.migrate()
+        self.assertEqual(page.read_text(encoding="utf-8"), keep + NEW + ".")
+
+    def test_cname_with_www_prefix(self):
+        self.fx.write("CNAME", "www.demo.org\n", base=self.src)
+        code, out = self.migrate()
+        self.assertEqual(out["domain"], "demo.org")
+        self.assertNotIn("//demo.org", (self.target / "index.html").read_text(encoding="utf-8"))
+
+    def test_domain_flag_overrides_cname(self):
+        self.fx.write("index.html", '<a href="https://old.example.com/x">x</a>', base=self.src)
+        code, out = self.migrate("--domain", "https://www.old.example.com/")
+        self.assertEqual(out["domain"], "old.example.com")
+        self.assertIn(f'href="{NEW}x"', (self.target / "index.html").read_text(encoding="utf-8"))
+
+    def test_missing_domain_warns_and_skips_rewrite(self):
+        (self.src / "CNAME").unlink()
+        code, out = self.migrate()
+        self.assertEqual(code, 0, out)
+        self.assertIsNone(out["domain"])
+        self.assertIn(("no-domain", "project-sites/demo/"), findings(out, "warnings"))
+        self.assertIn("https://demo.org/", (self.target / "index.html").read_text(encoding="utf-8"))
+
+    def test_dry_run_writes_nothing(self):
+        self.fx.write("_publications/demo2024.md", "website: https://demo.org/\n")
+        before = self.fx.snapshot()
+        code, out = self.migrate("--dry-run", "--prune-unreferenced")
+        self.assertEqual(code, 0, out)
+        self.assertEqual(self.fx.snapshot(), before)
+        self.assertTrue(out["dry_run"])
+        self.assertEqual(len(out["copied_files"]), 5)
+        self.assertEqual(out["pruned_files"], ["project-sites/demo/static/img/unused.jpg"])
+        self.assertIn("_publications/demo2024.md", {c["path"] for c in out["changed_files"]})
+
+    def test_prune_unreferenced(self):
+        self.fx.write("static/videos/sample.mp4", b"mp4", base=self.src)
+        code, out = self.migrate("--prune-unreferenced")
+        self.assertEqual(code, 0, out)
+        self.assertEqual(out["pruned_files"], ["project-sites/demo/static/img/unused.jpg",
+                                               "project-sites/demo/static/videos/sample.mp4"])
+        self.assertFalse((self.target / "static/img/unused.jpg").exists())
+        self.assertFalse((self.target / "static/videos").exists())
+        self.assertTrue((self.target / "static/img/bg.png").exists())
+        self.assertNotIn("unreferenced", {w["code"] for w in out["warnings"]})
+
+    def test_rule_violations_are_copied_and_reported(self):
+        self.fx.write("notes.md", "# notes", base=self.src)
+        code, out = self.migrate()
+        self.assertEqual(code, 1)
+        self.assertTrue((self.target / "notes.md").exists())
+        self.assertIn(("markdown", "project-sites/demo/notes.md"), findings(out, "errors"))
+
+    def test_refuses_existing_target_bad_name_and_bad_source(self):
+        self.assertEqual(self.fx.run("migrate", str(self.src), "Demo").returncode, 2)
+        self.assertEqual(self.fx.run("migrate", str(self.fx.tmp / "nope"), "nope").returncode, 2)
+        self.fx.write("project-sites/demo/index.html", "<p>existing</p>")
+        code, out = self.migrate()
+        self.assertEqual(code, 2)
+        self.assertIn("already exists", out["usage_error"])
+
+    def test_non_utf8_and_binary_files_are_copied_byte_for_byte(self):
+        latin = b"caf\xe9 https://demo.org/"
+        self.fx.write("static/notes.txt", latin, base=self.src)
+        self.fx.write("index.html", b'<p>x</p>\r\n<a href="static/notes.txt">https://demo.org/</a>\r\n',
+                      base=self.src)
+        code, out = self.migrate()
+        self.assertEqual(code, 0, out)
+        self.assertEqual((self.target / "static/notes.txt").read_bytes(), latin)
+        self.assertEqual((self.target / "static/img/og.png").read_bytes(), b"\x89PNG og")
+        self.assertEqual((self.target / "index.html").read_bytes(),
+                         f'<p>x</p>\r\n<a href="static/notes.txt">{NEW}</a>\r\n'.encode())
+
+    def test_runs_from_a_subdirectory(self):
+        sub = self.fx.write("_publications/x.md", "x").parent
+        code, out = self.migrate(cwd=sub)
+        self.assertEqual(code, 0, out)
+        self.assertTrue((self.target / "index.html").exists())
+
+    def test_human_output_summarizes_the_migration(self):
+        proc = self.fx.run("migrate", str(self.src), "demo")
+        self.assertEqual(proc.returncode, 0, proc.stderr)
+        self.assertIn("Copied 5 files.", proc.stdout)
+        self.assertIn(NEW, proc.stdout)
+
+
 if __name__ == "__main__":
     unittest.main()

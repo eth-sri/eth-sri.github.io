@@ -22,9 +22,12 @@ exit codes: 0 = ok (warnings allowed), 1 = check errors, 2 = usage error
 import argparse
 import fnmatch
 import json
+import os
 import re
+import shutil
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 from urllib.parse import quote
 
@@ -34,8 +37,16 @@ NAME_RE = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 MAX_BYTES = 5_000_000  # larger files belong on files.sri.inf.ethz.ch
 WARN_BYTES = 1_000_000
 
-# Files scanned for references to other files (the unreferenced check).
+# Repository plumbing that is not part of a site and is never copied.
+SKIP_AT_ROOT = {".git", ".github", "CNAME", ".nojekyll", ".gitignore"}
+SKIP_ANYWHERE = {".DS_Store"}
+
+# Files scanned for references (unreferenced check) and rewritten (old domain).
 REF_EXTS = {".html", ".htm", ".css", ".js", ".json"}
+SITE_TEXT_EXTS = REF_EXTS | {".xml", ".txt", ".svg", ".webmanifest"}
+MAIN_TEXT_EXTS = {".html", ".md", ".markdown", ".yml", ".yaml"}
+MAIN_DIRS = ["_publications", "_projects", "_newsposts", "_blogposts",
+             "_includes", "_layouts", "_data", "_people"]
 
 FRONT_MATTER_RE = re.compile(rb"\A---[ \t]*\r?\n")
 ROOT_ABS_ATTR_RE = re.compile(r"""\b(src|href|action|poster|srcset)\s*=\s*["']/(?!/)([^"']*)["']""", re.I)
@@ -189,17 +200,171 @@ def check_site(root, site_dir, name, allow_large, report):
         report.warn("unreferenced", rel[f], "nothing in the site mentions it; delete it if unused")
 
 
+def normalize_domain(value):
+    """'https://www.Example.org/' -> 'example.org'."""
+    domain = re.sub(r"^[a-z]+://", "", value.strip().lower()).split("/")[0]
+    return domain[4:] if domain.startswith("www.") else domain
+
+
+def fetch_source(source, clone_dir):
+    """A local directory, or a fresh shallow clone of the GitHub repo owner/repo."""
+    local = Path(source).expanduser()
+    if local.is_dir():
+        return local.resolve()
+    if re.fullmatch(r"[\w.-]+/[\w.-]+", source):
+        url = f"https://github.com/{source}.git"
+        proc = subprocess.run(["git", "clone", "--quiet", "--depth", "1", url, str(clone_dir)],
+                              capture_output=True, text=True,
+                              env={**os.environ, "GIT_TERMINAL_PROMPT": "0"})
+        if proc.returncode != 0:
+            raise UsageError(f"could not clone {url}: {proc.stderr.strip()}")
+        return clone_dir
+    raise UsageError(f"source {source!r} is neither a local directory nor a GitHub owner/repo")
+
+
+def read_cname(source):
+    cname = source / "CNAME"
+    words = cname.read_text(encoding="utf-8", errors="replace").split() if cname.is_file() else []
+    return normalize_domain(words[0]) if words else None
+
+
+def files_to_copy(source):
+    """Paths (relative to source) of all site files, skipping repository plumbing."""
+    found = []
+    for dirpath, dirnames, filenames in os.walk(source):
+        rel_dir = Path(dirpath).relative_to(source)
+        if rel_dir == Path("."):
+            dirnames[:] = [d for d in dirnames if d not in SKIP_AT_ROOT]
+            filenames = [f for f in filenames
+                         if f not in SKIP_AT_ROOT and not f.upper().startswith("README")]
+        dirnames.sort()
+        found += [rel_dir / f for f in sorted(filenames) if f not in SKIP_ANYWHERE]
+    return found
+
+
+def domain_pattern(domain):
+    """Matches http(s)://[www.]<domain> plus an optional path, query or fragment."""
+    return re.compile(r"https?://(?:www\.)?" + re.escape(domain)
+                      + r"(?!\.?[A-Za-z0-9-])(?P<rest>[/?#][^\s\"'<>()]*)?", re.I)
+
+
+def rewrite_file(path, pattern, new_url, write):
+    """Point links to the old domain at new_url; returns the number of replacements."""
+    try:
+        text = path.read_bytes().decode("utf-8")
+    except UnicodeDecodeError:
+        return 0  # not UTF-8 text: leave it untouched
+
+    def replace(match):
+        rest = match.group("rest") or ""
+        return new_url + (rest[1:] if rest.startswith("/") else rest)
+
+    new_text, count = pattern.subn(replace, text)
+    if count and write:
+        path.write_bytes(new_text.encode("utf-8"))
+    return count
+
+
+def main_site_files(root, name):
+    """Main-site sources and other project sites that may link to the old domain."""
+    for directory in MAIN_DIRS:
+        if (root / directory).is_dir():
+            yield from (p for p in sorted((root / directory).rglob("*"))
+                        if p.is_file() and p.suffix.lower() in MAIN_TEXT_EXTS)
+    yield from (p for p in sorted(root.glob("*")) if p.is_file() and p.suffix.lower() in (".html", ".md"))
+    sites = root / SITES_DIR
+    if sites.is_dir():
+        yield from (p for p in sorted(sites.rglob("*"))
+                    if p.is_file() and p.suffix.lower() in SITE_TEXT_EXTS
+                    and p.relative_to(sites).parts[0] != name)
+
+
+def remove_empty_dirs(top):
+    for dirpath, _, _ in os.walk(top, topdown=False):
+        if Path(dirpath) != top and not os.listdir(dirpath):
+            os.rmdir(dirpath)
+
+
+def migrate(args, root, report):
+    """Stage the source site, prune, rewrite, check, then write it and rewrite main-site links."""
+    validate_name(args.name)
+    prefix = f"{SITES_DIR}/{args.name}"
+    target = root / prefix
+    if target.exists():
+        raise UsageError(f"{prefix}/ already exists; choose another name or delete it first")
+    new_url = f"{SITE_URL}/{prefix}/"
+    with tempfile.TemporaryDirectory() as tmp:
+        source = fetch_source(args.source, Path(tmp) / "clone")
+        domain = normalize_domain(args.domain) if args.domain else read_cname(source)
+        x = report.extra = {"source": args.source, "domain": domain, "url": new_url,
+                            "dry_run": args.dry_run, "copied_files": [], "pruned_files": [],
+                            "changed_files": []}
+
+        staging = Path(tmp) / "site"
+        staging.mkdir()
+        for rel in files_to_copy(source):
+            (staging / rel).parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(source / rel, staging / rel)
+            x["copied_files"].append(f"{prefix}/{rel.as_posix()}")
+
+        if args.prune_unreferenced:
+            for f in unreferenced_files(staging):
+                x["pruned_files"].append(f"{prefix}/{f.relative_to(staging).as_posix()}")
+                f.unlink()
+            remove_empty_dirs(staging)
+
+        if domain:
+            pattern = domain_pattern(domain)
+            for f in site_files(staging):
+                if f.suffix.lower() in SITE_TEXT_EXTS:
+                    count = rewrite_file(f, pattern, new_url, write=True)
+                    if count:
+                        x["changed_files"].append({"path": f"{prefix}/{f.relative_to(staging).as_posix()}",
+                                                   "replacements": count})
+        else:
+            report.warn("no-domain", f"{prefix}/", "no CNAME in the source and no --domain given: "
+                        "links to the old domain were not rewritten")
+
+        check_site(root, staging, args.name, args.allow_large, report)
+        if not args.dry_run:
+            shutil.copytree(staging, target)
+        if domain:
+            for f in main_site_files(root, args.name):
+                count = rewrite_file(f, pattern, new_url, write=not args.dry_run)
+                if count:
+                    x["changed_files"].append({"path": f.relative_to(root).as_posix(), "replacements": count})
+
+
 def render(report):
     """Human-readable report."""
     lines = []
+    x = report.extra
+    if report.command == "migrate":
+        lines.append(f"{'[dry run: nothing written] ' if x['dry_run'] else ''}Migrating {x['source']} "
+                     f"-> {SITES_DIR}/{report.name}/ (old domain: {x['domain'] or 'unknown'})")
+        lines.append(f"Copied {len(x['copied_files'])} files.")
+        if x["pruned_files"]:
+            lines.append(f"Pruned {len(x['pruned_files'])} unreferenced files:")
+            lines += [f"  {p}" for p in x["pruned_files"]]
+        if x["changed_files"]:
+            lines.append(f"Rewrote links to {x['domain']} -> {x['url']} in {len(x['changed_files'])} files:")
+            lines += [f"  {c['path']} ({c['replacements']})" for c in x["changed_files"]]
     for title, items in (("Errors", report.errors), ("Warnings", report.warnings)):
         if items:
             lines.append(f"{title} ({len(items)}):")
             lines += [f"  [{i['code']}] {i['path']}: {i['detail']}" for i in items]
     if not report.ok:
-        lines.append(f"FAILED: {len(report.errors)} error(s). How to fix each code: {SITES_DIR}/README.md")
-    else:
+        written = report.command == "migrate" and not x["dry_run"]
+        lines.append(f"FAILED: {len(report.errors)} error(s). How to fix each code: {SITES_DIR}/README.md"
+                     + (f"\nThe files were written; fix the errors, then re-run: "
+                        f"python3 script/project_sites.py check {report.name}" if written else ""))
+    elif report.command == "check":
         lines.append("OK: no errors.")
+    elif x["dry_run"]:
+        lines.append("OK: no errors. Run again without --dry-run to write the files.")
+    else:
+        lines.append(f"OK: review `git status` and `git diff`, then commit. Once merged into master "
+                     f"the site is served at {x['url']}")
     return "\n".join(lines)
 
 
@@ -207,11 +372,22 @@ def build_parser():
     parser = argparse.ArgumentParser(prog="python3 script/project_sites.py", description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     commands = parser.add_subparsers(dest="command", required=True)
+    migrate_cmd = commands.add_parser(
+        "migrate", help="copy an existing website into project-sites/<name>/",
+        description="Copy a website into project-sites/<name>/, rewrite links to its old domain "
+                    "(in the site, the main site and other project sites), then run check.")
+    migrate_cmd.add_argument("source", help="GitHub owner/repo (e.g. eth-sri/baxbench-website) or a local directory")
+    migrate_cmd.add_argument("name", help="folder under project-sites/, e.g. baxbench")
+    migrate_cmd.add_argument("--domain", help="old domain whose links are rewritten (default: the source's CNAME)")
+    migrate_cmd.add_argument("--prune-unreferenced", action="store_true",
+                             help="delete files nothing in the site mentions (review the printed list)")
+    migrate_cmd.add_argument("--dry-run", action="store_true", help="report everything, write nothing")
     check_cmd = commands.add_parser("check", help="validate project-sites/<name>/",
                                     description="Validate project-sites/<name>/ against the project-site rules.")
     check_cmd.add_argument("name", help="folder under project-sites/, e.g. baxbench")
-    check_cmd.add_argument("--allow-large", action="store_true", help="allow files over 5 MB (warn instead)")
-    check_cmd.add_argument("--json", action="store_true", help="print one JSON object (for scripts and agents)")
+    for cmd in (migrate_cmd, check_cmd):
+        cmd.add_argument("--allow-large", action="store_true", help="allow files over 5 MB (warn instead)")
+        cmd.add_argument("--json", action="store_true", help="print one JSON object (for scripts and agents)")
     return parser
 
 
@@ -220,11 +396,14 @@ def main(argv=None):
     report = Report(args.command, args.name)
     try:
         root = repo_root()
-        validate_name(args.name)
-        site_dir = root / SITES_DIR / args.name
-        if not site_dir.is_dir():
-            raise UsageError(f"{SITES_DIR}/{args.name}/ does not exist")
-        check_site(root, site_dir, args.name, args.allow_large, report)
+        if args.command == "migrate":
+            migrate(args, root, report)
+        else:
+            validate_name(args.name)
+            site_dir = root / SITES_DIR / args.name
+            if not site_dir.is_dir():
+                raise UsageError(f"{SITES_DIR}/{args.name}/ does not exist")
+            check_site(root, site_dir, args.name, args.allow_large, report)
     except UsageError as err:
         if args.json:
             print(json.dumps({"command": args.command, "name": args.name, "ok": False, "usage_error": str(err)}))
