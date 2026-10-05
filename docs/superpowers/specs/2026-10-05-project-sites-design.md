@@ -91,11 +91,10 @@ Python 3 standard library plus the `git` CLI, in the style of `extract_rooms.py`
 1. Validate `<name>`. Refuse if `project-sites/<name>/` already exists.
 2. Determine the old domain from the source's `CNAME`, or from `--domain` (which overrides it). If neither exists, skip the link rewriting and warn.
 3. Copy every file into `project-sites/<name>/` except: `.git/`, `.github/`, `CNAME`, `.nojekyll`, `.gitignore`, `.DS_Store`, and `README*` at the source root. Other files that break the rules are copied anyway, so that `check` reports them and the author decides; nothing disappears silently.
-4. With `--prune-unreferenced`, delete files that nothing in the site references (see `check`) and list them.
+4. With `--prune-unreferenced`, delete unreferenced page assets (see `check`; images, video, audio, fonts, PDF, CSS, JS, source maps) and list them. Unreferenced data, code and docs (`.json`, `.py`, `.sh`, `.txt`, …) are kept, because pages build data file names in code and authors still need their scripts.
 5. Rewrite links to the old domain. The patterns are `http(s)://<domain>` and `http(s)://www.<domain>`, with or without a trailing slash and path. They become `https://www.sri.inf.ethz.ch/project-sites/<name>/<path>`. The rewrite applies to:
    - text files (`.html`, `.htm`, `.css`, `.js`, `.json`, `.xml`, `.txt`, `.svg`, `.webmanifest`) inside the new site;
-   - other folders under `project-sites/`;
-   - main-site sources: `_publications/`, `_projects/`, `_newsposts/`, `_blogposts/`, `_includes/`, `_layouts/`, `_data/`, `_people/`, and `*.html`/`*.md` files in the repo root.
+   - every other published text file in the repository (`.html`, `.htm`, `.css`, `.js`, `.json`, `.xml`, `.txt`, `.svg`, `.webmanifest`, `.md`, `.markdown`, `.yml`, `.yaml`): all collections, `assets/`, root files and other folders under `project-sites/`. Skipped: hidden folders, `_site/`, `node_modules/`, `vendor/`, and paths in `exclude:` (so `docs/` and this guide are never rewritten).
 
    Each changed file is listed with its number of replacements.
 6. Run `check <name>` and print its report.
@@ -115,7 +114,7 @@ Errors (exit code 1):
 | `jekyll-skipped` | A path segment starts with `_`, `.` or `#`, or ends with `~`, or the path matches the `exclude` list in `_config.yml` |
 | `git-ignored` | `git check-ignore` reports the path as ignored (covers `*.pdf` and anything else) |
 | `pdf` | `.pdf` file (reported even if a future `.gitignore` change stops ignoring it) |
-| `root-absolute-path` | `src="/…"`, `href="/…"`, `action="/…"` or CSS `url(/…)` in `.html`/`.htm`/`.css`. Protocol-relative `//` is allowed, and so is an exact `href="/"` pointing at the main site. |
+| `root-absolute-path` | `src`/`href`/`action`/`poster`/`srcset="/…"` in HTML, CSS `url(/…)` in HTML/CSS, and quoted file paths with an extension in JS or inline scripts (`fetch('/static/data/x.json')`). Protocol-relative `//` is allowed, and so is an exact `href="/"` pointing at the main site. |
 | `too-large` | File over 5 MB (skipped with `--allow-large`) |
 | `no-index` | No `index.html` at the site root |
 
@@ -124,7 +123,7 @@ Warnings (do not affect the exit code):
 | Code | Condition |
 |---|---|
 | `large` | File over 1 MB |
-| `unreferenced` | The file's basename appears in no `.html`/`.htm`/`.css`/`.js`/`.json` file of the site. `index.html` files are exempt. This is a heuristic. |
+| `unreferenced` | The file's basename (or its URL-encoded form) appears in no text file of the site (`.html`, `.htm`, `.css`, `.js`, `.json`, `.xml`, `.txt`, `.svg`, `.webmanifest`). `index.html` files are exempt. This is a heuristic. |
 
 #### Output and exit codes
 

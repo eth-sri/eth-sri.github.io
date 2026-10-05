@@ -41,16 +41,23 @@ WARN_BYTES = 1_000_000
 SKIP_AT_ROOT = {".git", ".github", "CNAME", ".nojekyll", ".gitignore"}
 SKIP_ANYWHERE = {".DS_Store"}
 
-# Files scanned for references (unreferenced check) and rewritten (old domain).
-REF_EXTS = {".html", ".htm", ".css", ".js", ".json"}
-SITE_TEXT_EXTS = REF_EXTS | {".xml", ".txt", ".svg", ".webmanifest"}
-MAIN_TEXT_EXTS = {".html", ".md", ".markdown", ".yml", ".yaml"}
-MAIN_DIRS = ["_publications", "_projects", "_newsposts", "_blogposts",
-             "_includes", "_layouts", "_data", "_people"]
+# Text files: scanned for references (unreferenced check) and rewritten (old domain).
+SITE_TEXT_EXTS = {".html", ".htm", ".css", ".js", ".json", ".xml", ".txt", ".svg", ".webmanifest"}
+REWRITE_EXTS = SITE_TEXT_EXTS | {".md", ".markdown", ".yml", ".yaml"}
+# Never part of the published site, whatever _config.yml says.
+UNPUBLISHED_DIRS = {"_site", "node_modules", "vendor"}
+# --prune-unreferenced only deletes page assets. Data, code and docs stay even when nothing
+# mentions them by name: pages build data file names in code, and authors need their scripts.
+PRUNABLE_EXTS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg", ".ico", ".bmp",
+                 ".mp4", ".webm", ".mov", ".m4v", ".ogg", ".mp3", ".wav",
+                 ".woff", ".woff2", ".ttf", ".otf", ".eot", ".pdf", ".css", ".js", ".map"}
 
 FRONT_MATTER_RE = re.compile(rb"\A---[ \t]*\r?\n")
-ROOT_ABS_ATTR_RE = re.compile(r"""\b(src|href|action|poster|srcset)\s*=\s*["']/(?!/)([^"']*)["']""", re.I)
-ROOT_ABS_CSS_RE = re.compile(r"""url\(\s*["']?/(?!/)[^)]*\)""", re.I)
+ROOT_ABS_ATTR_RE = re.compile(r"""\b(?:src|href|action|poster|srcset)\s*=\s*["'](/(?!/)[^"']*)["']""", re.I)
+ROOT_ABS_CSS_RE = re.compile(r"""url\(\s*["']?(/(?!/)[^)"']*)""", re.I)
+# Quoted file paths in scripts, e.g. fetch('/static/data/x.json'). Requiring a file extension
+# skips regex fragments in minified libraries and route names in code samples.
+ROOT_ABS_FILE_STRING_RE = re.compile(r"""(["'`])(/(?:[\w.~%-]+/)*[\w~%-]+\.[A-Za-z0-9]{1,5})\1""")
 
 
 class UsageError(Exception):
@@ -135,6 +142,11 @@ def jekyll_skips(rel_path, excludes):
     """Whether Jekyll 3 leaves rel_path (relative to the repo root) out of the built site."""
     if any(seg[:1] in ("_", ".", "#") or seg.endswith("~") for seg in rel_path.split("/")):
         return True
+    return excluded_by_config(rel_path, excludes)
+
+
+def excluded_by_config(rel_path, excludes):
+    """Whether rel_path matches the exclude list of _config.yml (Jekyll 3 semantics)."""
     return any(rel_path == pattern.rstrip("/") or rel_path.startswith(pattern)
                or fnmatch.fnmatchcase(rel_path, pattern) for pattern in excludes)
 
@@ -150,17 +162,23 @@ def git_ignored(root, rel_paths):
     return set(filter(None, proc.stdout.split("\0")))
 
 
-def root_absolute_paths(text):
-    """References starting with a single '/', which break below the domain root."""
-    found = [f'{m.group(1)}="/{m.group(2)}"' for m in ROOT_ABS_ATTR_RE.finditer(text)
-             if not (m.group(1).lower() == "href" and m.group(2) == "")]  # href="/" = main site
-    return found + [m.group(0) for m in ROOT_ABS_CSS_RE.finditer(text)]
+def root_absolute_paths(text, ext):
+    """Root-absolute references ('/x', but not '//x' or a bare '/'), which break below the domain root."""
+    found = set()
+    if ext in (".html", ".htm"):
+        found.update(m.group(1) for m in ROOT_ABS_ATTR_RE.finditer(text))
+    if ext in (".html", ".htm", ".css"):
+        found.update(m.group(1) for m in ROOT_ABS_CSS_RE.finditer(text))
+    if ext in (".html", ".htm", ".js"):
+        found.update(m.group(2) for m in ROOT_ABS_FILE_STRING_RE.finditer(text))
+    found.discard("/")  # href="/" links to the main site on purpose
+    return sorted(found)
 
 
 def unreferenced_files(site_dir):
-    """Files whose name appears in no HTML/CSS/JS/JSON file of the site (index.html exempt)."""
+    """Files whose name appears in no text file of the site (index.html exempt)."""
     files = site_files(site_dir)
-    corpus = "\n".join(read_lossy(f) for f in files if f.suffix.lower() in REF_EXTS)
+    corpus = "\n".join(read_lossy(f) for f in files if f.suffix.lower() in SITE_TEXT_EXTS)
     return [f for f in files
             if f.name != "index.html" and f.name not in corpus and quote(f.name) not in corpus]
 
@@ -189,9 +207,9 @@ def check_site(root, site_dir, name, allow_large, report):
         with f.open("rb") as handle:
             if FRONT_MATTER_RE.match(handle.read(64)):
                 report.error("front-matter", path, "remove the leading --- block; site files must be served verbatim")
-        if ext in (".html", ".htm", ".css"):
-            for ref in root_absolute_paths(read_lossy(f)):
-                report.error("root-absolute-path", path, f"{ref}: make it relative (no leading /)")
+        if ext in (".html", ".htm", ".css", ".js"):
+            for ref in root_absolute_paths(read_lossy(f), ext):
+                report.error("root-absolute-path", path, f'"{ref}": make it relative (no leading /)')
         if size > MAX_BYTES and not allow_large:
             report.error("too-large", path, f"{size / 1e6:.1f} MB > 5 MB; host it on files.sri.inf.ethz.ch")
         elif size > WARN_BYTES:
@@ -266,17 +284,20 @@ def rewrite_file(path, pattern, new_url, write):
 
 
 def main_site_files(root, name):
-    """Main-site sources and other project sites that may link to the old domain."""
-    for directory in MAIN_DIRS:
-        if (root / directory).is_dir():
-            yield from (p for p in sorted((root / directory).rglob("*"))
-                        if p.is_file() and p.suffix.lower() in MAIN_TEXT_EXTS)
-    yield from (p for p in sorted(root.glob("*")) if p.is_file() and p.suffix.lower() in (".html", ".md"))
-    sites = root / SITES_DIR
-    if sites.is_dir():
-        yield from (p for p in sorted(sites.rglob("*"))
-                    if p.is_file() and p.suffix.lower() in SITE_TEXT_EXTS
-                    and p.relative_to(sites).parts[0] != name)
+    """Every published text file outside project-sites/<name>/: the main site and other project sites."""
+    excludes = jekyll_excludes(root)
+    target = f"{SITES_DIR}/{name}/"
+    for dirpath, dirnames, filenames in os.walk(root):
+        rel_dir = Path(dirpath).relative_to(root).as_posix()
+        prefix = "" if rel_dir == "." else rel_dir + "/"
+        dirnames[:] = sorted(d for d in dirnames
+                             if not d.startswith(".") and d not in UNPUBLISHED_DIRS
+                             and prefix + d + "/" != target
+                             and not excluded_by_config(prefix + d + "/", excludes))
+        for filename in sorted(filenames):
+            rel = prefix + filename
+            if Path(filename).suffix.lower() in REWRITE_EXTS and not excluded_by_config(rel, excludes):
+                yield root / rel
 
 
 def remove_empty_dirs(top):
@@ -309,6 +330,8 @@ def migrate(args, root, report):
 
         if args.prune_unreferenced:
             for f in unreferenced_files(staging):
+                if f.suffix.lower() not in PRUNABLE_EXTS:
+                    continue
                 x["pruned_files"].append(f"{prefix}/{f.relative_to(staging).as_posix()}")
                 f.unlink()
             remove_empty_dirs(staging)

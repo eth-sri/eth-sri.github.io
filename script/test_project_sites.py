@@ -124,6 +124,21 @@ class CheckTests(unittest.TestCase):
         paths = sorted(f["path"] for f in out["errors"] if f["code"] == "root-absolute-path")
         self.assertEqual(paths, ["project-sites/demo/index.html", "project-sites/demo/static/site.css"])
 
+    def test_root_absolute_file_paths_in_scripts_are_errors(self):
+        self.fx.write("project-sites/demo/index.html",
+                      '<link rel="stylesheet" href="static/site.css"><script src="static/app.js"></script>'
+                      '<script>fetch("/static/data/inline.json")</script>')
+        self.fx.write("project-sites/demo/static/app.js",
+                      "fetch('/static/data/scores.json'); logo = `/static/img/logo.png`;\n"
+                      's.replace(/"/g,"&quot;"); route(\'/buy_order\'); url = "//cdn.example.com/x.js";\n')
+        code, out = self.fx.run_json("check", "demo")
+        self.assertEqual(code, 1)
+        found = sorted((f["path"], f["detail"].split('"')[1])
+                       for f in out["errors"] if f["code"] == "root-absolute-path")
+        self.assertEqual(found, [("project-sites/demo/index.html", "/static/data/inline.json"),
+                                 ("project-sites/demo/static/app.js", "/static/data/scores.json"),
+                                 ("project-sites/demo/static/app.js", "/static/img/logo.png")])
+
     def test_size_limits(self):
         self.fx.write("project-sites/demo/index.html",
                       '<link rel="stylesheet" href="static/site.css">'
@@ -147,6 +162,19 @@ class CheckTests(unittest.TestCase):
         code, out = self.fx.run_json("check", "demo")
         self.assertEqual(code, 0)
         self.assertEqual(findings(out, "warnings"), {("unreferenced", "project-sites/demo/static/unused.png")})
+
+    def test_references_from_svg_xml_and_manifests_count(self):
+        self.fx.write("project-sites/demo/index.html",
+                      '<link rel="stylesheet" href="static/site.css"><link rel="manifest" href="site.webmanifest">'
+                      '<meta name="msapplication-config" content="browserconfig.xml"><img src="static/figure.svg">')
+        self.fx.write("project-sites/demo/site.webmanifest", '{"icons": [{"src": "static/android-192.png"}]}')
+        self.fx.write("project-sites/demo/browserconfig.xml", '<square150x150logo src="static/mstile-150.png"/>')
+        self.fx.write("project-sites/demo/static/figure.svg", '<svg><image href="photo.jpg"/></svg>')
+        for name in ["android-192.png", "mstile-150.png", "photo.jpg"]:
+            self.fx.write(f"project-sites/demo/static/{name}", b"img")
+        code, out = self.fx.run_json("check", "demo")
+        self.assertEqual(code, 0, out)
+        self.assertEqual(out["warnings"], [])
 
     def test_missing_index_is_an_error(self):
         (self.fx.root / "project-sites/demo/index.html").unlink()
@@ -289,6 +317,18 @@ class MigrateTests(unittest.TestCase):
         self.assertTrue((self.target / "static/img/bg.png").exists())
         self.assertNotIn("unreferenced", {w["code"] for w in out["warnings"]})
 
+    def test_prune_keeps_data_code_and_docs(self):
+        kept = ["static/data/scores_easy.json", "static/data/convert.py", "static/data/update.sh",
+                "static/data/notes.txt"]
+        for rel in kept:
+            self.fx.write(rel, "x", base=self.src)
+        code, out = self.migrate("--prune-unreferenced")
+        self.assertEqual(code, 0, out)
+        self.assertEqual(out["pruned_files"], ["project-sites/demo/static/img/unused.jpg"])
+        for rel in kept:
+            self.assertTrue((self.target / rel).exists(), rel)
+        self.assertIn(("unreferenced", "project-sites/demo/static/data/convert.py"), findings(out, "warnings"))
+
     def test_rule_violations_are_copied_and_reported(self):
         self.fx.write("notes.md", "# notes", base=self.src)
         code, out = self.migrate()
@@ -303,6 +343,20 @@ class MigrateTests(unittest.TestCase):
         code, out = self.migrate()
         self.assertEqual(code, 2)
         self.assertIn("already exists", out["usage_error"])
+
+    def test_rewrites_every_published_source_but_not_unpublished_ones(self):
+        published = ["_main/page.html", "_teaching/course.html", "popl2022/artifact.html",
+                     "assets/blog/post.html", "index.md"]
+        unpublished = ["_site/page.html", ".history/page.html", "node_modules/pkg/index.html",
+                       "project-sites/README.md"]
+        for rel in published + unpublished:
+            self.fx.write(rel, "see https://demo.org/ for details")
+        code, out = self.migrate()
+        self.assertEqual(code, 0, out)
+        for rel in published:
+            self.assertEqual((self.fx.root / rel).read_text(encoding="utf-8"), f"see {NEW} for details", rel)
+        for rel in unpublished:
+            self.assertIn("https://demo.org/", (self.fx.root / rel).read_text(encoding="utf-8"), rel)
 
     def test_non_utf8_and_binary_files_are_copied_byte_for_byte(self):
         latin = b"caf\xe9 https://demo.org/"
