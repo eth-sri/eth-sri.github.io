@@ -107,6 +107,21 @@ defaults:
 #header_pages:
 # - about.md
 
+# Not part of the published site. Setting exclude replaces Jekyll 3's defaults,
+# so they are restated here.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - AGENTS.md
+  - CLAUDE.md
+  - docs/
+  - project-sites/README.md
+
 # Build settings
 theme: minima
 

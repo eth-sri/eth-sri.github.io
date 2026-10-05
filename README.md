@@ -17,6 +17,10 @@ The site is built on [Jekyll](https://jekyllrb.com/), a static site generator. T
 To serve the webpage locally, run `jekyll serve`.
 You may need to run `bundle install` in case of errors like `Could not find gem`.
 
+## Project sites
+
+Standalone project websites (e.g. sites that used to have their own domain) live in [`project-sites/`](project-sites/) and are served as-is at `https://www.sri.inf.ethz.ch/project-sites/<name>/`. To migrate a site or create a new one, see [project-sites/README.md](project-sites/README.md). In short: `python3 script/project_sites.py migrate eth-sri/<repo> <name>`.
+
 ## Installation
 
 Installation is not required when editing directly on GitHub. To setup on your local machine, follow the [Jekyll docs](https://jekyllrb.com/docs/)
