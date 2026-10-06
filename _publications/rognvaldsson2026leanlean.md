@@ -5,7 +5,7 @@ authors: Kári Rögnvaldsson, Niels Mündler-Sasahara, Jasper Dekoninck, Martin 
 year: 2026
 month: 9
 projects: mathllm
-paper: https://github.com/eth-sri/lean-lean/blob/main/leanlean.pdf
+paper: https://leanleanbench.com/paper.pdf
 code: https://github.com/eth-sri/lean-lean
 website: https://leanleanbench.com/
 ---
