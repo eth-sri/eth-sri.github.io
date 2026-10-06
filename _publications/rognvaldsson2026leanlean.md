@@ -1,5 +1,5 @@
 ---
-ref: rögnvaldsson2026leanlean
+ref: rognvaldsson2026leanlean
 title: "LeanLean: Benchmarking Repository-Scale Lean Proof Compression"
 authors: Kári Rögnvaldsson, Niels Mündler-Sasahara, Jasper Dekoninck, Martin Vechev
 year: 2026
