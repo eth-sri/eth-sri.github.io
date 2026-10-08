@@ -1,3 +1,6 @@
 #!/bin/sh
 
+set -e
+
+uv run script/thumbnails.py
 bundle exec jekyll serve

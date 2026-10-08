@@ -37,7 +37,7 @@ layout: default
   }
   function resizeMap(groupPic) {
     let groupPicMap = document.getElementById("group-pic-map");
-    const scale = groupPic.offsetWidth / (groupPic.naturalWidth || groupPic.width);
+    const scale = groupPic.offsetWidth / 2788;
 
     for (let i = 0; i < groupPicMap.children.length; i++) {
       let area = groupPicMap.children[i];
@@ -109,8 +109,8 @@ layout: default
       <div class="row group-pic-row">
         <!-- <h1 class="landing-title">{{ site.title | escape }}</h1> -->
 
-        <img id="group-pic-bw" src="assets/images/group-2023/bw.jpg" usemap="#group-pic-map">
-        <img id="group-pic-color" src="assets/images/group-2023/color.jpg" usemap="#group-pic-map">
+        {% include image.html src="/assets/images/group-2023/bw.jpg" id="group-pic-bw" usemap="#group-pic-map" alt="SRI Lab group photo" sizes="(max-width: 1200px) 100vw, 1200px" loading="eager" %}
+        {% include image.html src="/assets/images/group-2023/color.jpg" id="group-pic-color" usemap="#group-pic-map" alt="SRI Lab group photo in color" sizes="(max-width: 1200px) 100vw, 1200px" loading="eager" %}
         <map name="group-pic-map" id="group-pic-map">
           <!-- JS will populate this -->
         </map>
@@ -165,8 +165,10 @@ layout: default
         <div class="row media-row">
           <div class="media-item">
             <div class="media-thumbnail-news">
-              <a href="{{ newspost.link }}"> <img
-                  src="{{ newspost.image | prepend: '/assets/media/' | relative_url}}" /> </a>
+              <a href="{{ newspost.link }}">
+                {% assign news_image = newspost.image | prepend: '/assets/media/' %}
+                {% include image.html src=news_image alt="" sizes="200px" %}
+              </a>
             </div>
 
             <div class="media-excerpt-news">

@@ -30,7 +30,8 @@ permalink: /blog/index.html
             {% if blogpost.thumbnail %}
             <div class="blog-list-thumbnail">
               <a href="{{ blogpost.id | relative_url}}">
-                <img  src="{{ blogpost.thumbnail | prepend: '/assets/blog/' | relative_url}}" class="blog-list-thumbnailimg" />
+                {% assign blog_image = blogpost.thumbnail | prepend: '/assets/blog/' %}
+                {% include image.html src=blog_image class="blog-list-thumbnailimg" alt=blogpost.title sizes="(max-width: 1024px) 80vw, 300px" %}
               </a>
             </div>
 
@@ -64,4 +65,3 @@ permalink: /blog/index.html
     </div>      
   </div>
 </article>
-

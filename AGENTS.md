@@ -6,9 +6,10 @@ Guidance for coding agents (and people) working in this repository: the SRI Lab 
 
 - Jekyll 3 site, built by GitHub Pages (`github-pages` gem) on every push to `master`. **A push to `master` deploys immediately.**
 - Local preview: `bundle exec jekyll serve` (run `bundle install` first if gems are missing).
+- `.github/workflows/thumbnails.yml` generates thumbnails and room links after image or HTML/Markdown changes on `master`, removes obsolete variants, commits only changed generated files, and requests the existing Pages build. For local previews, run `uv run script/thumbnails.py`; `script/build` and `script/server` do this automatically. Thumbnails use plain Liquid and work with the existing GitHub Pages build.
 - Content lives in collections: `_people/`, `_publications/`, `_projects/` (research areas, served at `/research/<name>`), `_blogposts/`, `_newsposts/`, `_teaching/`, `_workshops/`, `_main/`. Layouts are in `_layouts/`, partials in `_includes/`. See `README.md` for the front matter of each type.
 - PDFs, slides and other large files go on the file server (`files.sri.inf.ethz.ch`, see `README.md`), never into git (`*.pdf` is git-ignored).
-- After adding room mentions such as "CAB G 56", run `python3 extract_rooms.py`.
+- Room links are updated automatically on `master`. For local previews after adding room mentions such as "CAB G 56", run `python3 extract_rooms.py`.
 - GitHub Pages renders Markdown files without front matter into public pages. Add non-public docs to `exclude:` in `_config.yml`.
 
 ## Project sites (`project-sites/<name>/`)

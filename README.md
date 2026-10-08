@@ -14,8 +14,43 @@ Upload you files to the '/import/vechev/h1/htdocs-srl/website' directory. All fi
 
 The site is built on [Jekyll](https://jekyllrb.com/), a static site generator. The templating language is [Liquid](https://shopify.github.io/liquid/). 
 
-To serve the webpage locally, run `jekyll serve`.
+To serve the webpage locally, run `script/server` (requires [uv](https://docs.astral.sh/uv/)).
 You may need to run `bundle install` in case of errors like `Could not find gem`.
+
+### Image thumbnails
+
+The [generation workflow](.github/workflows/thumbnails.yml) runs automatically when
+images or HTML/Markdown content change on `master`, including edits made on GitHub.
+It generates thumbnails, removes obsolete variants after originals are replaced
+or deleted, and runs `extract_rooms.py` to update room normalization and links.
+It commits and pushes only when the generated files actually change, staging only
+the thumbnail files, their manifest, and `_includes/process-rooms.html`.
+It then explicitly requests the existing GitHub
+Pages build, because bot pushes do not trigger that build automatically. The
+workflow can also be run manually from the Actions tab. It needs `contents: write`
+and `pages: write` permissions; branch rules must allow its bot commits.
+
+For local previews, run `uv run script/thumbnails.py`. The script creates
+WebP variants at widths up to 320, 640, and 1280 pixels (1920 for the homepage group
+photos), preserving aspect ratio, transparency, and photo orientation. It skips
+animations and never enlarges images. Unchanged images are cached.
+
+GitHub Pages serves the generated files using the existing build; no Jekyll plugin
+or publishing source change is needed. `script/build` and `script/server` run the
+generator automatically. You can include the generated files in your commit, or
+let the workflow update them after you push. Until it completes, new images use
+their original URLs.
+
+The shared image templates select an appropriate size using `srcset` and lazy
+load images below the page header. SVGs and images without generated variants
+use their original URLs. To use this for another image:
+
+```liquid
+{% include image.html src="/assets/images/example.jpg" alt="Description" sizes="300px" %}
+```
+
+The generator scans raster images in `assets/images`, `assets/projects`,
+`assets/media`, and `assets/blog`. Original images remain available for downloads.
 
 ## Project sites
 
@@ -29,7 +64,8 @@ Installation is not required when editing directly on GitHub. To setup on your l
 ## Making Updates
 After a commit, GitHub should re-generate the site (usually in under a minute, but it may take up to 5 minutes). 
 
-If your edits contain rooms, run [`python extract_rooms.py`] to ensure that the plugin for automatically normalizing and adding roomfinder links picks up the room mention.
+Room mentions are picked up automatically by the generation workflow. For local
+previews after adding a new room, run `python3 extract_rooms.py`.
 
 ## Types of Content
 The types of content on the site:
@@ -291,11 +327,12 @@ Currently the Events section is used for workshops.
 #### Room Normalization and links
 
 The script `extract_rooms.py` ensures that the plugin-less script for room normalization and linking picks up all mentioned rooms across the website.
-It scans the repository for any mentioned rooms and inserts them into `includes/process-rooms.html`.
+It scans the repository for any mentioned rooms and inserts them into `_includes/process-rooms.html`.
 If you add content that contains rooms which are not highlighted, you may need to ensure that the corresponding layout appropriately wraps the content in question with a call to process-rooms.
 
 **Usage:**
-After each edit to the website, run
+The generation workflow runs it automatically after HTML/Markdown changes on
+`master`. For local previews, run:
 
 ```bash
 python3 extract_rooms.py

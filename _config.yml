@@ -120,6 +120,7 @@ exclude:
   - AGENTS.md
   - CLAUDE.md
   - docs/
+  - script/
   - project-sites/README.md
 
 # Build settings

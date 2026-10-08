@@ -5,7 +5,7 @@ This include replaces the functionality of the room_links.rb plugin for GitHub P
 Usage: {% include process-rooms.html content=content %}
 {% endcomment %}
 
-{% assign rooms = "CAB E 74,CAB G 51,CAB G 52,CAB G 56,CAB G 57,CAB G 59,CAB G 61,CAB H 53,CAB H 66,CAB H 69.1,CAB H 81.1,CAB H 85.2,CAB H 86.1,CAB H 86.3,CHN D 42,CHN D 46,CHN D 48,CHN E 42,CHN E 46,CHN G 22,CHN G 46,CNB H 100.5,CNB H 104.2,ETZ F 91,ETZ G 86,ETZ G 91,ETZ H 91,ETZ J 91,HG D 7.2,HG E 22,HG E 3,HG F 3,HG F 5,HG F 7,HG G 26.5,HG G 3,IFW A 36,LFW B 3,LFW C 4,LFW C 5,LFW E 13,ML D 28,ML E 12,ML F 34,ML F 38,ML H 41.1,ML J 34.1,ML J 34.3,NO D 11,NO E 11" | split: "," %}
+{% assign rooms = "CAB E 74,CAB G 51,CAB G 52,CAB G 56,CAB G 57,CAB G 59,CAB G 61,CAB H 53,CAB H 66,CAB H 69.1,CAB H 81.1,CAB H 85.2,CAB H 86.1,CAB H 86.3,CHN D 42,CHN D 46,CHN D 48,CHN E 42,CHN E 46,CHN G 22,CHN G 46,CNB H 100.5,CNB H 104.2,ETZ F 91,ETZ G 86,ETZ G 91,ETZ H 91,ETZ J 91,HG D 7.2,HG E 22,HG E 3,HG E 5,HG F 3,HG F 5,HG F 7,HG G 26.5,HG G 3,IFW A 36,LFW B 3,LFW C 4,LFW C 5,LFW E 13,ML D 28,ML E 12,ML F 34,ML F 38,ML H 41.1,ML J 34.1,ML J 34.3,NO D 11,NO E 11" | split: "," %}
 
 {% assign processed_content = include.content %}
 

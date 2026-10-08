@@ -3,4 +3,5 @@
 set -e
 
 echo "Building the example site..."
+uv run script/thumbnails.py
 bundle exec jekyll build

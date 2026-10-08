@@ -6,7 +6,8 @@
     <div class="card-img">
       {% if person.image %} 
       <a href="{{ person.url | relative_url}}">
-        <img class="page-img" src="{{ person.image | prepend: '/assets/images/' | relative_url}}"/> 
+        {% assign person_image = person.image | prepend: '/assets/images/' %}
+        {% include image.html src=person_image class="page-img" alt=person.title sizes="150px" %}
       </a>
       {% endif %}
     </div>

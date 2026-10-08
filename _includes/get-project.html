@@ -13,7 +13,8 @@
         <div class="card-img">
           
             <a href="{{ project.url | relative_url}}">
-              <img src="{{ project.image | prepend: '/assets/projects/' | relative_url}}"/>
+              {% assign project_image = project.image | prepend: '/assets/projects/' %}
+              {% include image.html src=project_image alt=project.title sizes="(max-width: 1024px) 80vw, 200px" %}
             </a>
           
         </div>

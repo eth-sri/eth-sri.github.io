@@ -1,0 +1,65 @@
+name: Generate thumbnails and room links
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'assets/images/**'
+      - 'assets/projects/**'
+      - 'assets/media/**'
+      - 'assets/blog/**'
+      - 'assets/generated/thumbnails/**'
+      - '_data/thumbnails.json'
+      - 'script/thumbnails.py'
+      - 'extract_rooms.py'
+      - '**/*.html'
+      - '**/*.md'
+      - '.github/workflows/thumbnails.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: generated-site-assets
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      # Read the latest master when a queued run starts.
+      - uses: actions/checkout@v6
+        with:
+          ref: master
+      - uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4 # v10.1.0
+        with:
+          python-version: '3.13'
+          cache-dependency-glob: script/thumbnails.py
+      - name: Generate thumbnails and remove obsolete variants
+        run: uv run script/thumbnails.py
+      - name: Normalize room mentions
+        run: uv run --no-project python extract_rooms.py
+      - name: Commit and push generated files
+        run: |
+          git add -- assets/generated/thumbnails/ _data/thumbnails.json _includes/process-rooms.html
+          if git diff --cached --quiet; then
+            echo "Generated files are already up to date."
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Update generated thumbnails and room links'
+          # A normal push fails safely if someone updated master during generation.
+          # The run queued by that newer content change will regenerate from master.
+          git push origin HEAD:master
+      - name: Request the existing GitHub Pages build
+        # GITHUB_TOKEN pushes do not automatically trigger a Pages build.
+        # Also run on a no-change retry, in case an earlier build request failed.
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: gh api --method POST "repos/$GH_REPO/pages/builds"

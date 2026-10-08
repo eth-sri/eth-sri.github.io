@@ -33,7 +33,8 @@ permalink: /news/index.html
               {% if newspost.link %}  
               <a href="{{ newspost.link }}">
               {% endif %}
-                <img src="{{ newspost.image | prepend: '/assets/media/' | relative_url}}"/>
+                {% assign news_image = newspost.image | prepend: '/assets/media/' %}
+                {% include image.html src=news_image alt="" sizes="(max-width: 1024px) 80vw, 300px" %}
               {% if newspost.link %}  
               </a>
               {% endif %}
@@ -49,4 +50,3 @@ permalink: /news/index.html
     </div>      
   </div>
 </article>
-

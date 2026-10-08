@@ -19,7 +19,8 @@ layout: default
 
   <header class="page-header container">
 	{% if page.thumbnail and page.show_title_thumbnail != false %}
-	<img src="{{ page.thumbnail | prepend: '/assets/blog/' | relative_url}}" class="blogpost-thumbnail"/>
+	{% assign blog_image = page.thumbnail | prepend: '/assets/blog/' %}
+	{% include image.html src=blog_image class="blogpost-thumbnail" alt=page.title sizes="(max-width: 1024px) 100vw, 600px" loading="eager" %}
 	{% endif %}
 	
 	<div class="row">
@@ -104,7 +105,8 @@ layout: default
               </h3>
               <div class="subpost-box">
                 <div class="subpost-thumbnail">
-                  <img src="{{ blogpost.thumbnail | prepend: '/assets/blog/' | relative_url}}" class="subpost-thumbnailimg" />
+                  {% assign subpost_image = blogpost.thumbnail | prepend: '/assets/blog/' %}
+                  {% include image.html src=subpost_image class="subpost-thumbnailimg" alt=blogpost.title sizes="(max-width: 1024px) 80vw, 300px" %}
                 </div>
                 <div class="subpost-info">
                   <b>Authors</b>: {% include get-linked-persons.html persons=publication.authors %}  <br>

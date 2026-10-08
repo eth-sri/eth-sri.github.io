@@ -1,0 +1,6854 @@
+{
+  "/assets/blog/automark/harness.png": {
+    "digest": "1b425e9e5aa699f3",
+    "height": 647,
+    "src": "/assets/generated/thumbnails/1b425e9e5aa699f3-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/1b425e9e5aa699f3-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/1b425e9e5aa699f3-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/1b425e9e5aa699f3-815.webp",
+        "width": 815
+      }
+    ],
+    "width": 815
+  },
+  "/assets/blog/automark/trajectories.png": {
+    "digest": "e7c9a272c0853c5e",
+    "height": 590,
+    "src": "/assets/generated/thumbnails/e7c9a272c0853c5e-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/e7c9a272c0853c5e-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/e7c9a272c0853c5e-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/e7c9a272c0853c5e-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1430
+  },
+  "/assets/blog/bayesian/attacks_barplot.png": {
+    "digest": "53634184b71044ec",
+    "height": 360,
+    "src": "/assets/generated/thumbnails/53634184b71044ec-576.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/53634184b71044ec-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/53634184b71044ec-576.webp",
+        "width": 576
+      }
+    ],
+    "width": 576
+  },
+  "/assets/blog/bayesian/bayes_attack.png": {
+    "digest": "f680a38876565684",
+    "height": 295,
+    "src": "/assets/generated/thumbnails/f680a38876565684-552.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/f680a38876565684-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/f680a38876565684-552.webp",
+        "width": 552
+      }
+    ],
+    "width": 552
+  },
+  "/assets/blog/bayesian/img_reconstructions.png": {
+    "digest": "42c6fd392929eff2",
+    "height": 605,
+    "src": "/assets/generated/thumbnails/42c6fd392929eff2-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/42c6fd392929eff2-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/42c6fd392929eff2-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/42c6fd392929eff2-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1420
+  },
+  "/assets/blog/dlm-watermarking/images/eval1.png": {
+    "digest": "35751c3140c5939c",
+    "height": 976,
+    "src": "/assets/generated/thumbnails/35751c3140c5939c-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/35751c3140c5939c-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/35751c3140c5939c-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/35751c3140c5939c-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2460
+  },
+  "/assets/blog/dlm-watermarking/images/eval2.png": {
+    "digest": "a7a4070079bafa5a",
+    "height": 828,
+    "src": "/assets/generated/thumbnails/a7a4070079bafa5a-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/a7a4070079bafa5a-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/a7a4070079bafa5a-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/a7a4070079bafa5a-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2460
+  },
+  "/assets/blog/dlm-watermarking/images/optim_problem.png": {
+    "digest": "5f8f9d2f5a81642c",
+    "height": 108,
+    "src": "/assets/generated/thumbnails/5f8f9d2f5a81642c-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/5f8f9d2f5a81642c-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/5f8f9d2f5a81642c-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/5f8f9d2f5a81642c-859.webp",
+        "width": 859
+      }
+    ],
+    "width": 859
+  },
+  "/assets/blog/fb_preview/iclr.jpg": {
+    "digest": "082e4f3a943a99a5",
+    "height": 630,
+    "src": "/assets/generated/thumbnails/082e4f3a943a99a5-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/082e4f3a943a99a5-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/082e4f3a943a99a5-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/082e4f3a943a99a5-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/blog/fb_preview/probingsynthid.jpg": {
+    "digest": "a35acc275f859e9c",
+    "height": 3559,
+    "src": "/assets/generated/thumbnails/a35acc275f859e9c-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/a35acc275f859e9c-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/a35acc275f859e9c-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/a35acc275f859e9c-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 6778
+  },
+  "/assets/blog/fedcomp/fedcomp_overview.png": {
+    "digest": "5e3f6c5dc51c209b",
+    "height": 2388,
+    "src": "/assets/generated/thumbnails/5e3f6c5dc51c209b-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/5e3f6c5dc51c209b-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/5e3f6c5dc51c209b-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/5e3f6c5dc51c209b-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2803
+  },
+  "/assets/blog/fnf/fnf_bound.png": {
+    "digest": "fcf8cd58bc91ad61",
+    "height": 544,
+    "src": "/assets/generated/thumbnails/fcf8cd58bc91ad61-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/fcf8cd58bc91ad61-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/fcf8cd58bc91ad61-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/fcf8cd58bc91ad61-843.webp",
+        "width": 843
+      }
+    ],
+    "width": 843
+  },
+  "/assets/blog/fnf/fnf_cont_results.png": {
+    "digest": "68aef5451bb4b35e",
+    "height": 529,
+    "src": "/assets/generated/thumbnails/68aef5451bb4b35e-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/68aef5451bb4b35e-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/68aef5451bb4b35e-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/68aef5451bb4b35e-832.webp",
+        "width": 832
+      }
+    ],
+    "width": 832
+  },
+  "/assets/blog/fnf/fnf_overview.png": {
+    "digest": "6c2d5198906c74ce",
+    "height": 528,
+    "src": "/assets/generated/thumbnails/6c2d5198906c74ce-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/6c2d5198906c74ce-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/6c2d5198906c74ce-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/6c2d5198906c74ce-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1602
+  },
+  "/assets/blog/fnf/gauss.png": {
+    "digest": "97adbf4b705e55aa",
+    "height": 699,
+    "src": "/assets/generated/thumbnails/97adbf4b705e55aa-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/97adbf4b705e55aa-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/97adbf4b705e55aa-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/97adbf4b705e55aa-895.webp",
+        "width": 895
+      }
+    ],
+    "width": 895
+  },
+  "/assets/blog/k2think/falling_k2_social.png": {
+    "digest": "05c38f4368b9f669",
+    "height": 1024,
+    "src": "/assets/generated/thumbnails/05c38f4368b9f669-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/05c38f4368b9f669-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/05c38f4368b9f669-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/05c38f4368b9f669-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1956
+  },
+  "/assets/blog/k2think/matharena.png": {
+    "digest": "503f5115c09fcf19",
+    "height": 454,
+    "src": "/assets/generated/thumbnails/503f5115c09fcf19-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/503f5115c09fcf19-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/503f5115c09fcf19-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/503f5115c09fcf19-1230.webp",
+        "width": 1230
+      }
+    ],
+    "width": 1230
+  },
+  "/assets/blog/lamp/text_rec.png": {
+    "digest": "c1f5ad06586121ab",
+    "height": 558,
+    "src": "/assets/generated/thumbnails/c1f5ad06586121ab-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/c1f5ad06586121ab-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/c1f5ad06586121ab-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/c1f5ad06586121ab-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1484
+  },
+  "/assets/blog/lcifr/lcifr_overview.png": {
+    "digest": "67dac304d139ea10",
+    "height": 1031,
+    "src": "/assets/generated/thumbnails/67dac304d139ea10-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/67dac304d139ea10-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/67dac304d139ea10-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/67dac304d139ea10-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 4591
+  },
+  "/assets/blog/mn-bab/ConvexHull.png": {
+    "digest": "3c5846854258dd08",
+    "height": 440,
+    "src": "/assets/generated/thumbnails/3c5846854258dd08-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/3c5846854258dd08-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/3c5846854258dd08-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/3c5846854258dd08-939.webp",
+        "width": 939
+      }
+    ],
+    "width": 939
+  },
+  "/assets/blog/mn-bab/DeepPoly.png": {
+    "digest": "08a261f72df66a0d",
+    "height": 582,
+    "src": "/assets/generated/thumbnails/08a261f72df66a0d-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/08a261f72df66a0d-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/08a261f72df66a0d-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/08a261f72df66a0d-1244.webp",
+        "width": 1244
+      }
+    ],
+    "width": 1244
+  },
+  "/assets/blog/mn-bab/PRIMA.png": {
+    "digest": "4bc43d7135a50146",
+    "height": 624,
+    "src": "/assets/generated/thumbnails/4bc43d7135a50146-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/4bc43d7135a50146-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/4bc43d7135a50146-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/4bc43d7135a50146-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1371
+  },
+  "/assets/blog/mn-bab/ResNet6-A_cab_runtime_comparison_p4c_acs.png": {
+    "digest": "51ce4a0ca2d71f8e",
+    "height": 2071,
+    "src": "/assets/generated/thumbnails/51ce4a0ca2d71f8e-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/51ce4a0ca2d71f8e-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/51ce4a0ca2d71f8e-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/51ce4a0ca2d71f8e-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2450
+  },
+  "/assets/blog/mn-bab/ResNet6-A_n_subproblems_ratio_branching.png": {
+    "digest": "9ee7ce602383b755",
+    "height": 1999,
+    "src": "/assets/generated/thumbnails/9ee7ce602383b755-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/9ee7ce602383b755-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/9ee7ce602383b755-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/9ee7ce602383b755-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2206
+  },
+  "/assets/blog/mn-bab/ResNet6-A_n_subproblems_ratio_w_wo_MNC.png": {
+    "digest": "76b661bde0559c29",
+    "height": 1999,
+    "src": "/assets/generated/thumbnails/76b661bde0559c29-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/76b661bde0559c29-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/76b661bde0559c29-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/76b661bde0559c29-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2206
+  },
+  "/assets/blog/mn-bab/ablation_study.png": {
+    "digest": "8a84721c36eea779",
+    "height": 1442,
+    "src": "/assets/generated/thumbnails/8a84721c36eea779-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/8a84721c36eea779-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/8a84721c36eea779-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/8a84721c36eea779-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1970
+  },
+  "/assets/blog/mn-bab/split_constraints.png": {
+    "digest": "82313b23b3e22a97",
+    "height": 486,
+    "src": "/assets/generated/thumbnails/82313b23b3e22a97-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/82313b23b3e22a97-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/82313b23b3e22a97-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/82313b23b3e22a97-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1936
+  },
+  "/assets/blog/mn-bab/stable_vs_unstable.png": {
+    "digest": "b1dd7b9d5d3ae857",
+    "height": 398,
+    "src": "/assets/generated/thumbnails/b1dd7b9d5d3ae857-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/b1dd7b9d5d3ae857-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/b1dd7b9d5d3ae857-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/b1dd7b9d5d3ae857-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2398
+  },
+  "/assets/blog/phoenix/argmax.png": {
+    "digest": "34f80325e6dffea1",
+    "height": 301,
+    "src": "/assets/generated/thumbnails/34f80325e6dffea1-330.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/34f80325e6dffea1-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/34f80325e6dffea1-330.webp",
+        "width": 330
+      }
+    ],
+    "width": 330
+  },
+  "/assets/blog/phoenix/mlaas.png": {
+    "digest": "10f72d1146565f9b",
+    "height": 580,
+    "src": "/assets/generated/thumbnails/10f72d1146565f9b-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/10f72d1146565f9b-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/10f72d1146565f9b-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/10f72d1146565f9b-782.webp",
+        "width": 782
+      }
+    ],
+    "width": 782
+  },
+  "/assets/blog/phoenix/phoenix.png": {
+    "digest": "3b48634122c86e3a",
+    "height": 689,
+    "src": "/assets/generated/thumbnails/3b48634122c86e3a-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/3b48634122c86e3a-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/3b48634122c86e3a-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/3b48634122c86e3a-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1495
+  },
+  "/assets/blog/phoenix/sgn.png": {
+    "digest": "512021df43e885f2",
+    "height": 685,
+    "src": "/assets/generated/thumbnails/512021df43e885f2-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/512021df43e885f2-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/512021df43e885f2-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/512021df43e885f2-1000.webp",
+        "width": 1000
+      }
+    ],
+    "width": 1000
+  },
+  "/assets/blog/phoenix/smoothing.png": {
+    "digest": "2373e17542120c97",
+    "height": 609,
+    "src": "/assets/generated/thumbnails/2373e17542120c97-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/2373e17542120c97-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/2373e17542120c97-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/2373e17542120c97-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1497
+  },
+  "/assets/blog/probingsynthid/clues.png": {
+    "digest": "b5a7f89ede334d49",
+    "height": 412,
+    "src": "/assets/generated/thumbnails/b5a7f89ede334d49-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/b5a7f89ede334d49-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/b5a7f89ede334d49-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/b5a7f89ede334d49-1013.webp",
+        "width": 1013
+      }
+    ],
+    "width": 1013
+  },
+  "/assets/blog/probingsynthid/detection.png": {
+    "digest": "f7201fac3fd252ba",
+    "height": 347,
+    "src": "/assets/generated/thumbnails/f7201fac3fd252ba-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/f7201fac3fd252ba-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/f7201fac3fd252ba-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/f7201fac3fd252ba-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/blog/probingsynthid/scrubbing_edited.png": {
+    "digest": "90e861dc9f722343",
+    "height": 738,
+    "src": "/assets/generated/thumbnails/90e861dc9f722343-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/90e861dc9f722343-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/90e861dc9f722343-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/90e861dc9f722343-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1415
+  },
+  "/assets/blog/probingsynthid/spoofing_edited.png": {
+    "digest": "055e6cfec773c283",
+    "height": 741,
+    "src": "/assets/generated/thumbnails/055e6cfec773c283-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/055e6cfec773c283-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/055e6cfec773c283-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/055e6cfec773c283-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1415
+  },
+  "/assets/blog/probingsynthid/synthid_fb_photo.png": {
+    "digest": "68084ea363ec535f",
+    "height": 1575,
+    "src": "/assets/generated/thumbnails/68084ea363ec535f-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/68084ea363ec535f-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/68084ea363ec535f-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/68084ea363ec535f-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 3000
+  },
+  "/assets/blog/probingsynthid/tweet1.png": {
+    "digest": "685f8d1ec8848937",
+    "height": 283,
+    "src": "/assets/generated/thumbnails/685f8d1ec8848937-636.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/685f8d1ec8848937-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/685f8d1ec8848937-636.webp",
+        "width": 636
+      }
+    ],
+    "width": 636
+  },
+  "/assets/blog/probingsynthid/tweet2.png": {
+    "digest": "bbd62a3ef1ebbfdc",
+    "height": 911,
+    "src": "/assets/generated/thumbnails/bbd62a3ef1ebbfdc-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/bbd62a3ef1ebbfdc-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/bbd62a3ef1ebbfdc-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/bbd62a3ef1ebbfdc-1114.webp",
+        "width": 1114
+      }
+    ],
+    "width": 1114
+  },
+  "/assets/blog/probingsynthid/tweet3.png": {
+    "digest": "ecd78215d027b2ec",
+    "height": 576,
+    "src": "/assets/generated/thumbnails/ecd78215d027b2ec-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/ecd78215d027b2ec-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/ecd78215d027b2ec-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/ecd78215d027b2ec-696.webp",
+        "width": 696
+      }
+    ],
+    "width": 696
+  },
+  "/assets/blog/probingsynthid/tweet4.png": {
+    "digest": "89e4119584df4f6b",
+    "height": 911,
+    "src": "/assets/generated/thumbnails/89e4119584df4f6b-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/89e4119584df4f6b-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/89e4119584df4f6b-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/89e4119584df4f6b-1114.webp",
+        "width": 1114
+      }
+    ],
+    "width": 1114
+  },
+  "/assets/blog/smooth_ens/acr_cifar_050_3.png": {
+    "digest": "90cac595426183f6",
+    "height": 434,
+    "src": "/assets/generated/thumbnails/90cac595426183f6-316.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/90cac595426183f6-316.webp",
+        "width": 316
+      }
+    ],
+    "width": 316
+  },
+  "/assets/blog/smooth_ens/acr_cifar_050_blog.png": {
+    "digest": "9923f0f5bfc824e5",
+    "height": 5434,
+    "src": "/assets/generated/thumbnails/9923f0f5bfc824e5-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/9923f0f5bfc824e5-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/9923f0f5bfc824e5-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/9923f0f5bfc824e5-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 3959
+  },
+  "/assets/blog/smooth_ens/acr_in_100.png": {
+    "digest": "9b7e94272d1a7206",
+    "height": 5434,
+    "src": "/assets/generated/thumbnails/9b7e94272d1a7206-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/9b7e94272d1a7206-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/9b7e94272d1a7206-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/9b7e94272d1a7206-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 3932
+  },
+  "/assets/blog/smooth_ens/acr_in_100_blog.png": {
+    "digest": "b3e20ef863f75a22",
+    "height": 5434,
+    "src": "/assets/generated/thumbnails/b3e20ef863f75a22-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/b3e20ef863f75a22-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/b3e20ef863f75a22-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/b3e20ef863f75a22-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 3932
+  },
+  "/assets/blog/smooth_ens/acr_noise_025.png": {
+    "digest": "da6b8724429ecf96",
+    "height": 358,
+    "src": "/assets/generated/thumbnails/da6b8724429ecf96-316.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/da6b8724429ecf96-316.webp",
+        "width": 316
+      }
+    ],
+    "width": 316
+  },
+  "/assets/blog/smooth_ens/acr_noise_050.png": {
+    "digest": "97d0200186d82814",
+    "height": 286,
+    "src": "/assets/generated/thumbnails/97d0200186d82814-316.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/97d0200186d82814-316.webp",
+        "width": 316
+      }
+    ],
+    "width": 316
+  },
+  "/assets/blog/smooth_ens/cert_rad_distr.png": {
+    "digest": "de23d58adc0a318f",
+    "height": 2333,
+    "src": "/assets/generated/thumbnails/de23d58adc0a318f-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/de23d58adc0a318f-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/de23d58adc0a318f-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/de23d58adc0a318f-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2733
+  },
+  "/assets/blog/smooth_ens/imagenet.png": {
+    "digest": "8a31e78f1ba99db2",
+    "height": 287,
+    "src": "/assets/generated/thumbnails/8a31e78f1ba99db2-313.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/8a31e78f1ba99db2-313.webp",
+        "width": 313
+      }
+    ],
+    "width": 313
+  },
+  "/assets/blog/smooth_ens/main.png": {
+    "digest": "c0939e5a980f9e10",
+    "height": 847,
+    "src": "/assets/generated/thumbnails/c0939e5a980f9e10-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/c0939e5a980f9e10-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/c0939e5a980f9e10-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/c0939e5a980f9e10-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 3262
+  },
+  "/assets/blog/smooth_ens/runner_up_margin.png": {
+    "digest": "76467b1a66ccf7b4",
+    "height": 2408,
+    "src": "/assets/generated/thumbnails/76467b1a66ccf7b4-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/76467b1a66ccf7b4-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/76467b1a66ccf7b4-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/76467b1a66ccf7b4-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2458
+  },
+  "/assets/blog/smooth_ens/sample_experiment_cifar.png": {
+    "digest": "e3cce8250b38c06e",
+    "height": 1216,
+    "src": "/assets/generated/thumbnails/e3cce8250b38c06e-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/e3cce8250b38c06e-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/e3cce8250b38c06e-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/e3cce8250b38c06e-1204.webp",
+        "width": 1204
+      }
+    ],
+    "width": 1204
+  },
+  "/assets/blog/smooth_ens/succes_prob.png": {
+    "digest": "7758cbdbd5f937f0",
+    "height": 2333,
+    "src": "/assets/generated/thumbnails/7758cbdbd5f937f0-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/7758cbdbd5f937f0-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/7758cbdbd5f937f0-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/7758cbdbd5f937f0-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1991
+  },
+  "/assets/blog/thumbnails/falling_k2.png": {
+    "digest": "637ba134a89a1108",
+    "height": 1024,
+    "src": "/assets/generated/thumbnails/637ba134a89a1108-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/637ba134a89a1108-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/637ba134a89a1108-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/637ba134a89a1108-1024.webp",
+        "width": 1024
+      }
+    ],
+    "width": 1024
+  },
+  "/assets/blog/thumbnails/fedcomp.png": {
+    "digest": "796ce4f412c5ae17",
+    "height": 2003,
+    "src": "/assets/generated/thumbnails/796ce4f412c5ae17-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/796ce4f412c5ae17-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/796ce4f412c5ae17-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/796ce4f412c5ae17-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1805
+  },
+  "/assets/blog/thumbnails/fixedcode.png": {
+    "digest": "f10ead3acec8c3b5",
+    "height": 846,
+    "src": "/assets/generated/thumbnails/f10ead3acec8c3b5-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/f10ead3acec8c3b5-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/f10ead3acec8c3b5-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/f10ead3acec8c3b5-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1453
+  },
+  "/assets/blog/thumbnails/smooth_ens.png": {
+    "digest": "ce80e4b92cc72bd8",
+    "height": 1006,
+    "src": "/assets/generated/thumbnails/ce80e4b92cc72bd8-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/ce80e4b92cc72bd8-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/ce80e4b92cc72bd8-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/ce80e4b92cc72bd8-996.webp",
+        "width": 996
+      }
+    ],
+    "width": 996
+  },
+  "/assets/images/ELINA.png": {
+    "digest": "c211d7a29746eaf9",
+    "height": 536,
+    "src": "/assets/generated/thumbnails/c211d7a29746eaf9-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/c211d7a29746eaf9-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/c211d7a29746eaf9-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/c211d7a29746eaf9-770.webp",
+        "width": 770
+      }
+    ],
+    "width": 770
+  },
+  "/assets/images/Expressivity_img.png": {
+    "digest": "71fdebc87f6930c7",
+    "height": 1090,
+    "src": "/assets/generated/thumbnails/71fdebc87f6930c7-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/71fdebc87f6930c7-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/71fdebc87f6930c7-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/71fdebc87f6930c7-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2266
+  },
+  "/assets/images/IN_error_img.png": {
+    "digest": "6c71c57a093bcba6",
+    "height": 934,
+    "src": "/assets/generated/thumbnails/6c71c57a093bcba6-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/6c71c57a093bcba6-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/6c71c57a093bcba6-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/6c71c57a093bcba6-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2798
+  },
+  "/assets/images/Octagon.jpg": {
+    "digest": "40cd53978f844d7a",
+    "height": 474,
+    "src": "/assets/generated/thumbnails/40cd53978f844d7a-564.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/40cd53978f844d7a-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/40cd53978f844d7a-564.webp",
+        "width": 564
+      }
+    ],
+    "width": 564
+  },
+  "/assets/images/SABR.png": {
+    "digest": "eb4cae8392c3e8f6",
+    "height": 332,
+    "src": "/assets/generated/thumbnails/eb4cae8392c3e8f6-525.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/eb4cae8392c3e8f6-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/eb4cae8392c3e8f6-525.webp",
+        "width": 525
+      }
+    ],
+    "width": 525
+  },
+  "/assets/images/SBLM_full.png": {
+    "digest": "a75ea3a3ee00a7b5",
+    "height": 314,
+    "src": "/assets/generated/thumbnails/a75ea3a3ee00a7b5-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/a75ea3a3ee00a7b5-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/a75ea3a3ee00a7b5-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/a75ea3a3ee00a7b5-785.webp",
+        "width": 785
+      }
+    ],
+    "width": 785
+  },
+  "/assets/images/SWA_figure.png": {
+    "digest": "b9911e410c1c61f7",
+    "height": 812,
+    "src": "/assets/generated/thumbnails/b9911e410c1c61f7-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/b9911e410c1c61f7-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/b9911e410c1c61f7-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/b9911e410c1c61f7-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2088
+  },
+  "/assets/images/Teamfoto_3_cut.jpg": {
+    "digest": "d5d29d73546d8598",
+    "height": 1422,
+    "src": "/assets/generated/thumbnails/d5d29d73546d8598-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/d5d29d73546d8598-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/d5d29d73546d8598-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/d5d29d73546d8598-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2128
+  },
+  "/assets/images/ai.png": {
+    "digest": "72f509977e03b32e",
+    "height": 569,
+    "src": "/assets/generated/thumbnails/72f509977e03b32e-569.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/72f509977e03b32e-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/72f509977e03b32e-569.webp",
+        "width": 569
+      }
+    ],
+    "width": 569
+  },
+  "/assets/images/ai2.png": {
+    "digest": "12361aaf9620abed",
+    "height": 587,
+    "src": "/assets/generated/thumbnails/12361aaf9620abed-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/12361aaf9620abed-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/12361aaf9620abed-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/12361aaf9620abed-898.webp",
+        "width": 898
+      }
+    ],
+    "width": 898
+  },
+  "/assets/images/ai_lecture.png": {
+    "digest": "a45efc307c77edfe",
+    "height": 272,
+    "src": "/assets/generated/thumbnails/a45efc307c77edfe-580.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/a45efc307c77edfe-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/a45efc307c77edfe-580.webp",
+        "width": 580
+      }
+    ],
+    "width": 580
+  },
+  "/assets/images/andrei-s.jpg": {
+    "digest": "1294727f699f52af",
+    "height": 150,
+    "src": "/assets/generated/thumbnails/1294727f699f52af-125.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/1294727f699f52af-125.webp",
+        "width": 125
+      }
+    ],
+    "width": 125
+  },
+  "/assets/images/andrei.jpg": {
+    "digest": "7da26abd25102d5a",
+    "height": 150,
+    "src": "/assets/generated/thumbnails/7da26abd25102d5a-125.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/7da26abd25102d5a-125.webp",
+        "width": 125
+      }
+    ],
+    "width": 125
+  },
+  "/assets/images/andrey.jpg": {
+    "digest": "a78cd6bddff42441",
+    "height": 379,
+    "src": "/assets/generated/thumbnails/a78cd6bddff42441-316.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/a78cd6bddff42441-316.webp",
+        "width": 316
+      }
+    ],
+    "width": 316
+  },
+  "/assets/images/anouk.jpeg": {
+    "digest": "94285b081e55e5cb",
+    "height": 735,
+    "src": "/assets/generated/thumbnails/94285b081e55e5cb-520.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/94285b081e55e5cb-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/94285b081e55e5cb-520.webp",
+        "width": 520
+      }
+    ],
+    "width": 520
+  },
+  "/assets/images/anouk.jpg": {
+    "digest": "9725a5aa71844c83",
+    "height": 1600,
+    "src": "/assets/generated/thumbnails/9725a5aa71844c83-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/9725a5aa71844c83-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/9725a5aa71844c83-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/9725a5aa71844c83-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/ar.png": {
+    "digest": "83598008abb62844",
+    "height": 8,
+    "src": "/assets/generated/thumbnails/83598008abb62844-9.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/83598008abb62844-9.webp",
+        "width": 9
+      }
+    ],
+    "width": 9
+  },
+  "/assets/images/arthur.jpg": {
+    "digest": "153546439cca7af9",
+    "height": 150,
+    "src": "/assets/generated/thumbnails/153546439cca7af9-150.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/153546439cca7af9-150.webp",
+        "width": 150
+      }
+    ],
+    "width": 150
+  },
+  "/assets/images/award.png": {
+    "digest": "aecb0198f25164e9",
+    "height": 64,
+    "src": "/assets/generated/thumbnails/aecb0198f25164e9-64.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/aecb0198f25164e9-64.webp",
+        "width": 64
+      }
+    ],
+    "width": 64
+  },
+  "/assets/images/baader2019universal2.jpg": {
+    "digest": "c39272007936b471",
+    "height": 629,
+    "src": "/assets/generated/thumbnails/c39272007936b471-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/c39272007936b471-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/c39272007936b471-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/c39272007936b471-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/balunovic2019geometric.png": {
+    "digest": "7eb155c75268bddf",
+    "height": 629,
+    "src": "/assets/generated/thumbnails/7eb155c75268bddf-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/7eb155c75268bddf-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/7eb155c75268bddf-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/7eb155c75268bddf-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/baxbench-logo-project.png": {
+    "digest": "bb0db06f1eed5a45",
+    "height": 589,
+    "src": "/assets/generated/thumbnails/bb0db06f1eed5a45-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/bb0db06f1eed5a45-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/bb0db06f1eed5a45-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/bb0db06f1eed5a45-1000.webp",
+        "width": 1000
+      }
+    ],
+    "width": 1000
+  },
+  "/assets/images/beni.jpg": {
+    "digest": "2c0ed2fd17dd94dd",
+    "height": 1600,
+    "src": "/assets/generated/thumbnails/2c0ed2fd17dd94dd-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/2c0ed2fd17dd94dd-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/2c0ed2fd17dd94dd-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/2c0ed2fd17dd94dd-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/beni2.jpg": {
+    "digest": "8acff4c3e7ecf256",
+    "height": 630,
+    "src": "/assets/generated/thumbnails/8acff4c3e7ecf256-500.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/8acff4c3e7ecf256-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/8acff4c3e7ecf256-500.webp",
+        "width": 500
+      }
+    ],
+    "width": 500
+  },
+  "/assets/images/bigcode.jpg": {
+    "digest": "302bfc0d863288b4",
+    "height": 768,
+    "src": "/assets/generated/thumbnails/302bfc0d863288b4-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/302bfc0d863288b4-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/302bfc0d863288b4-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/302bfc0d863288b4-1024.webp",
+        "width": 1024
+      }
+    ],
+    "width": 1024
+  },
+  "/assets/images/bsec.jpg": {
+    "digest": "150eacd893648438",
+    "height": 360,
+    "src": "/assets/generated/thumbnails/150eacd893648438-480.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/150eacd893648438-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/150eacd893648438-480.webp",
+        "width": 480
+      }
+    ],
+    "width": 480
+  },
+  "/assets/images/bullet_yellow.png": {
+    "digest": "5b4ffac0786ba424",
+    "height": 6,
+    "src": "/assets/generated/thumbnails/5b4ffac0786ba424-3.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/5b4ffac0786ba424-3.webp",
+        "width": 3
+      }
+    ],
+    "width": 3
+  },
+  "/assets/images/ccs23-img.jpg": {
+    "digest": "9fe282a609222181",
+    "height": 2250,
+    "src": "/assets/generated/thumbnails/9fe282a609222181-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/9fe282a609222181-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/9fe282a609222181-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/9fe282a609222181-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 4000
+  },
+  "/assets/images/cert_train_fig.png": {
+    "digest": "e046cdd74aeccad5",
+    "height": 470,
+    "src": "/assets/generated/thumbnails/e046cdd74aeccad5-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/e046cdd74aeccad5-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/e046cdd74aeccad5-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/e046cdd74aeccad5-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2088
+  },
+  "/assets/images/chainsecurity-logo.png": {
+    "digest": "308b300faada94c1",
+    "height": 172,
+    "src": "/assets/generated/thumbnails/308b300faada94c1-292.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/308b300faada94c1-292.webp",
+        "width": 292
+      }
+    ],
+    "width": 292
+  },
+  "/assets/images/chenhao.png": {
+    "digest": "2168d4758f5b9ca8",
+    "height": 1463,
+    "src": "/assets/generated/thumbnails/2168d4758f5b9ca8-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/2168d4758f5b9ca8-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/2168d4758f5b9ca8-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/2168d4758f5b9ca8-1075.webp",
+        "width": 1075
+      }
+    ],
+    "width": 1075
+  },
+  "/assets/images/chip.png": {
+    "digest": "d4400fb8cc613db3",
+    "height": 105,
+    "src": "/assets/generated/thumbnails/d4400fb8cc613db3-230.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/d4400fb8cc613db3-230.webp",
+        "width": 230
+      }
+    ],
+    "width": 230
+  },
+  "/assets/images/christopher.png": {
+    "digest": "dd4d8ab8069cb0d2",
+    "height": 1424,
+    "src": "/assets/generated/thumbnails/dd4d8ab8069cb0d2-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/dd4d8ab8069cb0d2-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/dd4d8ab8069cb0d2-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/dd4d8ab8069cb0d2-1104.webp",
+        "width": 1104
+      }
+    ],
+    "width": 1104
+  },
+  "/assets/images/close_open.png": {
+    "digest": "02ccd36a810281cb",
+    "height": 243,
+    "src": "/assets/generated/thumbnails/02ccd36a810281cb-241.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/02ccd36a810281cb-241.webp",
+        "width": 241
+      }
+    ],
+    "width": 241
+  },
+  "/assets/images/colt.png": {
+    "digest": "f7ef2abc6c69c99d",
+    "height": 271,
+    "src": "/assets/generated/thumbnails/f7ef2abc6c69c99d-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/f7ef2abc6c69c99d-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/f7ef2abc6c69c99d-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/f7ef2abc6c69c99d-729.webp",
+        "width": 729
+      }
+    ],
+    "width": 729
+  },
+  "/assets/images/concurrent_bound_logo.png": {
+    "digest": "9653aa34a657698c",
+    "height": 433,
+    "src": "/assets/generated/thumbnails/9653aa34a657698c-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/9653aa34a657698c-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/9653aa34a657698c-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/9653aa34a657698c-662.webp",
+        "width": 662
+      }
+    ],
+    "width": 662
+  },
+  "/assets/images/concurrent_logo.png": {
+    "digest": "e028569eb2af9e9b",
+    "height": 433,
+    "src": "/assets/generated/thumbnails/e028569eb2af9e9b-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/e028569eb2af9e9b-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/e028569eb2af9e9b-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/e028569eb2af9e9b-662.webp",
+        "width": 662
+      }
+    ],
+    "width": 662
+  },
+  "/assets/images/coverity.png": {
+    "digest": "085404e37b6d1226",
+    "height": 90,
+    "src": "/assets/generated/thumbnails/085404e37b6d1226-220.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/085404e37b6d1226-220.webp",
+        "width": 220
+      }
+    ],
+    "width": 220
+  },
+  "/assets/images/cryptocurrency-grey.jpg": {
+    "digest": "80e20f1619ef9913",
+    "height": 370,
+    "src": "/assets/generated/thumbnails/80e20f1619ef9913-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/80e20f1619ef9913-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/80e20f1619ef9913-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/80e20f1619ef9913-685.webp",
+        "width": 685
+      }
+    ],
+    "width": 685
+  },
+  "/assets/images/cryptocurrency.jpg": {
+    "digest": "a3ed499bbfc0091c",
+    "height": 523,
+    "src": "/assets/generated/thumbnails/a3ed499bbfc0091c-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/a3ed499bbfc0091c-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/a3ed499bbfc0091c-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/a3ed499bbfc0091c-800.webp",
+        "width": 800
+      }
+    ],
+    "width": 800
+  },
+  "/assets/images/cz.jpg": {
+    "digest": "8b3395b5e82ce4c4",
+    "height": 689,
+    "src": "/assets/generated/thumbnails/8b3395b5e82ce4c4-636.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/8b3395b5e82ce4c4-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/8b3395b5e82ce4c4-636.webp",
+        "width": 636
+      }
+    ],
+    "width": 636
+  },
+  "/assets/images/dana.jpg": {
+    "digest": "8ed1962cd274a0c3",
+    "height": 1464,
+    "src": "/assets/generated/thumbnails/8ed1962cd274a0c3-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/8ed1962cd274a0c3-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/8ed1962cd274a0c3-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/8ed1962cd274a0c3-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1312
+  },
+  "/assets/images/debin-share.png": {
+    "digest": "a415adc94aca727e",
+    "height": 834,
+    "src": "/assets/generated/thumbnails/a415adc94aca727e-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/a415adc94aca727e-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/a415adc94aca727e-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/a415adc94aca727e-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1555
+  },
+  "/assets/images/deepcode-logo.png": {
+    "digest": "04db4b1ad0a16d77",
+    "height": 172,
+    "src": "/assets/generated/thumbnails/04db4b1ad0a16d77-292.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/04db4b1ad0a16d77-292.webp",
+        "width": 292
+      }
+    ],
+    "width": 292
+  },
+  "/assets/images/deguard-example.png": {
+    "digest": "544acb0e7b39899e",
+    "height": 894,
+    "src": "/assets/generated/thumbnails/544acb0e7b39899e-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/544acb0e7b39899e-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/544acb0e7b39899e-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/544acb0e7b39899e-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1540
+  },
+  "/assets/images/deguard-logo.png": {
+    "digest": "169fa2bf1621c8f8",
+    "height": 630,
+    "src": "/assets/generated/thumbnails/169fa2bf1621c8f8-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/169fa2bf1621c8f8-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/169fa2bf1621c8f8-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/169fa2bf1621c8f8-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/deguard.jpg": {
+    "digest": "e85f8d0884e3bcbd",
+    "height": 268,
+    "src": "/assets/generated/thumbnails/e85f8d0884e3bcbd-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/e85f8d0884e3bcbd-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/e85f8d0884e3bcbd-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/e85f8d0884e3bcbd-989.webp",
+        "width": 989
+      }
+    ],
+    "width": 989
+  },
+  "/assets/images/dimitadi.jpg": {
+    "digest": "1623d4a4d777fad2",
+    "height": 1600,
+    "src": "/assets/generated/thumbnails/1623d4a4d777fad2-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/1623d4a4d777fad2-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/1623d4a4d777fad2-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/1623d4a4d777fad2-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/dimitar.jpg": {
+    "digest": "b7ba2a4cde2782c4",
+    "height": 389,
+    "src": "/assets/generated/thumbnails/b7ba2a4cde2782c4-376.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/b7ba2a4cde2782c4-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/b7ba2a4cde2782c4-376.webp",
+        "width": 376
+      }
+    ],
+    "width": 376
+  },
+  "/assets/images/dl2-poster.jpg": {
+    "digest": "91927d0eca5b2b9c",
+    "height": 1486,
+    "src": "/assets/generated/thumbnails/91927d0eca5b2b9c-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/91927d0eca5b2b9c-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/91927d0eca5b2b9c-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/91927d0eca5b2b9c-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2800
+  },
+  "/assets/images/dl2_poster.png": {
+    "digest": "7b7ca1f5ff98129f",
+    "height": 1486,
+    "src": "/assets/generated/thumbnails/7b7ca1f5ff98129f-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/7b7ca1f5ff98129f-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/7b7ca1f5ff98129f-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/7b7ca1f5ff98129f-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2100
+  },
+  "/assets/images/domains.jpg": {
+    "digest": "f7a9b855486ac407",
+    "height": 491,
+    "src": "/assets/generated/thumbnails/f7a9b855486ac407-535.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/f7a9b855486ac407-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/f7a9b855486ac407-535.webp",
+        "width": 535
+      }
+    ],
+    "width": 535
+  },
+  "/assets/images/domains.png": {
+    "digest": "0039e91110e2f546",
+    "height": 491,
+    "src": "/assets/generated/thumbnails/0039e91110e2f546-535.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/0039e91110e2f546-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/0039e91110e2f546-535.webp",
+        "width": 535
+      }
+    ],
+    "width": 535
+  },
+  "/assets/images/erc-logo.png": {
+    "digest": "eefdfd50e89f8e41",
+    "height": 227,
+    "src": "/assets/generated/thumbnails/eefdfd50e89f8e41-345.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/eefdfd50e89f8e41-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/eefdfd50e89f8e41-345.webp",
+        "width": 345
+      }
+    ],
+    "width": 345
+  },
+  "/assets/images/eth-zurich-header.jpg": {
+    "digest": "3c522ae3e884f377",
+    "height": 400,
+    "src": "/assets/generated/thumbnails/3c522ae3e884f377-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/3c522ae3e884f377-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/3c522ae3e884f377-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/3c522ae3e884f377-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1400
+  },
+  "/assets/images/eth-zurich-workshop.jpg": {
+    "digest": "37121919ef762ad8",
+    "height": 863,
+    "src": "/assets/generated/thumbnails/37121919ef762ad8-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/37121919ef762ad8-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/37121919ef762ad8-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/37121919ef762ad8-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1757
+  },
+  "/assets/images/eth_logo.png": {
+    "digest": "f7a0d7ffb4618f88",
+    "height": 45,
+    "src": "/assets/generated/thumbnails/f7a0d7ffb4618f88-181.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/f7a0d7ffb4618f88-181.webp",
+        "width": 181
+      }
+    ],
+    "width": 181
+  },
+  "/assets/images/eth_logo_flat.png": {
+    "digest": "68c27c02618fd484",
+    "height": 20,
+    "src": "/assets/generated/thumbnails/68c27c02618fd484-246.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/68c27c02618fd484-246.webp",
+        "width": 246
+      }
+    ],
+    "width": 246
+  },
+  "/assets/images/event_racer_logo.png": {
+    "digest": "c28d3083149fe86b",
+    "height": 433,
+    "src": "/assets/generated/thumbnails/c28d3083149fe86b-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/c28d3083149fe86b-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/c28d3083149fe86b-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/c28d3083149fe86b-662.webp",
+        "width": 662
+      }
+    ],
+    "width": 662
+  },
+  "/assets/images/eventracer_logo.png": {
+    "digest": "53e5bbf159023265",
+    "height": 102,
+    "src": "/assets/generated/thumbnails/53e5bbf159023265-374.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/53e5bbf159023265-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/53e5bbf159023265-374.webp",
+        "width": 374
+      }
+    ],
+    "width": 374
+  },
+  "/assets/images/eventracer_poster_preview.png": {
+    "digest": "75a51c304d61cfd5",
+    "height": 523,
+    "src": "/assets/generated/thumbnails/75a51c304d61cfd5-368.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/75a51c304d61cfd5-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/75a51c304d61cfd5-368.webp",
+        "width": 368
+      }
+    ],
+    "width": 368
+  },
+  "/assets/images/events.png": {
+    "digest": "5ef030cd793b3107",
+    "height": 150,
+    "src": "/assets/generated/thumbnails/5ef030cd793b3107-210.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/5ef030cd793b3107-210.webp",
+        "width": 210
+      }
+    ],
+    "width": 210
+  },
+  "/assets/images/favicon-16x16.png": {
+    "digest": "22ab607ab2323749",
+    "height": 16,
+    "src": "/assets/generated/thumbnails/22ab607ab2323749-16.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/22ab607ab2323749-16.webp",
+        "width": 16
+      }
+    ],
+    "width": 16
+  },
+  "/assets/images/favicon-32x32.png": {
+    "digest": "e778bf3b29bfd23d",
+    "height": 32,
+    "src": "/assets/generated/thumbnails/e778bf3b29bfd23d-32.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/e778bf3b29bfd23d-32.webp",
+        "width": 32
+      }
+    ],
+    "width": 32
+  },
+  "/assets/images/favicon.png": {
+    "digest": "d3c10ee048c8e8e2",
+    "height": 16,
+    "src": "/assets/generated/thumbnails/d3c10ee048c8e8e2-16.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/d3c10ee048c8e8e2-16.webp",
+        "width": 16
+      }
+    ],
+    "width": 16
+  },
+  "/assets/images/fb.png": {
+    "digest": "755a0adeaada0133",
+    "height": 347,
+    "src": "/assets/generated/thumbnails/755a0adeaada0133-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/755a0adeaada0133-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/755a0adeaada0133-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/755a0adeaada0133-1000.webp",
+        "width": 1000
+      }
+    ],
+    "width": 1000
+  },
+  "/assets/images/fender_logo.png": {
+    "digest": "80328bc81581f6b9",
+    "height": 433,
+    "src": "/assets/generated/thumbnails/80328bc81581f6b9-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/80328bc81581f6b9-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/80328bc81581f6b9-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/80328bc81581f6b9-662.webp",
+        "width": 662
+      }
+    ],
+    "width": 662
+  },
+  "/assets/images/fiorella.jpg": {
+    "digest": "f158bf99e7601925",
+    "height": 1458,
+    "src": "/assets/generated/thumbnails/f158bf99e7601925-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/f158bf99e7601925-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/f158bf99e7601925-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/f158bf99e7601925-1092.webp",
+        "width": 1092
+      }
+    ],
+    "width": 1092
+  },
+  "/assets/images/fischer2019saferl.png": {
+    "digest": "f215c48f4c58bc5c",
+    "height": 629,
+    "src": "/assets/generated/thumbnails/f215c48f4c58bc5c-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/f215c48f4c58bc5c-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/f215c48f4c58bc5c-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/f215c48f4c58bc5c-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/fischer2020smoothing.png": {
+    "digest": "fe01d19234234c3d",
+    "height": 400,
+    "src": "/assets/generated/thumbnails/fe01d19234234c3d-600.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/fe01d19234234c3d-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/fe01d19234234c3d-600.webp",
+        "width": 600
+      }
+    ],
+    "width": 600
+  },
+  "/assets/images/fischer2021segmentation.png": {
+    "digest": "ef02ca36d0e2e3fa",
+    "height": 400,
+    "src": "/assets/generated/thumbnails/ef02ca36d0e2e3fa-600.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/ef02ca36d0e2e3fa-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/ef02ca36d0e2e3fa-600.webp",
+        "width": 600
+      }
+    ],
+    "width": 600
+  },
+  "/assets/images/florian.jpg": {
+    "digest": "5c8a64f66f6ee058",
+    "height": 150,
+    "src": "/assets/generated/thumbnails/5c8a64f66f6ee058-134.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/5c8a64f66f6ee058-134.webp",
+        "width": 134
+      }
+    ],
+    "width": 134
+  },
+  "/assets/images/francois.jpg": {
+    "digest": "9285b1561e40fb90",
+    "height": 939,
+    "src": "/assets/generated/thumbnails/9285b1561e40fb90-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/9285b1561e40fb90-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/9285b1561e40fb90-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/9285b1561e40fb90-696.webp",
+        "width": 696
+      }
+    ],
+    "width": 696
+  },
+  "/assets/images/gdocs.jpg": {
+    "digest": "ffa52916156aee47",
+    "height": 400,
+    "src": "/assets/generated/thumbnails/ffa52916156aee47-600.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/ffa52916156aee47-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/ffa52916156aee47-600.webp",
+        "width": 600
+      }
+    ],
+    "width": 600
+  },
+  "/assets/images/gears.jpeg": {
+    "digest": "58524c62e10253b1",
+    "height": 389,
+    "src": "/assets/generated/thumbnails/58524c62e10253b1-500.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/58524c62e10253b1-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/58524c62e10253b1-500.webp",
+        "width": 500
+      }
+    ],
+    "width": 500
+  },
+  "/assets/images/ggn.jpg": {
+    "digest": "3cf86b0ebe168acb",
+    "height": 2084,
+    "src": "/assets/generated/thumbnails/3cf86b0ebe168acb-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/3cf86b0ebe168acb-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/3cf86b0ebe168acb-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/3cf86b0ebe168acb-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2082
+  },
+  "/assets/images/github_icon.png": {
+    "digest": "63fa74b4a9b82fc6",
+    "height": 61,
+    "src": "/assets/generated/thumbnails/63fa74b4a9b82fc6-60.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/63fa74b4a9b82fc6-60.webp",
+        "width": 60
+      }
+    ],
+    "width": 60
+  },
+  "/assets/images/github_logo.png": {
+    "digest": "978236f86599dd43",
+    "height": 410,
+    "src": "/assets/generated/thumbnails/978236f86599dd43-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/978236f86599dd43-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/978236f86599dd43-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/978236f86599dd43-1000.webp",
+        "width": 1000
+      }
+    ],
+    "width": 1000
+  },
+  "/assets/images/grammatech.jpg": {
+    "digest": "807234bc59b7d408",
+    "height": 89,
+    "src": "/assets/generated/thumbnails/807234bc59b7d408-246.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/807234bc59b7d408-246.webp",
+        "width": 246
+      }
+    ],
+    "width": 246
+  },
+  "/assets/images/graph.png": {
+    "digest": "df1ee70459273fa6",
+    "height": 170,
+    "src": "/assets/generated/thumbnails/df1ee70459273fa6-150.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/df1ee70459273fa6-150.webp",
+        "width": 150
+      }
+    ],
+    "width": 150
+  },
+  "/assets/images/group-2015-small.JPG": {
+    "digest": "f5827d2b28ccbbdd",
+    "height": 1000,
+    "src": "/assets/generated/thumbnails/f5827d2b28ccbbdd-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/f5827d2b28ccbbdd-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/f5827d2b28ccbbdd-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/f5827d2b28ccbbdd-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1500
+  },
+  "/assets/images/group-2017-orig.JPG": {
+    "digest": "39a2771c446558bd",
+    "height": 4000,
+    "src": "/assets/generated/thumbnails/39a2771c446558bd-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/39a2771c446558bd-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/39a2771c446558bd-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/39a2771c446558bd-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 6000
+  },
+  "/assets/images/group-2017-small.JPG": {
+    "digest": "09cb3c594b71a70d",
+    "height": 1166,
+    "src": "/assets/generated/thumbnails/09cb3c594b71a70d-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/09cb3c594b71a70d-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/09cb3c594b71a70d-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/09cb3c594b71a70d-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1748
+  },
+  "/assets/images/group-2017.JPG": {
+    "digest": "580cdebfab3cc876",
+    "height": 2915,
+    "src": "/assets/generated/thumbnails/580cdebfab3cc876-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/580cdebfab3cc876-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/580cdebfab3cc876-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/580cdebfab3cc876-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 4370
+  },
+  "/assets/images/group-2018-12-final.jpg": {
+    "digest": "7fee631a091dbae8",
+    "height": 1678,
+    "src": "/assets/generated/thumbnails/7fee631a091dbae8-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/7fee631a091dbae8-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/7fee631a091dbae8-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/7fee631a091dbae8-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2669
+  },
+  "/assets/images/group-2018-smaller.png": {
+    "digest": "de94c0a593e9269f",
+    "height": 1332,
+    "src": "/assets/generated/thumbnails/de94c0a593e9269f-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/de94c0a593e9269f-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/de94c0a593e9269f-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/de94c0a593e9269f-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2669
+  },
+  "/assets/images/group-2018.jpg": {
+    "digest": "e880a20e00044ff9",
+    "height": 863,
+    "src": "/assets/generated/thumbnails/e880a20e00044ff9-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/e880a20e00044ff9-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/e880a20e00044ff9-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/e880a20e00044ff9-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1757
+  },
+  "/assets/images/group-2023-crop-bw.png": {
+    "digest": "2bd454dab1e11cd5",
+    "height": 1218,
+    "src": "/assets/generated/thumbnails/2bd454dab1e11cd5-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/2bd454dab1e11cd5-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/2bd454dab1e11cd5-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/2bd454dab1e11cd5-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2788
+  },
+  "/assets/images/group-2023/bw.jpg": {
+    "digest": "40df563458783a1e",
+    "height": 1218,
+    "src": "/assets/generated/thumbnails/40df563458783a1e-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/40df563458783a1e-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/40df563458783a1e-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/40df563458783a1e-1280.webp",
+        "width": 1280
+      },
+      {
+        "url": "/assets/generated/thumbnails/40df563458783a1e-1920.webp",
+        "width": 1920
+      }
+    ],
+    "width": 2788
+  },
+  "/assets/images/group-2023/color.jpg": {
+    "digest": "95a3b191b4ae6f3e",
+    "height": 1218,
+    "src": "/assets/generated/thumbnails/95a3b191b4ae6f3e-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/95a3b191b4ae6f3e-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/95a3b191b4ae6f3e-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/95a3b191b4ae6f3e-1280.webp",
+        "width": 1280
+      },
+      {
+        "url": "/assets/generated/thumbnails/95a3b191b4ae6f3e-1920.webp",
+        "width": 1920
+      }
+    ],
+    "width": 2788
+  },
+  "/assets/images/group-2023/xmem_masks_handtuned.png": {
+    "digest": "f9a61cff05c198cc",
+    "height": 1218,
+    "src": "/assets/generated/thumbnails/f9a61cff05c198cc-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/f9a61cff05c198cc-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/f9a61cff05c198cc-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/f9a61cff05c198cc-1280.webp",
+        "width": 1280
+      },
+      {
+        "url": "/assets/generated/thumbnails/f9a61cff05c198cc-1920.webp",
+        "width": 1920
+      }
+    ],
+    "width": 2788
+  },
+  "/assets/images/group_high.jpg": {
+    "digest": "daef144073a8aae5",
+    "height": 3264,
+    "src": "/assets/generated/thumbnails/daef144073a8aae5-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/daef144073a8aae5-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/daef144073a8aae5-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/daef144073a8aae5-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 4928
+  },
+  "/assets/images/groupsmall.jpg": {
+    "digest": "48f972fc98348674",
+    "height": 1188,
+    "src": "/assets/generated/thumbnails/48f972fc98348674-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/48f972fc98348674-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/48f972fc98348674-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/48f972fc98348674-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1419
+  },
+  "/assets/images/gslides_logo.png": {
+    "digest": "75a0500c172c64dd",
+    "height": 32,
+    "src": "/assets/generated/thumbnails/75a0500c172c64dd-32.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/75a0500c172c64dd-32.webp",
+        "width": 32
+      }
+    ],
+    "width": 32
+  },
+  "/assets/images/gsmooth.png": {
+    "digest": "fb2dd2348afc1bc0",
+    "height": 1178,
+    "src": "/assets/generated/thumbnails/fb2dd2348afc1bc0-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/fb2dd2348afc1bc0-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/fb2dd2348afc1bc0-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/fb2dd2348afc1bc0-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2410
+  },
+  "/assets/images/haskell.png": {
+    "digest": "d070fd1a14a1a845",
+    "height": 128,
+    "src": "/assets/generated/thumbnails/d070fd1a14a1a845-128.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/d070fd1a14a1a845-128.webp",
+        "width": 128
+      }
+    ],
+    "width": 128
+  },
+  "/assets/images/iclr_poster_preview.jpg": {
+    "digest": "1973509190b11647",
+    "height": 520,
+    "src": "/assets/generated/thumbnails/1973509190b11647-368.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/1973509190b11647-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/1973509190b11647-368.webp",
+        "width": 368
+      }
+    ],
+    "width": 368
+  },
+  "/assets/images/icml22-logo.png": {
+    "digest": "39432b54dbf84ec3",
+    "height": 1200,
+    "src": "/assets/generated/thumbnails/39432b54dbf84ec3-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/39432b54dbf84ec3-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/39432b54dbf84ec3-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/39432b54dbf84ec3-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2269
+  },
+  "/assets/images/icml_poster_preview.jpg": {
+    "digest": "8e122fc5fb2ef204",
+    "height": 520,
+    "src": "/assets/generated/thumbnails/8e122fc5fb2ef204-368.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/8e122fc5fb2ef204-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/8e122fc5fb2ef204-368.webp",
+        "width": 368
+      }
+    ],
+    "width": 368
+  },
+  "/assets/images/ilf-logo-1.png": {
+    "digest": "162ba086800b7edb",
+    "height": 900,
+    "src": "/assets/generated/thumbnails/162ba086800b7edb-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/162ba086800b7edb-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/162ba086800b7edb-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/162ba086800b7edb-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1681
+  },
+  "/assets/images/ilf-logo.png": {
+    "digest": "d490c2a274023078",
+    "height": 1143,
+    "src": "/assets/generated/thumbnails/d490c2a274023078-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/d490c2a274023078-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/d490c2a274023078-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/d490c2a274023078-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1865
+  },
+  "/assets/images/invariant-logo.png": {
+    "digest": "1e4777f08a647912",
+    "height": 172,
+    "src": "/assets/generated/thumbnails/1e4777f08a647912-292.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/1e4777f08a647912-292.webp",
+        "width": 292
+      }
+    ],
+    "width": 292
+  },
+  "/assets/images/jasper.jpg": {
+    "digest": "45d376562ec17865",
+    "height": 1600,
+    "src": "/assets/generated/thumbnails/45d376562ec17865-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/45d376562ec17865-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/45d376562ec17865-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/45d376562ec17865-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/jav1.jpg": {
+    "digest": "5e2aaa19717fae4b",
+    "height": 357,
+    "src": "/assets/generated/thumbnails/5e2aaa19717fae4b-430.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/5e2aaa19717fae4b-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/5e2aaa19717fae4b-430.webp",
+        "width": 430
+      }
+    ],
+    "width": 430
+  },
+  "/assets/images/jingxuan.jpg": {
+    "digest": "4df546747db52e0f",
+    "height": 1244,
+    "src": "/assets/generated/thumbnails/4df546747db52e0f-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/4df546747db52e0f-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/4df546747db52e0f-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/4df546747db52e0f-934.webp",
+        "width": 934
+      }
+    ],
+    "width": 934
+  },
+  "/assets/images/jm.png": {
+    "digest": "07e71f45f9272e1e",
+    "height": 403,
+    "src": "/assets/generated/thumbnails/07e71f45f9272e1e-385.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/07e71f45f9272e1e-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/07e71f45f9272e1e-385.webp",
+        "width": 385
+      }
+    ],
+    "width": 385
+  },
+  "/assets/images/js_nice_logo.png": {
+    "digest": "0a171b6e8d9cfc95",
+    "height": 433,
+    "src": "/assets/generated/thumbnails/0a171b6e8d9cfc95-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/0a171b6e8d9cfc95-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/0a171b6e8d9cfc95-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/0a171b6e8d9cfc95-662.webp",
+        "width": 662
+      }
+    ],
+    "width": 662
+  },
+  "/assets/images/js_nice_logo_wide.png": {
+    "digest": "b123ee7c4eabfe02",
+    "height": 156,
+    "src": "/assets/generated/thumbnails/b123ee7c4eabfe02-572.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/b123ee7c4eabfe02-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/b123ee7c4eabfe02-572.webp",
+        "width": 572
+      }
+    ],
+    "width": 572
+  },
+  "/assets/images/jsnice.png": {
+    "digest": "59a5b28fc4241f9c",
+    "height": 56,
+    "src": "/assets/generated/thumbnails/59a5b28fc4241f9c-465.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/59a5b28fc4241f9c-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/59a5b28fc4241f9c-465.webp",
+        "width": 465
+      }
+    ],
+    "width": 465
+  },
+  "/assets/images/kari.jpg": {
+    "digest": "522dc69af2e7984b",
+    "height": 1291,
+    "src": "/assets/generated/thumbnails/522dc69af2e7984b-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/522dc69af2e7984b-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/522dc69af2e7984b-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/522dc69af2e7984b-968.webp",
+        "width": 968
+      }
+    ],
+    "width": 968
+  },
+  "/assets/images/kazuki.png": {
+    "digest": "4d2aca722c8aea45",
+    "height": 1430,
+    "src": "/assets/generated/thumbnails/4d2aca722c8aea45-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/4d2aca722c8aea45-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/4d2aca722c8aea45-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/4d2aca722c8aea45-1100.webp",
+        "width": 1100
+      }
+    ],
+    "width": 1100
+  },
+  "/assets/images/krelu.png": {
+    "digest": "e42e80237765502e",
+    "height": 379,
+    "src": "/assets/generated/thumbnails/e42e80237765502e-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/e42e80237765502e-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/e42e80237765502e-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/e42e80237765502e-1079.webp",
+        "width": 1079
+      }
+    ],
+    "width": 1079
+  },
+  "/assets/images/lassi_overview.png": {
+    "digest": "081435f85286e7df",
+    "height": 2274,
+    "src": "/assets/generated/thumbnails/081435f85286e7df-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/081435f85286e7df-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/081435f85286e7df-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/081435f85286e7df-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 9406
+  },
+  "/assets/images/latticeflow-logo.png": {
+    "digest": "37c9fc333ca02d53",
+    "height": 172,
+    "src": "/assets/generated/thumbnails/37c9fc333ca02d53-292.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/37c9fc333ca02d53-292.webp",
+        "width": 292
+      }
+    ],
+    "width": 292
+  },
+  "/assets/images/links.jpg": {
+    "digest": "38eaa0d5b358ab5b",
+    "height": 1008,
+    "src": "/assets/generated/thumbnails/38eaa0d5b358ab5b-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/38eaa0d5b358ab5b-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/38eaa0d5b358ab5b-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/38eaa0d5b358ab5b-1008.webp",
+        "width": 1008
+      }
+    ],
+    "width": 1008
+  },
+  "/assets/images/linux_logo.png": {
+    "digest": "1ea642e6d055e973",
+    "height": 301,
+    "src": "/assets/generated/thumbnails/1ea642e6d055e973-280.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/1ea642e6d055e973-280.webp",
+        "width": 280
+      }
+    ],
+    "width": 280
+  },
+  "/assets/images/list.png": {
+    "digest": "83e79d5f24183998",
+    "height": 401,
+    "src": "/assets/generated/thumbnails/83e79d5f24183998-436.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/83e79d5f24183998-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/83e79d5f24183998-436.webp",
+        "width": 436
+      }
+    ],
+    "width": 436
+  },
+  "/assets/images/llvm.png": {
+    "digest": "ae19cc6d49a43597",
+    "height": 88,
+    "src": "/assets/generated/thumbnails/ae19cc6d49a43597-250.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/ae19cc6d49a43597-250.webp",
+        "width": 250
+      }
+    ],
+    "width": 250
+  },
+  "/assets/images/logicstar-logo-white.png": {
+    "digest": "8283b9b52b7cda90",
+    "height": 172,
+    "src": "/assets/generated/thumbnails/8283b9b52b7cda90-292.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/8283b9b52b7cda90-292.webp",
+        "width": 292
+      }
+    ],
+    "width": 292
+  },
+  "/assets/images/logicstar-logo.png": {
+    "digest": "ae6d7d4ff37c129a",
+    "height": 589,
+    "src": "/assets/generated/thumbnails/ae6d7d4ff37c129a-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/ae6d7d4ff37c129a-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/ae6d7d4ff37c129a-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/ae6d7d4ff37c129a-1000.webp",
+        "width": 1000
+      }
+    ],
+    "width": 1000
+  },
+  "/assets/images/logo-bg.png": {
+    "digest": "54fc022730e8cb77",
+    "height": 37,
+    "src": "/assets/generated/thumbnails/54fc022730e8cb77-52.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/54fc022730e8cb77-52.webp",
+        "width": 52
+      }
+    ],
+    "width": 52
+  },
+  "/assets/images/lower.png": {
+    "digest": "95f9785686b1a744",
+    "height": 194,
+    "src": "/assets/generated/thumbnails/95f9785686b1a744-206.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/95f9785686b1a744-206.webp",
+        "width": 206
+      }
+    ],
+    "width": 206
+  },
+  "/assets/images/lower2.jpg": {
+    "digest": "d558dc21932f86d6",
+    "height": 1617,
+    "src": "/assets/generated/thumbnails/d558dc21932f86d6-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/d558dc21932f86d6-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/d558dc21932f86d6-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/d558dc21932f86d6-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2288
+  },
+  "/assets/images/luca.jpg": {
+    "digest": "73f60b92defeadc1",
+    "height": 1600,
+    "src": "/assets/generated/thumbnails/73f60b92defeadc1-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/73f60b92defeadc1-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/73f60b92defeadc1-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/73f60b92defeadc1-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/lwn.png": {
+    "digest": "572a897a1a1b82da",
+    "height": 120,
+    "src": "/assets/generated/thumbnails/572a897a1a1b82da-153.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/572a897a1a1b82da-153.webp",
+        "width": 153
+      }
+    ],
+    "width": 153
+  },
+  "/assets/images/marc.jpg": {
+    "digest": "c2a65d40c63e58c1",
+    "height": 1600,
+    "src": "/assets/generated/thumbnails/c2a65d40c63e58c1-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/c2a65d40c63e58c1-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/c2a65d40c63e58c1-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/c2a65d40c63e58c1-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/marco_guarnieri.png": {
+    "digest": "1e3935a58ce23201",
+    "height": 196,
+    "src": "/assets/generated/thumbnails/1e3935a58ce23201-159.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/1e3935a58ce23201-159.webp",
+        "width": 159
+      }
+    ],
+    "width": 159
+  },
+  "/assets/images/mark.jpg": {
+    "digest": "7894516afca82779",
+    "height": 1288,
+    "src": "/assets/generated/thumbnails/7894516afca82779-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/7894516afca82779-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/7894516afca82779-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/7894516afca82779-966.webp",
+        "width": 966
+      }
+    ],
+    "width": 966
+  },
+  "/assets/images/markVero.jpg": {
+    "digest": "ab4e9f37d5d9390a",
+    "height": 1600,
+    "src": "/assets/generated/thumbnails/ab4e9f37d5d9390a-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/ab4e9f37d5d9390a-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/ab4e9f37d5d9390a-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/ab4e9f37d5d9390a-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/mark_bak.jpg": {
+    "digest": "bd6edb4872d7ee3c",
+    "height": 1600,
+    "src": "/assets/generated/thumbnails/bd6edb4872d7ee3c-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/bd6edb4872d7ee3c-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/bd6edb4872d7ee3c-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/bd6edb4872d7ee3c-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/mark_new.jpg": {
+    "digest": "9349f84350db9446",
+    "height": 3082,
+    "src": "/assets/generated/thumbnails/9349f84350db9446-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/9349f84350db9446-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/9349f84350db9446-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/9349f84350db9446-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2396
+  },
+  "/assets/images/markus.jpg": {
+    "digest": "ee50712049349fdf",
+    "height": 555,
+    "src": "/assets/generated/thumbnails/ee50712049349fdf-478.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/ee50712049349fdf-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/ee50712049349fdf-478.webp",
+        "width": 478
+      }
+    ],
+    "width": 478
+  },
+  "/assets/images/martin_kucera.jpg": {
+    "digest": "0d4304f84765883a",
+    "height": 396,
+    "src": "/assets/generated/thumbnails/0d4304f84765883a-300.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/0d4304f84765883a-300.webp",
+        "width": 300
+      }
+    ],
+    "width": 300
+  },
+  "/assets/images/matthew_mirman.jpg": {
+    "digest": "40c12a9c88519ce4",
+    "height": 1170,
+    "src": "/assets/generated/thumbnails/40c12a9c88519ce4-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/40c12a9c88519ce4-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/40c12a9c88519ce4-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/40c12a9c88519ce4-873.webp",
+        "width": 873
+      }
+    ],
+    "width": 873
+  },
+  "/assets/images/max.jpg": {
+    "digest": "7e0fd59f0bdb2785",
+    "height": 1600,
+    "src": "/assets/generated/thumbnails/7e0fd59f0bdb2785-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/7e0fd59f0bdb2785-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/7e0fd59f0bdb2785-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/7e0fd59f0bdb2785-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/mirella.jpg": {
+    "digest": "e0c0c55d428c60ca",
+    "height": 768,
+    "src": "/assets/generated/thumbnails/e0c0c55d428c60ca-597.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/e0c0c55d428c60ca-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/e0c0c55d428c60ca-597.webp",
+        "width": 597
+      }
+    ],
+    "width": 597
+  },
+  "/assets/images/mirman2021impossibility.png": {
+    "digest": "ea59a69b2cdde03b",
+    "height": 630,
+    "src": "/assets/generated/thumbnails/ea59a69b2cdde03b-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/ea59a69b2cdde03b-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/ea59a69b2cdde03b-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/ea59a69b2cdde03b-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/mirman2021incompleteness.png": {
+    "digest": "6d8c85756991e8a3",
+    "height": 630,
+    "src": "/assets/generated/thumbnails/6d8c85756991e8a3-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/6d8c85756991e8a3-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/6d8c85756991e8a3-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/6d8c85756991e8a3-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/mirman2021theory.png": {
+    "digest": "34d4537d932f2606",
+    "height": 630,
+    "src": "/assets/generated/thumbnails/34d4537d932f2606-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/34d4537d932f2606-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/34d4537d932f2606-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/34d4537d932f2606-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/mislav.jpg": {
+    "digest": "597ad307e4eb5e69",
+    "height": 1600,
+    "src": "/assets/generated/thumbnails/597ad307e4eb5e69-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/597ad307e4eb5e69-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/597ad307e4eb5e69-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/597ad307e4eb5e69-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/mislav.png": {
+    "digest": "cc83356575c0c8d6",
+    "height": 600,
+    "src": "/assets/generated/thumbnails/cc83356575c0c8d6-600.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/cc83356575c0c8d6-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/cc83356575c0c8d6-600.webp",
+        "width": 600
+      }
+    ],
+    "width": 600
+  },
+  "/assets/images/moi.jpg": {
+    "digest": "348bbdb94f3e3ded",
+    "height": 195,
+    "src": "/assets/generated/thumbnails/348bbdb94f3e3ded-162.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/348bbdb94f3e3ded-162.webp",
+        "width": 162
+      }
+    ],
+    "width": 162
+  },
+  "/assets/images/momchil.jpg": {
+    "digest": "499e17ea70125939",
+    "height": 1600,
+    "src": "/assets/generated/thumbnails/499e17ea70125939-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/499e17ea70125939-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/499e17ea70125939-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/499e17ea70125939-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/mv.jpg": {
+    "digest": "66b9e09923d5499f",
+    "height": 115,
+    "src": "/assets/generated/thumbnails/66b9e09923d5499f-115.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/66b9e09923d5499f-115.webp",
+        "width": 115
+      }
+    ],
+    "width": 115
+  },
+  "/assets/images/mveth.jpg": {
+    "digest": "1844b13a7929cd9c",
+    "height": 1600,
+    "src": "/assets/generated/thumbnails/1844b13a7929cd9c-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/1844b13a7929cd9c-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/1844b13a7929cd9c-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/1844b13a7929cd9c-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/mvpic.jpg": {
+    "digest": "195ec732c47fa68f",
+    "height": 689,
+    "src": "/assets/generated/thumbnails/195ec732c47fa68f-636.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/195ec732c47fa68f-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/195ec732c47fa68f-636.webp",
+        "width": 636
+      }
+    ],
+    "width": 636
+  },
+  "/assets/images/mvpic.png": {
+    "digest": "d6fa626eb94c16c5",
+    "height": 139,
+    "src": "/assets/generated/thumbnails/d6fa626eb94c16c5-129.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/d6fa626eb94c16c5-129.webp",
+        "width": 129
+      }
+    ],
+    "width": 129
+  },
+  "/assets/images/mvs-s.jpg": {
+    "digest": "83e2a9c6a238dc17",
+    "height": 150,
+    "src": "/assets/generated/thumbnails/83e2a9c6a238dc17-128.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/83e2a9c6a238dc17-128.webp",
+        "width": 128
+      }
+    ],
+    "width": 128
+  },
+  "/assets/images/mvs.jpg": {
+    "digest": "e36c563c6929d1c0",
+    "height": 1247,
+    "src": "/assets/generated/thumbnails/e36c563c6929d1c0-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/e36c563c6929d1c0-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/e36c563c6929d1c0-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/e36c563c6929d1c0-1061.webp",
+        "width": 1061
+      }
+    ],
+    "width": 1061
+  },
+  "/assets/images/net2text_logo.png": {
+    "digest": "9ca54c3e823ed971",
+    "height": 433,
+    "src": "/assets/generated/thumbnails/9ca54c3e823ed971-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/9ca54c3e823ed971-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/9ca54c3e823ed971-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/9ca54c3e823ed971-662.webp",
+        "width": 662
+      }
+    ],
+    "width": 662
+  },
+  "/assets/images/netfabric-logo.png": {
+    "digest": "6bcfd72850405ceb",
+    "height": 172,
+    "src": "/assets/generated/thumbnails/6bcfd72850405ceb-292.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/6bcfd72850405ceb-292.webp",
+        "width": 292
+      }
+    ],
+    "width": 292
+  },
+  "/assets/images/nice2predict_logo.png": {
+    "digest": "a401ad942984e336",
+    "height": 312,
+    "src": "/assets/generated/thumbnails/a401ad942984e336-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/a401ad942984e336-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/a401ad942984e336-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/a401ad942984e336-1145.webp",
+        "width": 1145
+      }
+    ],
+    "width": 1145
+  },
+  "/assets/images/niels.png": {
+    "digest": "7918a6254365f796",
+    "height": 1127,
+    "src": "/assets/generated/thumbnails/7918a6254365f796-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/7918a6254365f796-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/7918a6254365f796-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/7918a6254365f796-845.webp",
+        "width": 845
+      }
+    ],
+    "width": 845
+  },
+  "/assets/images/nikola.jpg": {
+    "digest": "07642b48e0716ac7",
+    "height": 971,
+    "src": "/assets/generated/thumbnails/07642b48e0716ac7-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/07642b48e0716ac7-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/07642b48e0716ac7-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/07642b48e0716ac7-728.webp",
+        "width": 728
+      }
+    ],
+    "width": 728
+  },
+  "/assets/images/nikola2.jpg": {
+    "digest": "44e5f4da370836cb",
+    "height": 1603,
+    "src": "/assets/generated/thumbnails/44e5f4da370836cb-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/44e5f4da370836cb-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/44e5f4da370836cb-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/44e5f4da370836cb-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/numerical.jpg": {
+    "digest": "33e669b98480c78a",
+    "height": 268,
+    "src": "/assets/generated/thumbnails/33e669b98480c78a-564.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/33e669b98480c78a-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/33e669b98480c78a-564.webp",
+        "width": 564
+      }
+    ],
+    "width": 564
+  },
+  "/assets/images/numerical_domains.png": {
+    "digest": "70a77ae60aa3be2a",
+    "height": 491,
+    "src": "/assets/generated/thumbnails/70a77ae60aa3be2a-535.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/70a77ae60aa3be2a-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/70a77ae60aa3be2a-535.webp",
+        "width": 535
+      }
+    ],
+    "width": 535
+  },
+  "/assets/images/onward.png": {
+    "digest": "970a54d2188340d7",
+    "height": 627,
+    "src": "/assets/generated/thumbnails/970a54d2188340d7-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/970a54d2188340d7-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/970a54d2188340d7-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/970a54d2188340d7-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/orator.jpg": {
+    "digest": "7f61f3d389a954d0",
+    "height": 159,
+    "src": "/assets/generated/thumbnails/7f61f3d389a954d0-200.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/7f61f3d389a954d0-200.webp",
+        "width": 200
+      }
+    ],
+    "width": 200
+  },
+  "/assets/images/ou.jpg": {
+    "digest": "ffe64419d22deb44",
+    "height": 2765,
+    "src": "/assets/generated/thumbnails/ffe64419d22deb44-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/ffe64419d22deb44-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/ffe64419d22deb44-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/ffe64419d22deb44-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1824
+  },
+  "/assets/images/pagediv.png": {
+    "digest": "a924bcf973c6ba0c",
+    "height": 58,
+    "src": "/assets/generated/thumbnails/a924bcf973c6ba0c-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/a924bcf973c6ba0c-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/a924bcf973c6ba0c-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/a924bcf973c6ba0c-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1400
+  },
+  "/assets/images/para.png": {
+    "digest": "43513960dd6d2905",
+    "height": 171,
+    "src": "/assets/generated/thumbnails/43513960dd6d2905-151.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/43513960dd6d2905-151.webp",
+        "width": 151
+      }
+    ],
+    "width": 151
+  },
+  "/assets/images/pass.png": {
+    "digest": "5a72647cff6800c7",
+    "height": 680,
+    "src": "/assets/generated/thumbnails/5a72647cff6800c7-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/5a72647cff6800c7-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/5a72647cff6800c7-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/5a72647cff6800c7-734.webp",
+        "width": 734
+      }
+    ],
+    "width": 734
+  },
+  "/assets/images/pavol.png": {
+    "digest": "cb3be03fbdcfe203",
+    "height": 868,
+    "src": "/assets/generated/thumbnails/cb3be03fbdcfe203-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/cb3be03fbdcfe203-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/cb3be03fbdcfe203-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/cb3be03fbdcfe203-756.webp",
+        "width": 756
+      }
+    ],
+    "width": 756
+  },
+  "/assets/images/pdf.png": {
+    "digest": "5d39987c94019d22",
+    "height": 32,
+    "src": "/assets/generated/thumbnails/5d39987c94019d22-32.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/5d39987c94019d22-32.webp",
+        "width": 32
+      }
+    ],
+    "width": 32
+  },
+  "/assets/images/pdficon.png": {
+    "digest": "c36b128afb942083",
+    "height": 128,
+    "src": "/assets/generated/thumbnails/c36b128afb942083-128.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/c36b128afb942083-128.webp",
+        "width": 128
+      }
+    ],
+    "width": 128
+  },
+  "/assets/images/pdficonsmall.jpg": {
+    "digest": "2ecfcf011e69d632",
+    "height": 45,
+    "src": "/assets/generated/thumbnails/2ecfcf011e69d632-45.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/2ecfcf011e69d632-45.webp",
+        "width": 45
+      }
+    ],
+    "width": 45
+  },
+  "/assets/images/pesho.jpg": {
+    "digest": "1c2735f27c8eefe6",
+    "height": 1600,
+    "src": "/assets/generated/thumbnails/1c2735f27c8eefe6-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/1c2735f27c8eefe6-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/1c2735f27c8eefe6-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/1c2735f27c8eefe6-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/petar-s.jpg": {
+    "digest": "04024c7117aaee0f",
+    "height": 150,
+    "src": "/assets/generated/thumbnails/04024c7117aaee0f-134.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/04024c7117aaee0f-134.webp",
+        "width": 134
+      }
+    ],
+    "width": 134
+  },
+  "/assets/images/petar-small.jpg": {
+    "digest": "ac4ba642ead71e00",
+    "height": 150,
+    "src": "/assets/generated/thumbnails/ac4ba642ead71e00-150.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/ac4ba642ead71e00-150.webp",
+        "width": 150
+      }
+    ],
+    "width": 150
+  },
+  "/assets/images/petar.jpg": {
+    "digest": "5576a51b138fce4c",
+    "height": 672,
+    "src": "/assets/generated/thumbnails/5576a51b138fce4c-600.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/5576a51b138fce4c-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/5576a51b138fce4c-600.webp",
+        "width": 600
+      }
+    ],
+    "width": 600
+  },
+  "/assets/images/petar.png": {
+    "digest": "b51efa4121d8dfd5",
+    "height": 676,
+    "src": "/assets/generated/thumbnails/b51efa4121d8dfd5-500.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/b51efa4121d8dfd5-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/b51efa4121d8dfd5-500.webp",
+        "width": 500
+      }
+    ],
+    "width": 500
+  },
+  "/assets/images/plam.jpg": {
+    "digest": "848b5afcc067a562",
+    "height": 681,
+    "src": "/assets/generated/thumbnails/848b5afcc067a562-541.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/848b5afcc067a562-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/848b5afcc067a562-541.webp",
+        "width": 541
+      }
+    ],
+    "width": 541
+  },
+  "/assets/images/psi.png": {
+    "digest": "97bec3ff4933c88e",
+    "height": 139,
+    "src": "/assets/generated/thumbnails/97bec3ff4933c88e-235.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/97bec3ff4933c88e-235.webp",
+        "width": 235
+      }
+    ],
+    "width": 235
+  },
+  "/assets/images/psi_logo.png": {
+    "digest": "1864b31a268b25db",
+    "height": 433,
+    "src": "/assets/generated/thumbnails/1864b31a268b25db-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/1864b31a268b25db-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/1864b31a268b25db-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/1864b31a268b25db-662.webp",
+        "width": 662
+      }
+    ],
+    "width": 662
+  },
+  "/assets/images/qvm.png": {
+    "digest": "d20730d6750c6198",
+    "height": 172,
+    "src": "/assets/generated/thumbnails/d20730d6750c6198-222.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/d20730d6750c6198-222.webp",
+        "width": 222
+      }
+    ],
+    "width": 222
+  },
+  "/assets/images/rb.png": {
+    "digest": "97b21a0044982416",
+    "height": 200,
+    "src": "/assets/generated/thumbnails/97b21a0044982416-200.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/97b21a0044982416-200.webp",
+        "width": 200
+      }
+    ],
+    "width": 200
+  },
+  "/assets/images/reliableai_logo.png": {
+    "digest": "5c8e6eace5f8ad0d",
+    "height": 540,
+    "src": "/assets/generated/thumbnails/5c8e6eace5f8ad0d-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/5c8e6eace5f8ad0d-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/5c8e6eace5f8ad0d-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/5c8e6eace5f8ad0d-960.webp",
+        "width": 960
+      }
+    ],
+    "width": 960
+  },
+  "/assets/images/riai-logo.png": {
+    "digest": "5134af4c0b1340ce",
+    "height": 1020,
+    "src": "/assets/generated/thumbnails/5134af4c0b1340ce-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/5134af4c0b1340ce-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/5134af4c0b1340ce-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/5134af4c0b1340ce-1020.webp",
+        "width": 1020
+      }
+    ],
+    "width": 1020
+  },
+  "/assets/images/riai_logo_1200_630.png": {
+    "digest": "a027a2d687fd41ad",
+    "height": 630,
+    "src": "/assets/generated/thumbnails/a027a2d687fd41ad-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/a027a2d687fd41ad-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/a027a2d687fd41ad-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/a027a2d687fd41ad-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/rnn.png": {
+    "digest": "45f7a71004d94a98",
+    "height": 168,
+    "src": "/assets/generated/thumbnails/45f7a71004d94a98-239.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/45f7a71004d94a98-239.webp",
+        "width": 239
+      }
+    ],
+    "width": 239
+  },
+  "/assets/images/robin.jpg": {
+    "digest": "395e9f9ad86b6239",
+    "height": 2884,
+    "src": "/assets/generated/thumbnails/395e9f9ad86b6239-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/395e9f9ad86b6239-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/395e9f9ad86b6239-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/395e9f9ad86b6239-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2163
+  },
+  "/assets/images/rudi.jpg": {
+    "digest": "91bea485814599f9",
+    "height": 1600,
+    "src": "/assets/generated/thumbnails/91bea485814599f9-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/91bea485814599f9-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/91bea485814599f9-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/91bea485814599f9-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/sae.png": {
+    "digest": "96b8186bdac93eda",
+    "height": 330,
+    "src": "/assets/generated/thumbnails/96b8186bdac93eda-330.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/96b8186bdac93eda-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/96b8186bdac93eda-330.webp",
+        "width": 330
+      }
+    ],
+    "width": 330
+  },
+  "/assets/images/sam.jpg": {
+    "digest": "56d3a71f41eb8816",
+    "height": 1600,
+    "src": "/assets/generated/thumbnails/56d3a71f41eb8816-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/56d3a71f41eb8816-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/56d3a71f41eb8816-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/56d3a71f41eb8816-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/sasam.png": {
+    "digest": "64e4c84ccda623c5",
+    "height": 696,
+    "src": "/assets/generated/thumbnails/64e4c84ccda623c5-572.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/64e4c84ccda623c5-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/64e4c84ccda623c5-572.webp",
+        "width": 572
+      }
+    ],
+    "width": 572
+  },
+  "/assets/images/securify-logo.png": {
+    "digest": "31f906228cf7a759",
+    "height": 922,
+    "src": "/assets/generated/thumbnails/31f906228cf7a759-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/31f906228cf7a759-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/31f906228cf7a759-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/31f906228cf7a759-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2074
+  },
+  "/assets/images/securify.png": {
+    "digest": "69d50737e32b71b0",
+    "height": 84,
+    "src": "/assets/generated/thumbnails/69d50737e32b71b0-271.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/69d50737e32b71b0-271.webp",
+        "width": 271
+      }
+    ],
+    "width": 271
+  },
+  "/assets/images/security.jpg": {
+    "digest": "f5426874b226a647",
+    "height": 427,
+    "src": "/assets/generated/thumbnails/f5426874b226a647-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/f5426874b226a647-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/f5426874b226a647-640.webp",
+        "width": 640
+      }
+    ],
+    "width": 640
+  },
+  "/assets/images/singh2019krelu.png": {
+    "digest": "6cf6a0150a0c9038",
+    "height": 629,
+    "src": "/assets/generated/thumbnails/6cf6a0150a0c9038-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/6cf6a0150a0c9038-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/6cf6a0150a0c9038-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/6cf6a0150a0c9038-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/slide_preview_PeWe.png": {
+    "digest": "5960509766cd6524",
+    "height": 720,
+    "src": "/assets/generated/thumbnails/5960509766cd6524-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/5960509766cd6524-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/5960509766cd6524-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/5960509766cd6524-960.webp",
+        "width": 960
+      }
+    ],
+    "width": 960
+  },
+  "/assets/images/slide_preview_cav.png": {
+    "digest": "f15c7b4b830d412b",
+    "height": 720,
+    "src": "/assets/generated/thumbnails/f15c7b4b830d412b-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/f15c7b4b830d412b-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/f15c7b4b830d412b-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/f15c7b4b830d412b-960.webp",
+        "width": 960
+      }
+    ],
+    "width": 960
+  },
+  "/assets/images/slide_preview_cav17_learning.png": {
+    "digest": "b15b76e3f48d2655",
+    "height": 720,
+    "src": "/assets/generated/thumbnails/b15b76e3f48d2655-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/b15b76e3f48d2655-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/b15b76e3f48d2655-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/b15b76e3f48d2655-960.webp",
+        "width": 960
+      }
+    ],
+    "width": 960
+  },
+  "/assets/images/slide_preview_fb_workshop17.png": {
+    "digest": "56f943c838cf3132",
+    "height": 720,
+    "src": "/assets/generated/thumbnails/56f943c838cf3132-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/56f943c838cf3132-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/56f943c838cf3132-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/56f943c838cf3132-960.webp",
+        "width": 960
+      }
+    ],
+    "width": 960
+  },
+  "/assets/images/slide_preview_icml.png": {
+    "digest": "e8f28acd22f37ed4",
+    "height": 720,
+    "src": "/assets/generated/thumbnails/e8f28acd22f37ed4-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/e8f28acd22f37ed4-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/e8f28acd22f37ed4-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/e8f28acd22f37ed4-960.webp",
+        "width": 960
+      }
+    ],
+    "width": 960
+  },
+  "/assets/images/slide_preview_oopsla15.png": {
+    "digest": "739e2ed6c92e3770",
+    "height": 720,
+    "src": "/assets/generated/thumbnails/739e2ed6c92e3770-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/739e2ed6c92e3770-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/739e2ed6c92e3770-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/739e2ed6c92e3770-960.webp",
+        "width": 960
+      }
+    ],
+    "width": 960
+  },
+  "/assets/images/slide_preview_oopsla16.png": {
+    "digest": "9b73c37183cfaaea",
+    "height": 720,
+    "src": "/assets/generated/thumbnails/9b73c37183cfaaea-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/9b73c37183cfaaea-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/9b73c37183cfaaea-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/9b73c37183cfaaea-960.webp",
+        "width": 960
+      }
+    ],
+    "width": 960
+  },
+  "/assets/images/slide_preview_snapl.png": {
+    "digest": "c8fca21c97fde6ab",
+    "height": 360,
+    "src": "/assets/generated/thumbnails/c8fca21c97fde6ab-480.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/c8fca21c97fde6ab-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/c8fca21c97fde6ab-480.webp",
+        "width": 480
+      }
+    ],
+    "width": 480
+  },
+  "/assets/images/slide_preview_sosr.png": {
+    "digest": "fbe3421a130f0915",
+    "height": 359,
+    "src": "/assets/generated/thumbnails/fbe3421a130f0915-480.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/fbe3421a130f0915-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/fbe3421a130f0915-480.webp",
+        "width": 480
+      }
+    ],
+    "width": 480
+  },
+  "/assets/images/slide_preview_strangeloop.png": {
+    "digest": "79862e83a33b612c",
+    "height": 360,
+    "src": "/assets/generated/thumbnails/79862e83a33b612c-480.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/79862e83a33b612c-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/79862e83a33b612c-480.webp",
+        "width": 480
+      }
+    ],
+    "width": 480
+  },
+  "/assets/images/soot.png": {
+    "digest": "b1c9d8ec3692d807",
+    "height": 358,
+    "src": "/assets/generated/thumbnails/b1c9d8ec3692d807-472.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/b1c9d8ec3692d807-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/b1c9d8ec3692d807-472.webp",
+        "width": 472
+      }
+    ],
+    "width": 472
+  },
+  "/assets/images/spire.png": {
+    "digest": "30043971d9e9c5b0",
+    "height": 489,
+    "src": "/assets/generated/thumbnails/30043971d9e9c5b0-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/30043971d9e9c5b0-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/30043971d9e9c5b0-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/30043971d9e9c5b0-899.webp",
+        "width": 899
+      }
+    ],
+    "width": 899
+  },
+  "/assets/images/sri_logo.png": {
+    "digest": "d103f3ac8ae8de12",
+    "height": 758,
+    "src": "/assets/generated/thumbnails/d103f3ac8ae8de12-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/d103f3ac8ae8de12-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/d103f3ac8ae8de12-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/d103f3ac8ae8de12-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2348
+  },
+  "/assets/images/srl_logo.png": {
+    "digest": "5a75e7801b00e4ab",
+    "height": 184,
+    "src": "/assets/generated/thumbnails/5a75e7801b00e4ab-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/5a75e7801b00e4ab-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/5a75e7801b00e4ab-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/5a75e7801b00e4ab-644.webp",
+        "width": 644
+      }
+    ],
+    "width": 644
+  },
+  "/assets/images/srl_logo2.png": {
+    "digest": "e64854c28db61464",
+    "height": 184,
+    "src": "/assets/generated/thumbnails/e64854c28db61464-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/e64854c28db61464-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/e64854c28db61464-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/e64854c28db61464-644.webp",
+        "width": 644
+      }
+    ],
+    "width": 644
+  },
+  "/assets/images/srl_logo_lowercase.png": {
+    "digest": "0ae4087b0f4fd6f3",
+    "height": 208,
+    "src": "/assets/generated/thumbnails/0ae4087b0f4fd6f3-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/0ae4087b0f4fd6f3-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/0ae4087b0f4fd6f3-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/0ae4087b0f4fd6f3-643.webp",
+        "width": 643
+      }
+    ],
+    "width": 643
+  },
+  "/assets/images/srl_logo_lowercase2.png": {
+    "digest": "419784516901d7c3",
+    "height": 185,
+    "src": "/assets/generated/thumbnails/419784516901d7c3-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/419784516901d7c3-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/419784516901d7c3-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/419784516901d7c3-643.webp",
+        "width": 643
+      }
+    ],
+    "width": 643
+  },
+  "/assets/images/structured_logo.png": {
+    "digest": "acfe7bf3db272a1c",
+    "height": 433,
+    "src": "/assets/generated/thumbnails/acfe7bf3db272a1c-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/acfe7bf3db272a1c-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/acfe7bf3db272a1c-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/acfe7bf3db272a1c-662.webp",
+        "width": 662
+      }
+    ],
+    "width": 662
+  },
+  "/assets/images/sveq2joint.png": {
+    "digest": "4d07b4713fda1645",
+    "height": 180,
+    "src": "/assets/generated/thumbnails/4d07b4713fda1645-274.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/4d07b4713fda1645-274.webp",
+        "width": 274
+      }
+    ],
+    "width": 274
+  },
+  "/assets/images/synet_logo.png": {
+    "digest": "e9e622feb7566fd4",
+    "height": 433,
+    "src": "/assets/generated/thumbnails/e9e622feb7566fd4-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/e9e622feb7566fd4-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/e9e622feb7566fd4-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/e9e622feb7566fd4-662.webp",
+        "width": 662
+      }
+    ],
+    "width": 662
+  },
+  "/assets/images/t.jpg": {
+    "digest": "e14875371b5bfe22",
+    "height": 294,
+    "src": "/assets/generated/thumbnails/e14875371b5bfe22-300.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/e14875371b5bfe22-300.webp",
+        "width": 300
+      }
+    ],
+    "width": 300
+  },
+  "/assets/images/t.png": {
+    "digest": "9297c4302a1f6015",
+    "height": 300,
+    "src": "/assets/generated/thumbnails/9297c4302a1f6015-400.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/9297c4302a1f6015-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/9297c4302a1f6015-400.webp",
+        "width": 400
+      }
+    ],
+    "width": 400
+  },
+  "/assets/images/taps.png": {
+    "digest": "b40419ab4774e652",
+    "height": 1124,
+    "src": "/assets/generated/thumbnails/b40419ab4774e652-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/b40419ab4774e652-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/b40419ab4774e652-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/b40419ab4774e652-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2070
+  },
+  "/assets/images/tar_gz.png": {
+    "digest": "3031dc80a73ef285",
+    "height": 48,
+    "src": "/assets/generated/thumbnails/3031dc80a73ef285-48.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/3031dc80a73ef285-48.webp",
+        "width": 48
+      }
+    ],
+    "width": 48
+  },
+  "/assets/images/tar_gz_small.png": {
+    "digest": "b26f48e1b31c4a9d",
+    "height": 32,
+    "src": "/assets/generated/thumbnails/b26f48e1b31c4a9d-32.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/b26f48e1b31c4a9d-32.webp",
+        "width": 32
+      }
+    ],
+    "width": 32
+  },
+  "/assets/images/teaser_right.jpg": {
+    "digest": "dc3c43e50140bd6e",
+    "height": 2976,
+    "src": "/assets/generated/thumbnails/dc3c43e50140bd6e-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/dc3c43e50140bd6e-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/dc3c43e50140bd6e-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/dc3c43e50140bd6e-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 4080
+  },
+  "/assets/images/thibaud.jpg": {
+    "digest": "11c91ffaaf367075",
+    "height": 1333,
+    "src": "/assets/generated/thumbnails/11c91ffaaf367075-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/11c91ffaaf367075-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/11c91ffaaf367075-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/11c91ffaaf367075-1000.webp",
+        "width": 1000
+      }
+    ],
+    "width": 1000
+  },
+  "/assets/images/timon.jpg": {
+    "digest": "11a8b9944e2f04a5",
+    "height": 1600,
+    "src": "/assets/generated/thumbnails/11a8b9944e2f04a5-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/11a8b9944e2f04a5-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/11a8b9944e2f04a5-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/11a8b9944e2f04a5-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/tobias.jpg": {
+    "digest": "fe6dc5f55ed98b27",
+    "height": 2401,
+    "src": "/assets/generated/thumbnails/fe6dc5f55ed98b27-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/fe6dc5f55ed98b27-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/fe6dc5f55ed98b27-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/fe6dc5f55ed98b27-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1800
+  },
+  "/assets/images/tooltip-pointer.png": {
+    "digest": "257cb2b0d533b853",
+    "height": 6,
+    "src": "/assets/generated/thumbnails/257cb2b0d533b853-11.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/257cb2b0d533b853-11.webp",
+        "width": 11
+      }
+    ],
+    "width": 11
+  },
+  "/assets/images/txt.png": {
+    "digest": "0272b788651f43d6",
+    "height": 128,
+    "src": "/assets/generated/thumbnails/0272b788651f43d6-128.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/0272b788651f43d6-128.webp",
+        "width": 128
+      }
+    ],
+    "width": 128
+  },
+  "/assets/images/verx-paper-image.png": {
+    "digest": "bb84aa38ed07e67c",
+    "height": 630,
+    "src": "/assets/generated/thumbnails/bb84aa38ed07e67c-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/bb84aa38ed07e67c-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/bb84aa38ed07e67c-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/bb84aa38ed07e67c-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/verx-paper.png": {
+    "digest": "d2fb6a6f6c22a0a9",
+    "height": 630,
+    "src": "/assets/generated/thumbnails/d2fb6a6f6c22a0a9-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/d2fb6a6f6c22a0a9-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/d2fb6a6f6c22a0a9-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/d2fb6a6f6c22a0a9-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/vi-orig.png": {
+    "digest": "40ed9de88b7685bc",
+    "height": 30,
+    "src": "/assets/generated/thumbnails/40ed9de88b7685bc-30.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/40ed9de88b7685bc-30.webp",
+        "width": 30
+      }
+    ],
+    "width": 30
+  },
+  "/assets/images/vi.jpg": {
+    "digest": "3321eff7db2fce4a",
+    "height": 300,
+    "src": "/assets/generated/thumbnails/3321eff7db2fce4a-300.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/3321eff7db2fce4a-300.webp",
+        "width": 300
+      }
+    ],
+    "width": 300
+  },
+  "/assets/images/vi1.png": {
+    "digest": "84485756a65aedfd",
+    "height": 32,
+    "src": "/assets/generated/thumbnails/84485756a65aedfd-32.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/84485756a65aedfd-32.webp",
+        "width": 32
+      }
+    ],
+    "width": 32
+  },
+  "/assets/images/vi2.png": {
+    "digest": "c7208a8144337ba7",
+    "height": 191,
+    "src": "/assets/generated/thumbnails/c7208a8144337ba7-189.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/c7208a8144337ba7-189.webp",
+        "width": 189
+      }
+    ],
+    "width": 189
+  },
+  "/assets/images/vi3.png": {
+    "digest": "5d2c880438125fcd",
+    "height": 100,
+    "src": "/assets/generated/thumbnails/5d2c880438125fcd-100.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/5d2c880438125fcd-100.webp",
+        "width": 100
+      }
+    ],
+    "width": 100
+  },
+  "/assets/images/vrpic.jpg": {
+    "digest": "788cbb83ba05a643",
+    "height": 333,
+    "src": "/assets/generated/thumbnails/788cbb83ba05a643-300.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/788cbb83ba05a643-300.webp",
+        "width": 300
+      }
+    ],
+    "width": 300
+  },
+  "/assets/images/wala.png": {
+    "digest": "759419507ee86baf",
+    "height": 161,
+    "src": "/assets/generated/thumbnails/759419507ee86baf-609.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/759419507ee86baf-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/759419507ee86baf-609.webp",
+        "width": 609
+      }
+    ],
+    "width": 609
+  },
+  "/assets/images/watson.jpg": {
+    "digest": "3d60699b44ec3566",
+    "height": 422,
+    "src": "/assets/generated/thumbnails/3d60699b44ec3566-600.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/3d60699b44ec3566-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/3d60699b44ec3566-600.webp",
+        "width": 600
+      }
+    ],
+    "width": 600
+  },
+  "/assets/images/web_icon.png": {
+    "digest": "7f5bacbd43edf378",
+    "height": 32,
+    "src": "/assets/generated/thumbnails/7f5bacbd43edf378-32.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/7f5bacbd43edf378-32.webp",
+        "width": 32
+      }
+    ],
+    "width": 32
+  },
+  "/assets/images/workshop16_logo.png": {
+    "digest": "e5756e94276920ad",
+    "height": 627,
+    "src": "/assets/generated/thumbnails/e5756e94276920ad-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/e5756e94276920ad-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/e5756e94276920ad-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/e5756e94276920ad-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/workshop17_logo.png": {
+    "digest": "6b09e4b8c60da97f",
+    "height": 627,
+    "src": "/assets/generated/thumbnails/6b09e4b8c60da97f-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/6b09e4b8c60da97f-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/6b09e4b8c60da97f-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/6b09e4b8c60da97f-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/workshop2018.png": {
+    "digest": "d66478a5b327142e",
+    "height": 770,
+    "src": "/assets/generated/thumbnails/d66478a5b327142e-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/d66478a5b327142e-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/d66478a5b327142e-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/d66478a5b327142e-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1306
+  },
+  "/assets/images/workshop2019.png": {
+    "digest": "cafaba375b5678d5",
+    "height": 383,
+    "src": "/assets/generated/thumbnails/cafaba375b5678d5-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/cafaba375b5678d5-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/cafaba375b5678d5-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/cafaba375b5678d5-1000.webp",
+        "width": 1000
+      }
+    ],
+    "width": 1000
+  },
+  "/assets/images/workshop2021.JPG": {
+    "digest": "7506b92d3f5fcb1e",
+    "height": 382,
+    "src": "/assets/generated/thumbnails/7506b92d3f5fcb1e-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/7506b92d3f5fcb1e-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/7506b92d3f5fcb1e-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/7506b92d3f5fcb1e-1000.webp",
+        "width": 1000
+      }
+    ],
+    "width": 1000
+  },
+  "/assets/images/workshop2022.jpg": {
+    "digest": "30a5774993d1ae46",
+    "height": 896,
+    "src": "/assets/generated/thumbnails/30a5774993d1ae46-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/30a5774993d1ae46-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/30a5774993d1ae46-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/30a5774993d1ae46-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2538
+  },
+  "/assets/images/workshop2022.png": {
+    "digest": "1031a33cc3970e8f",
+    "height": 630,
+    "src": "/assets/generated/thumbnails/1031a33cc3970e8f-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/1031a33cc3970e8f-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/1031a33cc3970e8f-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/1031a33cc3970e8f-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/images/x.png": {
+    "digest": "2bd6034e5291dadc",
+    "height": 120,
+    "src": "/assets/generated/thumbnails/2bd6034e5291dadc-120.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/2bd6034e5291dadc-120.webp",
+        "width": 120
+      }
+    ],
+    "width": 120
+  },
+  "/assets/images/youtube.png": {
+    "digest": "6d6e9dc7441b04cb",
+    "height": 23,
+    "src": "/assets/generated/thumbnails/6d6e9dc7441b04cb-33.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/6d6e9dc7441b04cb-33.webp",
+        "width": 33
+      }
+    ],
+    "width": 33
+  },
+  "/assets/images/yuhao.jpg": {
+    "digest": "0312f3cdaff98d14",
+    "height": 3103,
+    "src": "/assets/generated/thumbnails/0312f3cdaff98d14-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/0312f3cdaff98d14-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/0312f3cdaff98d14-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/0312f3cdaff98d14-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2237
+  },
+  "/assets/images/z3.png": {
+    "digest": "09e72b207f0ffb4b",
+    "height": 61,
+    "src": "/assets/generated/thumbnails/09e72b207f0ffb4b-106.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/09e72b207f0ffb4b-106.webp",
+        "width": 106
+      }
+    ],
+    "width": 106
+  },
+  "/assets/images/zipicon.png": {
+    "digest": "af17cdc54b768702",
+    "height": 256,
+    "src": "/assets/generated/thumbnails/af17cdc54b768702-256.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/af17cdc54b768702-256.webp",
+        "width": 256
+      }
+    ],
+    "width": 256
+  },
+  "/assets/images/zmlds.jpeg": {
+    "digest": "b9cd91e31bd17152",
+    "height": 2368,
+    "src": "/assets/generated/thumbnails/b9cd91e31bd17152-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/b9cd91e31bd17152-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/b9cd91e31bd17152-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/b9cd91e31bd17152-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 3200
+  },
+  "/assets/media/chatprotect_news.png": {
+    "digest": "0d98f5aaa2024c56",
+    "height": 315,
+    "src": "/assets/generated/thumbnails/0d98f5aaa2024c56-600.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/0d98f5aaa2024c56-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/0d98f5aaa2024c56-600.webp",
+        "width": 600
+      }
+    ],
+    "width": 600
+  },
+  "/assets/media/coding.jpg": {
+    "digest": "a52699020ffe517a",
+    "height": 358,
+    "src": "/assets/generated/thumbnails/a52699020ffe517a-580.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/a52699020ffe517a-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/a52699020ffe517a-580.webp",
+        "width": 580
+      }
+    ],
+    "width": 580
+  },
+  "/assets/media/coindesk.png": {
+    "digest": "35a1c5ba269157bd",
+    "height": 427,
+    "src": "/assets/generated/thumbnails/35a1c5ba269157bd-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/35a1c5ba269157bd-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/35a1c5ba269157bd-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/35a1c5ba269157bd-839.webp",
+        "width": 839
+      }
+    ],
+    "width": 839
+  },
+  "/assets/media/complai.png": {
+    "digest": "f631cefd55a58141",
+    "height": 545,
+    "src": "/assets/generated/thumbnails/f631cefd55a58141-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/f631cefd55a58141-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/f631cefd55a58141-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/f631cefd55a58141-884.webp",
+        "width": 884
+      }
+    ],
+    "width": 884
+  },
+  "/assets/media/corona-info.jpg": {
+    "digest": "bd2c128cb3e2bf60",
+    "height": 475,
+    "src": "/assets/generated/thumbnails/bd2c128cb3e2bf60-336.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/bd2c128cb3e2bf60-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/bd2c128cb3e2bf60-336.webp",
+        "width": 336
+      }
+    ],
+    "width": 336
+  },
+  "/assets/media/corona-link.jpg": {
+    "digest": "5d9700c9cbe9e79b",
+    "height": 196,
+    "src": "/assets/generated/thumbnails/5d9700c9cbe9e79b-196.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/5d9700c9cbe9e79b-196.webp",
+        "width": 196
+      }
+    ],
+    "width": 196
+  },
+  "/assets/media/corona.png": {
+    "digest": "2c74c9c843d91dae",
+    "height": 252,
+    "src": "/assets/generated/thumbnails/2c74c9c843d91dae-485.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/2c74c9c843d91dae-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/2c74c9c843d91dae-485.webp",
+        "width": 485
+      }
+    ],
+    "width": 485
+  },
+  "/assets/media/dc-snyk.jpg": {
+    "digest": "7cf78baa05261014",
+    "height": 465,
+    "src": "/assets/generated/thumbnails/7cf78baa05261014-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/7cf78baa05261014-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/7cf78baa05261014-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/7cf78baa05261014-930.webp",
+        "width": 930
+      }
+    ],
+    "width": 930
+  },
+  "/assets/media/dc-snyk2.png": {
+    "digest": "a824fbf565c7d6b9",
+    "height": 641,
+    "src": "/assets/generated/thumbnails/a824fbf565c7d6b9-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/a824fbf565c7d6b9-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/a824fbf565c7d6b9-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/a824fbf565c7d6b9-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1282
+  },
+  "/assets/media/deepseek_nzz.jpeg": {
+    "digest": "80fb84914a7300a5",
+    "height": 3628,
+    "src": "/assets/generated/thumbnails/80fb84914a7300a5-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/80fb84914a7300a5-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/80fb84914a7300a5-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/80fb84914a7300a5-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 5442
+  },
+  "/assets/media/dimitar_wide.jpg": {
+    "digest": "a0c766768b6da492",
+    "height": 382,
+    "src": "/assets/generated/thumbnails/a0c766768b6da492-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/a0c766768b6da492-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/a0c766768b6da492-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/a0c766768b6da492-764.webp",
+        "width": 764
+      }
+    ],
+    "width": 764
+  },
+  "/assets/media/fixedcode.png": {
+    "digest": "e01069553ee76fd1",
+    "height": 846,
+    "src": "/assets/generated/thumbnails/e01069553ee76fd1-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/e01069553ee76fd1-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/e01069553ee76fd1-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/e01069553ee76fd1-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1453
+  },
+  "/assets/media/french.jpg": {
+    "digest": "c37c9a4917d32885",
+    "height": 320,
+    "src": "/assets/generated/thumbnails/c37c9a4917d32885-600.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/c37c9a4917d32885-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/c37c9a4917d32885-600.webp",
+        "width": 600
+      }
+    ],
+    "width": 600
+  },
+  "/assets/media/ibm.jpg": {
+    "digest": "0809a669daedb273",
+    "height": 200,
+    "src": "/assets/generated/thumbnails/0809a669daedb273-350.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/0809a669daedb273-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/0809a669daedb273-350.webp",
+        "width": 350
+      }
+    ],
+    "width": 350
+  },
+  "/assets/media/iclr.png": {
+    "digest": "f218971fd222a0e9",
+    "height": 185,
+    "src": "/assets/generated/thumbnails/f218971fd222a0e9-231.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/f218971fd222a0e9-231.webp",
+        "width": 231
+      }
+    ],
+    "width": 231
+  },
+  "/assets/media/iclr2025.png": {
+    "digest": "8673c0727ba6535b",
+    "height": 845,
+    "src": "/assets/generated/thumbnails/8673c0727ba6535b-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/8673c0727ba6535b-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/8673c0727ba6535b-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/8673c0727ba6535b-1267.webp",
+        "width": 1267
+      }
+    ],
+    "width": 1267
+  },
+  "/assets/media/iclr2026.jpg": {
+    "digest": "60126eac79e4a370",
+    "height": 846,
+    "src": "/assets/generated/thumbnails/60126eac79e4a370-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/60126eac79e4a370-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/60126eac79e4a370-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/60126eac79e4a370-1267.webp",
+        "width": 1267
+      }
+    ],
+    "width": 1267
+  },
+  "/assets/media/icml2025.jpg": {
+    "digest": "ab711b6955530d71",
+    "height": 625,
+    "src": "/assets/generated/thumbnails/ab711b6955530d71-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/ab711b6955530d71-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/ab711b6955530d71-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/ab711b6955530d71-887.webp",
+        "width": 887
+      }
+    ],
+    "width": 887
+  },
+  "/assets/media/invariant_snyk.png": {
+    "digest": "21be23dc82aa1ea2",
+    "height": 382,
+    "src": "/assets/generated/thumbnails/21be23dc82aa1ea2-587.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/21be23dc82aa1ea2-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/21be23dc82aa1ea2-587.webp",
+        "width": 587
+      }
+    ],
+    "width": 587
+  },
+  "/assets/media/jh_medal.jpg": {
+    "digest": "bb6ed06fef942f9f",
+    "height": 708,
+    "src": "/assets/generated/thumbnails/bb6ed06fef942f9f-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/bb6ed06fef942f9f-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/bb6ed06fef942f9f-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/bb6ed06fef942f9f-1064.webp",
+        "width": 1064
+      }
+    ],
+    "width": 1064
+  },
+  "/assets/media/kuenstliche-intelligenz.jpg": {
+    "digest": "d64be08acf8acf04",
+    "height": 780,
+    "src": "/assets/generated/thumbnails/d64be08acf8acf04-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/d64be08acf8acf04-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/d64be08acf8acf04-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/d64be08acf8acf04-1170.webp",
+        "width": 1170
+      }
+    ],
+    "width": 1170
+  },
+  "/assets/media/lattice-flow.png": {
+    "digest": "baa9d408b040cd2d",
+    "height": 600,
+    "src": "/assets/generated/thumbnails/baa9d408b040cd2d-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/baa9d408b040cd2d-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/baa9d408b040cd2d-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/baa9d408b040cd2d-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/media/logicstar_tc.png": {
+    "digest": "30e8162cecc7be92",
+    "height": 768,
+    "src": "/assets/generated/thumbnails/30e8162cecc7be92-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/30e8162cecc7be92-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/30e8162cecc7be92-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/30e8162cecc7be92-1240.webp",
+        "width": 1240
+      }
+    ],
+    "width": 1240
+  },
+  "/assets/media/martin-award.jpg": {
+    "digest": "1a3b9d07d09eb12f",
+    "height": 333,
+    "src": "/assets/generated/thumbnails/1a3b9d07d09eb12f-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/1a3b9d07d09eb12f-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/1a3b9d07d09eb12f-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/1a3b9d07d09eb12f-667.webp",
+        "width": 667
+      }
+    ],
+    "width": 667
+  },
+  "/assets/media/martin-erc.jpg": {
+    "digest": "d4a3ebccebc2fb23",
+    "height": 438,
+    "src": "/assets/generated/thumbnails/d4a3ebccebc2fb23-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/d4a3ebccebc2fb23-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/d4a3ebccebc2fb23-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/d4a3ebccebc2fb23-774.webp",
+        "width": 774
+      }
+    ],
+    "width": 774
+  },
+  "/assets/media/martin-full-prof.jpg": {
+    "digest": "b9e1ffa7ca121ea2",
+    "height": 662,
+    "src": "/assets/generated/thumbnails/b9e1ffa7ca121ea2-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/b9e1ffa7ca121ea2-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/b9e1ffa7ca121ea2-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/b9e1ffa7ca121ea2-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1280
+  },
+  "/assets/media/matharena_apex.png": {
+    "digest": "22a99270ec613d12",
+    "height": 1024,
+    "src": "/assets/generated/thumbnails/22a99270ec613d12-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/22a99270ec613d12-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/22a99270ec613d12-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/22a99270ec613d12-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1536
+  },
+  "/assets/media/matharena_imc.png": {
+    "digest": "f44281537a717f22",
+    "height": 500,
+    "src": "/assets/generated/thumbnails/f44281537a717f22-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/f44281537a717f22-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/f44281537a717f22-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/f44281537a717f22-750.webp",
+        "width": 750
+      }
+    ],
+    "width": 750
+  },
+  "/assets/media/matharena_imo.png": {
+    "digest": "129672f2e52460be",
+    "height": 1024,
+    "src": "/assets/generated/thumbnails/129672f2e52460be-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/129672f2e52460be-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/129672f2e52460be-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/129672f2e52460be-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1536
+  },
+  "/assets/media/matharena_kangaroo.png": {
+    "digest": "9bcc7f3fca446f3d",
+    "height": 1024,
+    "src": "/assets/generated/thumbnails/9bcc7f3fca446f3d-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/9bcc7f3fca446f3d-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/9bcc7f3fca446f3d-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/9bcc7f3fca446f3d-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1536
+  },
+  "/assets/media/mittr_watermark_stealing.png": {
+    "digest": "a5e5ba289a5d0a22",
+    "height": 628,
+    "src": "/assets/generated/thumbnails/a5e5ba289a5d0a22-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/a5e5ba289a5d0a22-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/a5e5ba289a5d0a22-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/a5e5ba289a5d0a22-1122.webp",
+        "width": 1122
+      }
+    ],
+    "width": 1122
+  },
+  "/assets/media/nature.png": {
+    "digest": "c2588d41f05ddc45",
+    "height": 625,
+    "src": "/assets/generated/thumbnails/c2588d41f05ddc45-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/c2588d41f05ddc45-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/c2588d41f05ddc45-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/c2588d41f05ddc45-887.webp",
+        "width": 887
+      }
+    ],
+    "width": 887
+  },
+  "/assets/media/popl20talk.jpg": {
+    "digest": "b4ff52c9b9302198",
+    "height": 197,
+    "src": "/assets/generated/thumbnails/b4ff52c9b9302198-350.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/b4ff52c9b9302198-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/b4ff52c9b9302198-350.webp",
+        "width": 350
+      }
+    ],
+    "width": 350
+  },
+  "/assets/media/quantstamp-securify.png": {
+    "digest": "f4b6bdb4728186e3",
+    "height": 296,
+    "src": "/assets/generated/thumbnails/f4b6bdb4728186e3-593.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/f4b6bdb4728186e3-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/f4b6bdb4728186e3-593.webp",
+        "width": 593
+      }
+    ],
+    "width": 593
+  },
+  "/assets/media/sciencesquared.png": {
+    "digest": "4bdd59c60b21dafb",
+    "height": 502,
+    "src": "/assets/generated/thumbnails/4bdd59c60b21dafb-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/4bdd59c60b21dafb-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/4bdd59c60b21dafb-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/4bdd59c60b21dafb-717.webp",
+        "width": 717
+      }
+    ],
+    "width": 717
+  },
+  "/assets/media/securify.png": {
+    "digest": "3875b8a4f31328a1",
+    "height": 630,
+    "src": "/assets/generated/thumbnails/3875b8a4f31328a1-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/3875b8a4f31328a1-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/3875b8a4f31328a1-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/3875b8a4f31328a1-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/media/sifted.jpg": {
+    "digest": "87e9798fcd78d498",
+    "height": 355,
+    "src": "/assets/generated/thumbnails/87e9798fcd78d498-530.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/87e9798fcd78d498-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/87e9798fcd78d498-530.webp",
+        "width": 530
+      }
+    ],
+    "width": 530
+  },
+  "/assets/media/sigplanbeni.jpg": {
+    "digest": "15577f48a85b555a",
+    "height": 1023,
+    "src": "/assets/generated/thumbnails/15577f48a85b555a-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/15577f48a85b555a-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/15577f48a85b555a-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/15577f48a85b555a-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1570
+  },
+  "/assets/media/silq-tc.jpg": {
+    "digest": "b0853bc5e50a3150",
+    "height": 390,
+    "src": "/assets/generated/thumbnails/b0853bc5e50a3150-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/b0853bc5e50a3150-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/b0853bc5e50a3150-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/b0853bc5e50a3150-764.webp",
+        "width": 764
+      }
+    ],
+    "width": 764
+  },
+  "/assets/media/tg-doctoral-awards.jpg": {
+    "digest": "6a3f6c24663e3cb1",
+    "height": 382,
+    "src": "/assets/generated/thumbnails/6a3f6c24663e3cb1-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/6a3f6c24663e3cb1-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/6a3f6c24663e3cb1-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/6a3f6c24663e3cb1-764.webp",
+        "width": 764
+      }
+    ],
+    "width": 764
+  },
+  "/assets/media/trending-agents.png": {
+    "digest": "cb69616b0d206be1",
+    "height": 625,
+    "src": "/assets/generated/thumbnails/cb69616b0d206be1-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/cb69616b0d206be1-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/cb69616b0d206be1-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/cb69616b0d206be1-887.webp",
+        "width": 887
+      }
+    ],
+    "width": 887
+  },
+  "/assets/media/trending.jpg": {
+    "digest": "19f2f56bc38af805",
+    "height": 1023,
+    "src": "/assets/generated/thumbnails/19f2f56bc38af805-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/19f2f56bc38af805-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/19f2f56bc38af805-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/19f2f56bc38af805-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1570
+  },
+  "/assets/media/verx.png": {
+    "digest": "7dd2c9d988e4e42f",
+    "height": 630,
+    "src": "/assets/generated/thumbnails/7dd2c9d988e4e42f-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/7dd2c9d988e4e42f-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/7dd2c9d988e4e42f-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/7dd2c9d988e4e42f-1200.webp",
+        "width": 1200
+      }
+    ],
+    "width": 1200
+  },
+  "/assets/media/web3.png": {
+    "digest": "e47522a72bbac48c",
+    "height": 275,
+    "src": "/assets/generated/thumbnails/e47522a72bbac48c-600.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/e47522a72bbac48c-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/e47522a72bbac48c-600.webp",
+        "width": 600
+      }
+    ],
+    "width": 600
+  },
+  "/assets/media/wired_privacy_llm.png": {
+    "digest": "4cbd36cce5ae9d6b",
+    "height": 1117,
+    "src": "/assets/generated/thumbnails/4cbd36cce5ae9d6b-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/4cbd36cce5ae9d6b-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/4cbd36cce5ae9d6b-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/4cbd36cce5ae9d6b-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1920
+  },
+  "/assets/media/workshop2022.jpg": {
+    "digest": "d479b5fff0b623f4",
+    "height": 1035,
+    "src": "/assets/generated/thumbnails/d479b5fff0b623f4-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/d479b5fff0b623f4-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/d479b5fff0b623f4-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/d479b5fff0b623f4-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1995
+  },
+  "/assets/media/wsdsss21.jpg": {
+    "digest": "0db872d977c6b657",
+    "height": 542,
+    "src": "/assets/generated/thumbnails/0db872d977c6b657-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/0db872d977c6b657-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/0db872d977c6b657-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/0db872d977c6b657-1084.webp",
+        "width": 1084
+      }
+    ],
+    "width": 1084
+  },
+  "/assets/projects/atom.png": {
+    "digest": "a7053638dd2e686b",
+    "height": 1440,
+    "src": "/assets/generated/thumbnails/a7053638dd2e686b-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/a7053638dd2e686b-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/a7053638dd2e686b-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/a7053638dd2e686b-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1440
+  },
+  "/assets/projects/backup/cclm.png": {
+    "digest": "e9a4bc888dc73cd8",
+    "height": 246,
+    "src": "/assets/generated/thumbnails/e9a4bc888dc73cd8-485.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/e9a4bc888dc73cd8-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/e9a4bc888dc73cd8-485.webp",
+        "width": 485
+      }
+    ],
+    "width": 485
+  },
+  "/assets/projects/backup/codellm.png": {
+    "digest": "de5f4c7cf0a1e716",
+    "height": 246,
+    "src": "/assets/generated/thumbnails/de5f4c7cf0a1e716-485.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/de5f4c7cf0a1e716-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/de5f4c7cf0a1e716-485.webp",
+        "width": 485
+      }
+    ],
+    "width": 485
+  },
+  "/assets/projects/backup/federated.png": {
+    "digest": "d8dc18944b1d2eeb",
+    "height": 246,
+    "src": "/assets/generated/thumbnails/d8dc18944b1d2eeb-485.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/d8dc18944b1d2eeb-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/d8dc18944b1d2eeb-485.webp",
+        "width": 485
+      }
+    ],
+    "width": 485
+  },
+  "/assets/projects/backup/llmevals.png": {
+    "digest": "34adb7f1bac50a07",
+    "height": 246,
+    "src": "/assets/generated/thumbnails/34adb7f1bac50a07-485.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/34adb7f1bac50a07-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/34adb7f1bac50a07-485.webp",
+        "width": 485
+      }
+    ],
+    "width": 485
+  },
+  "/assets/projects/backup/llmsecpriv.png": {
+    "digest": "19b1a7916ce8ef08",
+    "height": 246,
+    "src": "/assets/generated/thumbnails/19b1a7916ce8ef08-485.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/19b1a7916ce8ef08-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/19b1a7916ce8ef08-485.webp",
+        "width": 485
+      }
+    ],
+    "width": 485
+  },
+  "/assets/projects/backup/mathllm.png": {
+    "digest": "4ee7cab05d4c0ecd",
+    "height": 246,
+    "src": "/assets/generated/thumbnails/4ee7cab05d4c0ecd-485.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/4ee7cab05d4c0ecd-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/4ee7cab05d4c0ecd-485.webp",
+        "width": 485
+      }
+    ],
+    "width": 485
+  },
+  "/assets/projects/backup/regulations.png": {
+    "digest": "a9fb9793353c5221",
+    "height": 246,
+    "src": "/assets/generated/thumbnails/a9fb9793353c5221-485.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/a9fb9793353c5221-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/a9fb9793353c5221-485.webp",
+        "width": 485
+      }
+    ],
+    "width": 485
+  },
+  "/assets/projects/backup/safeai.png": {
+    "digest": "1cf98d3d3ebbdc21",
+    "height": 246,
+    "src": "/assets/generated/thumbnails/1cf98d3d3ebbdc21-485.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/1cf98d3d3ebbdc21-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/1cf98d3d3ebbdc21-485.webp",
+        "width": 485
+      }
+    ],
+    "width": 485
+  },
+  "/assets/projects/backup/watermarks.png": {
+    "digest": "601548606cce8f00",
+    "height": 246,
+    "src": "/assets/generated/thumbnails/601548606cce8f00-485.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/601548606cce8f00-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/601548606cce8f00-485.webp",
+        "width": 485
+      }
+    ],
+    "width": 485
+  },
+  "/assets/projects/baxbench.png": {
+    "digest": "8b56c67d3d20872b",
+    "height": 300,
+    "src": "/assets/generated/thumbnails/8b56c67d3d20872b-450.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/8b56c67d3d20872b-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/8b56c67d3d20872b-450.webp",
+        "width": 450
+      }
+    ],
+    "width": 450
+  },
+  "/assets/projects/bio.png": {
+    "digest": "43fcf71a7089c9e8",
+    "height": 1437,
+    "src": "/assets/generated/thumbnails/43fcf71a7089c9e8-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/43fcf71a7089c9e8-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/43fcf71a7089c9e8-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/43fcf71a7089c9e8-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1440
+  },
+  "/assets/projects/blockchain.png": {
+    "digest": "ccc64fce4a8bbf91",
+    "height": 1437,
+    "src": "/assets/generated/thumbnails/ccc64fce4a8bbf91-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/ccc64fce4a8bbf91-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/ccc64fce4a8bbf91-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/ccc64fce4a8bbf91-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1440
+  },
+  "/assets/projects/cclm.png": {
+    "digest": "ddc26ae2a4728d78",
+    "height": 844,
+    "src": "/assets/generated/thumbnails/ddc26ae2a4728d78-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/ddc26ae2a4728d78-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/ddc26ae2a4728d78-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/ddc26ae2a4728d78-854.webp",
+        "width": 854
+      }
+    ],
+    "width": 854
+  },
+  "/assets/projects/chain.png": {
+    "digest": "5225644016dd378f",
+    "height": 1440,
+    "src": "/assets/generated/thumbnails/5225644016dd378f-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/5225644016dd378f-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/5225644016dd378f-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/5225644016dd378f-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1440
+  },
+  "/assets/projects/codellm.png": {
+    "digest": "6242d5d2f19bb0f5",
+    "height": 677,
+    "src": "/assets/generated/thumbnails/6242d5d2f19bb0f5-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/6242d5d2f19bb0f5-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/6242d5d2f19bb0f5-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/6242d5d2f19bb0f5-797.webp",
+        "width": 797
+      }
+    ],
+    "width": 797
+  },
+  "/assets/projects/complai.png": {
+    "digest": "65ed62e80499d136",
+    "height": 300,
+    "src": "/assets/generated/thumbnails/65ed62e80499d136-450.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/65ed62e80499d136-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/65ed62e80499d136-450.webp",
+        "width": 450
+      }
+    ],
+    "width": 450
+  },
+  "/assets/projects/convo.png": {
+    "digest": "f5ec04f476fb0f11",
+    "height": 1440,
+    "src": "/assets/generated/thumbnails/f5ec04f476fb0f11-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/f5ec04f476fb0f11-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/f5ec04f476fb0f11-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/f5ec04f476fb0f11-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1440
+  },
+  "/assets/projects/data.png": {
+    "digest": "d0f909d3c96b27d1",
+    "height": 1437,
+    "src": "/assets/generated/thumbnails/d0f909d3c96b27d1-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/d0f909d3c96b27d1-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/d0f909d3c96b27d1-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/d0f909d3c96b27d1-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1440
+  },
+  "/assets/projects/fast.png": {
+    "digest": "05fc6f28d7b94d80",
+    "height": 1437,
+    "src": "/assets/generated/thumbnails/05fc6f28d7b94d80-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/05fc6f28d7b94d80-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/05fc6f28d7b94d80-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/05fc6f28d7b94d80-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1440
+  },
+  "/assets/projects/federated.png": {
+    "digest": "3ca28c29d9bc2577",
+    "height": 813,
+    "src": "/assets/generated/thumbnails/3ca28c29d9bc2577-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/3ca28c29d9bc2577-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/3ca28c29d9bc2577-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/3ca28c29d9bc2577-797.webp",
+        "width": 797
+      }
+    ],
+    "width": 797
+  },
+  "/assets/projects/llmevals.png": {
+    "digest": "5064ea55d970b865",
+    "height": 708,
+    "src": "/assets/generated/thumbnails/5064ea55d970b865-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/5064ea55d970b865-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/5064ea55d970b865-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/5064ea55d970b865-688.webp",
+        "width": 688
+      }
+    ],
+    "width": 688
+  },
+  "/assets/projects/llmsecpriv.png": {
+    "digest": "a96b8d573ccc686c",
+    "height": 725,
+    "src": "/assets/generated/thumbnails/a96b8d573ccc686c-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/a96b8d573ccc686c-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/a96b8d573ccc686c-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/a96b8d573ccc686c-873.webp",
+        "width": 873
+      }
+    ],
+    "width": 873
+  },
+  "/assets/projects/matharena.png": {
+    "digest": "b8572ed5a4a33dc2",
+    "height": 300,
+    "src": "/assets/generated/thumbnails/b8572ed5a4a33dc2-450.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/b8572ed5a4a33dc2-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/b8572ed5a4a33dc2-450.webp",
+        "width": 450
+      }
+    ],
+    "width": 450
+  },
+  "/assets/projects/mathllm.png": {
+    "digest": "a19c8f4699bf352e",
+    "height": 733,
+    "src": "/assets/generated/thumbnails/a19c8f4699bf352e-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/a19c8f4699bf352e-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/a19c8f4699bf352e-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/a19c8f4699bf352e-860.webp",
+        "width": 860
+      }
+    ],
+    "width": 860
+  },
+  "/assets/projects/network.png": {
+    "digest": "a56da05af7d87c34",
+    "height": 1437,
+    "src": "/assets/generated/thumbnails/a56da05af7d87c34-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/a56da05af7d87c34-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/a56da05af7d87c34-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/a56da05af7d87c34-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1440
+  },
+  "/assets/projects/programming.png": {
+    "digest": "70665d95e4ba868f",
+    "height": 1437,
+    "src": "/assets/generated/thumbnails/70665d95e4ba868f-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/70665d95e4ba868f-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/70665d95e4ba868f-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/70665d95e4ba868f-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1440
+  },
+  "/assets/projects/quantum.png": {
+    "digest": "54b25f9d104842a4",
+    "height": 871,
+    "src": "/assets/generated/thumbnails/54b25f9d104842a4-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/54b25f9d104842a4-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/54b25f9d104842a4-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/54b25f9d104842a4-924.webp",
+        "width": 924
+      }
+    ],
+    "width": 924
+  },
+  "/assets/projects/regulations.png": {
+    "digest": "1a6078254db98ea3",
+    "height": 787,
+    "src": "/assets/generated/thumbnails/1a6078254db98ea3-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/1a6078254db98ea3-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/1a6078254db98ea3-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/1a6078254db98ea3-952.webp",
+        "width": 952
+      }
+    ],
+    "width": 952
+  },
+  "/assets/projects/safeai.png": {
+    "digest": "907ebf09c40acdc8",
+    "height": 869,
+    "src": "/assets/generated/thumbnails/907ebf09c40acdc8-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/907ebf09c40acdc8-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/907ebf09c40acdc8-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/907ebf09c40acdc8-880.webp",
+        "width": 880
+      }
+    ],
+    "width": 880
+  },
+  "/assets/projects/scales.png": {
+    "digest": "5055a8e99ec69375",
+    "height": 1440,
+    "src": "/assets/generated/thumbnails/5055a8e99ec69375-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/5055a8e99ec69375-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/5055a8e99ec69375-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/5055a8e99ec69375-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1440
+  },
+  "/assets/projects/security.png": {
+    "digest": "52024baa12c8738f",
+    "height": 1437,
+    "src": "/assets/generated/thumbnails/52024baa12c8738f-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/52024baa12c8738f-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/52024baa12c8738f-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/52024baa12c8738f-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1440
+  },
+  "/assets/projects/shield.png": {
+    "digest": "dfb419d450e8e357",
+    "height": 1440,
+    "src": "/assets/generated/thumbnails/dfb419d450e8e357-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/dfb419d450e8e357-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/dfb419d450e8e357-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/dfb419d450e8e357-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1440
+  },
+  "/assets/projects/smart.png": {
+    "digest": "dace69f8b174df46",
+    "height": 1440,
+    "src": "/assets/generated/thumbnails/dace69f8b174df46-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/dace69f8b174df46-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/dace69f8b174df46-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/dace69f8b174df46-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1440
+  },
+  "/assets/projects/swtbench.png": {
+    "digest": "66f2b6aa420bfb4e",
+    "height": 300,
+    "src": "/assets/generated/thumbnails/66f2b6aa420bfb4e-450.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/66f2b6aa420bfb4e-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/66f2b6aa420bfb4e-450.webp",
+        "width": 450
+      }
+    ],
+    "width": 450
+  },
+  "/assets/projects/watermarks.png": {
+    "digest": "1121a1372acc8b63",
+    "height": 846,
+    "src": "/assets/generated/thumbnails/1121a1372acc8b63-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/1121a1372acc8b63-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/1121a1372acc8b63-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/1121a1372acc8b63-863.webp",
+        "width": 863
+      }
+    ],
+    "width": 863
+  }
+}
