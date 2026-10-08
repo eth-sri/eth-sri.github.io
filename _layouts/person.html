@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<article class="page">
+<article class="page person-page">
 
   <header class="page-header container">
 	<div class="row">
@@ -31,7 +31,7 @@ layout: default
       <div class="page-img">
         {% if page.image %}
           {% assign person_image = page.image | prepend: '/assets/images/' %}
-          {% include image.html src=person_image alt=page.title sizes="(max-width: 1024px) 80vw, 300px" loading="eager" %}
+          {% include image.html src=person_image alt=page.title sizes="(max-width: 1024px) 20vw, 300px" loading="eager" %}
         {% endif %}
       </div>
     </div>

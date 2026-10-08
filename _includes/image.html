@@ -7,7 +7,7 @@
   width="{{ thumbnail.width }}" height="{{ thumbnail.height }}"
   {%- endif %}
   alt="{{ include.alt | default: '' | escape }}"
-  loading="{{ include.loading | default: 'lazy' }}" decoding="async"
+  loading="{{ include.loading | default: 'lazy' }}" decoding="async" style="height: auto;"
   class="responsive-image{% if include.class %} {{ include.class | escape }}{% endif %}"
   {%- if include.id %} id="{{ include.id | escape }}"{% endif %}
   {%- if include.usemap %} usemap="{{ include.usemap | escape }}"{% endif %}>

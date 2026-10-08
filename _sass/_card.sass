@@ -135,6 +135,22 @@
 		width: 100%
 		padding: $spacing-unit 0
 
+		&.person-card
+			align-items: flex-start
+			.card-img
+				flex: 0 0 20%
+				max-width: 20%
+				img
+					display: block
+					width: 100%
+			.card-content
+				flex: 1
+				min-width: 0
+				width: auto
+				margin-right: 0
+			.card-info
+				overflow-wrap: anywhere
+
 		&.card-vertical
 			max-width: 100%
 			.card-img
@@ -144,4 +160,3 @@
 					min-height: none
 					max-height: none
 					width: 80%
-

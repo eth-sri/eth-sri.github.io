@@ -63,6 +63,28 @@
     width: $mobile
 
 @include media-query($mobile-break)
+  .person-page
+    .page-header > .row
+      flex-direction: row
+      align-items: flex-start
+      gap: $spacing-unit/2
+      .column-66
+        min-width: 0
+      .column-25
+        flex: 0 0 20%
+        max-width: 20%
+    .page-img img
+      position: static
+      display: block
+      width: 100%
+      max-width: 100%
+    .page-info .info-line
+      label
+        flex: 0 0 60px
+      a
+        min-width: 0
+        overflow-wrap: anywhere
+
   .page
     width: 100%
     padding: $spacing-unit
@@ -87,5 +109,4 @@
       label::after
         content: " "
       
-
 

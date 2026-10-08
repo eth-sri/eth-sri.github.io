@@ -1,13 +1,13 @@
 {% assign person = site.people | where:"title", include.title  | first %}
 
 
-  <div class="card">
+  <div class="card person-card">
     
     <div class="card-img">
       {% if person.image %} 
       <a href="{{ person.url | relative_url}}">
         {% assign person_image = person.image | prepend: '/assets/images/' %}
-        {% include image.html src=person_image class="page-img" alt=person.title sizes="150px" %}
+        {% include image.html src=person_image class="page-img" alt=person.title sizes="(max-width: 1024px) 20vw, 150px" %}
       </a>
       {% endif %}
     </div>
