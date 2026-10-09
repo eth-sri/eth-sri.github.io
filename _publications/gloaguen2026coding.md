@@ -16,6 +16,7 @@ bibtex: |
   url={https://openreview.net/forum?id=CVg4Honh4Y}
   }
 paper: https://arxiv.org/abs/2605.07769
+slides: https://files.sri.inf.ethz.ch/website/slides/2026FixedCodePresentation.pdf
 ---
 
 Coding agents are increasingly deployed to autonomously maintain software, including to resolve user-reported issues: a bug report comes in and the agent creates a patch to address it. However, in any real-world deployment, they will encounter stale bug reports about issues that have already been resolved. Agents should recognize this and abstain from modifying the code to avoid accumulating technical debt.
