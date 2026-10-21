@@ -18,7 +18,9 @@ layout: default
 
 
   <header class="page-header container">
-	{% if page.thumbnail and page.show_title_thumbnail != false %}
+	{% if page.hero %}
+	{% include image.html src=page.hero class="blogpost-hero" alt=page.title sizes="(max-width: 1024px) 100vw, 75vw" loading="eager" %}
+	{% elsif page.thumbnail and page.show_title_thumbnail != false %}
 	{% assign blog_image = page.thumbnail | prepend: '/assets/blog/' %}
 	{% include image.html src=blog_image class="blogpost-thumbnail" alt=page.title sizes="(max-width: 1024px) 100vw, 600px" loading="eager" %}
 	{% endif %}

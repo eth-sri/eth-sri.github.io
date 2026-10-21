@@ -647,6 +647,186 @@
     ],
     "width": 1497
   },
+  "/assets/blog/probing-synthid-gemini-apis/black-box-detection.png": {
+    "digest": "50f2acf4c1ce3aa9",
+    "height": 416,
+    "src": "/assets/generated/thumbnails/50f2acf4c1ce3aa9-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/50f2acf4c1ce3aa9-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/50f2acf4c1ce3aa9-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/50f2acf4c1ce3aa9-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2200
+  },
+  "/assets/blog/probing-synthid-gemini-apis/context-size.png": {
+    "digest": "b4d32cdca70a94dc",
+    "height": 947,
+    "src": "/assets/generated/thumbnails/b4d32cdca70a94dc-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/b4d32cdca70a94dc-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/b4d32cdca70a94dc-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/b4d32cdca70a94dc-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2072
+  },
+  "/assets/blog/probing-synthid-gemini-apis/gemini-context-alignment.png": {
+    "digest": "329c57fe5f83bb37",
+    "height": 1359,
+    "src": "/assets/generated/thumbnails/329c57fe5f83bb37-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/329c57fe5f83bb37-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/329c57fe5f83bb37-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/329c57fe5f83bb37-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1530
+  },
+  "/assets/blog/probing-synthid-gemini-apis/gemini-watermark-correlation.png": {
+    "digest": "33803409cc88322f",
+    "height": 1464,
+    "src": "/assets/generated/thumbnails/33803409cc88322f-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/33803409cc88322f-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/33803409cc88322f-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/33803409cc88322f-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1740
+  },
+  "/assets/blog/probing-synthid-gemini-apis/hero.png": {
+    "digest": "2f3f62a44aedae49",
+    "height": 915,
+    "src": "/assets/generated/thumbnails/2f3f62a44aedae49-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/2f3f62a44aedae49-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/2f3f62a44aedae49-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/2f3f62a44aedae49-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2400
+  },
+  "/assets/blog/probing-synthid-gemini-apis/magnifier.png": {
+    "digest": "793e5becdd290b99",
+    "height": 915,
+    "src": "/assets/generated/thumbnails/793e5becdd290b99-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/793e5becdd290b99-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/793e5becdd290b99-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/793e5becdd290b99-960.webp",
+        "width": 960
+      }
+    ],
+    "width": 960
+  },
+  "/assets/blog/probing-synthid-gemini-apis/red-green-context-seeding.png": {
+    "digest": "6d406e9b2af454d4",
+    "height": 569,
+    "src": "/assets/generated/thumbnails/6d406e9b2af454d4-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/6d406e9b2af454d4-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/6d406e9b2af454d4-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/6d406e9b2af454d4-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2200
+  },
+  "/assets/blog/probing-synthid-gemini-apis/thinking-context-alignment.png": {
+    "digest": "db8dc4a0e99af2c8",
+    "height": 1455,
+    "src": "/assets/generated/thumbnails/db8dc4a0e99af2c8-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/db8dc4a0e99af2c8-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/db8dc4a0e99af2c8-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/db8dc4a0e99af2c8-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1477
+  },
+  "/assets/blog/probing-synthid-gemini-apis/thinking-watermark-attack.png": {
+    "digest": "18667d1935552425",
+    "height": 740,
+    "src": "/assets/generated/thumbnails/18667d1935552425-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/18667d1935552425-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/18667d1935552425-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/18667d1935552425-1000.webp",
+        "width": 1000
+      }
+    ],
+    "width": 1000
+  },
   "/assets/blog/probingsynthid/clues.png": {
     "digest": "b5a7f89ede334d49",
     "height": 412,

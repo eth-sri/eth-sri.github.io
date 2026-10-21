@@ -88,6 +88,32 @@
 	width: 30%
 	margin: auto
 
+.blogpost-hero
+	display: block
+	width: 75%
+	margin: 0 auto 30px
+
+.blogpost-plot
+	width: 50%
+
+.blogpost-note
+	text-align: left
+	line-height: 1.6
+	font-size: inherit
+	font-style: normal
+	letter-spacing: normal
+	color: inherit
+
+	.MathJax_Display
+		overflow-x: auto
+		overflow-y: hidden
+		padding: 0.5em 0
+
+@media (max-width: $mobile-break)
+	.blogpost-hero
+		width: 100%
+
+
 .blogpost-headerblock
 	margin-bottom: inherit
 	max-width: 100%
@@ -149,6 +175,7 @@
 	justify-content: center
 
 .blogpost-col
+	min-width: 0
 	margin-bottom: inherit
 	justify-content: center
 	text-align: justify 

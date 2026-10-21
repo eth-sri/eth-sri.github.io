@@ -21,6 +21,15 @@
 {% if page.usemathjax %}
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
+    {% if page.mathjax_font == "TeX" %}
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["TeX"],
+      webFont: "TeX",
+      matchFontHeight: false
+    },
+    TeX: { Macros: { coloneq: "\\mathrel{:=}" } },
+    {% endif %}
     tex2jax: {
       inlineMath: [ ['$','$'], ["\\(","\\)"] ],
       processEscapes: true
