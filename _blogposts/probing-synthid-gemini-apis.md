@@ -2,7 +2,7 @@
 layout: "blogpost"
 category: "other"
 title: "Probing the SynthID-text deployment on Gemini APIs"
-blogpost-authors: "Thibaud Gloaguen, Robin Staab, Martin Vechev"
+blogpost-authors: "Thibaud Gloaguen, Robin Staab, Kristian Minchev, Martin Vechev"
 date: "2026-10-21"
 thumbnail: "probing-synthid-gemini-apis/magnifier.png"
 hero: "/assets/blog/probing-synthid-gemini-apis/hero.png"
