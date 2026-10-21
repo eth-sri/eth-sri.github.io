@@ -688,44 +688,44 @@
     "width": 2072
   },
   "/assets/blog/probing-synthid-gemini-apis/gemini-context-alignment.png": {
-    "digest": "329c57fe5f83bb37",
-    "height": 1359,
-    "src": "/assets/generated/thumbnails/329c57fe5f83bb37-640.webp",
+    "digest": "208cad11ceae99be",
+    "height": 1345,
+    "src": "/assets/generated/thumbnails/208cad11ceae99be-640.webp",
     "variants": [
       {
-        "url": "/assets/generated/thumbnails/329c57fe5f83bb37-320.webp",
+        "url": "/assets/generated/thumbnails/208cad11ceae99be-320.webp",
         "width": 320
       },
       {
-        "url": "/assets/generated/thumbnails/329c57fe5f83bb37-640.webp",
+        "url": "/assets/generated/thumbnails/208cad11ceae99be-640.webp",
         "width": 640
       },
       {
-        "url": "/assets/generated/thumbnails/329c57fe5f83bb37-1280.webp",
+        "url": "/assets/generated/thumbnails/208cad11ceae99be-1280.webp",
         "width": 1280
       }
     ],
-    "width": 1530
+    "width": 1521
   },
   "/assets/blog/probing-synthid-gemini-apis/gemini-watermark-correlation.png": {
-    "digest": "33803409cc88322f",
-    "height": 1464,
-    "src": "/assets/generated/thumbnails/33803409cc88322f-640.webp",
+    "digest": "cc8c9778893000f2",
+    "height": 1631,
+    "src": "/assets/generated/thumbnails/cc8c9778893000f2-640.webp",
     "variants": [
       {
-        "url": "/assets/generated/thumbnails/33803409cc88322f-320.webp",
+        "url": "/assets/generated/thumbnails/cc8c9778893000f2-320.webp",
         "width": 320
       },
       {
-        "url": "/assets/generated/thumbnails/33803409cc88322f-640.webp",
+        "url": "/assets/generated/thumbnails/cc8c9778893000f2-640.webp",
         "width": 640
       },
       {
-        "url": "/assets/generated/thumbnails/33803409cc88322f-1280.webp",
+        "url": "/assets/generated/thumbnails/cc8c9778893000f2-1280.webp",
         "width": 1280
       }
     ],
-    "width": 1740
+    "width": 1904
   },
   "/assets/blog/probing-synthid-gemini-apis/hero.png": {
     "digest": "2f3f62a44aedae49",
