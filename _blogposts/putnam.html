@@ -1,0 +1,226 @@
+---
+layout: "matharena"
+category: "other"
+title: "LLMs Achieve Fellowship-Level Scores on The 2025 Putnam Exam"
+blogpost-authors: "Jasper Dekoninck, Nikola Jovanović, Chenhao Sun, Martin Vechev"
+date: "2026-02-26"
+thumbnail: "matharena/blog_putnam.png"
+image: "/assets/blog/matharena/blog_putnam.png"
+show_title_thumbnail: false
+usemathjax: true
+original_url: "https://matharena.ai/putnam/"
+tldr: >
+  Graded by the Putnam organizers, the DeepSeek-v3.2-Speciale agent scores 103 out of 120 on the 2025 exam, enough for a top-three finish among 4,329 human participants.
+  We describe the evaluation and compare open and closed models, alongside results from systems that produce formally verified proofs in Lean.
+excerpt: >
+  Graded by the Putnam organizers, the DeepSeek-v3.2-Speciale agent scores 103 out of 120 on the 2025 exam, enough for a top-three finish among 4,329 human participants.
+  We describe the evaluation and compare open and closed models, alongside results from systems that produce formally verified proofs in Lean.
+tweet-id: "2027149807295590629"
+---
+
+{% include image.html src="/assets/blog/matharena/blog_putnam.png" alt="Putnam Banner" class="main-image" usemap="#kangaroo-map" sizes="(max-width: 1024px) 100vw, 930px" loading="eager" %}
+      <map name="kangaroo-map">
+            <area target="" alt="" title="" href="{{ "/assets/blog/matharena/blog_putnam_card.png" | relative_url }}" coords="830,515,812,562,801,586,801,627,818,666,851,694,891,708,944,715,1029,726,1105,705,1146,650,1126,582,1092,555,1044,528,987,513,917,511,849,507,822,525" shape="poly">
+      </map>
+
+      <div class="acknowledgement">
+        This work was partially supported by an evaluation grant from Google DeepMind.
+        We also wish to thank the Putnam organizers for their support and collaboration in conducting this evaluation.
+      </div>
+      <div class="content blog-content">
+      <h2 class="anchorable" id="introduction">
+        <a href="#introduction">
+          Introduction
+        </a>
+      </h2>
+
+      <p>
+        Last December, the 86th edition of the <a href="https://maa.org/putnam/" target="_blank">William Lowell Putnam Mathematical Competition</a> took place.
+        The Putnam is widely regarded as one of the most challenging and prestigious mathematics competitions for undergraduate students in the world.
+        In collaboration with the organizers, we were able to evaluate several state-of-the-art LLMs and agentic systems on this year's problems.
+      </p>
+
+      <p>
+        The results, shown in Fig. 1, are clear: LLMs now excel in solving some of the most challenging mathematical problems designed for human students.
+        The best-performing system, DeepSeek-v3.2-Speciale (Agent), achieved a score of 103 out of 120 points. This places it within the top 3 out of 4329 human participants and above the threshold required for Putnam Fellowship.
+      </p>
+
+      <p>
+        In this post, we describe our evaluation methodology and highlight the two most interesting findings from this evaluation.
+        First, open models have reached parity with closed models on the Putnam 2025 problems, with the strongest open agent even slightly outperforming its closed counterparts under similar cost constraints.
+        Second, <a href="https://github.com/AxiomMath/Putnam2025" target="_blank">in light of the excellent results obtained by Lean-based agents</a>, we observe and discuss the narrowing performance gap between natural language reasoning and formally verified proof approaches.
+      </p>
+      <figure>
+        {% include image.html src="/assets/blog/matharena/putnam_results.png" alt="Results on the Putnam 2025 competition" class="kangaroo-image" sizes="(max-width: 1024px) 100vw, 930px" %}
+        <figcaption class="caption">Figure 1: Results of several AI models on the Putnam 2025 competition.</figcaption>
+      </figure>
+
+      <h2 class="anchorable" id="methodology">
+        <a href="#methodology">
+          Methodology
+        </a>
+      </h2>
+
+      <p>
+        <strong>Model selection.</strong>
+        By agreement with the Putnam organizers, we were allowed to submit six model solutions for official evaluation.
+        To maximize the insight gained, we selected three state-of-the-art base LLMs and their agentic counterparts.
+        This would allow us to evaluate both the performance of different LLMs as well as the impact of agentic architectures on problem-solving capabilities.
+        Further, we wanted to ensure that at least one of the selected systems was open to allow for a comparison between open and closed models.
+      </p>
+
+      <p>
+        Concretely, we evaluated Gemini-3-Pro (Preview) together with Gemini Deep Think 3, GPT-5.1 (high) together with GPT-5-Pro, and the open DeepSeek-v3.2-Speciale model together with a custom agent developed by the DeepSeek authors.<sup><a href="#fn1" id="ref1">1</a></sup>
+        In particular, the DeepSeek agent follows the architecture introduced in <a href="https://arxiv.org/abs/2511.22570" target="_blank">the DeepSeek-Math-V2 paper</a>, though we scaled down the maximum number of queries per problem from 65,000 to 1,000 due to time and API limitations.<sup><a href="#fn2" id="ref2">2</a></sup>
+        Importantly, all model choices were finalized before the competition took place, and no tuning or selection was performed after we received the problems from the organizers.
+      </p>
+
+      <p>
+        <strong>Model execution and answer preparation.</strong>
+        Each model was prompted to generate full solutions for all twelve problems.
+        The prompt used is provided <a href="{{ "/blog/putnam#conclusion" | relative_url }}">at the end of this post.</a>
+        After that, the generated outputs were converted into LaTeX and compiled into PDF files for submission.<sup><a href="#fn3" id="ref3">3</a></sup>
+        To simplify evaluation for the Putnam organizers, we manually fixed formatting and compilation issues where necessary.
+        Importantly, we did not modify any of the actual content of any solution.
+      </p>
+
+      <p>
+        <strong>Model evaluation.</strong>
+        Finally, the anonymized PDFs were submitted to the Putnam organizers and graded following their procedure.
+        In particular, the Putnam grading process has two separate rounds.
+        In the first round, all human solutions are graded.
+        In a second round, the top-scoring solutions are re-evaluated to ensure consistency and fairness.
+        The model-generated solutions were only included in the second round of grading, using the same rubrics and graders as the human solutions.
+        The graders were aware which solutions were generated by AI, but were not aware of which model generated which solution.
+      </p>
+
+      <h2 class="anchorable" id="experiments">
+        <a href="#experiments">
+          Discussion and Results
+        </a>
+      </h2>
+
+
+      <p>
+        <strong>Results.</strong>
+        The results shown in Fig. 1 demonstrate a remarkable level of mathematical capability across all evaluated systems.
+        In particular, all agentic models achieved scores that would place them within the top 10 human competitors.
+        Even non-agentic models performed strongly, with Gemini-3-Pro scoring 91 points and being the only system to correctly solve problem A5.
+        Interestingly, <a href="https://matharena.ai/?view=problem&comp=putnam--putnam_2025&model=Gemini+3+Pro&task=4&run=1" target="_blank">the Gemini solution to A5</a> was unique among both AI and human submissions, relying on a relatively obscure theorem that is not typically taught in undergraduate mathematics courses.
+        Additionally, the graders found that many model solutions included information that was regarded as unnecessary or tangential to the problem, and are therefore too long and verbose.
+        Finally, we note that the Putnam committee chair (Greta Panova) ensured that at least 6 out of the 12 problems were not solvable by the LLMs during the selection process in July.
+        Our results therefore show a stark improvement in the models over only a 4 month period.
+      </p>
+
+      <p>
+        <strong>Difficulty correlation.</strong>
+        We analyze the relationship between model and human performance to understand whether LLMs find the same problems easy as humans do.
+        To do this, we rank the problems based on their average human score and their average model score.
+        The table below shows the resulting rankings, were a lower rank indicates a higher score and therefore an easier problem.
+      </p>
+
+      <div class="table-container">
+        <table class="table is-striped is-hoverable is-fullwidth">
+          <thead>
+            <tr>
+              <th>Difficulty</th>
+              <th>A1</th>
+              <th>A2</th>
+              <th>A3</th>
+              <th>A4</th>
+              <th>A5</th>
+              <th>A6</th>
+              <th>B1</th>
+              <th>B2</th>
+              <th>B3</th>
+              <th>B4</th>
+              <th>B5</th>
+              <th>B6</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Human Rank</td><td>2</td><td>4</td><td>6</td><td>11</td><td>9</td><td>12</td><td>1</td><td>5</td><td>3</td><td>7</td><td>10</td><td>8</td></tr>
+            <tr><td>LLM Rank</td><td>1</td><td>5</td><td>1</td><td>8</td><td>12</td><td>6</td><td>10</td><td>1</td><td>2</td><td>9</td><td>7</td><td>11</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        While the rankings reveal a clear overall correlation, several big discrepancies remain.
+        For example, B1 appears substantially easier for humans than for LLMs, whereas A6 shows the opposite pattern.
+        These discrepancies suggest that LLMs and humans rely on partially different reasoning strategies when tackling mathematical problems.
+        A deeper investigation of these differences could shed light on model limitations and help guide future improvements in mathematical reasoning capabilities.
+      </p>
+
+      <p>
+        <strong>Open versus closed models.</strong>
+        One of the most notable findings is the competitive performance of the open DeepSeek-v3.2-Speciale agent: under a similar cost budget, it matched and even slightly outperformed the best closed-model agents.
+        That said, the graders did point out that the solutions produced by Gemini Deep Think and GPT-5-Pro were generally of higher quality.
+        Here, proof quality refers to clearer structure, more polished mathematical language, and more readable proofs.
+        It is also worth noting that since the competition, GPT-5.2 and Gemini-3.1-Pro have been released and represent a substantial improvement over their prior versions.
+        Comparable advances have not yet been observed for open models (but might be soon).
+      </p>
+
+      <p>
+        <strong>Formal proofs versus natural language reasoning.</strong>
+        A little over six months ago, we published <a href="https://arxiv.org/abs/2506.21621" target="_blank">a paper</a> pointing out a large performance gap between agents producing formally verified Lean proofs and LLMs generating natural language solutions.
+        On Putnam 2025, this gap has largely closed.
+        For instance, <a href="https://x.com/axiommathai/status/1997767850279440715" target="_blank">AxiomMath solved 9 of the 12 problems</a> in Lean during the competition weekend, and several groups (including AxiomMath) have since reported even stronger results with their own Lean-based agents.
+        These improvements are largely driven by agentic architectures that can scale efficiently through formal verification.
+        The same scalability is much more difficult to achieve with pure LLM-based approaches due to the lack of exact verification mechanisms for natural language proofs.
+      </p>
+      <p>
+        However, there are several important caveats to consider when comparing our results to those obtained by Lean-based systems.
+        First, statement formalization is extremely challenging for general research-level mathematics, while the Putnam problems are relatively easier to formalize.
+        Therefore, the performance gap is likely to be larger on more complex mathematical problems, as recently <a href="https://www.daniellitt.com/blog/2026/2/20/mathematics-in-the-library-of-babel" target="_blank">argued by Daniel Litt</a> in his observations on <a href="https://1stproof.org/" target="_blank">the First Proof project</a>.
+        Second, we operate under significantly lower compute budgets. For instance, <a href="https://github.com/project-numina/numina-lean-agent" target="_blank">Numina-Lean-Agent</a> reportedly used a budget between 50 and 1,000 dollars per problem.
+        Finally, we only evaluated models that were released before the Putnam competition took place. In contrast, the perfect score by <a href="https://github.com/project-numina/numina-lean-agent" target="_blank">Numina-Lean-Agent</a> made use of GPT-5.2, a stronger model that was not available at the time of our evaluation.
+      </p>
+      <h2 class="anchorable" id="conclusion">
+        <a href="#conclusion">
+          Prompt
+        </a>
+      </h2>
+
+      <details class="example-container prompt-details">
+          <summary class="title is-4">Generation Prompt</summary>
+          <div class="box problem-box prompt-content">{% raw %}
+<p>Your task is to write a proof solution to the following problem. Your proof will be graded by human judges for accuracy, thoroughness, and clarity. When you write your proof, follow these guidelines:</p>
+
+<ul>
+  <li>You are creating a proof, not a proof outline. Each step should be carefully explained and documented. If not properly explained, the judge will assume that you cannot explain it, and therefore decrease your grade.</li>
+  <li>You can use general theorems and lemmas, but only if they are well-known. As a rule of thumb: if the result has a name and is famous enough to have a Wikipedia page or something similar to describe it, it is allowed. Any result from papers that would not be taught in high-school or low-level bachelor courses in mathematics should not be used. Any use of such results will immediately give you a zero grade.</li>
+  <li>Do not skip computation steps in your proof. Clearly explain what transformations were done and why they are allowed in each step of a calculation.</li>
+  <li>You should use correct LaTeX notation to write equations and mathematical symbols. You should encompass these equations in appropriate symbols ("\\(&quot; and &quot;\\)" for inline math, "\\[&quot; and &quot;\\]" for block math) to enhance the clarity of your proof. Do not use any unicode characters.</li>
+  <li>Your proof should be self-contained.</li>
+  <li>If you are not sure about a specific step, or do not know how to prove an intermediate result, clearly state this. It is much preferable to indicate your uncertainty rather than making incorrect statements or claims.</li>
+</ul>
+{% endraw %}</div>
+        </details>
+
+        <h2 class="anchorable" id="footnotes">
+          <a href="#footnotes">
+            Footnotes
+          </a>
+        </h2>
+        <ol class="footnotes">
+          <li id="fn1">
+            We did not use DeepSeek-Math-V2 directly since it was not available via API, and would therefore require us to decrease the number of agentic queries significantly.
+            Since DeepSeek-v3.2-Speciale was trained using a similar technique and was reported by the authors to obtain similar performance on mathematical competitions, we opted to use it instead.
+            <a href="#ref1" class="footnote-backref">↩</a>
+          </li>
+          <li id="fn2">
+            The implementation and parameters of the DeepSeek agent are openly accessible <a href="https://github.com/eth-sri/matharena" target="_blank">in our GitHub repository</a>.
+            <a href="#ref2" class="footnote-backref">↩</a>
+          </li>
+          <li id="fn3">
+            Originally, it was our intention to present the solutions in handwritten format to the graders, as this is also how human participants submit their solutions.
+            This intention was put down when we found that the solutions were extremely long.
+            In the end, we submitted 292 LaTeX-written pages of solutions across all models, averaging around 4 pages per problem and model.
+            GPT-5.3-Codex tells us that it would have taken us around 200 hours to handwrite all of these solutions, which we preferred to spend on actually interesting research or even just relaxing instead.
+            <a href="#ref3" class="footnote-backref">↩</a>
+          </li>
+        </ol>
+
+
+      </div>

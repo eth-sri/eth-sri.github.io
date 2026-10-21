@@ -13,14 +13,14 @@ permalink: /blog/index.html
 
   <div class="page-content container">
     <div class="row">   
-      <div class="column column-80">
+      <div class="column">
       
       <div class="blog-logo">
         <img class="blog-logoimg" src="{{ 'logo-blog.svg' | prepend: '/assets/images/' | relative_url }}" alt="{{ site.title | escape }}">
       </div>
   
           <ul class="blog-list">
-          {% assign blogposts = site.blogposts %}
+          {% assign blogposts = site.blogposts | sort: 'date' %}
           {%- for blogpost in blogposts reversed -%}
           {%- if blogpost.draft != true -%}
           <li>
@@ -29,7 +29,7 @@ permalink: /blog/index.html
             
             {% if blogpost.thumbnail %}
             <div class="blog-list-thumbnail">
-              <a href="{{ blogpost.id | relative_url}}">
+              <a href="{{ blogpost.url | relative_url}}">
                 {% assign blog_image = blogpost.thumbnail | prepend: '/assets/blog/' %}
                 {% include image.html src=blog_image class="blog-list-thumbnailimg" alt=blogpost.title sizes="(max-width: 1024px) 80vw, 300px" %}
               </a>
@@ -39,7 +39,7 @@ permalink: /blog/index.html
             {% endif %}
             <div class="blog-list-content">
               <div class="blog-list-title">
-                <a href="{{ blogpost.id | relative_url}}">{{blogpost.title}}</a>
+                <a href="{{ blogpost.url | relative_url}}">{{blogpost.title}}</a>
               </div>
               
               <div class="blog-list-authors">

@@ -1,0 +1,416 @@
+---
+layout: "matharena"
+category: "other"
+title: "Not Even Bronze: Evaluating LLMs on 2025 International Math Olympiad"
+blogpost-authors: "Ivo Petrov, Jasper Dekoninck, Mislav Balunović, Nikola Jovanović, Kristian Minchev, Maria Drencheva, Martin Vechev"
+date: "2025-07-17"
+thumbnail: "matharena/blog_question.png"
+image: "/assets/blog/matharena/blog_question.png"
+show_title_thumbnail: false
+usemathjax: true
+original_url: "https://matharena.ai/imo/"
+tldr: >
+  We evaluate five publicly available LLMs on the 2025 International Mathematical Olympiad, with expert human graders reviewing proofs selected from repeated attempts.
+  Gemini 2.5 Pro achieves the highest score at 13 out of 42 points, below the 19 needed for bronze.
+excerpt: >
+  We evaluate five publicly available LLMs on the 2025 International Mathematical Olympiad, with expert human graders reviewing proofs selected from repeated attempts.
+  Gemini 2.5 Pro achieves the highest score at 13 out of 42 points, below the 19 needed for bronze.
+tweet-id: "1945848711466160349"
+---
+
+{% include image.html src="/assets/blog/matharena/blog_question.png" alt="IMO Banner" class="main-image" sizes="(max-width: 1024px) 100vw, 930px" loading="eager" %}
+      <div class="content blog-content">
+        <h2 class="anchorable" id="introduction">
+          <a href="#introduction">
+            Introduction
+          </a>
+        </h2>
+
+        <p>
+          Recent progress in the mathematical capabilities of LLMs have created a need for increasingly challenging
+          benchmarks. With MathArena, we address this need by evaluating models on difficult and recent mathematical
+          competitions, offering benchmarks that are both uncontaminated and interpretable. Among these competitions,
+          the International Mathematical Olympiad (IMO) stands out as the most well-known and prestigious. As such, an
+          evaluation of the IMO 2025, which took place just a few days ago, is a necessary addition to the MathArena
+          leaderboard. In this post, we present our methodology and results from evaluating several state-of-the-art
+          models on the IMO 2025 problems. Our goal was to evaluate whether these models could reach key milestones
+          corresponding to medal-level performance: bronze (top 50%), silver (top 25%), or even gold (top 8%). To
+          investigate the true limits of current LLMs, we used a best-of-n selection methods to scale inference-time
+          compute as much as possible in an attempt to reach one of these milestones.
+        </p>
+        <p>
+          The best-performing model is Gemini 2.5 Pro, achieving a score of 31% (13 points), which is well below the
+          19/42 score necessary for a bronze medal. Other models lagged significantly behind, with Grok-4 and
+          DeepSeek-R1 in particular underperforming relative to their earlier results on other MathArena benchmarks. We
+          also share some initial qualitative observations in this post, but we invite the community to conduct their
+          own analyses. Visit our website to explore the raw model outputs and dive deeper into the results.</p>
+        </p>
+
+        <p>
+          <strong>Update 19/07:</strong> <a href="https://x.com/alexwei_/status/1946477742855532918">OpenAI has
+            announced</a> they achieved a gold medal with a currently unreleased model. These proofs were validated by 3
+          former IMO participants, but not by the IMO organisers themselves. We are happy to see the steep progress in
+          this field, and look forward to the release of the model to make independent evaluations possible using public
+          benchmarks like MathArena.
+        </p>
+
+        <p>
+          <strong>Update 24/07:</strong> In the meantime, <a
+            href="https://deepmind.google/discover/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/">Deepmind
+            has announced</a> they won the gold medal at the IMO 2025 with a new version of Deep Think that they will
+          make this new version available to trusted testers. These proofs <a
+            href="https://imo2025.au/news/the-66th-international-mathematical-olympiad-draws-to-a-close-today/">were
+            validated by the IMO organisers.</a>Additionally, <a
+            href="https://seed.bytedance.com/en/blog/bytedance-seed-prover-achieves-silver-medal-score-in-imo-2025?view_from=content_recommend">ByteDance</a>
+          has won the silver medal with a specialized formal system that produced proofs in the Lean theorem prover.
+          Finally, <a href="https://arxiv.org/abs/2507.15855">a paper was published</a> claiming that Gemini-2.5-Pro
+          could achieve a gold medal with a specialized agentic framework. However, <a
+            href="https://x.com/j_dekoninck/status/1947587647616004583">we have pointed out</a> several issues with the
+          paper methodology.
+        </p>
+        <p>
+          <strong>Update 25/07:</strong> We have added Grok-4 with a new prompt to the leaderboard, where it scores
+          21.43%. This new prompt was used by xAI when training their Grok-4 model for proof-generation capabilities.
+          We have added a section in this blog post explaining what prompted us to re-evaluate this model and what the
+          conclusions of this evaluation are.
+        </p>
+
+        <h2 class="anchorable" id="methodology">
+          <a href="#methodology">
+            Methodology
+          </a>
+        </h2>
+        <p>
+          <strong>Setup</strong> We followed a methodology similar to our evaluation of the 2025 USA Math Olympiad [1].
+          In particular, four experienced human judges, each with IMO-level mathematical expertise, were recruited to
+          evaluate the responses. Evaluation began immediately after the 2025 IMO problems were released to prevent
+          contamination. Judges reviewed the problems and developed grading schemes, with each problem scored out of 7
+          points. To ensure fairness, each response was anonymized and graded independently by two judges. Grading was
+          conducted using the same interface developed for our Open Proof Corpus project [2].
+
+        </p>
+        <p>
+          <strong>Models</strong> We evaluated five state-of-the-art models: o3, o4-mini, Gemini-2.5-Pro, Grok-4, and
+          Deepseek-R1 (05/28). These were selected based on prior performance on the MathArena competitions. Each model
+          was run with the recommended hyperparameters and a maximum token limit of 64,000. No models needs more than
+          this number of tokens. We used the same prompting strategy as in our Open Proof Corpus evaluation (provided at
+          the bottom of this post). For each problem, each model generated four distinct responses.
+        </p>
+        <p>
+          <strong>Best-of-n Selection</strong> A key critique of our USAMO evaluation was that models shouldn't be
+          expected to answer extremely difficult problems in a single attempt. This critique is even more relevant for
+          the even more difficult IMO problems. To mitigate this limitation, we applied a best-of-32 selection strategy
+          using a method based on previous work [3].
+          In our prior work [2], we found that this method works very well for proof generation tasks, almost doubling
+          performance of the models on the data we had at hand.
+          Specifically, for each model solution, we first generated 32 responses. These responses were evaluated in a
+          bracket-style tournament using an LLM-as-a-judge system to select winners in head-to-head comparisons. Here,
+          the model itself was used to evaluate its own responses. The model judged each pair and selected the stronger
+          response. This process was repeated until a single best response remained which was then presented to the
+          human judges for evaluation.
+          We use the same prompt for judging as in our own prior work and we repeat it at the bottom of the post for
+          completeness. This selection process was computationally and financially intensive: on average, each final
+          model answer cost at least 3 dollars to generate, with Grok-4 costing over 20 dollars per answer.
+          As such, the performance reported here represents the models' best achievable output within a reasonable
+          resource budget.
+        </p>
+
+        <h2 class="anchorable" id="results">
+          <a href="#results">
+            Results
+          </a>
+        </h2>
+        <p>
+          As mentioned above, Gemini 2.5 Pro achieved the highest score with an average of 31% (13 points). While this
+          may seem low, especially considering the $400 spent on generating just 24 answers, it nonetheless represents a
+          strong performance given the extreme difficulty of the IMO. However, these 13 points are not enough for a
+          bronze medal (19/42). In contrast, other models trail significantly behind and we can already safely say that
+          none of them will achieve the bronze medal. Full results are available on our leaderboard, where everyone can
+          explore and analyze individual responses and judge feedback in detail.
+        </p>
+
+        {% include image.html src="/assets/blog/matharena/imo_results.png" alt="IMO Banner" class="second-image" sizes="(max-width: 1024px) 100vw, 930px" %}
+
+        <h2 class="anchorable" id="qualitative-analysis">
+          <a href="#qualitative-analysis">
+            Qualitative Analysis
+          </a>
+        </h2>
+        <p>
+          Below, we present a few qualitative observations based on model responses to highlight the kinds of mistakes
+          and behaviors we encountered.
+        </p>
+
+        <p>
+          <strong>Grok-4 Performs Poorly</strong> Grok-4 significantly underperformed compared to expectations. Many of
+          its initial responses were extremely short, often consisting only of a final answer without explanation. While
+          best-of-n selection helped to filter better responses, we note that the vast majority of its answers (that
+          were not selected) simply stated the final answer without additional justification. Similar issues are visible
+          on the other benchmarks in MathArena, where Grok-4's replies frequently lack depth or justification.
+        </p>
+
+        <p>
+          <strong>Gemini and Bogus Citations</strong> Gemini-2.5-Pro continues to exhibit a problematic tendency to cite
+          non-existent theorems when it fails to find a valid proof. As in our USAMO evaluation, we emphasize that this
+          behavior is particularly concerning, as it misleads users by presenting false authority and undermines trust
+          in the model's reasoning. However, we do note that this behavior was less prevalent in the IMO responses
+          compared to the USAMO, suggesting some improvement in this area.
+        </p>
+
+        <p>
+          <strong>More "Solid" Answers</strong> In contrast to earlier evaluations, we noticed fewer cases of odd
+          formatting issues or behaviors linked to models over-optimizing for final-answer formats, such as boxing
+          entire proofs or assuming numerical answers were always required. This suggests that models have made progress
+          in handling open-ended mathematical reasoning tasks more robustly.
+        </p>
+
+        <p>
+          <strong>Partial Credits</strong> In math competitions like the IMO, it is relatively rare for human
+          participants to receive a medium score of 3 or 4 out of 7 on a question. In contrast, LLMs often received
+          partial credit from our judges, especially on problem 4 and 5. For Problem 4, this was usually because most
+          models adopted a generally human-like approach but suffered from logical lapses that significantly reduced
+          their scores. For Problem 5, models often identified the correct strategies but failed to prove them, which
+          is, ironically, the easier part for an IMO participant. This contrast highlights key differences between human
+          and model performance and suggests that models could improve significantly in the near future if these
+          relatively minor logical issues are addressed.
+        </p>
+
+        <p>
+          <strong>Best-of-n is Important</strong> One of our judges briefly looked at a subset of the 32 raw responses
+          generated by the models prior to the best-of-n selection. They observed that many of these responses were
+          quite poor and estimated that, without the best-of-n filtering, model scores would likely have fallen below
+          10%.
+          Interestingly, the judge noted that some unselected answers appeared more coherent than the chosen ones, but
+          actually contained more factual errors. This suggests that the models are surprisingly effective at
+          identifying the relative quality of their own outputs during the best-of-n selection process and are able to
+          look past coherence to check for accuracy.
+
+        </p>
+
+        <h2 class="anchorable" id="grok-4-re-evaluation">
+          <a href="#grok-4-re-evaluation">
+            Grok-4 Re-evaluation
+          </a>
+        </h2>
+        <p>
+          After publishing our initial evaluation, xAI contacted us regarding Grok-4's performance. They reported
+          encountering the same issue we did: Grok-4 often produced very short responses when generating proofs.
+          However, they also shared a simple prompt that mitigates this issue:
+        </p>
+        <details class="example-container prompt-details">
+          <summary class="title is-4">Grok-4 Generation Prompt</summary>
+          <div class="box problem-box prompt-content">{% raw %}
+<p>{problem}</p>
+
+<p>After reasoning, please provide a rigorous proof of the given problem. Just provide the proof, no need to
+put it in \\boxed{}.</p>
+{% endraw %}</div>
+        </details>
+        <p>
+          We immediately tested this prompt and observed a significant distribution shift in Grok-4's answers. Even
+          without checking correctness, it was clear that the model now produced much longer and more coherent
+          responses.
+          xAI clarified that this prompt was used during the model's training for proof generation capabilities. This
+          training occurred <strong>before</strong> the release of the IMO 2025 problems.
+        </p>
+        <p>
+          This significant improvement led us to consider whether the leaderboard should include Grok-4's performance
+          with the improved prompt. We carefully considered the following arguments:
+        </p>
+
+        <h4>Arguments Against Re-evaluation</h4>
+        <ul>
+          <li>Including the same model twice may be seen as unfair to other providers.</li>
+          <li>Other developers might request re-evaluations for their own models, which we do not have the capacity for
+            due to the high cost of human evaluation.</li>
+          <li>xAI has the technical ability to fine-tune Grok-4 on IMO 2025 data. <strong>Disclaimer:</strong> We have
+            no evidence or suspicion that this occurred and were mainly thinking of potential optics or accusations of
+            bias. We consider this possibility extremely unlikely.</li>
+        </ul>
+
+        <h4>Arguments For Re-evaluation</h4>
+        <ul>
+          <li>If our goal is to measure the model's maximum potential, this improved prompt must be considered.</li>
+          <li>The fact that such a minor prompt adjustment can significantly change performance is highly relevant for
+            the research community.</li>
+          <li>By being transparent, we believe we can mitigate concerns about fairness or favoritism.</li>
+        </ul>
+
+        <p>
+          After careful consideration, we decided to re-evaluate Grok-4 using the updated prompt. Since Grok-4
+          frequently produced reasoning chains exceeding 64,000 tokens, we also increased the token limit to 128,000.
+          We informed xAI that we would be fully transparent and would keep the original results on the leaderboard as
+          well, as the original prompt remains a valid way to use the model.
+        </p>
+
+        <p>
+          We began inference with the updated prompt just one day after our initial evaluation. Given this short
+          timeframe, contamination is extremely unlikely, both ethically and practically.
+          Below, we present the results of the re-evaluation. Grok-4 now scores 21.43% on our leaderboard.
+        </p>
+
+        <p>
+          <strong>Improved Performance:</strong> With the new prompt, Grok-4 significantly improved, performing on par
+          with other frontier models, but at a higher cost.
+          The proofs were also more coherent and well-developed, addressing our original concern about short answers and
+          lack of depth.
+        </p>
+
+        <p>
+          <strong>Prompt Sensitivity:</strong> The new prompt is neither more specific nor more detailed than the
+          original, yet it leads to a significant improvement. This highlights the importance of prompt design, even for
+          frontier reasoning models.
+          Even though one might expect models to be robust to prompt changes, or at the very least that these changes
+          are intuitive and easy to implement, this is not the case.
+          Obviously, we strongly recommend using this updated prompt when generating proofs with Grok-4.
+        </p>
+
+        <p>
+          <strong>Why This Still Matters:</strong> Despite gold medal results by other advanced models, this evaluation
+          remains relevant. None of the top-performing models are currently public. Moreover, those results likely
+          involved significantly larger compute budgets, something known to boost performance even in publicly available
+          models.
+        </p>
+
+        <h2 class="anchorable" id="references">
+          <a href="#references">
+            References
+          </a>
+        </h2>
+        <ul>
+          <li>
+            [1] Petrov, Ivo, et al. "Proof or bluff? Evaluating LLMs on 2025 USA Math Olympiad." arXiv preprint
+            arXiv:2503.21934 (2025).
+          </li>
+          <li>
+            [2] Dekoninck, Jasper, et al. "The Open Proof Corpus: A Large-Scale Study of LLM-Generated Mathematical
+            Proofs." arXiv preprint arXiv:2506.21621 (2025).
+          </li>
+          <li>
+            [3] Liu, Yantao, et al. "Pairjudge rm: Perform best-of-n sampling with knockout tournament." arXiv preprint
+            arXiv:2501.13007 (2025).
+          </li>
+        </ul>
+
+        <h2 class="anchorable" id="prompts">
+          <a href="#prompts">
+            Prompts
+          </a>
+        </h2>
+
+        <details class="example-container prompt-details">
+          <summary class="title is-4">Solution Generation Prompt</summary>
+          <div class="box problem-box prompt-content">{% raw %}
+<p>Your task is to write a proof solution to the following problem. Your proof will
+be graded by human judges for accuracy, thoroughness, and clarity. When you write your proof, follow these
+guidelines:</p>
+
+<ul>
+  <li>You are creating a proof, not a proof outline. Each step should be carefully explained and documented. If
+not properly explained, the judge will assume that you cannot explain it, and therefore decrease your grade.</li>
+  <li>You can use general theorems and lemmas, but only if they are well-known. As a rule of thumb: if the
+result has a name and is famous enough to have a Wikipedia page or something similar to describe it, it is
+allowed. Any result from papers that would not be taught in high-school or low-level bachelor courses in
+mathematics should not be used. Any use of such results will immediately give you a zero grade.</li>
+  <li>Do not skip computation steps in your proof. Clearly explain what transformations were done and why they
+are allowed in each step of a calculation.</li>
+  <li>You should use correct LaTeX notation to write equations and mathematical symbols. You should encompass
+these equations in appropriate symbols ("\\(&quot; and &quot;\\)" for inline math, "\\[&quot; and &quot;\\]" for block math) to
+enhance the clarity of your proof. Do not use any unicode characters.</li>
+  <li>Your proof should be self-contained.</li>
+  <li>If you are not sure about a specific step, or do not know how to prove an intermediate result, clearly
+state this. It is much preferable to indicate your uncertainty rather than making incorrect statements or
+claims.</li>
+</ul>
+
+<p>{problem}</p>
+{% endraw %}</div>
+        </details>
+
+        <details class="example-container prompt-details">
+          <summary class="title is-4">Solution Judging Prompt</summary>
+          <div class="box problem-box prompt-content">{% raw %}
+<p>You are judging which of the two LLM-generated proofs for a given math problem is
+better.</p>
+
+<h5>Input:</h5>
+
+<p>Your input will consist of the following components:</p>
+<ul>
+  <li><strong>Problem Statement</strong>: A mathematical problem that the proof is attempting to solve.</li>
+  <li><strong>Proof Solution A/B</strong>: The proofs that you need to evaluate. This proof may contain errors, omissions, or
+unclear steps. Proofs were generated by another language model, which was given the following instructions:
+&lt;model_prompt&gt;</li>
+  <li>You are creating a proof, not a proof outline. Each step should be carefully explained and documented. If
+not properly explained, the judge will assume that you cannot explain it, and therefore decrease your grade.</li>
+  <li>You can use general theorems and lemmas, but only if they are well-known. As a rule of thumb: if the
+result has a name and is famous enough to have a Wikipedia page or something similar to describe it, it is
+allowed. Any result from papers that would not be taught in high-school or low-level bachelor courses in
+mathematics should not be used. Any use of such results will immediately give you a zero grade.</li>
+  <li>Do not skip computation steps in your proof. Clearly explain what transformations were done and why they
+are allowed in each step of a calculation.</li>
+  <li>You should use correct LaTeX notation to write equations and mathematical symbols. You should encompass
+these equations in appropriate symbols ("\\(&quot; and &quot;\\)" for inline math, "\\[&quot; and &quot;\\]" for block math) to
+enhance the clarity of your proof. Do not use any unicode characters.</li>
+  <li>Your proof should be self-contained.</li>
+  <li>If you are not sure about a specific step, or do not know how to prove an intermediate result, clearly
+state this. It is much preferable to indicate your uncertainty rather than making incorrect statements or
+claims.
+&lt;/model_prompt&gt;</li>
+</ul>
+
+<h5>How the solution should be graded:</h5>
+<p>The following examples are small mistakes that should only be slightly penalised:</p>
+<ul>
+  <li>Makes a small computational mistake that can be easily fixed</li>
+  <li>Misses an edge case which can be easily proven/disproven</li>
+  <li>Skips over a step that follows without much reasoning or manual work
+On the other hand, a solution should should be severely penalised if:</li>
+  <li>It marks a step as trivial, if it is not immediately obvious with little reasoning why this would be the
+case.</li>
+  <li>It omits algebra-heavy computational steps, regardless of whether or not it has outlined the methodology.
+Skipping shorter computations should be permitted.</li>
+  <li>Generalizes over a pattern without rigorously describing the pattern, or without proving any relevant
+properties.</li>
+  <li>It cites a non-existing or unpopular source/Theorem, which cannot be immediately found from searching for
+it online. Thus, any theorems that can be immediately found and have a Wikipedia article are allowed.</li>
+</ul>
+
+<p>The model has been specifically told that it should not skip steps or mark them as trivial. Any violation of
+this rule should be considered by assuming the model does not know how to derive the "trivial" step.</p>
+
+<h5>Further Potential Issues:</h5>
+
+<p>Here are some common types of issues to look for:</p>
+<ul>
+  <li><strong>Overgeneralization</strong>: The generated proof proceeds by proving the problem in one or more specific cases,
+and then concludes that the result holds in general. However, it does not provide a proof for the general
+case.</li>
+  <li><strong>Oversimplification</strong>: The proof marks steps as trivial or obvious without proper justification.</li>
+  <li><strong>Skipping Computation Steps</strong>: Proofs that skip computation steps or do not explain transformations
+clearly can lead to misunderstandings.</li>
+  <li><strong>Citing Non-Standard Works or Theorems</strong>: Some models may cite theorems or results that are not
+well-known or are not typically taught in high-school or low-level bachelor courses. Such theorems are only
+allowed if they are well known.</li>
+  <li><strong>Missing Edge Cases</strong>: The proof may not consider all possible cases or edge cases.</li>
+</ul>
+
+<h5>Scoring instructions</h5>
+
+<p>You should compare the two proofs and determine which one is better. If you believe Proof A is better, end
+your analysis with \boxed{A}. If you believe Proof B is better, end your analysis with \boxed{B}. If you
+believe both proofs are equally good, end your analysis with \boxed{equal}.</p>
+
+<h5>Problem Statement:</h5>
+<p>{problem}</p>
+
+<h5>Proof Solution A:</h5>
+<p>{solution_a}</p>
+
+<h5>Proof Solution B:</h5>
+<p>{solution_b}</p>
+{% endraw %}</div>
+        </details>
+
+
+      </div>

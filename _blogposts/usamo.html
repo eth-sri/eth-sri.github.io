@@ -1,0 +1,954 @@
+---
+layout: "matharena"
+category: "other"
+title: "Proof, Not Bluff: LLMs Reach 95% on the 2026 USA Math Olympiad"
+blogpost-authors: "Jasper Dekoninck, Kári Rögnvaldsson, Chenhao Sun, Ivo Petrov, Martin Vechev"
+date: "2026-03-28"
+thumbnail: "matharena/blog_usamo.jpeg"
+image: "/assets/blog/matharena/blog_usamo.jpeg"
+show_title_thumbnail: false
+usemathjax: true
+original_url: "https://matharena.ai/usamo/"
+tldr: >
+  A year after LLMs struggled on the USA Math Olympiad, GPT-5.4 scores 95% on the 2026 problems.
+  We explain how we graded the proofs using LLM juries and human review, and examine the gaps between models.
+excerpt: >
+  A year after LLMs struggled on the USA Math Olympiad, GPT-5.4 scores 95% on the 2026 problems.
+  We explain how we graded the proofs using LLM juries and human review, and examine the gaps between models.
+---
+
+{% include image.html src="/assets/blog/matharena/blog_usamo.jpeg" alt="USAMO 2026 banner" class="main-image" usemap="#kangaroo-map" sizes="(max-width: 1024px) 100vw, 930px" loading="eager" %}
+      <map name="kangaroo-map">
+            <area target="" alt="" title="" href="{{ "/assets/blog/matharena/blog_usamo_card.jpeg" | relative_url }}" coords="308,122,265,183,269,268,316,327,350,339,408,322,425,275,425,195,406,144,352,115" shape="poly">
+      </map>
+
+      <div class="acknowledgement">
+        This work was partially supported by an evaluation grant from Google.
+      </div>
+      <div class="content blog-content">
+      <h2 class="anchorable" id="introduction">
+        <a href="#introduction">
+          Introduction
+        </a>
+      </h2>
+
+      <p>
+        The USA Math Olympiad (USAMO) is a prestigious annual competition that challenges the strongest
+        high school students in the United States. Last year, <a href="https://arxiv.org/abs/2503.21934" target="_blank">we found that LLMs performed disastrously on the USAMO
+        2025</a>. Their solutions contained many basic errors, including circular arguments, unsupported guesses, and very
+        poor overall structure. Now, just one year later, we repeat our evaluation on USAMO 2026 and find that these
+        issues are resolved: the top model, GPT-5.4, essentially saturates the benchmark with a top score of 95%.
+      </p>
+
+      <p>
+        This result reflects the pace of progress in the field. The jump from near-zero performance to near-saturation
+        in just one year is remarkable, though perhaps no longer surprising in light of recent results on the <a href="https://deepmind.google/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/" target="_blank">IMO</a>,
+        <a href="https://matharena.ai/imc" target="_blank">IMC</a>, <a href="https://matharena.ai/?comp=miklos--2025&view=problem" target="_blank">Miklós Schweitzer</a>, and <a href="{{ "/blog/putnam" | relative_url }}" target="_blank">Putnam</a>.
+        Beyond this result, we also focus this blog post on our grading pipeline and on the capability gaps that remain between models.
+      </p>
+
+      <p>
+        <strong>Semi-automated grading.</strong> We design a new pipeline for automated proof grading. Due to
+        concerns with <a href="https://arxiv.org/pdf/2510.13888" target="_blank">biases in LLM judges</a>, most notably <a href="https://arxiv.org/abs/2410.21819" target="_blank">self-bias</a> and <a href="https://arxiv.org/abs/2410.02736" target="_blank">formatting bias</a>, we develop a grading pipeline
+        based on LLM juries that aims to be as accurate and unbiased as possible. For the USAMO 2026, we still
+        manually verified and adjusted the resulting grades, but we found that this pipeline is already sufficiently
+        robust without requiring much manual intervention.
+      </p>
+
+      <p>
+        <strong>Capability gaps.</strong> Although GPT-5.4 achieves a near-perfect score, the gap to all other models remains substantial. Gemini-3.1-Pro reaches only
+        75%, Opus-4.6 scores 47%, and the strongest open model, Step-3.5-Flash, reaches just 45%. We examine these
+        differences in more detail below and highlight several high-level differences between these models.
+      </p>
+
+      <h2 class="anchorable" id="methodology">
+        <a href="#methodology">
+          Semi-Automated Grading
+        </a>
+      </h2>
+
+      <p>
+        Any automated grading pipeline must satisfy two key criteria: accuracy and unbiasedness.
+        High accuracy ensures that the grades themselves are reliable, while unbiasedness ensures that the relative rankings are not distorted in favor of any model.
+        <a href="https://arxiv.org/pdf/2510.13888" target="_blank">Recent work</a> suggests that LLM judges can already achieve high accuracy, but their biases still prevent their direct use for mathematical evaluation.
+        For mathematical proof grading in particular, we find two forms of bias especially important:
+      </p>
+
+      <ul>
+        <li>
+          <strong>Self-bias:</strong> LLM judges often assign higher scores to their own outputs or to models from the
+          same family. This may happen because the judge was used during RL training, enabling reward hacking, or
+          simply because a model that can recognize a certain mistake is also less likely to generate it when solving a
+          problem.
+        </li>
+        <li>
+          <strong>Formatting bias:</strong> Judges can be influenced by surface-level features of a solution, such as
+          whether it is unusually verbose or highly structured.
+        </li>
+      </ul>
+
+      <p>
+        To reduce these biases as much as possible, we design a grading pipeline with two distinct stages:
+        grading scheme creation and final judging.
+      </p>
+
+      <p>
+        <strong>Grading scheme creation.</strong> Following <a href="https://arxiv.org/pdf/2510.13888" target="_blank">prior work</a>, we first construct a grading scheme for each problem. We adopt the approach introduced
+        in <a href="https://arxiv.org/pdf/2510.13888" target="_blank">ProofBench</a>: an LLM, in our case Gemini-3.1-Pro, is given the problem statement together with several
+        reference solutions and is asked to produce a detailed grading rubric based on those solutions. These rubrics
+        can include multiple valid solution paths, specify which steps deserve credit, and indicate both which errors
+        should receive no credit and where additional deductions are warranted.
+      </p>
+
+      <p>
+        Unfortunately, the resulting grading schemes were of poor quality for several problems. For instance,
+        they were too rigid, ruling out even slight variations of a valid approach. We therefore
+        made substantial manual changes to most grading schemes to ensure a high-quality grading process.
+        After grading, we also found that we had underestimated how important the grading scheme would be: small phrasing
+        issues often misled judges and were the main source of discrepancies
+        between our own judgments and those of the automated judge. The grading scheme
+        creation process can therefore benefit significantly from further improvements, which we leave as future work.
+      </p>
+
+      <p>
+        <strong>Our judging pipeline.</strong> We specifically tweak the judging pipeline to mitigate the biases outlined above. Naively, one would run a
+        single LLM judge with detailed instructions including the problem, model solution, and grading scheme. We make
+        three modifications to the naive pipeline:
+      </p>
+
+      <ul>
+        <li>
+          <strong>Standardize formatting:</strong> We instruct an LLM, again Gemini-3.1-Pro, to rewrite each proof
+          according to detailed formatting guidelines while preserving its mathematical content. For example, we ask it
+          to remove obvious redundancies, such as restating the problem, and to present the solution in formal
+          language with correct LaTeX formatting. We manually verified that the LLM had no trouble following these instructions.
+        </li>
+        <li>
+          <strong>Code execution:</strong> We enable code execution for the judges. This is often useful for checking
+          symbolic manipulations or verifying computations numerically.
+          We found this to be particularly useful for the two geometry problems, where many models produced long algebraic manipulations.
+        </li>
+        <li>
+          <strong>LLM jury:</strong> We replace a single judge with an LLM jury consisting of GPT-5.4,
+          Gemini-3.1-Pro, and Opus-4.6. If the three judges agree within two points, out of seven, we take the
+          minimum of their scores, since, in our experience, LLM judges tend to be overly generous.<sup><a href="#fn1" id="ref1">1</a></sup> If they
+          disagree by more than two points, we provide each judge with all three initial judgments and ask them to
+          reconcile them. After this second round, we take the minimum of the three revised scores as the final
+          grade.
+        </li>
+      </ul>
+
+      <p>
+        <strong>Human validation.</strong> After running the automated grading pipeline on USAMO 2026, our team carefully reviewed every solution by
+        hand. To speed up this process, the reviewers were given access to the explanations produced by the models in
+        the LLM jury. One practical challenge was that many models used heavy computation-based approaches for the two
+        geometry problems, resulting in pages of algebraic manipulations.
+        To make validation manageable, we adopted the following procedure for these two problems: we assumed that any
+        issue identified by at least one model in the jury captured the full set of relevant issues. Human review then
+        focused primarily on ensuring that these issues were graded consistently across solutions.
+      </p>
+
+      <h2 class="anchorable" id="experiments">
+        <a href="#experiments">
+          Results
+        </a>
+      </h2>
+
+      <p>
+        <strong>Overall performance.</strong> All results are shown in Figure 1, with each model being executed four
+        times on each problem. Despite its challenging nature, GPT-5.4 is
+        able to consistently produce complete proofs for almost all problems. Its only significant error is a somewhat
+        surprising one: on Problem 5, <a href="https://matharena.ai/?comp=usamo--usamo_2026&model=GPT-5.4+%28xhigh%29&task=4&run=4" target="_blank">one solution argues incorrectly</a> that the statement is false and presents an
+        invalid counterexample. All other models perform substantially worse, with rankings that are broadly in line
+        with expectations based on prior benchmark results.
+        Notably, open models still trail the top closed models by a wide margin.
+      </p>
+
+      <figure style="margin: 2rem 0; text-align: center;">
+        {% include image.html src="/assets/blog/matharena/usamo_2026_results.png" alt="Results on USAMO 2026." sizes="(max-width: 1024px) 100vw, 930px" %}
+        <figcaption  class="caption">
+          <strong>Figure 1.</strong> Results on USAMO 2026. Each model was run four times on each problem. All
+          results are also accessible on <a href="https://matharena.ai/?comp=usamo--usamo_2026">our main page</a>.
+        </figcaption>
+      </figure>
+
+      <p>
+        <strong>Comparison to USAMO 2025.</strong> This is in sharp contrast with our evaluation from last year, as
+        shown in Figure 2. Scores are not only much higher, but the nature of model errors has also changed
+        substantially. In 2025, models often guessed instead of proving, relied on circular reasoning, or produced
+        irrelevant and poorly structured text. In 2026, these basic failure modes are much less common.
+      </p>
+
+      <figure style="margin: 2rem 0; text-align: center;">
+        {% include image.html src="/assets/blog/matharena/usamo_2025_results.png" alt="Results on USAMO 2025." sizes="(max-width: 1024px) 100vw, 930px" %}
+        <figcaption  class="caption">
+          <strong>Figure 2.</strong> Results on USAMO 2025. Each model was run four times on each problem. All
+          results are also accessible on <a href="https://matharena.ai/?comp=usamo--usamo_2025">our main page</a>. The top three models were released after the competition took
+          place.
+        </figcaption>
+      </figure>
+
+      <p>
+        That said, a few avoidable issues remain in USAMO 2026. Open models sometimes reconsider their
+        approach mid-solution, effectively slipping back into chain-of-thought style reasoning without completing their
+        proof. Opus-4.6 exhibits a different failure mode: in 4 out of 24 responses, it exhausts its full 128,000
+        token budget without producing a completed proof. We briefly considered rerunning these samples, but decided
+        against it for two reasons. First, we used the hyperparameters recommended by the model provider, and the
+        token limit could not be increased. Second, three of the four failures occurred on Problem 2, making it
+        unlikely that rerunning would have resolved the issue.
+      </p>
+
+      <p>
+        <strong>Proof quality and style.</strong> Models differ not only in performance, but also in style. That
+        style has a direct effect on proof quality, by which we mean how clearly and faithfully a solution is presented,
+        independent of correctness. Although this judgment is necessarily somewhat subjective, human reviewers consistently found GPT-5.4’s proofs easiest to follow.
+        Its solutions are clear, precise, and well organized, making effective use of sections, claims, and lemmas
+        when appropriate.
+      </p>
+
+      <p>
+        Gemini-3.1-Pro has a more explanatory style: its solutions often proceed through explicit steps that guide the
+        reader toward the final argument. This can be helpful, but its paragraphs, like those of all other models
+        except GPT-5.4, sometimes become hard to follow. Opus-4.6 puts the most effort into presentation: its
+        outputs are carefully formatted, with polished headers and bolded subsection titles.
+      </p>
+
+      <p>
+        Among the open models, Qwen3.5-397B is most concise, often to the extent that it skips essential steps.
+        It does deserve credit for being the only model to (unsuccessfully) attempt synthetic rather
+        than heavily algebraic solutions to the geometry problems. GLM-5 sits at the opposite extreme: it is often too
+        verbose, and it is also the model most likely to rethink its approach
+        mid-proof. Finally, Step-3.5-Flash is structurally the closest to GPT-5.4, but its solutions are generally less polished.
+        Curiously, <a href="https://matharena.ai/?comp=usamo--usamo_2026&model=Step+3.5+Flash&task=4&run=1" target="_blank">it also sometimes puts newlines in the middle of sentences.</a>
+      </p>
+
+      <p>
+        <strong>Accuracy of the automated grading pipeline.</strong> Table 1 compares each model's scores before and
+        after human verification, and also displays the scores assigned by the individual judges. Overall, the
+        jury's scores track the final human scores closely. Among the three judges, GPT-5.4 is clearly the strongest judge.
+        Importantly, because its own performance is already nearly perfect, there is little room for self-bias,
+        whereas Gemini-3.1-Pro and Opus-4.6 both substantially overestimate their own performance.
+      </p>
+
+      <p>
+        Figure 3 shows the distribution of the absolute difference between the final human-validated scores and the
+        scores produced by each individual judge. Human review changes the score by at most two points, and this
+        happens for only three solutions. More broadly, Gemini-3.1-Pro and Opus-4.6 are also the only judges that make a major error
+        large enough to substantially misjudge a solution.
+      </p>
+
+
+      <figcaption class="caption" style="margin-top: 10px; margin-bottom: -10px">
+          <strong>Table 1.</strong> Comparison of model scores for various pipelines: before and after human intervention, and individual scores as given by each judge in the jury separately.
+          Note: Our pipeline accidentally graded the unfinished reasoning chains from Opus-4.6 as if they were complete solutions. Since these responses did not produce a final proof,
+          we corrected their scores to 0 in this table.
+        </figcaption>
+      <div class="table-container">
+        <table class="table is-striped is-hoverable is-fullwidth">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>After Human Intervention</th>
+              <th>Ensemble Judge</th>
+              <th>Gemini-3.1-Pro</th>
+              <th>Opus-4.6</th>
+              <th>GPT-5.4</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>GPT-5.4</td><td>95.2%</td><td>95.2%</td><td>95.2%</td><td>95.8%</td><td>95.8%</td></tr>
+            <tr><td>Gemini-3.1-Pro</td><td>74.4%</td><td>73.8%</td><td>85.7%</td><td>80.4%</td><td>74.4%</td></tr>
+            <tr><td>Opus-4.6</td><td>47.0%</td><td>46.4%</td><td>66.1%</td><td>58.9%</td><td>47.0%</td></tr>
+            <tr><td>Step-3.5-Flash</td><td>44.6%</td><td>43.5%</td><td>47.0%</td><td>58.3%</td><td>50.0%</td></tr>
+            <tr><td>Qwen3.5-397B</td><td>36.3%</td><td>32.1%</td><td>33.9%</td><td>41.7%</td><td>38.7%</td></tr>
+            <tr><td>GLM-5</td><td>35.1%</td><td>36.3%</td><td>44.0%</td><td>48.2%</td><td>36.3%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <figure style="margin: 2rem 0; text-align: center;">
+        {% include image.html src="/assets/blog/matharena/usamo_human_intervention_gap_histogram.svg" alt="Histogram of absolute score gaps between after-human-intervention grading and the other four grading settings on USAMO 2026." sizes="(max-width: 1024px) 100vw, 930px" %}
+        <figcaption class="caption">
+          <strong>Figure 3.</strong> Histogram of absolute differences between final grades as given by the human graders and each of the judges shown in Table 1.
+          Note: Our pipeline accidentally graded the unfinished reasoning chains from Opus-4.6 as if they were complete solutions.
+          Since these responses did not produce a final proof, we corrected their scores to 0 in this plot.
+        </figcaption>
+      </figure>
+
+      <h2 class="anchorable" id="qualitative-analysis">
+        <a href="#qualitative-analysis">
+          Qualitative Analysis
+        </a>
+      </h2>
+
+      <p>
+        Below, we provide a problem-by-problem qualitative analysis.
+      </p>
+
+      <div class="example-container qualitative-card">
+        <div class="title is-4">Problem 1</div>
+        <p class="qualitative-meta"><strong>Average model performance:</strong> 70.8%</p>
+        <div class="qualitative-label">Problem Statement</div>
+        <div class="box problem-box">Let $n$ be an integer greater than $1$. For which real numbers $x$ is
+\[
+\lfloor nx \rfloor - \sum_{k=1}^{n} \frac{\lfloor kx \rfloor}{k}
+\]
+maximal, and what is the maximal value that this expression can take?
+
+\textit{Note:} $\lfloor z \rfloor$ denotes the greatest integer less than or equal to $z$.</div>
+        <details class="example-container prompt-details">
+          <summary class="title is-5">Grading Scheme</summary>
+          <div class="box problem-box"><div class="marked-text"><h3>1. Checkpoints (7 pts total)</h3>
+<ul>
+  <li><strong>1 pt:</strong> Proving that $f(x)$ is periodic with period 1 (i.e., $f(x+1) = f(x)$), allowing the domain to WLOG be restricted to $x \in [0, 1)$ or any other interval of length 1.</li>
+  <li><strong>1 pt:</strong> Showing that within any interval of the form $[\frac{\ell}{n}, \frac{\ell+1}{n})$ for integer $\ell$, $f(x)$ is non-increasing (since $\lfloor nx \rfloor$ is constant and $-\sum \frac{\lfloor kx \rfloor}{k}$ can only decrease). This restricts the search for the maximum to points of the form $x = \frac{\ell}{n}$.</li>
+  <li><strong>1 pt:</strong> Evaluating $f(x)$ for the optimal range (e.g., testing $x \in [1-\frac{1}{n}, 1)$ or $x = \frac{n-1}{n}$) and explicitly calculating the candidate maximum value $-1 + \sum_{k=1}^n \frac{1}{k}$.</li>
+  <li><strong>1 pt:</strong> Expressing the function algebraically in terms of fractional parts (e.g., deriving the identity $f(x) = \sum_{k=1}^n \frac{\{kx\}}{k} - \{nx\}$ or $f(\frac{\ell}{n}) = \sum_{k=1}^n \frac{\{k\ell/n\}}{k}$).</li>
+  <li><strong>2 pts:</strong> Proving the general upper bound $\sum_{k=1}^n \frac{\{k\ell/n\}}{k} \le \sum_{k=1}^n \frac{n-k}{nk}$ for all integers $\ell$.
+    <ul>
+      <li><em>Partial credit of 1 pt:</em> Proving this bound only for the coprime case $\gcd(\ell, n) = 1$ (e.g., by recognizing the fractional parts form a permutation and applying the Rearrangement Inequality), but failing to correctly handle or rigorously bound the case where $\gcd(\ell, n) &gt; 1$.</li>
+    </ul>
+  </li>
+  <li><strong>1 pt:</strong> Identifying the correct equality cases of the upper bound to conclude the exact set of optimal $x$ (i.e., proving the maximum is achieved for exactly $x \in \bigcup_{m \in \mathbb{Z}} [m + 1 - \frac{1}{n}, m + 1)$).</li>
+</ul>
+
+<h3>2. Zero-credit items</h3>
+<ul>
+  <li>Conjecturing the maximum value or the optimal intervals without any proof.</li>
+  <li>Computing $f(x)$ for small specific values of $n$ without generalizing the algebraic step.</li>
+  <li>Restating the problem in an equivalent form without making any tangible progress toward bounding the sum.</li>
+</ul>
+
+<h3>3. Deductions</h3>
+<ul>
+  <li><strong>-1 pt:</strong> Minor cosmetic or arithmetic slips in the evaluation of the final value (e.g., an off-by-one error in the sum bounds) despite otherwise correct logical reasoning.</li>
+  <li><strong>-1 pt:</strong> Assuming without proof that the multiset of fractional parts for $\gcd(\ell, n) &gt; 1$ is majorized by or bounded by the set for $\gcd(\ell, n) = 1$ (apply this deduction to cap Checkpoint 5 at 1 out of 2 points if the student claims the general bound holds trivially from the coprime case).</li>
+</ul>
+</div></div>
+        </details>
+        <div class="qualitative-label">Analysis</div>
+        <div class="box response-box qualitative-response-box">The hardest part of this problem is seeing how to apply the rearrangement inequality to prove the upper bound. Most other steps are relatively standard, at least by USAMO standards. The grading scheme is therefore likely a bit too lenient toward solutions that complete the first few steps but miss the key connection to rearrangement. All correct solutions follow the same overall structure as the grading scheme, and most incorrect solutions fail precisely at the rearrangement step. There are also a few cases where models mishandle the exact set on which the maximum is attained, but those are rarer.</div>
+      </div>
+
+      <div class="example-container qualitative-card">
+        <div class="title is-4">Problem 2</div>
+        <p class="qualitative-meta"><strong>Average model performance:</strong> 40.5%</p>
+        <div class="qualitative-label">Problem Statement</div>
+        <div class="box problem-box">Annie is playing a game where she starts with a row of positive integers, written on a blackboard, each of which is a power of $2$. On each turn, she can erase two adjacent numbers and replace them with a power of $2$ that is greater than either of the erased numbers. This shortens the row of numbers, and she continues to take turns until only one number remains. Annie wins the game if the final remaining number is less than $4$ times the sum of the original numbers. Is it always possible for Annie to win, regardless of the starting row of numbers?</div>
+        <details class="example-container prompt-details">
+          <summary class="title is-5">Grading Scheme</summary>
+          <div class="box problem-box"><div class="marked-text"><h3>1. Checkpoints (7 pts total)</h3>
+<p><strong>Score exactly one chain: take the maximum subtotal among chains; do not add points across chains.</strong></p>
+
+<p><strong>Chain A: Constructive / Algorithmic / Invariant-Based Approach</strong></p>
+<ul>
+  <li><strong>2 pts:</strong> Defining a deterministic strategy (forward or reverse) AND accurately stating a precise mathematical invariant/bound that tracks the sequence’s sum. The claim must explicitly formulate a strict lower bound on the initial sum required to generate a localized configuration of elements (e.g., an inequality relating the minimum original sum required to form a block of adjacent identical elements).
+    <ul>
+      <li><em>(Note: This is all-or-nothing. 0 points if the strict inequality or formulation is mathematically incorrect, even if the strategy/framework is mentioned).</em></li>
+    </ul>
+  </li>
+  <li><strong>5 pts:</strong> Rigorously proving that this bound holds globally via a flawless inductive, recursive, or telescoping algebraic argument, concluding that $F &lt; 4S$.
+    <ul>
+      <li><em>Partial Credit (4 pts):</em> The proof is logically complete and mathematically sound, but contains a localized, non-trivial gap (e.g., failing to explicitly address boundary edge cases, such as adjacent elements that do not merge).</li>
+      <li><em>Partial Credit (2 pts):</em> The student provides a complete and rigorous proof of the bound for a highly restricted but meaningful sub-case (e.g., perfectly proving the bound for a starting board consisting <em>only</em> of $1$s and $2$s), or flawlessly executes the base cases and sets up the inductive gaps but fails the final algebraic reduction.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Chain B: Existential / Structural / Information-Theoretic Approach</strong></p>
+<ul>
+  <li><strong>2 pts:</strong> Translating the game into a global structure (e.g., a binary tree) AND identifying the strict mathematical constraints required for a winning structure to exist (e.g., defining the target $V &lt; 4S$, the depth limits $d_i \le \log_2(V/a_i)$, and identifying the required inverse-power sum).
+    <ul>
+      <li><em>(Note: This is all-or-nothing. 0 points for merely stating the game is a binary tree without the precise depth and volume limits).</em></li>
+    </ul>
+  </li>
+  <li><strong>5 pts:</strong> Rigorously proving the existence of a valid structure that satisfies these constraints without violating game rules (e.g., applying the Kraft-McMillan inequality and proving prefix domains are strictly disjoint), concluding that $F &lt; 4S$.
+    <ul>
+      <li><em>Partial Credit (4 pts):</em> The existence proof is mathematically valid, but lacks a rigorous verification of one specific structural rule (e.g., proving the total volume fits, but failing to formally prove strict left-to-right ordering).</li>
+      <li><em>Partial Credit (2 pts):</em> Sets up the correct system of prefix code intervals or spatial domains, but fails to mathematically prove the Kraft-McMillan sum evaluates to $\le 1$ for this game, OR calculates the sum correctly but fails to map it to a valid geometric/structural existence proof.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>2. Zero-Credit Items</h3>
+<ul>
+  <li>Conjecturing that Annie can always win without providing a mathematical proof.</li>
+  <li>Testing small sequences or specific initial board states and concluding the result holds generally.</li>
+  <li>Outlining a valid conceptual approach (e.g., “I will use induction” or “I will build a tree”) but failing to execute any formal mathematics.</li>
+</ul>
+
+<h3>3. Deductions and Caps</h3>
+<ul>
+  <li><strong>-1 point:</strong> Minor arithmetic, algebraic, or indexing errors that do not invalidate the overall logic of the proof (can be applied up to 2 times; cap at -2).</li>
+  <li><strong>Cap at 2/7:</strong> The proof states the correct bounds (2 pts) but the execution relies on a fundamental mathematical fallacy (e.g., circular reasoning, or assuming a tree exists without checking total “volume” constraints).</li>
+</ul>
+</div></div>
+        </details>
+        <div class="qualitative-label">Analysis</div>
+        <div class="box response-box qualitative-response-box">This problem could be solved in two ways. The example solution modifies the game by allowing one to erase a single number and double it, which does not make the game easier, and then develops a deterministic strategy that produces a final number smaller than four times the original sum. However, no AI-generated solution that went down this route was successful. The <a href="https://matharena.ai/?comp=usamo--usamo_2026&model=GPT-5.4+%28xhigh%29&task=1&run=1" target="_blank">successful solutions came from the more capable models</a> and instead used a more computer-science-oriented existential proof, setting the problem up as a binary tree and using the Kraft-McMillan inequality to show that a valid sequence exists. Solutions that went down the deterministic, and arguably more human, route remained shallow. None of them produced a correct strategy; instead, they typically tried and failed to prove the claim by induction.</div>
+      </div>
+
+      <div class="example-container qualitative-card">
+        <div class="title is-4">Problem 3</div>
+        <p class="qualitative-meta"><strong>Average model performance:</strong> 25.0%</p>
+        <div class="qualitative-label">Problem Statement</div>
+        <div class="box problem-box">Let $ABC$ be an acute scalene triangle with no angle equal to $60^\circ$. Let $\omega$ be the circumcircle of $ABC$. Let $\Delta_B$ be the equilateral triangle with three vertices on $\omega$, one of which is $B$. Let $\ell_B$ be the line through the two vertices of $\Delta_B$ other than $B$. Let $\Delta_C$ and $\ell_C$ be defined analogously. Let $Y$ be the intersection of $AC$ and $\ell_B$, and let $Z$ be the intersection of $AB$ and $\ell_C$.
+
+Let $N$ be the midpoint of minor arc $BC$ on $\omega$. Let $\mathcal{R}$ be the triangle formed by $\ell_B$, $\ell_C$, and the tangent to $\omega$ through $N$. Prove that the circumcircle of $AYZ$ and the incircle of $\mathcal{R}$ are tangent.</div>
+        <details class="example-container prompt-details">
+          <summary class="title is-5">Grading Scheme</summary>
+          <div class="box problem-box"><div class="marked-text"><h3>1. Checkpoints (7 pts total)</h3>
+<p><strong>Score exactly one chain: take the maximum subtotal among chains; do not add points across chains.</strong></p>
+
+<p><strong>Chain A: Synthetic approach</strong></p>
+<ul>
+  <li><strong>3 pts:</strong> Proving that $O$ is the incenter of $\triangle DYZ$ (can be achieved via reverse reconstruction, moving points, projective geometry, or other valid methods).</li>
+  <li><strong>1 pt:</strong> Defining $O&#39;$ as the reflection of $O$ over $YZ$ and showing that $O&#39;$ lies on the circumcircle of $\triangle AYZ$.</li>
+  <li><strong>1 pt:</strong> Constructing the point $X$ on $(AYZ)$ appropriately (e.g., by letting $X = NK \cap (AYZ)$ where $OYKZ$ is a parallelogram) and showing that $OX$ bisects $\angle YXZ$.</li>
+  <li><strong>1 pt:</strong> Applying Protassov’s theorem (or an equivalent homothety argument) to deduce that the circle tangent to $DY$, $DZ$, and $(AYZ)$ touches $(AYZ)$ at $X$.</li>
+  <li><strong>1 pt:</strong> Proving that the constructed tangent circle passes through $N$ (e.g., by showing its center $I$ satisfies $IX = IN$), which identifies it as the incircle of $\mathcal{R}$ and concludes the proof.</li>
+</ul>
+
+<p><strong>Chain B: Complex numbers and inversion approach</strong></p>
+<ul>
+  <li><strong>1 pt:</strong> Identifying and setting up a suitable inversion (e.g., an inversion centered at $A$ with radius $\sqrt{bc}$, combined with a reflection over the angle bisector of $A$).</li>
+  <li><strong>6 pt:</strong> Computing all valid coordinates to finish the complex number solution.</li>
+</ul>
+
+<h3>2. Zero-credit items</h3>
+<ul>
+  <li>Conjecturing that $O$ is the incenter of $\triangle DYZ$ or making other major geometric claims without proof.</li>
+  <li>Merely stating an inversion strategy (Chain B) or identifying Protassov’s configuration (Chain A) without performing subsequent calculations or verifying its conditions for this specific problem.</li>
+  <li>Routine coordinate geometry setups (e.g., simply assigning complex coordinates to the vertices) that do not result in meaningful progress.</li>
+  <li>Any incomplete computational approach that does not finish the solution or does not arrive at a meaningful synthetic observation that can help finish the solution (i.e. those from Chain A)</li>
+</ul>
+
+<h3>3. Deductions</h3>
+<ul>
+  <li><strong>-1 point:</strong> Arithmetic or algebraic execution errors in Chain B or in Cartesian coordinate checks within Chain A (can be applied up to 2 times; cap at -2).</li>
+  <li><strong>-1 point:</strong> Incomplete case analysis in the moving points/projective argument for proving $O$ is the incenter of $\triangle DYZ$ (e.g., verifying only one case instead of the required three).</li>
+  <li><strong>Cap at 6/7:</strong> The student successfully applies Protassov’s theorem to find the tangent circle but fails to definitively show it is the incircle of $\mathcal{R}$ (i.e., failing to show tangency at $N$).</li>
+  <li><strong>Cap at 5/7:</strong> The proof contains contradictory claims or assumes the conclusion halfway through to force a collinearity or tangency condition.</li>
+</ul>
+</div></div>
+        </details>
+        <div class="qualitative-label">Analysis</div>
+        <div class="box response-box qualitative-response-box">This was the hardest problem of the contest for LLMs, and GPT-5.4 was the only model to get full marks. Qwen3.5-397B was the only model that attempted <a href="https://matharena.ai/?comp=usamo--usamo_2026&model=Qwen3.5-397b-a17b&task=2&run=1">a synthetic-only approach</a>. Although it earned no credit on Problem 3, this is still worth highlighting, since LLMs much more often resort to algebraic or bashed approaches that require less geometric insight. The expected computational route uses inversion, a standard technique in geometry that transforms circles in lines and lines in circles. Some models opted for this approach, and a suitable inversion was enough to earn one point. GPT-5.4, by contrast, solved the problem with a long coordinate-bashing solution. Importantly, the LLM judges were quite generous in awarding points for the initial setup, whereas the human judge gave zero points to setups that never became mathematically useful.</div>
+      </div>
+
+      <div class="example-container qualitative-card">
+        <div class="title is-4">Problem 4</div>
+        <p class="qualitative-meta"><strong>Average model performance:</strong> 93.5%</p>
+        <div class="qualitative-label">Problem Statement</div>
+        <div class="box problem-box">A positive integer $n$ is called \emph{solitary} if, for any nonnegative integers $a$ and $b$ such that $a + b = n$, either $a$ or $b$ contains the digit ``1''. Determine, with proof, the number of solitary integers less than $10^{2026}$.</div>
+        <details class="example-container prompt-details">
+          <summary class="title is-5">Grading Scheme</summary>
+          <div class="box problem-box"><div class="marked-text"><h3>1. Checkpoints (7 pts total)</h3>
+
+<p><strong>1. Answer &amp; Characterization (1 pt)</strong></p>
+<ul>
+  <li><strong>1 pt:</strong> State the correct final answer ($2^{2026} - 1$) <strong>AND</strong> provide a valid, mathematically rigorous characterization of the solitary numbers.</li>
+</ul>
+
+<p><strong>2. Sufficiency: The characterized numbers are solitary (3 pts)</strong><br />
+<em>(Core logic: Proving that for numbers in the characterized set, any equation $a + b = n$ forces the use of the digit 1.)</em></p>
+
+<ul>
+  <li><strong>1 pt (Local Constraints / Base Mechanics):</strong> Rigorously establishing the rules of 1-free addition. The student must prove what carries are strictly forced when attempting to form the specific digits of the characterized set using only digits from $\{0, 2, 3, \ldots, 9\}$.</li>
+  <li><strong>2 pts (Global Contradiction):</strong> Synthesizing the local constraints to prove a global impossibility. The student must definitively show that these forced carries chain together across the entire number to create an inescapable contradiction (e.g., an infinite carry loop or a failure at the leading digit).
+    <ul>
+      <li><em>Note:</em> This is an all-or-nothing 2 points. The student must complete the logical chain.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>3. Necessity: All other numbers are not solitary (3 pts)</strong><br />
+<em>(Core logic: Proving that for any number outside the characterized set, there exists at least one valid 1-free decomposition $a + b = n$.)</em></p>
+
+<ul>
+  <li><strong>1 pt (The Invariant / Breakpoint):</strong> Identifying the structural feature of non-characterized numbers that permits a 1-free sum, and establishing a valid reduction/invariant (e.g., proving that deviating from the pattern pushes the carry into a relaxed, solvable state, or defining a valid “bare number” reduction).</li>
+  <li><strong>2 pts (Global Construction / Existence):</strong> Proving that the <em>entire</em> non-characterized integer $n$ can be formed by a 1-free sum. The student must provide a generalized, rigorous construction or induction that holds for the entire number, explicitly verifying that no contradiction occurs at the boundaries/most significant digit.
+    <ul>
+      <li><em>Note:</em> This is an all-or-nothing 2 points for completing the global proof of existence.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>2. Zero-credit items</h3>
+
+<ul>
+  <li>Stating the numerical answer ($2^{2026}-1$) without explicitly defining the generalized structural set.</li>
+  <li>Extrapolating the sequence/answer from small cases ($n &lt; 100$) without structural proof or induction.</li>
+  <li>Providing a mathematically false characterization of the set (e.g., claiming solitary numbers are “numbers that require a carry in every single digit”).</li>
+  <li>Demonstrating maximum bounds or isolating specific solitary examples (e.g., proving $199\dots9$ works) without proving the generalized set.</li>
+</ul>
+
+<h3>3. Deductions</h3>
+
+<ul>
+  <li><strong>-1 to -2 pts (Handwaving the Construction):</strong> The student claims a 1-free sum exists (e.g., “just pick digits that sum to $x$”) without explicitly proving that the restricted digit set $\{0, 2, 3, \ldots, 9\}$ is mathematically sufficient to fulfill those specific sums and carries.</li>
+  <li><strong>-1 pt (Minor Boundary Error):</strong> The global logic is sound, but the student fails to explicitly state how the sum resolves at the absolute boundaries (e.g., forgetting to mention that infinite leading zeros resolve the final carry, or a minor index error in an induction step).</li>
+</ul>
+</div></div>
+        </details>
+        <div class="qualitative-label">Analysis</div>
+        <div class="box response-box qualitative-response-box">This was by far the easiest problem in the contest. Almost all LLM attempts solved it successfully. The only significant mistake <a href="https://matharena.ai/?comp=usamo--usamo_2026&model=GLM+5&task=3&run=3" target="_blank">came from GLM 5</a>, which made an early logical mistake and therefore received zero points. In the other cases where points were lost, the issues were minor, such as a lack of sufficient rigor in the proof. All successful solutions followed the same main idea: they analyzed how carries propagate across digits and used this to characterize the structure of solitary numbers. The LLM judges were also highly consistent. Their scores differed by at most 1 point, and any differences were only from minor issues of rigor.</div>
+      </div>
+
+      <div class="example-container qualitative-card">
+        <div class="title is-4">Problem 5</div>
+        <p class="qualitative-meta"><strong>Average model performance:</strong> 58.3%</p>
+        <div class="qualitative-label">Problem Statement</div>
+        <div class="box problem-box">Let $ABC$ be a triangle. Points $D$, $E$, and $F$ lie on sides $BC$, $CA$, and $AB$, respectively, such that
+\[
+\angle AFE = \angle BDF = \angle CED.
+\]
+Let $O_A$, $O_B$, and $O_C$ be the circumcenters of triangles $AFE$, $BDF$, and $CED$, respectively. Let $M$, $N$, and $O$ be the circumcenters of triangles $ABC$, $DEF$, and $O_A O_B O_C$, respectively. Prove that $OM = ON$.</div>
+        <details class="example-container prompt-details">
+          <summary class="title is-5">Grading Scheme</summary>
+          <div class="box problem-box"><div class="marked-text"><h3>1. Checkpoints (7 pts total)</h3>
+<p><strong>Score exactly one chain: take the maximum subtotal among chains; do not add points across chains.</strong></p>
+
+<p><strong>Chain A: Synthetic Geometry</strong></p>
+<ul>
+  <li><strong>1 pt:</strong> Prove that $\triangle ABC \sim \triangle EFD$ (e.g., by identifying that $DE$ is tangent to $(AFE)$ and similar cyclic applications).</li>
+  <li><strong>1 pt:</strong> Introduce the Miquel point $P$ of $\triangle ABC$ with respect to $D,E,F$ (i.e., the point of concurrency of the circles $(AFE)$, $(BDF)$, and $(CED)$).</li>
+  <li><strong>1 pt:</strong> Establish that $P$ is the center of a spiral similarity mapping $\triangle ABC$ to $\triangle EFD$ (or equivalently, prove $\triangle PAB \sim \triangle PEF$). <em>Note: This may be cited as a standard consequence of the Miquel point.</em></li>
+  <li><strong>1 pt:</strong> Prove that $\triangle ABC \sim \triangle O_A O_B O_C$.</li>
+  <li><strong>1 pt:</strong> Prove that $P$ is the center of a spiral similarity mapping $\triangle EFD$ (or $\triangle ABC$) to $\triangle O_A O_B O_C$ (e.g., by proving $\triangle PEF \sim \triangle PO_A O_B$).</li>
+  <li><strong>1 pt:</strong> Deduce that $P$ is the center of a spiral similarity mapping the respective circumcenters $M \to N \to O$ (or establish equivalent similarity triangles involving $M,N,O$).</li>
+  <li><strong>1 pt:</strong> Conclude $OM = ON$ using the properties of paired spiral similarities (e.g., noting that $\triangle M N O \sim \triangle A E O_A$ and $O_A A = O_A E$).</li>
+</ul>
+
+<p><strong>Chain B: Complex Bashing</strong></p>
+<ul>
+  <li><strong>1 pt:</strong> Prove that $\triangle ABC \sim \triangle EFD$.</li>
+  <li><strong>1 pt:</strong> Identify the Miquel point $X$ (or $P$) as the center of spiral similarity mapping $\triangle ABC$ to $\triangle EFD$.</li>
+  <li><strong>5 pt:</strong> Setting up and correctly completing a series of computations that result in discovering the relationship $|O-M| = |O-N|$ (or any equivalent one).</li>
+</ul>
+
+<h3>2. Zero-credit items</h3>
+<ul>
+  <li>Conjecturing that $OM = ON$ from an accurately drawn diagram without any angle chasing or algebraic proof.</li>
+  <li>Simply restating the problem or rewriting the given angle conditions without deriving meaningful conclusions (e.g., not finding the tangent conditions).</li>
+  <li>Introducing complex coordinates but failing to simplify them into a usable factored form (e.g., writing the full determinant for $O_A$ but not evaluating it).</li>
+  <li>Any incomplete computational approach that does not finish the solution or does not arrive at a meaningful synthetic observation that can help finish the solution (i.e. those from Chain A)</li>
+</ul>
+
+<h3>3. Deductions</h3>
+<ul>
+  <li><strong>Algebraic/Arithmetic errors in Chain B:</strong> Deduct <strong>1 pt</strong> for each minor calculation error in evaluating determinants or expanding expressions. If an error drastically trivializes the remainder of the problem, <strong>cap at 3/7</strong> (or the score achieved up to the error).</li>
+  <li><strong>Unjustified assumptions about spiral similarities:</strong> Concluding that two triangles are spirally similar simply because they are similar, without establishing the correct center or orientation, triggers a <strong>1 pt</strong> deduction.</li>
+  <li><strong>Incomplete similarity argument:</strong> If a student claims the pairing property of spiral similarities (e.g., $P: \triangle A E O_A \to \triangle M N O$) but fails to note why $\triangle A E O_A$ is isosceles at $O_A$, deduct <strong>1 pt</strong>.</li>
+</ul>
+</div></div>
+        </details>
+        <div class="qualitative-label">Analysis</div>
+        <div class="box response-box qualitative-response-box">The solution to this problem requires identifying the Miquel point of the configuration and then using it in a spiral-similarity argument to relate the relevant triangles. Most generated solutions identified the Miquel point, used angle chasing for the first part of the proof, and then resorted to a bashing approach. In contrast, Qwen3.5-397B was once again the only model to provide synthetic-only solutions, none of which were fully correct. Using judges with tool-calling made human review of these solutions significantly easier, since they could spot mistakes in the tedious calculations.</div>
+      </div>
+
+      <div class="example-container qualitative-card">
+        <div class="title is-4">Problem 6</div>
+        <p class="qualitative-meta"><strong>Average model performance:</strong> 49.4%</p>
+        <div class="qualitative-label">Problem Statement</div>
+        <div class="box problem-box">Let $a$ and $b$ be positive integers such that $\varphi(ab+1)$ divides $a^2 + b^2 + 1$. Prove that $a$ and $b$ are Fibonacci numbers.</div>
+        <details class="example-container prompt-details">
+          <summary class="title is-5">Grading Scheme</summary>
+          <div class="box problem-box"><div class="marked-text"><h3>1. Checkpoints (7 pts total)</h3>
+<ul>
+  <li><strong>1 pt:</strong> Shows that $\nu_2(a^2+b^2+1)=\nu_2(\varphi(ab+1))=1$ by parity arguments, and concludes that $ab+1 = p^t$ for an odd prime $p \equiv 3 \pmod 4$.</li>
+  <li><strong>2 pts:</strong> Handles the case $t=1$ using Vieta Jumping on the relation $ab \mid a^2+b^2+1$ to conclude that $a$ and $b$ must be Fibonacci numbers.
+    <ul>
+      <li><strong>1 pt:</strong> 1 point should be given for showing that $k=3$ in the relation $a^2 + b^2 + 1 = kab$ using Vieta Jumping.</li>
+      <li><strong>1 pt:</strong> 1 point should be given by characterizing all solutions when $k=3$ as $(a,b) \in \{(1,1)\} \cup \{(F_{2l+1},F_{2l+3}) | l \in \mathbb{Z}_{&gt;0} \} \cup \{(F_{2l+3},F_{2l+1}) | l \in \mathbb{Z}_{&gt;0} \}$ using Vieta Jumping.</li>
+    </ul>
+  </li>
+  <li><strong>4 pts:</strong> Handles $t \geq 2$ by showing no solutions exist for $t \geq 3$ and only some exceptional cases exist for $t=2$.
+    <ul>
+      <li><strong>1 pt:</strong> Shows that $p=3$ or $p \equiv 1 \mod 3$ by applying divisibility properties, e.g., by proving that $p\mid (a^2+a+1)(a^2-a+1)$ which implies that -3 is a quadratic residue mod $p$.</li>
+      <li><strong>1 pt:</strong> Shows that $p \equiv 1 \mod 3$ is also impossible, e.g., by noting that it implies that either $3 | a$ or $3 | b$, which in turn implies that either $b^2 \equiv 2 \mod 3$ or $a^2 \equiv 2 \mod 3$ (contradiction).</li>
+      <li><strong>1 pt:</strong> Shows that $t &gt; 2$ is impossible by deriving a contradiction modulo 9.</li>
+      <li><strong>1 pt:</strong> Shows that $t  = 2$ and $p = 3$ leads to the solutions (1,8) and (8,1), both of which are pairs of Fibonacci.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>2. Zero-credit items</h3>
+<ul>
+  <li>Conjecturing that $a$ and $b$ are Fibonacci numbers based on testing small values without providing a proof.</li>
+  <li>Showing that $a^2+b^2+1$ is not divisible by 4 without successfully restricting the prime factorization form of $ab+1$.</li>
+  <li>Citing Vieta Jumping without first proving that $ab \mid a^2+b^2+1$ or establishing the specific prime form of $ab+1$.</li>
+</ul>
+
+<h3>3. Deductions</h3>
+<ul>
+  <li><strong>cap at 3/7:</strong> Assuming $ab+1$ is prime (i.e., assuming $t=1$) immediately after deducing it is a prime power, without proving that higher powers are impossible.</li>
+  <li><strong>-1 pt:</strong> Omitting valid small cases that yield legitimate Fibonacci pairs (e.g., missing the $\{1, 1\}$ case or the $\{1, 8\}$ case from $p=3, t=2$). Apply this flat penalty once for any missing edge cases.</li>
+  <li><strong>-1 pt:</strong> Minor algebraic or arithmetic slips that do not invalidate the overall logical pipeline (e.g., small errors during the Vieta jumping descent).</li>
+</ul>
+</div></div>
+        </details>
+        <div class="qualitative-label">Analysis</div>
+        <div class="box response-box qualitative-response-box">This is a beautiful problem that connects Fibonacci numbers with the Euler totient function. For humans, it is probably far from obvious that Vieta Jumping, a standard technique since a famous IMO problem in 1988, can be used here, but all models seem familiar with it, even in the specific form that arises in this problem. Many human authors on AoPS were also aware of this Vieta Jumping setup. Still, some models, most <a href="https://matharena.ai/?comp=usamo--usamo_2026&model=Gemini+3.1+Pro+Preview&task=5&run=3" target="_blank">notably Gemini-3.1</a>, frequently make the mistake of confidently claiming that Vieta Jumping applies without actually carrying the argument through.
+<br><br>
+The problem becomes subtler in the cases where Vieta Jumping does not apply directly, and most mistakes occur there. One has to combine several divisibility properties to exclude more and more cases until only a few edge cases remain, each of which also leads to Fibonacci solutions. Models often fail here by trying many different ideas without finding the right sequence of reductions. Interestingly, many incorrect solutions still identify the right edge cases without proving that these are the only ones, which suggests that final-answer performance is stronger than proof-based performance. </div>
+      </div>
+
+        <h2 class="anchorable" id="prompts">
+          <a href="#prompts">
+            Prompts
+          </a>
+        </h2>
+
+        <p>
+          Below are the main prompts used in the USAMO 2026 evaluation pipeline.
+        </p>
+
+        <details class="example-container prompt-details">
+          <summary class="title is-4">Grading Scheme Creation</summary>
+          <div class="box problem-box prompt-content">{% raw %}
+<p>You are an experienced Olympiad grader.
+<em>Treat the official solution as fully correct and authoritative; do not claim it contains errors.</em>
+Your task is to write a complete, grader-friendly rubric for the problem and official solution below. The rubric must map a student's proof to an integer score from <strong>0 to 7</strong>.
+The official solution may occasionally skip or skim too quickly over particular steps. Make sure you have understood properly what goes on under the hood to determine the difficulty of a given step and how many points it should be awarded.</p>
+
+<hr />
+
+<h5>INSTRUCTIONS</h5>
+
+<p>Produce the marking scheme in <strong>exactly</strong> the following three sections.
+Do not deviate from this format, and do not give any further remarks or comments (i.e., do <strong>not</strong> even start with "here is the marking scheme for this problem").
+Be concise and to-the-point, do not give details that limit the graders. The graders are capable, you do not have to specify every detail.</p>
+
+<ol>
+  <li><strong>Checkpoints (7 pts total)</strong>
+    <ul>
+      <li>Break the solution into logically independent checkpoints with <strong>integer</strong> point values.</li>
+      <li>Allocate <strong>&gt;= 4 pts</strong> to the main idea/critical steps (all combined); <strong>&lt;= 3 pts</strong> to routine work (all combined).</li>
+      <li>If a specific checkpoint can be achieved in multiple mathematically equivalent ways, mention this. However, only do so when the official solution mentions that the alternative is also acceptable.</li>
+      <li><strong>Parallel solution paths (non-additive):</strong></li>
+    </ul>
+    <ul>
+      <li>In rare occasions, the official solution admits more than one legitimate approach. If so, write <strong>parallel checkpoint chains</strong> labeled "Chain A: [idea] / Chain B: [idea] / ...". ONLY do so when the official solution allows for multiple paths. DO NOT add your own solution.</li>
+      <li>When there are parallel solution paths, start this section with a bold rule: <strong>Score exactly one chain: take the **maximum</strong> subtotal among chains; do <strong>not</strong> add points across chains.**</li>
+      <li>Within a chain, checkpoints may be additive.
+      * Finish with a one-line <strong>"Total (max 7)"</strong> check that is consistent with the non-additivity rule.
+      * Never demand cosmetic labels or specific variable names unless essential to the logic.</li>
+    </ul>
+  </li>
+  <li><strong>Zero-credit items</strong>
+    <ul>
+      <li>List common arguments or observations that <strong>earn 0 points</strong> (e.g., conjectures without proof, especially in geometry, routine restatements of the problem, or dead-ends).</li>
+      <li>Avoid redundancy with deductions below.</li>
+    </ul>
+  </li>
+  <li><strong>Deductions</strong>
+    <ul>
+      <li>Bullet each typical/expected mistake with a <strong>flat</strong> penalty (<strong>1</strong>, <strong>2</strong>, or <strong>"cap at x/7"</strong>). Use caps for major problems, while subtraction should be used for smaller arithmetic errors. Try to anticipate likely errors based on the official solution structure.</li>
+      <li>Target logic gaps, invalid claims, circular reasoning, or contradictions. Cosmetic slips (notation, arithmetic, wording) do <strong>not</strong> trigger deductions unless they break validity.</li>
+      <li>If proofs contain <strong>contradictory claims</strong>, apply an appropriate deduction (e.g., <strong>cap at 5/7</strong>).</li>
+      <li>If a proof is <strong>incomplete but logically sound</strong> (e.g., leaves cases unaddressed, or proves a key lemma but not the full result), do <strong>not</strong> deduct points; award partial credit based on checkpoints achieved.</li>
+    </ul>
+  </li>
+</ol>
+
+<h5>IMPORTANT REQUIREMENTS</h5>
+
+<ul>
+  <li>Be concise, do <strong>not</strong> include details.</li>
+  <li><strong>Arithmetic sanity checks:</strong> it must be impossible to exceed <strong>7</strong> overall and at least one chain must allow a perfect <strong>7/7</strong>.</li>
+  <li>Do <strong>not</strong> introduce, "fix," or critique the official solution.</li>
+  <li>Avoid over-fragmenting: do not split routine algebra into 3+ separate 1-pt bullets.</li>
+  <li>Keep notation consistent with the official solution; define any new symbols you introduce.</li>
+  <li>Make sure your grading scheme can be understood separately from the solution. Notation only present in the solution (and not in the question) either needs to be clear from context or redefined.</li>
+  <li>Do <strong>not</strong> include alternative pipelines based on angle chasing or bashing unless the official solution explicitly includes them.</li>
+</ul>
+
+<h5>PROBLEM</h5>
+<p>{problem}</p>
+<h5>OFFICIAL SOLUTION</h5>
+<p>{solution}</p>
+{% endraw %}</div>
+        </details>
+
+        <details class="example-container prompt-details">
+          <summary class="title is-4">Generation</summary>
+          <div class="box problem-box prompt-content">{% raw %}
+<p>Generate a rigorous proof for the following problem:</p>
+
+<p>{problem}</p>
+{% endraw %}</div>
+        </details>
+
+        <details class="example-container prompt-details">
+          <summary class="title is-4">Judging</summary>
+          <div class="box problem-box prompt-content">{% raw %}
+<p>You are an expert math proof grader. You are judging the correctness of an LLM-generated proof for a math problem.</p>
+
+<h5>Input</h5>
+<p>Your input will consist of:</p>
+<ul>
+  <li><strong>Problem Statement</strong>: A mathematical problem that the proof is attempting to solve.</li>
+  <li><strong>Marking Scheme</strong>: A problem-specific grading rubric (0-7 scale) with checkpoints, zero-credit items, and deductions. You must follow this scheme when assigning points.</li>
+  <li><strong>Proof Solution</strong>: The proof that you need to evaluate. This proof may contain errors, omissions, or unclear steps. The proof was generated by another language model.</li>
+</ul>
+
+<h5>Task</h5>
+<p>Analyze the proof carefully.
+<strong>Core principles (in order of precedence):</strong>
+1) <strong>Mathematical validity</strong> of the proof's reasoning and conclusion.
+2) <strong>Problem constraints</strong> (e.g., unique required final value; forbidden tools if stated).
+3) <strong>Advisory mapping to the marking scheme</strong> (checkpoints/deductions), allowing different orders and techniques.</p>
+
+<p><strong>Alternative-approach policy:</strong></p>
+<ul>
+  <li>If the proof uses a different but valid method, <strong>map its steps to equivalent rubric checkpoints</strong> (same logical role) and award points accordingly.</li>
+  <li>Apply zero-credit items/deductions <strong>only when the underlying issue actually occurs</strong> in the given proof's approach; do not auto-penalize for omitting a rubric step.</li>
+  <li>Avoid double-counting mutually exclusive items; if two items solve the same logical gap, <strong>award the larger only</strong>.</li>
+  <li>If the final numeric/algebraic answer is wrong where uniqueness is required, award only partial credit justified by correct intermediate reasoning.</li>
+</ul>
+
+<p><strong>Rigor and evidence:</strong></p>
+<ul>
+  <li>Award credit for intermediate claims <strong>only if adequately justified</strong> within the proof (not merely asserted).</li>
+  <li>If a step is plausible but under-justified, award <strong>conservative partial credit</strong> and note what is missing.</li>
+</ul>
+
+<p><strong>What to produce:</strong></p>
+<ul>
+  <li>Identify logical errors, incorrect steps, or unclear reasoning.</li>
+  <li>Give a <strong>score between 0 and 7</strong> with a <strong>detailed assessment</strong>.</li>
+  <li><strong>Within the assessment text</strong>, show clearly how the score was derived:
+    <ul>
+      <li>Which rubric checkpoints were earned and the points you awarded.</li>
+      <li>Any zero-credit items or deductions you applied (and why).</li>
+      <li>How these add up to the final integer score in [0-7].</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>What to avoid:</strong></p>
+<ul>
+  <li>Do <strong>not</strong> provide value judgments on the proof, in particular, avoid subjective assessments like "brilliant", "elegant", "flawless", "sloppy", etc. Specify whether the proof is correct or not, and give a clear rationale for your score, but do not use subjective adjectives or point out other superficial aspects, like the writing style, the formatting, or the clarity of the explanation.</li>
+</ul>
+
+<h5>Code execution</h5>
+<p>Use the provided code execution tool to verify calculations and check algebraic manipulations.
+Sympy and Numpy are available for symbolic verification or numerical checks. If possible, always prefer symbolic verification for mathematical proofs.
+However, do not use code execution as a crutch for understanding the proof. Your primary evaluation should be based on the logical structure and mathematical validity of the proof as written.
+<strong>Never</strong> trust a model solution blindly, any computations or equalities it claims should be rigorously checked, preferably with numerical or symbolic verification using the code execution tool.</p>
+
+<h5>Geometry problems</h5>
+<p>Geometric problems often are solved using "bashed" solutions, either with coordinate geometry, complex numbers, or angle chasing.
+Such proofs should be evaluated with extreme care, and the code execution tool should be used generously to verify the correctness of the bash and the validity of the conclusions drawn from it.
+Partial credits should be awarded <strong>sparingly</strong>. In particular, the following rules should be followed:</p>
+<ul>
+  <li>If the grading scheme includes specific checkpoints for the bash, points should be awarded for each checkpoint that was finished completely correctly.</li>
+  <li>A big portion of the grades for a bash are reserved for a correct setup and computations. For this portion, the following rules should be followed:
+    <ul>
+      <li>You are only allowed to either award 0 points, the full points, or a one-point deduction for a minor mistake that does not invalidate the final conclusion. It is impossible to give a partial score that is lower than the full points minus one for the bash. In such cases, you should always give 0 points instead.</li>
+      <li>Two or more minor mistakes, as well as a single major mistake that invalidates the final conclusion, should lead to a score of 0 for the bash.
+Be extremely strict when evaluating bashed solutions, and verify all calculations extensively with the code execution tool.</li>
+    </ul>
+  </li>
+</ul>
+
+<h5>Output Format</h5>
+<p>Respond with <strong>only</strong> well-formed XML using the structure below. Do not include any extra text or Markdown.
+<strong>Requirements:</strong></p>
+<ul>
+  <li>&lt;points&gt; must be an integer in [0, 7].</li>
+  <li>&lt;assessment&gt; must be a <strong>detailed analysis</strong> that explains your reasoning step-by-step and provides a clear <strong>rationale for the score</strong>.</li>
+  <li>&lt;errors&gt; must be a list of specific issues (empty if score = 7).</li>
+</ul>
+
+<p>Example output:
+&lt;points&gt;0&lt;/points&gt;
+&lt;assessment&gt;The proof shows a good understanding of the main idea, but has some unclear reasoning and minor mistakes...&lt;/assessment&gt;
+&lt;errors&gt;
+    1. specific error 1,
+    2. specific error 2,
+    ...
+&lt;/errors&gt;</p>
+
+<h5>INPUT DATA</h5>
+
+<h4>Problem Statement</h4>
+<p>{problem_statement}</p>
+
+<h4>Marking Scheme</h4>
+<p>{guidelines}</p>
+
+<h4>Proof Solution</h4>
+<p>{student_answer}</p>
+{% endraw %}</div>
+        </details>
+
+        <details class="example-container prompt-details">
+          <summary class="title is-4">Judging with prior judgments</summary>
+          <div class="box problem-box prompt-content">{% raw %}
+<p>You are an expert math proof grader. You are judging the correctness of an LLM-generated proof for a math problem.</p>
+
+<h5>Input</h5>
+<p>Your input will consist of:</p>
+<ul>
+  <li><strong>Problem Statement</strong>: A mathematical problem that the proof is attempting to solve.</li>
+  <li><strong>Marking Scheme</strong>: A problem-specific grading rubric (0-7 scale) with checkpoints, zero-credit items, and deductions. You must follow this scheme when assigning points.</li>
+  <li><strong>Proof Solution</strong>: The proof that you need to evaluate. This proof may contain errors, omissions, or unclear steps. The proof was generated by another language model.</li>
+</ul>
+
+<h5>Task</h5>
+<p>Analyze the proof carefully.
+<strong>Core principles (in order of precedence):</strong>
+1) <strong>Mathematical validity</strong> of the proof's reasoning and conclusion.
+2) <strong>Problem constraints</strong> (e.g., unique required final value; forbidden tools if stated).
+3) <strong>Advisory mapping to the marking scheme</strong> (checkpoints/deductions), allowing different orders and techniques.</p>
+
+<p><strong>Alternative-approach policy:</strong></p>
+<ul>
+  <li>If the proof uses a different but valid method, <strong>map its steps to equivalent rubric checkpoints</strong> (same logical role) and award points accordingly.</li>
+  <li>Apply zero-credit items/deductions <strong>only when the underlying issue actually occurs</strong> in the given proof's approach; do not auto-penalize for omitting a rubric step.</li>
+  <li>Avoid double-counting mutually exclusive items; if two items solve the same logical gap, <strong>award the larger only</strong>.</li>
+  <li>If the final numeric/algebraic answer is wrong where uniqueness is required, award only partial credit justified by correct intermediate reasoning.</li>
+</ul>
+
+<p><strong>Rigor and evidence:</strong></p>
+<ul>
+  <li>Award credit for intermediate claims <strong>only if adequately justified</strong> within the proof (not merely asserted).</li>
+  <li>If a step is plausible but under-justified, award <strong>conservative partial credit</strong> and note what is missing.</li>
+</ul>
+
+<p><strong>What to produce:</strong></p>
+<ul>
+  <li>Identify logical errors, incorrect steps, or unclear reasoning.</li>
+  <li>Give a <strong>score between 0 and 7</strong> with a <strong>detailed assessment</strong>.</li>
+  <li><strong>Within the assessment text</strong>, show clearly how the score was derived:
+    <ul>
+      <li>Which rubric checkpoints were earned and the points you awarded.</li>
+      <li>Any zero-credit items or deductions you applied (and why).</li>
+      <li>How these add up to the final integer score in [0-7].</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>What to avoid:</strong></p>
+<ul>
+  <li>Do <strong>not</strong> provide value judgments on the proof, in particular, avoid subjective assessments like "brilliant", "elegant", "flawless", "sloppy", etc. Specify whether the proof is correct or not, and give a clear rationale for your score, but do not use subjective adjectives or point out other superficial aspects, like the writing style, the formatting, or the clarity of the explanation.</li>
+</ul>
+
+<h5>Code execution</h5>
+<p>Use the provided code execution tool to verify calculations and check algebraic manipulations.
+Sympy and Numpy are available for symbolic verification or numerical checks. If possible, always prefer symbolic verification for mathematical proofs.
+However, do not use code execution as a crutch for understanding the proof. Your primary evaluation should be based on the logical structure and mathematical validity of the proof as written.
+<strong>Never</strong> trust a model solution blindly, any computations or equalities it claims should be rigorously checked, preferably with numerical or symbolic verification using the code execution tool.</p>
+
+<h5>Geometry problems</h5>
+<p>Geometric problems often are solved using "bashed" solutions, either with coordinate geometry, complex numbers, or angle chasing.
+Such proofs should be evaluated with extreme care, and the code execution tool should be used generously to verify the correctness of the bash and the validity of the conclusions drawn from it.
+Partial credits should be awarded <strong>sparingly</strong>. In particular, the following rules should be followed:</p>
+<ul>
+  <li>If the grading scheme includes specific checkpoints for the bash, points should be awarded for each checkpoint that was finished completely correctly.</li>
+  <li>A big portion of the grades for a bash are reserved for a correct setup and computations. For this portion, the following rules should be followed:
+    <ul>
+      <li>You are only allowed to either award 0 points, the full points, or a one-point deduction for a minor mistake that does not invalidate the final conclusion. It is impossible to give a partial score that is lower than the full points minus one for the bash. In such cases, you should always give 0 points instead.</li>
+      <li>Two or more minor mistakes, as well as a single major mistake that invalidates the final conclusion, should lead to a score of 0 for the bash.
+Be extremely strict when evaluating bashed solutions, and verify all calculations extensively with the code execution tool.</li>
+    </ul>
+  </li>
+</ul>
+
+<h5>Output Format</h5>
+<p>Respond with <strong>only</strong> well-formed XML using the structure below. Do not include any extra text or Markdown.
+<strong>Requirements:</strong></p>
+<ul>
+  <li>&lt;points&gt; must be an integer in [0, 7].</li>
+  <li>&lt;assessment&gt; must be a <strong>detailed analysis</strong> that explains your reasoning step-by-step and provides a clear <strong>rationale for the score</strong>.</li>
+  <li>&lt;errors&gt; must be a list of specific issues (empty if score = 7).</li>
+</ul>
+
+<p>Example output:
+&lt;points&gt;0&lt;/points&gt;
+&lt;assessment&gt;The proof shows a good understanding of the main idea, but has some unclear reasoning and minor mistakes...&lt;/assessment&gt;
+&lt;errors&gt;
+    1. specific error 1,
+    2. specific error 2,
+    ...
+&lt;/errors&gt;</p>
+
+<h5>INPUT DATA</h5>
+
+<h4>Problem Statement</h4>
+<p>{problem_statement}</p>
+
+<h4>Marking Scheme</h4>
+<p>{guidelines}</p>
+
+<h4>Proof Solution</h4>
+<p>{student_answer}</p>
+
+<p>You are additionally given the following judgments from other judges on the same proof.
+They have all read the same proof and marking scheme, but they significantly differ in the score they awarded in their analysis.
+Your task is to analyze their judgments and the proof, and reconcile the differences in the scores.
+Your judgment should not directly reference these other judgments, but should be self-contained and should provide a clear rationale for the score you give, which may be different from the scores given by the other judges.</p>
+
+<p>{other_judgments}</p>
+{% endraw %}</div>
+        </details>
+
+        <details class="example-container prompt-details">
+          <summary class="title is-4">Rewriting prompt</summary>
+          <div class="box problem-box prompt-content">{% raw %}
+<p>We have obtained a benchmark to test how good LLMs are at writing difficult mathematical proofs.
+We want to test how biased our graders are against certain styles of writing proofs to investigate whether the graders are truly evaluating the mathematical content of the proofs, or if they are being biased by superficial aspects of the writing style.
+Your job is to take a proof written by an LLM and rewrite it in the given style, <strong>keeping the mathematical content exactly the same</strong> but changing the superficial writing style.</p>
+
+<p>In particular, you are assigned the following style: "Accurate Writer". This style is characterized by:</p>
+<ul>
+  <li>Does not repeat the problem statement at the beginning of the proof, and does not include any unnecessary rephrasing or restatements of the same idea (if contained in the original proof).</li>
+  <li>Uses accurate, precise, and formal language to present the proof. The proof should be written in a clear and straightforward manner, without any unnecessary words or explanations. The proof should be as concise as possible while still being clear and accurate.</li>
+  <li>Computations should be presented in a clear and organized manner, but you cannot add or leave out any computational steps that are not present in the original proof. You can only reformat the existing computations to fit the style guidelines.</li>
+  <li>Any argument or claim that is present in the original proof must be present in the rewritten proof, and it must be presented with the exact same level of rigor and justification as in the original proof. In particular, do not remove the reasoning steps or justifications behind claims in the proof.</li>
+</ul>
+
+<p>You should also follow these style guidelines when rewriting the proof:</p>
+<ul>
+  <li>Use LaTeX formatting for all mathematical expressions and remove any unicode characters in favor of their LaTeX equivalents. You should use dollar delimiters for inline math and double dollar delimiters for display math.</li>
+  <li>All sentences should be complete and well-formed, with proper grammar and punctuation.</li>
+  <li>If the proof is mostly empty, you should not invent content to add. LLMs sometimes make this mistake. In these cases, you can simply reformat the existing content to fit the style guidelines as best as possible, without adding any new mathematical claims or reasoning.</li>
+  <li>If the proof empty, you can return an empty output. Do not invent content to add.</li>
+  <li>If the proof contains reconsiderations (e.g., "Wait, this step doesn't work, let's try something else"), you should keep these reconsiderations in the rewritten proof, but you should rephrase them to fit the style guidelines. You should explicitly keep the reconsiderations in the rewritten proof.</li>
+  <li>Start your output with "Proof." and end your output with "Q.E.D.", but only if the model claims to have found a full solution. Do not add any additional text before or after the proof, <em>not even for formatting purposes</em>.</li>
+</ul>
+
+<p>Under no circumstance are you allowed to change:</p>
+<ul>
+  <li>Any of the mathematical content of the proof, including the logical structure, the mathematical claims being made, and the final conclusion.</li>
+  <li>The correctness of the proof. You should never change things you believe to be incorrect, and keep them as they are. It is never your job to judge correctness or fix the proof.</li>
+  <li>If the original proof says it has not found a complete solution, it is NOT your job to complete the solution. You should keep the proof at the same level of completeness as the original proof, and you should not add any new mathematical claims or reasoning that were not present in the original proof.</li>
+</ul>
+
+<p>Your output should not reference these instructions, instead it should simply be the rewritten proof in the style of a "Accurate Writer" as described above.
+Your proof should be self-contained and should not reference the original proof or the instructions.</p>
+
+<h4>Problem</h4>
+<p>{problem_statement}</p>
+
+<h4>Proof</h4>
+<p>{student_answer}</p>
+{% endraw %}</div>
+        </details>
+
+        <h2 class="anchorable" id="footnotes">
+          <a href="#footnotes">
+            Footnotes
+          </a>
+        </h2>
+        <ol class="footnotes">
+          <li id="fn1">
+            We intended to only take the minimum when judges agreed to within one point instead of two
+        points. However, we accidentally included a misconfiguration in the judge that was executed.<a href="#ref1" class="footnote-backref">↩</a>
+          </li>
+        </ol>
+
+
+      </div>

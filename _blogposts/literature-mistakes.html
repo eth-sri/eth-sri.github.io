@@ -1,0 +1,449 @@
+---
+layout: "matharena"
+category: "other"
+title: "Searching for errors in mathematical papers with GPT-6.1 Sol"
+blogpost-authors: "Jasper Dekoninck, Tim Gehrunger, Kári Rögnvaldsson, Chenhao Sun, Martin Vechev"
+date: "2026-10-15"
+thumbnail: "matharena/blog_literature_mistakes.png"
+image: "/assets/blog/matharena/blog_literature_mistakes.png"
+show_title_thumbnail: false
+usemathjax: true
+original_url: "https://matharena.ai/literature_mistakes/"
+tldr: >
+  We use GPT-6.1 Sol to search for counterexamples to main theorems in recent arXiv papers and flag major errors in 6% of papers published before August 2026.
+  The reported rate drops to 1.5% in August and September, though the cause of this decline remains unclear.
+excerpt: >
+  We use GPT-6.1 Sol to search for counterexamples to main theorems in recent arXiv papers and flag major errors in 6% of papers published before August 2026.
+  The reported rate drops to 1.5% in August and September, though the cause of this decline remains unclear.
+charts: "literature_mistakes"
+---
+
+<!-- Comparison counts are a publication snapshot from MathArena revision 8d5696845. -->
+<div class="content blog-content">
+
+      <div id="paper-results">
+
+<figure class="paper-comparison" aria-label="Papers after all versions">
+  <div class="comparison-legend">
+
+    <span><i class="cohort-key before" aria-hidden="true"></i>Before Aug 2026 <span class="cohort-n">(n = 656)</span></span>
+
+    <span><i class="cohort-key recent" aria-hidden="true"></i>Aug–Sep 2026 <span class="cohort-n">(n = 137)</span></span>
+
+  </div>
+  <div class="comparison-canvas"><canvas id="paper-comparison-chart" role="img" aria-label="After all versions: papers category percentages comparing earlier papers with August–September 2026"></canvas></div>
+
+  <div class="comparison-definitions" aria-label="Category meanings">
+    <span aria-label="None: no counterexample found">No counterexample found</span>
+    <span aria-label="Edge: clear intent, but literal gap">Clear intent, but literal gap</span>
+    <span aria-label="Minor: error with a simple repair">Error with a simple repair</span>
+    <span aria-label="Major: central claim needs reworking">Central claim needs reworking</span>
+  </div>
+
+  <div id="paper-comparison-accessible" class="comparison-accessible"></div>
+  <figcaption class="caption">Figure 1. Major mistakes occur in 6% of arXiv papers, and this proportion dropped significantly in the last two months.</figcaption>
+</figure>
+
+      </div>
+
+      <div class="acknowledgement">
+        This work was supported by a grant from <a href="https://epoch.ai/" target="_blank" rel="noopener">Epoch AI</a>.
+      </div>
+      <p>Mathematical papers published on arXiv are not peer-reviewed and can therefore contain mistakes. However, these works are frequently relied upon and cited in follow-up work, and mathematicians spend a lot of time reading through them. Pollution in this source can therefore have significant consequences for the mathematical field. We therefore ask the following questions: How many arXiv papers contain major mistakes that make their main results invalid? And how has the recent rise of AI affected this possibility?</p>
+      <p>AI agents are now sufficiently good to approximately answer these questions at scale. However, despite their capabilities, there are still major issues when applying them to this task. For this reason, we focus on a subset of very consequential mistakes by measuring how often an LLM can find a counterexample to one of the main theorems proven in a paper. Additionally, we require the agent to place each counterexample in one of three categories:</p>
+      <ol>
+        <li><strong>Edge:</strong> the authors clearly meant the statement differently, but due to a typo or a missing, very common assumption, the statement is false as written.</li>
+        <li><strong>Minor:</strong> the statement is mathematically false in some cases but can be salvaged by adding minor additional assumptions or corrections that do not affect the main contribution of the theorem.</li>
+        <li><strong>Major:</strong> the statement is fundamentally flawed and can only be salvaged by significantly limiting or changing its conclusion.</li>
+      </ol>
+      <p>We use GPT-6.1 Sol with a pipeline consisting of statement extraction, counterexample search, and verification. Across 656 papers from January 2025 to July 2026, it reports major mistakes in theorem statements in 6% of papers and minor mistakes in a further 30%. In August and September 2026, <a href="https://epoch.ai/data/arxiv?view=graph" target="_blank" rel="noopener">when AI acknowledgments started appearing in over 25% of papers</a>, the prevalence of reported major mistakes dropped to 1.5%. While this gives an indication that the rise in AI usage in research mathematics has also reduced the error rate, we cannot exclude the possibility that confounding factors affect this proportion. For instance, GPT-6.1 Sol might be less able to identify mistakes in papers that were written with its help.</p>
+      <p>We release <a href="https://matharena.ai/literature/">all our raw data</a> with this blog post. However, we will not actively contact authors whose papers likely contain mistakes for two reasons. First, the reported mistakes include a significant number of false positives: around 10%, by our best estimate. Second, we believe that forcing others to read and verify AI-written text is counterproductive. Mathematicians could (and perhaps should) run AI agents on their own past papers to identify and correct mistakes, but doing so is already taxing in itself: when a mistake is found, one has to acknowledge that an autonomous system quickly found issues in a work that might have taken months or years to produce. If such corrections then came from external researchers, this might lead to understandable pushback.</p>
+
+      <h2 class="anchorable" id="method"><a href="#method">Methodology</a></h2>
+      <p><strong>Scope.</strong> Naively asking an AI agent to find mistakes in a mathematical arXiv paper runs into several major issues:</p>
+      <ul>
+        <li>In our experience, current agents often overestimate the importance of the mistakes they find. A small typo might be labeled as a major error.</li>
+        <li>Trying to find mistakes in papers is still very challenging. For instance, models have to handle complicated dependencies over long contexts. Given that error rates are likely low, even moderate false positive rates can be detrimental to the analysis.</li>
+        <li>Determining the severity of a mistake in a proof is extremely challenging. A mistake in the proof of a small lemma could be easily circumvented, or it could completely invalidate the proof.</li>
+      </ul>
+      <p>For these reasons, we instead focus on an easier, more clearly defined task: finding counterexamples to main theorems proven in the paper. Such counterexamples are easier to categorize and verify, and this approach, when properly executed, significantly reduces the effect of the second and third issues. Further, this process still identifies the most consequential mistakes: those for which follow-up work relying on the correctness of the results also leads to false conclusions.</p>
+      <p><strong>Extraction pipeline.</strong> We extract counterexamples through a four-stage pipeline. The first three stages of this pipeline focus on the first version of articles published on arXiv, while the final stage checks whether mistakes found in the first version also survive in later versions. This allows us to investigate how often mistakes get corrected.</p>
+      <p>In particular, the four stages are:</p>
+      <ol>
+        <li><strong>Theorem extraction:</strong> given the raw TeX of the paper, we first ask the model to extract up to five main theorems that are likely to be reused in follow-up work. All assumptions and definitions required to understand a theorem should be included in the extracted theorem. All further stages are executed on each extracted theorem.</li>
+        <li><strong>Counterexample search:</strong> given an extracted theorem and the raw TeX, we ask the model to find counterexamples that invalidate the theorem and categorize these counterexamples into the three categories described in the introduction: edge, minor, and major.</li>
+        <li><strong>Verification:</strong> given the extracted theorem, the counterexample report from the previous stage, and the raw TeX, the model is asked to verify the counterexamples and reconsider their categorization. This stage changed the severity of only 2% of the mistakes.</li>
+        <li><strong>Follow-up versions:</strong> given all prior information and the latest version of a paper, we ask the model to check whether the mistake is fixed in the latest version and, if so, to change the categorization of the counterexample found. When a follow-up version exists, it reduces the severity of major errors in 50% of cases, and the frequency of any errors decreases by 28%.</li>
+      </ol>
+      <p>Prompts for all stages can be found below. For each stage, we used a Codex agent with GPT-6.1 Sol at high reasoning effort, using a total of around <span>$2,500</span> in API credits.</p>
+
+      <h2 class="anchorable" id="results"><a href="#results">Results</a></h2>
+      <p><strong>Sol flags major errors in 6% of submitted papers.</strong> Among papers published before August, GPT-6.1 Sol reports major errors in 6% of papers (<a href="#paper-results">Figure 1</a>) and 2.3% of extracted theorems (<a href="#theorem-results">Figure 2</a>). Based on feedback from several mathematicians, this is more or less in line with expectations, given that arXiv papers are not peer-reviewed. A further 30% of papers are reported to contain minor errors, which does show that, despite the limited subset of mistakes we focus on, a very significant portion of arXiv articles contain mistakes that are worth fixing.</p>
+
+      <div id="theorem-results">
+
+<figure class="paper-comparison" aria-label="Theorems after all versions">
+  <div class="comparison-legend">
+
+    <span><i class="cohort-key before" aria-hidden="true"></i>Before Aug 2026 <span class="cohort-n">(n = 2543)</span></span>
+
+    <span><i class="cohort-key recent" aria-hidden="true"></i>Aug–Sep 2026 <span class="cohort-n">(n = 556)</span></span>
+
+  </div>
+  <div class="comparison-canvas"><canvas id="theorem-comparison-chart" role="img" aria-label="After all versions: theorems category percentages comparing earlier papers with August–September 2026"></canvas></div>
+
+  <div id="theorem-comparison-accessible" class="comparison-accessible"></div>
+  <figcaption class="caption">Figure 2. 2.3% of main theorems in arXiv papers contain major mistakes, and this proportion dropped significantly in the last two months.</figcaption>
+</figure>
+
+      </div>
+
+      <p><strong>Major mistakes have dropped by 75% in the past two months.</strong> In the last two months, <a href="https://epoch.ai/data/arxiv?view=graph" target="_blank" rel="noopener">when the use of AI in mathematical research has increased significantly</a>, major errors have decreased to just 1.5%. If we instead differentiate between papers with and without AI use statements, the decrease is similar: from 5.4% to 1.8%. Several confounding factors could have caused this: the distribution of published papers might have changed, or GPT-6.1 Sol might be less able to find mistakes in papers that were written with its help. However, this is more or less in line with mathematicians' expectations: at the very least, AI is now great for verifying papers and can therefore reduce the error rate as well as increase output.</p>
+      <p><strong>Estimated 10% false positives.</strong> To validate our approach, we first spot-checked 20 errors and found no mistakes in their categorization. We then ran the search stage using Opus 5.5 (high) on all 75 theorems with reported major errors remaining after the verification stage, and randomly selected 75 additional theorems from each of the three other categories.
+        As shown in <a href="#cross-model-agreement">Figure 3</a>, Opus 5.5 is more lenient overall and agrees with GPT-6.1 Sol in roughly 80% of cases classified as major errors.
+        We manually investigated the errors that Opus 5.5 downgraded from major to edge or none. Three of these six errors were correctly characterized by GPT-6.1 Sol.
+        After asking GPT-6.1 Sol to investigate the errors downgraded to minor, we believe that a bit less than 90% of the major mistakes found by GPT-6.1 Sol are correctly identified.
+        Rerunning GPT-6.1 Sol on the 75 major errors also retained 90% of the major errors, with the other 10% being downgraded. Importantly, these experiments only provide an estimate of error rates.</p>
+
+      <figure id="cross-model-agreement" class="search-confusion" aria-label="Sol and Opus theorem-level confusion matrix">
+        <div class="confusion-column-model">Opus 5.5</div>
+        <div class="confusion-body">
+          <div class="confusion-row-model">GPT-6.1 Sol</div>
+          <table class="confusion-matrix">
+            <thead><tr><td></td><th scope="col" class="confusion-category category-none">None</th><th scope="col" class="confusion-category category-edge">Edge</th><th scope="col" class="confusion-category category-minor">Minor</th><th scope="col" class="confusion-category category-major">Major</th></tr></thead>
+            <tbody>
+
+              <tr><th scope="row" class="confusion-category category-none">None</th>
+
+
+
+                <td class="confusion-cell" data-percent="96.0" title="Sol None → Opus None: 96.00%">
+                  <span>96.0%</span>
+                </td>
+
+
+
+                <td class="confusion-cell" data-percent="1.3333333333333333" title="Sol None → Opus Edge: 1.33%">
+                  <span>1.3%</span>
+                </td>
+
+
+
+                <td class="confusion-cell" data-percent="2.6666666666666665" title="Sol None → Opus Minor: 2.67%">
+                  <span>2.7%</span>
+                </td>
+
+
+
+                <td class="confusion-cell" data-percent="0.0" title="Sol None → Opus Major: 0.00%">
+                  <span>0.0%</span>
+                </td>
+
+              </tr>
+
+              <tr><th scope="row" class="confusion-category category-edge">Edge</th>
+
+
+
+                <td class="confusion-cell" data-percent="28.0" title="Sol Edge → Opus None: 28.00%">
+                  <span>28.0%</span>
+                </td>
+
+
+
+                <td class="confusion-cell" data-percent="61.333333333333336" title="Sol Edge → Opus Edge: 61.33%">
+                  <span>61.3%</span>
+                </td>
+
+
+
+                <td class="confusion-cell" data-percent="10.666666666666666" title="Sol Edge → Opus Minor: 10.67%">
+                  <span>10.7%</span>
+                </td>
+
+
+
+                <td class="confusion-cell" data-percent="0.0" title="Sol Edge → Opus Major: 0.00%">
+                  <span>0.0%</span>
+                </td>
+
+              </tr>
+
+              <tr><th scope="row" class="confusion-category category-minor">Minor</th>
+
+
+
+                <td class="confusion-cell" data-percent="9.333333333333334" title="Sol Minor → Opus None: 9.33%">
+                  <span>9.3%</span>
+                </td>
+
+
+
+                <td class="confusion-cell" data-percent="21.333333333333332" title="Sol Minor → Opus Edge: 21.33%">
+                  <span>21.3%</span>
+                </td>
+
+
+
+                <td class="confusion-cell" data-percent="68.0" title="Sol Minor → Opus Minor: 68.00%">
+                  <span>68.0%</span>
+                </td>
+
+
+
+                <td class="confusion-cell" data-percent="1.3333333333333333" title="Sol Minor → Opus Major: 1.33%">
+                  <span>1.3%</span>
+                </td>
+
+              </tr>
+
+              <tr><th scope="row" class="confusion-category category-major">Major</th>
+
+
+
+                <td class="confusion-cell" data-percent="2.6666666666666665" title="Sol Major → Opus None: 2.67%">
+                  <span>2.7%</span>
+                </td>
+
+
+
+                <td class="confusion-cell" data-percent="5.333333333333333" title="Sol Major → Opus Edge: 5.33%">
+                  <span>5.3%</span>
+                </td>
+
+
+
+                <td class="confusion-cell" data-percent="13.333333333333334" title="Sol Major → Opus Minor: 13.33%">
+                  <span>13.3%</span>
+                </td>
+
+
+
+                <td class="confusion-cell" data-percent="78.66666666666667" title="Sol Major → Opus Major: 78.67%">
+                  <span>78.7%</span>
+                </td>
+
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+        <figcaption class="caption">Figure 3. Agreement between Opus and Sol is high, but there is a significant number of discrepancies.</figcaption>
+      </figure>
+
+      <p><strong>Examples.</strong> Finally, we give two examples from each of the three error categories to give a better idea of the severity of each. These examples were specifically selected to be easy to understand and explain:</p>
+      <p><strong>Edge:</strong> In <a href="https://arxiv.org/abs/2609.16129v1" target="_blank" rel="noopener">this paper</a>, the authors accidentally omit an absolute value in equation 3.5, but the correct formula appears elsewhere in the paper. In <a href="https://arxiv.org/abs/2509.11956v1" target="_blank" rel="noopener">this paper</a>, Theorem 3 fails because the definition of a relationship between three points allows identical points to be included. Both errors can be fixed very easily and are readily understood by readers as simple oversights or typos.</p>
+      <p><strong>Minor:</strong> The robot-motion algorithm in <a href="https://arxiv.org/abs/2506.10686v1" target="_blank" rel="noopener">this paper</a> incorporates gravity directly into its calculations of how a joint's geometry changes, predicting changes even when the robot is motionless.
+        <a href="https://arxiv.org/abs/2511.06340v1" target="_blank" rel="noopener">This paper</a> proposes an optimization algorithm whose incorrect lower bound can cause it to discard the best solution and incorrectly declare a worse solution optimal. Both errors can be fixed by making small changes to the algorithms.</p>
+      <p><strong>Major:</strong> <a href="https://arxiv.org/abs/2601.07114v1" target="_blank" rel="noopener">This paper</a> supposedly guarantees a feasible traffic schedule under certain conditions, but counterexamples with infeasible traffic schedules can be found. <a href="https://arxiv.org/abs/2605.06375v1" target="_blank" rel="noopener">This paper</a> claims that its GRPO-based training algorithm improves monotonically under a mild condition, but due to a mismatch between the reward and the training objective, this is not true. Both errors require substantially changing the assumptions or conclusions.</p>
+
+      <h2 class="anchorable" id="prompts"><a href="#prompts">Prompts</a></h2>
+      <p>Below are the prompts for the four stages. The prompts were changed slightly midway through the generation process, but this did not significantly affect error rates.</p>
+
+      <details class="example-container prompt-details">
+        <summary class="title is-4">Theorem extraction</summary>
+        <div class="box problem-box prompt-content">{% raw %}
+<h3>Task</h3>
+<p>I want to determine how many ArXiv articles contain critical mistakes in their core theorems. For this purpose, I first want to extract the core mathematical theorems from a given ArXiv paper. The goal is to identify the most central and reusable results that are likely to be used in follow-up work. You are given a paper with the ArXiv ID <code>{arxiv_id}</code>. Your task is to read the TeX files in the <code>paper/</code> directory, follow their inputs/includes, and extract at most five core theorems that are likely to be used by future research. You are explicitly given v1 of the paper, and you should not use any later versions (even through internet search).</p>
+
+<h3>Theorem Extraction</h3>
+<p>Select AT MOST FIVE core theorems that are likely to be used by follow-up work. Prioritize reusable structural results, central techniques, classifications, and general statements on which future papers could build. Consider results called propositions, lemmas, or corollaries when they serve that role. Rank by mathematical centrality and likely downstream use. Do not fill the quota with peripheral results; a paper is very likely to contain less than five central contributions.</p>
+
+<p>For each result, preserve the exact quantifiers, domains, constants, and conclusion. Make the statement self-contained, explicitly collecting ALL hypotheses, including standing assumptions elsewhere in the article. Keep a theorem with several clauses as one item. Use the original theorem label and a unique local ID T1, T2, ... Check that each claim is made in the rendered paper, rather than only in a TeX comment, obsolete draft, or unused source file.</p>
+
+<p>The extracted statement will be the fixed target of a separate counterexample search. Preserve the paper's mathematical claim faithfully: do not strengthen hypotheses, weaken conclusions, restrict to a convenient special case, or supply a correction. Distinguish assumptions actually imposed by the paper from a proof strategy, an intermediate claim, or a property claimed as a consequence. A restriction used in a proof is not automatically an additional hypothesis. Collect standing assumptions only when the context establishes that they apply to the selected result, and quote the supporting passages.</p>
+
+<p>If a domain, convention, or standing assumption is genuinely ambiguous, preserve the paper's wording and explain the ambiguity in Source references. Do not silently resolve it by making the theorem narrower or broader. Identify which assumptions are stated in the theorem and which are supplied by the surrounding context. Do not split clauses of one theorem into separate selections or select essentially duplicate restatements just to fill the quota.</p>
+
+<p>Internet and shell tools are available. Use them if needed to understand the mathematics, but treat only this v1 source as authoritative for the claim. Do not import a later revision's hypotheses or corrected conclusions. Extract theorems without assessing their correctness or searching for mistakes. That is not your job.</p>
+
+<p>Write one separate UTF-8 Markdown file per theorem in <code>theorems/</code>, named T1.md, T2.md, ... through T5.md at most. Use this structure in each file:</p>
+
+<h3>T1 — Original theorem label</h3>
+
+<h3>Theorem statement</h3>
+<p>[The complete self-contained mathematical claim, preserving all quantifiers and conclusions, collecting the paper's applicable hypotheses and explaining definitions, conventions, and notation needed to interpret the statement. Do not add assumptions to repair or specialize the claim. Use ordinary mathematical Markdown and LaTeX.]</p>
+
+<h4>Importance for follow-up work</h4>
+<p>Explain why this is a core theorem likely to be used by follow-up work.</p>
+
+<h4>Source references</h4>
+<p>Paths relative to <code>paper/</code>, theorem labels or line locations, and verbatim TeX quotes supporting the statement and the relevant assumptions. Distinguish hypotheses in the theorem from standing assumptions in its context, and record any unresolved scope ambiguity. Do not expand macros or rephrase quoted TeX.</p>
+{% endraw %}</div>
+      </details>
+
+      <details class="example-container prompt-details">
+        <summary class="title is-4">Counterexample search</summary>
+        <div class="box problem-box prompt-content">{% raw %}
+<h3>Task</h3>
+<p>I want to determine how many ArXiv articles contain critical mistakes in their core theorems. You are given a theorem extracted from the paper with ArXiv ID <code>{arxiv_id}</code>, identified by <code>{theorem_id}</code> in <code>theorems/{theorem_id}.md</code>. Read that file and the full TeX source in <code>paper/</code>, following inputs/includes, and actively search for counterexamples to the extracted theorem. The supplied paper is v1. Do not consult any later version of this target paper, including through internet search.</p>
+
+<p>Your task is to find a mathematical contradiction to the theorem's conclusion under its hypotheses. You are not assessing the correctness of its proof. You may read the proof to understand notation and develop constructions, but a proof gap is not a counterexample. Do not assume that a mistake must exist.</p>
+
+<h3>Fixed target</h3>
+<p>The Theorem statement in <code>theorems/{theorem_id}.md</code> is the fixed target of this search. Preserve all its hypotheses, quantifiers, domains, conventions, and conclusions. Use the paper to understand the statement and check its provenance; do not replace it with another interpretation of the paper, drop a hypothesis, enlarge its domain, or attack a different claim. A construction outside the extracted theorem's hypotheses is not a counterexample, even if it challenges broader wording elsewhere in the paper.</p>
+
+<p>If you suspect an extraction error or unresolved scope ambiguity, describe it separately in Assessment with source references. Such an issue alone receives NONE.</p>
+
+<h3>Search and verification</h3>
+<p>Internet, shell, and computation tools are available. Use them as useful to find relevant constructions and independently verify them. Independent background sources are allowed; later versions of the target paper are not. Include URLs and explain their relevance when used.</p>
+
+<p>Test boundary values, degenerate cases, non-generic objects, small instances, and substantive families. For every candidate:</p>
+
+<ul>
+  <li>Specify the objects and parameters precisely.</li>
+  <li>Check every hypothesis of the extracted statement, including standing assumptions, and explain why your objects are in the allowed domain.</li>
+  <li>Identify the exact clause of the extracted conclusion that fails and demonstrate the contradiction.</li>
+  <li>Distinguish exact arguments or verified computations from numerical exploration. Justify that any claimed discrepancy is not numerical error or a convention mismatch. Finite tests alone do not contradict an asymptotic or limiting statement without an argument connecting them to its conclusion.</li>
+</ul>
+
+<h3>Categories</h3>
+<p>Choose exactly one category. First establish a verified contradiction to the fixed target. Then distinguish a defect in expressing a clearly correct intended claim from an actual mathematical error, and assess how easily the latter can be repaired. Judge the mathematical effect of a repair, not the length of the edit: a short restriction can discard a major part of the claimed result. The number of counterexamples, the size of their parameters, the breadth of the affected family, or the difficulty of finding them does not determine severity by itself.</p>
+
+<ul>
+  <li><strong>NONE:</strong> No verified counterexample to the extracted theorem was found. This includes rejected candidates, proof concerns without a counterexample, and extraction or interpretation issues alone.</li>
+  <li><strong>EDGE:</strong> The extracted statement fails under a strict reading, but v1 makes it clear that the authors actually meant the correct formulation. The issue is an omission, imprecision, or wording defect in expressing that already evident intended claim, rather than a mathematical error in it. State the literal failure, give the precise clarification, and cite evidence in v1 establishing the intended meaning and why it avoids the counterexample. A convenient fix, a charitable guess, or ease of correction alone does not qualify as EDGE.</li>
+  <li><strong>MINOR:</strong> There is an actual mathematical error, but it is easily correctable. Give a concrete, straightforward mathematical repair, justify why it resolves the failure, and explain why the theorem's main contribution survives without substantial reworking. A failure across many instances can still be MINOR if the repair is straightforward. Unlike EDGE, this category requires correcting the mathematics, not just making an already clear intended meaning explicit.</li>
+  <li><strong>MAJOR:</strong> There is an actual mathematical error that cannot be easily corrected while retaining the theorem's main contribution. Salvaging the result requires substantial weakening, major reworking, or abandonment of a central claim. Identify the essential failure and explain why straightforward corrections cannot preserve the main result. The existence of some surviving statements does not make the error MINOR. A defect in the proof alone never warrants MAJOR.</li>
+</ul>
+
+<p><strong>Severity caps for added assumptions:</strong> If a theorem can be repaired by adding an assumption that either (1) is typical, common, or standard in the field, or (2) excludes only a small set of edge cases, classify the issue as no more severe than MINOR, provided the repair preserves the main or important cases. If that assumption is very standard in the field or is almost always included in theorems of this kind, classify the issue as no more severe than EDGE. These caps apply even when the paper does not explicitly state the assumption; separate evidence of the authors' intent is not required. State the assumption and justify that it repairs the theorem and meets the relevant conditions.</p>
+
+<p><strong>MAJOR severity</strong>: MAJOR is reserved for issues that require substantial weakening, major reworking, or abandonment of a central claim. Do not assign MAJOR merely because a statement fails in peripheral edge cases or can be repaired by a small or standard added assumption while preserving its main or important cases. For every MAJOR finding, explain why plausible straightforward corrections cannot resolve the demonstrated failure while retaining the theorem’s main contribution. Changing the literal statement or conclusion does not, by itself, establish substantial weakening. If the MAJOR classification depends on resolving an ambiguity about the authors’ intended scope or conventions against them, do not assign MAJOR.</p>
+
+<p>For an actual mathematical error, distinguish MINOR from MAJOR by the smallest justified repair and whether it preserves the main contribution. If several genuinely different failures are verified, report them and classify by the strongest justified failure. Do not stop when you have found an EDGE or MINOR counterexample; continue searching for a MAJOR one. If you find multiple counterexamples, report the strongest justified failure and summarize the others in Assessment.</p>
+
+<h3>Output</h3>
+<p>Write exactly ONE UTF-8 Markdown file at the workspace root called <code>result.md</code>, using the sections below. Before choosing a non-NONE heading, confirm that at least one construction satisfies every hypothesis in the extracted file and contradicts a conclusion in that same file. If none does, use NONE.</p>
+
+<h3>{theorem_id} — {category: NONE, EDGE, MINOR, MAJOR}</h3>
+
+<h4>Assessment</h4>
+<p>State the verdict for the extracted theorem and why the category is appropriate. Record any extraction or interpretation issue separately from the verdict. For NONE, summarize the search's limits without claiming a proof of correctness.</p>
+
+<h4>Counterexample(s)</h4>
+<p>For a non-NONE verdict, give the explicit objects and parameters and verify every hypothesis of the extracted theorem. For NONE, briefly explain any significant rejected candidates, if applicable.</p>
+
+<h4>Failed conclusion</h4>
+<p>For a non-NONE verdict, identify the exact extracted clause and demonstrate how it fails. For NONE, state that no verified contradiction to the extracted conclusion was found.</p>
+
+<h4>Scope and repair</h4>
+<p>For EDGE, give the precise clarification and cite v1 evidence that the authors clearly meant the correct formulation. For MINOR, give the straightforward mathematical correction and justify why it suffices while preserving the main contribution. For MAJOR, explain the substantial changes needed and why an easy correction cannot retain the main result.</p>
+{% endraw %}</div>
+      </details>
+
+      <details class="example-container prompt-details">
+        <summary class="title is-4">Verification</summary>
+        <div class="box problem-box prompt-content">{% raw %}
+<h3>Task</h3>
+<p>I want to determine how many ArXiv articles contain critical mistakes in their core theorems. You are given a candidate counterexample to the theorem extracted from the paper with ArXiv ID <code>{arxiv_id}</code>, identified by <code>{theorem_id}</code> in <code>theorems/{theorem_id}.md</code>. Read that file, the candidate report in <code>counterexample.md</code>, and the full TeX source in <code>paper/</code>, following inputs/includes. Independently verify the reported counterexample and its classification. The supplied paper is v1. Do not consult any later version of this target paper, including through internet search. Do not try to find new counterexamples; your task is to verify and refine the supplied findings.</p>
+
+<p>You may change the issue's severity to any of NONE, EDGE, MINOR, or MAJOR, and rewrite the counterexample description to correct mistakes, fill justified gaps, and remove unsupported claims. Treat the candidate report as a claim to test, not as established evidence. Do not assume it is correct or that its category must be retained.</p>
+
+<h3>Fixed target and evidence</h3>
+<p>The Theorem statement in <code>theorems/{theorem_id}.md</code> is the fixed target. Preserve every hypothesis, quantifier, domain, convention, and conclusion. Use the paper to understand notation and check provenance. Do not drop assumptions, enlarge the allowed domain, substitute a broader interpretation, or attack a different claim.</p>
+
+<p>The supplied target paper is v1. Internet, shell, and computation tools are available. Independent background sources are allowed, but do not consult later versions of the target paper, including through internet search. Include relevant URLs when used.</p>
+
+<p>Check every reported construction independently:</p>
+
+<ul>
+  <li>Make the objects and parameters explicit and check every hypothesis, including standing assumptions from the fixed statement.</li>
+  <li>Identify the exact extracted conclusion that fails and independently reproduce the contradiction. A proof gap is not a counterexample.</li>
+  <li>Check calculations, cited facts, quantifiers, limiting arguments, and conventions. Distinguish exact reasoning and certified computations from numerical exploration; finite tests alone do not refute an asymptotic claim.</li>
+  <li>Fill gaps only with arguments you can justify. You may correct a construction or its parameters when the corrected construction still contradicts the same fixed theorem. Do not modify the theorem to manufacture a contradiction or present an unresolved gap as repaired.</li>
+  <li>Remove invalid candidates and unsupported descriptions of the failure's scope. Verify any proposed repair and assess whether it preserves the theorem's main contribution.</li>
+</ul>
+
+<p>Your task is to verify and refine the supplied findings. If several failures are reported, review each. If no candidate can be established as a counterexample, use NONE and explain what failed or remains unresolved; do not imply that you proved the theorem correct.</p>
+
+<h3>Categories</h3>
+<p>Choose exactly one category after verifying the contradiction. Judge severity by the smallest justified repair and its mathematical effect, not the length of an edit, the number or size of counterexamples, or the difficulty of finding them.</p>
+
+<ul>
+  <li><strong>NONE:</strong> No reported counterexample survives verification against the fixed theorem. This includes invalid or unverified constructions, proof concerns without a contradiction, and extraction or interpretation issues alone.</li>
+  <li><strong>EDGE:</strong> The statement fails under a strict reading, but the paper clearly shows that the authors meant the correct formulation. Give the literal failure, the precise clarification, and evidence in v1 establishing that intended meaning and why it avoids the counterexample.</li>
+  <li><strong>MINOR:</strong> An actual mathematical error has a concrete, straightforward correction that resolves the failure while preserving the main contribution without substantial reworking. Verify the correction. Failure across many instances can still be MINOR when this repair is straightforward. Unlike EDGE, the mathematics itself needs correction.</li>
+  <li><strong>MAJOR:</strong> An actual mathematical error cannot be easily corrected while retaining the theorem's main contribution. Give the essential failure and explain why straightforward repairs do not suffice: salvage requires substantial weakening, major reworking, or abandonment of a central claim. A short restriction can still discard a major part of the result; surviving statements alone do not make it MINOR.</li>
+</ul>
+
+<p><strong>Severity caps for added assumptions:</strong> If a theorem can be repaired by adding an assumption that either (1) is typical, common, or standard in the field, or (2) excludes only a small set of edge cases, classify the issue as no more severe than MINOR, provided the repair preserves the main or important cases. If that assumption is very standard in the field or is almost always included in theorems of this kind, classify the issue as no more severe than EDGE. These caps apply even when the paper does not explicitly state the assumption; separate evidence of the authors' intent is not required. State the assumption and justify that it repairs the theorem and meets the relevant conditions.</p>
+
+<p><strong>MAJOR severity</strong>: MAJOR is reserved for issues that require substantial weakening, major reworking, or abandonment of a central claim. Do not assign MAJOR merely because a statement fails in peripheral edge cases or can be repaired by a small or standard added assumption while preserving its main or important cases. For every MAJOR finding, explain why plausible straightforward corrections cannot resolve the demonstrated failure while retaining the theorem’s main contribution. Changing the literal statement or conclusion does not, by itself, establish substantial weakening. If the MAJOR classification depends on resolving an ambiguity about the authors’ intended scope or conventions against them, do not assign MAJOR.</p>
+
+<h3>Output</h3>
+<p>Write exactly ONE UTF-8 Markdown file at the workspace root called <code>result.md</code>. Its first line must be:</p>
+
+<h3>{theorem_id} — {category: NONE, EDGE, MINOR, MAJOR}</h3>
+
+<p>Replace the category placeholder with exactly one category. Write a self-contained revised report that can be understood without the candidate report; do not merely give editing instructions. Use these sections:</p>
+
+<h4>Assessment</h4>
+<p>State the verified category and justify it. Explain what changed from the candidate report and why, including rejected claims. Separate extraction or interpretation issues from the verdict.</p>
+
+<h4>Counterexample(s)</h4>
+<p>For a non-NONE verdict, give the corrected objects, parameters, and a complete check of the fixed theorem's hypotheses. For NONE, explain why the significant candidates failed verification or which essential gaps remain unresolved.</p>
+
+<h4>Failed conclusion</h4>
+<p>For a non-NONE verdict, identify the exact extracted clause and give the independently verified contradiction. For NONE, state that no reported contradiction was verified.</p>
+
+<h4>Scope and repair</h4>
+<p>For EDGE, give the clarification and evidence of the authors' clear intent in the paper. For MINOR, justify the straightforward mathematical repair and preservation of the main contribution. For MAJOR, justify why an easy correction cannot retain the main result. For NONE, explain any remaining uncertainty without asserting correctness of the theorem.</p>
+{% endraw %}</div>
+      </details>
+
+      <details class="example-container prompt-details">
+        <summary class="title is-4">Later-version check</summary>
+        <div class="box problem-box prompt-content">{% raw %}
+<h3>Task</h3>
+<p>I want to determine how many ArXiv articles contain critical mistakes in their core theorems. I have constructed a verified counterexample to the theorem extracted from the first version of the paper with ArXiv ID <code>{arxiv_id}</code>, identified by <code>{theorem_id}</code> in <code>theorems/{theorem_id}.md</code>. Check whether the verified issue with theorem <code>{theorem_id}</code> from arXiv paper <code>{arxiv_id}</code> has been fixed in the latest available version, <code>{latest_arxiv_id}</code>. You are given the complete original source in <code>paper_v1/</code>, the complete latest-version source in <code>paper_latest/</code>, the theorem extracted from v1 in <code>theorems/{theorem_id}.md</code>, and its verified counterexample description in <code>counterexample.md</code>.</p>
+
+<p>Assess whether the supplied issue still exists in the latest version and classify its current severity as NONE, EDGE, MINOR, or MAJOR. Do not search for unrelated new counterexamples.</p>
+
+<h3>Compare the versions</h3>
+<p>For each supplied failure, identify changes that matter to it and test whether its construction still satisfies the latest claim's hypotheses and contradicts its conclusion. You may translate notation and justify small corrections to the supplied construction; do not drop a latest-version hypothesis, enlarge its domain, substitute another claim, or invent a different issue.</p>
+
+<p>If the claim was corrected, restricted, or withdrawn so that the supplied issue no longer applies, use NONE and explain the substantive change, including any loss of scope.</p>
+
+<p>Internet, shell, and computation tools are available. Independent background sources may help verify calculations and cited facts. The assessment must concern the supplied pinned version <code>{latest_arxiv_id}</code>. Include relevant URLs when used.</p>
+
+<h3>Categories in the latest version</h3>
+<p>Choose one category based on the strongest supplied failure that survives checking against the latest claim. Judge severity by the smallest justified repair and its mathematical effect.</p>
+
+<ul>
+  <li><strong>NONE:</strong> No supplied counterexample establishes a remaining issue in the latest version. Explain whether the issue was fixed by a correction, a changed hypothesis, withdrawal of the claim, or whether the candidate no longer applies or cannot be verified.</li>
+  <li><strong>EDGE:</strong> The latest claim fails under a strict reading, but the latest source clearly shows that the authors meant the correct formulation. Give the literal failure, the precise clarification, and evidence of that intended meaning. An easy mathematical fix alone does not establish EDGE.</li>
+  <li><strong>MINOR:</strong> The supplied issue still demonstrates an actual mathematical error, but a concrete, straightforward correction resolves it while preserving the latest theorem's main contribution without substantial reworking. Justify that correction.</li>
+  <li><strong>MAJOR:</strong> The supplied issue still demonstrates an actual mathematical error that cannot be easily corrected while retaining the latest theorem's main contribution. Explain why salvage needs substantial weakening, major reworking, or abandonment of a central claim. A proof gap alone is not a counterexample.</li>
+</ul>
+
+<p><strong>Severity caps for added assumptions:</strong> If a theorem can be repaired by adding an assumption that either (1) is typical, common, or standard in the field, or (2) excludes only a small set of edge cases, classify the issue as no more severe than MINOR, provided the repair preserves the main or important cases. If that assumption is very standard in the field or is almost always included in theorems of this kind, classify the issue as no more severe than EDGE. These caps apply even when the paper does not explicitly state the assumption; separate evidence of the authors' intent is not required. State the assumption and justify that it repairs the theorem and meets the relevant conditions.</p>
+
+<p><strong>MAJOR severity</strong>: MAJOR is reserved for issues that require substantial weakening, major reworking, or abandonment of a central claim. Do not assign MAJOR merely because a statement fails in peripheral edge cases or can be repaired by a small or standard added assumption while preserving its main or important cases. For every MAJOR finding, explain why plausible straightforward corrections cannot resolve the demonstrated failure while retaining the theorem’s main contribution. Changing the literal statement or conclusion does not, by itself, establish substantial weakening. If the MAJOR classification depends on resolving an ambiguity about the authors’ intended scope or conventions against them, do not assign MAJOR.</p>
+
+<h3>Output</h3>
+<p>Write exactly ONE UTF-8 Markdown file at the workspace root called <code>result.md</code>. Its first line must be:</p>
+
+<h3>{theorem_id} — {category: NONE, EDGE, MINOR, MAJOR}</h3>
+
+<p>Replace the category placeholder with exactly one category. Write a self-contained report, using these sections:</p>
+
+<h4>Assessment</h4>
+<p>State both version IDs, whether the supplied issue remains, and the category for the latest version. Explain any change from the v1 verdict. Distinguish established repairs from inability to verify a surviving issue.</p>
+
+<h4>Version comparison</h4>
+<p>Identify the relevant claims and source locations in v1 and the latest version. Describe the exact statement, hypothesis, definition, or convention changes relevant to the counterexample, including renumbering or removal of a claim.</p>
+
+<h4>Counterexample and latest conclusion</h4>
+<p>For a surviving issue, give the objects and parameters, check every hypothesis of the latest claim, and demonstrate which conclusion fails. For NONE, explain why the supplied counterexamples no longer contradict the latest claim, or precisely what remains unverified.</p>
+
+<h4>Scope and repair</h4>
+<p>Explain the scope of the remaining issue and the smallest justified repair. If fixed, explain how the revision resolves the old failure and any accompanying change in scope. Do not invent a surviving issue merely because the repair weakened or removed the original theorem.</p>
+{% endraw %}</div>
+      </details>
+    </div>
+
+
+
+<script id="paper-comparison-data" type="application/json">{"categories": ["NONE", "EDGE", "MINOR", "MAJOR"], "groups": [{"counts": {"revision": {"EDGE": 183, "MAJOR": 39, "MINOR": 200, "NONE": 234}, "search": {"EDGE": 177, "MAJOR": 55, "MINOR": 228, "NONE": 196}, "verify": {"EDGE": 182, "MAJOR": 52, "MINOR": 225, "NONE": 197}}, "id": "before", "label": "Before Aug 2026", "n": 656}, {"counts": {"revision": {"EDGE": 30, "MAJOR": 2, "MINOR": 22, "NONE": 83}, "search": {"EDGE": 31, "MAJOR": 2, "MINOR": 22, "NONE": 82}, "verify": {"EDGE": 31, "MAJOR": 2, "MINOR": 22, "NONE": 82}}, "id": "recent", "label": "Aug\u2013Sep 2026", "n": 137}], "unit": "papers"}</script>
+<script id="theorem-comparison-data" type="application/json">{"categories": ["NONE", "EDGE", "MINOR", "MAJOR"], "groups": [{"counts": {"revision": {"EDGE": 434, "MAJOR": 58, "MINOR": 333, "NONE": 1718}, "search": {"EDGE": 466, "MAJOR": 76, "MINOR": 402, "NONE": 1599}, "verify": {"EDGE": 477, "MAJOR": 72, "MINOR": 392, "NONE": 1602}}, "id": "before", "label": "Before Aug 2026", "n": 2543}, {"counts": {"revision": {"EDGE": 60, "MAJOR": 3, "MINOR": 25, "NONE": 468}, "search": {"EDGE": 61, "MAJOR": 3, "MINOR": 25, "NONE": 467}, "verify": {"EDGE": 61, "MAJOR": 3, "MINOR": 25, "NONE": 467}}, "id": "recent", "label": "Aug\u2013Sep 2026", "n": 556}], "unit": "theorems"}</script>

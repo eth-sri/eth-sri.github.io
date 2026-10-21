@@ -371,6 +371,266 @@
     ],
     "width": 4591
   },
+  "/assets/blog/matharena/blog_arxivlean.png": {
+    "digest": "a19eef271d0ffe3d",
+    "height": 1086,
+    "src": "/assets/generated/thumbnails/a19eef271d0ffe3d-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/a19eef271d0ffe3d-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/a19eef271d0ffe3d-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/a19eef271d0ffe3d-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1448
+  },
+  "/assets/blog/matharena/blog_arxivlean_card.png": {
+    "digest": "595c1f7bc47f3a94",
+    "height": 1086,
+    "src": "/assets/generated/thumbnails/595c1f7bc47f3a94-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/595c1f7bc47f3a94-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/595c1f7bc47f3a94-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/595c1f7bc47f3a94-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1448
+  },
+  "/assets/blog/matharena/blog_literature_mistakes.png": {
+    "digest": "dc9c957496194cb9",
+    "height": 884,
+    "src": "/assets/generated/thumbnails/dc9c957496194cb9-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/dc9c957496194cb9-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/dc9c957496194cb9-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/dc9c957496194cb9-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1520
+  },
+  "/assets/blog/matharena/blog_putnam.png": {
+    "digest": "116762785d6e42cf",
+    "height": 1024,
+    "src": "/assets/generated/thumbnails/116762785d6e42cf-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/116762785d6e42cf-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/116762785d6e42cf-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/116762785d6e42cf-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1536
+  },
+  "/assets/blog/matharena/blog_putnam_card.png": {
+    "digest": "710e7636a3f6cb2f",
+    "height": 1024,
+    "src": "/assets/generated/thumbnails/710e7636a3f6cb2f-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/710e7636a3f6cb2f-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/710e7636a3f6cb2f-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/710e7636a3f6cb2f-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1536
+  },
+  "/assets/blog/matharena/blog_question.png": {
+    "digest": "ca46c6a19f1debab",
+    "height": 1024,
+    "src": "/assets/generated/thumbnails/ca46c6a19f1debab-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/ca46c6a19f1debab-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/ca46c6a19f1debab-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/ca46c6a19f1debab-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1536
+  },
+  "/assets/blog/matharena/blog_usamo.jpeg": {
+    "digest": "608dd3ea17ed75db",
+    "height": 1504,
+    "src": "/assets/generated/thumbnails/608dd3ea17ed75db-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/608dd3ea17ed75db-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/608dd3ea17ed75db-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/608dd3ea17ed75db-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2760
+  },
+  "/assets/blog/matharena/blog_usamo_card.jpeg": {
+    "digest": "a63ebc6d9e41f8d8",
+    "height": 1504,
+    "src": "/assets/generated/thumbnails/a63ebc6d9e41f8d8-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/a63ebc6d9e41f8d8-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/a63ebc6d9e41f8d8-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/a63ebc6d9e41f8d8-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2760
+  },
+  "/assets/blog/matharena/imo_results.png": {
+    "digest": "aa484c965c6086cf",
+    "height": 443,
+    "src": "/assets/generated/thumbnails/aa484c965c6086cf-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/aa484c965c6086cf-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/aa484c965c6086cf-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/aa484c965c6086cf-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2261
+  },
+  "/assets/blog/matharena/putnam_results.png": {
+    "digest": "9d0eb962e1f2a969",
+    "height": 538,
+    "src": "/assets/generated/thumbnails/9d0eb962e1f2a969-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/9d0eb962e1f2a969-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/9d0eb962e1f2a969-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/9d0eb962e1f2a969-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1748
+  },
+  "/assets/blog/matharena/results_arxivlean.png": {
+    "digest": "2d337128b4cd61fc",
+    "height": 540,
+    "src": "/assets/generated/thumbnails/2d337128b4cd61fc-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/2d337128b4cd61fc-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/2d337128b4cd61fc-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/2d337128b4cd61fc-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1594
+  },
+  "/assets/blog/matharena/usamo_2025_results.png": {
+    "digest": "ae3e477920741493",
+    "height": 1230,
+    "src": "/assets/generated/thumbnails/ae3e477920741493-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/ae3e477920741493-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/ae3e477920741493-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/ae3e477920741493-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2534
+  },
+  "/assets/blog/matharena/usamo_2026_results.png": {
+    "digest": "b9033a4f85edc57e",
+    "height": 1073,
+    "src": "/assets/generated/thumbnails/b9033a4f85edc57e-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/b9033a4f85edc57e-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/b9033a4f85edc57e-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/b9033a4f85edc57e-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 2532
+  },
   "/assets/blog/mn-bab/ConvexHull.png": {
     "digest": "3c5846854258dd08",
     "height": 440,

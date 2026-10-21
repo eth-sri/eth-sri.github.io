@@ -6,6 +6,14 @@
   {%- seo -%}
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}?v={{ site.time | date: '%s' }}">
+  {% if page.layout == 'matharena' %}
+  <link rel="stylesheet" href="{{ '/assets/blog/matharena/blog.css' | relative_url }}">
+  <script defer src="{{ '/assets/blog/matharena/images.js' | relative_url }}"></script>
+  {% if page.charts %}
+  <script defer src="{{ '/assets/blog/matharena/vendor/chart.umd.min.js' | relative_url }}"></script>
+  <script defer src="{{ page.charts | prepend: '/assets/blog/matharena/' | append: '.js' | relative_url }}"></script>
+  {% endif %}
+  {% endif %}
   {%- feed_meta -%}
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
     {%- include google-analytics.html -%}
