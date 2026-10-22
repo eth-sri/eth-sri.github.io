@@ -1,6 +1,6 @@
 ---
 layout: default
-title: News & Media
+title: News
 permalink: /news/index.html
 ---
 
@@ -10,7 +10,7 @@ permalink: /news/index.html
 
   <header class="page-header container">
   <div class="row">
-    <div class="column column-66">
+    <div class="column">
       <h1 class="page-title">{{ page.title | escape }}</h1>
     </div>
   </div>
@@ -19,7 +19,7 @@ permalink: /news/index.html
 
   <div class="page-content container">
     <div class="row">
-      <div class="column column-66">
+      <div class="column">
 
       	<ul class="newspost-list">
           {%- for newspost in site.newsposts reversed -%}
@@ -33,7 +33,12 @@ permalink: /news/index.html
               {% if newspost.link %}  
               <a href="{{ newspost.link }}">
               {% endif %}
-                {% assign news_image = newspost.image | prepend: '/assets/media/' %}
+                {% assign image_prefix = newspost.image | slice: 0, 1 %}
+                {% if image_prefix == '/' %}
+                  {% assign news_image = newspost.image %}
+                {% else %}
+                  {% assign news_image = newspost.image | prepend: '/assets/media/' %}
+                {% endif %}
                 {% include image.html src=news_image alt="" sizes="(max-width: 1024px) 80vw, 300px" %}
               {% if newspost.link %}  
               </a>

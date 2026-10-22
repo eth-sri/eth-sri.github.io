@@ -4,6 +4,7 @@ title: "LeanLean: Benchmarking Repository-Scale Lean Proof Compression"
 authors: Kári Rögnvaldsson, Niels Mündler-Sasahara, Jasper Dekoninck, Martin Vechev
 year: 2026
 month: 9
+venue: ArXiv
 projects: mathllm
 paper: https://leanleanbench.com/paper.pdf
 code: https://github.com/eth-sri/lean-lean

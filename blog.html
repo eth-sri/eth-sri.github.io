@@ -5,7 +5,7 @@ usemathjax: true
 permalink: /blog/index.html
 ---
 
-<article class="page">
+<article class="page blog-index">
 
   <header class="page-header container">
   </header>
@@ -15,10 +15,6 @@ permalink: /blog/index.html
     <div class="row">   
       <div class="column">
       
-      <div class="blog-logo">
-        <img class="blog-logoimg" src="{{ 'logo-blog.svg' | prepend: '/assets/images/' | relative_url }}" alt="{{ site.title | escape }}">
-      </div>
-  
           <ul class="blog-list">
           {% assign blogposts = site.blogposts | sort: 'date' %}
           {%- for blogpost in blogposts reversed -%}

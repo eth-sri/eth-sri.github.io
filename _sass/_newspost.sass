@@ -20,6 +20,28 @@
   .newspost-meta
     width: 80px
     font-size: 12px
+    flex-shrink: 0
 
   .newspost-content
     flex: 1
+    min-width: 0
+    overflow-wrap: anywhere
+
+@media (max-width: 600px)
+  .newspost-list
+    li
+      display: grid
+      grid-template-columns: 80px minmax(0, 1fr)
+      gap: 12px
+
+    .newspost-meta
+      grid-column: 1 / -1
+
+    .newspost-image
+      width: 80px
+
+    .newspost-content
+      grid-column: 2
+
+      &:nth-child(2)
+        grid-column: 1 / -1

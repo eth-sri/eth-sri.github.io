@@ -147,7 +147,7 @@ layout: default
 
   <div class="landing-content container">
 
-    <div class="row">
+    <div class="landing-highlights">
       {% capture query %} item.authors contains 'Martin Vechev'{% endcapture %}
       {% assign filtered_publications = site.publications | where_exp:"item", query %}
       {% assign pubs_by_year = filtered_publications | group_by: "year" | sort: "name" | reverse %}
@@ -159,17 +159,24 @@ layout: default
 
       {% assign sorted_newsposts = site.newsposts | where: "categories","media" | sort:"date" | reverse %}
 
-      <div class="column column-50">
-        <h2 style="font-size: 18px">Latest News</h2>
-        {%- for newspost in sorted_newsposts limit: 3 %}
-        <div class="row media-row">
+      <section class="landing-news" aria-labelledby="latest-news-title">
+        <h2 id="latest-news-title" class="landing-section-title">Latest News</h2>
+        {%- for newspost in sorted_newsposts limit: 4 %}
+        <div class="media-row">
           <div class="media-item">
+            {% if newspost.image %}
             <div class="media-thumbnail-news">
               <a href="{{ newspost.link }}">
-                {% assign news_image = newspost.image | prepend: '/assets/media/' %}
+                {% assign image_prefix = newspost.image | slice: 0, 1 %}
+                {% if image_prefix == '/' %}
+                  {% assign news_image = newspost.image %}
+                {% else %}
+                  {% assign news_image = newspost.image | prepend: '/assets/media/' %}
+                {% endif %}
                 {% include image.html src=news_image alt="" sizes="200px" %}
               </a>
             </div>
+            {% endif %}
 
             <div class="media-excerpt-news">
               <i>{{ newspost.date | date: "%d.%m.%Y" }}</i> {{ newspost.content}}
@@ -181,12 +188,12 @@ layout: default
         <div class="div-see-all">
           <a class="button btn-see-all" href="{{"/news" | relative_url }}">See all News</a>
         </div>
-      </div>
+      </section>
 
-      <div class="column column-50">
-        <h2 style="font-size: 18px">Most Recent Publications</h2>
+      <section class="landing-publications" aria-labelledby="recent-publications-title">
+        <h2 id="recent-publications-title" class="landing-section-title">Most Recent Publications</h2>
         {%- for pub in sorted_pubs limit: 4 %}
-        <div class="row pubs-on-home-row">
+        <div class="pubs-on-home-row">
           {% if pub %}
           {% assign pub-title = pub.title %}
           {% assign pub-url = pub.url %}
@@ -216,11 +223,25 @@ layout: default
         <div class="div-see-all">
           <a class="button btn-see-all" href="{{"/publications" | relative_url }}">See all Publications</a>
         </div>
-      </div>
+      </section>
 
     </div>
 
-
-
+    {% assign latest_blogposts = site.blogposts | where_exp: "post", "post.draft != true" | sort: "date" | reverse %}
+    <section class="landing-blogposts" aria-labelledby="latest-blogposts-title">
+      <h2 id="latest-blogposts-title" class="landing-section-title">Latest Blog Posts</h2>
+      <div class="landing-blogpost-grid">
+        {% for blogpost in latest_blogposts limit: 3 %}
+        <article class="landing-blogpost">
+          <h3><a href="{{ blogpost.url | relative_url }}">{{ blogpost.title | escape }}</a></h3>
+          <time datetime="{{ blogpost.date | date: '%Y-%m-%d' }}">{{ blogpost.date | date: "%d.%m.%Y" }}</time>
+          <p>{{ blogpost.excerpt | default: blogpost.tldr | strip_html | truncatewords: 50 }}</p>
+        </article>
+        {% endfor %}
+      </div>
+      <div class="div-see-all">
+        <a class="button btn-see-all" href="{{ '/blog/' | relative_url }}">See all Blog Posts</a>
+      </div>
+    </section>
   </div>
 </article>
