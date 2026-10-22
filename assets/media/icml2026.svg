@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-labelledby="title">
+  <title id="title">ICML 2026, Seoul</title>
+  <rect width="320" height="200" fill="#f5f7f9"/>
+  <text x="160" y="86" text-anchor="middle" font-family="Arial, sans-serif" font-size="54" font-weight="bold" fill="#0079af">ICML</text>
+  <text x="160" y="131" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" fill="#404040">2026</text>
+  <text x="160" y="168" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#555">Seoul</text>
+</svg>

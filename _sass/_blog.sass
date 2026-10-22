@@ -1,19 +1,13 @@
 /* blog page */
 
-.blog-logo
-	width: 100%
-
-.blog-logoimg
-	display: block
-	margin-left: 2%
-
 .blog-list
 	margin-left: 0
-	padding-top: $spacing-unit
 	li
 		list-style-type: none
 		display: flex
 		padding-top: $spacing-unit
+		&:first-child
+			padding-top: 0
 
 .blog-list-box	
 	width: 100%
@@ -366,3 +360,79 @@
 		.subpost-thumbnail
 			width: 60%
 			float: none
+
+@media (max-width: 768px)
+	.blog-index, .blogpost
+		padding: 20px
+
+	.blog-list-box
+		box-sizing: border-box
+		padding: 16px
+		.blog-list-thumbnail
+			float: none
+			width: 100%
+			max-width: 240px
+			margin: 0 auto 16px
+		.blog-list-thumbnailimg
+			width: 100%
+			padding: 0
+		.blog-list-content
+			float: none
+			width: 100%
+			min-width: 0
+			margin: 0
+			overflow-wrap: anywhere
+		.blog-list-title
+			font-size: 22px
+			line-height: 1.3
+			margin-bottom: 8px
+		.blog-list-authors
+			font-size: 16px
+			line-height: 1.5
+			padding: 0
+		.blog-list-tldr
+			font-size: 16px
+			line-height: 1.6
+			text-align: left
+			padding: 0
+			margin: 16px 0 0
+		.blog-list-tria
+			display: none
+
+	.blogpost
+		.blogpost-headerblock, .blogpost-col
+			box-sizing: border-box
+			width: 100%
+			max-width: 100%
+			overflow-wrap: anywhere
+		.blogpost-title
+			font-size: 28px
+			line-height: 1.25
+			text-align: left
+		.blogpost-subtitle
+			display: block
+			margin: 0
+		.blogpost-subtitle-left, .blogpost-subtitle-right
+			margin: 0
+		.page-subtitle
+			font-size: 16px
+			line-height: 1.5
+		.tldr, .tldr-meta-subposts, .blogpost-col
+			text-align: left
+		.tldr
+			padding: 14px
+		.blogpost-col
+			line-height: 1.65
+			iframe
+				max-width: 100%
+			table:not(.confusion-matrix)
+				display: block
+				max-width: 100%
+				overflow-x: auto
+		.MathJax_Display
+			max-width: 100%
+			overflow-x: auto
+			overflow-y: hidden
+		.subpost-info
+			float: none
+			width: 100%

@@ -56,6 +56,90 @@
     width: $full-width
     margin: 0 auto
 
+  .landing-highlights
+    display: grid
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+    grid-template-rows: auto repeat(4, auto) auto
+    column-gap: 32px
+    margin-top: $spacing-unit
+
+  .landing-section-title
+    font-size: 18px
+    margin: 0 0 15px
+
+  .landing-news, .landing-publications
+    min-width: 0
+    display: grid
+    grid-template-rows: subgrid
+    grid-row: span 6
+
+  .landing-highlights
+    .media-row, .pubs-on-home-row
+      box-sizing: border-box
+      padding: 20px 0
+      border-bottom: 2px solid #e5e5e5
+
+  .landing-news
+    .media-item
+      box-sizing: border-box
+      width: 100%
+      padding: 0
+      display: flex
+      gap: 20px
+      align-items: flex-start
+      border: 0
+
+    .media-thumbnail-news
+      flex: 0 0 120px
+
+      img
+        display: block
+        width: 100%
+        max-height: 90px
+        object-fit: contain
+
+    .media-excerpt-news
+      flex: 1
+      min-width: 0
+      padding: 0
+      text-align: left
+
+      p
+        margin-bottom: 0
+
+  .landing-publications .horizontal-card
+    padding: 0
+    border: 0
+
+  .div-see-all
+    width: 100%
+    max-width: 300px
+    margin: 16px auto 0
+
+  .landing-blogposts
+    margin-top: $spacing-unit
+
+  .landing-blogpost-grid
+    display: grid
+    grid-template-columns: repeat(3, minmax(0, 1fr))
+    gap: 32px
+
+  .landing-blogpost
+    min-width: 0
+    overflow-wrap: anywhere
+
+    h3
+      font-size: 18px
+      line-height: 1.4
+      margin: 0 0 8px
+
+    time
+      font-style: italic
+
+    p
+      margin-top: 10px
+      line-height: 1.6
+
 
 @include media-query($mobile-break)
   .landing
@@ -85,3 +169,23 @@
       width: 100%
       padding: $spacing-unit
       padding-top: 0
+
+    .landing-highlights
+      display: block
+
+    .landing-news, .landing-publications
+      display: block
+
+    .landing-publications
+      margin-top: $spacing-unit
+
+    .landing-blogpost-grid
+      grid-template-columns: minmax(0, 1fr)
+
+@media (max-width: 600px)
+  .landing .landing-news
+    .media-item
+      gap: 16px
+
+    .media-thumbnail-news
+      flex-basis: 80px

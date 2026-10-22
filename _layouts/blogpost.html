@@ -155,7 +155,7 @@ layout: default
             <b>&nbsp;&nbsp;|&nbsp;&nbsp;</b> 
             {% endif %}
 
-            <a href="/blog/feed.xml"> Subscribe to our Atom feed <svg class="social-icon">
+            <a href="{{ '/blog/feed.xml' | relative_url }}" title="Subscribe in a feed reader to receive new blog posts automatically">Subscribe to blog updates (Atom) <svg class="social-icon" aria-hidden="true">
               <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
             </svg> </a> 
           </div>

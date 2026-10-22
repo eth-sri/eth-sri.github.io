@@ -5975,6 +5975,26 @@
     ],
     "width": 600
   },
+  "/assets/media/honeyval.png": {
+    "digest": "6261b82e55636220",
+    "height": 1331,
+    "src": "/assets/generated/thumbnails/6261b82e55636220-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/6261b82e55636220-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/6261b82e55636220-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/6261b82e55636220-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1331
+  },
   "/assets/media/ibm.jpg": {
     "digest": "0809a669daedb273",
     "height": 200,

@@ -2,20 +2,25 @@
  * Site footer
  */
 .site-footer
-  padding: 80px 0 40px
-  min-height: 50px
+  border-top: 1px solid $color-border
+  background-color: #f5f7f9
+  margin-top: $spacing-unit
+  padding: 24px 0
+  width: 100%
+  flex-shrink: 0
+
+.footer-content
+  box-sizing: border-box
   width: $full-width
   margin: 0 auto
-  display: flex
+  line-height: 1.7
 
 
 @include media-query($full-width-break)
-  .site-footer
+  .footer-content
     width: $mobile
 
 @include media-query($mobile-break)
-  .site-footer
-    width: 100%
-    padding: $spacing-unit 0
   .footer-content
+    width: 100%
     padding: 0 $spacing-unit

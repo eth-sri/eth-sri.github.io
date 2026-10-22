@@ -148,6 +148,15 @@
   @media (max-width: 1024px) {
     padding: 0 1rem;
   }
+
+  @media (max-width: 768px) {
+    padding: 0;
+
+    .example-container, .box { padding: 0.75rem; }
+    .prompt-details { padding: 0; }
+    .prompt-details > summary { padding: 0.75rem; }
+    .prompt-details > .problem-box { margin: 0 0.75rem 0.75rem; }
+  }
 }
 
 .matharena-post {
