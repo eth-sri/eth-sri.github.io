@@ -1,0 +1,19 @@
+Autoresearch figure asset sources
+
+robot and docker: native vector paths extracted from the user's AutoMark figure,
+  automark_paper/paper/figures/accept/figure1_tikz.tex (top of the sandbox).
+chat-ui: browser frame and conversation bubbles extracted from the user's
+  detecting-watermarks-paper/paper/figures/overview.svg, group g628;
+  the original three provider logos were removed. The shorter landscape frame
+  retains the original browser styling; chat-bubble-left and chat-bubble-right
+  preserve the original native conversation bubble paths.
+qwen: existing h_qwen-color.svg from the user's fixed-code-paper poster assets.
+gemma: https://raw.githubusercontent.com/lobehub/lobe-icons/master/packages/static-svg/icons/gemma-color.svg
+ai2 (OLMo's provider): https://raw.githubusercontent.com/lobehub/lobe-icons/master/packages/static-svg/icons/ai2-color.svg
+  Lobe Icons: https://github.com/lobehub/lobe-icons (MIT license).
+Watermark droplet: existing SynthID blog/poster TikZ geometry and blue palette.
+
+Rebuild from SVG sources: export each SVG to the same basename with a .pdf
+extension using Inkscape, then run lualatex on SynthID-blog-autoresearch.tex
+from the parent directory. PDF files are generated intermediates; the website
+uses the self-contained PNG/SVG and does not commit PDFs.

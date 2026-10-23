@@ -1,0 +1,74 @@
+% Autoresearch setup for the SynthID blog.
+% Artwork: AutoMark's robot/Docker and the black-box detection paper's chat UI.
+% Model logos: existing Qwen asset; Gemma and Ai2 from the Lobe Icons SVG set.
+% Build from this directory: lualatex SynthID-blog-autoresearch.tex
+\documentclass[border=6bp]{standalone}
+\usepackage{fontspec}
+\setmainfont{Nunito}[Extension=.otf,UprightFont=*-Regular,BoldFont=*-Bold,
+ ItalicFont=*-Italic,BoldItalicFont=*-BoldItalic,FontFace={sb}{n}{*-SemiBold},Numbers=Lining]
+\usepackage{graphicx,tikz,xfp,fontawesome5}
+\usetikzlibrary{arrows.meta,calc}
+\newlength\U\setlength\U{.75bp}
+\newcommand\fs[1]{\fontsize{\fpeval{#1*.75}bp}{\fpeval{#1*.75*1.22}bp}\selectfont\spaceskip=\fontdimen2\font\relax}
+\newcommand\sbseries{\fontseries{sb}\selectfont}
+\definecolor{blue}{HTML}{3269AF}
+\definecolor{ink}{HTML}{1F1F1F}
+\definecolor{muted}{HTML}{5A5A5A}
+\definecolor{dropA}{HTML}{55C4FA}
+\definecolor{dropB}{HTML}{22A7F0}
+\graphicspath{{autoresearch-assets/}}
+\tikzset{flow/.style={<->,>={Stealth[length=10bp,width=8bp]},line width=2.8\U,draw=blue,line join=round},
+ drop/.pic={
+  \path[fill=dropB] (0,-30) .. controls (4,-18) and (17,-3) .. (17,10)
+    arc[start angle=0,end angle=180,radius=17] .. controls (-17,-3) and (-4,-18) .. cycle;
+  \begin{scope}
+   \clip (0,-30) .. controls (4,-18) and (17,-3) .. (17,10)
+    arc[start angle=0,end angle=180,radius=17] .. controls (-17,-3) and (-4,-18) .. cycle;
+   \fill[dropA] (2.5,-34) .. controls (6.5,-22) and (19.5,-7) .. (19.5,6)
+    arc[start angle=0,end angle=180,radius=17] .. controls (-14.5,-7) and (-1.5,-22) .. cycle;
+  \end{scope}}}
+
+% Short chat windows preserve the original speech-bubble artwork and browser styling.
+\newcommand\apibox[5]{%
+ \begin{scope}[shift={(#1,#2)}]
+  \begin{scope}
+   \clip[rounded corners=8\U] (-125,-80) rectangle (125,80);
+   \fill[white] (-125,-80) rectangle (125,80);
+   \fill[black!25] (-125,-80) rectangle (125,-55);
+  \end{scope}
+  \draw[draw=black!75,line width=3.5\U,rounded corners=8\U] (-125,-80) rectangle (125,80);
+  \draw[draw=black!75,line width=3.5\U] (-125,-55) -- (125,-55);
+  \foreach \x in {82,97,112} \fill[black!75] (\x,-67) circle[radius=2.7];
+  \node at (-70,7) {\includegraphics[width=58\U,height=58\U,keepaspectratio]{#3.pdf}};
+  \node at (31,-12) {\includegraphics[width=102\U]{chat-bubble-left.pdf}};
+  \node at (48,39) {\includegraphics[width=102\U]{chat-bubble-right.pdf}};
+  \node[font=\fs{27}\sbseries] at (0,105) {#4};
+  \ifnum#5=1
+   \filldraw[fill=white,draw=blue,line width=2\U] (120,-68) circle[radius=22];
+   \pic[scale=.55] at (120,-67) {drop};
+  \fi
+ \end{scope}}
+\begin{document}
+\begin{tikzpicture}[x=.75bp,y=-.75bp,every node/.style={inner sep=0,text=ink}]
+\path[use as bounding box] (0,0) rectangle (1100,735);
+% AutoMark sandbox, with the same robot and resources.
+\draw[blue,line width=2.8\U,rounded corners=12\U] (30,200) rectangle (430,500);
+\node at (75,236) {\includegraphics[width=43\U]{docker.pdf}};
+\node[anchor=west,font=\fs{29}\bfseries,text=blue] at (113,236) {Isolated sandbox};
+\node at (137,368) {\includegraphics[height=108\U]{robot.pdf}};
+\draw[blue,line width=2\U,rounded corners=10\U] (245,278) rectangle (407,458);
+\node[font=\fs{26}\sbseries,text=blue] at (326,310) {Resources};
+\node[font=\fs{30},text=blue] at (276,359) {\faIcon{microchip}};
+\node[anchor=west,font=\fs{26}] at (309,359) {GPU};
+\node[font=\fs{30},text=blue] at (276,412) {\faIcon{globe}};
+\node[anchor=west,font=\fs{26}] at (309,412) {Web};
+
+% API boxes on an arc; every communication channel is one straight segment.
+\draw[flow] (430,275) -- (525,145);
+\draw[flow] (430,350) -- (815,350);
+\draw[flow] (430,425) -- (525,555);
+\apibox{650}{100}{qwen}{Qwen3.5-9B}{1}
+\apibox{940}{350}{gemma}{Gemma-4-E4B-it}{0}
+\apibox{650}{600}{ai2}{OLMo-3-7B-Think}{0}
+\end{tikzpicture}
+\end{document}

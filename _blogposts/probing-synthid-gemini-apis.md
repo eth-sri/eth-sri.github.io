@@ -59,7 +59,13 @@ I bought 2222 bananas.
 
 In this example, the word `bananas` was chosen by the model in the thinking trace: there is no influence due to the context `2222` and thus our test would have failed.
 
-To update our method, we let auto-research agents figure out how to overcome this issue. Specifically, I gave an Opus 5.5 agent access to 3 black-box APIs (from its perspective) with only 1 of them watermarked. The agent was tasked with figuring out which one is watermarked. It also had access to a local GPU for conducting its experiments. After about 24 hours of research, it came up with an improvement to our method!
+To update our method, we let auto-research agents figure out how to overcome this issue. Specifically, we gave an Opus 5.5 agent access to 3 black-box APIs (from its perspective) with only 1 of them watermarked. The agent was tasked with figuring out which one is watermarked. It also had access to a local GPU for conducting its experiments. After about 24 hours of research, it came up with an improvement to our method!
+
+![](/assets/blog/probing-synthid-gemini-apis/autoresearch.png){: .blogpost-img100}
+
+{:.blogpost-caption}
+*Illustration of our autoresearch setup. An Opus5.5 agent is running in an isolated sandbox and has access to 3 black-box APIs, one of them being watermarked. It is tasked to design a test to infer which one is watermarked.*
+
 
 {: .blogpost-note}
 > The three black-box APIs served Qwen3.5-9B, Gemma-4-E4B-it, and Olmo-3-7B-Think, with their identities hidden from the agent. For local experiments, the agent had access to LiquidAI’s LFM2.5-2.6B on an NVIDIA RTX PRO 6000 GPU (96 GB). Downloading any additional model weights, from Hugging Face or elsewhere, was forbidden, preventing direct comparisons between the APIs and local copies of the same models.

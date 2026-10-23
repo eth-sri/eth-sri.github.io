@@ -907,6 +907,26 @@
     ],
     "width": 1497
   },
+  "/assets/blog/probing-synthid-gemini-apis/autoresearch.png": {
+    "digest": "948864d2320e34d4",
+    "height": 1127,
+    "src": "/assets/generated/thumbnails/948864d2320e34d4-640.webp",
+    "variants": [
+      {
+        "url": "/assets/generated/thumbnails/948864d2320e34d4-320.webp",
+        "width": 320
+      },
+      {
+        "url": "/assets/generated/thumbnails/948864d2320e34d4-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/assets/generated/thumbnails/948864d2320e34d4-1280.webp",
+        "width": 1280
+      }
+    ],
+    "width": 1674
+  },
   "/assets/blog/probing-synthid-gemini-apis/black-box-detection.png": {
     "digest": "50f2acf4c1ce3aa9",
     "height": 416,
