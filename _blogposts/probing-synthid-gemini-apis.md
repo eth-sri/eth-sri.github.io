@@ -45,7 +45,9 @@ In "[Black-Box Detection of Language Model Watermarks](https://www.sri.inf.ethz.
 {:.blogpost-caption}
 *Illustration of context-size probing. Changing a token outside the four-token watermark context preserves the choice probabilities, while changing one inside it changes them.*
 
-In our original work, the idea was to see if, when asking the LLM to choose a random word, we observe a strong dependency based on the context. Specifically, to infer the size of the watermark context, we force the model to generate replies with this specific format: $$t_{1}\dots t_{n} \text{choice}$$. We then, for all $$i$$, vary $$t_{i}$$ while keeping the other ones fixed. If $$i$$ is smaller than the watermark context length, varying $$t_{i}$$ will significantly change the choice (because it changes which tokens are favored by the watermark). If $$i$$ is bigger than the watermark context size, varying $$t_{i}$$ should not change the choice (because the tokens favored by the watermark are the same).
+In our original work, we asked the LLM to choose a random word and tested whether its word preferences depended strongly on the preceding tokens. To infer the watermark context length, we require replies of the form $$t_{n}\dots t_{1} \text{choice}$$, where $$t_{i}$$ is the token $$i$$ positions before the chosen word. For each position $$i$$, we vary $$t_{i}$$ while keeping all other preceding tokens fixed, then compare the choice probabilities across repeated replies.
+
+If $$i$$ is smaller than or equal to the watermark context length (e.g., $$i = 4$$ in the example above, with a context length of 4), changing $$t_{i}$$ changes the watermark context and therefore which tokens the watermark favors. We thus expect the choice probabilities to change. If $$i$$ is greater than the watermark context length (e.g., $$i = 5$$ in the example above), changing $$t_{i}$$ leaves the watermark context unchanged, so the watermark should continue to favor the same tokens.
 
 
 
