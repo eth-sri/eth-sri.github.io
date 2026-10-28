@@ -75,7 +75,7 @@ To update our method, we let auto-research agents figure out how to overcome thi
 {: .blogpost-note}
 > The three black-box APIs served Qwen3.5-9B, Gemma-4-E4B-it, and Olmo-3-7B-Think, with their identities hidden from the agent. For local experiments, the agent had access to LiquidAI’s LFM2.5-2.6B on an NVIDIA RTX PRO 6000 GPU (96 GB). Downloading any additional model weights, from Hugging Face or elsewhere, was forbidden, preventing direct comparisons between the APIs and local copies of the same models.
 
-The updated method uses the same context-dependency mechanism as our work. It just changes the prompt to:
+The updated method still tests whether word preferences depend on the preceding tokens. To keep those tokens next to the chosen word even during thinking, we ask the model to write a story with a code at the start of each sentence:
 
 ```
 Answer immediately without deliberation. Write a story about a lighthouse keeper in exactly 20 sentences, one sentence per line. Each line must begin with the given code copied exactly (single letters separated by single spaces), then a space, then the sentence. Use these codes in this order, one per line:
@@ -86,7 +86,7 @@ e y h u k t v r
 Output only the 20 lines.
 ```
 
-Here, each code corresponds to a different sequence $$t_{1},\dots,t_{n}$$ and the choice of words after $$t_{1},\dots,t_{n}$$ is no longer constrained to a specific list, giving more entropy to the model. A typical reply would be
+Here, each code gives the sequence $$t_n\dots t_1$$ before the opening word. We let the model choose any opening word, giving it more entropy than a fixed list. The eight letters in this example are a choice we make when designing the prompt. Below, we use sixteen letters to probe contexts longer than four tokens. The code length and the number of sentences are chosen separately. A typical reply would be
 
 ```
 <think>I'll start by drafting the sentences. I'll need to create a narrative arc,
@@ -103,52 +103,55 @@ e y h u k t v r Outside, a brisk northern wind howled against the thick granite 
 [...]
 ```
 
-In this case, we find that the model consistently generates in its thinking trace the choice of the next word with the context $$t_{1}\dots t_{n}$$. This means that, even if the model only copy-pastes its choice in the visible answer the choice of the next word after the context in the visible answer would still be influenced by the watermark. And thus our test would still work.
+In this example, the code immediately precedes the opening word when the model first drafts it in the thinking trace. If thinking is watermarked, the code can therefore influence the word choice. Copying this draft into the visible answer preserves that bias. With thinking disabled, the model chooses the word directly after the code in its visible answer. This lets us apply the same test in both settings.
 
-To detect the watermark, we construct families of codes from a reference code.
-A family is a set of codes that share the same $m$ trailing tokens (where $m$ is an integer we can vary), and the $m$ trailing tokens constitute the reference code.
-Each sentence in the story uses one randomly selected code from each family, and we repeat the experiment across many stories.
-In particular, this means we use as many families as generated sentences (20 in practice).
-This way, we have many examples of referenced code x next word tuples that can be used to see if a given reference code induced a specific bias.
-Below is an example of a family with the reference code `t d f`:
+To compare codes with different amounts of shared context, we construct 20 families before querying the model. Each family starts with one random 16-letter reference code. We create eight variants that share exactly 0, 1, 2, 3, 4, 6, 8, or 12 trailing letters with it. For each variant, we keep the suffix, change the letter immediately before it, and randomly draw the earlier letters, keeping the first letter fixed. We also add two controls that preserve the first 12 or 14 letters and change the last letter. Each family thus contains 11 codes, giving 220 codes in total. Keeping the first letter fixed helps control for models that use it to choose the first letter of the opening word.
 
-```
-a p f t d f
-e s m t d f
-z o i t d f
+For example, these shorter codes all share the last three letters `t d f`:
+
+```text
+r a p t d f
+r e s t d f
+r z o t d f
 ```
 
-> For each tested model, we also verify that each letter corresponds exactly to one token (it would be possible for tokenizers to tokenize e.g. `a b` in a single token), so a reference code of 4 trailing letters means that all codes in its family share exactly the 4 tokens immediately before the generated word. 
+We count shared trailing letters backwards from the code endings, stopping at the first difference. The first two codes above share exactly three trailing letters. The second and third share four.
 
-For each code, we record the first word of the sentence that follows it. 
-We then build a word-preference profile: which opening words appear unusually often after this code, and which appear unusually rarely? 
-We compare these profiles as we increase the length of the reference code $m$. 
-If the watermark uses a context of 4 tokens, codes sharing only their last 3 letters generally produce different watermark seeds and therefore different word preferences. Once they share their last 4 letters, their seeds match, and their preferences should become as similar as those observed when repeating the experiment with the same code. 
-We therefore look for a sudden jump in similarity, followed by a plateau: the location of the jump reveals the watermark’s context size!
+> For each tested model, we also verify that each letter corresponds exactly to one token (it would be possible for tokenizers to tokenize e.g. `a b` in a single token). This lets us count the tokens immediately before the opening word from the letters in the code.
+
+For each story, we randomly select one code from each family and shuffle their order. Each of the 20 lines uses one selected code. We repeat this with new stories and record each code together with the first word that follows it. The code pool stays fixed throughout the experiment. After collecting the replies, we use the same observations to analyze every tested suffix length.
+
+For each code, we build a word-preference profile by comparing the observed word counts with the counts expected if word choice did not depend on the code. We use the 12 most frequent opening words and group the remaining words into an “other” category. A positive profile entry means that a word appears more often than expected, and a negative entry means that it appears less often. We scale each difference by the square root of its expected count.
+
+Let's work through a small example. Suppose we use five-letter codes and each sentence starts with “The”, “Silas” (a character's name), or “Outside”. For example, `r b c d y Silas climbed the stairs.` gives us the code `r b c d y` followed by the word “Silas”. In one family, we have the reference `r b c d y` and two variants, `r l x d y` and `r j k x y`. For each story, we select one of these codes and record the word that follows it. The first variant shares two trailing letters with the reference, while the second shares only one.
+
+Suppose we observe the reference 30 times: 12 followed by “The”, 9 by “Silas”, and 9 by “Outside”. Across all codes, the three words appear equally often, so we would expect 10 of each for this code. Its profile is therefore $$(2,-1,-1)/\sqrt{10}$$. If `r l x d y` gives the same counts, the two codes favor the same words. If `r j k x y` instead gives counts of 10, 13, and 7, it favors “Silas” and disfavors “Outside”. Repeating this comparison across families, we would look for word preferences that become similar once codes share two trailing tokens. This would suggest a two-token watermark context.
+
+We then compare these profiles for codes sharing different numbers of trailing tokens. If the watermark uses a context of 4 tokens, codes sharing only their last 3 tokens generally produce different watermark seeds and therefore different word preferences. Once they share their last 4 tokens, their seeds match, and their preferences should become as similar as those observed with the same code. We therefore look for a sudden jump in similarity, followed by a plateau: the location of the jump reveals the watermark’s context size!
 
 {: .blogpost-note}
-> Precisely, we introduce a similarity metric $$S_m$$ and a global alignment metric $$r$$. We also repeat each query twice independently (query sets $$A$$ and $$B$$) to better calibrate the method.
->
-> Let $$N^A_{cw}$$ count how often code $$c$$ is followed by word $$w$$ in query half $$A$$. Under independence between codes and words, its expected count is $$E^A_{cw}=N^A_{c\cdot}N^A_{\cdot w}/N^A_{\cdot\cdot}$$. Define the standardized residual $$R^A_{cw}=(N^A_{cw}-E^A_{cw})/\sqrt{E^A_{cw}}$$, and similarly for the independent half $$B$$. The similarity between codes $$c$$ and $$d$$ is
+> Precisely, we randomly split the collected replies into halves $$A$$ and $$B$$. Let $$N^A_{cw}$$ count how often code $$c$$ is followed by word $$w$$ in half $$A$$. Let $$n^A_c$$ be the total count for code $$c$$, $$n^A_w$$ the total for word $$w$$, and $$n^A$$ the total number of observations. Under independence between codes and words, the expected count is $$E^A_{cw}=n^A_c n^A_w/n^A$$. Define the standardized residual $$R^A_{cw}=(N^A_{cw}-E^A_{cw})/\sqrt{E^A_{cw}}$$, and similarly for half $$B$$. The similarity between any two codes $$c$$ and $$d$$ is
 >
 > $$
 > G_{cd}=\frac12\sum_w\left(R^A_{cw}R^B_{dw}+R^B_{cw}R^A_{dw}\right).
 > $$
 >
-> We average $$G_{cd}$$ over distinct code pairs sharing exactly $$m$$ trailing tokens within each family, then average equally across families to obtain $$S_m$$. The implementation also averages over multiple random query splits. A larger $$S_m$$ means that these codes reproducibly favor and disfavor the same words.
+> Within each family, we average $$G_{cd}$$ over distinct code pairs sharing exactly $$m$$ trailing tokens. We then average equally across families to obtain $$S_m$$. Pairs sharing no trailing tokens but a long prefix are kept as separate controls and excluded from $$S_0$$. We also average over multiple random splits of the replies. A larger $$S_m$$ means that these codes reproducibly favor and disfavor the same words.
 >
-> Let $$S_{0}$$ be the baseline for codes sharing no trailing tokens, and $$S_{\mathrm{same}}$$ the similarity of a code with itself across independent samples. We define $$r \coloneq (S_m-S_0)/(S_{\mathrm{same}}-S_0)$$. When $$r \approx 0$$ this means that $$S_{m} = S_{0}$$ and that sharing $$m$$ trailing tokens has the same biases as sharing $$0$$ tokens. Conversely, with $$r \approx 1$$ this means that $$S_{m} \approx S_{\mathrm{same}}$$ and that sharing $$m$$ trailing tokens has the same biases as sharing the exact same code.
+> Let $$S_0$$ be the baseline for codes sharing no trailing tokens, and $$S_{\mathrm{same}}$$ the average similarity of each code with itself across the two halves. For each suffix length $$m$$, we define the alignment $$r_m=(S_m-S_0)/(S_{\mathrm{same}}-S_0)$$. An alignment near 0 means that sharing $$m$$ trailing tokens produces as little similarity as sharing none. An alignment near 1 means that these codes have word preferences as similar as those measured with the same code.
+
+We give a [worked example](/blog/probing-synthid-gemini-apis/worked-example/) with two small families, three possible opening words, and detailed calculations.
 
 ### Applying our method to all Gemini models
 
-We apply our method using stories of 20 sentences (i.e. 20 families), each beginning with a 16-letter code, i.e. $$t_{1},\dots,t_{16}$$. We use the same pool of 220 codes across models, vary $m$ (i.e. the legnth of the reference code in each family) from 1 to 16, and collect 2,000 stories per model x $m$. We disable thinking whenever the API allows it.
+We apply our method to ten Gemini models using the same 20 families of 16-letter codes described above. We collect 2,000 stories per model, except for Gemini 2.5 Pro (1,200) and Gemini 3.7 Flash (1,990 retained). Each story provides up to 20 code–word observations, giving up to 40,000 observations per model, or about 182 per code. From these replies, we compute alignment at shared suffix lengths 1, 2, 3, 4, 6, 8, and 12, using length 0 as the baseline and identical codes for calibration. We disable thinking whenever the API allows it.
 
 [![](/assets/blog/probing-synthid-gemini-apis/gemini-context-alignment.png){: .blogpost-img50 .blogpost-plot}](/assets/blog/probing-synthid-gemini-apis/gemini-context-alignment.png)
 
 {:.blogpost-caption}
 *Within-model alignment for 10 Gemini models as a function of the number of shared trailing tokens. Faint blue curves show individual models and the thick blue curve shows their median. The jump at four shared tokens is consistent with a four-token watermark context across all evaluated models.*
 
-Our results show that, for codes with a reference code of length 3, we see no similar word preferences across codes on any model. However, for codes with a reference code of length 4 or more, we see on all models that different codes consistently lead to the same word preferences. This means that the watermark context size of all evaluated Gemini models is 4 tokens.
+Our results show that, for codes sharing exactly 3 trailing tokens, we see no similar word preferences across codes on any model. However, for codes sharing 4 or more trailing tokens, we see on all models that different codes consistently lead to the same word preferences. This means that the watermark context size of all evaluated Gemini models is 4 tokens.
 
 [![](/assets/blog/probing-synthid-gemini-apis/gemini-watermark-correlation.png){: .blogpost-img50 .blogpost-plot}](/assets/blog/probing-synthid-gemini-apis/gemini-watermark-correlation.png)
 
@@ -178,23 +181,23 @@ Because of these unexpected results, we pushed our investigation further. The Ge
 3.  `h b x f o d d r` For a thousand years, the dragon had ignored the petty squabbles of the mortal realm below.
 ```
 
-In most cases, the summary shows verbatim the story the model was about to generate. In particular, in the summary, Gemini always inserted a backtick after the code and before the first word chosen. From this simple observation, we can infer a few things. First, the text we observe outside the thinking trace is almost a copy-paste of the content in the thinking trace. In particular, this means that there is zero entropy for the watermark to be applied. Yet, we observe the watermark with our test: this means the watermark was applied during the thinking.
+The summaries sometimes show a backtick between the code and the first word. If the model also inserts it when drafting the story in its hidden trace, the backtick takes up one token of the watermark context. A four-token context would then contain the last three tokens of the code and the backtick, explaining the jump at 3 shared tokens.
 
-Furthermore, the backtick explains why with thinking we see the jump at 3 tokens. When we do our test, in practice the context with which the watermark is applied is $$t_{1},\dots,t_{n}\text{`}$$, yet in the visible output we only see $$t_{1}\dots t_{n}$$. Hence, from our method’s perspective it seems the relevant context was $$t_{n-2}t_{n-1}t_{n}$$ whereas in practice it was $$t_{n-2}t_{n-1}t_{n}\text{`}$$. To confirm this hypothesis, we verify that the bias with thinking was the same as the bias without thinking when adding a backtick to every code: this turns out to be true in practice!
+To test this explanation, we collected 500 additional stories with thinking disabled, using the same code pool and adding a closing backtick after every code. The resulting word preferences align with those measured with thinking enabled, supporting the explanation that the model chooses the words after a backtick during thinking and copies them into its visible answer. Thinking summaries are rewritten accounts of the hidden trace, so the controlled comparison provides stronger evidence than the summaries alone.
 
 ### Why watermark the thinking trace?
 
 
 We now know that Google decided to watermark the thinking trace of their model. In this part, we try to give sensible explanations for why this choice makes sense.
 
-Intuitively, because the thinking trace is hidden anyway, one would think that there is no need for it to be watermarked: end users should never see it anyway. Yet, our tests already give an explanation for why watermarking the thinking trace makes sense. We saw that with our prompt the thinking model first drafted the answer in its trace and then copy-pasted it almost exactly in the visible answer. If the trace were not watermarked, the answer would also not be watermarked.
+Intuitively, because the thinking trace is hidden anyway, one would think that there is no need for it to be watermarked: end users should never see it anyway. Yet, our tests already give an explanation for why watermarking the thinking trace makes sense. We saw that with our prompt the thinking model first drafted the answer in its trace and then copy-pasted it almost exactly in the visible answer. If the trace were not watermarked, copying its draft would leave little freedom for final-answer watermarking to bias the word choices.
 
-We therefore propose a simple “attack” that would generate non-watermarked text with thinking models if their thinking trace is not watermarked. We ask the model to generate a reply with a fixed number of sentences: on all tested models, this forces the model to first explicitly write its reply in the thinking trace to “count” the sentences and then copy-paste them in the visible output.
+We therefore propose a simple “attack” against thinking models whose final answers are watermarked while their thinking traces are not. We ask for a reply with a fixed number of sentences, encouraging the model to draft and count the sentences during thinking, then copy them into the visible answer. We observed this behavior on Gemini 3.8 Flash above. To test its effect on watermark detection, we run a separate experiment on an open model where we control which parts are watermarked.
 
 [![](/assets/blog/probing-synthid-gemini-apis/thinking-watermark-attack.png){: .blogpost-img50 .blogpost-plot}](/assets/blog/probing-synthid-gemini-apis/thinking-watermark-attack.png)
 
 
-Specifically, we evaluate our attack on Qwen3.8-27B with 1,000 ELI5 prompts and a SynthID watermark with a context of 4 tokens, once with the thinking trace watermarked and once without. We use the following prompt:
+Specifically, we evaluate our attack on Qwen3.8-27B with 1,000 ELI5 prompts and a SynthID watermark with a context of 4 tokens, with final-answer watermarking enabled in both conditions. We only change whether the thinking trace is also watermarked. We use the following prompt:
 ```
 Answer in 10 sentences exactly this question: {eli5 question}
 ```
