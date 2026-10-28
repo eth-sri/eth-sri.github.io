@@ -103,11 +103,28 @@ e y h u k t v r Outside, a brisk northern wind howled against the thick granite 
 [...]
 ```
 
-In this case, we find that the model consistently generates in its thinking trace the choice of the next word with the context $$t_{1}\dots t_{n}$$.
+In this case, we find that the model consistently generates in its thinking trace the choice of the next word with the context $$t_{1}\dots t_{n}$$. This means that, even if the model only copy-pastes its choice in the visible answer the choice of the next word after the context in the visible answer would still be influenced by the watermark. And thus our test would still work.
 
-To detect the watermark, we construct families of codes from a reference code. Each family contains variants that preserve exactly its last 1, 2, 3, 4, or more letters, while changing the earlier letters. We verify that each letter corresponds to one token, so sharing 4 trailing letters means sharing exactly the 4 tokens immediately before the generated word. Each story uses one randomly selected code from each family, and we repeat the experiment across many stories.
+To detect the watermark, we construct families of codes from a reference code.
+A family is a set of codes that share the same $m$ trailing tokens (where $m$ is an integer we can vary), and the $m$ trailing tokens constitute the reference code.
+Each sentence in the story uses one randomly selected code from each family, and we repeat the experiment across many stories.
+In particular, this means we use as many families as generated sentences (20 in practice).
+This way, we have many examples of referenced code x next word tuples that can be used to see if a given reference code induced a specific bias.
+Below is an example of a family with the reference code `t d f`:
 
-For each code, we record the first word of the sentence that follows it. We then build a word-preference profile: which opening words appear unusually often after this code, and which appear unusually rarely? We compare these profiles as we increase the number of shared trailing letters. If the watermark uses a context of 4 tokens, codes sharing only their last 3 letters generally produce different watermark seeds and therefore different word preferences. Once they share their last 4 letters, their seeds match, and their preferences should become as similar as those observed when repeating the experiment with the same code. We therefore look for a sudden jump in similarity, followed by a plateau: the location of the jump reveals the watermark’s context size!
+```
+a p f t d f
+e s m t d f
+z o i t d f
+```
+
+> For each tested model, we also verify that each letter corresponds exactly to one token (it would be possible for tokenizers to tokenize e.g. `a b` in a single token), so a reference code of 4 trailing letters means that all codes in its family share exactly the 4 tokens immediately before the generated word. 
+
+For each code, we record the first word of the sentence that follows it. 
+We then build a word-preference profile: which opening words appear unusually often after this code, and which appear unusually rarely? 
+We compare these profiles as we increase the length of the reference code $m$. 
+If the watermark uses a context of 4 tokens, codes sharing only their last 3 letters generally produce different watermark seeds and therefore different word preferences. Once they share their last 4 letters, their seeds match, and their preferences should become as similar as those observed when repeating the experiment with the same code. 
+We therefore look for a sudden jump in similarity, followed by a plateau: the location of the jump reveals the watermark’s context size!
 
 {: .blogpost-note}
 > Precisely, we introduce a similarity metric $$S_m$$ and a global alignment metric $$r$$. We also repeat each query twice independently (query sets $$A$$ and $$B$$) to better calibrate the method.
@@ -124,15 +141,14 @@ For each code, we record the first word of the sentence that follows it. We then
 
 ### Applying our method to all Gemini models
 
-We apply our method using stories of 20 sentences, each beginning with a 16-letter code, i.e. $$t_{1},\dots,t_{16}$$. We use the same pool of 220 codes across models and collect 2,000 stories per model. We disable thinking whenever the API allows it.
-
+We apply our method using stories of 20 sentences (i.e. 20 families), each beginning with a 16-letter code, i.e. $$t_{1},\dots,t_{16}$$. We use the same pool of 220 codes across models, vary $m$ (i.e. the legnth of the reference code in each family) from 1 to 16, and collect 2,000 stories per model x $m$. We disable thinking whenever the API allows it.
 
 [![](/assets/blog/probing-synthid-gemini-apis/gemini-context-alignment.png){: .blogpost-img50 .blogpost-plot}](/assets/blog/probing-synthid-gemini-apis/gemini-context-alignment.png)
 
 {:.blogpost-caption}
 *Within-model alignment for 10 Gemini models as a function of the number of shared trailing tokens. Faint blue curves show individual models and the thick blue curve shows their median. The jump at four shared tokens is consistent with a four-token watermark context across all evaluated models.*
 
-Our results show that, for codes sharing 3 or fewer trailing tokens, we see no similar word preferences across codes on any model. However, for codes sharing 4 or more trailing tokens, we see on all models that different codes consistently lead to the same word preferences. This means that the watermark context size of all evaluated Gemini models is 4 tokens.
+Our results show that, for codes with a reference code of length 3, we see no similar word preferences across codes on any model. However, for codes with a reference code of length 4 or more, we see on all models that different codes consistently lead to the same word preferences. This means that the watermark context size of all evaluated Gemini models is 4 tokens.
 
 [![](/assets/blog/probing-synthid-gemini-apis/gemini-watermark-correlation.png){: .blogpost-img50 .blogpost-plot}](/assets/blog/probing-synthid-gemini-apis/gemini-watermark-correlation.png)
 
@@ -142,8 +158,6 @@ Our results show that, for codes sharing 3 or fewer trailing tokens, we see no s
 Furthermore, if we look at the word preference across the nine models from Gemini 2.5 to 3.8, we find that for each shared set of trailing tokens, these models show the same word preference. This is consistent with those nine models sharing the exact same watermarking key. Gemini 4 Argon also has a four-token watermark context, but its biases do not align with those of the earlier models in any of the nine comparisons. This lack of alignment means that Argon effectively has a different watermarking key. This result is actually not surprising: the watermark is applied at the token level, and Gemini 4 uses a different tokenizer compared with previous models. This means that the watermark is also applied differently, similar to having a different key.
 
 ### Detecting that the thinking trace is watermarked
-
-<!-- Citations: add these references at the start of “Detecting that the thinking trace is watermarked”, replacing the citation placeholder. Gloaguen et al., LLM Fingerprinting via Semantically Conditioned Watermarks, Appendix E.1 (opening/closing watermark tokens), discusses selectively watermarking the trace or answer; Liu et al., ReasonMark, Section 2.1, leaves thinking unwatermarked; Rieff et al., Marking the Wrong Symptoms, Section 4.4, compares full and final-answer-only watermarking on medical reasoning tasks. These sources motivate the design question; the Gemini deployment finding comes from our experiments below. -->
 
 A question in the watermark literature is whether model providers should watermark the thinking trace ([ReasonMark](https://arxiv.org/abs/2601.05144), [Marking the Wrong Symptoms: Evaluating LLM Watermarks in Medical Texts](https://arxiv.org/html/2607.20462#S4.SS4)). With our probing, we find that Google decided to watermark the thinking traces of Gemini.
 
