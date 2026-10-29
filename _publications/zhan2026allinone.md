@@ -4,15 +4,18 @@ title: "All-in-One: A Composable Attack on LLM Transformations"
 authors: Xiaohua Zhan, Kazuki Egashira, Robin Staab, Mark Vero, Martin Vechev
 year: 2026
 month: 10
-venue: Preprint
+venue: arXiv
 projects: llmsecpriv
 bibtex: "@misc{zhan2026allinone,
   title={{All-in-One}: A Composable Attack on {LLM} Transformations},
   author={Zhan, Xiaohua and Egashira, Kazuki and Staab, Robin and Vero, Mark and Vechev, Martin},
   year={2026},
-  url={https://files.sri.inf.ethz.ch/website/papers/zhan2026allinone.pdf}
+  eprint={2610.33298},
+  archivePrefix={arXiv},
+  primaryClass={cs.LG},
+  url={https://arxiv.org/abs/2610.33298}
 }"
-paper: https://files.sri.inf.ethz.ch/website/papers/zhan2026allinone.pdf
+paper: https://arxiv.org/abs/2610.33298
 code: https://github.com/eth-sri/aio-attack
 ---
 
