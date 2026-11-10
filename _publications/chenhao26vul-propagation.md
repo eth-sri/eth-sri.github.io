@@ -4,7 +4,7 @@ title: "Coding Agents Propagate Vulnerabilities in Code Bases"
 authors: Chenhao Sun, Niels Mündler-Sasahara, Mark Vero, Martin Vechev
 year: 2026
 month: 11
-venue: arxiv
+venue: arXiv
 projects: codellm
 bibtex: '@article{sun2026vulpropagation,
   title={Coding Agents Propagate Vulnerabilities in Code Bases},
@@ -13,7 +13,7 @@ bibtex: '@article{sun2026vulpropagation,
   year={2026},
   url={https://arxiv.org/abs/2611.11455}
 }'
-paper: https://arxiv.org/pdf/2611.11455
+paper: https://arxiv.org/abs/2611.11455
 code: https://github.com/eth-sri/vulnerability-propagation
 ---
 
