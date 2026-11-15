@@ -1,7 +1,7 @@
 ---
 ref: yuhao26paper_formalizer
-title: "Paper Formalization for Efficient and Rigorous Proof Review"
-authors: Yuhao Mao, Chenhao Sun, Yani Zhang, Martin Vechev
+title: "HumanLean: Faithful Lean Formalization for Human Proof Review"
+authors: Yuhao Mao*, Chenhao Sun*, Yani Zhang, Martin Vechev
 year: 2026
 month: 10
 projects: mathllm
