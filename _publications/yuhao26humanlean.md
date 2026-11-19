@@ -5,7 +5,7 @@ authors: Yuhao Mao*, Chenhao Sun*, Yani Zhang, Martin Vechev
 year: 2026
 month: 10
 projects: mathllm
-paper: https://files.sri.inf.ethz.ch/website/papers/yuhao2026paper_formalizer.pdf
+paper: https://files.sri.inf.ethz.ch/website/papers/yuhao2026humanlean.pdf
 # slides: https://files.sri.inf.ethz.ch/website/slides/mueller2023sabr_slides.pdf
 #poster: https://files.sri.inf.ethz.ch/website/slides/mueller2021boosting_poster.pdf
 # image: assets/images/taps.png
