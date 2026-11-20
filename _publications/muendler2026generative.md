@@ -4,8 +4,8 @@ title: "Generative Compilation: On-the-Fly Compiler Feedback as AI Generates Cod
 authors: Niels Mündler-Sasahara*, Hristo Venev*, Dawn Song, Martin Vechev, Jingxuan He
 year: 2026
 month: 07
-day: 15
-venue: arXiv
+day: 16
+venue: DL4C @ ICML 2026
 projects: codellm,cclm
 bibtex: "@misc{muendler2026generativecompilationontheflycompilerfeedback,
       title={Generative Compilation: On-the-Fly Compiler Feedback as AI Generates Code},
