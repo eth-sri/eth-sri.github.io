@@ -13,7 +13,7 @@ bibtex: "@article{petrov2025usamo,
    archivePrefix={arXiv},
    primaryClass={cs.CL}
 }"
-paper: https://files.sri.inf.ethz.ch/website/papers/petrov2025usamo.pdf
+paper: https://arxiv.org/abs/2503.21934
 code: https://github.com/eth-sri/matharena
 website: https://matharena.ai/
 ---

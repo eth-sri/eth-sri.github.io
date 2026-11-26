@@ -12,7 +12,7 @@ bibtex: '@article{openproofcorpus2025,
   journal={arXiv},
   year={2025},
 }'
-paper: https://files.sri.inf.ethz.ch/website/papers/dekoninck2025proofcorpus.pdf
+paper: https://arxiv.org/abs/2506.21621
 code: https://github.com/insait-institute/open-proof-corpus
 website: https://proofcorpus.ai/
 ---

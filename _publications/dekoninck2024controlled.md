@@ -13,7 +13,7 @@ bibtex: "@inproceedings{dekoninck2024controlled,
       year={2024},
 	booktitle={The Twelfth International Conference on Learning Representations}'
 }"
-paper: https://files.sri.inf.ethz.ch/website/papers/dekoninck2024controlled.pdf
+paper: https://arxiv.org/abs/2311.14479
 code: https://github.com/eth-sri/language-model-arithmetic
 ---
 

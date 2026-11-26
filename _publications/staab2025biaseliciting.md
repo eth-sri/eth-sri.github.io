@@ -15,7 +15,7 @@ bibtex: "@article{staab2025bias,
       primaryClass={cs.CY},
       url={https://arxiv.org/abs/2510.12857}, 
 }"
-paper: https://files.sri.inf.ethz.ch/website/papers/staab2025bias.pdf
+paper: https://arxiv.org/abs/2510.12857
 code: https://github.com/eth-sri/cab
 ---
 

@@ -13,7 +13,7 @@ bibtex: "@article{dekoninck2024constat,
       archivePrefix={arXiv},
       primaryClass={cs.LG}
 }"
-paper: https://files.sri.inf.ethz.ch/website/papers/dekoninck2024constat.pdf
+paper: https://arxiv.org/abs/2405.16281
 code: https://github.com/eth-sri/ConStat
 website: https://constat.ai
 ---
